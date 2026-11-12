@@ -1,0 +1,392 @@
+[
+  {
+    "id": 751,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1",
+    "question": "Giải bài toán cái túi $0-1$ sau để tìm giá trị tối ưu $f^*$: $$12x_1 + 10x_2 + 9x_3 + 7x_4 + 4x_5 \\to \\max$$ với ràng buộc $4x_1 + 4x_2 + 3x_3 + 3x_4 + 2x_5 \\le 9$ và $x_i \\in \\{0, 1\\}$:",
+    "options": [
+      "$f^* = 23$ tại $(1, 0, 0, 1, 1)$",
+      "$f^* = 22$ tại $(1, 1, 0, 0, 0)$",
+      "$f^* = 25$ tại $(1, 0, 1, 0, 1)$",
+      "$f^* = 26$ tại $(1, 1, 1, 0, 0)$"
+    ],
+    "correct": 2,
+    "explanation": "Với phương án $X^* = (1, 0, 1, 0, 1)$: trọng lượng là $4 + 3 + 2 = 9 \\le 9$ và giá trị đạt $12 + 9 + 4 = 25$. Phương án $(1, 1, 1, 0, 0)$ vượt trọng lượng ($11 > 9$), các phương án hợp lệ khác đều cho giá trị $\\le 23$. Vậy $f^* = 25$."
+  },
+  {
+    "id": 752,
+    "topic": "Tối Ưu Tổ Hợp & Nhánh Cận",
+    "question": "Xét bài toán cái túi <strong>nguyên không giới hạn số lượng</strong>: $$11x_1 + 7x_2 + 5x_3 \\to \\max$$ thỏa mãn $4x_1 + 3x_2 + 2x_3 \\le 10$ với $x_1, x_2, x_3 \\in \\mathbb{Z}_{\\ge 0}$. Phương án tối ưu và giá trị $f^*$ là:",
+    "options": [
+      "$f^* = 25$ tại $(0, 0, 5)$",
+      "$f^* = 26$ tại $(1, 0, 3)$",
+      "$f^* = 27$ tại $(2, 0, 1)$",
+      "$f^* = 28$ tại $(2, 1, 0)$"
+    ],
+    "correct": 2,
+    "explanation": "Vì $\\frac{11}{4} = 2.75 > \\frac{5}{2} = 2.5 > \\frac{7}{3} \\approx 2.33$, ưu tiên chọn tối đa $x_1 = 2$ (trọng lượng còn $10 - 8 = 2$), phần còn lại chọn $x_3 = 1$, tổng giá trị $11(2) + 5(1) = 27$. Phương án $(2, 1, 0)$ có trọng lượng $11 > 10$ nên loại."
+  },
+  {
+    "id": 753,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên",
+    "question": "Cho bài toán cái túi $0-1$: $$4x_1 + 10x_2 + 3x_3 + 6x_4 \\to \\max$$ với ràng buộc $2x_1 + 4x_2 + 3x_3 + 5x_4 \\le 7$. Trước khi chạy thuật toán Nhánh cận theo giáo trình chuẩn, ta phải sắp xếp lại các biến theo thứ tự phân nhánh giảm dần của đơn giá $\\frac{c_i}{a_i}$. Thứ tự biến và giá trị cận trên tại gốc $g_{\\text{gốc}}$ đúng là:",
+    "options": [
+      "Thứ tự $(x_1, x_2, x_3, x_4)$ và $g_{\\text{gốc}} = 14{,}0$",
+      "Thứ tự $(x_2, x_4, x_1, x_3)$ và $g_{\\text{gốc}} = 17{,}5$",
+      "Thứ tự $(x_2, x_1, x_3, x_4)$ và $g_{\\text{gốc}} = 14{,}0$",
+      "Thứ tự $(x_2, x_1, x_4, x_3)$ và $g_{\\text{gốc}} = 17{,}5$"
+    ],
+    "correct": 3,
+    "explanation": "Tính đơn giá $c_i / a_i$: $x_1 \\to 4/2 = 2{,}0$; $x_2 \\to 10/4 = 2{,}5$; $x_3 \\to 3/3 = 1{,}0$; $x_4 \\to 6/5 = 1{,}2$. Sắp xếp giảm dần ta được thứ tự $(x_2, x_1, x_4, x_3)$. Tại nút gốc, cận trên $g = 0 + \\frac{10}{4}\\times 7 = 17{,}5$."
+  },
+  {
+    "id": 754,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên",
+    "question": "Cho bài toán cái túi $0-1$: $$8x_1 + 6x_2 + 5x_3 + 3x_4 \\to \\max$$ với $2x_1 + 3x_2 + 4x_3 + 3x_4 \\le 6$ và $x_i \\in \\{0, 1\\}$. Giá trị hàm cận trên $g$ tại phương án bộ phận $(x_1, x_2) = (1, 0)$ là:",
+    "options": [
+      "$12{,}0$",
+      "$13{,}0$",
+      "$14{,}0$",
+      "$11{,}0$"
+    ],
+    "correct": 1,
+    "explanation": "Đơn giá $4 > 2 > 1{,}25 > 1$ đã giảm dần. Tại bộ phận $(x_1, x_2) = (1, 0)$: giá trị $\\sigma_2 = 8$, trọng lượng còn lại $W = 6 - 2 = 4$. Biến kế tiếp $x_3$ có $c_3 = 5, a_3 = 4$, nên $g(1, 0) = 8 + 5 \\times \\frac{4}{4} = 13{,}0$."
+  },
+  {
+    "id": 755,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên",
+    "question": "Với bài toán cái túi $8x_1 + 6x_2 + 5x_3 + 3x_4 \\to \\max$, $2x_1 + 3x_2 + 4x_3 + 3x_4 \\le 6$ ($x_i \\in \\{0,1\\}$), giả sử đã tìm được kỷ lục tốt nhất hiện tại $f_{\\max} = 14$ (từ $(1, 1, 0, 0)$). Khi xét sang nhánh $x_1 = 0$, giá trị cận trên $g(0)$ và quyết định của thuật toán Nhánh cận là:",
+    "options": [
+      "$g(0) = 12{,}0 \\le f_{\\max} \\Rightarrow$ cắt bỏ toàn bộ nhánh $x_1 = 0$",
+      "$g(0) = 15{,}0 > f_{\\max} \\Rightarrow$ tiếp tục phân nhánh $x_2 = 1$ và $x_2 = 0$",
+      "$g(0) = 10{,}0 < f_{\\max} \\Rightarrow$ cập nhật $f_{\\max} = 10$",
+      "$g(0) = 14{,}0 = f_{\\max} \\Rightarrow$ tiếp tục duyệt để tìm nghiệm khác"
+    ],
+    "correct": 0,
+    "explanation": "Tại nhánh $x_1 = 0$: $\\sigma_1 = 0$, trọng lượng còn lại $W = 6$. Với $x_2$ ($c_2 = 6, a_2 = 3$), cận trên $g(0) = 0 + 6 \\times \\frac{6}{3} = 12{,}0 \\le f_{\\max} = 14$. Nhánh này không thể sinh ra nghiệm tốt hơn $14$ nên bị cắt tỉa hoàn toàn."
+  },
+  {
+    "id": 756,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên",
+    "question": "Cho bài toán cái túi $0-1$: $$9x_1 + 6x_2 + 4x_3 + 3x_4 \\to \\max$$ với $3x_1 + 3x_2 + 2x_3 + 4x_4 \\le 8$ và $x_i \\in \\{0, 1\\}$. Giá trị hàm cận trên $g$ cho phương án bộ phận $(x_1, x_2, x_3) = (0, 1, 1)$ là:",
+    "options": [
+      "$10{,}0$",
+      "$13{,}0$",
+      "$11{,}5$",
+      "$12{,}25$"
+    ],
+    "correct": 3,
+    "explanation": "Tại bộ phận $(0, 1, 1)$: giá trị hiện tại $\\sigma = 6 + 4 = 10$; trọng lượng đã dùng $3 + 2 = 5$, còn lại $W = 8 - 5 = 3$. Biến cuối $x_4$ có $c_4 = 3, a_4 = 4$, suy ra $g(0, 1, 1) = 10 + 3 \\times \\frac{3}{4} = 12{,}25$."
+  },
+  {
+    "id": 757,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên",
+    "question": "Trong thuật toán Nhánh cận giải bài toán cái túi $0-1$: $6x_1 + 5x_2 + 4x_3 + 2x_4 \\to \\max$ với $4x_1 + 4x_2 + 3x_3 + 2x_4 \\le 7$. Khi mở rộng đến phương án bộ phận $(x_1, x_2) = (1, 1)$, điều gì xảy ra?",
+    "options": [
+      "Tính cận trên $g(1, 1) = 11 + 4 \\times (-1)/3 = 9{,}67$",
+      "Ghi nhận kỷ lục $f_{\\max} = 11$",
+      "Tiếp tục xét $x_3 = 0, x_4 = 0$",
+      "Tổng trọng lượng đã dùng là $4 + 4 = 8 > 7$ (vi phạm ràng buộc $W < 0$), nên nút $(1, 1)$ bị loại bỏ ngay"
+    ],
+    "correct": 3,
+    "explanation": "Bất kỳ nút nào có tổng trọng lượng đã chọn $\\sum_{i=1}^k a_i x_i > b$ (trọng lượng còn lại $b_k < 0$) đều vi phạm ràng buộc không thể sửa được ở các biến sau (vì $x_i \\ge 0, a_i > 0$), nên bị cắt tỉa ngay lập tức mà không tính cận trên."
+  },
+  {
+    "id": 758,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1",
+    "question": "Một công ty có ngân sách $10$ tỷ đồng và $4$ dự án đầu tư độc lập với (chi phí, lợi nhuận) lần lượt là: Dự án 1: $(3, 20)$, Dự án 2: $(6, 35)$, Dự án 3: $(4, 25)$, Dự án 4: $(3, 18)$. Tổng lợi nhuận tối đa có thể đạt được và tổ hợp dự án được chọn là:",
+    "options": [
+      "$55$ tỷ (chọn Dự án 1, 2)",
+      "$65$ tỷ (chọn Dự án 1, 2, 4)",
+      "$60$ tỷ (chọn Dự án 2, 3)",
+      "$63$ tỷ (chọn Dự án 1, 3, 4)"
+    ],
+    "correct": 3,
+    "explanation": "Thử các tổ hợp có tổng chi phí $\\le 10$: $(1,2)$ tốn $9$ lãi $55$; $(2,3)$ tốn $10$ lãi $60$; $(1,3,4)$ tốn $3+4+3=10$ lãi $20+25+18 = 63$. Bộ $(1,2,4)$ tốn $12 > 10$. Vậy lợi nhuận tối đa là $63$ tỷ."
+  },
+  {
+    "id": 759,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1",
+    "question": "Điểm khác biệt cốt lõi trong cây phân nhánh của thuật toán Nhánh cận giữa <strong>Cái túi $0-1$</strong> ($x_i \\in \\{0, 1\\}$) và <strong>Cái túi nguyên không giới hạn</strong> ($x_i \\in \\mathbb{Z}_{\\ge 0}$) là gì?",
+    "options": [
+      "Cái túi $0-1$ chỉ phân nhánh $x_k$ theo $2$ giá trị ($1$ và $0$), còn cái túi nguyên thử $x_k$ từ $\\lfloor b_{k-1}/a_k \\rfloor$ giảm dần về $0$",
+      "Cái túi $0-1$ có thể giải bằng tham lam theo $c_i/a_i$ luôn cho nghiệm tối ưu tuyệt đối",
+      "Cái túi nguyên luôn có $f^*$ nhỏ hơn cái túi $0-1$",
+      "Cái túi $0-1$ không cần sắp xếp đơn giá $c_i / a_i$"
+    ],
+    "correct": 0,
+    "explanation": "Với cái túi $0-1$, mỗi biến $x_k$ chỉ có $2$ nhánh ($x_k = 1$ nếu $a_k \\le b_{k-1}$, và $x_k = 0$). Với cái túi nguyên không giới hạn, biến $x_k$ có thể nhận giá trị nguyên từ $\\lfloor b_{k-1}/a_k \\rfloor$ xuống $0$."
+  },
+  {
+    "id": 760,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên",
+    "question": "Khi nhánh cận cái túi $0-1$ đạt tới cấu hình đầy đủ (nút lá mức $k = n$) có tổng trọng lượng $\\le b$ và giá trị $f(X) > f_{\\max}$, thuật toán thực hiện thao tác nào?",
+    "options": [
+      "Cắt bỏ tất cả các nhánh đã duyệt trước đó",
+      "Cập nhật $f_{\\max} \\leftarrow f(X)$ và lưu lại phương án $X^* \\leftarrow X$",
+      "Kết thúc thuật toán ngay lập tức vì đã tìm được nghiệm tối ưu toàn cục",
+      "Tính tiếp $g = f(X) + c_n / a_n$"
+    ],
+    "correct": 1,
+    "explanation": "Trong thuật toán Nhánh cận, việc chạm nút lá với giá trị tốt hơn kỷ lục hiện tại chỉ giúp nâng ngưỡng $f_{\\max}$ (để cắt tỉa mạnh hơn các nhánh còn lại), chứ chưa thể dừng thuật toán ngay cho đến khi duyệt hoặc cắt tỉa hết mọi nhánh của cây."
+  },
+  {
+    "id": 761,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Trong bài toán Người du lịch (TSP) gồm $n = 6$ thành phố, biết chi phí nhỏ nhất giữa hai thành phố bất kỳ là $c_{\\min} = 4$. Xét hành trình bộ phận $1 \\to 3 \\to 5 \\to 2$ ($k = 4$ thành phố) có tổng chi phí hiện tại $\\partial = 18$. Giá trị <strong>cận dưới $g$</strong> của hành trình bộ phận này là:",
+    "options": [
+      "$30$",
+      "$22$",
+      "$26$",
+      "$34$"
+    ],
+    "correct": 0,
+    "explanation": "Áp dụng công thức cận dưới chuẩn: $g = \\partial + (n - k + 1)c_{\\min} = 18 + (6 - 4 + 1) \\times 4 = 18 + 12 = 30$ (còn $3$ cạnh chưa đi kể cả cạnh quay về $1$)."
+  },
+  {
+    "id": 762,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Giải bài toán TSP cho $n = 5$ thành phố với $c_{\\min} = 5$. Giả sử đã tìm được một chu trình hợp lệ có tổng chi phí $f^* = 32$. Khi xét hành trình bộ phận $1 \\to 2 \\to 4$ ($k = 3$) có chi phí $\\partial = 18$, cận dưới $g$ bằng bao nhiêu và nhánh này có bị cắt tỉa không?",
+    "options": [
+      "$g = 38 > 32 \\Rightarrow$ cập nhật $f^* = 38$",
+      "$g = 33 \\ge 32 \\Rightarrow$ vẫn phải duyệt thêm bước $k=4$",
+      "$g = 28 < 32 \\Rightarrow$ tiếp tục mở rộng",
+      "$g = 33 \\ge 32 \\Rightarrow$ cắt tỉa ngay nhánh này"
+    ],
+    "correct": 3,
+    "explanation": "Ta có $g = \\partial + (n - k + 1)c_{\\min} = 18 + (5 - 3 + 1)\\cdot 5 = 33$. Vì bài toán tìm cực tiểu ($\\min$) và $g = 33 \\ge f^* = 32$, bất kỳ chu trình nào mở rộng từ nhánh này đều có chi phí $\\ge 33$, nên ta cắt tỉa ngay."
+  },
+  {
+    "id": 763,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Với bài toán TSP gồm $n = 6$ thành phố có đầy đủ đường đi hai chiều giữa mọi cặp thành phố, nếu ma trận chi phí <strong>không đối xứng</strong> ($c_{ij} \\ne c_{ji}$) thì có tất cả bao nhiêu chu trình xuất phát từ thành phố $1$ cần xét khi duyệt toàn bộ?",
+    "options": [
+      "$360$",
+      "$120$",
+      "$60$",
+      "$720$"
+    ],
+    "correct": 1,
+    "explanation": "Cố định điểm xuất phát là thành phố $1$, $5$ thành phố còn lại có thể sắp xếp theo $5! = (6-1)! = 120$ thứ tự khác nhau. (Nếu ma trận chi phí đối xứng thì hai chu trình ngược chiều nhau có chi phí bằng nhau, giảm còn $5!/2 = 60$)."
+  },
+  {
+    "id": 764,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Cho ma trận chi phí $4 \\times 4$ của bài toán TSP: hàng 1: $(\\infty, 10, 15, 20)$; hàng 2: $(10, \\infty, 35, 25)$; hàng 3: $(15, 35, \\infty, 30)$; hàng 4: $(20, 25, 30, \\infty)$. Sau khi thực hiện rút gọn tất cả các hàng rồi rút gọn tất cả các cột (<code>Reduce(C)</code>), giá trị <strong>cận dưới ban đầu</strong> thu được bằng bao nhiêu?",
+    "options": [
+      "$80$",
+      "$55$",
+      "$70$",
+      "$65$"
+    ],
+    "correct": 2,
+    "explanation": "1) Rút gọn hàng: trừ các hàng đi $\\min$ tương ứng là $10, 10, 15, 20$ (tổng $= 55$). Ma trận sau trừ hàng có các cột $( \\infty, 0, 5, 10)^T$, $(0, \\infty, 20, 5)^T$, $(0, 25, \\infty, 10)^T$, $(0, 15, 15, \\infty)^T$ (lưu ý viết theo cột: cột 1 min $0$, cột 2 min $0$, cột 3 min $5$, cột 4 min $10$).<br/>2) Rút gọn cột: trừ thêm $0 + 0 + 5 + 10 = 15$. Vậy cận dưới ban đầu là $55 + 15 = 70$."
+  },
+  {
+    "id": 765,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Cho ma trận chi phí đã rút gọn: hàng 1: $(\\infty, 0, 4, 1)$; hàng 2: $(3, \\infty, 0, 5)$; hàng 3: $(0, 5, \\infty, 0)$; hàng 4: $(2, 0, 1, \\infty)$. Theo thủ tục <code>BestEdge</code> của thuật toán Nhánh cận, cạnh $(p, q)$ có $C(p, q) = 0$ nào được chọn để phân nhánh và giá trị phạt $\\Delta(p, q)$ của nó là bao nhiêu?",
+    "options": [
+      "Cạnh $(1, 2)$ với $\\Delta = 1$",
+      "Cạnh $(3, 1)$ với $\\Delta = 2$",
+      "Cạnh $(4, 2)$ với $\\Delta = 1$",
+      "Cạnh $(2, 3)$ với $\\Delta = 4$"
+    ],
+    "correct": 3,
+    "explanation": "Tính phạt $\\Delta(i,j) = \\min_{c\\ne j} C(i,c) + \\min_{r\\ne i} C(r,j)$ cho các ô $0$: $\\Delta(1,2)=1+0=1$; $\\Delta(2,3)=3+1=4$; $\\Delta(3,1)=0+2=2$; $\\Delta(3,4)=0+1=1$; $\\Delta(4,2)=1+0=1$. Giá trị lớn nhất là $\\Delta(2,3) = 4$, nên chọn cạnh $(2, 3)$."
+  },
+  {
+    "id": 766,
+    "topic": "Các Bài Toán Tối Ưu Tổ Hợp Điển Hình",
+    "question": "Xét bài toán phân công $3$ công nhân (hàng $1, 2, 3$) thực hiện $3$ công việc (cột $1, 2, 3$) với ma trận chi phí: hàng 1: $(9, 2, 7)$; hàng 2: $(6, 4, 3)$; hàng 3: $(5, 8, 1)$. Tổng chi phí thực hiện tối thiểu là bao nhiêu?",
+    "options": [
+      "$11$",
+      "$9$",
+      "$8$",
+      "$10$"
+    ],
+    "correct": 1,
+    "explanation": "Xét $3! = 6$ hoán vị phân công: chọn Công nhân 1 làm Việc 2 (chi phí $2$), Công nhân 2 làm Việc 1 ($6$), Công nhân 3 làm Việc 3 ($1$) cho tổng chi phí $2 + 6 + 1 = 9$, là giá trị nhỏ nhất (ví dụ phân công $(2, 3, 1)$ tốn $2+3+5 = 10$)."
+  },
+  {
+    "id": 767,
+    "topic": "Các Bài Toán Tối Ưu Tổ Hợp Điển Hình",
+    "question": "Cho ma trận chi phí phân công $4 \\times 4$: hàng 1: $(10, 12, 8, 15)$; hàng 2: $(7, 9, 11, 6)$; hàng 3: $(14, 5, 9, 12)$; hàng 4: $(8, 10, 7, 11)$. Tổng giá trị nhỏ nhất mỗi hàng (cận dưới ban đầu) và chi phí phân công tối ưu thực tế $f^*$ lần lượt là:",
+    "options": [
+      "$26$ và $26$",
+      "$26$ và $28$",
+      "$26$ và $27$",
+      "$25$ và $27$"
+    ],
+    "correct": 2,
+    "explanation": "Tổng $\\min$ các hàng là $8 + 6 + 5 + 7 = 26$, nhưng hàng $1$ và hàng $4$ cùng đạt $\\min$ tại cột $3$ nên không thể ghép cùng lúc. Phương án tối ưu hợp lệ là $(3, 4, 2, 1)$ có chi phí $8 + 6 + 5 + 8 = 27$."
+  },
+  {
+    "id": 768,
+    "topic": "Các Bài Toán Tối Ưu Tổ Hợp Điển Hình",
+    "question": "Có $4$ công việc cần thực hiện lần lượt trên $1$ máy với thời gian xử lý tương ứng là $t = (5, 2, 8, 3)$. Để <strong>tổng thời gian hoàn thành</strong> (hoặc thời gian chờ trung bình) của cả $4$ công việc là nhỏ nhất, thứ tự thực hiện và tổng thời gian hoàn thành nhỏ nhất bằng:",
+    "options": [
+      "Thứ tự $(2, 5, 3, 8)$ với tổng $= 37$",
+      "Thứ tự $(8, 5, 3, 2)$ với tổng $= 50$",
+      "Thứ tự $(2, 3, 5, 8)$ với tổng $= 35$",
+      "Thứ tự $(5, 2, 8, 3)$ với tổng $= 43$"
+    ],
+    "correct": 2,
+    "explanation": "Theo quy tắc tham lam SPT (Shortest Processing Time first), thực hiện việc ngắn trước giúp giảm thời gian chờ cho các việc sau. Sắp xếp $(2, 3, 5, 8)$ cho các mốc hoàn thành là $2,\\ 5,\\ 10,\\ 18$, tổng bằng $2 + 5 + 10 + 18 = 35$."
+  },
+  {
+    "id": 769,
+    "topic": "Các Bài Toán Tối Ưu Tổ Hợp Điển Hình",
+    "question": "Trong bài toán <strong>cho thuê máy / lựa chọn hoạt động</strong> (chọn được nhiều cuộc họp nhất trên $1$ phòng họp không giao nhau), chiến lược tham lam nào luôn cho kết quả tối ưu tuyệt đối?",
+    "options": [
+      "Luôn chọn cuộc họp <strong>kết thúc sớm nhất</strong> (tương thích với cuộc họp trước)",
+      "Luôn chọn cuộc họp bắt đầu sớm nhất",
+      "Luôn chọn cuộc họp xung đột với ít cuộc họp khác nhất",
+      "Luôn chọn cuộc họp có thời lượng ngắn nhất"
+    ],
+    "correct": 0,
+    "explanation": "Chiến lược tham lam sắp xếp các hoạt động theo <strong>thời điểm kết thúc tăng dần</strong> và chọn các hoạt động không chồng lấn luôn để lại khoảng thời gian trống lớn nhất cho các hoạt động phía sau, đảm bảo tối ưu tuyệt đối."
+  },
+  {
+    "id": 770,
+    "topic": "Các Bài Toán Tối Ưu Tổ Hợp Điển Hình",
+    "question": "So sánh kích thước không gian tìm kiếm khi <strong>duyệt toàn bộ</strong> đối với bài toán Cái túi $0-1$ ($n$ đồ vật) và bài toán Người du lịch ($n$ thành phố, không đối xứng):",
+    "options": [
+      "$2^n$ và $(n - 1)!$",
+      "$n^2$ và $n!$",
+      "$2^{n-1}$ và $n!$",
+      "$n!$ và $2^n$"
+    ],
+    "correct": 0,
+    "explanation": "Trong bài toán cái túi $0-1$, mỗi biến $x_i \\in \\{0, 1\\}$ nên có $2^n$ phương án. Trong bài toán TSP cố định điểm xuất phát là thành phố $1$, có $(n-1)!$ chu trình cần xét."
+  },
+  {
+    "id": 771,
+    "topic": "Tối Ưu Tổ Hợp & Nhánh Cận",
+    "question": "Cho hệ mệnh giá tiền gồm các đồng xu $\\{1, 3, 4\\}$ và cần đổi số tiền $S = 6$ sao cho số đồng xu ít nhất. Kết quả của thuật toán Tham lam (luôn chọn đồng lớn nhất $\\le$ phần còn lại) và kết quả tối ưu thực sự lần lượt là:",
+    "options": [
+      "Tham lam: $2$ đồng ($3+3$); Tối ưu: $1$ đồng",
+      "Tham lam: $4$ đồng; Tối ưu: $3$ đồng",
+      "Tham lam: $3$ đồng ($4+1+1$); Tối ưu: $2$ đồng ($3+3$)",
+      "Tham lam: $2$ đồng; Tối ưu: $2$ đồng"
+    ],
+    "correct": 2,
+    "explanation": "Với hệ mệnh giá $\\{1, 3, 4\\}$, tham lam lấy $4$ trước dẫn tới $6 = 4 + 1 + 1$ ($3$ đồng), trong khi phương án tối ưu (tìm được bằng Quy hoạch động hoặc Nhánh cận) là $6 = 3 + 3$ chỉ tốn $2$ đồng."
+  },
+  {
+    "id": 772,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên",
+    "question": "Cho bài toán cái túi $0-1$: $$15x_1 + 12x_2 + 8x_3 + 5x_4 \\to \\max$$ với $5x_1 + 5x_2 + 4x_3 + 5x_4 \\le 10$ ($x_i \\in \\{0, 1\\}$). Giá trị hàm cận trên $g$ tại nhánh $x_1 = 0$ bằng:",
+    "options": [
+      "$24{,}0$",
+      "$20{,}0$",
+      "$27{,}0$",
+      "$25{,}0$"
+    ],
+    "correct": 0,
+    "explanation": "Các đơn giá $3{,}0 > 2{,}4 > 2{,}0 > 1{,}0$ đã giảm dần. Tại $x_1 = 0$, giá trị $\\sigma = 0$, trọng lượng còn lại $W = 10$. Biến tiếp theo $x_2$ có $c_2 = 12, a_2 = 5$, nên $g(0) = 0 + 12 \\times \\frac{10}{5} = 24{,}0$."
+  },
+  {
+    "id": 773,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên",
+    "question": "Cho bài toán cái túi $0-1$: $$7x_1 + 6x_2 + 5x_3 + 3x_4 \\to \\max$$ với $2x_1 + 3x_2 + 4x_3 + 3x_4 \\le 7$ ($x_i \\in \\{0, 1\\}$). Giá trị hàm cận trên $g$ tại phương án bộ phận $(x_1, x_2, x_3) = (1, 1, 0)$ là:",
+    "options": [
+      "$13{,}0$",
+      "$16{,}0$",
+      "$15{,}0$",
+      "$14{,}5$"
+    ],
+    "correct": 2,
+    "explanation": "Tại $(1, 1, 0)$: giá trị $\\sigma = 7 + 6 = 13$, trọng lượng đã dùng $2 + 3 = 5$, còn lại $W = 7 - 5 = 2$. Với biến còn lại $x_4$ ($c_4 = 3, a_4 = 3$), ta có $g(1, 1, 0) = 13 + 3 \\times \\frac{2}{3} = 15{,}0$."
+  },
+  {
+    "id": 774,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1",
+    "question": "Tìm giá trị tối ưu $f^*$ của bài toán cái túi $0-1$: $$5x_1 + 11x_2 + 6x_3 + 4x_4 \\to \\max$$ với ràng buộc $3x_1 + 5x_2 + 2x_3 + 2x_4 \\le 7$ và $x_i \\in \\{0, 1\\}$:",
+    "options": [
+      "$f^* = 17$",
+      "$f^* = 18$",
+      "$f^* = 16$",
+      "$f^* = 15$"
+    ],
+    "correct": 0,
+    "explanation": "Chọn $x_2 = 1$ và $x_3 = 1$ (tức $X^* = (0, 1, 1, 0)$) có tổng trọng lượng $5 + 2 = 7 \\le 7$ và đạt tổng giá trị lớn nhất là $f^* = 11 + 6 = 17$."
+  },
+  {
+    "id": 775,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1",
+    "question": "Cho bài toán cái túi $0-1$: $6x_1 + 9x_2 + 9x_3 \\to \\max$ với $3x_1 + 5x_2 + 5x_3 \\le 10$. Nếu chọn <strong>tham lam</strong> theo đơn giá $\\frac{c_i}{a_i}$ giảm dần thì chỉ thu được giá trị $15$ ($x_1 = x_2 = 1$). Giá trị tối ưu thực sự $f^*$ của bài toán là bao nhiêu?",
+    "options": [
+      "$15$",
+      "$18$",
+      "$16$",
+      "$24$"
+    ],
+    "correct": 1,
+    "explanation": "Đơn giá của $x_1$ cao nhất ($6/3 = 2 > 9/5 = 1{,}8$), nhưng nếu bỏ $x_1$ và chọn $(x_2, x_3) = (1, 1)$ thì lấp đầy hoàn toàn trọng lượng $5 + 5 = 10$ và đạt giá trị tối ưu $f^* = 9 + 9 = 18$. Đây là lý do bài toán cái túi $0-1$ không thể giải bằng tham lam thuần túy."
+  },
+  {
+    "id": 776,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Trong thuật toán Nhánh cận giải TSP bằng rút gọn ma trận chi phí, giả sử ma trận hiện tại đã rút gọn có cận dưới là $LB = 45$ và ta phân nhánh theo ô $0$ tại $(p, q)$ có lượng phạt $\\Delta(p, q) = 9$. Cận dưới của nhánh <strong>không chọn</strong> cạnh $(p, q)$ (nhánh $\\overline{(p, q)}$) là:",
+    "options": [
+      "$54$",
+      "$45$",
+      "$36$",
+      "$9$"
+    ],
+    "correct": 0,
+    "explanation": "Khi cấm cạnh $(p, q)$ (gán $C(p, q) = \\infty$), hàng $p$ và cột $q$ đều mất đi số $0$ tại vị trí $(p, q)$, nên phải rút gọn lại tối thiểu đúng bằng lượng phạt $\\Delta(p, q) = 9$. Do đó cận dưới của nhánh $\\overline{(p, q)}$ tăng thành $LB_{\\text{mới}} = 45 + 9 = 54$."
+  },
+  {
+    "id": 777,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Trong thuật toán Nhánh cận với ma trận rút gọn giải TSP, khi quyết định <strong>chọn</strong> cạnh $(p, q)$ đưa vào hành trình, ngoài việc xóa hàng $p$ và cột $q$, ta phải gán $C(q, p) = \\infty$ (và các cạnh khép chu trình sớm) với mục đích gì?",
+    "options": [
+      "Để giảm kích thước ma trận về $0$",
+      "Để ngăn không cho tạo thành <strong>chu trình con (subtour)</strong> không đi qua hết $n$ thành phố",
+      "Để tăng tốc độ rút gọn cột",
+      "Để làm cho ma trận trở thành đối xứng"
+    ],
+    "correct": 1,
+    "explanation": "Nếu vừa đi $(p, q)$ lại cho phép đi $(q, p)$ (khi $n > 2$), hành trình sẽ tạo thành chu trình con độ dài $2$ khép kín sớm. Do đó phải cấm cạnh ngược lại (hoặc cạnh nối cuối về đầu của đoạn đường đã tạo) bằng cách gán chi phí $\\infty$."
+  },
+  {
+    "id": 778,
+    "topic": "Tối Ưu Tổ Hợp & Nhánh Cận",
+    "question": "Bài toán cái túi $0-1$ với $n$ đồ vật và sức chứa nguyên $W$ có thể giải chính xác bằng <strong>Quy hoạch động</strong> với công thức $dp[i][w] = \\max(dp[i-1][w],\\ dp[i-1][w - a_i] + c_i)$. Độ phức tạp thời gian của phương pháp này là:",
+    "options": [
+      "$O(n^2)$",
+      "$O(n \\log n)$",
+      "$O(2^n)$",
+      "$O(n \\cdot W)$ (thời gian giả đa thức)"
+    ],
+    "correct": 3,
+    "explanation": "Bảng quy hoạch động có kích thước $n \\times W$, mỗi ô tính trong $O(1)$ nên độ phức tạp là $O(n \\cdot W)$. Đây là thuật toán giả đa thức (pseudo-polynomial) vì phụ thuộc vào giá trị số của $W$."
+  },
+  {
+    "id": 779,
+    "topic": "Tối Ưu Tổ Hợp & Nhánh Cận",
+    "question": "Trong bài toán <strong>cắt thanh thép</strong> độ dài $n = 4$ để thu được tổng doanh thu lớn nhất, biết bảng giá theo độ dài $1, 2, 3, 4$ lần lượt là $(1, 5, 8, 9)$. Doanh thu tối đa có thể thu được là:",
+    "options": [
+      "$12$ (cắt thành bốn đoạn $1$)",
+      "$9$ (để nguyên độ dài $4$)",
+      "$10$ (cắt thành hai đoạn $2 + 2$)",
+      "$11$ (cắt thành $3 + 1$)"
+    ],
+    "correct": 2,
+    "explanation": "Thử các cách phân hoạch độ dài $4$: $(4) \\to 9$; $(3,1) \\to 8 + 1 = 9$; $(2,2) \\to 5 + 5 = 10$; $(2,1,1) \\to 5 + 1 + 1 = 7$; $(1,1,1,1) \\to 4$. Vậy cắt thành hai đoạn độ dài $2$ cho doanh thu tối đa là $10$."
+  },
+  {
+    "id": 780,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên",
+    "question": "Cho bài toán cái túi $0-1$: $$10x_1 + 7x_2 + 6x_3 + 3x_4 \\to \\max$$ với $3x_1 + 3x_2 + 4x_3 + 4x_4 \\le 8$ và $x_i \\in \\{0, 1\\}$. Giá trị hàm cận trên $g$ cho bộ phận $(x_1, x_2) = (1, 0)$ là:",
+    "options": [
+      "$16{,}5$",
+      "$17{,}5$",
+      "$15{,}0$",
+      "$18{,}0$"
+    ],
+    "correct": 1,
+    "explanation": "Tại $(x_1, x_2) = (1, 0)$: giá trị $\\sigma = 10$, trọng lượng còn lại $W = 8 - 3 = 5$. Biến tiếp theo $x_3$ có $c_3 = 6, a_3 = 4$, suy ra $g(1, 0) = 10 + 6 \\times \\frac{5}{4} = 10 + 7{,}5 = 17{,}5$."
+  }
+]

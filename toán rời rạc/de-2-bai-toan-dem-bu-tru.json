@@ -1,0 +1,210 @@
+[
+  {
+    "id": 201,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Một biển đăng ký ô tô gồm $2$ chữ cái tiếng Anh (trong bảng $26$ chữ cái) tiếp theo là $4$ chữ số thập phân (từ $0$ đến $9$). Hỏi có bao nhiêu biển số xe khác nhau nếu các chữ cái và chữ số có thể lặp lại, nhưng $4$ chữ số không được đồng thời bằng $0000$?",
+    "options": [
+      "$26 \\times 25 \\times 10^4 = 6\\,500\\,000$",
+      "$26^2 \\times (10^4 - 1) = 6\\,759\\,324$",
+      "$26^2 \\times 10^4 = 6\\,760\\,000$",
+      "$26^2 \\times 9^4 = 4\\,435\\,236$"
+    ],
+    "correct": 1,
+    "explanation": "Có $26 \\times 26 = 26^2$ cách chọn $2$ chữ cái đầu. Có $10^4$ bộ $4$ chữ số từ $0000$ đến $9999$, trừ đi bộ $0000$ còn $10^4 - 1 = 9999$ cách. Theo nguyên lý nhân có $26^2 \\times 9999 = 6\\,759\\,324$ biển số."
+  },
+  {
+    "id": 202,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Có bao nhiêu số nguyên dương có $5$ chữ số không chứa chữ số $1$ và không có $2$ chữ số nào giống nhau (Bài tập 14 - Giáo trình Toán Rời Rạc 1)?",
+    "options": [
+      "$8 \\times 7 \\times 6 \\times 5 \\times 4 = 6\\,720$",
+      "$9 \\times 9 \\times 8 \\times 7 \\times 6 = 27\\,216$",
+      "$8 \\times 8 \\times 7 \\times 6 \\times 5 = 13\\,440$",
+      "$8^5 = 32\\,768$"
+    ],
+    "correct": 2,
+    "explanation": "Tập chữ số được phép dùng là $\\{0, 2, 3, 4, 5, 6, 7, 8, 9\\}$ ($9$ chữ số). Chữ số hàng chục nghìn $a_1 \\neq 0$ có $8$ cách chọn; $a_2$ có $8$ cách chọn (khác $a_1$); $a_3$ có $7$ cách; $a_4$ có $6$ cách; $a_5$ có $5$ cách. Vậy có $8 \\times 8 \\times 7 \\times 6 \\times 5 = 13\\,440$ số."
+  },
+  {
+    "id": 203,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Một đoàn văn nghệ có $10$ nam và $8$ nữ. Cần chọn ra một tốp ca gồm $5$ người sao cho có <strong>ít nhất $2$ nữ</strong>. Số cách chọn là:",
+    "options": [
+      "$C_{18}^5 - (C_{10}^5 + C_8^1 C_{10}^4) = 6\\,636$",
+      "$C_8^2 C_{16}^3 = 15\\,680$",
+      "$C_8^2 C_{10}^3 = 3\\,360$",
+      "$C_{18}^5 - C_{10}^5 = 8\\,316$"
+    ],
+    "correct": 0,
+    "explanation": "Tổng số cách chọn $5$ người bất kỳ từ $18$ người là $C_{18}^5 = 8568$. Số cách chọn có $0$ nữ là $C_{10}^5 = 252$; số cách chọn có $1$ nữ là $C_8^1 C_{10}^4 = 8 \\times 210 = 1680$. Dùng phần bù: $8568 - (252 + 1680) = 6636$ cách."
+  },
+  {
+    "id": 204,
+    "topic": "Tổ Hợp Lặp & Chia Kẹo Euler",
+    "question": "Phương trình $x_1 + x_2 + x_3 + x_4 = 12$ có bao nhiêu nghiệm nguyên không âm ($x_i \\ge 0$)?",
+    "options": [
+      "$4^{12}$",
+      "$C_{12}^4 = 495$",
+      "$C_{16}^4 = 1\\,820$",
+      "$C_{4 - 1 + 12}^{12} = C_{15}^{12} = 455$"
+    ],
+    "correct": 3,
+    "explanation": "Áp dụng công thức số nghiệm nguyên không âm của phương trình $x_1 + x_2 + \\dots + x_n = k$ (Slide 2_Counting): $$N = C_{n - 1 + k}^k = C_{4 - 1 + 12}^{12} = C_{15}^{12} = C_{15}^3 = \\frac{15 \\times 14 \\times 13}{6} = 455.$$"
+  },
+  {
+    "id": 205,
+    "topic": "Tổ Hợp Lặp & Chia Kẹo Euler",
+    "question": "Phương trình $x_1 + x_2 + x_3 = 11$ có bao nhiêu nghiệm nguyên thỏa mãn điều kiện chặn dưới $x_1 \\ge 1, x_2 \\ge 2, x_3 \\ge 3$ (Slide 2_Counting)?",
+    "options": [
+      "$C_8^5 = 56$",
+      "$C_{13}^{11} = 78$",
+      "$C_7^5 = 21$",
+      "$C_{11}^3 = 165$"
+    ],
+    "correct": 2,
+    "explanation": "Đổi biến $y_1 = x_1 - 1 \\ge 0$, $y_2 = x_2 - 2 \\ge 0$, $y_3 = x_3 - 3 \\ge 0$. Phương trình trở thành $y_1 + y_2 + y_3 = 11 - (1 + 2 + 3) = 5$. Số nghiệm là $C_{3 - 1 + 5}^5 = C_7^5 = 21$."
+  },
+  {
+    "id": 206,
+    "topic": "Tổ Hợp Lặp & Nguyên Lý Bù Trừ",
+    "question": "Phương trình $x_1 + x_2 + x_3 = 11$ có bao nhiêu nghiệm nguyên không âm thỏa mãn điều kiện chặn trên $x_1 \\le 3, x_2 \\le 4, x_3 \\le 6$ (Ví dụ 12 - Slide 2_Counting)?",
+    "options": [
+      "$12$",
+      "$6$",
+      "$15$",
+      "$78$"
+    ],
+    "correct": 1,
+    "explanation": "Tổng số nghiệm không âm là $|U| = C_{13}^{11} = 78$. Gọi $A_1: x_1 \\ge 4$ ($|A_1|=C_9^7=36$), $A_2: x_2 \\ge 5$ ($|A_2|=C_8^6=28$), $A_3: x_3 \\ge 7$ ($|A_3|=C_6^4=15$). Giao từng đôi: $|A_1 \\cap A_2| = C_4^2 = 6$, $|A_1 \\cap A_3| = C_2^0 = 1$, $|A_2 \\cap A_3| = 0$, $|A_1 \\cap A_2 \\cap A_3| = 0$. Theo bù trừ: $78 - (36 + 28 + 15) + (6 + 1 + 0) - 0 = 6$ nghiệm."
+  },
+  {
+    "id": 207,
+    "topic": "Nguyên Lý Bù Trừ",
+    "question": "Trong tập các số nguyên dương từ $1$ đến $10\\,000$, có bao nhiêu số <strong>không</strong> chia hết cho bất kỳ số nào trong ba số $3, 4, 7$ (Ví dụ 10 - Slide 2_Counting)?",
+    "options": [
+      "$3\\,810$",
+      "$5\\,714$",
+      "$4\\,285$",
+      "$4\\,286$"
+    ],
+    "correct": 3,
+    "explanation": "Gọi $A_1, A_2, A_3$ là tập các số trong $\\{1..10000\\}$ chia hết cho $3, 4, 7$. Ta có:<br/>$N_1 = \\lfloor 10000/3 \\rfloor + \\lfloor 10000/4 \\rfloor + \\lfloor 10000/7 \\rfloor = 3333 + 2500 + 1428 = 7261$.<br/>$N_2 = \\lfloor 10000/12 \\rfloor + \\lfloor 10000/21 \\rfloor + \\lfloor 10000/28 \\rfloor = 833 + 476 + 357 = 1666$.<br/>$N_3 = \\lfloor 10000/84 \\rfloor = 119$.<br/>Số chia hết cho ít nhất một trong ba số là $7261 - 1666 + 119 = 5714$. Số không chia hết cho cả $3, 4, 7$ là $10000 - 5714 = 4286$."
+  },
+  {
+    "id": 208,
+    "topic": "Nguyên Lý Bù Trừ",
+    "question": "Hỏi có bao nhiêu xâu nhị phân độ dài $10$ bắt đầu bởi $00$ <strong>hoặc</strong> kết thúc bởi $11$?",
+    "options": [
+      "$2^8 + 2^8 - 2^6 = 448$",
+      "$2^8 + 2^8 = 512$",
+      "$2^{10} - 2^6 = 960$",
+      "$2^8 - 2^6 = 192$"
+    ],
+    "correct": 0,
+    "explanation": "Gọi $A$ là tập xâu bắt đầu bởi $00$ ($|A| = 2^8 = 256$), $B$ là tập xâu kết thúc bởi $11$ ($|B| = 2^8 = 256$). Giao $A \\cap B$ gồm các xâu vừa bắt đầu bởi $00$ vừa kết thúc bởi $11$ ($|A \\cap B| = 2^6 = 64$). Theo nguyên lý bù trừ: $|A \\cup B| = 256 + 256 - 64 = 448$."
+  },
+  {
+    "id": 209,
+    "topic": "Hoán Vị Không Điểm Bất Động (Mất Thứ Tự)",
+    "question": "Bài toán bỏ thư / Trả mũ (Derangements - Ví dụ 11 Slide 2_Counting): Có $n$ lá thư bỏ ngẫu nhiên vào $n$ phong bì đã ghi sẵn địa chỉ. Công thức tính số cách bỏ sao cho <strong>không có lá thư nào đúng địa chỉ</strong> ($D_n$) là:",
+    "options": [
+      "$D_n = n! - (n - 1)!$",
+      "$D_n = n! \\left(1 - \\frac{1}{1!} + \\frac{1}{2!} - \\frac{1}{3!} + \\dots + (-1)^n \\frac{1}{n!}\\right)$",
+      "$D_n = \\sum_{k=1}^n (-1)^{k-1} C_n^k (n-k)!$",
+      "$D_n = (n - 1)!$"
+    ],
+    "correct": 1,
+    "explanation": "Theo nguyên lý bù trừ, số hoán vị có ít nhất $1$ điểm bất động là $N = n!(\\frac{1}{1!} - \\frac{1}{2!} + \\dots + (-1)^{n-1}\\frac{1}{n!})$. Do đó số hoán vị không có điểm bất động nào là $D_n = n! - N = n! \\sum_{k=0}^n \\frac{(-1)^k}{k!}$."
+  },
+  {
+    "id": 210,
+    "topic": "Hoán Vị Không Điểm Bất Động (Mất Thứ Tự)",
+    "question": "Có $5$ người gửi mũ tại quầy giữ đồ. Khi trả mũ, nhân viên trả ngẫu nhiên cho mỗi người $1$ chiếc mũ. Hỏi có bao nhiêu cách trả sao cho <strong>không ai nhận lại đúng mũ của mình</strong> ($D_5$)?",
+    "options": [
+      "$60$",
+      "$45$",
+      "$24$",
+      "$44$"
+    ],
+    "correct": 3,
+    "explanation": "Áp dụng công thức $D_n = n!(1 - \\frac{1}{1!} + \\frac{1}{2!} - \\frac{1}{3!} + \\dots + \\frac{(-1)^n}{n!})$ với $n = 5$:<br/>$D_5 = 120 \\times (1 - 1 + \\frac{1}{2} - \\frac{1}{6} + \\frac{1}{24} - \\frac{1}{120}) = 60 - 20 + 5 - 1 = 44$ (Lưu ý: $D_1=0, D_2=1, D_3=2, D_4=9, D_5=44$)."
+  },
+  {
+    "id": 211,
+    "topic": "Bài Toán Xếp Khách Lucas",
+    "question": "Trong bài toán xếp khách của Lucas (Mục 2.1.4 - Giáo trình Toán Rời Rạc 1): Cần xếp $n$ cặp vợ chồng ($2n$ người) quanh một bàn tròn sao cho nam nữ xen kẽ và không có cặp vợ chồng nào ngồi cạnh nhau. Số phần tử của tập $A_i$ (cặp vợ chồng thứ $i$ ngồi cạnh nhau) liên hệ với số cách chọn $k$ điểm không kề nhau trên vòng tròn $2n$ điểm bởi công thức:",
+    "options": [
+      "$g(2n, k) = C_{2n}^k$",
+      "$g(2n, k) = C_{2n - k + 1}^k$",
+      "$g(2n, k) = \\frac{2n}{2n - k} C_{2n - k}^k$",
+      "$g(2n, k) = \\frac{n}{n - k} C_{n - k}^k$"
+    ],
+    "correct": 2,
+    "explanation": "Theo Bổ đề 2 (Mục 2.1.4 - Giáo trình Toán Rời Rạc 1 trang 31): Số cách chọn $k$ phần tử không kề nhau từ $m$ phần tử xếp trên đường tròn là $g(m, k) = \\frac{m}{m - k} C_{m - k}^k$. Khi áp dụng cho $m = 2n$ vị trí kề nhau trên bàn tròn, ta có $g(2n, k) = \\frac{2n}{2n - k} C_{2n - k}^k$."
+  },
+  {
+    "id": 212,
+    "topic": "Quy Về Bài Toán Con",
+    "question": "Một số nguyên dương được gọi là <strong>đối xứng (palindrome)</strong> nếu viết từ trái sang phải hay từ phải sang trái đều giống nhau. Hỏi có bao nhiêu số đối xứng có $7$ chữ số mà tổng các chữ số của nó bằng $18$ (Ví dụ 13 - Slide 2_Counting)?",
+    "options": [
+      "$285$",
+      "$330$",
+      "$240$",
+      "$220$"
+    ],
+    "correct": 0,
+    "explanation": "Số đối xứng $7$ chữ số có dạng $\\overline{x_1 x_2 x_3 x_4 x_3 x_2 x_1}$ với $x_1 \\ge 1$ và $2(x_1 + x_2 + x_3) + x_4 = 18$. Do đó $x_4$ phải là số chẵn ($x_4 = 2k$ với $k \\in \\{0, 1, 2, 3, 4\\}$) và $x_1 + x_2 + x_3 = 9 - k$ ($x_1 \\ge 1$). Tính tổng số nghiệm cho $k = 0, 1, 2, 3, 4$ ta được $\\sum_{k=0}^4 C_{10 - k}^2 = C_{10}^2 + C_9^2 + C_8^2 + C_7^2 + C_6^2$ (trừ trường hợp vượt $9$), kết quả theo Slide 2_Counting là $285$ số."
+  },
+  {
+    "id": 213,
+    "topic": "Khai Triển Nhị Thức Newton",
+    "question": "Tìm hệ số của số hạng chứa $x^5 y^8$ trong khai triển nhị thức Newton của $(x + y)^{13}$:",
+    "options": [
+      "$2^{13} = 8\\,192$",
+      "$C_{13}^7 = 1\\,716$",
+      "$A_{13}^5 = 154\\,440$",
+      "$C_{13}^5 = 1\\,287$"
+    ],
+    "correct": 3,
+    "explanation": "Theo công thức nhị thức Newton $(x + y)^n = \\sum_{k=0}^n C_n^k x^{n-k} y^k$, hệ số của $x^5 y^8$ ứng với $n = 13, k = 8$ là $C_{13}^8 = C_{13}^5 = \\frac{13 \\times 12 \\times 11 \\times 10 \\times 9}{120} = 1287$."
+  },
+  {
+    "id": 214,
+    "topic": "Tổ Hợp & Nhị Thức",
+    "question": "Cho tập hợp $X$ gồm $n$ phần tử ($n \\ge 1$). Tổng số các tập con có <strong>số chẵn phần tử</strong> của tập $X$ là:",
+    "options": [
+      "$2^n$",
+      "$2^{n-1}$",
+      "$2^n - 1$",
+      "$C_n^{\\lfloor n/2 \\rfloor}$"
+    ],
+    "correct": 1,
+    "explanation": "Từ khai triển $(1 - 1)^n = C_n^0 - C_n^1 + C_n^2 - C_n^3 + \\dots = 0$, suy ra tổng số tập con có số chẵn phần tử bằng tổng số tập con có số lẻ phần tử và bằng $\\frac{2^n}{2} = 2^{n-1}$."
+  },
+  {
+    "id": 215,
+    "topic": "Hình Vuông La-tinh",
+    "question": "Một <strong>hình vuông La-tinh</strong> cấp $n$ là bảng vuông $n \\times n$ gồm các số từ $1$ đến $n$ sao cho mỗi số xuất hiện đúng $1$ lần trên mỗi hàng và mỗi cột. Gọi $L(n, n)$ là số hình vuông La-tinh cấp $n$ và $l_n$ là số hình vuông La-tinh chuẩn hóa cấp $n$ (Mục 2.1.4 - Giáo trình Toán Rời Rạc 1). Hệ thức liên hệ đúng là:",
+    "options": [
+      "$L(n, n) = n! (n - 1)! l_n$",
+      "$L(n, n) = (n!)^2 l_n$",
+      "$L(n, n) = n! l_n$",
+      "$L(n, n) = (n - 1)! l_n$"
+    ],
+    "correct": 0,
+    "explanation": "Hình vuông La-tinh chuẩn hóa có hàng 1 và cột 1 đều theo thứ tự $1, 2, \\dots, n$. Từ mỗi hình vuông chuẩn hóa, hoán vị $n$ cột ($n!$ cách) và hoán vị $n - 1$ hàng dưới ($(n-1)!$ cách) tạo ra $n!(n-1)!$ hình vuông La-tinh phân biệt. Vậy $L(n, n) = n!(n-1)! l_n$ (với $l_3 = 1 \\Rightarrow L(3,3) = 6 \\times 2 \\times 1 = 12$)."
+  },
+  {
+    "id": 216,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Từ các chữ số $\\{1, 2, 3, 4, 5\\}$, lập được bao nhiêu số tự nhiên gồm $3$ chữ số đôi một khác nhau và là một <strong>số chẵn</strong>?",
+    "options": [
+      "$2 \\times 5 \\times 5 = 50$",
+      "$5 \\times 4 \\times 2 = 40$",
+      "$2 \\times 4 \\times 3 = 24$",
+      "$3 \\times 4 \\times 3 = 36$"
+    ],
+    "correct": 2,
+    "explanation": "Gọi số cần lập là $\\overline{abc}$. Vì số chẵn nên chữ số tận cùng $c \\in \\{2, 4\\}$ có $2$ cách chọn. Sau khi chọn $c$, chữ số $a$ có $4$ cách chọn và $b$ có $3$ cách chọn. Theo nguyên lý nhân có $2 \\times 4 \\times 3 = 24$ số."
+  }
+]

@@ -1,0 +1,392 @@
+[
+  {
+    "id": 781,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Một đồ thị vô hướng $G$ có $8$ đỉnh và $13$ cạnh. Biết trong $G$ có $3$ đỉnh bậc $4$, $2$ đỉnh bậc $3$ và $2$ đỉnh bậc $2$. Đỉnh còn lại của $G$ có bậc bằng bao nhiêu?",
+    "options": [
+      "$4$",
+      "$2$",
+      "$5$",
+      "$3$"
+    ],
+    "correct": 0,
+    "explanation": "Theo Định lý bắt tay, tổng bậc các đỉnh bằng $2|E| = 2 \\times 13 = 26$. Tổng bậc của $7$ đỉnh đã biết là $3(4) + 2(3) + 2(2) = 22$. Do đó bậc của đỉnh thứ $8$ là $26 - 22 = 4$."
+  },
+  {
+    "id": 782,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Một đồ thị có hướng $G$ gồm $5$ đỉnh có các bán bậc ra lần lượt là $(2, 3, 1, 2, 4)$. Biết bán bậc vào của $4$ đỉnh đầu là $(3, 1, 2, 2)$, số cung của đồ thị $G$ và bán bậc vào của đỉnh thứ $5$ lần lượt là:",
+    "options": [
+      "$12$ cung và bán bậc vào là $3$",
+      "$6$ cung và bán bậc vào là $2$",
+      "$12$ cung và bán bậc vào là $4$",
+      "$24$ cung và bán bậc vào là $4$"
+    ],
+    "correct": 2,
+    "explanation": "Trong đồ thị có hướng, $\\sum_{v} \\deg^+(v) = \\sum_{v} \\deg^-(v) = |E|$. Do đó số cung là $|E| = 2 + 3 + 1 + 2 + 4 = 12$, và bán bậc vào của đỉnh thứ $5$ bằng $12 - (3 + 1 + 2 + 2) = 4$."
+  },
+  {
+    "id": 783,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Một đồ thị vô hướng $4$-chính quy (mọi đỉnh đều có bậc bằng $4$) có tổng cộng $14$ cạnh. Số đỉnh của đồ thị này là:",
+    "options": [
+      "$6$ đỉnh",
+      "$8$ đỉnh",
+      "$14$ đỉnh",
+      "$7$ đỉnh"
+    ],
+    "correct": 3,
+    "explanation": "Với đồ thị $k$-chính quy có $n$ đỉnh thì tổng bậc là $k \\cdot n = 2|E|$. Thay $k = 4, |E| = 14$ ta có $4n = 28 \\Rightarrow n = 7$ đỉnh."
+  },
+  {
+    "id": 784,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Áp dụng định lý Havel–Hakimi (hoặc điều kiện tồn tại đơn đồ thị), dãy bậc nào dưới đây có thể là dãy bậc của một <strong>đơn đồ thị vô hướng</strong> $6$ đỉnh?",
+    "options": [
+      "$(5, 4, 3, 2, 1, 1)$",
+      "$(3, 3, 3, 3, 2, 1)$",
+      "$(5, 5, 4, 3, 2, 1)$",
+      "$(4, 4, 3, 2, 2, 1)$"
+    ],
+    "correct": 3,
+    "explanation": "Dãy $(3,3,3,3,2,1)$ có tổng bậc lẻ ($15$) nên loại. $(5,5,4,3,2,1)$ có $2$ đỉnh bậc $5$ (kề với cả $5$ đỉnh còn lại) nên không thể tồn tại đỉnh bậc $1$. $(5,4,3,2,1,1)$ sau bước 1 Havel–Hakimi cho $(3,2,1,0,0)$, đỉnh bậc $3$ không đủ $3$ đỉnh bậc dương để nối. Dãy $(4,4,3,2,2,1) \\to (3,2,1,1,1) \\to (1,1,0,0) \\to (0)$ hợp lệ."
+  },
+  {
+    "id": 785,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Một đơn đồ thị vô hướng $G$ gồm $8$ đỉnh và <strong>không liên thông</strong> có thể có tối đa bao nhiêu cạnh? (Nói cách khác: cần ít nhất bao nhiêu cạnh để chắc chắn bất kỳ đơn đồ thị $8$ đỉnh nào cũng liên thông?)",
+    "options": [
+      "Tối đa $21$ cạnh (chắc chắn liên thông từ $22$ cạnh)",
+      "Tối đa $14$ cạnh (chắc chắn liên thông từ $15$ cạnh)",
+      "Tối đa $20$ cạnh (chắc chắn liên thông từ $21$ cạnh)",
+      "Tối đa $28$ cạnh"
+    ],
+    "correct": 0,
+    "explanation": "Đơn đồ thị không liên thông $n$ đỉnh có nhiều cạnh nhất khi gồm một thành phần đầy đủ $K_{n-1}$ và $1$ đỉnh cô lập, cho $\\binom{n-1}{2}$ cạnh. Với $n = 8$, số cạnh tối đa khi không liên thông là $\\binom{7}{2} = 21$ (nên từ $22$ cạnh trở lên chắc chắn liên thông)."
+  },
+  {
+    "id": 786,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Cho đơn đồ thị vô hướng $G$ có $9$ đỉnh và $15$ cạnh. Số cạnh của <strong>đồ thị bù</strong> $\\overline{G}$ là bao nhiêu?",
+    "options": [
+      "$21$",
+      "$36$",
+      "$27$",
+      "$15$"
+    ],
+    "correct": 0,
+    "explanation": "Tổng số cạnh tối đa của đơn đồ thị $9$ đỉnh (tức $K_9$) là $\\frac{9 \\times 8}{2} = 36$. Đồ thị bù $\\overline{G}$ chứa các cạnh không có mặt trong $G$, nên $|E(\\overline{G})| = 36 - 15 = 21$ cạnh."
+  },
+  {
+    "id": 787,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Đồ thị khối siêu lập phương $4$ chiều $Q_4$ (mỗi đỉnh biểu diễn bởi một xâu nhị phân $4$ bit, hai đỉnh kề nhau khi khác nhau đúng $1$ bit) có bao nhiêu đỉnh và bao nhiêu cạnh?",
+    "options": [
+      "$16$ đỉnh và $16$ cạnh",
+      "$8$ đỉnh và $24$ cạnh",
+      "$16$ đỉnh và $64$ cạnh",
+      "$16$ đỉnh và $32$ cạnh"
+    ],
+    "correct": 3,
+    "explanation": "Trong $Q_n$: có $2^n$ đỉnh, mỗi đỉnh có bậc $n$ nên số cạnh là $\\frac{n \\cdot 2^n}{2} = n \\cdot 2^{n-1}$. Với $n = 4$: có $2^4 = 16$ đỉnh và $4 \\cdot 2^3 = 32$ cạnh."
+  },
+  {
+    "id": 788,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Đồ thị bánh xe $W_7$ (gồm chu trình $C_7$ ở viền ngoài và $1$ đỉnh tâm nối với cả $7$ đỉnh của $C_7$) có tổng số đỉnh và tổng số cạnh lần lượt là:",
+    "options": [
+      "$8$ đỉnh và $14$ cạnh",
+      "$8$ đỉnh và $21$ cạnh",
+      "$7$ đỉnh và $21$ cạnh",
+      "$7$ đỉnh và $14$ cạnh"
+    ],
+    "correct": 0,
+    "explanation": "Đồ thị bánh xe $W_n$ gồm $n + 1$ đỉnh ($n$ đỉnh trên vành $C_n$ và $1$ đỉnh tâm) và $2n$ cạnh ($n$ cạnh vòng ngoài và $n$ nan hoa nối vào tâm). Với $n = 7$: có $8$ đỉnh và $14$ cạnh."
+  },
+  {
+    "id": 789,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Theo định lý đặc trưng của đồ thị hai phía (Bipartite Graph), một đồ thị vô hướng $G$ là đồ thị hai phía khi và chỉ khi:",
+    "options": [
+      "$G$ là đồ thị phẳng và liên thông",
+      "$G$ không chứa bất kỳ <strong>chu trình độ dài lẻ</strong> nào",
+      "$G$ không chứa bất kỳ chu trình nào",
+      "Mọi đỉnh của $G$ đều có bậc chẵn"
+    ],
+    "correct": 1,
+    "explanation": "Định lý König khẳng định một đồ thị là đồ thị hai phía (có thể tô $2$ màu cho tập đỉnh) khi và chỉ khi nó không chứa bất kỳ chu trình độ dài lẻ nào ($C_3, C_5, C_7, \\dots$)."
+  },
+  {
+    "id": 790,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Đồ thị $3$ phía đầy đủ $K_{3, 4, 2}$ (tập đỉnh chia làm $3$ phần rời nhau có kích thước $3, 4, 2$; hai đỉnh thuộc hai phần khác nhau bất kỳ đều được nối với nhau) có tất cả bao nhiêu cạnh?",
+    "options": [
+      "$36$ cạnh",
+      "$24$ cạnh",
+      "$26$ cạnh",
+      "$18$ cạnh"
+    ],
+    "correct": 2,
+    "explanation": "Tổng số cạnh nối giữa các cặp tập đỉnh khác nhau là $3 \\times 4 + 3 \\times 2 + 4 \\times 2 = 12 + 6 + 8 = 26$ cạnh (hoặc $\\binom{9}{2} - \\binom{3}{2} - \\binom{4}{2} - \\binom{2}{2} = 36 - 3 - 6 - 1 = 26$)."
+  },
+  {
+    "id": 791,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Cho đồ thị vô hướng $G$ gồm $4$ đỉnh $\\{1, 2, 3, 4\\}$ có ma trận kề $A = \\begin{pmatrix} 0 & 1 & 1 & 1 \\\\ 1 & 0 & 1 & 0 \\\\ 1 & 1 & 0 & 1 \\\\ 1 & 0 & 1 & 0 \\end{pmatrix}$. Theo tính chất lũy thừa ma trận kề, số đường đi (kể cả lặp đỉnh/cạnh) có độ dài đúng $3$ từ đỉnh $1$ đến đỉnh $3$ (tức phần tử $(1, 3)$ của $A^3$) là:",
+    "options": [
+      "$6$",
+      "$4$",
+      "$5$",
+      "$7$"
+    ],
+    "correct": 2,
+    "explanation": "Tính hàng $1$ của $A^2$: $(A^2)_{1,*} = (3, 1, 2, 1)$. Nhân hàng $1$ của $A^2$ với cột $3$ của $A$ là $(1, 1, 0, 1)^T$: $(A^3)_{1,3} = 3(1) + 1(1) + 2(0) + 1(1) = 5$ đường đi độ dài $3$."
+  },
+  {
+    "id": 792,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Cho đơn đồ thị vô hướng $G = (V, E)$ có $n$ đỉnh và $m$ cạnh, biểu diễn bằng <strong>ma trận liên thuộc (Incidence Matrix)</strong> $M$ kích thước $n \\times m$ (mỗi hàng là $1$ đỉnh, mỗi cột là $1$ cạnh, $M_{ij} = 1$ nếu đỉnh $i$ kề với cạnh $j$). Phát biểu nào sau đây đúng?",
+    "options": [
+      "Tổng các phần tử trên mỗi hàng bằng $2$, tổng trên mỗi cột bằng bậc đỉnh",
+      "Ma trận $M$ luôn đối xứng qua đường chéo chính",
+      "Ma trận $M$ luôn là ma trận vuông $n \\times n$",
+      "Tổng các phần tử trên mỗi cột bằng $2$, tổng trên mỗi hàng $i$ bằng $\\deg(v_i)$"
+    ],
+    "correct": 3,
+    "explanation": "Mỗi cạnh vô hướng (không phải khuyên) nối đúng $2$ đỉnh phân biệt nên mỗi cột có đúng hai số $1$ (tổng bằng $2$). Mỗi hàng ứng với đỉnh $v_i$ đếm số cạnh liên thuộc với $v_i$, chính bằng bậc $\\deg(v_i)$."
+  },
+  {
+    "id": 793,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Với đồ thị thưa $G = (V, E)$ ($|E| \\ll |V|^2$), xét việc lưu trữ bằng <strong>Danh sách kề (Adjacency List)</strong> thay vì <strong>Ma trận kề (Adjacency Matrix)</strong>. Bộ nhớ lưu trữ và độ phức tạp duyệt toàn bộ đồ thị bằng BFS/DFS với Danh sách kề là:",
+    "options": [
+      "Bộ nhớ $O(E)$ và duyệt $O(V \\cdot E)$",
+      "Bộ nhớ $O(V^2)$ và duyệt $O(V^2)$",
+      "Bộ nhớ $O(V \\log E)$ và duyệt $O(E \\log V)$",
+      "Bộ nhớ $O(V + E)$ và duyệt $O(V + E)$"
+    ],
+    "correct": 3,
+    "explanation": "Danh sách kề chỉ lưu các cạnh thực sự tồn tại nên tốn không gian $O(|V| + |E|)$, và thuật toán BFS/DFS thăm mỗi đỉnh, mỗi cạnh tối đa một hằng số lần nên đạt độ phức tạp $O(|V| + |E|)$."
+  },
+  {
+    "id": 794,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Hai đơn đồ thị $G$ và $H$ có cùng $6$ đỉnh và cùng $9$ cạnh, nhưng $G$ có dãy bậc $(3, 3, 3, 3, 3, 3)$ và chu trình độ dài $3$, còn $H$ là $K_{3,3}$ cũng có dãy bậc $(3, 3, 3, 3, 3, 3)$. Khẳng định nào đúng về tính đẳng cấu giữa $G$ và $H$?",
+    "options": [
+      "Không đẳng cấu vì $K_{3,3}$ là đồ thị hai phía không chứa chu trình độ dài $3$, còn $G$ có chu trình độ dài $3$",
+      "Đẳng cấu nếu đánh số lại các đỉnh của $H$",
+      "Không đủ thông tin để kết luận",
+      "Đẳng cấu vì có cùng số đỉnh, số cạnh và cùng dãy bậc"
+    ],
+    "correct": 0,
+    "explanation": "Cùng số đỉnh, số cạnh và dãy bậc chỉ là <strong>điều kiện cần</strong>. Phép đẳng cấu bảo toàn các cấu trúc con như chu trình $C_3$: $G$ có $C_3$ trong khi $K_{3,3}$ không có chu trình lẻ nào nên hai đồ thị không đẳng cấu."
+  },
+  {
+    "id": 795,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Một đồ thị vô hướng gồm $n = 12$ đỉnh và có đúng $k = 4$ thành phần liên thông. Số cạnh <strong>ít nhất</strong> mà đồ thị phải có là bao nhiêu?",
+    "options": [
+      "$8$",
+      "$7$",
+      "$11$",
+      "$9$"
+    ],
+    "correct": 0,
+    "explanation": "Mỗi thành phần liên thông có $n_i$ đỉnh cần ít nhất $n_i - 1$ cạnh (khi là một cây). Cộng qua $k$ thành phần liên thông: $\\sum_{i=1}^k (n_i - 1) = n - k = 12 - 4 = 8$ cạnh."
+  },
+  {
+    "id": 796,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Trong một đồ thị vô hướng liên thông $G$, một cạnh $e$ được gọi là <strong>cạnh cầu (bridge)</strong> khi và chỉ khi:",
+    "options": [
+      "Cạnh $e$ thuộc mọi cây khung của $G$ khi $G$ là chu trình $C_n$",
+      "Cạnh $e$ không nằm trên bất kỳ chu trình đơn nào của $G$ (xóa $e$ làm tăng số thành phần liên thông)",
+      "Khi xóa cạnh $e$, đồ thị vẫn liên thông",
+      "Cạnh $e$ nối hai đỉnh có bậc lớn nhất"
+    ],
+    "correct": 1,
+    "explanation": "Theo định lý đồ thị, một cạnh là cầu (xóa đi làm đồ thị mất tính liên thông) khi và chỉ khi nó không nằm trong bất kỳ chu trình nào của đồ thị."
+  },
+  {
+    "id": 797,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Trong đồ thị có hướng $G = (V, E)$, một <strong>thành phần liên thông mạnh (Strongly Connected Component - SCC)</strong> là tập con cực đại các đỉnh mà:",
+    "options": [
+      "Mọi đỉnh trong tập đều có bán bậc ra bằng bán bậc vào",
+      "Với mọi cặp đỉnh $u, v$ thuộc tập đó, tồn tại cả đường đi có hướng từ $u \\to v$ và đường đi có hướng từ $v \\to u$",
+      "Mọi cặp đỉnh $(u, v)$ đều có đường đi vô hướng nối chúng",
+      "Không có cạnh nối ra ngoài tập"
+    ],
+    "correct": 1,
+    "explanation": "Đồ thị có hướng liên thông mạnh khi mọi cặp đỉnh $u, v$ đều đi tới nhau được theo chiều cung. Các SCC là các đồ thị con liên thông mạnh cực đại (tìm được trong $O(V + E)$ bằng Kosaraju hoặc Tarjan)."
+  },
+  {
+    "id": 798,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Cho đồ thị vô hướng $6$ đỉnh với các cạnh: $(1,2), (1,3), (2,4), (2,5), (3,5), (4,6), (5,6)$. Xuất phát từ đỉnh $1$ và luôn ưu tiên xét các đỉnh kề theo thứ tự số hiệu tăng dần, thứ tự duyệt <strong>DFS (tìm kiếm theo chiều sâu)</strong> đúng là:",
+    "options": [
+      "$1 \\to 3 \\to 5 \\to 6 \\to 4 \\to 2$",
+      "$1 \\to 2 \\to 4 \\to 6 \\to 5 \\to 3$",
+      "$1 \\to 2 \\to 4 \\to 5 \\to 6 \\to 3$",
+      "$1 \\to 2 \\to 3 \\to 4 \\to 5 \\to 6$"
+    ],
+    "correct": 1,
+    "explanation": "Truy vết DFS từ $1$: thăm $1 \\to 2 \\to 4 \\to 6 \\to 5$; tại $5$ các đỉnh kề $2, 6$ đã thăm, chỉ còn $3$ chưa thăm nên đi tiếp $\\to 3$. Kết quả DFS là $1, 2, 4, 6, 5, 3$ (còn BFS cho $1, 2, 3, 4, 5, 6$)."
+  },
+  {
+    "id": 799,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Cấu trúc dữ liệu cốt lõi được sử dụng trong thuật toán <strong>BFS (Tìm kiếm theo chiều rộng)</strong> là gì, và BFS đảm bảo tìm được đường đi ngắn nhất tính theo số cạnh trên loại đồ thị nào?",
+    "options": [
+      "Hàng đợi (Queue); đồ thị <strong>không có trọng số</strong> (hoặc mọi cạnh trọng số bằng $1$)",
+      "Hàng đợi ưu tiên (Min-Heap); đồ thị có trọng số âm",
+      "Cây tìm kiếm nhị phân; chỉ áp dụng cho cây",
+      "Ngăn xếp (Stack); đồ thị có trọng số dương bất kỳ"
+    ],
+    "correct": 0,
+    "explanation": "BFS dùng Hàng đợi (FIFO) để duyệt theo từng lớp khoảng cách từ gốc $s$, nên luôn tìm ra đường đi có <strong>ít cạnh nhất</strong> từ $s$ đến mọi đỉnh khác trên đồ thị không trọng số."
+  },
+  {
+    "id": 800,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Một đồ thị <strong>có hướng</strong> liên thông yếu $G = (V, E)$ (không có đỉnh cô lập) có một <strong>chu trình Euler có hướng</strong> khi và chỉ khi:",
+    "options": [
+      "Mọi đỉnh có tổng bán bậc vào và bán bậc ra là số chẵn",
+      "$G$ liên thông yếu và mọi đỉnh $v \\in V$ đều thỏa mãn $\\deg^-(v) = \\deg^+(v)$",
+      "Mọi đỉnh đều có $\\deg^+(v) \\ge 1$",
+      "Có đúng $2$ đỉnh có $\\deg^-(v) \\ne \\deg^+(v)$"
+    ],
+    "correct": 1,
+    "explanation": "Trong đồ thị có hướng, mỗi lần chu trình Euler đi vào một đỉnh phải đi ra khỏi đỉnh đó theo một cung khác, nên cần liên thông yếu (nền vô hướng liên thông) và mọi đỉnh phải có <strong>bán bậc vào bằng bán bậc ra</strong>: $\\deg^-(v) = \\deg^+(v)$."
+  },
+  {
+    "id": 801,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Điều kiện cần và đủ để đồ thị có hướng liên thông yếu $G$ có một <strong>đường đi Euler không khép kín</strong> từ đỉnh $s$ đến đỉnh $t$ ($s \\ne t$) là:",
+    "options": [
+      "$\\deg^-(s) = \\deg^+(s) + 1$, $\\deg^+(t) = \\deg^-(t) + 1$, và mọi đỉnh khác có $\\deg^-(v) = \\deg^+(v)$",
+      "Mọi đỉnh đều có $\\deg^-(v) = \\deg^+(v)$",
+      "$\\deg^+(s) = \\deg^-(s) + 1$, $\\deg^-(t) = \\deg^+(t) + 1$, và mọi đỉnh $v \\ne s, t$ có $\\deg^-(v) = \\deg^+(v)$",
+      "Tồn tại đỉnh $s$ có $\\deg^-(s) = 0$ và đỉnh $t$ có $\\deg^+(t) = 0$"
+    ],
+    "correct": 2,
+    "explanation": "Đỉnh xuất phát $s$ phải đi ra nhiều hơn đi vào $1$ lần ($\\deg^+(s) - \\deg^-(s) = 1$), đỉnh kết thúc $t$ đi vào nhiều hơn đi ra $1$ lần ($\\deg^-(t) - \\deg^+(t) = 1$), và mọi đỉnh trung gian phải cân bằng $\\deg^-(v) = \\deg^+(v)$."
+  },
+  {
+    "id": 802,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Một đồ thị vô hướng liên thông $G$ có dãy bậc các đỉnh là $(4, 3, 3, 2, 3, 3, 4, 3, 3)$ (có $6$ đỉnh bậc $3$). Cần vẽ thêm <strong>ít nhất bao nhiêu cạnh</strong> vào $G$ để đồ thị thu được trở thành đồ thị có chu trình Euler?",
+    "options": [
+      "$3$ cạnh",
+      "$6$ cạnh",
+      "$4$ cạnh",
+      "$2$ cạnh"
+    ],
+    "correct": 0,
+    "explanation": "Đồ thị có $6$ đỉnh bậc lẻ. Mỗi cạnh nối $2$ đỉnh bậc lẻ khác nhau sẽ biến cả $2$ đỉnh đó thành bậc chẵn. Để mọi đỉnh đều có bậc chẵn (có chu trình Euler), cần ghép cặp và thêm ít nhất $6 / 2 = 3$ cạnh."
+  },
+  {
+    "id": 803,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Cho đồ thị khối siêu lập phương $Q_n$ ($n \\ge 2$). Khẳng định nào sau đây là <strong>đúng</strong> về chu trình Euler và chu trình Hamilton của $Q_n$?",
+    "options": [
+      "$Q_n$ có chu trình Euler khi và chỉ khi <strong>$n$ chẵn</strong>, và luôn có chu trình Hamilton với mọi $n \\ge 2$",
+      "$Q_n$ luôn có chu trình Euler với mọi $n \\ge 2$",
+      "$Q_n$ không có cả chu trình Euler lẫn Hamilton khi $n \\ge 3$",
+      "$Q_n$ chỉ có chu trình Hamilton khi $n$ chẵn"
+    ],
+    "correct": 0,
+    "explanation": "Mọi đỉnh của $Q_n$ đều có bậc $n$, nên $Q_n$ liên thông có chu trình Euler $\\iff n$ chẵn. Mặt khác, dãy mã Gray $n$-bit chính là một chu trình Hamilton đi qua mọi đỉnh của $Q_n$ với mọi $n \\ge 2$."
+  },
+  {
+    "id": 804,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Theo <strong>Định lý Dirac</strong>, một đơn đồ thị vô hướng $G$ có $n \\ge 3$ đỉnh chắc chắn có một <strong>chu trình Hamilton</strong> nếu mọi đỉnh $v$ của $G$ đều thỏa mãn:",
+    "options": [
+      "$\\deg(v) \\ge \\frac{n - 1}{2}$",
+      "$\\deg(v)$ là số chẵn",
+      "$\\deg(v) \\ge 2$",
+      "$\\deg(v) \\ge \\frac{n}{2}$"
+    ],
+    "correct": 3,
+    "explanation": "Định lý Dirac (1952) phát biểu điều kiện đủ: nếu đơn đồ thị $n \\ge 3$ đỉnh có $\\deg(v) \\ge \\frac{n}{2}$ với mọi đỉnh $v$, thì đồ thị chắc chắn có chu trình Hamilton."
+  },
+  {
+    "id": 805,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Theo <strong>Định lý Ore</strong> (tổng quát hơn Dirac), đơn đồ thị $G$ gồm $n \\ge 3$ đỉnh chắc chắn có chu trình Hamilton nếu với mọi cặp đỉnh $u, v$ <strong>không kề nhau</strong>, ta đều có:",
+    "options": [
+      "$\\deg(u) + \\deg(v) \\ge 2n - 2$",
+      "$\\deg(u) + \\deg(v) \\ge n - 1$",
+      "$\\deg(u) \\cdot \\deg(v) \\ge n$",
+      "$\\deg(u) + \\deg(v) \\ge n$"
+    ],
+    "correct": 3,
+    "explanation": "Định lý Ore (1960): nếu tổng bậc của hai đỉnh bất kỳ không kề nhau luôn $\\ge n$ ($\\deg(u) + \\deg(v) \\ge n$), thì đồ thị có chu trình Hamilton. (Nếu thay bằng $\\ge n - 1$ thì đảm bảo có đường đi Hamilton)."
+  },
+  {
+    "id": 806,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Đồ thị hai phía đầy đủ $K_{m, n}$ ($m, n \\ge 1$) có ít nhất một <strong>đường đi Hamilton</strong> (đi qua mọi đỉnh đúng $1$ lần, không bắt buộc khép kín) khi và chỉ khi:",
+    "options": [
+      "$m$ và $n$ đều chẵn",
+      "$|m - n| \\le 1$ (và $m + n \\ge 2$)",
+      "$m = n$",
+      "Với mọi $m, n \\ge 2$"
+    ],
+    "correct": 1,
+    "explanation": "Một đường đi Hamilton trong đồ thị hai phía phải đi xen kẽ qua hai tập đỉnh nên số lượng đỉnh của hai tập chênh nhau tối đa $1$ đỉnh: $|m - n| \\le 1$ (chẳng hạn $K_{3, 4}$ có đường đi Hamilton nhưng không có chu trình Hamilton)."
+  },
+  {
+    "id": 807,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Đồ thị đầy đủ $K_5$ có bao nhiêu chu trình Hamilton phân biệt (không phân biệt điểm xuất phát và chiều đi ngược/xuôi)?",
+    "options": [
+      "$12$",
+      "$24$",
+      "$10$",
+      "$60$"
+    ],
+    "correct": 0,
+    "explanation": "Số chu trình Hamilton không phân biệt hướng và đỉnh đầu trong đồ thị đầy đủ $K_n$ là $\\frac{(n - 1)!}{2}$. Với $n = 5$, kết quả là $\\frac{4!}{2} = 12$ chu trình."
+  },
+  {
+    "id": 808,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Trong thuật toán <strong>Fleury</strong> tìm chu trình (hoặc đường đi) Euler trên đồ thị vô hướng, nguyên tắc quan trọng nhất khi chọn cạnh tiếp theo để đi từ đỉnh hiện tại là:",
+    "options": [
+      "Luôn ưu tiên đi qua cạnh cầu trước để chia nhỏ đồ thị",
+      "Luôn chọn cạnh có trọng số nhỏ nhất",
+      "<strong>Không</strong> đi qua cạnh cầu trừ khi không còn cạnh lựa chọn nào khác",
+      "Chọn ngẫu nhiên bất kỳ cạnh nào kể cả khi làm cô lập đỉnh chưa thăm"
+    ],
+    "correct": 2,
+    "explanation": "Thuật toán Fleury quy định \"đừng đốt cầu phía sau mình\": tại mỗi bước, chỉ chọn cạnh cầu của đồ thị còn lại khi đó là cạnh duy nhất kề với đỉnh hiện tại, tránh bị cô lập trước khi đi hết các cạnh."
+  },
+  {
+    "id": 809,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Đồ thị nổi tiếng <strong>Petersen</strong> ($10$ đỉnh, $15$ cạnh, $3$-chính quy) có tính chất nào sau đây?",
+    "options": [
+      "Vừa là đồ thị Euler, vừa là đồ thị Hamilton",
+      "Là đồ thị phẳng hai phía",
+      "Không có đường đi Hamilton nào",
+      "Có <strong>đường đi Hamilton</strong> nhưng <strong>không có chu trình Hamilton</strong> (và không có chu trình Euler)"
+    ],
+    "correct": 3,
+    "explanation": "Đồ thị Petersen mọi đỉnh bậc $3$ (lẻ) nên không có chu trình/đường đi Euler. Nó là đồ thị giả Hamilton nổi tiếng: có đường đi Hamilton qua cả $10$ đỉnh nhưng không thể khép thành chu trình Hamilton."
+  },
+  {
+    "id": 810,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Nhận định nào sau đây là <strong>chính xác</strong> về độ phức tạp tính toán giữa bài toán kiểm tra/tìm chu trình Euler và chu trình Hamilton?",
+    "options": [
+      "Cả hai bài toán đều là NP-đầy đủ",
+      "Chu trình Hamilton dễ hơn chu trình Euler vì chỉ cần đi qua $n$ đỉnh",
+      "Chu trình Euler giải được trong thời gian tuyến tính $O(V + E)$ (Hierholzer), còn bài toán chu trình Hamilton thuộc lớp <strong>NP-đầy đủ</strong>",
+      "Cả hai bài toán đều giải được trong thời gian đa thức $O(V + E)$"
+    ],
+    "correct": 2,
+    "explanation": "Kiểm tra và tìm chu trình Euler chỉ tốn $O(V + E)$ nhờ định lý bậc chẵn và thuật toán Hierholzer. Ngược lại, bài toán quyết định sự tồn tại chu trình Hamilton là bài toán <strong>NP-đầy đủ</strong> kinh điển."
+  }
+]

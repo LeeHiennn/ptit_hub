@@ -1,0 +1,392 @@
+[
+  {
+    "id": 811,
+    "topic": "Lý Thuyết Đồ Thị - Công Thức Euler Cho Đồ Thị Phẳng",
+    "question": "Một đồ thị phẳng $G$ (không nhất thiết liên thông) có $V = 12$ đỉnh, $E = 15$ cạnh và gồm $k = 3$ thành phần liên thông. Khi vẽ phẳng không cắt cạnh, đồ thị $G$ chia mặt phẳng thành bao nhiêu miền $F$?",
+    "options": [
+      "$5$ miền",
+      "$8$ miền",
+      "$7$ miền",
+      "$6$ miền"
+    ],
+    "correct": 2,
+    "explanation": "Công thức Euler tổng quát cho đồ thị phẳng gồm $k$ thành phần liên thông là $V - E + F = k + 1$. Thay $V = 12, E = 15, k = 3$: $12 - 15 + F = 4 \\Rightarrow F = 7$ miền."
+  },
+  {
+    "id": 812,
+    "topic": "Lý Thuyết Đồ Thị - Công Thức Euler Cho Đồ Thị Phẳng",
+    "question": "Một đơn đồ thị phẳng liên thông $G$ có $V = 8$ đỉnh. Số cạnh <strong>tối đa</strong> mà $G$ có thể có trong trường hợp tổng quát và trong trường hợp $G$ <strong>không chứa tam giác</strong> ($C_3$) lần lượt là:",
+    "options": [
+      "$18$ và $12$",
+      "$18$ và $14$",
+      "$20$ và $14$",
+      "$28$ và $12$"
+    ],
+    "correct": 0,
+    "explanation": "Theo hệ quả công thức Euler cho đơn đồ thị phẳng ($V \\ge 3$): tổng quát có $E \\le 3V - 6 = 3(8) - 6 = 18$ cạnh; nếu đồ thị không có chu trình độ dài $3$ (mỗi miền có ít nhất $4$ cạnh bao quanh) thì $E \\le 2V - 4 = 2(8) - 4 = 12$ cạnh."
+  },
+  {
+    "id": 813,
+    "topic": "Lý Thuyết Đồ Thị - Công Thức Euler Cho Đồ Thị Phẳng",
+    "question": "Theo <strong>Định lý Kuratowski</strong>, một đồ thị vô hướng là đồ thị <strong>phẳng</strong> khi và chỉ khi nó không chứa đồ thị con nào đồng phôi (subdivision) với hai đồ thị không phẳng cơ bản nào sau đây?",
+    "options": [
+      "$K_6$ và $K_{3,4}$",
+      "$K_5$ và $K_{3,3}$",
+      "$K_4$ và $K_{2,3}$",
+      "$W_5$ và $Q_3$"
+    ],
+    "correct": 1,
+    "explanation": "Định lý Kuratowski khẳng định mọi đồ thị không phẳng đều bắt nguồn từ đúng hai \"hạt nhân\" không phẳng tối tiểu là $K_5$ ($5$ đỉnh đầy đủ, $10 > 3\\cdot 5 - 6 = 9$) và $K_{3,3}$ ($6$ đỉnh phân đôi không có tam giác, $9 > 2\\cdot 6 - 4 = 8$)."
+  },
+  {
+    "id": 814,
+    "topic": "Lý Thuyết Đồ Thị - Công Thức Euler Cho Đồ Thị Phẳng",
+    "question": "Trong mọi đơn đồ thị phẳng $G$, tính chất cực kỳ quan trọng về bậc tối thiểu của các đỉnh (dùng để chứng minh định lý $5$ màu / $6$ màu) là:",
+    "options": [
+      "Số đỉnh bậc chẵn nhiều hơn số đỉnh bậc lẻ",
+      "Mọi đỉnh của $G$ đều có bậc $\\le 5$",
+      "Luôn tồn tại ít nhất một đỉnh có bậc $\\le 5$",
+      "Mọi đỉnh đều có bậc $\\le 4$"
+    ],
+    "correct": 2,
+    "explanation": "Nếu mọi đỉnh đều có bậc $\\ge 6$, theo bắt tay $2E = \\sum \\deg(v) \\ge 6V \\Rightarrow E \\ge 3V$, mâu thuẫn với bất đẳng thức phẳng $E \\le 3V - 6$. Do đó bất kỳ đơn đồ thị phẳng nào cũng luôn có ít nhất một đỉnh bậc $\\le 5$."
+  },
+  {
+    "id": 815,
+    "topic": "Lý Thuyết Đồ Thị - Số Sắc Số (Chromatic Number)",
+    "question": "Cho $T$ là một cây có $n \\ge 2$ đỉnh và $K_6$ là đồ thị đầy đủ $6$ đỉnh. Sắc số $\\chi(T)$ và $\\chi(K_6)$ lần lượt bằng:",
+    "options": [
+      "$2$ và $6$",
+      "$1$ và $6$",
+      "$3$ và $6$",
+      "$2$ và $5$"
+    ],
+    "correct": 0,
+    "explanation": "Mọi cây có $\\ge 2$ đỉnh không có chu trình nào (nên là đồ thị hai phía có cạnh) và luôn tô được bằng đúng $\\chi(T) = 2$ màu. Đồ thị đầy đủ $K_6$ có $6$ đỉnh đôi một kề nhau nên bắt buộc dùng $\\chi(K_6) = 6$ màu."
+  },
+  {
+    "id": 816,
+    "topic": "Lý Thuyết Đồ Thị - Số Sắc Số (Chromatic Number)",
+    "question": "Cần xếp lịch thi cho $5$ môn học $M_1, M_2, M_3, M_4, M_5$ sao cho hai môn có sinh viên thi chung không xếp vào cùng một ca thi. Các cặp môn có sinh viên chung là: $(M_1, M_2), (M_1, M_3), (M_2, M_3), (M_2, M_4), (M_3, M_4), (M_3, M_5), (M_4, M_5), (M_1, M_5)$. Cần tối thiểu bao nhiêu ca thi (tức sắc số $\\chi(G)$)?",
+    "options": [
+      "$4$ ca thi",
+      "$5$ ca thi",
+      "$2$ ca thi",
+      "$3$ ca thi"
+    ],
+    "correct": 3,
+    "explanation": "Đồ thị xung đột chứa tam giác $(M_1, M_2, M_3)$ nên cần ít nhất $3$ màu. Thử tô $3$ ca: Ca 1: $\\{M_1, M_4\\}$; Ca 2: $\\{M_2, M_5\\}$; Ca 3: $\\{M_3\\}$ — kiểm tra thấy mọi cặp xung đột đều khác ca! Vậy số ca thi tối thiểu là $3$."
+  },
+  {
+    "id": 817,
+    "topic": "Lý Thuyết Đồ Thị - Số Sắc Số (Chromatic Number)",
+    "question": "Gọi $\\Delta(G)$ là bậc lớn nhất của một đỉnh trong đơn đồ thị liên thông $G$. Theo <strong>Định lý Brooks</strong>, bất đẳng thức $\\chi(G) \\le \\Delta(G)$ luôn đúng <strong>ngoại trừ</strong> hai họ đồ thị nào?",
+    "options": [
+      "Đồ thị cây và đồ thị hai phía",
+      "Đồ thị đầy đủ $K_n$ và đồ thị chu trình lẻ $C_{2k+1}$",
+      "Đồ thị $K_{m,n}$ và siêu khối $Q_n$",
+      "Đồ thị bánh xe $W_n$ và đồ thị phẳng"
+    ],
+    "correct": 1,
+    "explanation": "Tô màu tham lam luôn đảm bảo $\\chi(G) \\le \\Delta(G) + 1$. Định lý Brooks chỉ ra dấu bằng $\\chi(G) = \\Delta(G) + 1$ chỉ xảy ra đối với đồ thị đầy đủ $K_n$ ($\\chi = n, \\Delta = n-1$) và chu trình lẻ $C_{2k+1}$ ($\\chi = 3, \\Delta = 2$)."
+  },
+  {
+    "id": 818,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Cho đồ thị vô hướng $T$ có $n$ đỉnh ($n \\ge 1$). Phát biểu nào sau đây <strong>KHÔNG</strong> tương đương với khẳng định \"$T$ là một cây\"?",
+    "options": [
+      "$T$ liên thông và có đúng $n - 1$ cạnh",
+      "Giữa hai đỉnh bất kỳ của $T$ tồn tại duy nhất một đường đi đơn",
+      "Mọi đỉnh của $T$ đều có bậc $\\ge 2$",
+      "$T$ không có chu trình và có đúng $n - 1$ cạnh"
+    ],
+    "correct": 2,
+    "explanation": "Một cây có $n \\ge 2$ đỉnh luôn có ít nhất $2$ lá (đỉnh bậc $1$), nên không thể có mọi đỉnh bậc $\\ge 2$ (nếu mọi đỉnh bậc $\\ge 2$ thì đồ thị chắc chắn chứa chu trình). Ba mệnh đề còn lại đều là định nghĩa tương đương của cây."
+  },
+  {
+    "id": 819,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Theo <strong>Công thức Cayley</strong>, số lượng cây khung có nhãn phân biệt của đồ thị đầy đủ $K_n$ là $n^{n-2}$. Hỏi $K_5$ và $K_6$ lần lượt có bao nhiêu cây khung có nhãn?",
+    "options": [
+      "$125$ và $1296$",
+      "$625$ và $7776$",
+      "$25$ và $216$",
+      "$120$ và $720$"
+    ],
+    "correct": 0,
+    "explanation": "Áp dụng công thức Cayley $n^{n-2}$: với $n = 5$ có $5^{5-2} = 5^3 = 125$ cây khung; với $n = 6$ có $6^{6-2} = 6^4 = 1296$ cây khung."
+  },
+  {
+    "id": 820,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Cho cây $6$ đỉnh (đánh số $1..6$) gồm các cạnh: $(1,4), (2,4), (4,5), (3,5), (5,6)$. Mã <strong>Prüfer</strong> (luôn xóa lá có nhãn nhỏ nhất) của cây này là:",
+    "options": [
+      "$(4, 5, 4, 5)$",
+      "$(5, 4, 4, 5)$",
+      "$(4, 4, 5, 6)$",
+      "$(4, 4, 5, 5)$"
+    ],
+    "correct": 3,
+    "explanation": "Lặp $n - 2 = 4$ bước xóa lá nhãn nhỏ nhất và ghi lại đỉnh kề với nó:<br/>• Lá nhỏ nhất là $1$ (kề $4$) $\\to$ ghi $4$.<br/>• Lá nhỏ nhất là $2$ (kề $4$) $\\to$ ghi $4$.<br/>• Lá nhỏ nhất là $3$ (kề $5$) $\\to$ ghi $5$.<br/>• Lá nhỏ nhất là $4$ (kề $5$) $\\to$ ghi $5$.<br/>Vậy mã Prüfer là $(4, 4, 5, 5)$."
+  },
+  {
+    "id": 821,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Một cây $6$ đỉnh (nhãn $1..6$) có mã Prüfer là $(3, 3, 2, 5)$. Trong cây ban đầu, bậc của đỉnh $3$ và bậc của đỉnh $1$ lần lượt bằng bao nhiêu?",
+    "options": [
+      "$\\deg(3) = 4$ và $\\deg(1) = 1$",
+      "$\\deg(3) = 3$ và $\\deg(1) = 2$",
+      "$\\deg(3) = 3$ và $\\deg(1) = 1$",
+      "$\\deg(3) = 2$ và $\\deg(1) = 1$"
+    ],
+    "correct": 2,
+    "explanation": "Tính chất vàng của mã Prüfer: bậc của mỗi đỉnh $v$ đúng bằng <strong>số lần xuất hiện của $v$ trong mã Prüfer cộng thêm $1$</strong>. Số $3$ xuất hiện $2$ lần $\\Rightarrow \\deg(3) = 2 + 1 = 3$; số $1$ xuất hiện $0$ lần $\\Rightarrow \\deg(1) = 0 + 1 = 1$."
+  },
+  {
+    "id": 822,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Một cây tam phân đầy đủ (full $3$-ary tree, mỗi nút trong có đúng $3$ con) có tất cả $10$ nút trong (internal vertices). Tổng số đỉnh và số lá của cây lần lượt là:",
+    "options": [
+      "$29$ đỉnh và $19$ lá",
+      "$31$ đỉnh và $20$ lá",
+      "$31$ đỉnh và $21$ lá",
+      "$30$ đỉnh và $20$ lá"
+    ],
+    "correct": 2,
+    "explanation": "Trong cây $m$-phân đầy đủ có $i$ nút trong: tổng số đỉnh $n = m \\cdot i + 1 = 3(10) + 1 = 31$, và số lá $l = (m - 1)i + 1 = 2(10) + 1 = 21$ (hoặc $l = n - i = 31 - 10 = 21$)."
+  },
+  {
+    "id": 823,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Một cây nhị phân có chiều cao $h = 4$ (gốc ở mức $0$) chứa tối đa bao nhiêu lá và tối đa bao nhiêu đỉnh?",
+    "options": [
+      "Tối đa $16$ lá và $32$ đỉnh",
+      "Tối đa $8$ lá và $15$ đỉnh",
+      "Tối đa $15$ lá và $31$ đỉnh",
+      "Tối đa $16$ lá và $31$ đỉnh"
+    ],
+    "correct": 3,
+    "explanation": "Cây $m$-phân chiều cao $h$ có tối đa $m^h$ lá. Với cây nhị phân ($m = 2, h = 4$): tối đa $2^4 = 16$ lá và tổng cộng tối đa $2^{h+1} - 1 = 2^5 - 1 = 31$ đỉnh."
+  },
+  {
+    "id": 824,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Cho một cây nhị phân có thứ tự duyệt <strong>Tiền thứ tự (Preorder)</strong> là <code>A B D E C F</code> và <strong>Trung thứ tự (Inorder)</strong> là <code>D B E A F C</code>. Thứ tự duyệt <strong>Hậu thứ tự (Postorder)</strong> của cây này là:",
+    "options": [
+      "<code>D E B F C A</code>",
+      "<code>E D B F C A</code>",
+      "<code>D B E F C A</code>",
+      "<code>D E F B C A</code>"
+    ],
+    "correct": 0,
+    "explanation": "Từ Preorder, gốc là <code>A</code>. Chia Inorder tại <code>A</code>: cây con trái gồm $\\{D, B, E\\}$ (gốc trái là <code>B</code>, con trái <code>D</code>, con phải <code>E</code> $\\Rightarrow$ Postorder trái: <code>D E B</code>); cây con phải gồm $\\{F, C\\}$ (gốc phải là <code>C</code>, con trái <code>F</code> $\\Rightarrow$ Postorder phải: <code>F C</code>). Ghép lại với gốc <code>A</code> ở cuối được <code>D E B F C A</code>."
+  },
+  {
+    "id": 825,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Đọc từ trái sang phải theo ký pháp hậu tố Ba Lan ngược (Postfix / duyệt hậu thứ tự cây biểu thức): <code>5 3 + 2 * 6 3 / -</code>. Giá trị của biểu thức này bằng:",
+    "options": [
+      "$10$",
+      "$14$",
+      "$16$",
+      "$12$"
+    ],
+    "correct": 1,
+    "explanation": "Chuyển về trung tố từ cây biểu thức: <code>5 3 +</code> $\\to (5+3)=8$; nhân <code>2</code> $\\to 8 \\times 2 = 16$; <code>6 3 /</code> $\\to 6 / 3 = 2$; cuối cùng <code>-</code> $\\to 16 - 2 = 14$."
+  },
+  {
+    "id": 826,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Cho đồ thị vô hướng liên thông $6$ đỉnh $\\{1..6\\}$ với danh sách cạnh $(u, v, w)$: $(1,2,4), (1,3,2), (2,3,1), (2,4,5), (3,4,8), (3,5,10), (4,5,2), (4,6,6), (5,6,3)$. Tổng trọng số của <strong>Cây khung nhỏ nhất (MST)</strong> bằng:",
+    "options": [
+      "$14$",
+      "$13$",
+      "$12$",
+      "$15$"
+    ],
+    "correct": 1,
+    "explanation": "Thuật toán Kruskal sắp xếp các cạnh tăng dần và chọn các cạnh không tạo chu trình: $(2,3,1) \\to (1,3,2) \\to (4,5,2) \\to (5,6,3)$; bỏ qua $(1,2,4)$ vì tạo chu trình $1-2-3$; chọn $(2,4,5)$. Đủ $5$ cạnh với tổng trọng số $1 + 2 + 2 + 3 + 5 = 13$."
+  },
+  {
+    "id": 827,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Cho đồ thị vô hướng liên thông có trọng số $G = (V, E)$. Điều kiện nào sau đây đảm bảo $G$ có <strong>duy nhất một</strong> Cây khung nhỏ nhất (MST)?",
+    "options": [
+      "Mọi đỉnh đều có bậc bằng nhau",
+      "Trọng số của tất cả các cạnh trong $G$ là <strong>đôi một khác nhau</strong>",
+      "Mọi trọng số đều là số nguyên dương",
+      "Đồ thị là đồ thị phẳng"
+    ],
+    "correct": 1,
+    "explanation": "Theo tính chất cắt (Cut Property) và tính chất chu trình: nếu mọi cạnh của $G$ có trọng số đôi một phân biệt thì ở mỗi bước của Kruskal/Prim chỉ có duy nhất một cạnh nhẹ nhất, do đó MST của $G$ là duy nhất."
+  },
+  {
+    "id": 828,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Để tìm <strong>Cây khung lớn nhất (Maximum Spanning Tree)</strong> của một đồ thị vô hướng liên thông có trọng số bằng thuật toán Kruskal, ta làm như thế nào và với đồ thị $6$ đỉnh $\\{1..6\\}$ có các cạnh $(1,2,4), (1,3,2), (2,3,1), (2,4,5), (3,4,8), (3,5,10), (4,5,2), (4,6,6), (5,6,3)$ thì tổng trọng số cây khung lớn nhất bằng bao nhiêu?",
+    "options": [
+      "Không thể dùng Kruskal để tìm cây khung lớn nhất",
+      "Chọn các cạnh có trọng số lẻ trước; tổng trọng số $= 29$",
+      "Sắp xếp cạnh giảm dần (hoặc đổi dấu $-w$); tổng trọng số $= 31$",
+      "Sắp xếp cạnh giảm dần (hoặc đổi dấu $-w$); tổng trọng số $= 33$"
+    ],
+    "correct": 3,
+    "explanation": "Sắp xếp cạnh theo trọng số <strong>giảm dần</strong> (tương đương đổi dấu $w \\to -w$ rồi chạy Kruskal chuẩn): chọn lần lượt $(3,5,10),\\ (3,4,8),\\ (4,6,6),\\ (2,4,5),\\ (1,2,4)$. Năm cạnh này không tạo chu trình và có tổng trọng số $10 + 8 + 6 + 5 + 4 = 33$."
+  },
+  {
+    "id": 829,
+    "topic": "Đường Đi Ngắn Nhất & Luồng Cực Đại",
+    "question": "Cho đồ thị có hướng có trọng số không âm gồm $5$ đỉnh $\\{1..5\\}$ với các cung $(u \\to v, w)$: $(1\\to 2, 4), (1\\to 3, 2), (3\\to 2, 1), (2\\to 4, 5), (3\\to 4, 8), (3\\to 5, 10), (4\\to 5, 2)$. Chạy thuật toán <strong>Dijkstra</strong> từ đỉnh $1$, độ dài đường đi ngắn nhất từ $1$ đến $4$ và từ $1$ đến $5$ lần lượt là:",
+    "options": [
+      "$9$ và $11$",
+      "$10$ và $12$",
+      "$8$ và $12$",
+      "$8$ và $10$"
+    ],
+    "correct": 3,
+    "explanation": "Truy vết Dijkstra từ $1$: $d(1)=0$; thăm $1 \\to$ cập nhật $d(3)=2, d(2)=4$; chọn đỉnh $3$ ($d=2$) $\\to$ rút ngắn $d(2)=2+1=3$, $d(4)=10, d(5)=12$; chọn $2$ ($d=3$) $\\to$ rút ngắn $d(4)=3+5=8$; chọn $4$ ($d=8$) $\\to$ rút ngắn $d(5)=8+2=10$. Vậy $d(4)=8$ và $d(5)=10$."
+  },
+  {
+    "id": 830,
+    "topic": "Đường Đi Ngắn Nhất & Luồng Cực Đại",
+    "question": "Khi đồ thị có hướng có chứa <strong>cạnh trọng số âm</strong> (nhưng không có chu trình âm), thuật toán nào sau đây vẫn tìm được đường đi ngắn nhất từ một đỉnh nguồn $s$ đến mọi đỉnh khác (và có thể phát hiện chu trình âm)?",
+    "options": [
+      "Thuật toán <strong>Bellman–Ford</strong> với độ phức tạp $O(V \\cdot E)$",
+      "Thuật toán Dijkstra với hàng đợi ưu tiên",
+      "Thuật toán BFS",
+      "Thuật toán Prim"
+    ],
+    "correct": 0,
+    "explanation": "Dijkstra giả định trọng số không âm nên có thể cho kết quả sai nếu gặp cạnh âm. Thuật toán <strong>Bellman–Ford</strong> nới lỏng toàn bộ $|E|$ cạnh qua $|V|-1$ vòng ($O(V \\cdot E)$) xử lý đúng cạnh âm và phát hiện được chu trình âm ở lần lặp thứ $|V|$."
+  },
+  {
+    "id": 831,
+    "topic": "Đường Đi Ngắn Nhất & Luồng Cực Đại",
+    "question": "Thuật toán <strong>Floyd–Warshall</strong> tìm đường đi ngắn nhất giữa <strong>mọi cặp đỉnh</strong> trong đồ thị $n$ đỉnh dựa trên công thức quy hoạch động $d^{(k)}[i][j] = \\min\\big(d^{(k-1)}[i][j],\\ d^{(k-1)}[i][k] + d^{(k-1)}[k][j]\\big)$ có độ phức tạp thời gian và không gian bộ nhớ lần lượt là:",
+    "options": [
+      "$O(V \\cdot E)$ và $O(V + E)$",
+      "$O(V^2 \\log V)$ và $O(V^2)$",
+      "$O(V^3)$ và $O(V^2)$",
+      "$O(V^2)$ và $O(V)$"
+    ],
+    "correct": 2,
+    "explanation": "Floyd–Warshall sử dụng $3$ vòng lặp lồng nhau chạy từ $1$ đến $V$ nên có thời gian $O(V^3)$, và cập nhật trực tiếp trên ma trận khoảng cách $V \\times V$ nên tốn bộ nhớ $O(V^2)$."
+  },
+  {
+    "id": 832,
+    "topic": "Đường Đi Ngắn Nhất & Luồng Cực Đại",
+    "question": "Cho mạng vận tải có nguồn $s = 1$, đích $t = 4$ với các cung và khả năng thông qua $(u \\to v, c)$: $(1\\to 2, 10), (1\\to 3, 8), (2\\to 3, 5), (2\\to 4, 7), (3\\to 4, 9)$. Theo định lý <strong>Max-Flow Min-Cut</strong> (Ford–Fulkerson), giá trị <strong>luồng cực đại</strong> từ $1$ đến $4$ bằng:",
+    "options": [
+      "$18$",
+      "$16$",
+      "$20$",
+      "$15$"
+    ],
+    "correct": 1,
+    "explanation": "Lần lượt tăng luồng: $1\\to 2\\to 4$ ($7$ đơn vị), $1\\to 3\\to 4$ ($8$ đơn vị), $1\\to 2\\to 3\\to 4$ ($1$ đơn vị, làm bão hòa cả hai cung vào $4$ là $(2\\to 4)$ và $(3\\to 4)$). Tổng luồng đạt $7 + 8 + 1 = 16$, đúng bằng khả năng thông qua của lát cắt nhỏ nhất $\\{1, 2, 3\\} \\mid \\{4\\}$ có giá trị $7 + 9 = 16$."
+  },
+  {
+    "id": 833,
+    "topic": "Đường Đi Ngắn Nhất & Luồng Cực Đại",
+    "question": "Trong thuật toán <strong>Edmonds–Karp</strong> (cài đặt Ford–Fulkerson bằng cách dùng BFS tìm đường tăng luồng có ít cung nhất trên đồ thị thặng dư), độ phức tạp thời gian trong trường hợp xấu nhất là:",
+    "options": [
+      "$O(V^2 \\log E)$",
+      "$O(E \\cdot f_{\\max})$ (luôn phụ thuộc giá trị luồng)",
+      "$O(V \\cdot E)$",
+      "$O(V \\cdot E^2)$"
+    ],
+    "correct": 3,
+    "explanation": "Nhờ sử dụng BFS để tìm đường tăng luồng ngắn nhất (số bước tăng luồng tối đa là $O(V \\cdot E)$ và mỗi lần BFS mất $O(E)$), thuật toán Edmonds–Karp có độ phức tạp đa thức chặt là $O(V \\cdot E^2)$, không phụ thuộc vào độ lớn trọng số."
+  },
+  {
+    "id": 834,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Một đồ thị có hướng không có chu trình (DAG - Directed Acyclic Graph) đơn giản gồm $n = 7$ đỉnh có thể chứa tối đa bao nhiêu cung?",
+    "options": [
+      "$42$ cung",
+      "$12$ cung",
+      "$49$ cung",
+      "$21$ cung"
+    ],
+    "correct": 3,
+    "explanation": "Mọi DAG đều có thể sắp xếp Topo thành thứ tự tuyến tính $v_1, v_2, \\dots, v_n$ sao cho mọi cung chỉ đi từ trái sang phải ($i < j$). Số cung tối đa là số cặp $(i, j)$ với $1 \\le i < j \\le n$, tức $\\binom{7}{2} = 21$ cung."
+  },
+  {
+    "id": 835,
+    "topic": "Lý Thuyết Đồ Thị - Công Thức Euler Cho Đồ Thị Phẳng",
+    "question": "Một khối đa diện lồi (tương ứng đồ thị phẳng liên thông $3$-chính quy) có $12$ mặt và $30$ cạnh (như khối $12$ mặt đều Dodecahedron). Số đỉnh của khối đa diện đó là:",
+    "options": [
+      "$18$ đỉnh",
+      "$24$ đỉnh",
+      "$12$ đỉnh",
+      "$20$ đỉnh"
+    ],
+    "correct": 3,
+    "explanation": "Áp dụng công thức Euler cho đồ thị phẳng liên thông $V - E + F = 2 \\Rightarrow V = 2 - F + E = 2 - 12 + 30 = 20$ đỉnh."
+  },
+  {
+    "id": 836,
+    "topic": "Lý Thuyết Đồ Thị - Công Thức Euler Cho Đồ Thị Phẳng",
+    "question": "Một đơn đồ thị phẳng liên thông $3$-chính quy (mỗi đỉnh bậc $3$) mà mỗi miền trên mặt phẳng đều được bao quanh bởi đúng $4$ cạnh (hình tứ giác). Đồ thị này có bao nhiêu đỉnh, cạnh và miền (chính là hình lập phương $Q_3$)?",
+    "options": [
+      "$12$ đỉnh, $18$ cạnh, $8$ miền",
+      "$8$ đỉnh, $12$ cạnh, $6$ miền",
+      "$10$ đỉnh, $15$ cạnh, $7$ miền",
+      "$6$ đỉnh, $9$ cạnh, $5$ miền"
+    ],
+    "correct": 1,
+    "explanation": "Vì mọi đỉnh bậc $3$ nên $3V = 2E \\Rightarrow V = \\frac{2}{3}E$; mọi miền có $4$ cạnh biên nên $4F = 2E \\Rightarrow F = \\frac{1}{2}E$. Thay vào công thức Euler $V - E + F = 2$: $\\frac{2}{3}E - E + \\frac{1}{2}E = 2 \\iff \\frac{1}{6}E = 2 \\Rightarrow E = 12$, suy ra $V = 8$ và $F = 6$."
+  },
+  {
+    "id": 837,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Cho đồ thị vô hướng $5$ đỉnh $\\{1..5\\}$ với các cạnh $(u,v,w)$: $(1,2,3), (1,3,1), (1,4,6), (2,3,5), (2,5,3), (3,4,5), (3,5,6), (4,5,2)$. Khi chạy thuật toán <strong>Prim</strong> xuất phát từ đỉnh $1$, thứ tự các đỉnh được kết nạp vào cây khung nhỏ nhất và tổng trọng số MST là:",
+    "options": [
+      "$1 \\to 3 \\to 2 \\to 5 \\to 4$; trọng số $= 9$",
+      "$1 \\to 3 \\to 2 \\to 4 \\to 5$; trọng số $= 11$",
+      "$1 \\to 2 \\to 5 \\to 4 \\to 3$; trọng số $= 9$",
+      "$1 \\to 3 \\to 4 \\to 5 \\to 2$; trọng số $= 11$"
+    ],
+    "correct": 0,
+    "explanation": "Xuất phát từ $\\{1\\}$: chọn $(1,3,1) \\to$ kết nạp $3$; từ $\\{1,3\\}$ chọn $(1,2,3) \\to$ kết nạp $2$; từ $\\{1,2,3\\}$ chọn $(2,5,3) \\to$ kết nạp $5$; từ $\\{1,2,3,5\\}$ chọn $(5,4,2) \\to$ kết nạp $4$. Tổng trọng số là $1 + 3 + 3 + 2 = 9$."
+  },
+  {
+    "id": 838,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Một cây $T$ chỉ có các đỉnh bậc $1$, bậc $2$ và bậc $4$. Biết $T$ có đúng $5$ đỉnh bậc $4$ và $3$ đỉnh bậc $2$. Hỏi cây $T$ có bao nhiêu <strong>lá</strong> (đỉnh bậc $1$)?",
+    "options": [
+      "$14$ lá",
+      "$11$ lá",
+      "$12$ lá",
+      "$10$ lá"
+    ],
+    "correct": 2,
+    "explanation": "Gọi số lá là $L$. Tổng số đỉnh là $n = L + 3 + 5 = L + 8$, suy ra số cạnh là $n - 1 = L + 7$. Theo định lý bắt tay: $L\\cdot 1 + 3\\cdot 2 + 5\\cdot 4 = 2(L + 7) \\iff L + 26 = 2L + 14 \\Rightarrow L = 12$ lá."
+  },
+  {
+    "id": 839,
+    "topic": "Đường Đi Ngắn Nhất & Luồng Cực Đại",
+    "question": "Cho đồ thị có hướng $4$ đỉnh $\\{1, 2, 3, 4\\}$ có ma trận trọng số trực tiếp: $1\\to 2: 3$, $1\\to 3: 8$, $2\\to 4: 1$, $3\\to 2: 4$, $4\\to 1: 2$, $4\\to 3: -5$. Độ dài đường đi ngắn nhất từ đỉnh $1$ đến đỉnh $3$ (sau khi chạy thuật toán Floyd–Warshall hoặc Bellman–Ford) là:",
+    "options": [
+      "$8$",
+      "Không xác định do có chu trình âm",
+      "$0$",
+      "$-1$"
+    ],
+    "correct": 3,
+    "explanation": "Đường đi trực tiếp $1\\to 3$ có chi phí $8$, nhưng nếu đi vòng qua $1 \\to 2 \\to 4 \\to 3$ thì tổng trọng số chỉ là $3 + 1 + (-5) = -1$ (chu trình $4\\to 3\\to 2\\to 4$ có tổng $-5+4+1=0$ không âm). Vậy $d(1, 3) = -1$."
+  },
+  {
+    "id": 840,
+    "topic": "Đường Đi Ngắn Nhất & Luồng Cực Đại",
+    "question": "Cho đồ thị vô hướng có trọng số gồm $6$ đỉnh $\\{1..6\\}$ với các cạnh $(u,v,w)$: $(1,2,7), (1,3,9), (1,6,14), (2,3,10), (2,4,15), (3,4,11), (3,6,2), (4,5,6), (5,6,9)$. Đường đi ngắn nhất từ đỉnh $1$ đến đỉnh $5$ có độ dài bằng bao nhiêu?",
+    "options": [
+      "$20$ (qua $1 \\to 3 \\to 6 \\to 5$)",
+      "$23$ (qua $1 \\to 6 \\to 5$)",
+      "$26$ (qua $1 \\to 3 \\to 4 \\to 5$)",
+      "$28$ (qua $1 \\to 2 \\to 4 \\to 5$)"
+    ],
+    "correct": 0,
+    "explanation": "Áp dụng Dijkstra từ $1$: $d(2)=7,\\ d(3)=9,\\ d(6)=14$. Từ $3$ ($d=9$) cập nhật được $d(6) = \\min(14, 9 + 2) = 11$ và $d(4) = 9 + 11 = 20$. Từ $6$ ($d=11$) cập nhật $d(5) = 11 + 9 = 20$. Vậy đường đi ngắn nhất dài $20$ ($1 \\to 3 \\to 6 \\to 5$)."
+  }
+]

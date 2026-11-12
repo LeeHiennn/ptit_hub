@@ -1,0 +1,752 @@
+[
+  {
+    "id": 399,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "theory",
+    "question": "Trong nghịch lý cặp sinh đôi của Thuyết tương đối hẹp (người em bay bằng tên lửa ra không gian với tốc độ $v$ gần $c$ rồi quay trở về Trái Đất gặp người anh), vì sao kết quả cuối cùng người em luôn trẻ hơn người anh chứ hai người không có tuổi đối xứng nhau?",
+    "image": "",
+    "options": [
+      "Vì thời gian chỉ trôi chậm đi đối với các hạt không khối lượng nghỉ",
+      "Vì chuyển động của hai người không tương đương về mặt vật lý: người anh luôn ở trong một hệ quy chiếu quán tính (gần đúng), còn người em phải chịu gia tốc phanh, quay đầu và đổi sang hệ quy chiếu quán tính khác trên đường trở về",
+      "Vì đồng hồ cơ học trên tên lửa bị hỏng do trọng lực yếu ngoài vũ trụ",
+      "Vì tốc độ ánh sáng trên tàu khi bay về chậm hơn lúc bay đi"
+    ],
+    "correct": 1,
+    "explanation": "Nguyên lý tương đối chỉ khẳng định tính tương đương giữa các hệ quy chiếu **quán tính**. Để gặp lại người anh tại cùng một vị trí, người em buộc phải tăng tốc, quay đầu (chịu gia tốc phi quán tính và chuyển giữa hai đường thế giới quán tính khác nhau), nên đường thế giới của người anh là dài nhất về thời gian riêng $\\Delta\\tau$."
+  },
+  {
+    "id": 400,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "theory",
+    "question": "Xét hai sự kiện $1$ và $2$ xảy ra ở các hệ quy chiếu quán tính khác nhau. Biểu thức khoảng không-thời gian bình phương $s_{12}^2 = c^2(\\Delta t)^2 - (\\Delta x)^2 - (\\Delta y)^2 - (\\Delta z)^2$ có tính chất nào sau đây?",
+    "image": "",
+    "options": [
+      "Luôn bằng $0$ đối với mọi cặp sự kiện vật lý xảy ra trên cùng một hạt có khối lượng nghỉ $m_0 > 0$",
+      "Bất biến (giữ nguyên giá trị và dấu) qua phép biến đổi Lorentz giữa mọi hệ quy chiếu quán tính; nếu $s_{12}^2 > 0$ (kiểu thời gian) thì hai sự kiện có thể có quan hệ nhân quả và thứ tự thời gian của chúng được bảo toàn",
+      "Chỉ bất biến đối với phép biến đổi Galileo ở vận tốc nhỏ $V \\ll c$",
+      "Thay đổi dấu từ dương sang âm khi đổi sang hệ quy chiếu chạy với $V = 0{,}9c$"
+    ],
+    "correct": 1,
+    "explanation": "Khoảng $s_{12}^2$ là đại lượng bất biến Lorentz cơ bản của không-thời gian Minkowski. Nếu $s_{12}^2 > 0$ ($\\dfrac{|\\Delta r|}{|\\Delta t|} < c$), tín hiệu ánh sáng kịp truyền giữa hai sự kiện nên quan hệ nhân quả được giữ nguyên ($\\Delta t'$ luôn cùng dấu $\\Delta t$). Nếu $s_{12}^2 < 0$ (kiểu không gian), tồn tại hệ quy chiếu khiến hai sự kiện xảy ra đồng thời."
+  },
+  {
+    "id": 401,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Trong hệ quy chiếu quán tính $K$, hai tia chớp xảy ra **đồng thời** tại hai điểm nằm dọc trục $Ox$ cách nhau $\\Delta x = 3000\\ \\text{m}$. Một con tàu vũ trụ $K'$ bay dọc trục $+Ox$ với vận tốc $V = 0{,}6c$ so với $K$. Theo đồng hồ trong hệ $K'$, hai sự kiện này lệch nhau một khoảng thời gian $|\\Delta t'|$ bằng:",
+    "image": "",
+    "options": [
+      "$|\\Delta t'| = 0\\ \\mu\\text{s}$ (vẫn đồng thời)",
+      "$|\\Delta t'| = 6{,}0\\ \\mu\\text{s}$",
+      "$|\\Delta t'| = 7{,}5\\ \\mu\\text{s}$",
+      "$|\\Delta t'| = 10{,}0\\ \\mu\\text{s}$"
+    ],
+    "correct": 2,
+    "explanation": "Áp dụng phép biến đổi Lorentz cho khoảng thời gian: $\\Delta t' = \\gamma\\left(\\Delta t - \\dfrac{V\\Delta x}{c^2}\\right)$ với $\\gamma = \\dfrac{1}{\\sqrt{1 - 0{,}6^2}} = 1{,}25$ và $\\Delta t = 0$. Do đó $|\\Delta t'| = 1{,}25\\cdot\\dfrac{0{,}6c\\cdot 3000}{c^2} = \\dfrac{1{,}25\\times 1800}{3\\times 10^8} = 7{,}5\\times 10^{-6}\\ \\text{s} = 7{,}5\\ \\mu\\text{s}$."
+  },
+  {
+    "id": 402,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Trong máy gia tốc va chạm, hai chùm hạt electron và pôzitrôn bay ngược chiều nhau dọc theo một đường thẳng với tốc độ so với phòng thí nghiệm lần lượt là $v_1 = 0{,}6c$ và $v_2 = 0{,}8c$. Tốc độ tương đối của hạt này đối với hạt kia bằng:",
+    "image": "",
+    "options": [
+      "$u \\approx 0{,}976c$",
+      "$u \\approx 0{,}700c$",
+      "$u = 1{,}400c$",
+      "$u \\approx 0{,}946c$"
+    ],
+    "correct": 3,
+    "explanation": "Áp dụng công thức cộng vận tốc tương đối tính khi hai vật chuyển động ngược chiều nhau: $u = \\dfrac{v_1 + v_2}{1 + \\frac{v_1 v_2}{c^2}} = \\dfrac{0{,}6c + 0{,}8c}{1 + 0{,}6\\times 0{,}8} = \\dfrac{1{,}40}{1{,}48}c \\approx 0{,}946c < c$."
+  },
+  {
+    "id": 403,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Một thanh thẳng có chiều dài riêng $\\ell_0 = 2\\ \\text{m}$ đặt trong hệ $K'$ hợp với trục $O'x'$ góc $\\theta_0 = 45^\\circ$. Hệ $K'$ chuyển động thẳng đều dọc theo trục $+Ox$ với vận tốc $V = 0{,}6c$ so với hệ $K$. Chiều dài $\\ell$ của thanh mà người quan sát trong hệ $K$ đo được bằng:",
+    "image": "",
+    "options": [
+      "$\\ell = 2{,}00\\ \\text{m}$",
+      "$\\ell \\approx 1{,}81\\ \\text{m}$",
+      "$\\ell \\approx 1{,}41\\ \\text{m}$",
+      "$\\ell = 1{,}60\\ \\text{m}$"
+    ],
+    "correct": 1,
+    "explanation": "Sự co ngắn chỉ xảy ra theo phương chuyển động ($Ox$): $\\ell_{0x} = \\ell_{0y} = 2\\cos 45^\\circ = \\sqrt{2}\\ \\text{m}$. Trong hệ $K$: $\\ell_x = \\ell_{0x}\\sqrt{1 - 0{,}6^2} = 0{,}8\\sqrt{2}\\ \\text{m}$, còn $\\ell_y = \\ell_{0y} = \\sqrt{2}\\ \\text{m}$ giữ nguyên. Vậy $\\ell = \\sqrt{\\ell_x^2 + \\ell_y^2} = \\sqrt{2(0{,}64 + 1)} = \\sqrt{3{,}28} \\approx 1{,}81\\ \\text{m}$."
+  },
+  {
+    "id": 404,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Một hạt muon ($\\mu^-$) có thời gian sống trung bình khi đứng yên là $\\tau_0 = 2{,}2\\ \\mu\\text{s}$. Hạt muon này được tạo ra trong tầng khí quyển trên cao và lao xuống với tốc độ $v = 0{,}995c$. Quãng đường trung bình mà muon đi được trước khi phân rã theo quan sát từ Trái Đất xấp xỉ là:",
+    "image": "",
+    "options": [
+      "$s \\approx 13\\,150\\ \\text{m}$",
+      "$s \\approx 2200\\ \\text{m}$",
+      "$s \\approx 6575\\ \\text{m}$ ($\\approx 6{,}6\\ \\text{km}$)",
+      "$s \\approx 657\\ \\text{m}$ ($\\approx 0{,}66\\ \\text{km}$)"
+    ],
+    "correct": 2,
+    "explanation": "Theo đồng hồ trên Trái Đất, thời gian sống của muon giãn ra thành $\\tau = \\dfrac{\\tau_0}{\\sqrt{1 - 0{,}995^2}} \\approx 10{,}0125\\times 2{,}2\\ \\mu\\text{s} \\approx 22{,}03\\ \\mu\\text{s}$. Quãng đường đi được $s = v\\tau = 0{,}995\\times 3\\times 10^8\\times 22{,}03\\times 10^{-6} \\approx 6575\\ \\text{m}$ (nhờ đó nhiều muon tới được mặt đất)."
+  },
+  {
+    "id": 405,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Một hạt có khối lượng nghỉ $m_0$ chuyển động sao cho động năng tương đối tính của nó bằng $2$ lần năng lượng nghỉ ($W_{\\text{đ}} = 2 m_0 c^2$). Độ lớn động lượng tương đối tính $p$ của hạt đó bằng:",
+    "image": "",
+    "options": [
+      "$p = 2\\sqrt{2}\\,m_0 c$",
+      "$p = 3\\,m_0 c$",
+      "$p = 2\\,m_0 c$",
+      "$p = \\sqrt{3}\\,m_0 c$"
+    ],
+    "correct": 0,
+    "explanation": "Năng lượng toàn phần $E = E_0 + W_{\\text{đ}} = 3 m_0 c^2$. Từ hệ thức bất biến $E^2 = m_0^2 c^4 + p^2 c^2 \\Rightarrow p c = \\sqrt{E^2 - E_0^2} = \\sqrt{(3 E_0)^2 - E_0^2} = \\sqrt{8}\\,m_0 c^2 \\Rightarrow p = 2\\sqrt{2}\\,m_0 c$."
+  },
+  {
+    "id": 406,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Mặt Trời bức xạ năng lượng điện từ ra không gian với tổng công suất gần như không đổi $P \\approx 3{,}87\\times 10^{26}\\ \\text{W}$. Theo hệ thức Einstein $\\Delta E = \\Delta m c^2$, mỗi giây khối lượng nghỉ của Mặt Trời bị chuyển hóa thành bức xạ mất đi xấp xỉ:",
+    "image": "",
+    "options": [
+      "$\\Delta m \\approx 4{,}3\\times 10^9\\ \\text{kg/s}$ ($4{,}3$ triệu tấn mỗi giây)",
+      "$\\Delta m \\approx 1{,}29\\times 10^{18}\\ \\text{kg/s}$",
+      "$\\Delta m \\approx 8{,}6\\times 10^{10}\\ \\text{kg/s}$",
+      "$\\Delta m \\approx 4{,}3\\times 10^6\\ \\text{kg/s}$"
+    ],
+    "correct": 0,
+    "explanation": "Mỗi giây Mặt Trời bức xạ năng lượng $\\Delta E = 3{,}87\\times 10^{26}\\ \\text{J}$, ứng với độ hụt khối lượng $\\Delta m = \\dfrac{\\Delta E}{c^2} = \\dfrac{3{,}87\\times 10^{26}}{(3\\times 10^8)^2} = \\dfrac{3{,}87\\times 10^{26}}{9\\times 10^{16}} = 4{,}3\\times 10^9\\ \\text{kg}$."
+  },
+  {
+    "id": 407,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Một hạt có khối lượng nghỉ $M$ đang đứng yên thì tự phân rã thành hai hạt giống hệt nhau có khối lượng nghỉ mỗi hạt là $m_0$, bay ra ngược chiều với cùng tốc độ $v = 0{,}6c$. Tỉ số khối lượng nghỉ $\\dfrac{M}{m_0}$ bằng:",
+    "image": "",
+    "options": [
+      "$\\dfrac{M}{m_0} = 1{,}25$",
+      "$\\dfrac{M}{m_0} = 2{,}5$",
+      "$\\dfrac{M}{m_0} = 3{,}33$",
+      "$\\dfrac{M}{m_0} = 2{,}0$"
+    ],
+    "correct": 1,
+    "explanation": "Theo bảo toàn năng lượng toàn phần (bỏ qua tương tác sau phân rã): $M c^2 = 2\\gamma m_0 c^2$ với $\\gamma = \\dfrac{1}{\\sqrt{1 - 0{,}6^2}} = 1{,}25$. Suy ra $\\dfrac{M}{m_0} = 2\\times 1{,}25 = 2{,}5$ (lớn hơn tổng $2m_0$ vì một phần khối lượng nghỉ $M$ đã chuyển hóa thành động năng của hai hạt con!)."
+  },
+  {
+    "id": 408,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Hai hạt có cùng khối lượng nghỉ $m_0$ chuyển động đối đầu với cùng tốc độ $v = 0{,}8c$ va chạm mềm dính vào nhau thành một hạt tổng hợp đứng yên có khối lượng nghỉ $M$. Khối lượng nghỉ $M$ của hạt mới tạo thành bằng:",
+    "image": "",
+    "options": [
+      "$M = \\dfrac{5}{3}m_0$",
+      "$M = \\dfrac{8}{3}m_0$",
+      "$M = 2 m_0$",
+      "$M = \\dfrac{10}{3}m_0$"
+    ],
+    "correct": 3,
+    "explanation": "Trong va chạm mềm tương đối tính, **năng lượng toàn phần** bảo toàn chứ khối lượng nghỉ không bảo toàn: $M c^2 = 2\\gamma m_0 c^2 = \\dfrac{2}{\\sqrt{1 - 0{,}8^2}}m_0 c^2 = \\dfrac{2}{0{,}6}m_0 c^2 = \\dfrac{10}{3}m_0 c^2 \\Rightarrow M = \\dfrac{10}{3}m_0$."
+  },
+  {
+    "id": 423,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "theory",
+    "question": "Lý thuyết sóng điện từ cổ điển đã **thất bại** không thể giải thích được điểm nào sau đây trong thí nghiệm hiện tượng quang điện ngoài?",
+    "image": "",
+    "options": [
+      "Hiện tượng electron mang điện tích âm chuyển động về anốt khi đặt hiệu điện thế thuận",
+      "Sự tồn tại của bước sóng giới hạn $\\lambda_0$ (ánh sáng tần số thấp dù cường độ mạnh đến mấy cũng không bứt được electron) và việc động năng ban đầu cực đại của quang electron phụ thuộc tuyến tính vào tần số ánh sáng mà **không** phụ thuộc vào cường độ chùm sáng",
+      "Việc cường độ dòng quang điện bão hòa tỉ lệ thuận với cường độ chùm sáng tới khi $\\lambda \\le \\lambda_0$",
+      "Việc dùng các kim loại kiềm dễ gây ra hiện tượng quang điện hơn so với kẽm hay đồng"
+    ],
+    "correct": 1,
+    "explanation": "Theo sóng cổ điển, ánh sáng có cường độ đủ mạnh sẽ tích lũy dần năng lượng làm bật electron ở mọi tần số và làm $W_{\\text{đmax}}$ tăng theo cường độ sáng. Thực nghiệm lại chứng minh cơ chế hấp thụ tức thời từng lượng tử năng lượng $h\\nu$, dẫn tới công thức Einstein $h\\nu = A + W_{\\text{đmax}}$."
+  },
+  {
+    "id": 424,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "theory",
+    "question": "Sự khác biệt căn bản giữa hiện tượng **quang điện trong** (xảy ra trong chất bán dẫn, ứng dụng ở quang trở LDR hay pin mặt trời) và hiện tượng **quang điện ngoài** (trên catốt kim loại) là gì?",
+    "image": "",
+    "options": [
+      "Trong quang điện trong, phôtôn giải phóng electron liên kết trở thành **electron dẫn và lỗ trống** tự do chuyển động ngay **bên trong** khối bán dẫn (nên cần $\\varepsilon_{\\text{photon}} \\ge \\Delta E_g$ nhỏ hơn nhiều so với công thoát $A$ ra chân không), còn quang điện ngoài làm electron thoát hẳn ra khỏi bề mặt vật",
+      "Quang điện ngoài luôn tạo ra đồng thời các cặp electron – lỗ trống trên bề mặt kim loại",
+      "Trong quang điện trong không tồn tại giới hạn quang dẫn $\\lambda_0$",
+      "Quang điện trong chỉ xảy ra với tia X và tia gamma"
+    ],
+    "correct": 0,
+    "explanation": "Năng lượng cần để phá vỡ liên kết đưa electron từ vùng hóa trị lên vùng dẫn ($\\Delta E_g \\sim 0{,}6\\text{–}1{,}5\\ \\text{eV}$) nhỏ hơn công thoát ra ngoài môi trường ($A \\sim 2\\text{–}5\\ \\text{eV}$), do đó nhiều bán dẫn như $\\text{Si}, \\text{Ge}, \\text{PbS}$ có hiện tượng quang điện trong ngay cả với ánh sáng hồng ngoại."
+  },
+  {
+    "id": 425,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Một bút laser $\\text{He-Ne}$ phát chùm sáng đơn sắc màu đỏ bước sóng $\\lambda = 632{,}8\\ \\text{nm}$ với công suất phát xạ liên tục $P = 10\\ \\text{mW}$. Lấy $h = 6{,}625\\times 10^{-34}\\ \\text{J}\\cdot\\text{s},\\ c = 3\\times 10^8\\ \\text{m/s}$, số phôtôn phát ra từ laser trong mỗi giây xấp xỉ là:",
+    "image": "",
+    "options": [
+      "$N \\approx 1{,}59\\times 10^{17}\\ \\text{phôtôn/s}$",
+      "$N \\approx 6{,}36\\times 10^{15}\\ \\text{phôtôn/s}$",
+      "$N \\approx 3{,}18\\times 10^{16}\\ \\text{phôtôn/s}$",
+      "$N \\approx 3{,}18\\times 10^{19}\\ \\text{phôtôn/s}$"
+    ],
+    "correct": 2,
+    "explanation": "Năng lượng mỗi phôtôn: $\\varepsilon = \\dfrac{hc}{\\lambda} = \\dfrac{6{,}625\\times 10^{-34}\\times 3\\times 10^8}{632{,}8\\times 10^{-9}} \\approx 3{,}141\\times 10^{-19}\\ \\text{J}$. Số phôtôn phát ra trong $1\\ \\text{s}$: $N = \\dfrac{P}{\\varepsilon} = \\dfrac{10\\times 10^{-3}}{3{,}141\\times 10^{-19}} \\approx 3{,}18\\times 10^{16}\\ \\text{phôtôn/s}$."
+  },
+  {
+    "id": 426,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Ánh sáng Mặt Trời chiếu vuông góc lên một cánh buồm mặt trời có cường độ bức xạ (mật độ công suất) $I = 1200\\ \\text{W/m}^2$ và hệ số phản xạ của cánh buồm là $\\rho = 0{,}8$ ($80\\%$). Áp suất ánh sáng tác dụng lên cánh buồm ($p = (1 + \\rho)\\dfrac{I}{c}$) bằng:",
+    "image": "",
+    "options": [
+      "$p = 7{,}2\\times 10^{-6}\\ \\text{Pa}$",
+      "$p = 3{,}2\\times 10^{-6}\\ \\text{Pa}$",
+      "$p = 4{,}0\\times 10^{-6}\\ \\text{Pa}$",
+      "$p = 8{,}0\\times 10^{-6}\\ \\text{Pa}$"
+    ],
+    "correct": 0,
+    "explanation": "Mỗi phôtôn bị hấp thụ truyền xung lượng $E/c$, còn phôtôn phản xạ truyền $2E/c$. Với hệ số phản xạ $\\rho = 0{,}8$, áp suất bức xạ vuông góc bằng $p = (1 + \\rho)\\dfrac{I}{c} = (1 + 0{,}8)\\dfrac{1200}{3\\times 10^8} = 7{,}2\\times 10^{-6}\\ \\text{N/m}^2$."
+  },
+  {
+    "id": 427,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Phân tích bức xạ nhiệt phát ra từ một lò nung coi như vật đen tuyệt đối cho thấy năng suất phát xạ đơn sắc đạt giá trị cực đại tại bước sóng hồng ngoại gần $\\lambda_{\\max} = 1{,}449\\ \\mu\\text{m}$. Cho hằng số Wien $b = 2{,}898\\times 10^{-3}\\ \\text{m}\\cdot\\text{K}$, nhiệt độ tuyệt đối của lò bằng:",
+    "image": "",
+    "options": [
+      "$T = 1500\\ \\text{K}$",
+      "$T = 2000\\ \\text{K}$ ($1727^\\circ\\text{C}$)",
+      "$T = 4000\\ \\text{K}$",
+      "$T = 2898\\ \\text{K}$"
+    ],
+    "correct": 1,
+    "explanation": "Theo định luật dịch chuyển Wien: $\\lambda_{\\max} T = b \\Rightarrow T = \\dfrac{b}{\\lambda_{\\max}} = \\dfrac{2{,}898\\times 10^{-3}}{1{,}449\\times 10^{-6}} = 2000\\ \\text{K}$."
+  },
+  {
+    "id": 428,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Một lò nung kín được nung nóng ở nhiệt độ không đổi $T = 1000\\ \\text{K}$ có khoét một lỗ tròn nhỏ bán kính $r = 2\\ \\text{cm}$ (đóng vai trò là một vật đen tuyệt đối có hệ số hấp thụ $a = 1$). Lấy $\\sigma = 5{,}67\\times 10^{-8}\\ \\text{W}\\cdot\\text{m}^{-2}\\cdot\\text{K}^{-4}$, công suất bức xạ nhiệt thoát ra ngoài qua lỗ nhỏ đó xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$P \\approx 142{,}5\\ \\text{W}$",
+      "$P \\approx 28{,}5\\ \\text{W}$",
+      "$P \\approx 22{,}7\\ \\text{W}$",
+      "$P \\approx 71{,}3\\ \\text{W}$"
+    ],
+    "correct": 3,
+    "explanation": "Diện tích lỗ bức xạ là $S = \\pi r^2 = \\pi(0{,}02)^2 \\approx 1{,}2566\\times 10^{-3}\\ \\text{m}^2$. Công suất thoát qua lỗ theo định luật Stefan-Boltzmann: $P = \\sigma S T^4 = 5{,}67\\times 10^{-8}\\times \\pi(0{,}02)^2\\times (1000)^4 \\approx 71{,}25\\ \\text{W}$."
+  },
+  {
+    "id": 429,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Trong thí nghiệm xác định công thoát của một kim loại làm catốt tế bào quang điện: khi chiếu bức xạ $\\lambda_1 = 300\\ \\text{nm}$ thì hiệu điện thế hãm đo được là $U_{h1} = 1{,}80\\ \\text{V}$. Khi thay bằng bức xạ $\\lambda_2 = 400\\ \\text{nm}$, năng lượng mỗi phôtôn tính theo $\\text{eV}$ giảm đi còn $\\approx 3{,}11\\ \\text{eV}$. Công thoát $A$ của electron khỏi kim loại này gần nhất với:",
+    "image": "",
+    "options": [
+      "$A \\approx 3{,}11\\ \\text{eV}$",
+      "$A \\approx 4{,}14\\ \\text{eV}$",
+      "$A \\approx 2{,}34\\ \\text{eV}$",
+      "$A \\approx 1{,}80\\ \\text{eV}$"
+    ],
+    "correct": 2,
+    "explanation": "Năng lượng phôtôn ứng với $\\lambda_1 = 300\\ \\text{nm}$ là $\\varepsilon_1 = \\dfrac{hc}{e\\lambda_1} = \\dfrac{6{,}625\\times 10^{-34}\\times 3\\times 10^8}{1{,}6\\times 10^{-19}\\times 300\\times 10^{-9}} \\approx 4{,}14\\ \\text{eV}$. Theo phương trình Einstein: $A = \\varepsilon_1 - e U_{h1} = 4{,}14 - 1{,}80 = 2{,}34\\ \\text{eV}$."
+  },
+  {
+    "id": 430,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Chiếu tia tử ngoại vào một tấm kim loại đặt trong chân không. Những quang electron có động năng cực đại bắn ra bay vuông góc vào một từ trường đều có cảm ứng từ $B = 2{,}0\\times 10^{-4}\\ \\text{T}$ thì vạch một quỹ đạo tròn có bán kính lớn nhất $R_{\\max} = 2{,}5\\ \\text{cm}$. Cho $m_e = 9{,}1\\times 10^{-31}\\ \\text{kg},\\ e = 1{,}6\\times 10^{-19}\\ \\text{C}$, động năng ban đầu cực đại của quang electron (tính theo $\\text{eV}$) xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$W_{\\text{đmax}} \\approx 4{,}40\\ \\text{eV}$",
+      "$W_{\\text{đmax}} \\approx 1{,}10\\ \\text{eV}$",
+      "$W_{\\text{đmax}} \\approx 3{,}52\\ \\text{eV}$",
+      "$W_{\\text{đmax}} \\approx 2{,}20\\ \\text{eV}$"
+    ],
+    "correct": 3,
+    "explanation": "Trong từ trường đều, lực Lorentz tạo hướng tâm: $R_{\\max} = \\dfrac{m_e v_{\\max}}{e B} \\Rightarrow p_{\\max} = e B R_{\\max} = 1{,}6\\times 10^{-19}\\cdot 2{,}0\\times 10^{-4}\\cdot 0{,}025 = 8{,}0\\times 10^{-25}\\ \\text{kg}\\cdot\\text{m/s}$. Động năng cực đại $W_{\\text{đmax}} = \\dfrac{p_{\\max}^2}{2 m_e} = \\dfrac{(8{,}0\\times 10^{-25})^2}{2\\times 9{,}1\\times 10^{-31}} \\approx 3{,}516\\times 10^{-19}\\ \\text{J} \\approx 2{,}20\\ \\text{eV}$."
+  },
+  {
+    "id": 431,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Trong thí nghiệm tán xạ Compton trên electron tự do đứng yên, chùm phôtôn tia X tán xạ có độ dịch bước sóng đo được bằng một nửa bước sóng Compton của electron ($\\Delta\\lambda = \\lambda' - \\lambda = 0{,}5\\lambda_C$). Góc tán xạ $\\theta$ của phôtôn bằng:",
+    "image": "",
+    "options": [
+      "$\\theta = 60^\\circ$",
+      "$\\theta = 120^\\circ$",
+      "$\\theta = 90^\\circ$",
+      "$\\theta = 45^\\circ$"
+    ],
+    "correct": 0,
+    "explanation": "Theo công thức Compton: $\\Delta\\lambda = \\lambda_C(1 - \\cos\\theta) = 0{,}5\\lambda_C \\Rightarrow 1 - \\cos\\theta = 0{,}5 \\Rightarrow \\cos\\theta = 0{,}5 \\Rightarrow \\theta = 60^\\circ$."
+  },
+  {
+    "id": 432,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Một phôtôn tia gamma có năng lượng đúng bằng năng lượng nghỉ của electron ($E = m_e c^2 \\approx 0{,}511\\ \\text{MeV}$) va chạm Compton trực diện với một electron tự do đứng yên rồi bật ngược lại theo góc $\\theta = 180^\\circ$. Động năng cực đại mà electron thu được bằng:",
+    "image": "",
+    "options": [
+      "$W_{\\text{đmax}} = 0{,}511\\ \\text{MeV}$ (truyền $100\\%$ năng lượng)",
+      "$W_{\\text{đmax}} = \\dfrac{1}{3}E \\approx 0{,}170\\ \\text{MeV}$",
+      "$W_{\\text{đmax}} = \\dfrac{1}{2}E \\approx 0{,}256\\ \\text{MeV}$",
+      "$W_{\\text{đmax}} = \\dfrac{2}{3}E \\approx 0{,}341\\ \\text{MeV}$"
+    ],
+    "correct": 3,
+    "explanation": "Vì $E = m_e c^2 = \\dfrac{hc}{\\lambda_C}$ nên bước sóng ban đầu $\\lambda = \\lambda_C$. Khi tán xạ ngược $\\theta = 180^\\circ$: $\\lambda' = \\lambda + \\lambda_C(1 - \\cos 180^\\circ) = \\lambda_C + 2\\lambda_C = 3\\lambda_C$. Suy ra năng lượng phôtôn sau tán xạ là $E' = \\dfrac{E}{3}$, nên electron nhận động năng $W_{\\text{đmax}} = E - E' = \\dfrac{2}{3}E \\approx 0{,}341\\ \\text{MeV}$."
+  },
+  {
+    "id": 435,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "theory",
+    "question": "Trong cơ học lượng tử, hàm sóng $\\psi(\\vec{r}, t)$ mô tả trạng thái của một vi hạt phải thỏa mãn các điều kiện tiêu chuẩn nào về mặt toán học để có ý nghĩa vật lý hợp lệ?",
+    "image": "",
+    "options": [
+      "Hàm sóng phải tuần hoàn theo không gian với chu kỳ bằng hằng số Planck $h$",
+      "Hàm sóng luôn phải là hàm số thực và không âm tại mọi điểm ($\\psi \\ge 0$)",
+      "Đạo hàm bậc hai $\\psi''$ phải triệt tiêu bằng $0$ tại mọi điểm trong giếng thế",
+      "Hàm sóng phải **đơn trị, liên tục (cùng các đạo hàm bậc nhất liên tục ở thế hữu hạn), hữu hạn** trong toàn không gian và thỏa mãn điều kiện chuẩn hóa $\\displaystyle\\int |\\psi(\\vec{r}, t)|^2 dV = 1$"
+    ],
+    "correct": 3,
+    "explanation": "Vì $|\\psi(\\vec{r}, t)|^2$ biểu thị **mật độ xác suất** tìm thấy hạt tại vị trí $\\vec{r}$ lúc $t$, tổng xác suất tìm thấy hạt trong toàn bộ không gian phải bằng $1$ (chuẩn hóa). Đồng thời hàm $\\psi$ phải đơn trị, hữu hạn và liên tục (trừ các bước nhảy thế năng cao vô hạn nơi đạo hàm bậc nhất có thể gián đoạn)."
+  },
+  {
+    "id": 436,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "theory",
+    "question": "Khi thế năng $U(\\vec{r})$ của hạt **không phụ thuộc vào thời gian**, phương trình Schrödinger viết dưới dạng dừng $\\hat{H}\\psi(\\vec{r}) = E\\psi(\\vec{r})$ có nghiệm là các trạng thái dừng. Ý nghĩa của \\\"trạng thái dừng\\\" là gì?",
+    "image": "",
+    "options": [
+      "Là trạng thái ứng với mức năng lượng xác định $E$, trong đó hàm sóng toàn phần $\\Psi(\\vec{r}, t) = \\psi(\\vec{r})e^{-iEt/\\hbar}$ có mật độ xác suất $|\\Psi(\\vec{r}, t)|^2 = |\\psi(\\vec{r})|^2$ **không thay đổi theo thời gian**",
+      "Là trạng thái hạt chỉ chuyển động dọc theo quỹ đạo tròn bán kính cố định",
+      "Là trạng thái hạt đứng yên tuyệt đối tại một điểm có động năng $W_{\\text{đ}} = 0$",
+      "Là trạng thái mà tại đó $E = 0$ và thế năng triệt tiêu"
+    ],
+    "correct": 0,
+    "explanation": "Trong trạng thái dừng (trạng thái riêng của toán tử Hamilton $\\hat{H}$ độc lập thời gian), thừa số pha $e^{-iEt/\\hbar}$ có môđun bằng $1$, nên phân bố mật độ xác suất và giá trị trung bình của mọi đại lượng không phụ thuộc thời gian $t$."
+  },
+  {
+    "id": 437,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "theory",
+    "question": "Theo cơ học lượng tử, mức năng lượng cơ bản thấp nhất ($n = 0$) của một dao động tử điều hòa một chiều có giá trị $E_0 = \\dfrac{1}{2}\\hbar\\omega > 0$ (năng lượng điểm không) chứ không bằng $0$ như vật lý cổ điển. Nguyên nhân sâu xa của hiện tượng này là:",
+    "image": "",
+    "options": [
+      "Do hằng số Planck phụ thuộc vào nhiệt độ tuyệt đối $T$",
+      "Do thế năng của lò xo ở điểm cân bằng $x = 0$ được quy ước bằng hằng số khác không",
+      "Hệ thức bất định Heisenberg ($\\Delta x\\cdot\\Delta p \\ge \\hbar/2$): nếu $E_0 = 0$ thì hạt phải đồng thời đứng yên hoàn toàn ($p = 0 \\Rightarrow \\Delta p = 0$) tại đúng đáy giếng thế ($x = 0 \\Rightarrow \\Delta x = 0$), điều này vi phạm nguyên lý bất định",
+      "Do sự va chạm liên tục với các phân tử không khí ở nhiệt độ phòng"
+    ],
+    "correct": 2,
+    "explanation": "Năng lượng $E = \\dfrac{\\langle p^2\\rangle}{2m} + \\dfrac{1}{2}m\\omega^2\\langle x^2\\rangle \\ge \\dfrac{(\\Delta p)^2}{2m} + \\dfrac{1}{2}m\\omega^2(\\Delta x)^2$. Nếu định xứ chặt hạt tại gốc ($\\Delta x \\to 0$) thì bất định động lượng $\\Delta p \\to \\infty$ làm động năng tăng vọt. Giá trị cực tiểu cân bằng đạt tại $E_0 = \\dfrac{1}{2}\\hbar\\omega$."
+  },
+  {
+    "id": 438,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Nơtron nhiệt có khối lượng $m_n \\approx 1{,}675\\times 10^{-27}\\ \\text{kg}$ ở trạng thái cân bằng nhiệt tại $T = 300\\ \\text{K}$ có động năng trung bình bằng $W_{\\text{đ}} = \\dfrac{3}{2}k_B T$ ($k_B = 1{,}38\\times 10^{-23}\\ \\text{J/K}$). Bước sóng de Broglie của nơtron nhiệt đó xấp xỉ là:",
+    "image": "",
+    "options": [
+      "$\\lambda \\approx 6{,}20\\ \\text{nm}$",
+      "$\\lambda \\approx 0{,}073\\ \\text{nm}$",
+      "$\\lambda \\approx 0{,}145\\ \\text{nm}$ ($\\approx 1{,}45\\ \\text{Å}$)",
+      "$\\lambda \\approx 0{,}252\\ \\text{nm}$"
+    ],
+    "correct": 2,
+    "explanation": "Động lượng tương ứng: $p = \\sqrt{2 m_n W_{\\text{đ}}} = \\sqrt{3 m_n k_B T} = \\sqrt{3\\times 1{,}675\\times 10^{-27}\\times 1{,}38\\times 10^{-23}\\times 300} \\approx 4{,}561\\times 10^{-24}\\ \\text{kg}\\cdot\\text{m/s}$. Bước sóng de Broglie $\\lambda = \\dfrac{h}{p} = \\dfrac{6{,}625\\times 10^{-34}}{4{,}561\\times 10^{-24}} \\approx 1{,}45\\times 10^{-10}\\ \\text{m} = 0{,}145\\ \\text{nm}$ (cỡ hằng số mạng tinh thể nên nơtron nhiệt dùng rất tốt để nhiễu xạ tinh thể!)."
+  },
+  {
+    "id": 439,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Theo điều kiện lượng tử hóa quỹ đạo dừng bằng sóng dừng de Broglie ($2\\pi r_n = n\\lambda$), biết bán kính quỹ đạo Bohr thứ nhất ($n = 1$) của electron trong nguyên tử Hiđrô là $r_1 = 0{,}529\\ \\text{Å}$. Bước sóng de Broglie $\\lambda$ và tốc độ $v_1$ của electron trên quỹ đạo này xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$\\lambda \\approx 0{,}529\\ \\text{Å};\\ v_1 \\approx 1{,}38\\times 10^7\\ \\text{m/s}$",
+      "$\\lambda \\approx 6{,}65\\ \\text{Å};\\ v_1 \\approx 1{,}09\\times 10^6\\ \\text{m/s}$",
+      "$\\lambda \\approx 3{,}32\\ \\text{Å};\\ v_1 \\approx 2{,}19\\times 10^6\\ \\text{m/s}$",
+      "$\\lambda \\approx 1{,}66\\ \\text{Å};\\ v_1 \\approx 4{,}38\\times 10^6\\ \\text{m/s}$"
+    ],
+    "correct": 2,
+    "explanation": "Quỹ đạo cơ bản chứa đúng một bước sóng de Broglie khép kín: $\\lambda = 2\\pi r_1 = 2\\pi\\times 0{,}529 \\approx 3{,}324\\ \\text{Å} = 3{,}324\\times 10^{-10}\\ \\text{m}$. Tốc độ electron: $v_1 = \\dfrac{h}{m_e \\lambda} = \\dfrac{6{,}625\\times 10^{-34}}{9{,}1\\times 10^{-31}\\times 3{,}324\\times 10^{-10}} \\approx 2{,}19\\times 10^6\\ \\text{m/s}$."
+  },
+  {
+    "id": 440,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Trong thí nghiệm kinh điển Davisson - Germer khẳng định sóng de Broglie, một chùm electron (ban đầu đứng yên) được tăng tốc qua hiệu điện thế $U = 54\\ \\text{V}$ rồi chiếu vào đơn tinh thể Niken. Bước sóng de Broglie của chùm electron đó xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$\\lambda \\approx 0{,}23\\ \\text{Å}$",
+      "$\\lambda \\approx 3{,}34\\ \\text{Å}$",
+      "$\\lambda \\approx 1{,}67\\ \\text{Å}$ ($0{,}167\\ \\text{nm}$)",
+      "$\\lambda \\approx 0{,}54\\ \\text{Å}$"
+    ],
+    "correct": 2,
+    "explanation": "Sử dụng công thức phi tương đối ($eU = 54\\ \\text{eV} \\ll m_e c^2$): $\\lambda = \\dfrac{h}{\\sqrt{2 m_e e U}} = \\dfrac{6{,}625\\times 10^{-34}}{\\sqrt{2\\times 9{,}1\\times 10^{-31}\\times 1{,}6\\times 10^{-19}\\times 54}} \\approx 1{,}67\\times 10^{-10}\\ \\text{m} = 1{,}67\\ \\text{Å}$."
+  },
+  {
+    "id": 441,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Một electron bị giam giữ trong một chấm lượng tử kích thước tuyến tính $\\Delta x = 2{,}0\\ \\text{nm}$. Lấy $\\hbar = 1{,}055\\times 10^{-34}\\ \\text{J}\\cdot\\text{s},\\ m_e = 9{,}1\\times 10^{-31}\\ \\text{kg}$ và dùng hệ thức bất định Heisenberg dạng $\\Delta x\\cdot\\Delta p_x \\approx \\hbar$, độ bất định vận tốc $\\Delta v_x$ của electron đó cỡ:",
+    "image": "",
+    "options": [
+      "$\\Delta v_x \\approx 1{,}16\\times 10^5\\ \\text{m/s}$",
+      "$\\Delta v_x \\approx 2{,}90\\times 10^4\\ \\text{m/s}$",
+      "$\\Delta v_x \\approx 3{,}64\\times 10^5\\ \\text{m/s}$",
+      "$\\Delta v_x \\approx 5{,}80\\times 10^4\\ \\text{m/s}$"
+    ],
+    "correct": 3,
+    "explanation": "Từ $\\Delta p_x = m_e\\Delta v_x \\approx \\dfrac{\\hbar}{\\Delta x} \\Rightarrow \\Delta v_x \\approx \\dfrac{\\hbar}{m_e\\Delta x} = \\dfrac{1{,}055\\times 10^{-34}}{9{,}1\\times 10^{-31}\\times 2{,}0\\times 10^{-9}} \\approx 5{,}80\\times 10^4\\ \\text{m/s}$."
+  },
+  {
+    "id": 442,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Một mức năng lượng kích thích của nguyên tử có thời gian sống trung bình trước khi chuyển xuống mức cơ bản là $\\Delta t = 10^{-8}\\ \\text{s}$. Theo hệ thức bất định năng lượng – thời gian $\\Delta E\\cdot\\Delta t \\approx \\hbar$ (với $\\hbar = 1{,}055\\times 10^{-34}\\ \\text{J}\\cdot\\text{s}$), độ nhòe (bề rộng tự nhiên) năng lượng $\\Delta E$ của mức này xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$\\Delta E \\approx 6{,}59\\times 10^{-8}\\ \\text{eV}$",
+      "$\\Delta E \\approx 4{,}14\\times 10^{-7}\\ \\text{eV}$",
+      "$\\Delta E \\approx 3{,}30\\times 10^{-8}\\ \\text{eV}$",
+      "$\\Delta E \\approx 1{,}06\\times 10^{-26}\\ \\text{eV}$"
+    ],
+    "correct": 0,
+    "explanation": "Độ bất định năng lượng theo hệ thức Heisenberg: $\\Delta E \\approx \\dfrac{\\hbar}{\\Delta t} = \\dfrac{1{,}055\\times 10^{-34}}{10^{-8}} = 1{,}055\\times 10^{-26}\\ \\text{J}$. Đổi sang electron-volt: $\\Delta E \\approx \\dfrac{1{,}055\\times 10^{-26}}{1{,}6\\times 10^{-19}} \\approx 6{,}59\\times 10^{-8}\\ \\text{eV}$."
+  },
+  {
+    "id": 443,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Một vi hạt ở trạng thái cơ bản ($n = 1$) chuyển động trong giếng thế năng một chiều bề rộng $a$ thành cao vô hạn ($0 \\le x \\le a$), có hàm sóng chuẩn hóa là $\\psi_1(x) = \\sqrt{\\dfrac{2}{a}}\\sin\\left(\\dfrac{\\pi x}{a}\\right)$. Xác suất tìm thấy hạt nằm trong nửa khoảng chính giữa giếng $\\left[\\dfrac{a}{4},\\ \\dfrac{3a}{4}\\right]$ bằng:",
+    "image": "",
+    "options": [
+      "$P = 50{,}0\\%$ (chia đều như cơ học cổ điển)",
+      "$P = \\dfrac{1}{2} + \\dfrac{1}{\\pi} \\approx 81{,}8\\%$",
+      "$P = 100\\%$",
+      "$P = \\dfrac{1}{2} - \\dfrac{1}{\\pi} \\approx 18{,}2\\%$"
+    ],
+    "correct": 1,
+    "explanation": "Xác suất bằng $P = \\displaystyle\\int_{a/4}^{3a/4} \\dfrac{2}{a}\\sin^2\\left(\\dfrac{\\pi x}{a}\\right)dx = \\dfrac{1}{a}\\displaystyle\\int_{a/4}^{3a/4}\\left[1 - \\cos\\left(\\dfrac{2\\pi x}{a}\\right)\\right]dx = \\left[\\dfrac{x}{a} - \\dfrac{1}{2\\pi}\\sin\\left(\\dfrac{2\\pi x}{a}\\right)\\right]_{a/4}^{3a/4} = \\dfrac{1}{2} + \\dfrac{1}{\\pi} \\approx 81{,}8\\%$."
+  },
+  {
+    "id": 444,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Xét một vi hạt trong giếng thế một chiều thành cao vô hạn ($0 \\le x \\le a$) đang ở trạng thái kích thích thứ nhất ($n = 2$, $\\psi_2(x) = \\sqrt{\\dfrac{2}{a}}\\sin\\dfrac{2\\pi x}{a}$). Trong khoảng mở bên trong giếng ($0 < x < a$), xác suất tìm thấy hạt cực đại và bằng $0$ (nút sóng) tại các tọa độ nào?",
+    "image": "",
+    "options": [
+      "Mật độ xác suất bằng $0$ tại $x = \\dfrac{a}{4}, \\dfrac{3a}{4}$ và cực đại tại $x = \\dfrac{a}{2}$",
+      "Mật độ xác suất cực đại tại chính giữa $x = \\dfrac{a}{2}$; không có điểm nào bên trong giếng bằng $0$",
+      "Mật độ xác suất đồng đều bằng $1/a$ tại mọi điểm trong khoảng $(0, a)$",
+      "Mật độ xác suất cực đại tại $x = \\dfrac{a}{4}$ và $x = \\dfrac{3a}{4}$; bằng $0$ tại điểm chính giữa $x = \\dfrac{a}{2}$"
+    ],
+    "correct": 3,
+    "explanation": "Mật độ xác suất $|\\psi_2(x)|^2 = \\dfrac{2}{a}\\sin^2\\left(\\dfrac{2\\pi x}{a}\\right)$. Tại $x = \\dfrac{a}{2}$: $\\sin\\pi = 0 \\Rightarrow$ mật độ xác suất bằng $0$ (nút dừng). Tại $x = \\dfrac{a}{4}$ và $x = \\dfrac{3a}{4}$: $\\left|\\sin\\left(\\dfrac{\\pi}{2}\\right)\\right| = \\left|\\sin\\left(\\dfrac{3\\pi}{2}\\right)\\right| = 1 \\Rightarrow |\\psi_2|^2 = \\dfrac{2}{a}$ đạt cực đại."
+  },
+  {
+    "id": 453,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "theory",
+    "question": "Trong mô hình cơ học lượng tử giải cho nguyên tử, bốn số lượng tử $(n, \\ell, m_\\ell, m_s)$ của mỗi electron thỏa mãn quy tắc cho phép nào sau đây?",
+    "image": "",
+    "options": [
+      "$n \\in \\{0, 1, 2,\\dots\\}$; $\\ell \\in \\{1,\\dots, n\\}$; $m_\\ell \\in \\{0,\\dots, \\ell\\}$; $m_s \\in \\{-1, 0, +1\\}$",
+      "$\\ell$ có thể nhận mọi giá trị từ $0$ đến $n$; $m_s$ chỉ phụ thuộc vào $n$",
+      "Hai electron trong cùng một nguyên tử có thể có cả bốn số lượng tử giống hệt nhau nếu ở phân lớp $s$",
+      "$n \\in \\{1, 2, 3,\\dots\\}$; $\\ell \\in \\{0, 1,\\dots, n-1\\}$; $m_\\ell \\in \\{-\\ell,\\dots, 0,\\dots, +\\ell\\}$; $m_s \\in \\left\\{-\\dfrac{1}{2}, +\\dfrac{1}{2}\\right\\}$"
+    ],
+    "correct": 3,
+    "explanation": "Nghiệm phương trình Schrödinger trong trường đối xứng cầu kết hợp spin electron $s = 1/2$ quy định: $n \\ge 1$ xác định năng lượng lớp; $0 \\le \\ell \\le n-1$ xác định độ lớn $L = \\sqrt{\\ell(\\ell+1)}\\hbar$; $-\\ell \\le m_\\ell \\le +\\ell$ xác định hình chiếu $L_z = m_\\ell\\hbar$; và $m_s = \\pm 1/2$ xác định hình chiếu spin $S_z = m_s\\hbar$."
+  },
+  {
+    "id": 454,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "theory",
+    "question": "Thí nghiệm Stern - Gerlach (1922) bắn chùm nguyên tử Bạc ($\\text{Ag}$, có một electron hóa trị ở trạng thái $5s$ với $\\ell = 0$) đi qua một **từ trường không đều** thu được kết quả gì trên tấm kính hứng và chứng minh điều gì?",
+    "image": "",
+    "options": [
+      "Chùm nguyên tử tách thành $3$ vệt riêng biệt ứng với trạng thái $p$",
+      "Chùm nguyên tử vẫn tụ thành $1$ vệt thẳng không lệch ở chính giữa vì $\\ell = 0$",
+      "Chùm nguyên tử trải rộng thành một vệt liên tục theo dự đoán của cơ học cổ điển",
+      "Chùm nguyên tử tách thành đúng **$2$ vệt riêng biệt** đối xứng nhau (tương ứng $2s+1 = 2$ định hướng), qua đó chứng minh thực nghiệm sự **lượng tử hóa không gian** của mômen từ và sự tồn tại của **spin electron** ($s = 1/2$)"
+    ],
+    "correct": 3,
+    "explanation": "Với trạng thái $s$ ($\\ell = 0$), mômen quỹ đạo bằng $0$ nên theo lý thuyết cũ không có mômen từ ($2\\ell+1 = 1$ vệt). Việc tách thành hai vệt rõ rệt trong từ trường không đều chứng tỏ electron sở hữu mômen động lượng nội tại spin $s = 1/2$ với hai giá trị hình chiếu $m_s = \\pm 1/2$."
+  },
+  {
+    "id": 455,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "theory",
+    "question": "Khi điền các electron vào lớp vỏ của nguyên tử nhiều electron ở trạng thái cơ bản, nội dung của **quy tắc Klechkovsky (nguyên lý vững bền)** và **quy tắc Hund** phát biểu chính xác là:",
+    "image": "",
+    "options": [
+      "Electron luôn điền kín toàn bộ lớp $n=3$ ($3s, 3p, 3d$) rồi mới sang $4s$; trong một obitan hai electron luôn có cùng giá trị $m_s$",
+      "Electron chiếm các phân lớp theo thứ tự tăng dần của tổng $(n + \\ell)$ (nếu tổng bằng nhau thì ưu tiên $n$ nhỏ hơn trước); trong cùng một phân lớp, electron phân bố sao cho **tổng giá trị spin cực đại** (điền độc thân cùng chiều vào tối đa các obitan trước khi ghép đôi)",
+      "Trong cùng một phân lớp, electron ưu tiên ghép đôi hết vào một obitan đầu tiên để cực tiểu hóa tổng spin",
+      "Thứ tự điền mức năng lượng luôn chỉ phụ thuộc vào số lượng tử chính $n$ bất kể $\\ell$"
+    ],
+    "correct": 1,
+    "explanation": "Do hiệu ứng chắn và xuyên sâu của electron $s, p$, phân lớp $4s$ ($n+\\ell=4+0=4$) có năng lượng thấp hơn $3d$ ($n+\\ell=3+2=5$) nên được điền trước. Khi điền vào phân lớp suy biến (ví dụ $3p^3$ hay $3d^5$), tương tác đẩy Coulomb giảm tối thiểu khi các electron chiếm các obitan khác nhau với spin song song (quy tắc Hund)."
+  },
+  {
+    "id": 456,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "theory",
+    "question": "Theo thống kê lượng tử cho hệ các hạt đồng nhất không thể phân biệt được, mối liên hệ giữa tính chất spin, tính đối xứng của hàm sóng toàn phần $\\Psi$ khi hoán vị hai hạt và nguyên lý loại trừ Pauli là:",
+    "image": "",
+    "options": [
+      "Phôtôn tuân theo nguyên lý loại trừ Pauli nên một chùm laser chỉ có tối đa 2 phôtôn cùng pha",
+      "Các **Fermion** (spin bán nguyên như $e, p, n$) có hàm sóng **phản đối xứng** khi đổi chỗ hai hạt, trực tiếp dẫn tới nguyên lý Pauli (không thể có 2 hạt ở cùng trạng thái lượng tử); còn **Boson** (spin nguyên như phôtôn) có hàm sóng **đối xứng** và có thể ngưng tụ đồng loạt vào cùng một trạng thái",
+      "Cả electron lẫn phôtôn đều có hàm sóng phản đối xứng khi hoán vị hai hạt",
+      "Fermion có hàm sóng đối xứng nên tụ chung vô hạn hạt vào mức cơ bản"
+    ],
+    "correct": 1,
+    "explanation": "Hoán vị hai hạt đồng nhất trong hệ Fermion làm đổi dấu hàm sóng $\\Psi(1, 2) = -\\Psi(2, 1)$. Nếu hai hạt có cùng bộ trạng thái lượng tử ($1 \\equiv 2$) thì $\\Psi = -\\Psi \\Rightarrow \\Psi \\equiv 0$, tức xác suất tồn tại bằng $0$ — đó chính là nguồn gốc cơ bản của nguyên lý loại trừ Pauli."
+  },
+  {
+    "id": 457,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "theory",
+    "question": "Vì sao trong nguyên tử Hiđrô cô lập, electron ở trạng thái kích thích $2s$ ($\\ell = 0$) hầu như bị \\\"mắc kẹt\\\" (trạng thái siêu bền sống rất lâu $\\sim 0{,}12\\ \\text{s}$) không thể tự phát chuyển trực tiếp về trạng thái cơ bản $1s$ ($\\ell = 0$) bằng cách phát ra **một phôtôn** điện từ lưỡng cực?",
+    "image": "",
+    "options": [
+      "Vì năng lượng của trạng thái $2s$ thấp hơn năng lượng của trạng thái $1s$",
+      "Vì $2s$ và $1s$ có hai số lượng tử từ $m_\\ell$ bằng $\\pm 1$",
+      "Vì chuyển dời $2s \\to 1s$ có $\\Delta\\ell = 0$, vi phạm quy tắc lựa chọn bức xạ lưỡng cực điện $\\Delta\\ell = \\pm 1$ (do phôtôn mang spin $s_\\gamma = 1$ nên nguyên tử phải đổi mômen quỹ đạo khi phát 1 phôtôn)",
+      "Vì electron $2s$ chuyển động chậm hơn tốc độ ánh sáng"
+    ],
+    "correct": 2,
+    "explanation": "Khi phát ra một phôtôn lưỡng cực điện, bảo toàn mômen động lượng tổng cộng (do phôtôn mang mômen $1\\hbar$) áp đặt quy tắc lựa chọn $\\Delta\\ell = \\pm 1$. Mọi chuyển mức có $\\Delta\\ell = 0$ như $2s \\to 1s$ đều bị **cấm** phát 1 phôtôn (chỉ có thể phát 2 phôtôn đồng thời hoặc va chạm không bức xạ)."
+  },
+  {
+    "id": 458,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "theory",
+    "question": "Cơ chế hình thành vạch tia X đặc trưng (dãy $K_\\alpha, K_\\beta$) khi chùm electron năng lượng cao bắn phá bia kim loại và nội dung định luật Moseley ($\\sqrt{\\nu} = a(Z - \\sigma)$) là gì?",
+    "image": "",
+    "options": [
+      "Do các electron tự do va chạm làm phanh hãm liên tục trong điện trường hạt nhân phát phổ liên tục",
+      "Do sự phân hạch hạt nhân của nguyên tử bia phát ra tia gamma",
+      "Do chuyển dời của electron hóa trị lớp ngoài cùng giữa các mức kích thích $n=5 \\to 4$",
+      "Electron tới đánh bật một electron ở lớp **trong cùng** (như lớp $K, n=1$) ra khỏi nguyên tử, ngay sau đó electron từ lớp cao hơn ($L, M$) nhảy xuống lấp chỗ trống và phát ra phôtôn tia X năng lượng cao có tần số thỏa $\\sqrt{\\nu} \\propto (Z - \\sigma)$ (giúp xác định chính xác số hiệu nguyên tử $Z$ của nguyên tố)"
+    ],
+    "correct": 3,
+    "explanation": "Quang phổ hãm cho phổ liên tục, còn các vạch tia X đặc trưng nhọn xuất phát từ tái sắp xếp lớp vỏ sâu bên trong. Với chuyển dời $L \\to K$ (vạch $K_\\alpha$), điện tích hiệu dụng hạt nhân nhìn thấy bị chắn đi $\\sigma \\approx 1$ còn $(Z - 1)$, dẫn đến công thức Moseley nổi tiếng $\\nu_{K\\alpha} = \\dfrac{3}{4}R(Z-1)^2$."
+  },
+  {
+    "id": 459,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "Theo công thức Moseley cho vạch tia X đặc trưng $K_\\alpha$ (electron nhảy từ lớp $L, n=2$ về lớp $K, n=1$): $\\nu_{K\\alpha} = R(Z - 1)^2\\left(\\dfrac{1}{1^2} - \\dfrac{1}{2^2}\\right)$ với $R = 3{,}29\\times 10^{15}\\ \\text{s}^{-1}$. Khi bắn phá bia Đồng nguyên chất ($Z = 29$), bước sóng vạch $K_\\alpha$ tính theo công thức này xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$\\lambda_{K\\alpha} \\approx 0{,}078\\ \\text{nm}$",
+      "$\\lambda_{K\\alpha} \\approx 0{,}144\\ \\text{nm}$",
+      "$\\lambda_{K\\alpha} \\approx 1{,}55\\ \\text{nm}$",
+      "$\\lambda_{K\\alpha} \\approx 0{,}155\\ \\text{nm}$ ($1{,}55\\ \\text{Å}$)"
+    ],
+    "correct": 3,
+    "explanation": "Thay $Z = 29$ vào công thức Moseley: $\\nu_{K\\alpha} = 3{,}29\\times 10^{15}\\times (29 - 1)^2\\times \\dfrac{3}{4} = 3{,}29\\times 10^{15}\\times 784\\times 0{,}75 \\approx 1{,}935\\times 10^{18}\\ \\text{Hz}$. Bước sóng $\\lambda_{K\\alpha} = \\dfrac{c}{\\nu_{K\\alpha}} = \\dfrac{3\\times 10^8}{1{,}935\\times 10^{18}} \\approx 1{,}55\\times 10^{-10}\\ \\text{m} = 0{,}155\\ \\text{nm}$."
+  },
+  {
+    "id": 460,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "Cho năng lượng các trạng thái dừng của nguyên tử Hiđrô là $E_n = -\\dfrac{13{,}6}{n^2}\\ (\\text{eV})$. Một nguyên tử Hiđrô đang ở trạng thái kích thích đầu tiên ($n = 2$). Để ion hóa nguyên tử Hiđrô này (tách hoàn toàn electron ra xa vô cực khỏi trạng thái $n=2$), cần cung cấp năng lượng tối thiểu bằng:",
+    "image": "",
+    "options": [
+      "$3{,}40\\ \\text{eV}$",
+      "$13{,}6\\ \\text{eV}$",
+      "$1{,}51\\ \\text{eV}$",
+      "$10{,}2\\ \\text{eV}$"
+    ],
+    "correct": 0,
+    "explanation": "Ở trạng thái $n = 2$, năng lượng liên kết của electron là $E_2 = -\\dfrac{13{,}6}{2^2} = -3{,}40\\ \\text{eV}$. Muốn đưa electron lên mức $n \\to \\infty$ ($E_\\infty = 0$) cần cung cấp năng lượng tối thiểu $\\Delta E = 0 - (-3{,}40) = 3{,}40\\ \\text{eV}$."
+  },
+  {
+    "id": 461,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "Một nguyên tử Hiđrô ban đầu đứng yên ở trạng thái kích thích $n = 2$ chuyển về trạng thái cơ bản $n = 1$, phát ra phôtôn vạch Lyman-alpha có năng lượng $10{,}2\\ \\text{eV}$. Biết khối lượng nguyên tử Hiđrô $M_H \\approx 1{,}67\\times 10^{-27}\\ \\text{kg}$, tốc độ giật lùi của nguyên tử Hiđrô sau khi phát phôtôn bằng:",
+    "image": "",
+    "options": [
+      "$v \\approx 3{,}26\\ \\text{m/s}$",
+      "$v \\approx 0{,}33\\ \\text{m/s}$",
+      "$v \\approx 1{,}63\\ \\text{m/s}$",
+      "$v \\approx 32{,}6\\ \\text{m/s}$"
+    ],
+    "correct": 0,
+    "explanation": "Động lượng của phôtôn phát ra: $p_\\gamma = \\dfrac{\\varepsilon}{c} = \\dfrac{10{,}2\\times 1{,}6\\times 10^{-19}}{3\\times 10^8} = 5{,}44\\times 10^{-27}\\ \\text{kg}\\cdot\\text{m/s}$. Theo bảo toàn động lượng, nguyên tử giật lùi với động lượng đúng bằng $p_\\gamma$, nên $v = \\dfrac{p_\\gamma}{M_H} = \\dfrac{5{,}44\\times 10^{-27}}{1{,}67\\times 10^{-27}} \\approx 3{,}26\\ \\text{m/s}$."
+  },
+  {
+    "id": 462,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "Một electron trong nguyên tử ở trạng thái $d$ ($\\ell = 2$) đặt trong từ trường ngoài có phương trục $Oz$. Độ lớn mômen động lượng orbital $L = \\sqrt{\\ell(\\ell+1)}\\hbar$ và góc nhỏ nhất $\\theta_{\\min}$ hợp bởi véc-tơ $\\vec{L}$ với phương trục từ trường $+Oz$ là:",
+    "image": "",
+    "options": [
+      "$L = \\sqrt{2}\\,\\hbar;\\ \\theta_{\\min} = 45^\\circ$",
+      "$L = 2\\hbar;\\ \\theta_{\\min} = 0^\\circ$ (song song hoàn toàn với $Oz$)",
+      "$L = \\sqrt{6}\\,\\hbar;\\ \\theta_{\\min} = \\arccos\\dfrac{2}{\\sqrt{6}} \\approx 35{,}3^\\circ$",
+      "$L = \\sqrt{6}\\,\\hbar;\\ \\theta_{\\min} = \\arccos\\dfrac{1}{\\sqrt{6}} \\approx 65{,}9^\\circ$"
+    ],
+    "correct": 2,
+    "explanation": "Với $\\ell = 2$: $L = \\sqrt{2(2+1)}\\hbar = \\sqrt{6}\\,\\hbar$. Hình chiếu cực đại trên $Oz$ ứng với $m_{\\ell\\max} = +\\ell = +2$ ($L_z = 2\\hbar$). Do đó $\\cos\\theta_{\\min} = \\dfrac{L_z}{L} = \\dfrac{2}{\\sqrt{6}} \\approx 0{,}8165 \\Rightarrow \\theta_{\\min} \\approx 35{,}26^\\circ$ (véc-tơ $\\vec{L}$ không bao giờ trùng khít trục $Oz$ để tránh vi phạm bất định các thành phần khác)."
+  },
+  {
+    "id": 473,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "theory",
+    "question": "Trong các cấu trúc mạng tinh thể lập phương phổ biến (lập phương đơn giản SC, lập phương tâm khối BCC và lập phương tâm mặt FCC), số nguyên tử thuộc về **một ô mạng cơ sở** và số phối vị (số láng giềng gần nhất) tương ứng lần lượt là:",
+    "image": "",
+    "options": [
+      "SC: $1$ nguyên tử (phối vị $6$); BCC: $2$ nguyên tử (phối vị $8$); FCC: $4$ nguyên tử (phối vị $12$)",
+      "SC: $8$ nguyên tử; BCC: $9$ nguyên tử; FCC: $14$ nguyên tử",
+      "SC: $1$ nguyên tử (phối vị $12$); BCC: $2$ nguyên tử (phối vị $6$); FCC: $4$ nguyên tử (phối vị $8$)",
+      "SC: $2$ nguyên tử; BCC: $4$ nguyên tử; FCC: $8$ nguyên tử"
+    ],
+    "correct": 0,
+    "explanation": "Mỗi nguyên tử ở đỉnh lập phương đóng góp $1/8$, ở tâm mặt đóng góp $1/2$, ở tâm khối đóng góp $1$: SC $= 8\\times 1/8 = 1$; BCC $= 8\\times 1/8 + 1 = 2$; FCC $= 8\\times 1/8 + 6\\times 1/2 = 4$ nguyên tử/ô."
+  },
+  {
+    "id": 474,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Tinh thể Đồng ($\\text{Cu}$) có cấu trúc mạng lập phương tâm mặt (FCC) với các quả cầu nguyên tử bán kính $R = 1{,}28\\ \\text{Å}$ tiếp xúc nhau dọc theo đường chéo của mỗi mặt vuông. Hằng số mạng $a$ (cạnh ô cơ sở lập phương) của tinh thể Đồng xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$a \\approx 2{,}96\\ \\text{Å}$",
+      "$a \\approx 3{,}62\\ \\text{Å}$",
+      "$a = 2{,}56\\ \\text{Å}$",
+      "$a \\approx 5{,}12\\ \\text{Å}$"
+    ],
+    "correct": 1,
+    "explanation": "Trong mạng lập phương tâm mặt (FCC), đường chéo mỗi mặt có chiều dài $a\\sqrt{2}$ đi qua bán kính đỉnh + đường kính nguyên tử tâm mặt + bán kính đỉnh $= 4R$. Do đó $a = \\dfrac{4R}{\\sqrt{2}} = 2\\sqrt{2}\\,R = 2\\sqrt{2}\\times 1{,}28 \\approx 3{,}62\\ \\text{Å}$."
+  },
+  {
+    "id": 475,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Tinh thể Sắt ($\\alpha\\text{-Fe}$) ở nhiệt độ phòng có mạng lập phương tâm khối (BCC) với hằng số mạng $a = 2{,}87\\ \\text{Å}$. Do nguyên tử tâm khối tiếp xúc với hai nguyên tử ở hai đỉnh đối diện trên đường chéo không gian, bán kính nguyên tử sắt $R$ gần nhất với:",
+    "image": "",
+    "options": [
+      "$R \\approx 2{,}49\\ \\text{Å}$",
+      "$R \\approx 1{,}44\\ \\text{Å}$",
+      "$R \\approx 1{,}24\\ \\text{Å}$",
+      "$R \\approx 1{,}01\\ \\text{Å}$"
+    ],
+    "correct": 2,
+    "explanation": "Đường chéo không gian của hình lập phương cạnh $a$ là $a\\sqrt{3} = 4R$ (do có hai bán kính đỉnh và một nguyên tử ở tâm khối). Suy ra $R = \\dfrac{a\\sqrt{3}}{4} = \\dfrac{2{,}87\\sqrt{3}}{4} \\approx 1{,}24\\ \\text{Å}$."
+  },
+  {
+    "id": 476,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Trong tinh thể hệ lập phương có hằng số mạng $a$, khoảng cách giữa các mặt phẳng mạng song song có chỉ số Miller $(hkl)$ là $d_{hkl} = \\dfrac{a}{\\sqrt{h^2 + k^2 + l^2}}$. Tinh thể Nhôm ($\\text{Al}$) có $a = 0{,}405\\ \\text{nm}$; khoảng cách $d_{111}$ giữa các mặt mạng $(111)$ xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$d_{111} \\approx 0{,}234\\ \\text{nm}$",
+      "$d_{111} \\approx 0{,}405\\ \\text{nm}$",
+      "$d_{111} \\approx 0{,}135\\ \\text{nm}$",
+      "$d_{111} \\approx 0{,}286\\ \\text{nm}$"
+    ],
+    "correct": 0,
+    "explanation": "Thay $h = 1, k = 1, l = 1$ vào công thức lập phương: $d_{111} = \\dfrac{0{,}405}{\\sqrt{1^2 + 1^2 + 1^2}} = \\dfrac{0{,}405}{\\sqrt{3}} \\approx 0{,}234\\ \\text{nm}$."
+  },
+  {
+    "id": 477,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Trong mô hình mạng tinh thể một chiều có chu kỳ $a = 0{,}314\\ \\text{nm}$, vùng Brillouin thứ nhất (nơi các nhánh năng lượng liên tục trước khi bị đứt đoạn bởi phản xạ Bragg của sóng electron tạo khe cấm) nằm trong khoảng số sóng $k$ nào?",
+    "image": "",
+    "options": [
+      "$-\\dfrac{2\\pi}{a} \\le k \\le +\\dfrac{2\\pi}{a}$, tức $\\pm 2{,}00\\times 10^{10}\\ \\text{m}^{-1}$",
+      "$-\\dfrac{\\pi}{a} \\le k \\le +\\dfrac{\\pi}{a}$, tức $-1{,}00\\times 10^{10}\\ \\text{m}^{-1} \\le k \\le +1{,}00\\times 10^{10}\\ \\text{m}^{-1}$",
+      "$0 \\le k \\le \\dfrac{\\pi}{2a}$, tức $0 \\le k \\le 0{,}50\\times 10^{10}\\ \\text{m}^{-1}$",
+      "$-\\infty < k < +\\infty$ không xuất hiện khe cấm"
+    ],
+    "correct": 1,
+    "explanation": "Tại biên vùng Brillouin thứ nhất $k = \\pm \\dfrac{\\pi}{a}$, bước sóng de Broglie $\\lambda = \\dfrac{2\\pi}{|k|} = 2a$ thỏa mãn điều kiện phản xạ Bragg vuông góc $2a = 1\\cdot\\lambda$, sinh ra sóng dừng và mở ra vùng cấm năng lượng đầu tiên. Với $a = 3{,}14\\times 10^{-10}\\ \\text{m} \\approx \\pi\\times 10^{-10}\\ \\text{m} \\Rightarrow \\dfrac{\\pi}{a} \\approx 1{,}00\\times 10^{10}\\ \\text{m}^{-1}$."
+  },
+  {
+    "id": 478,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "theory",
+    "question": "Theo phương pháp khối lượng hiệu dụng $m^* = \\dfrac{\\hbar^2}{\\dfrac{d^2 E}{dk^2}}$ trong lý thuyết vùng năng lượng tinh thể, vì sao các electron nằm gần **đỉnh vùng hóa trị** lại có $m^* < 0$ và người ta quy ước thay bằng khái niệm \\\"lỗ trống\\\" (hole)?",
+    "image": "",
+    "options": [
+      "Vì ở đỉnh vùng hóa trị không bao giờ có chuyển động nhiệt của electron",
+      "Tại gần đỉnh vùng hóa trị, đường cong tán sắc $E(k)$ lồi hướng xuống nên độ cong $\\dfrac{d^2 E}{dk^2} < 0 \\Rightarrow m^* < 0$ (electron gia tốc ngược chiều lực điện trường tác dụng lên hạt âm); khi dùng khái niệm **lỗ trống** ứng với trạng thái thiếu hụt electron mang điện tích dương $+e$, khối lượng hiệu dụng của lỗ trống trở thành dương $m_h^* = -m_e^* > 0$ giúp mô tả trực quan sự dẫn điện",
+      "Vì các electron ở đỉnh vùng hóa trị có khối lượng nghỉ lớn gấp 1000 lần proton",
+      "Vì lỗ trống thực chất là hạt phản vật chất pôzitrôn tồn tại lâu dài bên trong tinh thể"
+    ],
+    "correct": 1,
+    "explanation": "Độ cong $\\dfrac{d^2E}{dk^2}$ dương ở đáy vùng dẫn ($m_n^* > 0$) và âm ở đỉnh vùng hóa trị ($m^* < 0$). Tập thể toàn vùng hóa trị thiếu mất $1$ electron ở trạng thái $k$ hoạt động về mặt điện tích và động lực học hoàn toàn tương đương một giả hạt mang điện tích $+e$ và khối lượng dương $m_p^* = |m^*| > 0$ gọi là lỗ trống."
+  },
+  {
+    "id": 479,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Chất bán dẫn $\\text{CdS}$ (thường dùng chế tạo quang điện trở nhạy sáng khả kiến) có độ rộng vùng cấm $\\Delta E_g = 2{,}42\\ \\text{eV}$; còn $\\text{Si}$ có $\\Delta E_g = 1{,}12\\ \\text{eV}$. Giới hạn bước sóng dài nhất $\\lambda_0 = \\dfrac{hc}{\\Delta E_g}$ để gây ra hiện tượng quang dẫn nội cho $\\text{CdS}$ và $\\text{Si}$ lần lượt xấp xỉ là:",
+    "image": "",
+    "options": [
+      "$\\text{CdS}: \\lambda_0 \\approx 513\\ \\text{nm}$ (xanh lục); $\\text{Si}: \\lambda_0 \\approx 1109\\ \\text{nm}$ (hồng ngoại gần)",
+      "$\\text{CdS}: \\lambda_0 \\approx 1109\\ \\text{nm}$; $\\text{Si}: \\lambda_0 \\approx 513\\ \\text{nm}$",
+      "$\\text{CdS}: \\lambda_0 \\approx 242\\ \\text{nm}$; $\\text{Si}: \\lambda_0 \\approx 1120\\ \\text{nm}$",
+      "Cả hai đều có giới hạn quang dẫn nằm ở vùng hồng ngoại xa $10\\ \\mu\\text{m}$"
+    ],
+    "correct": 0,
+    "explanation": "Áp dụng $\\lambda_0 = \\dfrac{hc}{e\\,\\Delta E_g(\\text{eV})} \\approx \\dfrac{1242\\ \\text{nm}\\cdot\\text{eV}}{\\Delta E_g}$. Với $\\text{CdS}$: $\\lambda_0 \\approx \\dfrac{1242{,}2}{2{,}42} \\approx 513\\ \\text{nm}$ (không nhạy với tia đỏ/hồng ngoại); với $\\text{Si}$: $\\lambda_0 \\approx \\dfrac{1242{,}2}{1{,}12} \\approx 1109\\ \\text{nm}$ (dùng tốt cho pin mặt trời hấp thụ từ tử ngoại tới cận hồng ngoại)."
+  },
+  {
+    "id": 480,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Theo hàm phân bố Fermi - Dirac $f(E, T) = \\dfrac{1}{\\exp\\left(\\dfrac{E - E_F}{k_B T}\\right) + 1}$, ở nhiệt độ phòng $T = 300\\ \\text{K}$ ($k_B T \\approx 0{,}0259\\ \\text{eV}$), xác suất tìm thấy electron chiếm một mức năng lượng nằm cao hơn mức Fermi là $f(E) = 1\\%$ ($0{,}01$) khi hiệu năng lượng $(E - E_F)$ bằng:",
+    "image": "",
+    "options": [
+      "$E - E_F \\approx +0{,}026\\ \\text{eV}$",
+      "$E - E_F \\approx -0{,}119\\ \\text{eV}$",
+      "$E - E_F \\approx +0{,}119\\ \\text{eV}$",
+      "$E - E_F \\approx +2{,}59\\ \\text{eV}$"
+    ],
+    "correct": 2,
+    "explanation": "Từ $\\dfrac{1}{e^x + 1} = 0{,}01 \\Rightarrow e^x = 99 \\Rightarrow x = \\dfrac{E - E_F}{k_B T} = \\ln 99 \\approx 4{,}595$. Vậy $E - E_F = 4{,}595\\times \\dfrac{1{,}38\\times 10^{-23}\\times 300}{1{,}6\\times 10^{-19}} \\approx 0{,}119\\ \\text{eV}$."
+  },
+  {
+    "id": 481,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Biết xác suất để một mức năng lượng $E_1$ (nằm trên mức Fermi một đoạn $\\Delta E = 0{,}10\\ \\text{eV}$) có electron chiếm giữ ở $T = 300\\ \\text{K}$ là $2{,}0\\%$. Theo tính đối xứng của phân bố Fermi - Dirac, xác suất để một mức $E_2$ nằm **dưới** mức Fermi đúng đoạn $\\Delta E = 0{,}10\\ \\text{eV}$ còn **trống (bị lỗ trống chiếm giữ)** bằng:",
+    "image": "",
+    "options": [
+      "$4{,}0\\%$",
+      "$2{,}0\\%$",
+      "$98{,}0\\%$",
+      "$50{,}0\\%$"
+    ],
+    "correct": 1,
+    "explanation": "Xác suất mức $E_2 = E_F - \\Delta E$ bị **trống** là $1 - f(E_F - \\Delta E) = 1 - \\dfrac{1}{e^{-\\Delta E/k_B T} + 1} = \\dfrac{e^{-\\Delta E/k_B T}}{e^{-\\Delta E/k_B T} + 1} = \\dfrac{1}{e^{+\\Delta E/k_B T} + 1} = f(E_F + \\Delta E) = 2{,}0\\%$!"
+  },
+  {
+    "id": 482,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "theory",
+    "question": "Trên giản đồ vùng năng lượng của chất bán dẫn ở nhiệt độ phòng, vị trí mức Fermi $E_F$ thay đổi ra sao khi chuyển từ bán dẫn **thuần** sang pha tạp loại **$n$** và loại **$p$**?",
+    "image": "",
+    "options": [
+      "Ở bán dẫn thuần, $E_F$ nằm xấp xỉ **chính giữa vùng cấm**; khi pha tạp donor (loại $n$) $E_F$ dịch **lên sát đáy vùng dẫn**; khi pha tạp acceptor (loại $p$) $E_F$ dịch **xuống sát đỉnh vùng hóa trị**",
+      "Ở cả ba loại bán dẫn, mức Fermi luôn nằm sâu bên trong vùng dẫn cao hơn đáy vùng dẫn",
+      "Khi pha tạp loại $n$, $E_F$ dịch xuống sát đỉnh vùng hóa trị",
+      "Ở bán dẫn thuần, $E_F$ bằng $0\\ \\text{eV}$ trùng với năng lượng của electron tự do trong chân không"
+    ],
+    "correct": 0,
+    "explanation": "Mức Fermi đánh dấu ranh giới trung tâm xác suất chiếm trạng thái ($f = 1/2$). Ở bán dẫn thuần $n = p$ nên $E_F$ nằm giữa khe năng lượng. Pha donor tăng mật độ electron vùng dẫn ($n \\gg p$) kéo $E_F$ lên gần vùng dẫn; pha acceptor tạo nhiều lỗ trống kéo $E_F$ xuống gần vùng hóa trị."
+  }
+]

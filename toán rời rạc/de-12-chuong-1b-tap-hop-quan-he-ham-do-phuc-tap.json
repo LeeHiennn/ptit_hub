@@ -1,0 +1,392 @@
+[
+  {
+    "id": 631,
+    "topic": "Quan Hệ & Tập Hợp",
+    "question": "Cho tập hợp rỗng $\\emptyset$ và hai tập $A = \\{1, 2\\}$, $B = \\{a, b, c\\}$. Lực lượng của tập lũy thừa $\\big|\\mathcal{P}(\\mathcal{P}(\\emptyset))\\big|$ và $\\big|\\mathcal{P}(A \\times B)\\big|$ lần lượt là:",
+    "options": [
+      "$4$ và $64$",
+      "$1$ và $12$",
+      "$2$ và $32$",
+      "$2$ và $64$"
+    ],
+    "correct": 3,
+    "explanation": "Vì $|\\emptyset| = 0 \\Rightarrow |\\mathcal{P}(\\emptyset)| = 2^0 = 1$ (gồm phần tử $\\emptyset$), nên $|\\mathcal{P}(\\mathcal{P}(\\emptyset))| = 2^1 = 2$. Mặt khác $|A \\times B| = 2 \\times 3 = 6$, suy ra $|\\mathcal{P}(A \\times B)| = 2^6 = 64$."
+  },
+  {
+    "id": 632,
+    "topic": "Quan Hệ & Tập Hợp",
+    "question": "Cho hai tập hợp $A = \\{1, 2, 3, 4, 5, 6\\}$ và $B = \\{4, 5, 6, 7, 8, 9, 10\\}$. Số phần tử của tập <strong>hiệu đối xứng</strong> $A \\oplus B = (A \\setminus B) \\cup (B \\setminus A)$ là:",
+    "options": [
+      "$13$",
+      "$7$",
+      "$10$",
+      "$3$"
+    ],
+    "correct": 1,
+    "explanation": "Ta có $A \\cap B = \\{4, 5, 6\\}$ gồm $3$ phần tử. Công thức hiệu đối xứng: $|A \\oplus B| = |A| + |B| - 2|A \\cap B| = 6 + 7 - 2\\cdot 3 = 7$ (tập $\\{1, 2, 3, 7, 8, 9, 10\\}$)."
+  },
+  {
+    "id": 633,
+    "topic": "Phép Toán Bit & Biểu Diễn Tập Hợp",
+    "question": "Trên tập vũ trụ $U$ có $8$ phần tử, tập $A$ được biểu diễn bởi xâu bit $10110100$ và tập $B$ bởi xâu bit $01101101$. Xâu bit biểu diễn cho tập hiệu $B \\setminus A = \\overline{A} \\cap B$ là:",
+    "options": [
+      "$01001001$",
+      "$10010000$",
+      "$00100100$",
+      "$11011001$"
+    ],
+    "correct": 0,
+    "explanation": "Đảo bit của $A$ ta được $\\overline{A} = 01001011$. Thực hiện phép AND từng bit với $B = 01101101$ ta thu được $01001001$."
+  },
+  {
+    "id": 634,
+    "topic": "Quan Hệ Tương Đương & Quan Hệ Thứ Tự",
+    "question": "Trên tập $A = \\{1, 2, 3\\}$, xét quan hệ hai ngôi $R = \\{(1,1), (2,2), (3,3), (1,2), (2,1), (2,3)\\}$. Khẳng định nào sau đây mô tả <strong>đúng</strong> các tính chất của $R$?",
+    "options": [
+      "Phản xạ, không đối xứng, không phản đối xứng, không bắc cầu",
+      "Phản xạ, phản đối xứng, bắc cầu",
+      "Không phản xạ, không đối xứng, bắc cầu",
+      "Phản xạ, đối xứng, không bắc cầu"
+    ],
+    "correct": 0,
+    "explanation": "$R$ có $(1,1), (2,2), (3,3)$ nên <strong>phản xạ</strong>. Có $(2,3)$ nhưng thiếu $(3,2)$ nên <strong>không đối xứng</strong>. Có $(1,2)$ và $(2,1)$ với $1\\ne 2$ nên <strong>không phản đối xứng</strong>. Có $(1,2)$ và $(2,3)$ nhưng thiếu $(1,3)$ nên <strong>không bắc cầu</strong>."
+  },
+  {
+    "id": 635,
+    "topic": "Quan Hệ Tương Đương & Quan Hệ Thứ Tự",
+    "question": "Trên tập hợp $A$ gồm $n = 3$ phần tử, có tất cả bao nhiêu quan hệ hai ngôi $R \\subseteq A \\times A$ có tính chất <strong>phản đối xứng (antisymmetric)</strong>?",
+    "options": [
+      "$512$",
+      "$216$",
+      "$128$",
+      "$64$"
+    ],
+    "correct": 1,
+    "explanation": "Với $3$ phần tử trên đường chéo chính $(a, a)$, mỗi phần tử có $2$ lựa chọn (có hoặc không trong $R$). Với $\\frac{3\\cdot 2}{2} = 3$ cặp $\\{a, b\\}$ phân biệt, không thể đồng thời có cả $(a,b)$ và $(b,a)$, nên mỗi cặp có $3$ lựa chọn: chỉ $(a,b)$, chỉ $(b,a)$, hoặc không cặp nào. Tổng cộng: $2^3 \\cdot 3^3 = 8 \\times 27 = 216$."
+  },
+  {
+    "id": 636,
+    "topic": "Quan Hệ Tương Đương & Quan Hệ Thứ Tự",
+    "question": "Trên tập hợp $A$ có $|A| = n$ phần tử ($n \\ge 1$), có bao nhiêu quan hệ hai ngôi trên $A$ <strong>vừa đối xứng, vừa phản đối xứng</strong>?",
+    "options": [
+      "$2^n$",
+      "$2^{n(n-1)/2}$",
+      "$1$",
+      "$2^{n^2 - n}$"
+    ],
+    "correct": 0,
+    "explanation": "Nếu $R$ vừa đối xứng vừa phản đối xứng thì không thể chứa bất kỳ cặp $(a, b)$ nào với $a \\ne b$ (vì nếu có $(a, b)$ thì đối xứng kéo theo $(b, a) \\in R$, phản đối xứng kéo theo $a = b$). Vậy $R$ chỉ có thể là tập con của đường chéo $\\{(a, a) \\mid a \\in A\\}$, có đúng $2^n$ quan hệ."
+  },
+  {
+    "id": 637,
+    "topic": "Quan Hệ & Tập Hợp",
+    "question": "Cho hai quan hệ trên $A = \\{1, 2, 3\\}$: $R = \\{(1,2), (1,3), (2,1)\\}$ và $S = \\{(1,3), (2,2), (3,1), (3,2)\\}$. Quan hệ hợp $S \\circ R = \\{(a, c) \\mid \\exists b: (a, b) \\in R \\land (b, c) \\in S\\}$ là:",
+    "options": [
+      "$\\{(1,1), (2,3), (3,3)\\}$",
+      "$\\{(1,2), (2,2), (3,1)\\}$",
+      "$\\{(1,1), (1,2), (2,3)\\}$",
+      "$\\{(1,3), (2,1), (3,2)\\}$"
+    ],
+    "correct": 2,
+    "explanation": "Kiểm tra từng cặp trong $R$: $(1,2)\\in R$ nối với $(2,2)\\in S \\Rightarrow (1,2)$; $(1,3)\\in R$ nối với $(3,1), (3,2)\\in S \\Rightarrow (1,1), (1,2)$; $(2,1)\\in R$ nối với $(1,3)\\in S \\Rightarrow (2,3)$. Vậy $S \\circ R = \\{(1,1), (1,2), (2,3)\\}$."
+  },
+  {
+    "id": 638,
+    "topic": "Quan Hệ & Tập Hợp",
+    "question": "Cho quan hệ $R$ trên tập $n$ phần tử. Để tìm <strong>bao đóng bắc cầu (Transitive Closure)</strong> $R^*$ của $R$, thuật toán <strong>Warshall</strong> có độ phức tạp thời gian là bao nhiêu và tương ứng với công thức nào?",
+    "options": [
+      "$O(n^4)$ với công thức $R^* = R \\cup R^2$",
+      "$O(n^3)$ với công thức $R^* = \\bigcup_{k=1}^n R^k$",
+      "$O(2^n)$ theo thuật toán vét cạn",
+      "$O(n^2)$ phép toán bit"
+    ],
+    "correct": 1,
+    "explanation": "Bao đóng bắc cầu của quan hệ trên $n$ phần tử là $R^* = \\bigcup_{k=1}^n R^k$ (ứng với đường đi có hướng độ dài $\\ge 1$). Thuật toán Warshall sử dụng $3$ vòng lặp lồng nhau chạy từ $1$ đến $n$ nên có độ phức tạp $O(n^3)$."
+  },
+  {
+    "id": 639,
+    "topic": "Quan Hệ Tương Đương & Quan Hệ Thứ Tự",
+    "question": "Trên tập số nguyên $\\mathbb{Z}$, xét quan hệ tương đương $x R y \\iff x^2 \\equiv y^2 \\pmod 5$. Quan hệ $R$ chia tập $\\mathbb{Z}$ thành bao nhiêu lớp tương đương phân biệt?",
+    "options": [
+      "$2$ lớp",
+      "$4$ lớp",
+      "$5$ lớp",
+      "$3$ lớp"
+    ],
+    "correct": 3,
+    "explanation": "Xét số dư $x \\bmod 5 \\in \\{0, 1, 2, 3, 4\\}$: $0^2 \\equiv 0$, $1^2 \\equiv 4^2 \\equiv 1$, $2^2 \\equiv 3^2 \\equiv 4 \\pmod 5$. Vậy $x^2 \\bmod 5$ chỉ nhận $3$ giá trị $\\{0, 1, 4\\}$, tương ứng với đúng $3$ lớp tương đương."
+  },
+  {
+    "id": 640,
+    "topic": "Quan Hệ Tương Đương & Quan Hệ Thứ Tự",
+    "question": "Số quan hệ tương đương khác nhau có thể định nghĩa trên tập $A = \\{1, 2, 3, 4\\}$ (bằng số phân hoạch hay số Bell $B_4$) là:",
+    "options": [
+      "$14$",
+      "$16$",
+      "$15$",
+      "$12$"
+    ],
+    "correct": 2,
+    "explanation": "Mỗi quan hệ tương đương tương ứng $1-1$ với một phân hoạch của tập $4$ phần tử: (4): $1$ cách; (3,1): $4$ cách; (2,2): $3$ cách; (2,1,1): $6$ cách; (1,1,1,1): $1$ cách. Tổng số là $B_4 = 1 + 4 + 3 + 6 + 1 = 15$."
+  },
+  {
+    "id": 641,
+    "topic": "Quan Hệ Tương Đương & Quan Hệ Thứ Tự",
+    "question": "Xét tập các ước nguyên dương của $36$: $D_{36} = \\{1, 2, 3, 4, 6, 9, 12, 18, 36\\}$ với quan hệ thứ tự chia hết \"$\\mid$\". Trong <strong>biểu đồ Hasse</strong> của $(D_{36}, \\mid)$, cặp đỉnh nào sau đây được nối trực tiếp với nhau bởi một cạnh?",
+    "options": [
+      "$(4, 36)$",
+      "$(2, 12)$",
+      "$(6, 18)$",
+      "$(3, 18)$"
+    ],
+    "correct": 2,
+    "explanation": "Trong biểu đồ Hasse của quan hệ chia hết, $b$ nối trực tiếp ngay trên $a$ khi và chỉ khi $b / a$ là một <strong>số nguyên tố</strong>. Chỉ có $18 / 6 = 3$ là số nguyên tố (còn $12/2=6$, $18/3=6$, $36/4=9$ đều là hợp số)."
+  },
+  {
+    "id": 642,
+    "topic": "Quan Hệ Tương Đương & Quan Hệ Thứ Tự",
+    "question": "Xét tập thứ tự bộ phận $(S, \\mid)$ với $S = \\{2, 3, 4, 6, 12, 18\\}$ theo quan hệ chia hết. Tập các phần tử <strong>tối tiểu (minimal)</strong> và tập các phần tử <strong>tối đại (maximal)</strong> của $S$ lần lượt là:",
+    "options": [
+      "Tối tiểu: $\\{2, 3\\}$; Tối đại: $\\{12, 18\\}$",
+      "Không có tối tiểu; Tối đại: $\\{12, 18\\}$",
+      "Tối tiểu: $\\{2\\}$; Tối đại: $\\{18\\}$",
+      "Tối tiểu: $\\{2, 3\\}$; Tối đại: $\\{4, 12, 18\\}$"
+    ],
+    "correct": 0,
+    "explanation": "Không có phần tử nào trong $S$ là ước thực sự của $2$ hay $3$ nên $\\{2, 3\\}$ là các phần tử tối tiểu. Không có phần tử nào trong $S$ là bội thực sự của $12$ hay $18$ nên $\\{12, 18\\}$ là các phần tử tối đại (do $4 \\mid 12$ nên $4$ không tối đại)."
+  },
+  {
+    "id": 643,
+    "topic": "Quan Hệ Tương Đương & Quan Hệ Thứ Tự",
+    "question": "Một tập thứ tự bộ phận (Poset) $(L, \\preceq)$ được gọi là một <strong>dàn (Lattice)</strong> khi và chỉ khi:",
+    "options": [
+      "Mọi cặp phần tử $a, b \\in L$ đều so sánh được với nhau",
+      "Mọi cặp phần tử $a, b \\in L$ đều tồn tại cả cận trên đúng (LUB / $\\sup$) và cận dưới đúng (GLB / $\\inf$) trong $L$",
+      "Tập $L$ có duy nhất một phần tử nhỏ nhất và một phần tử lớn nhất",
+      "Biểu đồ Hasse của $L$ là một đồ thị phẳng không có chu trình"
+    ],
+    "correct": 1,
+    "explanation": "Theo định nghĩa, poset $(L, \\preceq)$ là một dàn nếu với mọi $a, b \\in L$, cả $a \\lor b = \\text{LUB}(a,b)$ và $a \\land b = \\text{GLB}(a,b)$ đều tồn tại trong $L$."
+  },
+  {
+    "id": 644,
+    "topic": "Quan Hệ Tương Đương & Quan Hệ Thứ Tự",
+    "question": "Trên $\\mathbb{Z} \\times \\mathbb{Z}$ trang bị thứ tự từ điển (Lexicographic order) từ quan hệ $\\le$ thông thường, dãy các cặp nào dưới đây được sắp xếp theo thứ tự <strong>tăng dần</strong>?",
+    "options": [
+      "$(3, -1) \\prec (2, 0) \\prec (2, -10) \\prec (1, 5)$",
+      "$(1, 5) \\prec (2, -10) \\prec (2, 0) \\prec (3, -1)$",
+      "$(2, -10) \\prec (1, 5) \\prec (2, 0) \\prec (3, -1)$",
+      "$(1, 5) \\prec (2, 0) \\prec (2, -10) \\prec (3, -1)$"
+    ],
+    "correct": 1,
+    "explanation": "Trong thứ tự từ điển, $(a_1, b_1) \\prec (a_2, b_2)$ nếu $a_1 < a_2$, hoặc ($a_1 = a_2$ và $b_1 < b_2$). Vì $1 < 2$, $-10 < 0$ (cùng hoành độ $2$), và $2 < 3$, thứ tự tăng đúng là $(1, 5) \\prec (2, -10) \\prec (2, 0) \\prec (3, -1)$."
+  },
+  {
+    "id": 645,
+    "topic": "Quan Hệ Tương Đương & Quan Hệ Thứ Tự",
+    "question": "Cho các ràng buộc thứ tự công việc trên tập $\\{A, B, C, D\\}$: $A \\prec C$, $B \\prec C$, $C \\prec D$. Có bao nhiêu thứ tự toàn phần (kết quả <strong>sắp xếp Topo</strong>) tương thích với quan hệ thứ tự bộ phận này?",
+    "options": [
+      "$1$",
+      "$4$",
+      "$3$",
+      "$2$"
+    ],
+    "correct": 3,
+    "explanation": "Vì $A$ và $B$ đều phải làm trước $C$, và $C$ phải làm trước $D$, nên $C$ bắt buộc đứng ở vị trí thứ $3$ và $D$ ở vị trí thứ $4$. Hai vị trí đầu có thể là $(A, B)$ hoặc $(B, A)$, cho đúng $2$ thứ tự Topo hợp lệ."
+  },
+  {
+    "id": 646,
+    "topic": "Hàm Số & Ánh Xạ",
+    "question": "Xét ánh xạ $f: \\mathbb{Z} \\to \\mathbb{Z}$ xác định bởi $f(n) = \\lfloor n/2 \\rfloor$. Tính chất nào sau đây của $f$ là <strong>đúng</strong>?",
+    "options": [
+      "$f$ là toàn ánh nhưng không đơn ánh",
+      "$f$ là đơn ánh nhưng không toàn ánh",
+      "$f$ là song ánh",
+      "$f$ không phải đơn ánh cũng không phải toàn ánh"
+    ],
+    "correct": 0,
+    "explanation": "Với mọi $k \\in \\mathbb{Z}$, chọn $n = 2k \\in \\mathbb{Z}$ thì $f(2k) = k$, nên $f$ là <strong>toàn ánh</strong>. Tuy nhiên $f(0) = \\lfloor 0 \\rfloor = 0$ và $f(1) = \\lfloor 0.5 \\rfloor = 0$ ($0 \\ne 1$), nên $f$ <strong>không phải đơn ánh</strong>."
+  },
+  {
+    "id": 647,
+    "topic": "Hàm Số & Ánh Xạ",
+    "question": "Số ánh xạ <strong>đơn ánh</strong> từ tập $3$ phần tử vào tập $4$ phần tử, và số ánh xạ <strong>toàn ánh</strong> từ tập $4$ phần tử lên tập $3$ phần tử lần lượt là:",
+    "options": [
+      "$24$ và $81$",
+      "$64$ và $36$",
+      "$12$ và $24$",
+      "$24$ và $36$"
+    ],
+    "correct": 3,
+    "explanation": "Số đơn ánh từ tập $3$ phần tử vào $4$ phần tử là $A_4^3 = 4 \\times 3 \\times 2 = 24$. Số toàn ánh từ tập $4$ phần tử lên $3$ phần tử theo nguyên lý bù trừ là $3^4 - C_3^1 2^4 + C_3^2 1^4 = 81 - 48 + 3 = 36$."
+  },
+  {
+    "id": 648,
+    "topic": "Hàm Số & Ánh Xạ",
+    "question": "Cho hai hàm số $f, g: \\mathbb{R} \\to \\mathbb{R}$ xác định bởi $f(x) = 2x + 3$ và $g(x) = 3x - 2$. Biểu thức của hai hàm hợp $(f \\circ g)(x)$ và $(g \\circ f)(x)$ lần lượt là:",
+    "options": [
+      "$6x + 7$ và $6x - 1$",
+      "$6x - 1$ và $6x + 7$",
+      "$6x + 1$ và $6x - 7$",
+      "$5x + 1$ và $5x + 1$"
+    ],
+    "correct": 1,
+    "explanation": "Ta tính $(f \\circ g)(x) = f(g(x)) = 2(3x - 2) + 3 = 6x - 1$, còn $(g \\circ f)(x) = g(f(x)) = 3(2x + 3) - 2 = 6x + 7$."
+  },
+  {
+    "id": 649,
+    "topic": "Hàm Số & Ánh Xạ",
+    "question": "Giá trị của biểu thức $\\lceil -3.2 \\rceil + \\lfloor -3.2 \\rfloor + \\lfloor 2.9 \\rfloor$ bằng bao nhiêu?",
+    "options": [
+      "$-4$",
+      "$-6$",
+      "$-3$",
+      "$-5$"
+    ],
+    "correct": 3,
+    "explanation": "Theo định nghĩa: $\\lceil -3.2 \\rceil = -3$ (số nguyên nhỏ nhất $\\ge -3.2$), $\\lfloor -3.2 \\rfloor = -4$ (số nguyên lớn nhất $\\le -3.2$), và $\\lfloor 2.9 \\rfloor = 2$. Tổng là $-3 + (-4) + 2 = -5$."
+  },
+  {
+    "id": 650,
+    "topic": "Số Học & Đồng Dư",
+    "question": "Áp dụng định lý Fermat nhỏ, số dư của phép chia $3^{2026}$ cho $7$ là:",
+    "options": [
+      "$1$",
+      "$4$",
+      "$5$",
+      "$2$"
+    ],
+    "correct": 1,
+    "explanation": "Vì $7$ là số nguyên tố và $\\gcd(3, 7) = 1$, theo định lý Fermat nhỏ ta có $3^6 \\equiv 1 \\pmod 7$. Do $2026 = 6 \\times 337 + 4$, nên $3^{2026} \\equiv 3^4 = 81 \\equiv 4 \\pmod 7$."
+  },
+  {
+    "id": 651,
+    "topic": "Số Học & Đồng Dư",
+    "question": "Sử dụng thuật toán Euclid mở rộng, tìm <strong>nghịch đảo modulo</strong> của $17$ theo modulo $43$ (tức số nguyên $x \\in \\{0, 1, \\dots, 42\\}$ sao cho $17x \\equiv 1 \\pmod{43}$):",
+    "options": [
+      "$38$",
+      "$40$",
+      "$18$",
+      "$5$"
+    ],
+    "correct": 0,
+    "explanation": "Áp dụng Euclid: $43 = 2\\cdot 17 + 9$; $17 = 1\\cdot 9 + 8$; $9 = 1\\cdot 8 + 1$. Thế ngược: $1 = 9 - 8 = 9 - (17 - 9) = 2\\cdot 9 - 17 = 2(43 - 2\\cdot 17) - 17 = 2\\cdot 43 - 5\\cdot 17$. Vậy $x \\equiv -5 \\equiv 38 \\pmod{43}$ (thử lại: $17 \\times 38 = 646 = 15 \\times 43 + 1$)."
+  },
+  {
+    "id": 652,
+    "topic": "Số Học & Đồng Dư",
+    "question": "Theo Định lý phần dư Trung Hoa (CRT), nghiệm nguyên dương nhỏ nhất của hệ phương trình đồng dư $\\begin{cases} x \\equiv 2 \\pmod 3 \\\\ x \\equiv 3 \\pmod 5 \\\\ x \\equiv 2 \\pmod 7 \\end{cases}$ là:",
+    "options": [
+      "$53$",
+      "$128$",
+      "$38$",
+      "$23$"
+    ],
+    "correct": 3,
+    "explanation": "Với $M = 3\\cdot 5\\cdot 7 = 105$: $M_1 = 35, y_1 = 2$ ($70 \\equiv 1 \\pmod 3$); $M_2 = 21, y_2 = 1$ ($21 \\equiv 1 \\pmod 5$); $M_3 = 15, y_3 = 1$ ($15 \\equiv 1 \\pmod 7$). Nghiệm $x \\equiv 2\\cdot 35\\cdot 2 + 3\\cdot 21\\cdot 1 + 2\\cdot 15\\cdot 1 = 233 \\equiv 23 \\pmod{105}$."
+  },
+  {
+    "id": 653,
+    "topic": "Số Học & Đồng Dư",
+    "question": "Số nguyên viết trong hệ thập lục phân là $(2AF)_{16}$ có biểu diễn trong hệ nhị phân (cơ số $2$) và hệ thập phân (cơ số $10$) lần lượt là:",
+    "options": [
+      "$1101011110_2$ và $862_{10}$",
+      "$1010101111_2$ và $687_{10}$",
+      "$1010111011_2$ và $699_{10}$",
+      "$1010101110_2$ và $686_{10}$"
+    ],
+    "correct": 1,
+    "explanation": "Chuyển từng chữ số hex sang 4 bit: $2 = 0010$, $A(10) = 1010$, $F(15) = 1111$, ghép bỏ số $0$ đầu được $1010101111_2$. Giá trị thập phân: $2\\cdot 16^2 + 10\\cdot 16 + 15 = 512 + 160 + 15 = 687$."
+  },
+  {
+    "id": 654,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Cho hàm $f(n)$ và $g(n)$ dương. Theo định nghĩa toán học chuẩn, $f(n) = O(g(n))$ khi và chỉ khi tồn tại các hằng số dương $C$ và $n_0$ sao cho:",
+    "options": [
+      "$|f(n)| \\le C |g(n)|$ với mọi $n > n_0$",
+      "$|f(n)| \\ge C |g(n)|$ với mọi $n > n_0$",
+      "$c_1 |g(n)| \\le |f(n)| \\le c_2 |g(n)|$ luôn sai với mọi $n > n_0$",
+      "$\\lim_{n \\to \\infty} \\frac{f(n)}{g(n)} = \\infty$"
+    ],
+    "correct": 0,
+    "explanation": "Ký hiệu $O$-lớn (Big-O) biểu thị cận trên tiệm cận: $f(n) = O(g(n)) \\iff \\exists C > 0, n_0 > 0: \\forall n > n_0,\\ |f(n)| \\le C |g(n)|$."
+  },
+  {
+    "id": 655,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Sắp xếp các lớp độ phức tạp sau theo thứ tự tốc độ tăng <strong>từ chậm nhất đến nhanh nhất</strong> (khi $n \\to \\infty$):",
+    "options": [
+      "$\\log_2 n \\prec n^{1.5} \\prec n \\log_2 n \\prec n \\prec 2^n \\prec n!$",
+      "$n \\prec \\log_2 n \\prec n \\log_2 n \\prec n^{1.5} \\prec n! \\prec 2^n$",
+      "$\\log_2 n \\prec n \\prec n \\log_2 n \\prec 2^n \\prec n^{1.5} \\prec n!$",
+      "$\\log_2 n \\prec n \\prec n \\log_2 n \\prec n^{1.5} \\prec 2^n \\prec n!$"
+    ],
+    "correct": 3,
+    "explanation": "Thứ tự tăng tiệm cận chuẩn: hàm logarit ($\\log_2 n$) $\\prec$ tuyến tính ($n$) $\\prec$ $n\\log_2 n$ $\\prec$ đa thức bậc lớn hơn ($n^{1.5}$) $\\prec$ hàm mũ ($2^n$) $\\prec$ giai thừa ($n!$)."
+  },
+  {
+    "id": 656,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Xét đoạn mã có $3$ vòng lặp lồng nhau phụ thuộc: <code>for i := 1 to n do for j := 1 to i do for k := 1 to j do count := count + 1;</code>. Tổng số lần phép cộng được thực hiện và độ phức tạp chặt $\\Theta$ của đoạn mã là:",
+    "options": [
+      "$n^3$ và $\\Theta(n^3)$",
+      "$\\frac{n(n+1)}{2}$ và $\\Theta(n^2)$",
+      "$\\frac{n(n+1)(n+2)}{6}$ và $\\Theta(n^3)$",
+      "$n^2 \\log n$ và $\\Theta(n^2 \\log n)$"
+    ],
+    "correct": 2,
+    "explanation": "Tổng số bước lặp là $\\sum_{i=1}^n \\sum_{j=1}^i j = \\sum_{i=1}^n \\frac{i(i+1)}{2} = \\frac{n(n+1)(n+2)}{6}$, có bậc cao nhất là $\\frac{1}{6}n^3$ nên độ phức tạp chặt là $\\Theta(n^3)$."
+  },
+  {
+    "id": 657,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Xét đoạn mã (với $n = 2^k$): <code>i := 1; while (i <= n) do { for j := 1 to i do s := s + 1; i := i * 2; }</code>. Độ phức tạp chặt $\\Theta$ của đoạn mã này là:",
+    "options": [
+      "$\\Theta(n)$",
+      "$\\Theta(n \\log n)$",
+      "$\\Theta(\\log n)$",
+      "$\\Theta(n^2)$"
+    ],
+    "correct": 0,
+    "explanation": "Vòng lặp ngoài chạy $\\log_2 n + 1$ lần, nhưng số lần lặp bên trong tạo thành cấp số nhân $1 + 2 + 4 + \\dots + n = 2n - 1$. Vậy tổng số phép toán chỉ là $\\Theta(n)$ (không phải $\\Theta(n\\log n)$!)."
+  },
+  {
+    "id": 658,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Trên một mảng đã sắp xếp gồm $n = 1024$ phần tử phân biệt, số phép so sánh tối đa cần thực hiện trong trường hợp xấu nhất của thuật toán <strong>Tìm kiếm tuần tự (Linear Search)</strong> và <strong>Tìm kiếm nhị phân (Binary Search)</strong> xấp xỉ lần lượt là:",
+    "options": [
+      "$10$ và $1024$",
+      "$1024$ và $32$",
+      "$1024$ và $11$",
+      "$512$ và $10$"
+    ],
+    "correct": 2,
+    "explanation": "Tìm kiếm tuần tự trong trường hợp xấu nhất phải duyệt hết cả $n = 1024$ phần tử. Tìm kiếm nhị phân mỗi bước loại một nửa không gian tìm kiếm nên số bước kiểm tra tối đa là $\\lfloor \\log_2(1024) \\rfloor + 1 = 10 + 1 = 11$ bước."
+  },
+  {
+    "id": 659,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Áp dụng Định lý Thợ (Master Theorem) cho hệ thức đệ quy $T(n) = 4T(n/2) + n^2$ (với $T(1) = 1$). Đánh giá độ phức tạp chặt $\\Theta$ của $T(n)$ là:",
+    "options": [
+      "$\\Theta(n^3)$",
+      "$\\Theta(n^2 \\log n)$",
+      "$\\Theta(n \\log n)$",
+      "$\\Theta(n^2)$"
+    ],
+    "correct": 1,
+    "explanation": "Ta có $a = 4, b = 2 \\Rightarrow n^{\\log_b a} = n^{\\log_2 4} = n^2$. Vì $f(n) = n^2 = \\Theta(n^{\\log_b a})$, theo Trường hợp 2 của Định lý Thợ, $T(n) = \\Theta(n^2 \\log n)$."
+  },
+  {
+    "id": 660,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Thuật toán nhân hai ma trận vuông $n \\times n$ bằng chia để trị thông thường cho hệ thức $T(n) = 8T(n/2) + n^2$, còn thuật toán <strong>Strassen</strong> tối ưu xuống còn $T(n) = 7T(n/2) + n^2$. Độ phức tạp của hai thuật toán lần lượt là:",
+    "options": [
+      "$\\Theta(n^3)$ và $\\Theta(n^{\\log_2 7})$ ($\\approx O(n^{2.81})$)",
+      "$\\Theta(n^3 \\log n)$ và $\\Theta(n^{2.5})$",
+      "$\\Theta(n^2 \\log n)$ và $\\Theta(n^2)$",
+      "$\\Theta(n^3)$ và $\\Theta(n^2 \\log n)$"
+    ],
+    "correct": 0,
+    "explanation": "Với $T(n) = 8T(n/2) + n^2$, $n^{\\log_2 8} = n^3$ trội hơn $n^2$ nên thuộc Trường hợp 1 Định lý Thợ: $\\Theta(n^3)$. Với Strassen ($a=7, b=2$), $n^{\\log_2 7} \\approx n^{2.807}$ cũng trội hơn $n^2$ nên độ phức tạp là $\\Theta(n^{\\log_2 7})$."
+  }
+]

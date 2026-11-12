@@ -1,0 +1,210 @@
+[
+  {
+    "id": 501,
+    "topic": "Tối Ưu Tổ Hợp & Nhánh Cận",
+    "question": "Xét <strong>Bài toán cái túi nguyên (Knapsack)</strong> (Mục 4.3.1 - Giáo trình Toán Rời Rạc 1 trang 82): $\\max \\sum_{i=1}^n c_i x_i$ với ràng buộc $\\sum_{i=1}^n a_i x_i \\le b$ ($x_i \\in \\mathbb{Z}^+$). Khi các đồ vật đã được sắp xếp theo thứ tự đơn giá giảm dần $\\frac{c_1}{a_1} \\ge \\frac{c_2}{a_2} \\ge \\dots \\ge \\frac{c_n}{a_n}$, công thức tính <strong>cận trên</strong> $g(x_1, \\dots, x_k)$ tại nút cấp $k$ trong thuật toán Nhánh cận là:",
+    "options": [
+      "$g = \\sigma_k + c_{k+1} \\cdot b_k$",
+      "$g = \\sigma_k + \\frac{c_{k+1} \\cdot b_k}{a_{k+1}}$ (với $\\sigma_k = \\sum_{i=1}^k c_i x_i$ và $b_k = b - \\sum_{i=1}^k a_i x_i$)",
+      "$g = \\sigma_k + \\min_{i > k} \\left(\\frac{c_i b_k}{a_i}\\right)$",
+      "$g = \\sigma_k + (n - k) \\cdot c_{k+1}$"
+    ],
+    "correct": 1,
+    "explanation": "Vì đồ vật thứ $k+1$ có giá trị trên một đơn vị trọng lượng $\\frac{c_{k+1}}{a_{k+1}}$ lớn nhất trong số các đồ vật còn lại ($k+1, \\dots, n$), nên trọng lượng còn lại $b_k$ mang lại giá trị tối đa không vượt quá $\\frac{c_{k+1}}{a_{k+1}} b_k$. Do đó cận trên là $g = \\sigma_k + \\frac{c_{k+1} b_k}{a_{k+1}}$."
+  },
+  {
+    "id": 502,
+    "topic": "Tối Ưu Tổ Hợp & Nhánh Cận",
+    "question": "Cho bài toán cái túi (Ví dụ 2 - Mục 4.3.1 Giáo trình Toán Rời Rạc 1): $\\max f = 10x_1 + 5x_2 + 3x_3 + 6x_4$ với $5x_1 + 3x_2 + 2x_3 + 4x_4 \\le 8$, $x_i \\in \\mathbb{Z}^+$. Tại bước đầu tiên khi chọn $x_1 = 1$ (trọng lượng còn lại $b_1 = 8 - 5 = 3$, giá trị hiện tại $\\sigma_1 = 10$), giá trị <strong>cận trên $g(x_1 = 1)$</strong> bằng bao nhiêu?",
+    "options": [
+      "$g = 10 + \\frac{6 \\times 3}{4} = 14.5$",
+      "$g = 10 + \\frac{3 \\times 3}{2} = 14.5$",
+      "$g = 10 + \\frac{5 \\times 3}{3} = 15$",
+      "$g = 16$"
+    ],
+    "correct": 2,
+    "explanation": "Kiểm tra tỷ số $c_i / a_i$: $10/5 = 2.0 > 5/3 \\approx 1.67 > 3/2 = 1.5 = 6/4$ (đã giảm dần). Với $x_1 = 1$: $\\sigma_1 = 10$, $b_1 = 8 - 5(1) = 3$. Áp dụng công thức cận trên: $g(x_1 = 1) = \\sigma_1 + \\frac{c_2 b_1}{a_2} = 10 + \\frac{5 \\times 3}{3} = 15$."
+  },
+  {
+    "id": 503,
+    "topic": "Tối Ưu Tổ Hợp & Nhánh Cận",
+    "question": "Cũng với bài toán cái túi $\\max f = 10x_1 + 5x_2 + 3x_3 + 6x_4$ với $5x_1 + 3x_2 + 2x_3 + 4x_4 \\le 8$ ($x_i \\in \\mathbb{Z}^+$), giá trị tối ưu $f^*$ và phương án tối ưu $X^* = (x_1, x_2, x_3, x_4)$ tìm được bằng thuật toán Nhánh cận là:",
+    "options": [
+      "$f^* = 15$ tại $X^* = (1, 1, 0, 0)$",
+      "$f^* = 16$ tại $X^* = (1, 0, 0, 1)$",
+      "$f^* = 14$ tại $X^* = (0, 2, 2, 0)$",
+      "$f^* = 13$ tại $X^* = (1, 0, 1, 0)$"
+    ],
+    "correct": 0,
+    "explanation": "Với $x_1 = 1, x_2 = 1, x_3 = 0, x_4 = 0$: trọng lượng là $5(1) + 3(1) = 8 \\le 8$ và tổng giá trị là $10(1) + 5(1) = 15$. Nhánh $x_1 = 0$ có cận trên $g = 0 + \\frac{5 \\times 8}{3} = 13.3 < 15$ nên bị cắt tỉa ngay. Vậy $f^* = 15$."
+  },
+  {
+    "id": 504,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Trong <strong>Bài toán người du lịch (TSP)</strong> gồm $n$ thành phố (Mục 4.3.2 - Giáo trình Toán Rời Rạc 1 trang 86): Giả sử hành trình bộ phận đã đi qua $k$ thành phố $1 \\to a_2 \\to \\dots \\to a_k$ với chi phí $\\partial$, và $c_{\\min}$ là chi phí nhỏ nhất giữa các cặp thành phố. Công thức tính <strong>cận dưới $g$</strong> của hành trình bộ phận này là:",
+    "options": [
+      "$g(1, a_2, \\dots, a_k) = \\partial + n \\cdot c_{\\min}$",
+      "$g(1, a_2, \\dots, a_k) = \\partial + (n - k) c_{\\min}$",
+      "$g(1, a_2, \\dots, a_k) = \\partial + k \\cdot c_{\\min}$",
+      "$g(1, a_2, \\dots, a_k) = \\partial + (n - k + 1) c_{\\min}$"
+    ],
+    "correct": 3,
+    "explanation": "Một chu trình khép kín đi qua $n$ thành phố rồi quay về thành phố $1$ có tổng cộng $n$ đoạn đường. Hành trình bộ phận $1 \\to a_2 \\to \\dots \\to a_k$ đã đi được $k - 1$ đoạn đường, nên còn phải đi thêm $n - (k - 1) = n - k + 1$ đoạn đường nữa, mỗi đoạn có chi phí ít nhất là $c_{\\min}$. Vậy $g = \\partial + (n - k + 1)c_{\\min}$."
+  },
+  {
+    "id": 505,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Trong thuật toán Nhánh cận giải bài toán Người du lịch sử dụng kỹ thuật <strong>rút gọn ma trận chi phí</strong> (Mục 4.3.3 - Giáo trình Toán Rời Rạc 1 trang 91): Một hàng (hoặc một cột) của ma trận chi phí được gọi là <strong>đã rút gọn</strong> khi nào?",
+    "options": [
+      "Khi tổng các phần tử trên hàng (hoặc cột) đó bằng $1$",
+      "Khi tất cả các phần tử trên hàng (hoặc cột) đó đều bằng $0$",
+      "Khi hàng (hoặc cột) đó chứa ít nhất một phần tử bằng $0$ và tất cả các phần tử còn lại đều không âm",
+      "Khi phần tử trên đường chéo chính của hàng (hoặc cột) đó bằng $0$"
+    ],
+    "correct": 2,
+    "explanation": "Thủ tục `Reduce(C)` trừ mỗi phần tử trên hàng $i$ đi phần tử nhỏ nhất của hàng đó, rồi trừ mỗi phần tử trên cột $j$ đi phần tử nhỏ nhất của cột đó, sao cho mỗi hàng và mỗi cột đều có ít nhất một số $0$ và các phần tử còn lại $\\ge 0$. Tổng các hằng số rút gọn chính là cận dưới của ma trận."
+  },
+  {
+    "id": 506,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Trong thuật toán Nhánh cận với ma trận rút gọn giải bài toán TSP (thủ tục `BestEdge` - Mục 4.3.3 Giáo trình Toán Rời Rạc 1), khi xét các ô có $C(i, j) = 0$, ta chọn cạnh phân nhánh $(p, q)$ theo tiêu chuẩn nào?",
+    "options": [
+      "Chọn ô $(p, q)$ có $C(p, q) = 0$ sao cho tổng phần tử nhỏ nhất hàng $p$ và cột $q$ là nhỏ nhất",
+      "Chọn ô $(p, q)$ có $C(p, q) = 0$ sao cho tổng (phần tử nhỏ nhất hàng $p$ khác cột $q$) $+$ (phần tử nhỏ nhất cột $q$ khác hàng $p$) là <strong>lớn nhất</strong>",
+      "Chọn ô $(p, q)$ có chỉ số hàng $p$ và cột $q$ nhỏ nhất",
+      "Chọn ngẫu nhiên một ô có giá trị bằng $0$ trong ma trận"
+    ],
+    "correct": 1,
+    "explanation": "Nếu không đi qua cạnh $(p, q)$ (nhánh $C(p, q) = \\infty$), ma trận sẽ phải rút gọn thêm một lượng đúng bằng $\\Delta(p, q) = \\min_{j \\neq q} C(p, j) + \\min_{i \\neq p} C(i, q)$. Chọn ô $(p, q)$ làm cực đại hóa $\\Delta(p, q)$ giúp cận dưới của nhánh không chứa $(p, q)$ tăng mạnh nhất, từ đó cắt tỉa nhánh nhanh nhất."
+  },
+  {
+    "id": 507,
+    "topic": "Các Bài Toán Tối Ưu Tổ Hợp Điển Hình",
+    "question": "Trong <strong>Bài toán cái túi 0-1</strong> gồm $n$ đồ vật (mỗi đồ vật chỉ được chọn hoặc không chọn: $x_i \\in \\{0, 1\\}$), nếu sử dụng phương pháp <strong>duyệt toàn bộ</strong> (Exhaustive Search - Mục 4.2 Giáo trình Toán Rời Rạc 1), số phương án cần xét và độ phức tạp thời gian là:",
+    "options": [
+      "$C_{2n}^n$ phương án với độ phức tạp $O(4^n)$",
+      "$n!$ phương án với độ phức tạp $O(n!)$",
+      "$n^2$ phương án với độ phức tạp $O(n^2)$",
+      "$2^n$ phương án với độ phức tạp $O(2^n)$ (hoặc $O(n 2^n)$)"
+    ],
+    "correct": 3,
+    "explanation": "Mỗi phương án $X = (x_1, x_2, \\dots, x_n)$ là một xâu nhị phân độ dài $n$, nên không gian nghiệm có $2^n$ phần tử, dẫn đến sự bùng nổ tổ hợp khi $n$ lớn."
+  },
+  {
+    "id": 508,
+    "topic": "Các Bài Toán Tối Ưu Tổ Hợp Điển Hình",
+    "question": "Trong <strong>Bài toán phân công công việc (Assignment Problem)</strong> (Mục 4.1.4 - Giáo trình Toán Rời Rạc 1): Có $n$ công nhân và $n$ công việc, mỗi người nhận đúng $1$ việc và mỗi việc giao cho đúng $1$ người. Mỗi phương án phân công tương ứng với cấu trúc tổ hợp nào và có bao nhiêu phương án?",
+    "options": [
+      "Mỗi phương án là một hoán vị của $\\{1, 2, \\dots, n\\}$ và có tất cả $n!$ phương án",
+      "Mỗi phương án là một xâu nhị phân độ dài $n$ và có $2^n$ phương án",
+      "Mỗi phương án là một tổ hợp chập $k$ của $n$ và có $C_n^k$ phương án",
+      "Có tất cả $(n - 1)!$ phương án phân công"
+    ],
+    "correct": 0,
+    "explanation": "Gọi $\\pi(i)$ là công việc giao cho công nhân $i$. Vì mỗi người làm đúng $1$ việc khác nhau nên $(\\pi(1), \\pi(2), \\dots, \\pi(n))$ là một hoán vị của $n$ phần tử, có $n!$ phương án."
+  },
+  {
+    "id": 509,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Cho đồ thị vô hướng $G = (V, E)$ có $|V|$ đỉnh và $|E|$ cạnh. Theo <strong>Định lý bắt tay (Handshaking Lemma)</strong>, khẳng định nào dưới đây là <strong>luôn đúng</strong>?",
+    "options": [
+      "Tổng bậc của tất cả các đỉnh bằng $|E|$, và số đỉnh bậc chẵn luôn là một số chẵn",
+      "Tổng bậc của tất cả các đỉnh bằng $2|E|$, và số đỉnh bậc lẻ luôn là một số chẵn",
+      "Tổng bậc của tất cả các đỉnh bằng $2|V|$",
+      "Số đỉnh bậc lẻ luôn bằng số đỉnh bậc chẵn"
+    ],
+    "correct": 1,
+    "explanation": "Mỗi cạnh vô hướng đóng góp $2$ vào tổng bậc của các đỉnh: $\\sum_{v \\in V} \\deg(v) = 2|E|$ (số chẵn). Vì tổng của các đỉnh bậc chẵn là chẵn nên tổng bậc các đỉnh bậc lẻ phải chẵn $\\Rightarrow$ số đỉnh bậc lẻ phải là số chẵn."
+  },
+  {
+    "id": 510,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Có thể nối $31$ máy vi tính thành một mạng sao cho mỗi máy vi tính được nối trực tiếp với đúng $5$ máy khác hay không (Bài tập 2 - Slide 5_Existing)?",
+    "options": [
+      "Có thể, nếu sắp xếp $31$ máy theo hình đa giác đều",
+      "Có thể, với tổng cộng $77$ dây cáp mạng",
+      "Có thể, với tổng cộng $155$ dây cáp mạng",
+      "Không thể, vì tổng bậc của $31$ đỉnh sẽ là $31 \\times 5 = 155$ (là số lẻ, trái với định lý bắt tay)"
+    ],
+    "correct": 3,
+    "explanation": "Nếu mỗi máy nối với đúng $5$ máy khác thì đồ thị có $31$ đỉnh bậc lẻ ($5$). Theo hệ quả định lý bắt tay, số đỉnh bậc lẻ phải là số chẵn (hoặc $2|E| = 31 \\times 5 = 155$ vô nghiệm nguyên), nên không thể thực hiện được."
+  },
+  {
+    "id": 511,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Một đồ thị vô hướng đơn gồm $6$ đỉnh và $11$ cạnh, trong đó mỗi đỉnh chỉ có bậc $3$ hoặc bậc $4$. Số đỉnh bậc $3$ và số đỉnh bậc $4$ của đồ thị lần lượt là:",
+    "options": [
+      "$3$ đỉnh bậc $3$ và $3$ đỉnh bậc $4$",
+      "$4$ đỉnh bậc $3$ và $2$ đỉnh bậc $4$",
+      "$2$ đỉnh bậc $3$ và $4$ đỉnh bậc $4$",
+      "$1$ đỉnh bậc $3$ và $5$ đỉnh bậc $4$"
+    ],
+    "correct": 2,
+    "explanation": "Gọi $x$ là số đỉnh bậc $3$ và $6 - x$ là số đỉnh bậc $4$. Áp dụng định lý bắt tay: $3x + 4(6 - x) = 2 \\times 11 = 22 \\Rightarrow 24 - x = 22 \\Rightarrow x = 2$. Vậy có $2$ đỉnh bậc $3$ và $4$ đỉnh bậc $4$."
+  },
+  {
+    "id": 512,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Số cạnh của đồ thị đầy đủ $K_n$ và số cạnh của đồ thị hai phía đầy đủ $K_{m,n}$ lần lượt là:",
+    "options": [
+      "$|E(K_n)| = \\frac{n(n-1)}{2}$ và $|E(K_{m,n})| = m \\cdot n$",
+      "$|E(K_n)| = n(n-1)$ và $|E(K_{m,n})| = m + n$",
+      "$|E(K_n)| = \\frac{n(n+1)}{2}$ và $|E(K_{m,n})| = \\frac{mn}{2}$",
+      "$|E(K_n)| = 2^n$ và $|E(K_{m,n})| = m^n$"
+    ],
+    "correct": 0,
+    "explanation": "Trong $K_n$, mỗi cặp đỉnh đều có đúng $1$ cạnh nối nên có $C_n^2 = \\frac{n(n-1)}{2}$ cạnh. Trong $K_{m,n}$, mỗi đỉnh trong $m$ đỉnh phía trái nối với cả $n$ đỉnh phía phải nên có $m \\cdot n$ cạnh."
+  },
+  {
+    "id": 513,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Đồ thị vô hướng liên thông $G = (V, E)$ có một <strong>đường đi Euler không khép kín</strong> (đi qua mọi cạnh đúng $1$ lần nhưng không phải chu trình Euler) khi và chỉ khi:",
+    "options": [
+      "Mọi đỉnh của $G$ đều có bậc lẻ",
+      "Mọi đỉnh của $G$ đều có bậc chẵn",
+      "$G$ có ít nhất $2$ đỉnh bậc chẵn",
+      "$G$ có đúng $2$ đỉnh bậc lẻ"
+    ],
+    "correct": 3,
+    "explanation": "Theo định lý Euler: Đồ thị vô hướng liên thông có chu trình Euler $\\Leftrightarrow$ mọi đỉnh bậc chẵn; có đường đi Euler không khép kín $\\Leftrightarrow$ có đúng $2$ đỉnh bậc lẻ (đường đi bắt đầu ở đỉnh bậc lẻ này và kết thúc ở đỉnh bậc lẻ kia)."
+  },
+  {
+    "id": 514,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Với giá trị nào của $n \\ge 3$ thì đồ thị đầy đủ $K_n$ có <strong>chu trình Euler</strong>?",
+    "options": [
+      "Khi và chỉ khi $n$ là số nguyên chẵn ($n = 4, 6, 8, \\dots$)",
+      "Khi và chỉ khi $n$ là số nguyên lẻ ($n = 3, 5, 7, \\dots$)",
+      "Với mọi $n \\ge 3$",
+      "Chỉ khi $n = 3$ hoặc $n = 4$"
+    ],
+    "correct": 1,
+    "explanation": "Trong đồ thị đầy đủ $K_n$, mỗi đỉnh đều có bậc bằng $n - 1$. Để $K_n$ có chu trình Euler, bậc của mọi đỉnh phải chẵn $\\Leftrightarrow n - 1$ chẵn $\\Leftrightarrow n$ là số lẻ."
+  },
+  {
+    "id": 515,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Cho đồ thị phẳng liên thông $G$ có $V = 10$ đỉnh, mỗi đỉnh đều có bậc bằng $4$. Biểu diễn phẳng của $G$ chia mặt phẳng thành bao nhiêu miền $F$ (kể cả miền vô hạn)?",
+    "options": [
+      "$12$ miền",
+      "$10$ miền",
+      "$14$ miền",
+      "$8$ miền"
+    ],
+    "correct": 0,
+    "explanation": "Số cạnh của đồ thị là $E = \\frac{10 \\times 4}{2} = 20$ cạnh. Áp dụng công thức Euler cho đồ thị phẳng liên thông: $V - E + F = 2 \\Rightarrow F = 2 - V + E = 2 - 10 + 20 = 12$ miền."
+  },
+  {
+    "id": 516,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Một cây (Tree) có $n$ đỉnh ($n \\ge 2$) luôn có bao nhiêu cạnh, và một rừng (Forest) gồm $k$ cây rời nhau trên tổng số $n$ đỉnh có bao nhiêu cạnh?",
+    "options": [
+      "Cây có $n - 1$ cạnh; Rừng $k$ cây có $n - 1$ cạnh",
+      "Cây có $n$ cạnh; Rừng $k$ cây có $n - k + 1$ cạnh",
+      "Cây có $n - 1$ cạnh; Rừng $k$ cây có $n - k$ cạnh",
+      "Cây có $n + 1$ cạnh; Rừng $k$ cây có $n + k$ cạnh"
+    ],
+    "correct": 2,
+    "explanation": "Mỗi cây $n_i$ đỉnh có đúng $n_i - 1$ cạnh. Rừng gồm $k$ cây rời nhau có tổng số cạnh là $\\sum_{i=1}^k (n_i - 1) = (\\sum_{i=1}^k n_i) - k = n - k$ cạnh."
+  }
+]

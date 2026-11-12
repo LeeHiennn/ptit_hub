@@ -1,0 +1,377 @@
+[
+  {
+    "id": 56,
+    "lab_name": "Bài 0: Lý thuyết sai số & Xử lý số liệu thực nghiệm",
+    "type": "error",
+    "question": "Khi đo trực tiếp một đại lượng vật lý $A$ nhiều lần độc lập với các giá trị $A_1, A_2, \\dots, A_n$, giá trị trung bình $\\bar{A}$, sai số ngẫu nhiên trung bình $\\overline{\\Delta A}$ và sai số tuyệt đối toàn phần $\\Delta A$ (với $\\Delta A_{\\text{dc}}$ là sai số dụng cụ) được tính theo công thức nào?",
+    "image": "",
+    "options": [
+      "$\\bar{A} = \\dfrac{1}{n}\\sum_{i=1}^{n} A_i,\\ \\overline{\\Delta A} = \\sum_{i=1}^{n} |A_i - \\bar{A}|,\\ \\Delta A = \\Delta A_{\\text{dc}}$",
+      "$\\bar{A} = \\dfrac{1}{n}\\sum_{i=1}^{n} A_i,\\ \\overline{\\Delta A} = \\dfrac{1}{n}\\sum_{i=1}^{n} (A_i - \\bar{A}),\\ \\Delta A = \\overline{\\Delta A} - \\Delta A_{\\text{dc}}$",
+      "$\\bar{A} = \\sqrt{A_1 A_n},\\ \\overline{\\Delta A} = \\max|A_i - \\bar{A}|,\\ \\Delta A = \\dfrac{\\overline{\\Delta A}}{\\Delta A_{\\text{dc}}}$",
+      "$\\bar{A} = \\dfrac{1}{n}\\sum_{i=1}^{n} A_i,\\ \\overline{\\Delta A} = \\dfrac{1}{n}\\sum_{i=1}^{n} |A_i - \\bar{A}|,\\ \\Delta A = \\overline{\\Delta A} + \\Delta A_{\\text{dc}}$"
+    ],
+    "correct": 3,
+    "explanation": "Theo Bài 0 - Lý thuyết sai số: sai số ngẫu nhiên trung bình là trung bình cộng các độ lệch tuyệt đối $\\overline{\\Delta A} = \\dfrac{1}{n}\\sum |A_i - \\bar{A}|$, và sai số tuyệt đối của phép đo là $\\Delta A = \\overline{\\Delta A} + \\Delta A_{\\text{dc}}$; kết quả viết dưới dạng $A = \\bar{A} \\pm \\Delta A$."
+  },
+  {
+    "id": 57,
+    "lab_name": "Bài 0: Lý thuyết sai số & Xử lý số liệu thực nghiệm",
+    "type": "error",
+    "question": "Đối với dụng cụ đo hiện kim (như ampe kế, vôn kế) có cấp chính xác $\\delta\\%$ và giá trị lớn nhất của thang đo là $A_{\\max}$, sai số hệ thống do cấp chính xác $\\Delta A_{\\text{ccx}}$ và sai số độ phân giải $\\Delta A_{\\text{dpg}}$ (bằng nửa độ chia nhỏ nhất) được xác định như thế nào?",
+    "image": "",
+    "options": [
+      "$\\Delta A_{\\text{ccx}} = \\delta\\% \\cdot A_{\\max}$; sai số dụng cụ lấy $\\Delta A_{\\text{dc}} = \\max(\\Delta A_{\\text{ccx}}, \\Delta A_{\\text{dpg}})$ (hoặc tổng hai thành phần theo quy ước phòng thí nghiệm)",
+      "$\\Delta A_{\\text{ccx}} = \\delta\\% \\cdot A_{\\text{đo}}$; sai số dụng cụ chỉ phụ thuộc vào giá trị đọc tức thời trên mặt đồng hồ",
+      "$\\Delta A_{\\text{ccx}} = \\dfrac{A_{\\max}}{\\delta\\%}$; không phụ thuộc vào thang đo đang chọn",
+      "$\\Delta A_{\\text{ccx}} = 0$; dụng cụ hiện kim không có sai số hệ thống"
+    ],
+    "correct": 0,
+    "explanation": "Theo Bài 0 - Lý thuyết sai số (trang 8): với đồng hồ hiện kim có cấp chính xác $\\delta\\%$ ở thang đo $A_{\\max}$, sai số cấp chính xác là $\\Delta A_{\\text{ccx}} = \\delta\\% \\cdot A_{\\max}$ (ví dụ $\\delta = 1{,}5\\%$ ở thang $A_{\\max} = 5\\ \\text{A}$ cho $\\Delta I_{\\text{ccx}} = 0{,}075\\ \\text{A}$)."
+  },
+  {
+    "id": 58,
+    "lab_name": "Bài 0: Lý thuyết sai số & Xử lý số liệu thực nghiệm",
+    "type": "error",
+    "question": "Một đồng hồ vạn năng hiện số đo hiệu điện thế một chiều ở thang đo $20\\ \\text{V}$, nhà sản xuất ghi độ chính xác là $\\pm(0{,}5\\% + 2\\text{ digit})$ với độ phân giải $0{,}01\\ \\text{V}$. Khi màn hình hiển thị $U = 10{,}00\\ \\text{V}$ thì sai số dụng cụ $\\Delta U_{\\text{dc}}$ bằng:",
+    "image": "",
+    "options": [
+      "$\\Delta U_{\\text{dc}} = 0{,}5\\% \\times 20{,}00 = 0{,}10\\ \\text{V}$",
+      "$\\Delta U_{\\text{dc}} = 0{,}5\\% \\times 10{,}00 + 2 \\times 0{,}01 = 0{,}07\\ \\text{V}$",
+      "$\\Delta U_{\\text{dc}} = 2 \\times 0{,}01 = 0{,}02\\ \\text{V}$",
+      "$\\Delta U_{\\text{dc}} = 0{,}5\\% \\times 10{,}00 = 0{,}05\\ \\text{V}$"
+    ],
+    "correct": 1,
+    "explanation": "Với dụng cụ đo hiện số (digital), sai số gồm tỷ lệ phần trăm của giá trị đọc cộng với sai số chữ số cuối (LSB): $\\Delta U_{\\text{dc}} = 0{,}005 \\times 10{,}00 + 2 \\times 0{,}01 = 0{,}05 + 0{,}02 = 0{,}07\\ \\text{V}$."
+  },
+  {
+    "id": 59,
+    "lab_name": "Bài 0: Lý thuyết sai số & Xử lý số liệu thực nghiệm",
+    "type": "error",
+    "question": "Theo quy tắc làm tròn và biểu diễn kết quả đo trong Vật lý thí nghiệm, sai số tuyệt đối $\\Delta A$ và giá trị trung bình $\\bar{A}$ được làm tròn như thế nào?",
+    "image": "",
+    "options": [
+      "Giữ nguyên toàn bộ các chữ số hiện trên máy tính bỏ túi để độ chính xác cao nhất",
+      "Luôn làm tròn cả $\\bar{A}$ và $\\Delta A$ đến đúng $3$ chữ số sau dấu phẩy thập phân bất kể độ lớn",
+      "Sai số tuyệt đối $\\Delta A$ chỉ giữ lại $1$ chữ số có nghĩa (nếu chữ số đầu $> 2$) hoặc $2$ chữ số có nghĩa (nếu chữ số đầu $\\le 2$); giá trị trung bình $\\bar{A}$ làm tròn đến cùng bậc thập phân với $\\Delta A$",
+      "Làm tròn $\\bar{A}$ đến $1$ chữ số có nghĩa, còn $\\Delta A$ giữ $4$ chữ số có nghĩa"
+    ],
+    "correct": 2,
+    "explanation": "Theo quy ước chuẩn trong Bài 0 - Lý thuyết sai số (trang 11-12): $\\Delta A$ được viết với $1$ chữ số có nghĩa (hoặc $2$ chữ số có nghĩa nếu chữ số có nghĩa đầu tiên là $1$ hoặc $2$), và bậc thập phân cuối cùng của $\\bar{A}$ phải trùng với bậc thập phân của $\\Delta A$."
+  },
+  {
+    "id": 60,
+    "lab_name": "Bài 0: Lý thuyết sai số & Xử lý số liệu thực nghiệm",
+    "type": "error",
+    "question": "Cho phép đo gián tiếp đại lượng $F = \\dfrac{x^a \\cdot y^b}{z^c}$, trong đó $x, y, z$ là các đại lượng đo trực tiếp độc lập và $a, b, c > 0$ là các hằng số. Công thức tính sai số tương đối $\\varepsilon = \\dfrac{\\Delta F}{\\bar{F}}$ theo phương pháp vi phân logarit là:",
+    "image": "",
+    "options": [
+      "$\\varepsilon = \\dfrac{\\Delta F}{\\bar{F}} = \\Delta x + \\Delta y + \\Delta z$",
+      "$\\varepsilon = \\dfrac{\\Delta F}{\\bar{F}} = a\\dfrac{\\Delta x}{\\bar{x}} + b\\dfrac{\\Delta y}{\\bar{y}} - c\\dfrac{\\Delta z}{\\bar{z}}$",
+      "$\\varepsilon = \\dfrac{\\Delta F}{\\bar{F}} = \\dfrac{\\Delta x^a \\cdot \\Delta y^b}{\\Delta z^c}$",
+      "$\\varepsilon = \\dfrac{\\Delta F}{\\bar{F}} = a\\dfrac{\\Delta x}{\\bar{x}} + b\\dfrac{\\Delta y}{\\bar{y}} + c\\dfrac{\\Delta z}{\\bar{z}}$"
+    ],
+    "correct": 3,
+    "explanation": "Lấy logarit tự nhiên hai vế: $\\ln F = a\\ln x + b\\ln y - c\\ln z$, lấy vi phân và thay dấu âm bằng dấu cộng để đánh giá sai số cực đại: $\\dfrac{\\Delta F}{\\bar{F}} = a\\dfrac{\\Delta x}{\\bar{x}} + b\\dfrac{\\Delta y}{\\bar{y}} + c\\dfrac{\\Delta z}{\\bar{z}}$."
+  },
+  {
+    "id": 61,
+    "lab_name": "Bài 0: Lý thuyết sai số & Xử lý số liệu thực nghiệm",
+    "type": "calc",
+    "question": "Để xác định gia tốc trọng trường $g$ bằng con lắc đơn theo công thức $g = 4\\pi^2 \\dfrac{\\ell}{T^2}$, một sinh viên đo được chiều dài $\\ell = 100{,}0 \\pm 0{,}2\\ \\text{cm}$, chu kỳ $T = 2{,}000 \\pm 0{,}004\\ \\text{s}$ và lấy $\\pi = 3{,}1416 \\pm 0{,}0001$. Sai số tương đối $\\varepsilon = \\dfrac{\\Delta g}{\\bar{g}}$ của phép đo (bỏ qua sai số rất nhỏ của $\\pi$) bằng:",
+    "image": "",
+    "options": [
+      "$\\varepsilon = \\dfrac{\\Delta \\ell}{\\bar{\\ell}} + 2\\dfrac{\\Delta T}{\\bar{T}} = 0{,}2\\% + 2 \\times 0{,}2\\% = 0{,}6\\%$",
+      "$\\varepsilon = \\dfrac{\\Delta \\ell}{\\bar{\\ell}} + \\dfrac{\\Delta T}{\\bar{T}} = 0{,}4\\%$",
+      "$\\varepsilon = \\dfrac{\\Delta \\ell}{\\bar{\\ell}} - 2\\dfrac{\\Delta T}{\\bar{T}} = -0{,}2\\%$",
+      "$\\varepsilon = 2\\dfrac{\\Delta \\ell}{\\bar{\\ell}} + \\dfrac{\\Delta T}{\\bar{T}} = 0{,}6\\%$"
+    ],
+    "correct": 0,
+    "explanation": "Từ $g = 4\\pi^2 \\ell T^{-2}$, công thức truyền sai số là $\\dfrac{\\Delta g}{\\bar{g}} = \\dfrac{\\Delta \\ell}{\\bar{\\ell}} + 2\\dfrac{\\Delta T}{\\bar{T}} = \\dfrac{0{,}2}{100{,}0} + 2\\times\\dfrac{0{,}004}{2{,}000} = 0{,}002 + 0{,}004 = 0{,}006 = 0{,}6\\%$."
+  },
+  {
+    "id": 62,
+    "lab_name": "Bài 0: Lý thuyết sai số & Xử lý số liệu thực nghiệm",
+    "type": "error",
+    "question": "Khi biểu diễn số liệu thực nghiệm của hai đại lượng $(t_i, R_i)$ kèm sai số $(\\Delta t_i, \\Delta R_i)$ lên đồ thị, mỗi điểm thực nghiệm được vẽ thành một ô chữ nhật sai số có kích thước bao nhiêu và đường đồ thị phải vẽ theo nguyên tắc nào?",
+    "image": "",
+    "options": [
+      "Ô chữ nhật có cạnh ngang $\\Delta t_i$, cạnh đứng $\\Delta R_i$; nối các tâm $(t_i, R_i)$ bằng các đoạn thẳng gấp khúc liên tiếp",
+      "Ô chữ nhật có tâm $(t_i, R_i)$, cạnh ngang $2\\Delta t_i$, cạnh đứng $2\\Delta R_i$; đường đồ thị phải là đường trơn tru phân bố đều qua các ô chữ nhật sai số (không nối gấp khúc từng điểm)",
+      "Chỉ vẽ điểm đầu và điểm cuối của bảng số liệu rồi kẻ đường thẳng nối hai điểm đó",
+      "Bỏ qua mọi điểm thực nghiệm không nằm chính xác trên đường thẳng nối điểm đầu và điểm cuối"
+    ],
+    "correct": 1,
+    "explanation": "Theo Bài 0 - Lý thuyết sai số (trang 15-16): mỗi điểm đo với sai số $\\pm\\Delta t_i, \\pm\\Delta R_i$ tạo thành hình chữ nhật sai số kích thước $2\\Delta t_i \\times 2\\Delta R_i$; đường biểu diễn vật lý phải trơn và đi cân đối qua tập hợp các ô sai số."
+  },
+  {
+    "id": 63,
+    "lab_name": "Bài 0: Lý thuyết sai số & Xử lý số liệu thực nghiệm",
+    "type": "calc",
+    "question": "Sau khi tính toán số liệu thực nghiệm, sinh viên thu được giá trị trung bình bước sóng $\\bar{\\lambda} = 589{,}347\\ \\text{nm}$ và sai số tuyệt đối $\\Delta\\lambda = 4{,}62\\ \\text{nm}$. Cách viết kết quả đo $\\lambda = \\bar{\\lambda} \\pm \\Delta\\lambda$ nào sau đây đúng quy chuẩn làm tròn?",
+    "image": "",
+    "options": [
+      "$\\lambda = 589{,}347 \\pm 5\\ \\text{nm}$",
+      "$\\lambda = 589{,}35 \\pm 4{,}62\\ \\text{nm}$",
+      "$\\lambda = 589 \\pm 5\\ \\text{nm}$",
+      "$\\lambda = 590 \\pm 4{,}6\\ \\text{nm}$"
+    ],
+    "correct": 2,
+    "explanation": "Chữ số có nghĩa đầu tiên của $\\Delta\\lambda = 4{,}62\\ \\text{nm}$ là $4 > 2$ nên làm tròn $\\Delta\\lambda$ thành $1$ chữ số có nghĩa: $\\Delta\\lambda = 5\\ \\text{nm}$ (hàng đơn vị). Giá trị trung bình $\\bar{\\lambda}$ làm tròn đến cùng hàng đơn vị: $\\bar{\\lambda} = 589\\ \\text{nm}$."
+  },
+  {
+    "id": 64,
+    "lab_name": "Thí nghiệm Bài 1: Giao thoa Michelson & Hệ vân tròn Newton",
+    "type": "error",
+    "question": "Trong Bài thí nghiệm số 1 (Xác định bước sóng ánh sáng bằng giao thoa kế Michelson), khi dịch chuyển gương di động một đoạn $d_m$ làm cho ở tâm hệ vân giao thoa có $N$ vân sáng (hoặc $N$ vân tối) dịch chuyển qua vạch chuẩn, bước sóng ánh sáng $\\lambda$ được tính theo công thức nào?",
+    "image": "",
+    "options": [
+      "$\\lambda = 2 N d_m$",
+      "$\\lambda = \\dfrac{d_m}{N}$",
+      "$\\lambda = \\dfrac{d_m}{2 N}$",
+      "$\\lambda = \\dfrac{2 d_m}{N}$"
+    ],
+    "correct": 3,
+    "explanation": "Trong giao thoa kế Michelson, khi gương di động dịch chuyển một đoạn $\\Delta d = \\lambda/2$ thì quang lộ tia phản xạ thay đổi một lượng $2\\Delta d = \\lambda$, làm hệ vân dịch đi $1$ khoảng vân. Do đó khi dịch đi $N$ vân thì $d_m = N\\dfrac{\\lambda}{2} \\Rightarrow \\lambda = \\dfrac{2d_m}{N}$."
+  },
+  {
+    "id": 65,
+    "lab_name": "Thí nghiệm Bài 1: Giao thoa Michelson & Hệ vân tròn Newton",
+    "type": "error",
+    "question": "Trong giao thoa kế Michelson của phòng thí nghiệm Vật lý 3 (giáo trình trang 261), cơ cấu đọc dịch chuyển gương gồm thước chính và thước phụ gắn trên trống quay panme có $25$ vạch chia đều. Độ dịch chuyển của gương di động ứng với $1$ vạch trên thước phụ và $1$ vạch trên thước chính lần lượt là:",
+    "image": "",
+    "options": [
+      "$1$ vạch thước phụ ứng với $1\\ \\mu\\text{m}$; $1$ vạch thước chính (trống quay hết $1$ vòng $= 25$ vạch phụ) ứng với $25\\ \\mu\\text{m}$",
+      "$1$ vạch thước phụ ứng với $10\\ \\mu\\text{m}$; $1$ vạch thước chính ứng với $1\\ \\text{mm}$",
+      "$1$ vạch thước phụ ứng với $0{,}01\\ \\text{mm}$; $1$ vạch thước chính ứng với $0{,}5\\ \\text{mm}$",
+      "$1$ vạch thước phụ ứng với $0{,}1\\ \\mu\\text{m}$; $1$ vạch thước chính ứng với $10\\ \\mu\\text{m}$"
+    ],
+    "correct": 0,
+    "explanation": "Theo tài liệu hướng dẫn thí nghiệm Bài 1 (trang 261): trống quay được chia làm $25$ vạch đều nhau, mỗi vạch trên thước phụ tương ứng với độ dịch chuyển gương $1\\ \\mu\\text{m}$, nên khi quay hết $1$ vòng ($25$ vạch phụ) thì vạch trên thước chính dịch đi $25\\ \\mu\\text{m}$."
+  },
+  {
+    "id": 66,
+    "lab_name": "Thí nghiệm Bài 1: Giao thoa Michelson & Hệ vân tròn Newton",
+    "type": "calc",
+    "question": "Khi làm thí nghiệm đo bước sóng ánh sáng đỏ bằng giao thoa kế Michelson, sinh viên quay panme để tại tâm hệ vân có $N = 100$ vân sáng dịch chuyển qua và đọc được độ dịch chuyển của gương di động là $d_m = 31{,}6\\ \\mu\\text{m}$. Bước sóng ánh sáng $\\lambda$ đo được là:",
+    "image": "",
+    "options": [
+      "$\\lambda = 0{,}316\\ \\mu\\text{m} = 316\\ \\text{nm}$",
+      "$\\lambda = 0{,}632\\ \\mu\\text{m} = 632\\ \\text{nm}$",
+      "$\\lambda = 0{,}546\\ \\mu\\text{m} = 546\\ \\text{nm}$",
+      "$\\lambda = 1{,}264\\ \\mu\\text{m}$"
+    ],
+    "correct": 1,
+    "explanation": "Áp dụng công thức giao thoa kế Michelson: $\\lambda = \\dfrac{2 d_m}{N} = \\dfrac{2 \\times 31{,}6\\ \\mu\\text{m}}{100} = 0{,}632\\ \\mu\\text{m} = 632\\ \\text{nm}$ (bước sóng laser He-Ne)."
+  },
+  {
+    "id": 67,
+    "lab_name": "Thí nghiệm Bài 1: Giao thoa Michelson & Hệ vân tròn Newton",
+    "type": "error",
+    "question": "Trong thí nghiệm xác định bước sóng bằng hệ vân tròn Newton, khi dùng kính hiển vi trắc vi dịch chuyển từ trái sang phải để đo vị trí vân tối thứ $k$ và thứ $i$ ở hai phía của tâm ($n_k, n_i$ ở bên trái và $n_i', n_k'$ ở bên phải tâm), hai đại lượng $B = r_k + r_i$ và $b = r_k - r_i$ trong công thức $\\lambda = \\dfrac{B \\cdot b}{(k - i)R}$ được xác định như thế nào?",
+    "image": "",
+    "options": [
+      "$B = 2(r_k + r_i)$ và $b = 2(r_k - r_i)$",
+      "$B = r_k \\cdot r_i$ và $b = \\dfrac{r_k}{r_i}$",
+      "$B = r_k + r_i = |n_i - n_k|$ (hoặc $|n_k' - n_i|$ theo ký hiệu bảng đo ở hai bên tâm) và $b = r_k - r_i = |n_k - n_i|$ ở cùng một phía của tâm vân",
+      "$B = r_k^2 + r_i^2$ và $b = r_k^2 - r_i^2$"
+    ],
+    "correct": 2,
+    "explanation": "Theo giáo trình thí nghiệm Bài 1 (trang 264): vì $r_k^2 - r_i^2 = (r_k + r_i)(r_k - r_i) = B \\cdot b$, khoảng cách giữa vạch vân tối thứ $k$ ở một phía và vân tối thứ $i$ ở phía đối diện qua tâm chính là $B = r_k + r_i$, còn khoảng cách giữa hai vân tối thứ $k$ và thứ $i$ ở cùng một phía tâm là $b = r_k - r_i$."
+  },
+  {
+    "id": 68,
+    "lab_name": "Thí nghiệm Bài 1: Giao thoa Michelson & Hệ vân tròn Newton",
+    "type": "error",
+    "question": "Trong thí nghiệm hệ vân tròn Newton, tại sao khi quay thước panme để dịch chuyển kính hiển vi đo các vị trí vân tối $n_k, n_i, n_i', n_k'$, người làm thí nghiệm bắt buộc phải quay panme theo MỘT CHIỀU DUY NHẤT từ đầu đến cuối phép đo?",
+    "image": "",
+    "options": [
+      "Để giữ cho bán kính cong $R$ của thấu kính không bị biến dạng nhiệt",
+      "Vì nếu quay ngược chiều thì bản thủy tinh phẳng sẽ tách rời khỏi thấu kính lồi",
+      "Vì quay ngược chiều sẽ làm thay đổi bước sóng của đèn Natri chiếu vào hệ",
+      "Để tránh sai số chết (độ rơ cơ khí của bước ren trục vít panme) khi đổi chiều quay làm sai lệch tọa độ đọc"
+    ],
+    "correct": 3,
+    "explanation": "Cơ cấu trục vít - đai ốc của thước panme luôn có một độ rơ cơ khí nhỏ (hành trình chết / backlash). Nếu vừa quay tiến vừa quay lùi, vị trí đọc trên trống chia độ sẽ lệch so với vị trí thực của kính hiển vi, gây sai số hệ thống lớn."
+  },
+  {
+    "id": 69,
+    "lab_name": "Thí nghiệm Bài 1: Giao thoa Michelson & Hệ vân tròn Newton",
+    "type": "calc",
+    "question": "Trong thí nghiệm vân tròn Newton với thấu kính có bán kính cong $R = 855\\ \\text{mm}$, sinh viên chọn vân tối thứ $k = 6$ và vân tối thứ $i = 2$ ($k - i = 4$), đo được giá trị trung bình $\\bar{B} = r_6 + r_2 = 2{,}76\\ \\text{mm}$ và $\\bar{b} = r_6 - r_2 = 0{,}73\\ \\text{mm}$. Bước sóng trung bình $\\bar{\\lambda}$ xác định được là:",
+    "image": "",
+    "options": [
+      "$\\bar{\\lambda} = \\dfrac{\\bar{B}\\cdot\\bar{b}}{(k - i)R} \\approx 0{,}589\\ \\mu\\text{m} = 589\\ \\text{nm}$",
+      "$\\bar{\\lambda} \\approx 0{,}633\\ \\mu\\text{m} = 633\\ \\text{nm}$",
+      "$\\bar{\\lambda} \\approx 0{,}486\\ \\mu\\text{m} = 486\\ \\text{nm}$",
+      "$\\bar{\\lambda} \\approx 1{,}178\\ \\mu\\text{m}$"
+    ],
+    "correct": 0,
+    "explanation": "Thay số vào công thức thực hành Bài 1: $\\bar{\\lambda} = \\dfrac{\\bar{B}\\cdot\\bar{b}}{(k - i)R} = \\dfrac{2{,}76 \\times 0{,}73}{4 \\times 855} \\approx 5{,}891\\times 10^{-4}\\ \\text{mm} = 0{,}589\\ \\mu\\text{m} = 589\\ \\text{nm}$ (vạch vàng đèn hơi Natri)."
+  },
+  {
+    "id": 70,
+    "lab_name": "Thí nghiệm Bài 1: Giao thoa Michelson & Hệ vân tròn Newton",
+    "type": "error",
+    "question": "Trong thí nghiệm hệ vân tròn Newton, bước sóng được tính bởi $\\lambda = \\dfrac{B \\cdot b}{(k - i)R}$. Biết mỗi vị trí $n_k, n_i, n_k'$ đọc trên panme có sai số dụng cụ $\\Delta n_{\\text{dc}} = 0{,}01\\ \\text{mm}$ (nên $\\Delta B_{\\text{dc}} = \\Delta b_{\\text{dc}} = 0{,}02\\ \\text{mm}$). Công thức tính sai số tương đối $\\delta = \\dfrac{\\Delta\\lambda}{\\bar{\\lambda}}$ là:",
+    "image": "",
+    "options": [
+      "$\\delta = \\dfrac{\\Delta\\lambda}{\\bar{\\lambda}} = \\dfrac{\\Delta B}{\\bar{B}} - \\dfrac{\\Delta b}{\\bar{b}} - \\dfrac{\\Delta R}{R}$",
+      "$\\delta = \\dfrac{\\Delta\\lambda}{\\bar{\\lambda}} = \\dfrac{\\Delta B}{\\bar{B}} + \\dfrac{\\Delta b}{\\bar{b}} + \\dfrac{\\Delta R}{R}$ với $\\Delta B = \\overline{\\Delta B} + 0{,}02\\ \\text{mm}$ và $\\Delta b = \\overline{\\Delta b} + 0{,}02\\ \\text{mm}$",
+      "$\\delta = \\dfrac{\\Delta\\lambda}{\\bar{\\lambda}} = 2\\dfrac{\\Delta B}{\\bar{B}} + 2\\dfrac{\\Delta b}{\\bar{b}}$",
+      "$\\delta = \\Delta B + \\Delta b + \\Delta R$"
+    ],
+    "correct": 1,
+    "explanation": "Theo hướng dẫn xử lý số liệu Bài 1 (trang 265): lấy vi phân logarit của $\\lambda = \\dfrac{B \\cdot b}{(k - i)R}$ (với $k, i$ là các số nguyên không có sai số), ta được $\\delta = \\dfrac{\\Delta\\lambda}{\\bar{\\lambda}} = \\dfrac{\\Delta B}{\\bar{B}} + \\dfrac{\\Delta b}{\\bar{b}} + \\dfrac{\\Delta R}{R}$, trong đó mỗi hiệu hai vị trí đọc có sai số dụng cụ $0{,}01 + 0{,}01 = 0{,}02\\ \\text{mm}$."
+  },
+  {
+    "id": 71,
+    "lab_name": "Thí nghiệm Bài 1: Giao thoa Michelson & Hệ vân tròn Newton",
+    "type": "theory",
+    "question": "Trong bộ thí nghiệm vân tròn Newton dùng ánh sáng phản xạ, phần tử quang học có dạng tấm kính phẳng đặt nghiêng một góc $45^\\circ$ nằm giữa nguồn sáng đơn sắc, kính hiển vi và hệ thấu kính - bản phẳng có tác dụng gì?",
+    "image": "",
+    "options": [
+      "Biến chùm sáng đơn sắc thành chùm sáng trắng có nhiều bước sóng",
+      "Phân cực toàn phần chùm tia sáng chiếu vào theo định luật Brewster",
+      "Phản xạ chùm sáng chiếu ngang từ nguồn xuống vuông góc với hệ vân Newton, đồng thời cho chùm tia phản xạ từ hệ vân truyền thẳng lên ống kính hiển vi để quan sát",
+      "Làm tăng bán kính cong $R$ của thấu kính phẳng - lồi lên $\\sqrt{2}$ lần"
+    ],
+    "correct": 2,
+    "explanation": "Tấm kính bán mạ đặt nghiêng $45^\\circ$ giúp chiếu chùm tia tới vuông góc ($i = 0$) xuống bản mỏng không khí giữa thấu kính và bản phẳng, đồng thời cho phép người làm thí nghiệm đặt kính hiển vi nhìn thẳng từ trên xuống để đo đường kính các vân tròn."
+  },
+  {
+    "id": 72,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "error",
+    "question": "Trong Bài thí nghiệm khảo sát hiện tượng quang điện và xác định hằng số Planck (giáo trình trang 266-273), tế bào quang điện chân không được sử dụng có catốt phủ lớp nhạy quang nào, dòng tối nhỏ hơn bao nhiêu và bộ $4$ kính lọc sắc đơn sắc có các bước sóng nào?",
+    "image": "",
+    "options": [
+      "Catốt làm bằng bạch kim hoạt động ở áp suất khí quyển bình thường",
+      "Catốt làm bằng đồng nguyên chất, dòng tối $\\le 10\\ \\text{mA}$; chỉ dùng $1$ kính lọc sắc $500\\ \\text{nm}$",
+      "Catốt phủ lớp kẽm chỉ nhạy với tia tử ngoại $\\lambda < 300\\ \\text{nm}$",
+      "Catốt phủ lớp hợp kim $\\text{Cs-Sb}$ (Xêzi - Antimon), dòng tối $\\le 3\\ \\text{nA}$; bộ $4$ kính lọc sắc có bước sóng $635\\ \\text{nm},\\ 570\\ \\text{nm},\\ 540\\ \\text{nm}$ và $460\\ \\text{nm}$"
+    ],
+    "correct": 3,
+    "explanation": "Theo thông số thiết bị thí nghiệm Bài 2 (trang 270): tế bào quang điện chân không có catốt phủ lớp nhạy quang $\\text{Cs-Sb}$ nhạy trong miền khả kiến, dòng tối $\\le 3\\ \\text{nA}$ ở $-2\\ \\text{V}$, đi kèm $4$ kính lọc sắc $\\lambda_1 = 635\\ \\text{nm},\\ \\lambda_2 = 570\\ \\text{nm},\\ \\lambda_3 = 540\\ \\text{nm},\\ \\lambda_4 = 460\\ \\text{nm}$."
+  },
+  {
+    "id": 73,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "error",
+    "question": "Trong thí nghiệm khảo sát định luật dòng quang điện bão hòa, bóng đèn Halogen được coi là nguồn sáng điểm đặt cách cửa sổ tế bào quang điện một khoảng $r$. Khi thay đổi khoảng cách $r$ (ví dụ $r = 38,\\ 36,\\ 34,\\ 32,\\ 30\\ \\text{cm}$), cường độ dòng quang điện bão hòa $I_{\\text{bh}}$ phụ thuộc vào $r$ theo quy luật nào?",
+    "image": "",
+    "options": [
+      "$I_{\\text{bh}}$ tỉ lệ nghịch với bình phương khoảng cách từ đèn đến catốt ($I_{\\text{bh}} \\propto \\dfrac{1}{r^2}$) vì thông lượng sáng gửi tới diện tích catốt giảm theo quy luật $1/r^2$",
+      "$I_{\\text{bh}}$ tỉ lệ thuận với khoảng cách $r$ ($I_{\\text{bh}} \\propto r$)",
+      "$I_{\\text{bh}}$ không phụ thuộc vào khoảng cách $r$ mà chỉ phụ thuộc vào bước sóng ánh sáng",
+      "$I_{\\text{bh}}$ tỉ lệ nghịch với căn bậc hai của khoảng cách ($I_{\\text{bh}} \\propto \\dfrac{1}{\\sqrt{r}}$)"
+    ],
+    "correct": 0,
+    "explanation": "Theo giáo trình thí nghiệm (trang 268 & 272): với nguồn sáng điểm đẳng hướng công suất phát sáng không đổi, cường độ sáng (số phôtôn tới một đơn vị diện tích catốt trong $1\\ \\text{s}$) tỉ lệ với $1/r^2$. Vì $I_{\\text{bh}}$ tỉ lệ thuận với thông lượng sáng tới catốt nên $I_{\\text{bh}} \\propto 1/r^2$ (đường biểu diễn $I_{\\text{bh}}$ theo $1/r^2$ là đường thẳng đi qua gốc tọa độ)."
+  },
+  {
+    "id": 74,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "error",
+    "question": "Khi khảo sát đường đặc trưng Vôn - Ampe $I = f(U_{AK})$ của tế bào quang điện ứng với cùng một bước sóng kích thích $\\lambda$ nhưng ở hai khoảng cách đặt đèn khác nhau $r_1 < r_2$ (tức thông lượng sáng $\\Phi_1 > \\Phi_2$), hai đường cong Vôn - Ampe có đặc điểm gì?",
+    "image": "",
+    "options": [
+      "Hai đường có cùng dòng quang điện bão hòa ($I_{\\text{bh1}} = I_{\\text{bh2}}$) nhưng có hiệu điện thế hãm khác nhau ($U_{h1} > U_{h2}$)",
+      "Hai đường có giá trị dòng quang điện bão hòa khác nhau ($I_{\\text{bh1}} > I_{\\text{bh2}}$) nhưng hội tụ về CÙNG MỘT giá trị hiệu điện thế hãm $U_h$ trên trục hoành",
+      "Cả dòng bão hòa $I_{\\text{bh}}$ lẫn hiệu điện thế hãm $U_h$ đều tỉ lệ nghịch với $r^2$",
+      "Hai đường hoàn toàn trùng khít lên nhau ở mọi giá trị $U_{AK}$"
+    ],
+    "correct": 1,
+    "explanation": "Theo định luật quang điện thứ nhất và thứ hai: $I_{\\text{bh}}$ tỉ lệ thuận với thông lượng sáng $\\Phi$ nên $I_{\\text{bh1}} > I_{\\text{bh2}}$; còn động năng ban đầu cực đại của quang electron (và do đó $U_h$) chỉ phụ thuộc vào tần số $\\nu = c/\\lambda$ của ánh sáng chiếu vào chứ không phụ thuộc vào cường độ sáng."
+  },
+  {
+    "id": 75,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "error",
+    "question": "Trong thí nghiệm xác định hằng số Planck bằng tế bào quang điện, từ việc đo các giá trị độ lớn hiệu điện thế hãm $U_{h1}, U_{h2}$ ứng với hai kính lọc sắc có tần số $\\nu_1 = \\dfrac{c}{\\lambda_1}$ và $\\nu_2 = \\dfrac{c}{\\lambda_2}$, hằng số Planck $h$ được tính theo công thức thực nghiệm nào?",
+    "image": "",
+    "options": [
+      "$h = \\dfrac{\\nu_2 - \\nu_1}{e(U_{h2} - U_{h1})}$",
+      "$h = e\\dfrac{U_{h2} + U_{h1}}{\\nu_2 + \\nu_1}$",
+      "$h = e\\dfrac{U_{h2} - U_{h1}}{\\nu_2 - \\nu_1} = \\dfrac{e(U_{h2} - U_{h1})}{c\\left(\\dfrac{1}{\\lambda_2} - \\dfrac{1}{\\lambda_1}\\right)}$",
+      "$h = \\dfrac{e U_{h1} U_{h2}}{c(\\lambda_2 - \\lambda_1)}$"
+    ],
+    "correct": 2,
+    "explanation": "Từ phương trình Einstein cho hai tần số: $eU_{h1} = h\\nu_1 - A_{th}$ và $eU_{h2} = h\\nu_2 - A_{th}$. Trừ vế với vế để khử công thoát $A_{th}$ chưa biết của catốt: $e(U_{h2} - U_{h1}) = h(\\nu_2 - \\nu_1) \\Rightarrow h = \\dfrac{e(U_{h2} - U_{h1})}{\\nu_2 - \\nu_1}$."
+  },
+  {
+    "id": 76,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "calc",
+    "question": "Trong bài thí nghiệm xác định hằng số Planck, sinh viên lần lượt lắp kính lọc sắc lục $\\lambda_1 = 540\\ \\text{nm}$ ($\\nu_1 = 5{,}56\\times 10^{14}\\ \\text{Hz}$) và kính lọc sắc lam $\\lambda_2 = 460\\ \\text{nm}$ ($\\nu_2 = 6{,}52\\times 10^{14}\\ \\text{Hz}$), đo được độ lớn hiệu điện thế hãm tương ứng là $U_{h1} = 0{,}66\\ \\text{V}$ và $U_{h2} = 1{,}05\\ \\text{V}$. Cho $e = 1{,}6\\times 10^{-19}\\ \\text{C}$. Giá trị hằng số Planck $h$ thu được từ cặp phép đo này là:",
+    "image": "",
+    "options": [
+      "$h \\approx 1{,}05\\times 10^{-34}\\ \\text{J·s}$",
+      "$h \\approx 4{,}12\\times 10^{-34}\\ \\text{J·s}$",
+      "$h \\approx 8{,}25\\times 10^{-34}\\ \\text{J·s}$",
+      "$h \\approx 6{,}50\\times 10^{-34}\\ \\text{J·s}$"
+    ],
+    "correct": 3,
+    "explanation": "Áp dụng công thức xử lý số liệu Bài 2: $h = \\dfrac{e(U_{h2} - U_{h1})}{\\nu_2 - \\nu_1} = \\dfrac{1{,}6\\times 10^{-19} \\times (1{,}05 - 0{,}66)}{(6{,}52 - 5{,}56)\\times 10^{14}} = \\dfrac{1{,}6\\times 10^{-19} \\times 0{,}39}{0{,}96\\times 10^{14}} = 6{,}50\\times 10^{-34}\\ \\text{J·s}$."
+  },
+  {
+    "id": 77,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "error",
+    "question": "Khi vẽ đồ thị sự phụ thuộc của độ lớn hiệu điện thế hãm $U_h$ theo tần số ánh sáng kích thích $\\nu$ từ $4$ kính lọc sắc trong thí nghiệm Bài 2, đường thẳng thực nghiệm $U_h = a\\nu - b$ cắt trục hoành tại $\\nu_0$, cắt trục tung (kéo dài) tại $-U_0$ và có hệ số góc $a = \\tan\\alpha$. Ý nghĩa vật lý của $a$, $\\nu_0$ và $U_0$ là:",
+    "image": "",
+    "options": [
+      "Hệ số góc $a = \\dfrac{h}{e}$; giao điểm trục hoành $\\nu_0 = \\dfrac{A_{th}}{h}$ là tần số giới hạn quang điện; độ lớn tung độ gốc $U_0 = \\dfrac{A_{th}}{e}$ là điện thế ứng với công thoát của catốt",
+      "Hệ số góc $a = h\\cdot e$; giao điểm trục hoành $\\nu_0$ là tần số cộng hưởng của mạch điện; $U_0$ là hiệu điện thế bão hòa",
+      "Hệ số góc $a = \\dfrac{e}{h}$; giao điểm trục hoành $\\nu_0 = c\\lambda_0$ là vận tốc ánh sáng",
+      "Hệ số góc $a = A_{th}$; giao điểm trục hoành $\\nu_0 = \\dfrac{h}{e}$"
+    ],
+    "correct": 0,
+    "explanation": "Theo phương trình Einstein: $U_h = \\dfrac{h}{e}\\nu - \\dfrac{A_{th}}{e}$. Đây là phương trình bậc nhất theo $\\nu$ có hệ số góc $\\tan\\alpha = \\dfrac{h}{e}$ (từ đó suy ra $h = e\\tan\\alpha$), cắt trục hoành ($U_h = 0$) tại $\\nu = \\nu_0 = \\dfrac{A_{th}}{h}$ và cắt trục tung ($\\nu = 0$) tại $-\\dfrac{A_{th}}{e}$."
+  },
+  {
+    "id": 78,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "error",
+    "question": "Trong thí nghiệm thực tế với tế bào quang điện chân không, tại sao ngay cả khi đã điều chỉnh hiệu điện thế phân cực ngược $U_{AK} < -U_h$, đồng hồ đo dòng siêu nhạy vẫn có thể chỉ một dòng điện rất nhỏ cỡ vài nanoampe ($\\text{nA}$) và cần phải hiệu chỉnh điểm $0$ (trừ dòng tối)?",
+    "image": "",
+    "options": [
+      "Do các quang electron có vận tốc lớn hơn vận tốc ánh sáng $c$ trong chân không",
+      "Do dòng rò bề mặt thủy tinh của bóng quang điện, phát xạ nhiệt electron ở nhiệt độ phòng và hiệu ứng quang điện ngược trên anốt",
+      "Do định luật bảo toàn năng lượng của Einstein không đúng với ánh sáng nhìn thấy",
+      "Do các phôtôn tự mang điện tích âm truyền thẳng từ catốt sang anốt"
+    ],
+    "correct": 1,
+    "explanation": "Trong thực tế (giáo trình trang 269-271), ở điện áp ngược vẫn tồn tại dòng tối nhỏ ($\\le 3\\ \\text{nA}$) do dòng rò cách điện trên vỏ thủy tinh, phát xạ nhiệt điện tử ở nhiệt độ phòng và một phần nhỏ ánh sáng tán xạ gây quang điện trên anốt; vì vậy phải che tối để chỉnh $0$ dòng tối trước khi đo $U_h$."
+  },
+  {
+    "id": 79,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "error",
+    "question": "Trong quy trình vận hành thiết bị thí nghiệm khảo sát hiện tượng quang điện và xác định hằng số Planck (giáo trình trang 271), thao tác nào sau đây BẮT BUỘC phải thực hiện để bảo vệ tế bào quang điện $\\text{Cs-Sb}$?",
+    "image": "",
+    "options": [
+      "Đặt điện áp xoay chiều $220\\ \\text{V}$ trực tiếp vào hai cực anốt - catốt của tế bào quang điện",
+      "Luôn tháo rời kính lọc sắc để chiếu trực tiếp toàn bộ ánh sáng trắng của đèn Halogen ở khoảng cách gần nhất $r = 5\\ \\text{cm}$",
+      "Không chiếu ánh sáng cường độ quá mạnh hoặc chiếu liên tục trong thời gian quá dài vào tế bào quang điện, và luôn đậy nắp che tối hộp tế bào quang điện khi ngừng đo",
+      "Ngâm hộp tế bào quang điện vào nước lạnh trong suốt quá trình đo dòng bão hòa"
+    ],
+    "correct": 2,
+    "explanation": "Lớp nhạy quang $\\text{Cs-Sb}$ rất dễ bị già hóa (\"mỏi quang điện\") và hỏng nếu bị rọi sáng mạnh hoặc liên tục khi không đo. Do đó trước và sau khi đọc số liệu phải đậy nắp che sáng của hộp tế bào quang điện."
+  },
+  {
+    "id": 80,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "calc",
+    "question": "Từ đồ thị $U_h(\\nu)$ trong thí nghiệm Bài 2, một nhóm sinh viên xác định được giao điểm của đường thẳng thực nghiệm với trục tần số là $\\nu_0 = 4{,}35\\times 10^{14}\\ \\text{Hz}$. Lấy $h = 6{,}625\\times 10^{-34}\\ \\text{J·s}$, $c = 3\\times 10^8\\ \\text{m/s}$, $1\\ \\text{eV} = 1{,}6\\times 10^{-19}\\ \\text{J}$. Công thoát $A_{th}$ và bước sóng giới hạn quang điện $\\lambda_0$ của lớp phủ catốt là:",
+    "image": "",
+    "options": [
+      "$A_{th} \\approx 3{,}10\\ \\text{eV};\\ \\lambda_0 \\approx 0{,}400\\ \\mu\\text{m}$",
+      "$A_{th} \\approx 2{,}45\\ \\text{eV};\\ \\lambda_0 \\approx 0{,}506\\ \\mu\\text{m}$",
+      "$A_{th} \\approx 1{,}20\\ \\text{eV};\\ \\lambda_0 \\approx 1{,}03\\ \\mu\\text{m}$",
+      "$A_{th} \\approx 1{,}80\\ \\text{eV};\\ \\lambda_0 \\approx 0{,}690\\ \\mu\\text{m} = 690\\ \\text{nm}$"
+    ],
+    "correct": 3,
+    "explanation": "Tại giao điểm với trục hoành ($U_h = 0$): $A_{th} = h\\nu_0 = \\dfrac{6{,}625\\times 10^{-34} \\times 4{,}35\\times 10^{14}}{1{,}6\\times 10^{-19}} \\approx 1{,}80\\ \\text{eV}$, và giới hạn quang điện $\\lambda_0 = \\dfrac{c}{\\nu_0} = \\dfrac{3\\times 10^8}{4{,}35\\times 10^{14}} \\approx 6{,}90\\times 10^{-7}\\ \\text{m} = 690\\ \\text{nm}$."
+  }
+]

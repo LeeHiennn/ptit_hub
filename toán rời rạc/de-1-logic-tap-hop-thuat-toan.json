@@ -1,0 +1,210 @@
+[
+  {
+    "id": 101,
+    "topic": "Logic Mệnh Đề",
+    "question": "Mệnh đề đảo và mệnh đề phản đảo của mệnh đề kéo theo $p \\rightarrow q$ lần lượt là:",
+    "options": [
+      "Đảo: $\\neg p \\rightarrow \\neg q$; Phản đảo: $\\neg q \\rightarrow \\neg p$",
+      "Đảo: $q \\rightarrow p$; Phản đảo: $\\neg q \\rightarrow \\neg p$",
+      "Đảo: $q \\rightarrow p$; Phản đảo: $\\neg p \\rightarrow \\neg q$",
+      "Đảo: $\\neg q \\rightarrow \\neg p$; Phản đảo: $q \\rightarrow p$"
+    ],
+    "correct": 1,
+    "explanation": "Với mệnh đề $p \\rightarrow q$: mệnh đề <strong>đảo</strong> là $q \\rightarrow p$, mệnh đề <strong>phản</strong> là $\\neg p \\rightarrow \\neg q$, và mệnh đề <strong>phản đảo</strong> (luôn tương đương logic với $p \\rightarrow q$) là $\\neg q \\rightarrow \\neg p$."
+  },
+  {
+    "id": 102,
+    "topic": "Logic Mệnh Đề",
+    "question": "Theo quy ước thứ tự ưu tiên các phép toán trong Logic mệnh đề (Chương 1 - Giáo trình Toán Rời Rạc 1), thứ tự thực hiện từ <strong>cao nhất</strong> đến <strong>thấp nhất</strong> là:",
+    "options": [
+      "$\\neg \\succ \\lor \\succ \\land \\succ \\rightarrow \\succ \\leftrightarrow$",
+      "$\\land \\succ \\lor \\succ \\neg \\succ \\rightarrow \\succ \\leftrightarrow$",
+      "$\\neg \\succ \\land \\succ \\lor \\succ \\rightarrow \\succ \\leftrightarrow$",
+      "$\\neg \\succ \\rightarrow \\succ \\land \\succ \\lor \\succ \\leftrightarrow$"
+    ],
+    "correct": 2,
+    "explanation": "Thứ tự ưu tiên chuẩn từ cao xuống thấp: Phủ định ($\\neg$, mức 1) $\\succ$ Hội ($\\land$, mức 2) $\\succ$ Tuyển ($\\lor$, mức 3) $\\succ$ Kéo theo ($\\rightarrow$, mức 4) $\\succ$ Tương đương ($\\leftrightarrow$, mức 5)."
+  },
+  {
+    "id": 103,
+    "topic": "Logic Mệnh Đề",
+    "question": "Rút gọn biểu thức logic $\\neg(p \\lor (\\neg p \\land q))$ (Bài tập 2 - Chương 1) ta thu được mệnh đề tương đương nào sau đây?",
+    "options": [
+      "$\\neg p \\land \\neg q$",
+      "$\\neg p \\lor \\neg q$",
+      "$p \\land \\neg q$",
+      "$\\neg p \\land q$"
+    ],
+    "correct": 0,
+    "explanation": "Áp dụng luật phân phối và luật De Morgan: $$\\neg(p \\lor (\\neg p \\land q)) \\equiv \\neg((p \\lor \\neg p) \\land (p \\lor q)) \\equiv \\neg(T \\land (p \\lor q)) \\equiv \\neg(p \\lor q) \\equiv \\neg p \\land \\neg q.$$"
+  },
+  {
+    "id": 104,
+    "topic": "Logic Mệnh Đề",
+    "question": "Tìm <strong>dạng chuẩn tắc hội</strong> (Conjunctive Normal Form - CNF) của biểu thức $(p \\rightarrow q) \\rightarrow (p \\land q)$ (Slide 1-Background):",
+    "options": [
+      "$\\neg p \\land q$",
+      "$p \\lor (\\neg p \\land q)$",
+      "$(\\neg p \\lor q) \\land (p \\lor \\neg q)$",
+      "$p \\land (\\neg p \\lor q)$"
+    ],
+    "correct": 3,
+    "explanation": "Ta biến đổi tương đương: $$(p \\rightarrow q) \\rightarrow (p \\land q) \\equiv \\neg(\\neg p \\lor q) \\lor (p \\land q) \\equiv (p \\land \\neg q) \\lor (p \\land q)$$<br/>Áp dụng luật phân phối (hoặc giữ dạng hội các tuyển sơ cấp): $(p \\lor (p \\land q)) \\land (\\neg q \\lor p) \\equiv p \\land (\\neg p \\lor q)$."
+  },
+  {
+    "id": 105,
+    "topic": "Logic Mệnh Đề",
+    "question": "Biểu thức logic nào dưới đây là một <strong>hằng đúng</strong> (Tautology)?",
+    "options": [
+      "$(p \\rightarrow q) \\leftrightarrow (q \\rightarrow p)$",
+      "$((p \\rightarrow q) \\land q) \\rightarrow p$",
+      "$((p \\rightarrow q) \\land p) \\rightarrow q$",
+      "$(p \\lor q) \\rightarrow (p \\land q)$"
+    ],
+    "correct": 2,
+    "explanation": "Công thức $((p \\rightarrow q) \\land p) \\rightarrow q$ chính là quy tắc suy diễn <strong>Modus Ponens</strong>, luôn nhận giá trị Đúng ($T$) với mọi giá trị chân lý của $p, q$."
+  },
+  {
+    "id": 106,
+    "topic": "Logic Vị Từ & Lượng Từ",
+    "question": "Cho vị từ $P(x, y)$: \"$x$ đã gửi thư điện tử cho $y$\" trên miền xác định gồm tất cả sinh viên trong lớp. Biểu thức lượng từ $\\exists x \\forall y P(x, y)$ có ý nghĩa là:",
+    "options": [
+      "Mọi sinh viên trong lớp đều đã gửi thư điện tử cho ít nhất một sinh viên",
+      "Có ít nhất một sinh viên trong lớp đã gửi thư điện tử cho tất cả sinh viên trong lớp",
+      "Có một sinh viên nhận được thư điện tử từ tất cả sinh viên trong lớp",
+      "Mọi sinh viên trong lớp đều đã gửi thư điện tử cho nhau"
+    ],
+    "correct": 1,
+    "explanation": "Lượng từ $\\exists x$ (tồn tại sinh viên $x$) đứng trước $\\forall y$ (với mọi sinh viên $y$) biểu thị: Có ít nhất một sinh viên $x$ đã gửi email cho tất cả sinh viên $y$ trong lớp."
+  },
+  {
+    "id": 107,
+    "topic": "Logic Vị Từ & Lượng Từ",
+    "question": "Phủ định của mệnh đề lượng từ $\\forall x (P(x) \\rightarrow Q(x))$ tương đương logic với mệnh đề nào?",
+    "options": [
+      "$\\exists x (\\neg P(x) \\land Q(x))$",
+      "$\\exists x (\\neg P(x) \\rightarrow \\neg Q(x))$",
+      "$\\forall x (P(x) \\land \\neg Q(x))$",
+      "$\\exists x (P(x) \\land \\neg Q(x))$"
+    ],
+    "correct": 3,
+    "explanation": "Áp dụng quy tắc phủ định lượng từ $\\neg(\\forall x A(x)) \\equiv \\exists x \\neg A(x)$ và $\\neg(P(x) \\rightarrow Q(x)) \\equiv P(x) \\land \\neg Q(x)$, ta được $\\exists x (P(x) \\land \\neg Q(x))$."
+  },
+  {
+    "id": 108,
+    "topic": "Phép Toán Bit & Biểu Diễn Tập Hợp",
+    "question": "Cho hai xâu bit $x = 0110110110$ và $y = 1100011101$ có độ dài $10$ (Slide 1-Background). Kết quả của phép toán <strong>XOR</strong> ($x \\oplus y$) là:",
+    "options": [
+      "$1010101011$",
+      "$0100010100$",
+      "$1110111111$",
+      "$1010111011$"
+    ],
+    "correct": 0,
+    "explanation": "Phép XOR ($\\oplus$) từng cặp bit tương ứng cho kết quả $1$ khi hai bit khác nhau và $0$ khi hai bit giống nhau:<br/>$x = 0110110110$<br/>$y = 1100011101$<br/>$x \\oplus y = 1010101011$ (trong khi $x \\land y = 0100010100$ và $x \\lor y = 1110111111$)."
+  },
+  {
+    "id": 109,
+    "topic": "Phép Toán Bit & Biểu Diễn Tập Hợp",
+    "question": "Cho tập vũ trụ $U = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$. Tập con $A = \\{1, 2, 3, 4, 5\\}$ có xâu bit biểu diễn là $1111100000$ và tập lẻ $B = \\{1, 3, 5, 7, 9\\}$ có xâu bit là $1010101010$. Xâu bit biểu diễn tập giao $A \\cap B$ là:",
+    "options": [
+      "$1111101010$",
+      "$1010100000$",
+      "$0101000000$",
+      "$0101001010$"
+    ],
+    "correct": 1,
+    "explanation": "Xâu bit của $A \\cap B$ là tích hội từng bit (bitwise AND) của hai xâu bit: $1111100000 \\land 1010101010 = 1010100000$, tương ứng với tập $\\{1, 3, 5\\}$."
+  },
+  {
+    "id": 110,
+    "topic": "Quan Hệ & Tập Hợp",
+    "question": "Cho $A, B, C$ là các tập hợp bất kỳ (Bài tập 7 - Giáo trình Toán Rời Rạc 1). Đẳng thức tập hợp nào dưới đây là <strong>luôn đúng</strong>?",
+    "options": [
+      "$\\overline{A \\cup B} = \\overline{A} \\cup \\overline{B}$",
+      "$(A \\cup B) \\setminus (A \\cap B) = A \\setminus B$",
+      "$A \\cap (B \\setminus C) = (A \\cap B) \\cup (A \\cap C)$",
+      "$(B \\setminus A) \\cup (C \\setminus A) = (B \\cup C) \\setminus A$"
+    ],
+    "correct": 3,
+    "explanation": "Ta có $(B \\setminus A) \\cup (C \\setminus A) = (B \\cap \\overline{A}) \\cup (C \\cap \\overline{A}) = (B \\cup C) \\cap \\overline{A} = (B \\cup C) \\setminus A$."
+  },
+  {
+    "id": 111,
+    "topic": "Quan Hệ & Tập Hợp",
+    "question": "Trên tập các số nguyên $\\mathbb{Z}$, xét quan hệ đồng dư $aRb \\Leftrightarrow a \\equiv b \\pmod k$ (với $k > 1$ nguyên dương). Khẳng định nào sau đây là <strong>đúng</strong>?",
+    "options": [
+      "$R$ có tính phản xạ và đối xứng nhưng không có tính bắc cầu",
+      "$R$ là quan hệ thứ tự toàn phần trên $\\mathbb{Z}$",
+      "$R$ là quan hệ tương đương và chia $\\mathbb{Z}$ thành đúng $k$ lớp tương đương",
+      "$R$ chia $\\mathbb{Z}$ thành $k + 1$ lớp tương đương"
+    ],
+    "correct": 2,
+    "explanation": "Quan hệ đồng dư modulo $k$ thỏa mãn cả 3 tính chất: Phản xạ ($a - a = 0 \\vdots k$), Đối xứng ($a - b \\vdots k \\Rightarrow b - a \\vdots k$) và Bắc cầu. Do có $k$ số dư khi chia cho $k$ là $0, 1, \\dots, k-1$, nên $R$ phân hoạch $\\mathbb{Z}$ thành $k$ lớp tương đương."
+  },
+  {
+    "id": 112,
+    "topic": "Quan Hệ & Tập Hợp",
+    "question": "Cho tập $A = \\{1, 2, 3\\}$ và $B = \\{a, b, c, d\\}$. Số phần tử của tích Đề-các $A \\times B$ và số quan hệ hai ngôi từ $A$ đến $B$ lần lượt là:",
+    "options": [
+      "$|A \\times B| = 12$ và có $2^{12} = 4096$ quan hệ hai ngôi",
+      "$|A \\times B| = 7$ và có $2^7 = 128$ quan hệ hai ngôi",
+      "$|A \\times B| = 12$ và có $12! $ quan hệ hai ngôi",
+      "$|A \\times B| = 64$ và có $2^{64}$ quan hệ hai ngôi"
+    ],
+    "correct": 0,
+    "explanation": "Theo nguyên lý nhân, $|A \\times B| = |A| \\cdot |B| = 3 \\times 4 = 12$. Mỗi quan hệ hai ngôi từ $A$ đến $B$ là một tập con của $A \\times B$, nên số quan hệ hai ngôi là $2^{|A \\times B|} = 2^{12} = 4096$."
+  },
+  {
+    "id": 113,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Xét thuật toán sắp xếp nổi bọt (<strong>Bubble Sort</strong>) gồm hai vòng lặp: <code>for i := 1 to n - 1</code> và bên trong là <code>for j := i + 1 to n</code> so sánh hai phần tử. Độ phức tạp thời gian của thuật toán là:",
+    "options": [
+      "$O(n^3)$ với $\\frac{n(n-1)(n-2)}{6}$ phép so sánh",
+      "$O(n \\log n)$ với $n \\log_2 n$ phép so sánh",
+      "$O(n)$ với $n - 1$ phép so sánh",
+      "$O(n^2)$ với đúng $\\frac{n(n-1)}{2}$ phép so sánh"
+    ],
+    "correct": 3,
+    "explanation": "Số phép so sánh thực hiện là $(n-1) + (n-2) + \\dots + 1 = \\frac{n(n-1)}{2} = \\frac{1}{2}(n^2 - n) = O(n^2)$ (Ví dụ 5 - Slide 1-Background)."
+  },
+  {
+    "id": 114,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Tìm độ phức tạp tính toán của thuật toán cộng hai số nguyên $n$ bit và thuật toán nhân hai số nguyên $n$ bit theo cách đặt tính thông thường (Mục 1.3.4 - Giáo trình Toán Rời Rạc 1):",
+    "options": [
+      "Cộng hai số $n$ bit là $O(\\log n)$; Nhân hai số $n$ bit thông thường là $O(n \\log n)$",
+      "Cộng hai số $n$ bit là $O(n)$; Nhân hai số $n$ bit thông thường là $O(n^2)$",
+      "Cả phép cộng và phép nhân hai số $n$ bit đều có độ phức tạp $O(n)$",
+      "Cộng hai số $n$ bit là $O(n^2)$; Nhân hai số $n$ bit thông thường là $O(2^n)$"
+    ],
+    "correct": 1,
+    "explanation": "Thuật toán cộng hai số nhị phân $n$ bit duyệt qua $n$ cột từ phải sang trái nên tốn $O(n)$ phép toán bit. Thuật toán nhân thông thường cần dịch chuyển và cộng $n$ số hạng dài tới $2n$ bit nên có độ phức tạp $O(n^2)$."
+  },
+  {
+    "id": 115,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Cho hàm thời gian thực hiện của một thuật toán là $f(n) = 3n^3 + 20n^2 \\log n + 50n + 100$. Đánh giá độ phức tạp tiệm cận $O$-lớn chặt nhất của $f(n)$ là:",
+    "options": [
+      "$O(n^3)$",
+      "$O(n^2 \\log n)$",
+      "$O(n^4)$",
+      "$O(n \\log n)$"
+    ],
+    "correct": 0,
+    "explanation": "Khi $n \\to \\infty$, hạng tử bậc cao nhất quyết định tốc độ tăng của tổng là $3n^3$ (vì $\\lim_{n \\to \\infty} \\frac{n^2 \\log n}{n^3} = 0$). Do đó $f(n) = O(n^3)$."
+  },
+  {
+    "id": 116,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Xét đoạn giả mã gồm 2 khối lệnh nối tiếp nhau: Khối 1 là một vòng lặp đơn chạy từ $1$ đến $n$ ($O(n)$), Khối 2 là hai vòng lặp lồng nhau chạy từ $1$ đến $n$ ($O(n^2)$). Theo quy tắc tổng độ phức tạp, độ phức tạp chung của cả đoạn chương trình là:",
+    "options": [
+      "$O(n)$",
+      "$O(n \\cdot n^2) = O(n^3)$",
+      "$O(\\max(n, n^2)) = O(n^2)$",
+      "$O(2^n)$"
+    ],
+    "correct": 2,
+    "explanation": "Với hai công việc thực hiện <strong>nối tiếp nhau</strong> có độ phức tạp $O(f_1(n))$ và $O(f_2(n))$, độ phức tạp tổng hợp là $O(f_1(n) + f_2(n)) = O(\\max(f_1(n), f_2(n))) = O(n^2)$."
+  }
+]

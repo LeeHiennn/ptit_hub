@@ -1,0 +1,210 @@
+[
+  {
+    "id": 129,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 91 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$4x_1 + 5x_2 + 6x_3 + 3x_4 \\to \\max$$ với $x_1 + 3x_2 + 6x_3 + 6x_4 \\le 11$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho phương án bộ phận $(x_1, x_2, x_3) = (1, 0, 1)$:",
+    "options": [
+      "$g(1, 0, 1) = 12{,}0$",
+      "$g(1, 0, 1) = 12{,}5$",
+      "$g(1, 0, 1) = 11{,}0$",
+      "$g(1, 0, 1) = 13{,}0$"
+    ],
+    "correct": 0,
+    "explanation": "Các đồ vật đã được sắp theo đơn giá giảm dần: $c_1/a_1 = 4 > c_2/a_2 = 5/3 > c_3/a_3 = 1 > c_4/a_4 = 0{,}5$. Tại nút bộ phận $(1, 0, 1)$: giá trị hiện tại $\\sigma = 4(1) + 5(0) + 6(1) = 10$; trọng lượng đã dùng là $1(1) + 3(0) + 6(1) = 7$, nên trọng lượng còn lại của túi là $W = 11 - 7 = 4$. Đồ vật tiếp theo là $x_4$ có $c_4 = 3, a_4 = 6$, do đó cận trên là $g(1, 0, 1) = \\sigma + c_4 \\cdot \\dfrac{W}{a_4} = 10 + 3 \\times \\dfrac{4}{6} = 12{,}0$."
+  },
+  {
+    "id": 130,
+    "topic": "Liệt Kê Tổ Hợp Liền Trước (Đề 91 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $8$ của các phần tử của tập $A$. Hãy liệt kê $4$ tổ hợp LIỀN TRƯỚC của tổ hợp $(1,2,3,4,6,7,8,9)$.",
+    "options": [
+      "$(1,2,3,4,5,6,7,8),\\ (1,2,3,4,5,6,7,9),\\ (1,2,3,4,5,7,8,9),\\ (1,2,3,4,5,6,8,9)$",
+      "$(1,2,3,4,5,7,8,9),\\ (1,2,3,4,5,6,8,9),\\ (1,2,3,4,5,6,7,9),\\ (1,2,3,4,5,6,7,8)$",
+      "$(1,2,3,4,5,6,8,9),\\ (1,2,3,4,5,7,8,9),\\ (1,2,3,4,5,6,7,8),\\ (1,2,3,4,5,6,7,9)$",
+      "$(1,2,3,4,5,7,8,9),\\ (1,2,3,4,5,6,7,8),\\ (1,2,3,4,5,6,8,9),\\ (1,2,3,4,5,6,7,9)$"
+    ],
+    "correct": 1,
+    "explanation": "Tổ hợp chập $8$ của $9$ phần tử đầu tiên theo thứ tự từ điển là $(1,2,3,4,5,6,7,8)$, kế tiếp là $(1,2,3,4,5,6,7,9)$, $(1,2,3,4,5,6,8,9)$, $(1,2,3,4,5,7,8,9)$, rồi đến $(1,2,3,4,6,7,8,9)$. Do đó $4$ tổ hợp liền trước (lùi ngược từ cấu hình hiện tại về đầu) lần lượt là $(1,2,3,4,5,7,8,9)$, $(1,2,3,4,5,6,8,9)$, $(1,2,3,4,5,6,7,9)$, $(1,2,3,4,5,6,7,8)$."
+  },
+  {
+    "id": 131,
+    "topic": "Nguyên Lý Dirichlet - Bài Toán Bốc Bi (Đề 91 - PTIT)",
+    "question": "Một hộp đựng bi chứa các viên bi có kích thước thuộc một trong $27$ loại và màu sắc thuộc một trong $2$ màu khác nhau. Giả sử rằng số lượng mỗi loại bi là không hạn chế. Cần lấy ra ít nhất bao nhiêu viên bi trong hộp để chắc chắn rằng có ít nhất $11$ viên bi giống nhau cả kích thước lẫn màu sắc?",
+    "options": [
+      "$542$",
+      "$892$",
+      "$541$",
+      "$539$"
+    ],
+    "correct": 2,
+    "explanation": "Số phân loại viên bi (kích thước $\\times$ màu sắc) là $M = 27 \\times 2 = 54$ loại. Theo nguyên lý Dirichlet, để chắc chắn có ít nhất $k = 11$ viên bi thuộc cùng một loại thì số viên bi cần lấy ra ít nhất là $N = (k - 1)\\cdot M + 1 = (11 - 1)\\times 54 + 1 = 540 + 1 = 541$."
+  },
+  {
+    "id": 132,
+    "topic": "Logic Mệnh Đề - Luật Modus Ponens (Đề 91-100 - PTIT)",
+    "question": "Cho mệnh đề logic $B = [p \\land (p \\Rightarrow q)] \\Rightarrow p$. Hỏi khẳng định nào sau đây là đúng?",
+    "options": [
+      "$B$ là mệnh đề không thỏa được",
+      "Tất cả đều sai",
+      "$B$ là mệnh đề chỉ thỏa được khi $q$ đúng",
+      "$B$ là mệnh đề hằng đúng"
+    ],
+    "correct": 3,
+    "explanation": "Mệnh đề dạng $(p \\land X) \\Rightarrow p$ luôn hằng đúng với mọi mệnh đề $X$ vì nếu vế trái $p \\land X$ đúng thì bắt buộc $p$ đã đúng."
+  },
+  {
+    "id": 133,
+    "topic": "Phương Trình Nghiệm Nguyên Bị Chặn (Đề 91 - PTIT)",
+    "question": "Số nghiệm nguyên không âm của phương trình $x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 50$ thỏa mãn $2 \\le x_1 \\le 6$ và $x_3 \\ge 5$ là:",
+    "options": [
+      "$749706$",
+      "$749708$",
+      "$749707$",
+      "$749700$"
+    ],
+    "correct": 0,
+    "explanation": "Đặt $y_1 = x_1 - 2 \\in [0, 4]$ và $y_3 = x_3 - 5 \\ge 0$. Phương trình trở thành $y_1 + x_2 + y_3 + x_4 + x_5 + x_6 = 50 - 2 - 5 = 43$ với ràng buộc $y_1 \\le 4$. Số nghiệm bằng tổng số nghiệm không ràng buộc cận trên trừ đi số nghiệm vi phạm $y_1 \\ge 5$: $C_{43+5}^5 - C_{38+5}^5 = C_{48}^5 - C_{43}^5 = 1712304 - 962598 = 749706$."
+  },
+  {
+    "id": 134,
+    "topic": "Nguyên Lý Dirichlet - Ngày Sinh (Đề 91 - PTIT)",
+    "question": "Cần ít nhất bao nhiêu sinh viên trong trường/lớp để chắc chắn rằng có ít nhất $7$ sinh viên có cùng ngày sinh trong năm (tính cả năm nhuận có $366$ ngày)?",
+    "options": [
+      "$2198$",
+      "$2197$",
+      "$2191$",
+      "$2192$"
+    ],
+    "correct": 1,
+    "explanation": "Một năm có tối đa $M = 366$ ngày sinh có thể có. Theo nguyên lý Dirichlet, để chắc chắn có ít nhất $k = 7$ sinh viên có cùng ngày sinh thì cần ít nhất $N = (k - 1)\\times 366 + 1 = 6\\times 366 + 1 = 2196 + 1 = 2197$ sinh viên."
+  },
+  {
+    "id": 135,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân (Đề 91 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (0,0,0,1,1,0,0,0)$. Hãy xác định xem đó là xâu nhị phân thứ bao nhiêu nếu liệt kê tất cả các xâu nhị phân độ dài $8$ theo thứ tự từ điển (bắt đầu từ thứ $1$)?",
+    "options": [
+      "$28$",
+      "$27$",
+      "$25$",
+      "$26$"
+    ],
+    "correct": 2,
+    "explanation": "Xâu đầu tiên $(0,0,0,0,0,0,0,0)$ có giá trị thập phân là $0$ và đứng ở vị trí thứ $1$. Xâu $X = 00011000_2$ có giá trị thập phân là $2^4 + 2^3 = 16 + 8 = 24$, nên nó là xâu nhị phân thứ $24 + 1 = 25$."
+  },
+  {
+    "id": 136,
+    "topic": "Thuật Toán Sinh Hoán Vị Liên Tiếp (Đề 91 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh hoán vị theo thứ tự từ điển, $3$ hoán vị liền kề tiếp theo của hoán vị $(5,1,6,8,7,9,3,4,2)$ là:",
+    "options": [
+      "$(5,1,6,8,9,2,3,4,7);\\ (5,1,6,8,7,9,4,2,3);\\ (5,1,6,8,7,9,4,3,2)$",
+      "$(5,1,6,8,9,2,3,4,7);\\ (5,1,6,8,7,9,4,3,2);\\ (5,1,6,8,7,9,4,2,3)$",
+      "$(5,1,6,8,7,9,4,2,3);\\ (5,1,6,8,9,2,3,4,7);\\ (5,1,6,8,7,9,4,3,2)$",
+      "$(5,1,6,8,7,9,4,2,3);\\ (5,1,6,8,7,9,4,3,2);\\ (5,1,6,8,9,2,3,4,7)$"
+    ],
+    "correct": 3,
+    "explanation": "Từ $(5,1,6,8,7,9,3,4,2)$: tăng đoạn đuôi $(3,4,2)$ được $(5,1,6,8,7,9,4,2,3)$, tiếp theo đổi $2$ và $3$ được $(5,1,6,8,7,9,4,3,2)$. Lúc này $4$ số cuối $(9,4,3,2)$ đã giảm dần cực đại, nên tăng vị trí thứ $5$ từ $7$ lên $9$ và sắp xếp tăng dần $(2,3,4,7)$ được $(5,1,6,8,9,2,3,4,7)$."
+  },
+  {
+    "id": 137,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 92 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$3x_1 + 6x_2 + x_3 + x_4 \\to \\max$$ với $x_1 + 5x_2 + x_3 + 5x_4 \\le 7$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (0, 1, 1)$:",
+    "options": [
+      "$g(0, 1, 1) = 7{,}2$",
+      "$g(0, 1, 1) = 8{,}2$",
+      "$g(0, 1, 1) = 6{,}2$",
+      "$g(0, 1, 1) = 7{,}7$"
+    ],
+    "correct": 0,
+    "explanation": "Tại nút bộ phận $(0, 1, 1)$: giá trị hiện tại $\\sigma = 3(0) + 6(1) + 1(1) = 7$; trọng lượng đã dùng là $1(0) + 5(1) + 1(1) = 6$, trọng lượng còn lại $W = 7 - 6 = 1$. Đồ vật còn lại là $x_4$ ($c_4 = 1, a_4 = 5$), nên cận trên là $g(0, 1, 1) = 7 + 1 \\times \\dfrac{1}{5} = 7{,}2$."
+  },
+  {
+    "id": 138,
+    "topic": "Liệt Kê Tổ Hợp Liền Trước (Đề 92 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $7$ của các phần tử của tập $A$. Hãy liệt kê $4$ tổ hợp LIỀN TRƯỚC của tổ hợp $(1,2,4,5,6,8,9)$.",
+    "options": [
+      "$(1,2,4,5,6,7,8),\\ (1,2,4,5,6,7,9),\\ (1,2,3,5,7,8,9),\\ (1,2,3,6,7,8,9)$",
+      "$(1,2,4,5,6,7,9),\\ (1,2,4,5,6,7,8),\\ (1,2,3,6,7,8,9),\\ (1,2,3,5,7,8,9)$",
+      "$(1,2,4,5,6,7,8),\\ (1,2,4,5,6,7,9),\\ (1,2,3,6,7,8,9),\\ (1,2,3,5,7,8,9)$",
+      "$(1,2,4,5,6,7,9),\\ (1,2,4,5,6,7,8),\\ (1,2,3,5,7,8,9),\\ (1,2,3,6,7,8,9)$"
+    ],
+    "correct": 1,
+    "explanation": "Liệt kê tiến từ $(1,2,3,5,7,8,9) \\to (1,2,3,6,7,8,9) \\to (1,2,4,5,6,7,8) \\to (1,2,4,5,6,7,9) \\to (1,2,4,5,6,8,9)$. Do đó $4$ tổ hợp liền trước theo thứ tự lùi là $(1,2,4,5,6,7,9)$, $(1,2,4,5,6,7,8)$, $(1,2,3,6,7,8,9)$, $(1,2,3,5,7,8,9)$."
+  },
+  {
+    "id": 139,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân (Đề 92 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (0,0,1,0,1,0,0,0)$. Hãy xác định xem đó là xâu nhị phân thứ bao nhiêu nếu liệt kê các xâu độ dài $8$ theo thứ tự từ điển?",
+    "options": [
+      "$44$",
+      "$42$",
+      "$41$",
+      "$43$"
+    ],
+    "correct": 2,
+    "explanation": "Giá trị thập phân của $X = 00101000_2$ là $2^5 + 2^3 = 32 + 8 = 40$. Vì xâu $00000000_2 = 0$ là xâu thứ $1$ nên $X$ là xâu thứ $40 + 1 = 41$."
+  },
+  {
+    "id": 140,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân (Đề 93 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (0,0,1,0,0,1,0,1,0)$. Hãy xác định xem đó là xâu nhị phân thứ bao nhiêu nếu liệt kê các xâu độ dài $9$ theo thứ tự từ điển?",
+    "options": [
+      "$76$",
+      "$77$",
+      "$78$",
+      "$75$"
+    ],
+    "correct": 3,
+    "explanation": "Xâu $X = 001001010_2$ có độ dài $9$ bit, giá trị thập phân là $2^6 + 2^3 + 2^1 = 64 + 8 + 2 = 74$. Do đó vị trí của $X$ theo thứ tự từ điển là $74 + 1 = 75$."
+  },
+  {
+    "id": 141,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 93 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$3x_1 + 4x_2 + 3x_3 + x_4 \\to \\max$$ với $x_1 + 3x_2 + 4x_3 + 3x_4 \\le 7$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (1, 0, 0)$:",
+    "options": [
+      "$g(1, 0, 0) = 5{,}0$",
+      "$g(1, 0, 0) = 6{,}0$",
+      "$g(1, 0, 0) = 5{,}5$",
+      "$g(1, 0, 0) = 4{,}0$"
+    ],
+    "correct": 0,
+    "explanation": "Tại bộ phận $(x_1, x_2, x_3) = (1, 0, 0)$: giá trị hiện tại $\\sigma = 3(1) + 0 + 0 = 3$; trọng lượng đã dùng là $1(1) = 1$, trọng lượng còn lại là $W = 7 - 1 = 6$. Biến tự do còn lại là $x_4$ có $c_4 = 1, a_4 = 3$, nên theo công thức cận trên chuẩn của thuật toán Nhánh cận: $g(1, 0, 0) = \\sigma + c_4 \\cdot \\dfrac{W}{a_4} = 3 + 1 \\times \\dfrac{6}{3} = 5{,}0$."
+  },
+  {
+    "id": 142,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 94 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$5x_1 + 3x_2 + x_3 + 2x_4 \\to \\max$$ với $5x_1 + 4x_2 + 2x_3 + 5x_4 \\le 9$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (0, 0, 1)$:",
+    "options": [
+      "$g(0, 0, 1) = 4{,}3$",
+      "$g(0, 0, 1) = 3{,}8$",
+      "$g(0, 0, 1) = 4{,}8$",
+      "$g(0, 0, 1) = 2{,}8$"
+    ],
+    "correct": 1,
+    "explanation": "Tại bộ phận $(0, 0, 1)$: giá trị hiện tại $\\sigma = 1$, trọng lượng đã dùng là $2$, trọng lượng còn lại của túi là $W = 9 - 2 = 7$. Biến tiếp theo $x_4$ có $c_4 = 2, a_4 = 5$, suy ra $g(0, 0, 1) = \\sigma + c_4 \\cdot \\dfrac{W}{a_4} = 1 + 2 \\times \\dfrac{7}{5} = 1 + 2{,}8 = 3{,}8$."
+  },
+  {
+    "id": 143,
+    "topic": "Nguyên Lý Dirichlet - Bài Toán Bốc Bi (Đề 94 - PTIT)",
+    "question": "Một hộp đựng bi chứa các viên bi có kích thước thuộc một trong $32$ loại và màu sắc thuộc một trong $3$ màu khác nhau. Giả sử rằng số lượng mỗi loại bi là không hạn chế. Cần lấy ra ít nhất bao nhiêu viên bi trong hộp để chắc chắn rằng có ít nhất $14$ viên bi giống nhau cả kích thước lẫn màu sắc?",
+    "options": [
+      "$1250$",
+      "$1247$",
+      "$1249$",
+      "$1793$"
+    ],
+    "correct": 2,
+    "explanation": "Tổng số loại bi (kích thước $\\times$ màu sắc) là $M = 32 \\times 3 = 96$ loại. Để chắc chắn có ít nhất $k = 14$ viên bi cùng loại, số viên bi tối thiểu phải lấy ra là $N = (14 - 1)\\times 96 + 1 = 13\\times 96 + 1 = 1248 + 1 = 1249$."
+  },
+  {
+    "id": 144,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 95 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$5x_1 + 6x_2 + 2x_3 + x_4 \\to \\max$$ với $3x_1 + 5x_2 + 2x_3 + 2x_4 \\le 8$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (0, 1, 0)$:",
+    "options": [
+      "$g(0, 1, 0) = 8{,}0$",
+      "$g(0, 1, 0) = 8{,}5$",
+      "$g(0, 1, 0) = 6{,}5$",
+      "$g(0, 1, 0) = 7{,}5$"
+    ],
+    "correct": 3,
+    "explanation": "Tại bộ phận $(0, 1, 0)$: giá trị hiện tại $\\sigma = 6$, trọng lượng đã dùng là $5$, trọng lượng còn lại là $W = 8 - 5 = 3$. Với biến còn lại $x_4$ ($c_4 = 1, a_4 = 2$), giá trị hàm cận trên là $g(0, 1, 0) = 6 + 1 \\times \\dfrac{3}{2} = 7{,}5$."
+  }
+]

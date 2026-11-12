@@ -1,0 +1,67 @@
+[
+  {
+    "id": 1,
+    "topic": "Logic Mệnh Đề",
+    "question": "Mệnh đề đảo của $p \\rightarrow q$ là mệnh đề nào sau đây?",
+    "options": [
+      "$q \\rightarrow p$",
+      "$\\neg p \\rightarrow \\neg q$",
+      "$\\neg q \\rightarrow \\neg p$",
+      "$p \\land \\neg q$"
+    ],
+    "correct": 0,
+    "explanation": "Mệnh đề $p \\rightarrow q$ có mệnh đề đảo là $q \\rightarrow p$."
+  },
+  {
+    "id": 2,
+    "topic": "Quan Hệ & Tập Hợp",
+    "question": "Cho hai tập hợp hữu hạn $A, B$. Theo nguyên lý bù trừ, công thức tính lực lượng của tập hợp $A \\cup B$ là:",
+    "options": [
+      "$|A \\cup B| = |A| + |B| - |A \\cap B|$",
+      "$|A \\cup B| = |A| + |B| + |A \\cap B|$",
+      "$|A \\cup B| = |A| \\cdot |B|$",
+      "$|A \\cup B| = |A| - |B|$"
+    ],
+    "correct": 0,
+    "explanation": "Theo nguyên lý bù trừ cho 2 tập hợp hữu hạn: $|A \\cup B| = |A| + |B| - |A \\cap B|$."
+  },
+  {
+    "id": 3,
+    "topic": "Đếm & Tổ Hợp",
+    "question": "Bài toán Tháp Hà Nội với $n$ đĩa có hệ thức truy hồi $H_n = 2H_{n-1} + 1$ ($H_1 = 1$). Số lần di chuyển đĩa ít nhất cho $n$ đĩa là:",
+    "options": [
+      "$2^n - 1$",
+      "$2^n + 1$",
+      "$2^{n-1} - 1$",
+      "$n!$"
+    ],
+    "correct": 0,
+    "explanation": "Bằng phương pháp lặp từ $H_n = 2H_{n-1} + 1$ với $H_1 = 1$, ta thu được công thức nghiệm tổng quát là $H_n = 2^n - 1$."
+  },
+  {
+    "id": 4,
+    "topic": "Đếm & Tổ Hợp",
+    "question": "Hàm sinh thu gọn của dãy số $1, 1, 1, \\dots, 1, \\dots$ (tất cả các hệ số $h_n = 1$ với mọi $n \\ge 0$) là:",
+    "options": [
+      "$g(x) = \\frac{1}{1 - x}$",
+      "$g(x) = \\frac{x}{1 - x}$",
+      "$g(x) = \\frac{1}{1 - x^2}$",
+      "$g(x) = (1 + x)^n$"
+    ],
+    "correct": 0,
+    "explanation": "Chuỗi lũy thừa vô hạn $\\sum_{i=0}^{+\\infty} x^i = 1 + x + x^2 + \\dots = \\frac{1}{1 - x}$."
+  },
+  {
+    "id": 5,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Một cây (Tree) vô hướng có $n$ đỉnh ($n \\ge 1$) thì có đúng bao nhiêu cạnh?",
+    "options": [
+      "$n - 1$ cạnh",
+      "$n$ cạnh",
+      "$\\frac{n(n-1)}{2}$ cạnh",
+      "$2n - 2$ cạnh"
+    ],
+    "correct": 0,
+    "explanation": "Theo tính chất cơ bản của cây: mọi đồ thị vô hướng liên thông không có chu trình với $n$ đỉnh đều có đúng $n - 1$ cạnh."
+  }
+]

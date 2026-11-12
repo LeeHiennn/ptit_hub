@@ -1,0 +1,752 @@
+[
+  {
+    "id": 316,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Một sóng điện từ phẳng có biên độ điện trường $E_0 = 100\\ \\text{V/m}$ truyền trong thủy tinh trong suốt ($\\mu = 1$, chiết suất $n = 1{,}5$). Biết $\\sqrt{\\dfrac{\\mu_0}{\\varepsilon_0}} = 120\\pi \\approx 377\\ \\Omega$, biên độ cường độ từ trường $H_0$ của sóng điện từ đó bằng:",
+    "image": "",
+    "options": [
+      "$H_0 \\approx 0{,}398\\ \\text{A/m}$",
+      "$H_0 \\approx 0{,}265\\ \\text{A/m}$",
+      "$H_0 \\approx 0{,}177\\ \\text{A/m}$",
+      "$H_0 \\approx 1{,}50\\ \\text{A/m}$"
+    ],
+    "correct": 0,
+    "explanation": "Từ đẳng thức $\\sqrt{\\varepsilon_0\\varepsilon}\\,E_0 = \\sqrt{\\mu_0\\mu}\\,H_0$ với $\\mu = 1$ và $n = \\sqrt{\\varepsilon} = 1{,}5$, ta có $H_0 = n\\sqrt{\\dfrac{\\varepsilon_0}{\\mu_0}}E_0 = \\dfrac{1{,}5\\times 100}{120\\pi} \\approx 0{,}398\\ \\text{A/m}$."
+  },
+  {
+    "id": 317,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "theory",
+    "question": "Khái niệm \\\"dòng điện dịch\\\" $\\vec{j}_d = \\dfrac{\\partial\\vec{D}}{\\partial t}$ do J. C. Maxwell đưa ra có vai trò bản chất nào sau đây trong điện từ học?",
+    "image": "",
+    "options": [
+      "Chứng tỏ nhiệt lượng tỏa ra trên tụ điện lý tưởng tuân theo định luật Joule-Lenz với dòng điện dịch",
+      "Chỉ tồn tại trong kim loại dẫn điện khi có từ trường không đổi đi qua",
+      "Thể hiện rằng điện trường biến thiên theo thời gian sinh ra từ trường xoáy tương tự như dòng điện dẫn, nhờ đó điện trường và từ trường biến thiên liên kết tạo thành sóng điện từ truyền được cả trong chân không",
+      "Là dòng chuyển dời có hướng của các electron tự do bên trong lớp điện môi hoàn hảo giữa hai bản tụ"
+    ],
+    "correct": 2,
+    "explanation": "Luận điểm II của Maxwell xác lập dòng điện dịch có mật độ $\\vec{j}_d = \\dfrac{\\partial\\vec{D}}{\\partial t}$ không gây tỏa nhiệt Joule trong chân không/điện môi nhưng lại sinh ra từ trường xoáy ($\\text{rot}\\,\\vec{H} = \\vec{j} + \\dfrac{\\partial\\vec{D}}{\\partial t}$) và khép kín mạch dòng xoay chiều."
+  },
+  {
+    "id": 318,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Một sóng cơ hình sin có tần số $f = 50\\ \\text{Hz}$ truyền dọc theo một dây dài với tốc độ $v = 20\\ \\text{m/s}$. Khoảng cách ngắn nhất giữa hai điểm nằm trên cùng một phương truyền sóng dao động vuông pha với nhau bằng:",
+    "image": "",
+    "options": [
+      "$d = 0{,}10\\ \\text{m}$",
+      "$d = 0{,}40\\ \\text{m}$",
+      "$d = 0{,}05\\ \\text{m}$",
+      "$d = 0{,}20\\ \\text{m}$"
+    ],
+    "correct": 0,
+    "explanation": "Bước sóng $\\lambda = \\dfrac{v}{f} = \\dfrac{20}{50} = 0{,}40\\ \\text{m}$. Hai điểm gần nhau nhất trên phương truyền dao động vuông pha ($\\Delta\\varphi = \\dfrac{\\pi}{2}$) cách nhau $d = \\dfrac{\\lambda}{4} = \\dfrac{0{,}40}{4} = 0{,}10\\ \\text{m}$."
+  },
+  {
+    "id": 319,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "theory",
+    "question": "Khi khảo sát đồ thị đường cong cộng hưởng biên độ của dao động cưỡng bức phụ thuộc tần số ngoại lực $\\Omega$, nếu hệ số cản (hoặc điện trở $R$ trong mạch $RLC$) càng lớn thì đường cong cộng hưởng thay đổi ra sao?",
+    "image": "",
+    "options": [
+      "Đỉnh cộng hưởng vọt cao hơn và nhọn sắc hơn rất nhiều",
+      "Đồ thị hoàn toàn không đổi vì biên độ cộng hưởng chỉ phụ thuộc biên độ ngoại lực",
+      "Đỉnh cộng hưởng thấp đi, tù hơn (dải tần cộng hưởng mở rộng ra) và vị trí cực đại biên độ cơ học lệch nhẹ về phía tần số nhỏ hơn $\\omega_0$",
+      "Tần số cộng hưởng dịch chuyển ra vô cực ($\\Omega \\to \\infty$)"
+    ],
+    "correct": 2,
+    "explanation": "Lực cản nhớt hoặc điện trở $R$ tiêu hao năng lượng làm giảm hệ số phẩm chất $Q$. Khi lực cản lớn, đỉnh cộng hưởng bị dìm xuống thấp, trải rộng theo $\\Omega$, và ở hệ cơ học cực đại $A(\\Omega)$ đạt tại $\\Omega = \\sqrt{\\omega_0^2 - 2\\beta^2} < \\omega_0$."
+  },
+  {
+    "id": 320,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Một vật khối lượng $m = 0{,}5\\ \\text{kg}$ dao động cưỡng bức ổn định theo phương trình $x = 4\\cos\\left(10\\pi t - \\dfrac{\\pi}{3}\\right)\\ (\\text{cm})$. Vận tốc cực đại $v_{\\max}$ và cơ năng dao động $W$ của vật (lấy $\\pi^2 \\approx 9{,}87$) lần lượt bằng:",
+    "image": "",
+    "options": [
+      "$v_{\\max} \\approx 1{,}26\\ \\text{m/s};\\ W \\approx 0{,}790\\ \\text{J}$",
+      "$v_{\\max} \\approx 12{,}6\\ \\text{m/s};\\ W \\approx 39{,}5\\ \\text{J}$",
+      "$v_{\\max} \\approx 1{,}26\\ \\text{m/s};\\ W \\approx 0{,}395\\ \\text{J}$",
+      "$v_{\\max} \\approx 0{,}40\\ \\text{m/s};\\ W \\approx 0{,}040\\ \\text{J}$"
+    ],
+    "correct": 2,
+    "explanation": "Ta có $A = 0{,}04\\ \\text{m},\\ \\omega = 10\\pi\\ \\text{rad/s}$. Vận tốc cực đại $v_{\\max} = \\omega A = 10\\pi\\cdot 0{,}04 = 0{,}4\\pi \\approx 1{,}26\\ \\text{m/s}$. Cơ năng dao động $W = \\dfrac{1}{2}m\\omega^2 A^2 = \\dfrac{1}{2}(0{,}5)(10\\pi)^2(0{,}04)^2 = 0{,}04\\pi^2 \\approx 0{,}395\\ \\text{J}$."
+  },
+  {
+    "id": 330,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "calc",
+    "question": "Dùng giao thoa kế Rayleigh với hai ống khí giống nhau dài $\\ell = 20\\ \\text{cm}$ và ánh sáng vàng Natri $\\lambda = 0{,}589\\ \\mu\\text{m}$. Ban đầu cả hai ống chứa không khí chiết suất $n_0 = 1{,}000292$. Khi hút hết không khí ở một ống rồi bơm đầy khí amoniac ($\\text{NH}_3$) vào, hệ vân dịch chuyển $m = 30$ vân. Chiết suất của khí $\\text{NH}_3$ (với $n > n_0$) gần nhất với:",
+    "image": "",
+    "options": [
+      "$n \\approx 1{,}000336$",
+      "$n \\approx 1{,}000204$",
+      "$n \\approx 1{,}000468$",
+      "$n \\approx 1{,}000380$"
+    ],
+    "correct": 3,
+    "explanation": "Sự chênh lệch quang lộ qua hai ống bằng $(n - n_0)\\ell = m\\lambda \\Rightarrow n = n_0 + \\dfrac{m\\lambda}{\\ell} = 1{,}000292 + \\dfrac{30\\times 0{,}589\\times 10^{-6}}{0{,}20} \\approx 1{,}000292 + 0{,}00008835 \\approx 1{,}000380$."
+  },
+  {
+    "id": 331,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "theory",
+    "question": "Thí nghiệm nổi tiếng sử dụng giao thoa kế Michelson do A. Michelson và E. Morley thực hiện (năm 1887) nhằm mục đích ban đầu là gì và kết quả thu được có ý nghĩa gì đối với vật lý hiện đại?",
+    "image": "",
+    "options": [
+      "Nhằm chứng minh sự tồn tại của ê-te tuyệt đối đứng yên làm môi trường truyền sóng ánh sáng",
+      "Nhằm phát hiện chuyển động của Trái Đất so với \\\"ête vũ trụ\\\" giả định thông qua sự dịch vân khi xoay giao thoa kế $90^\\circ$; kết quả thu được hiệu dịch chuyển bằng $0$, đặt nền móng thực nghiệm quan trọng dẫn tới tiên đề bất biến tốc độ ánh sáng trong Thuyết tương đối hẹp Einstein",
+      "Nhằm đo bước sóng tia X phát ra từ tinh thể kim loại bằng cách dịch gương di động",
+      "Nhằm đo hằng số Planck $h$ thông qua các vân tròn Newton bậc cao"
+    ],
+    "correct": 1,
+    "explanation": "Michelson và Morley kỳ vọng tốc độ ánh sáng thay đổi theo hướng chuyển động của Trái Đất trong gió ê-te, dẫn đến độ lệch vân khi quay máy $90^\\circ$. Thực nghiệm luôn cho độ dịch chuyển âm tính (bằng $0$), chứng minh tốc độ ánh sáng $c$ đẳng hướng trong mọi hệ quy chiếu quán tính."
+  },
+  {
+    "id": 332,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "theory",
+    "question": "Một nguồn sáng chuẩn đơn sắc thực tế luôn có dải bước sóng hẹp $\\Delta\\lambda \\ll \\lambda$ (không thể đơn sắc tuyệt đối). Độ dài kết hợp thời gian $L_c \\approx \\dfrac{\\lambda^2}{\\Delta\\lambda}$ biểu thị đại lượng nào?",
+    "image": "",
+    "options": [
+      "Khoảng cách ngắn nhất giữa hai khe Young có thể đặt trong phòng thí nghiệm",
+      "Hiệu quang lộ cực đại $\\Delta L_{\\max}$ mà tại đó hai chùm sáng tách ra từ cùng nguồn vẫn giữ được tính kết hợp để tạo ra các vân giao thoa phân biệt được",
+      "Đường kính của lỗ tròn nhiễu xạ Fresnel thứ nhất",
+      "Độ dày tối thiểu của lớp màng mỏng khử phản xạ ánh sáng trắng"
+    ],
+    "correct": 1,
+    "explanation": "Do dải phổ $\\Delta\\lambda$, cực đại bậc $k$ của bước sóng $\\lambda$ sẽ trùng với cực tiểu của bước sóng $\\lambda + \\Delta\\lambda/2$ khi hiệu quang lộ vượt quá ngưỡng độ dài kết hợp $L_c \\approx \\dfrac{\\lambda^2}{\\Delta\\lambda}$. Vì vậy laser ($\\Delta\\lambda$ cực nhỏ) có $L_c$ tới hàng mét hoặc kilômét, còn đèn trắng có $L_c$ chỉ vài micrômét."
+  },
+  {
+    "id": 347,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "calc",
+    "question": "(Nhiễu xạ tia X Vulf - Bragg) Khoảng cách giữa các mặt nguyên tử song song của tinh thể $\\text{NaCl}$ là $d = 0{,}282\\ \\text{nm}$. Chiếu tia X đơn sắc $K_\\alpha$ của đồng bước sóng $\\lambda = 0{,}154\\ \\text{nm}$ lên tinh thể này. Góc trượt nhỏ nhất $\\theta$ (hợp bởi tia X tới và mặt tinh thể) để thu được cực đại nhiễu xạ bậc $1$ bằng:",
+    "image": "",
+    "options": [
+      "$\\theta \\approx 7{,}8^\\circ$",
+      "$\\theta \\approx 33{,}1^\\circ$",
+      "$\\theta \\approx 74{,}2^\\circ$",
+      "$\\theta \\approx 15{,}8^\\circ$"
+    ],
+    "correct": 3,
+    "explanation": "Theo công thức Vulf - Bragg: $2d\\sin\\theta = k\\lambda$. Với $k = 1$, ta có $\\sin\\theta = \\dfrac{\\lambda}{2d} = \\dfrac{0{,}154}{2\\times 0{,}282} \\approx 0{,}2730 \\Rightarrow \\theta \\approx 15{,}8^\\circ$."
+  },
+  {
+    "id": 348,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "calc",
+    "question": "Chiếu chùm tia X đơn sắc bước sóng $\\lambda = 0{,}14\\ \\text{nm}$ dưới góc trượt $\\theta = 30^\\circ$ vào một họ mặt mạng tinh thể song song thì quan sát được cực đại phản xạ nhiễu xạ Vulf - Bragg bậc $2$ ($k = 2$). Khoảng cách $d$ giữa hai mặt phẳng mạng liên tiếp là:",
+    "image": "",
+    "options": [
+      "$d = 0{,}28\\ \\text{nm}$",
+      "$d = 0{,}56\\ \\text{nm}$",
+      "$d = 0{,}14\\ \\text{nm}$",
+      "$d = 0{,}32\\ \\text{nm}$"
+    ],
+    "correct": 0,
+    "explanation": "Áp dụng $2d\\sin\\theta = k\\lambda \\Rightarrow d = \\dfrac{k\\lambda}{2\\sin\\theta} = \\dfrac{2\\times 0{,}14}{2\\times\\sin 30^\\circ} = \\dfrac{0{,}28}{1} = 0{,}28\\ \\text{nm}$."
+  },
+  {
+    "id": 349,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "theory",
+    "question": "Vì sao để nghiên cứu cấu trúc mạng tinh thể bằng phương pháp nhiễu xạ Laue hoặc Vulf - Bragg người ta phải sử dụng chùm tia X mà không dùng ánh sáng nhìn thấy?",
+    "image": "",
+    "options": [
+      "Vì ánh sáng nhìn thấy bị các nguyên tử hấp thụ $100\\%$ ngay ở bề mặt ngoài không xuyên vào tinh thể",
+      "Vì tia X có vận tốc truyền trong chân không lớn hơn nhiều so với ánh sáng nhìn thấy",
+      "Vì bước sóng của tia X ($\\lambda \\sim 0{,}01\\text{–}1\\ \\text{nm}$) có cùng bậc độ lớn với khoảng cách giữa các mặt nguyên tử trong tinh thể ($d \\sim 0{,}1\\text{–}0{,}5\\ \\text{nm}$), thỏa mãn điều kiện $2d\\sin\\theta = k\\lambda$ ($\\lambda \\le 2d$), còn ánh sáng nhìn thấy có $\\lambda \\gg 2d$",
+      "Vì tinh thể hoàn toàn không làm đổi pha sóng ánh sáng nhìn thấy"
+    ],
+    "correct": 2,
+    "explanation": "Từ công thức Vulf - Bragg $\\sin\\theta = \\dfrac{k\\lambda}{2d} \\le 1$, nhiễu xạ bậc $k \\ge 1$ chỉ xảy ra khi $\\lambda \\le 2d$. Với hằng số mạng cỡ $\\text{Å}$ ($10^{-10}\\ \\text{m}$), bước sóng ánh sáng khả kiến ($\\sim 5000\\ \\text{Å}$) quá lớn khiến chỉ có phản xạ gương thông thường ($k = 0$), phải dùng tia X hoặc chùm electron/nơtron."
+  },
+  {
+    "id": 350,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "theory",
+    "question": "Trong thí nghiệm giao thoa qua hai khe hẹp có bề rộng mỗi khe là $b$ đáng kể (không vô cùng nhỏ) và tâm hai khe cách nhau $\\ell > b$, vì sao cường độ các vân sáng giao thoa nằm ở hai bên rìa giảm dần rồi bị triệt tiêu từng cụm?",
+    "image": "",
+    "options": [
+      "Vì màn ảnh phẳng không nằm trên mặt cầu tiêu diện",
+      "Vì bức tranh ánh sáng thu được là sự kết hợp của giao thoa hai khe ($I \\propto \\cos^2\\delta$) bị điều biến (bao bọc) bởi hàm nhiễu xạ qua từng khe đơn có độ rộng $b$ ($I_{\\text{đơn khe}} \\propto \\left(\\dfrac{\\sin u}{u}\\right)^2$)",
+      "Vì tia sáng đi tới hai mép ngoài của màn có quãng đường dài hơn làm đổi bước sóng",
+      "Vì hai khe tạo ra sự hấp thụ ánh sáng theo định luật Bouguer"
+    ],
+    "correct": 1,
+    "explanation": "Cường độ tại góc lệch $\\varphi$ trong giao thoa – nhiễu xạ đồng thời qua 2 khe bằng $I(\\varphi) = 4 I_{\\text{khe}}(\\varphi)\\cos^2\\left(\\dfrac{\\pi\\ell\\sin\\varphi}{\\lambda}\\right)$. Khi góc lệch rơi vào cực tiểu nhiễu xạ của 1 khe ($b\\sin\\varphi = m\\lambda$), cụm vân giao thoa tại vùng đó bị dập tắt."
+  },
+  {
+    "id": 372,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "theory",
+    "question": "Trong phổ tán xạ Raman ghi nhận ở nhiệt độ phòng, vì sao các vạch **Stokes** ($\\nu_S < \\nu_0$) luôn có cường độ mạnh hơn nhiều so với các vạch **đối-Stokes** ($\\nu_{dS} > \\nu_0$)?",
+    "image": "",
+    "options": [
+      "Vì vạch đối-Stokes có tần số thấp hơn nên bị thấu kính máy quang phổ hấp thụ hết",
+      "Vì tán xạ đối-Stokes vi phạm định luật bảo toàn năng lượng khi nhiệt độ dưới $1000\\ \\text{K}$",
+      "Vì phôtôn đối-Stokes chỉ phát sinh đối với tia X năng lượng cao",
+      "Theo phân bố Boltzmann ở nhiệt độ phòng, đa số phân tử đều đang nằm ở trạng thái dao động cơ bản (năng lượng thấp) nên xác suất nhận năng lượng từ phôtôn tới để nhảy lên mức cao hơn (phát vạch Stokes) lớn hơn nhiều so với xác suất xuất phát từ trạng thái kích thích sẵn có (phát đối-Stokes)"
+    ],
+    "correct": 3,
+    "explanation": "Ở trạng thái cân bằng nhiệt $T$, tỉ số mật độ phân tử ở mức dao động kích thích ($v=1$) và mức cơ bản ($v=0$) là $\\dfrac{N_1}{N_0} = \\exp\\left(-\\dfrac{h\\nu_v}{k_B T}\\right) \\ll 1$. Quá trình Stokes xuất phát từ $N_0$, còn đối-Stokes đòi hỏi phân tử phải ở sẵn $N_1$, nên cường độ Stokes lớn hơn hẳn."
+  },
+  {
+    "id": 373,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "theory",
+    "question": "Đặt một tấm kính lọc màu đỏ lý tưởng (chỉ cho ánh sáng đỏ đi qua, hấp thụ hết các màu khác) áp sát vào một tấm kính lọc màu xanh lục lý tưởng. Khi chiếu chùm ánh sáng trắng đi xuyên qua cả hai tấm kính này theo thứ tự, ánh sáng thu được phía sau là:",
+    "image": "",
+    "options": [
+      "Ánh sáng màu vàng (do phối trộn đỏ và lục)",
+      "Ánh sáng màu xanh lục vì tia sáng đi qua kính thứ hai sau cùng",
+      "Tối đen (hầu như không có ánh sáng ló ra)",
+      "Ánh sáng trắng giảm một nửa cường độ"
+    ],
+    "correct": 2,
+    "explanation": "Ánh sáng trắng qua tấm lọc đỏ chỉ còn giữ lại thành phần bước sóng màu đỏ. Khi chùm sáng đỏ này chiếu tới tấm lọc xanh lục (vốn hấp thụ mọi màu khác lục, kể cả đỏ), nó bị hấp thụ hoàn toàn nên phía sau tối đen."
+  },
+  {
+    "id": 374,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "theory",
+    "question": "Theo thuyết của Smoluchowski và Einstein về tán xạ phân tử trong môi trường tinh khiết (như không khí sạch hay nước cất không hạt bụi), bản chất gây ra tán xạ là gì?",
+    "image": "",
+    "options": [
+      "Do chuyển động tịnh tiến đều của cả khối chất lỏng làm gãy tia sáng",
+      "Các **thăng giáng mật độ nhiệt ngẫu nhiên** làm cho từng vùng kích thước rất nhỏ ($\\ll \\lambda$) có chiết suất dao động chênh lệch cục bộ với giá trị trung bình, phá vỡ sự triệt tiêu hoàn toàn của các sóng thứ cấp sang hai bên",
+      "Do các nguyên tử bị tách khỏi nhau bởi lực hấp dẫn",
+      "Do sự ion hóa hoàn toàn không khí bởi tia hồng ngoại Mặt Trời"
+    ],
+    "correct": 1,
+    "explanation": "Trong một tinh thể hoàn hảo ở $T = 0\\ \\text{K}$, sóng thứ cấp từ mọi nguyên tử đều giao thoa triệt tiêu theo mọi phương lệch khỏi tia truyền thẳng nên không có tán xạ. Ở $T > 0\\ \\text{K}$, chuyển động nhiệt gây ra các thăng giáng mật độ và định hướng phân tử tạo sự mất đồng nhất quang học cục bộ, sinh ra tán xạ phân tử."
+  },
+  {
+    "id": 375,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "theory",
+    "question": "So sánh hai hiện tượng tán xạ không đàn hồi **Raman** và **Mandelstam - Brillouin** trong chất rắn hoặc chất lỏng, sự khác nhau căn bản nằm ở yếu tố kích thích nào trong môi trường?",
+    "image": "",
+    "options": [
+      "Tán xạ Brillouin làm đổi điện tích phôtôn thành dương",
+      "Tán xạ Raman do tương tác giữa phôtôn ánh sáng với **dao động nội phân tử / phonon quang học** (độ dịch tần lớn $\\Delta\\tilde{\\nu} \\sim 10^2\\text{–}10^3\\ \\text{cm}^{-1}$), còn tán xạ Brillouin do tương tác với **sóng âm nhiệt đàn hồi / phonon âm học** (độ dịch tần rất nhỏ $\\sim 0{,}1\\text{–}1\\ \\text{cm}^{-1}$)",
+      "Tán xạ Brillouin chỉ xảy ra ở chân không, còn Raman chỉ có ở chất khí trơ",
+      "Tán xạ Raman giữ nguyên bước sóng ánh sáng ($\\Delta\\lambda = 0$), còn Brillouin làm tăng gấp đôi bước sóng"
+    ],
+    "correct": 1,
+    "explanation": "Cả hai đều là tán xạ không đàn hồi (có vạch Stokes và đối-Stokes): Raman liên quan đến chuyển mức dao động/quay nội tại của phân tử hoặc phonon quang; còn Mandelstam - Brillouin là sự tán xạ ánh sáng trên các sóng đàn hồi siêu âm nhiệt (phonon âm) chuyển động trong môi trường."
+  },
+  {
+    "id": 376,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Một tuyến cáp sợi quang đơn mode hoạt động ở bước sóng $1{,}55\\ \\mu\\text{m}$ có hệ số suy hao $\\alpha_{\\text{dB}} = 0{,}25\\ \\text{dB/km}$ (chủ yếu do tán xạ Rayleigh và hấp thụ dư). Sau quãng đường truyền $L = 40\\ \\text{km}$ (không qua bộ khuếch đại), công suất quang còn lại bằng bao nhiêu phần trăm công suất phát ban đầu?",
+    "image": "",
+    "options": [
+      "$50\\%$ (suy hao tổng cộng $3\\ \\text{dB}$)",
+      "$1\\%$ (suy hao tổng cộng $20\\ \\text{dB}$)",
+      "$10\\%$ (suy hao tổng cộng $10\\ \\text{dB}$)",
+      "$25\\%$ (suy hao tổng cộng $6\\ \\text{dB}$)"
+    ],
+    "correct": 2,
+    "explanation": "Tổng độ suy hao dọc $40\\ \\text{km}$ là $\\Delta L_{\\text{dB}} = 0{,}25\\times 40 = 10\\ \\text{dB}$. Theo định nghĩa $10\\lg\\dfrac{P_0}{P} = 10 \\Rightarrow \\dfrac{P_0}{P} = 10^1 = 10 \\Rightarrow \\dfrac{P}{P_0} = 10\\%$."
+  },
+  {
+    "id": 377,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Khi chiếu chùm tia sáng đơn sắc qua một bản thủy tinh màu có bề dày $d_{1/2} = 3\\ \\text{cm}$, cường độ chùm sáng giảm đi đúng một nửa (bỏ qua phản xạ). Muốn cường độ chùm sáng qua loại thủy tinh đó giảm đi $8$ lần so với lúc tới thì cần dùng tấm thủy tinh dày:",
+    "image": "",
+    "options": [
+      "$d = 9\\ \\text{cm}$",
+      "$d = 6\\ \\text{cm}$",
+      "$d = 12\\ \\text{cm}$",
+      "$d = 24\\ \\text{cm}$"
+    ],
+    "correct": 0,
+    "explanation": "Theo định luật Bouguer $I = I_0 e^{-kd} = I_0\\cdot 2^{-d/d_{1/2}}$. Để $\\dfrac{I}{I_0} = \\dfrac{1}{8} = 2^{-3}$, cần bề dày $d = 3 d_{1/2} = 3\\times 3 = 9\\ \\text{cm}$."
+  },
+  {
+    "id": 378,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "theory",
+    "question": "Điểm khác biệt đặc trưng nhất phân biệt hiện tượng **tán xạ Raman** với hiện tượng **huỳnh quang** (photoluminescence) là gì?",
+    "image": "",
+    "options": [
+      "Huỳnh quang trải qua quá trình **hấp thụ thực** phôtôn lên trạng thái kích thích thực tồn tại trong thời gian sống ($\\sim 10^{-8}\\ \\text{s}$) rồi mới phát lại bất kỳ pha, nên vạch phát xạ cố định theo chất; còn tán xạ Raman xảy ra gần như tức thời ($\\sim 10^{-14}\\ \\text{s}$) qua trạng thái ảo bất kể bước sóng kích thích và độ dịch $\\Delta\\nu$ luôn cố định so với $\\nu_0$",
+      "Tán xạ Raman chỉ phát ra tia tử ngoại còn huỳnh quang chỉ phát tia hồng ngoại",
+      "Huỳnh quang chỉ xảy ra ở chất khí loãng còn tán xạ Raman chỉ xảy ra ở kim loại",
+      "Tán xạ Raman luôn giữ cho bước sóng vạch Stokes nhỏ hơn bước sóng kích thích $\\lambda_0$"
+    ],
+    "correct": 0,
+    "explanation": "Trong huỳnh quang, nếu thay đổi bước sóng kích thích (trong dải hấp thụ), phổ phát xạ giữ nguyên đỉnh bước sóng riêng của chất và có độ trễ thời gian $\\sim\\text{ns}$. Ngược lại, trong Raman không cần đúng bước sóng hấp thụ cộng hưởng; nếu dịch chuyển $\\lambda_0$ thì toàn bộ vạch Stokes/anti-Stokes cũng dịch theo giữ nguyên độ chênh $\\Delta\\nu = \\pm\\nu_{\\text{dao động}}$."
+  },
+  {
+    "id": 394,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "theory",
+    "question": "Theo giả thuyết của Fresnel giải thích hiện tượng quay mặt phẳng phân cực trong các chất hoạt quang tự nhiên (thạch anh dọc quang trục, dung dịch đường), nguyên nhân gây quay cực là gì?",
+    "image": "",
+    "options": [
+      "Ánh sáng phân cực thẳng truyền dọc quang trục có thể tách thành hai sóng phân cực tròn quay ngược chiều nhau (quay phải $R$ và quay trái $L$); môi trường hoạt quang có chiết suất đối với hai sóng này khác nhau ($n_R \\neq n_L$) tạo ra độ lệch pha tỉ lệ với chiều dài truyền",
+      "Do sự lệch pha giữa tia $o$ và tia $e$ khi chiếu vuông góc với quang trục",
+      "Do điện trường của ánh sáng tương tác với lực hấp dẫn làm xoắn tia sáng",
+      "Do các hạt nhân tinh thể làm nhiễu xạ tia sáng theo hình xoắn ốc"
+    ],
+    "correct": 0,
+    "explanation": "Phân tích dao động thẳng thành tổng hai dao động tròn ngược chiều có biên độ bằng nhau: vì bất đối xứng phân tử hoặc xoắn mạng tinh thể ($n_R \\neq n_L$), hai sóng tròn truyền với vận tốc khác nhau nên khi tổng hợp lại ở đầu ra, mặt phẳng dao động thẳng đã bị quay đi góc $\\alpha = \\dfrac{\\pi d}{\\lambda_0}|n_L - n_R|$."
+  },
+  {
+    "id": 395,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "theory",
+    "question": "Các chi tiết nhựa trong suốt bình thường đẳng hướng quang học, nhưng khi chịu nén/kéo cơ học đặt giữa hai bản phân cực bắt chéo lại hiện lên các vân màu sắc sặc sỡ. Hiện tượng này gọi là gì và ứng dụng để làm gì?",
+    "image": "",
+    "options": [
+      "Hiện tượng tán xạ Raman cộng hưởng trên mạch polyme",
+      "Hiện tượng quang điện ngoài đo năng lượng phôtôn",
+      "Hiện tượng **quang đàn hồi** (lưỡng chiết nhân tạo do ứng suất cơ học làm $n_\\parallel - n_\\perp \\propto \\sigma$); ứng dụng để trực quan hóa và đo phân bố ứng suất bên trong mô hình kết cấu cơ khí/xây dựng",
+      "Hiện tượng phân cực góc Brewster do bọt khí"
+    ],
+    "correct": 2,
+    "explanation": "Khi chịu ứng suất cơ học lệch hướng $\\sigma_1 - \\sigma_2$, vật liệu vô định hình đẳng hướng trở thành dị hướng quang học (hiệu chiết suất tỉ lệ với độ chênh ứng suất). Đưa qua 2 kính phân cực bắt chéo tạo các vân màu giao thoa ánh sáng phân cực giúp kỹ sư tìm điểm tập trung ứng suất."
+  },
+  {
+    "id": 396,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "theory",
+    "question": "Trong lăng kính Nicol (gồm hai nửa tinh thể băng lan $n_o = 1{,}658,\\ n_e = 1{,}486$ dán khít bằng lớp nhựa Canada có chiết suất $n_{\\text{nhựa}} = 1{,}55$), vai trò của lớp nhựa dán Canada là gì?",
+    "image": "",
+    "options": [
+      "Gây ra **phản xạ toàn phần** đối với tia thường ($n_o = 1{,}658 > 1{,}55$) ở góc tới thích hợp (tia $o$ bị hắt sang thành đen hấp thụ), trong khi tia bất thường ($n_e < 1{,}55$) vẫn khúc xạ truyền qua thu được ánh sáng phân cực thẳng toàn phần",
+      "Làm tăng thêm gấp đôi bước sóng của cả tia thường và tia bất thường",
+      "Hấp thụ tia bất thường theo cơ chế tinh thể Tuamalin và cho tia thường đi thẳng",
+      "Biến ánh sáng phân cực thẳng thành phân cực tròn để tránh lóa"
+    ],
+    "correct": 0,
+    "explanation": "Chiết suất nhựa Canada ($1{,}55$) nằm kẹp giữa $n_e$ và $n_o$. Thiết kế mặt cắt chéo hợp lý để góc tới tại mặt dán lớn hơn góc giới hạn $i_{\\text{gh}}$ đối với tia thường ($\\sin i > 1{,}55/1{,}658$), loại bỏ hoàn toàn tia $o$ bằng phản xạ toàn phần."
+  },
+  {
+    "id": 397,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "theory",
+    "question": "Đặt một kính phân tích lý tưởng chắn ngang một chùm tia sáng rồi xoay kính một vòng $360^\\circ$ quanh trục tia sáng. Kết quả thấy cường độ sáng phía sau thay đổi tuần hoàn giữa một giá trị cực đại $I_{\\max} > 0$ và một giá trị cực tiểu $I_{\\min} > 0$. Chùm tia ban đầu là loại ánh sáng nào?",
+    "image": "",
+    "options": [
+      "Ánh sáng phân cực tròn hoàn toàn",
+      "Ánh sáng phân cực thẳng toàn phần",
+      "Ánh sáng tự nhiên hoàn toàn",
+      "Ánh sáng **phân cực một phần** (hoặc ánh sáng phân cực elip)"
+    ],
+    "correct": 3,
+    "explanation": "Nếu ánh sáng tự nhiên hoặc phân cực tròn thì khi xoay kính phân tích cường độ ra không đổi ($I_{\\max} = I_{\\min} > 0$). Nếu phân cực thẳng thì tại vị trí vuông góc $I_{\\min} = 0$. Chỉ khi **phân cực một phần** (hoặc elip) thì $I_{\\max} > I_{\\min} > 0$."
+  },
+  {
+    "id": 398,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "theory",
+    "question": "Sự khác biệt đặc trưng nhất về tính thuận nghịch quang học giữa quay mặt phẳng phân cực **tự nhiên** (như trong thạch anh, đường) và **hiệu ứng Faraday** (quay mặt phẳng phân cực trong từ trường $\\vec{B}$ song song tia truyền) là gì?",
+    "image": "",
+    "options": [
+      "Chất hoạt quang tự nhiên làm tăng gấp đôi góc quay khi đi khứ hồi",
+      "Nếu cho tia sáng phản xạ gương đi ngược lại qua chính môi trường đó: chất hoạt quang tự nhiên làm góc quay tự khử về **$0$**, còn trong hiệu ứng Faraday góc quay **tăng gấp đôi ($2\\alpha$)** do chiều quay phụ thuộc vào hướng vectơ $\\vec{B}$ cố định",
+      "Hiệu ứng Faraday chỉ xảy ra đối với ánh sáng không phân cực",
+      "Trong hiệu ứng Faraday không cần đặt từ trường ngoài"
+    ],
+    "correct": 1,
+    "explanation": "Quay cực tự nhiên phụ thuộc chiều truyền tương đối theo cấu trúc xoắn bất biến nên đi qua rồi dội về sẽ cộng hai góc trái dấu thành $0$. Trong hiệu ứng Faraday ($\\alpha = V B \\ell$), chiều quay gắn với chiều vectơ cảm ứng từ $\\vec{B}$ cố định trong phòng thí nghiệm nên đi về góc quay tích lũy thêm thành $2\\alpha$ (ứng dụng chế tạo isolator Faraday)."
+  },
+  {
+    "id": 417,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Một hạt chuyển động phải đạt tốc độ $v$ bằng bao nhiêu để động lượng tương đối tính $p = \\dfrac{m_0 v}{\\sqrt{1 - v^2/c^2}}$ của nó lớn gấp đôi động lượng tính theo cơ học cổ điển $p_{\\text{cổ điển}} = m_0 v$?",
+    "image": "",
+    "options": [
+      "$v = 0{,}500c$",
+      "$v = 0{,}707c$",
+      "$v = 0{,}943c$",
+      "$v = \\dfrac{\\sqrt{3}}{2}c \\approx 0{,}866c$"
+    ],
+    "correct": 3,
+    "explanation": "Điều kiện $\\dfrac{p}{p_{\\text{cổ điển}}} = \\gamma = \\dfrac{1}{\\sqrt{1 - v^2/c^2}} = 2 \\Rightarrow 1 - \\dfrac{v^2}{c^2} = \\dfrac{1}{4} \\Rightarrow v = \\dfrac{\\sqrt{3}}{2}c \\approx 0{,}866c$."
+  },
+  {
+    "id": 418,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Khi một hạt có khối lượng nghỉ $m_0$ chuyển động với tốc độ $v = 0{,}6c$, tỉ số giữa động năng tương đối tính đúng $W_{\\text{đ}}$ và giá trị động năng tính theo công thức cổ điển $W_{\\text{cđ}} = \\dfrac{1}{2}m_0 v^2$ bằng:",
+    "image": "",
+    "options": [
+      "$\\dfrac{W_{\\text{đ}}}{W_{\\text{cđ}}} = \\dfrac{18}{25} \\approx 0{,}72$",
+      "$\\dfrac{W_{\\text{đ}}}{W_{\\text{cđ}}} = 1{,}00$",
+      "$\\dfrac{W_{\\text{đ}}}{W_{\\text{cđ}}} = \\dfrac{25}{18} \\approx 1{,}39$",
+      "$\\dfrac{W_{\\text{đ}}}{W_{\\text{cđ}}} = 1{,}25$"
+    ],
+    "correct": 2,
+    "explanation": "Với $v = 0{,}6c$: $\\gamma = \\dfrac{1}{0{,}8} = 1{,}25$, nên $W_{\\text{đ}} = (\\gamma - 1)m_0 c^2 = 0{,}25 m_0 c^2$. Trong khi đó $W_{\\text{cđ}} = \\dfrac{1}{2}m_0 (0{,}6c)^2 = 0{,}18 m_0 c^2$. Tỉ số $\\dfrac{W_{\\text{đ}}}{W_{\\text{cđ}}} = \\dfrac{0{,}25}{0{,}18} = \\dfrac{25}{18} \\approx 1{,}39$."
+  },
+  {
+    "id": 419,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Một con tàu vũ trụ $K'$ bay theo phương ngang $+Ox$ với vận tốc $V = 0{,}6c$ so với Trái Đất ($K$). Từ trên tàu bắn ra một đầu dò vuông góc với hướng bay (dọc trục $+O'y'$) có vận tốc so với tàu là $u'_y = 0{,}8c$ ($u'_x = 0$). Vận tốc tổng hợp $u$ của đầu dò đo được từ hệ quy chiếu Trái Đất bằng:",
+    "image": "",
+    "options": [
+      "$u = 1{,}000c$",
+      "$u \\approx 0{,}877c$",
+      "$u \\approx 0{,}721c$",
+      "$u = 1{,}400c$"
+    ],
+    "correct": 1,
+    "explanation": "Áp dụng công thức biến đổi Lorentz cho các thành phần vận tốc ($u'_x = 0$): $u_x = V = 0{,}6c$; còn theo phương vuông góc: $u_y = \\dfrac{u'_y\\sqrt{1 - V^2/c^2}}{1 + \\frac{Vu'_x}{c^2}} = 0{,}8c\\times 0{,}8 = 0{,}64c$. Vậy độ lớn vận tốc trên Trái Đất là $u = \\sqrt{0{,}6^2 + 0{,}64^2}\\,c = \\sqrt{0{,}7696}\\,c \\approx 0{,}877c < c$."
+  },
+  {
+    "id": 420,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "theory",
+    "question": "Phát biểu nào sau đây phản ánh CHÍNH XÁC nhất bản chất khái niệm khối lượng nghỉ $m_0$ và khối lượng tương đối tính $m = \\gamma m_0$ trong động lực học Einstein?",
+    "image": "",
+    "options": [
+      "Khối lượng tương đối tính của một hạt luôn giảm đi khi tốc độ hạt tăng dần về $c$",
+      "$m_0$ là đại lượng bất biến đặc trưng nội tại cho hạt trong mọi hệ quy chiếu quán tính ($m_0 c^2 = \\sqrt{E^2 - p^2 c^2}$); đối với phôtôn truyền với vận tốc $c$ thì $m_0 = 0$ nhưng năng lượng $E = pc > 0$ và khối lượng hiệu dụng $m = \\dfrac{h\\nu}{c^2} > 0$",
+      "Mọi hệ hạt cô lập đều bảo toàn tổng các khối lượng nghỉ $\\sum m_{0i}$ trước và sau phản ứng hạt nhân",
+      "Phôtôn có khối lượng nghỉ $m_0 = \\dfrac{h\\nu}{c^2}$ và tăng lên vô hạn khi bay với vận tốc $c$"
+    ],
+    "correct": 1,
+    "explanation": "Khối lượng nghỉ $m_0$ (khối lượng bất biến) bằng $\\dfrac{\\sqrt{E^2 - p^2 c^2}}{c^2}$. Với phôtôn $E = pc \\Rightarrow m_0 = 0$, song phôtôn vẫn mang năng lượng $E = h\\nu$, động lượng $p = h/\\lambda$ và tương tác hấp dẫn tương đương $m = E/c^2$."
+  },
+  {
+    "id": 421,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Một electron và một pôzitrôn (phản hạt có cùng khối lượng nghỉ $m_e$, $m_e c^2 = 0{,}511\\ \\text{MeV}$) gần như đứng yên thì hủy cặp chuyển hóa hoàn toàn thành hai phôtôn tia gamma ($\\gamma$) bay ngược chiều nhau. Năng lượng và bước sóng của mỗi phôtôn gamma phát ra bằng:",
+    "image": "",
+    "options": [
+      "$E_\\gamma = 0{,}511\\ \\text{MeV};\\ \\lambda_\\gamma \\approx 2{,}43\\ \\text{pm}$ ($0{,}0243\\ \\text{Å}$)",
+      "$E_\\gamma = 0{,}255\\ \\text{MeV};\\ \\lambda_\\gamma \\approx 4{,}86\\ \\text{pm}$",
+      "$E_\\gamma = 1{,}022\\ \\text{MeV};\\ \\lambda_\\gamma \\approx 1{,}21\\ \\text{pm}$",
+      "$E_\\gamma = 0{,}511\\ \\text{MeV};\\ \\lambda_\\gamma \\approx 4{,}86\\ \\text{pm}$"
+    ],
+    "correct": 0,
+    "explanation": "Bảo toàn động lượng cho hai phôtôn có cùng độ lớn động lượng (bay ngược chiều), nên cùng năng lượng $E_\\gamma = \\dfrac{2 m_e c^2}{2} = m_e c^2 = 0{,}511\\ \\text{MeV}$. Bước sóng $\\lambda_\\gamma = \\dfrac{hc}{E_\\gamma} = \\dfrac{h}{m_e c} = \\lambda_C \\approx 2{,}426\\times 10^{-12}\\ \\text{m} = 2{,}43\\ \\text{pm}$."
+  },
+  {
+    "id": 422,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Trong một phản ứng nhiệt hạch tổng hợp hạt nhân, độ hụt khối lượng chuyển hóa hoàn toàn thành năng lượng bằng $\\Delta m = 1\\ \\text{gam}$ ($10^{-3}\\ \\text{kg}$). Năng lượng tỏa ra của phản ứng đó tương đương với:",
+    "image": "",
+    "options": [
+      "$\\Delta E = 3\\times 10^{5}\\ \\text{J}$",
+      "$\\Delta E = 9\\times 10^{13}\\ \\text{J}$ ($\\approx 25\\ \\text{triệu kWh}$)",
+      "$\\Delta E = 4{,}5\\times 10^{13}\\ \\text{J}$",
+      "$\\Delta E = 9\\times 10^{16}\\ \\text{J}$"
+    ],
+    "correct": 1,
+    "explanation": "Áp dụng hệ thức Einstein: $\\Delta E = \\Delta m c^2 = 10^{-3}\\times (3\\times 10^8)^2 = 9\\times 10^{13}\\ \\text{J}$. Vì $1\\ \\text{kWh} = 3{,}6\\times 10^6\\ \\text{J}$, năng lượng này tương đương $\\dfrac{9\\times 10^{13}}{3{,}6\\times 10^6} = 2{,}5\\times 10^7\\ \\text{kWh}$."
+  },
+  {
+    "id": 432,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Một phôtôn tia gamma có năng lượng đúng bằng năng lượng nghỉ của electron ($E = m_e c^2 \\approx 0{,}511\\ \\text{MeV}$) va chạm Compton trực diện với một electron tự do đứng yên rồi bật ngược lại theo góc $\\theta = 180^\\circ$. Động năng cực đại mà electron thu được bằng:",
+    "image": "",
+    "options": [
+      "$W_{\\text{đmax}} = \\dfrac{1}{2}E \\approx 0{,}256\\ \\text{MeV}$",
+      "$W_{\\text{đmax}} = 0{,}511\\ \\text{MeV}$ (truyền $100\\%$ năng lượng)",
+      "$W_{\\text{đmax}} = \\dfrac{1}{3}E \\approx 0{,}170\\ \\text{MeV}$",
+      "$W_{\\text{đmax}} = \\dfrac{2}{3}E \\approx 0{,}341\\ \\text{MeV}$"
+    ],
+    "correct": 3,
+    "explanation": "Vì $E = m_e c^2 = \\dfrac{hc}{\\lambda_C}$ nên bước sóng ban đầu $\\lambda = \\lambda_C$. Khi tán xạ ngược $\\theta = 180^\\circ$: $\\lambda' = \\lambda + \\lambda_C(1 - \\cos 180^\\circ) = \\lambda_C + 2\\lambda_C = 3\\lambda_C$. Suy ra năng lượng phôtôn sau tán xạ là $E' = \\dfrac{E}{3}$, nên electron nhận động năng $W_{\\text{đmax}} = E - E' = \\dfrac{2}{3}E \\approx 0{,}341\\ \\text{MeV}$."
+  },
+  {
+    "id": 433,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "theory",
+    "question": "Vì sao trong phòng thí nghiệm không thể quan sát rõ rệt độ dịch bước sóng Compton khi chiếu **ánh sáng nhìn thấy** ($\\lambda \\approx 500\\ \\text{nm}$) vào các bia vật chất mà phải dùng **tia X cứng** hoặc **tia gamma**?",
+    "image": "",
+    "options": [
+      "Do năng lượng phôtôn ánh sáng nhìn thấy ($\\sim 2{,}5\\ \\text{eV}$) nhỏ hơn năng lượng liên kết của electron nguyên tử nên electron dao động cùng cả nguyên tử nặng ($\\lambda_C$ nhỏ hơn hàng nghìn lần), mặt khác độ dịch tối đa trên electron tự do $2\\lambda_C \\approx 0{,}00485\\ \\text{nm}$ là quá nhỏ ($\\sim 10^{-5}\\lambda$) so với bước sóng ánh sáng thường",
+      "Vì định luật bảo toàn năng lượng chỉ đúng với tia X",
+      "Vì ánh sáng nhìn thấy không có động lượng ($p = 0$)",
+      "Vì electron tự do phản xạ ánh sáng nhìn thấy mà không làm đổi góc"
+    ],
+    "correct": 0,
+    "explanation": "Độ dịch bước sóng $\\Delta\\lambda \\le 2\\lambda_C \\approx 4{,}85\\times 10^{-3}\\ \\text{nm}$. Với ánh sáng khả kiến ($\\lambda \\approx 500\\ \\text{nm}$), tỉ lệ $\\Delta\\lambda/\\lambda \\lesssim 10^{-5}$ không thể tách khỏi tán xạ Rayleigh đàn hồi, đồng thời $\\varepsilon \\ll$ năng lượng ion hóa nên tương tác diễn ra với cả nguyên tử khối lượng $M \\gg m_e$."
+  },
+  {
+    "id": 434,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Khi chiếu chùm ánh sáng đơn sắc có bước sóng $\\lambda < \\lambda_0$ vào catốt của một tế bào quang điện với công suất $P = 0{,}8\\ \\text{W}$ (giả sử mọi phôtôn chiếu tới đều có năng lượng $\\varepsilon = 4{,}0\\times 10^{-19}\\ \\text{J}$ và hiệu suất lượng tử đạt $H = 5\\%$, tức $100$ phôtôn đập vào giải phóng $5$ quang electron). Cường độ dòng quang điện bão hòa $I_{bh}$ đo được bằng:",
+    "image": "",
+    "options": [
+      "$I_{bh} = 320\\ \\text{mA}$",
+      "$I_{bh} = 40\\ \\text{mA}$",
+      "$I_{bh} = 8\\ \\text{mA}$",
+      "$I_{bh} = 16\\ \\text{mA}$"
+    ],
+    "correct": 3,
+    "explanation": "Số phôtôn đập tới catốt trong $1$ giây là $N_p = \\dfrac{P}{\\varepsilon} = \\dfrac{0{,}8}{4{,}0\\times 10^{-19}} = 2{,}0\\times 10^{18}\\ \\text{phôtôn/s}$. Số quang electron bứt ra mỗi giây: $N_e = 0{,}05 N_p = 1{,}0\\times 10^{17}\\ \\text{electron/s}$. Cường độ dòng bão hòa $I_{bh} = N_e \\cdot e = 1{,}0\\times 10^{17}\\times 1{,}6\\times 10^{-19} = 0{,}016\\ \\text{A} = 16\\ \\text{mA}$."
+  },
+  {
+    "id": 448,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Một vi hạt chuyển động trong hộp thế năng lập phương 3 chiều cạnh $a$ thành cao vô hạn có phổ năng lượng $E_{n_x,n_y,n_z} = \\dfrac{\\pi^2\\hbar^2}{2ma^2}(n_x^2 + n_y^2 + n_z^2)$ với $n_x, n_y, n_z \\in \\{1, 2, 3,\\dots\\}$. Độ suy biến (số trạng thái lượng tử độc lập có cùng mức năng lượng) của mức cơ bản $E_1$ và mức kích thích đầu tiên $E_2$ lần lượt là:",
+    "image": "",
+    "options": [
+      "Mức $E_1$ suy biến bậc $1$; mức $E_2$ suy biến bậc $3$",
+      "Cả hai mức đều không suy biến (bậc $1$)",
+      "Mức $E_1$ suy biến bậc $3$; mức $E_2$ suy biến bậc $6$",
+      "Mức $E_1$ suy biến bậc $1$; mức $E_2$ suy biến bậc $6$"
+    ],
+    "correct": 0,
+    "explanation": "Mức cơ bản ứng với bộ số duy nhất $(1,1,1)$ ($n_x^2+n_y^2+n_z^2 = 3$), độ suy biến bằng $1$. Mức kích thích đầu tiên ứng với $n_x^2+n_y^2+n_z^2 = 1^2+1^2+2^2 = 6$, có đúng $3$ bộ hoán vị phân biệt là $(2,1,1),\\ (1,2,1),\\ (1,1,2)$, nên suy biến bậc $3$."
+  },
+  {
+    "id": 449,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Hệ số truyền qua hiệu ứng đường ngầm qua rào thế chữ nhật có bề rộng $a$ và chiều cao $U_0 > E$ được tính gần đúng theo $D \\approx D_0 \\exp\\left(-\\dfrac{2a}{\\hbar}\\sqrt{2m(U_0 - E)}\\right)$. Ban đầu một khe chân không STM có hệ số truyền qua $D_1 = 10^{-2}$ (coi $D_0 \\approx 1$). Nếu tăng bề rộng khe chân không từ $a$ lên $2a$ thì hệ số truyền qua mới $D_2$ bằng:",
+    "image": "",
+    "options": [
+      "$D_2 = 0$ (chặn đứng hoàn toàn)",
+      "$D_2 \\approx 2{,}5\\times 10^{-3}$ (giảm 4 lần)",
+      "$D_2 \\approx 10^{-4}$ (giảm theo lũy thừa bậc hai của $D_1$)",
+      "$D_2 \\approx 5\\times 10^{-3}$ (giảm một nửa)"
+    ],
+    "correct": 2,
+    "explanation": "Với $D_0 \\approx 1$ và hàm mũ $D_1 = e^{-2\\kappa a} = 10^{-2}$, khi tăng bề rộng rào thế gấp đôi ($a \\to 2a$) thì $D_2 = e^{-2\\kappa(2a)} = \\left(e^{-2\\kappa a}\\right)^2 = (10^{-2})^2 = 10^{-4}$. Tính nhạy cực cao theo hàm mũ này là cơ sở đạt độ phân giải cấp nguyên tử của kính hiển vi quét đường ngầm STM!"
+  },
+  {
+    "id": 450,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "theory",
+    "question": "Trong các hiện tượng vật lý nào dưới đây, cơ chế **hiệu ứng đường ngầm lượng tử (quantum tunneling)** đóng vai trò quyết định?",
+    "image": "",
+    "options": [
+      "Sự cân bằng nhiệt của bức xạ vật đen tuyệt đối",
+      "Hiện tượng khúc xạ ánh sáng qua lăng kính thủy tinh và sự phản xạ toàn phần trong sợi quang",
+      "Sự phát xạ quang điện ngoài trên bề mặt kim loại kiềm khi tăng cường độ sáng",
+      "Sự phóng xạ hạt $\\alpha$ của hạt nhân nặng, hoạt động của kính hiển vi quét đường ngầm (STM), điốt đường ngầm (Esaki) và phản ứng tổng hợp hạt nhân trong lõi các ngôi sao"
+    ],
+    "correct": 3,
+    "explanation": "Cả 4 hiện tượng đều đòi hỏi vi hạt vượt qua một rào thế năng cao hơn năng lượng toàn phần của nó ($E < U_0$): hạt $\\alpha$ xuyên rào Coulomb, electron xuyên khe chân không đầu dò STM hoặc lớp tiếp xúc $p^+$–$n^+$ siêu mỏng của điốt tunnel, và các prôtôn xuyên rào tĩnh điện trong tâm Mặt Trời ở nhiệt độ $\\sim 1{,}5\\times 10^7\\ \\text{K}$."
+  },
+  {
+    "id": 451,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Một electron ($m_e = 9{,}1\\times 10^{-31}\\ \\text{kg}$) và một prôtôn ($m_p = 1{,}67\\times 10^{-27}\\ \\text{kg}$) ban đầu đứng yên cùng được gia tốc qua một hiệu điện thế $U$ không quá lớn (chế độ phi tương đối tính). Tỉ số bước sóng de Broglie $\\dfrac{\\lambda_e}{\\lambda_p}$ xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$\\dfrac{\\lambda_e}{\\lambda_p} \\approx 1835$",
+      "$\\dfrac{\\lambda_e}{\\lambda_p} \\approx 42{,}8$",
+      "$\\dfrac{\\lambda_e}{\\lambda_p} = 1{,}0$",
+      "$\\dfrac{\\lambda_e}{\\lambda_p} \\approx 0{,}023$"
+    ],
+    "correct": 1,
+    "explanation": "Cả hai hạt đều thu được động năng $W_{\\text{đ}} = |q|U = eU$. Vì $\\lambda = \\dfrac{h}{\\sqrt{2m eU}} \\propto \\dfrac{1}{\\sqrt{m}}$, ta có $\\dfrac{\\lambda_e}{\\lambda_p} = \\sqrt{\\dfrac{m_p}{m_e}} = \\sqrt{\\dfrac{1{,}67\\times 10^{-27}}{9{,}1\\times 10^{-31}}} \\approx \\sqrt{1835} \\approx 42{,}8$."
+  },
+  {
+    "id": 452,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Coi gần đúng một hạt nhân nguyên tử như giếng thế một chiều có kích thước $a = 10^{-14}\\ \\text{m}$ chứa prôtôn ($m_p = 1{,}67\\times 10^{-27}\\ \\text{kg},\\ \\hbar = 1{,}055\\times 10^{-34}\\ \\text{J}\\cdot\\text{s}$). Bậc độ lớn năng lượng mức cơ bản $E_1 = \\dfrac{\\pi^2\\hbar^2}{2 m_p a^2}$ của prôtôn trong giếng thế này xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$E_1 \\approx 205\\ \\text{keV}$",
+      "$E_1 \\approx 2{,}05\\ \\text{eV}$",
+      "$E_1 \\approx 13{,}6\\ \\text{eV}$",
+      "$E_1 \\approx 2{,}05\\ \\text{MeV}$"
+    ],
+    "correct": 3,
+    "explanation": "Thay số trực tiếp: $E_1 = \\dfrac{\\pi^2(1{,}055\\times 10^{-34})^2}{2\\times 1{,}67\\times 10^{-27}\\times (10^{-14})^2} \\approx 3{,}289\\times 10^{-13}\\ \\text{J}$. Đổi sang $\\text{MeV}$: $E_1 \\approx \\dfrac{3{,}289\\times 10^{-13}}{1{,}6\\times 10^{-13}} \\approx 2{,}05\\ \\text{MeV}$ (đúng bằng bậc năng lượng hạt nhân $\\sim\\text{MeV}$!)."
+  },
+  {
+    "id": 468,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "(Hiệu ứng Zeeman thường) Đặt nguồn phát ánh sáng phát vạch quang phổ bước sóng $\\lambda = 500\\ \\text{nm}$ vào trong từ trường đều mạnh cảm ứng từ $B = 2{,}0\\ \\text{T}$. Biết $\\mu_B = 9{,}27\\times 10^{-24}\\ \\text{J/T},\\ h = 6{,}625\\times 10^{-34}\\ \\text{J}\\cdot\\text{s}$, khoảng cách bước sóng $\\Delta\\lambda = \\dfrac{\\lambda^2 \\Delta\\nu}{c}$ giữa vạch chính giữa ($\\Delta m = 0$) và mỗi vạch lệch bên ($\\Delta m = \\pm 1$) xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$\\Delta\\lambda \\approx 2{,}33\\ \\text{nm}$",
+      "$\\Delta\\lambda \\approx 11{,}7\\ \\text{pm}$",
+      "$\\Delta\\lambda \\approx 46{,}6\\ \\text{pm}$",
+      "$\\Delta\\lambda \\approx 23{,}3\\ \\text{pm}$ ($0{,}0233\\ \\text{nm}$)"
+    ],
+    "correct": 3,
+    "explanation": "Độ dịch tần số Zeeman: $\\Delta\\nu = \\dfrac{\\mu_B B}{h} = \\dfrac{9{,}27\\times 10^{-24}\\times 2{,}0}{6{,}625\\times 10^{-34}} \\approx 2{,}80\\times 10^{10}\\ \\text{Hz}$. Đổi sang độ tách bước sóng (vì $|\\Delta\\lambda| = \\dfrac{\\lambda^2}{c}\\Delta\\nu$): $\\Delta\\lambda = \\dfrac{(500\\times 10^{-9})^2}{3\\times 10^8}\\times 2{,}80\\times 10^{10} \\approx 2{,}33\\times 10^{-11}\\ \\text{m} = 23{,}3\\ \\text{pm}$."
+  },
+  {
+    "id": 469,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "Theo nguyên lý loại trừ Pauli, số lượng electron tối đa có thể chứa trong một phân lớp $f$ ($\\ell = 3$) và trong toàn bộ lớp $N$ ($n = 4$) lần lượt bằng:",
+    "image": "",
+    "options": [
+      "Phân lớp $f$: $14$ electron; lớp $N$: $18$ electron",
+      "Phân lớp $f$: $10$ electron; lớp $N$: $18$ electron",
+      "Phân lớp $f$: $14$ electron; lớp $N$: $32$ electron",
+      "Phân lớp $f$: $7$ electron; lớp $N$: $16$ electron"
+    ],
+    "correct": 2,
+    "explanation": "Mỗi phân lớp $\\ell$ có $(2\\ell + 1)$ giá trị $m_\\ell$, mỗi obitan chứa tối đa $2$ electron khác spin nên chứa tối đa $2(2\\ell+1)$ electron: với $\\ell = 3$ là $2(7) = 14$ electron. Toàn bộ lớp $n = 4$ chứa $2n^2 = 2\\times 4^2 = 32$ electron ($2 + 6 + 10 + 14 = 32$)."
+  },
+  {
+    "id": 470,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "Xét nguyên tử Crom ($\\text{Cr},\\ Z = 24$). Nhờ tính ổn định cao của cấu hình bán bão hòa phân lớp $3d^5$ làm năng lượng toàn phần giảm đi, cấu hình electron lớp ngoài ở trạng thái cơ bản của Crom viết đúng là:",
+    "image": "",
+    "options": [
+      "$1s^2 2s^2 2p^6 3s^2 3p^6 3d^6$",
+      "$1s^2 2s^2 2p^6 3s^2 3p^6 3d^4 4s^2$",
+      "$1s^2 2s^2 2p^6 3s^2 3p^6 3d^5 4s^1$",
+      "$1s^2 2s^2 2p^6 3s^2 3p^5 3d^5 4s^2$"
+    ],
+    "correct": 2,
+    "explanation": "Theo quy tắc Klechkovsky cơ bản là $3d^4 4s^2$, nhưng năng lượng giữa hai phân lớp $3d$ và $4s$ rất gần nhau nên $1$ electron từ $4s$ nhảy sang $3d$ để cả $3d^5$ và $4s^1$ đều đạt trạng thái bán bão hòa đối xứng, spin cực đại bền vững (tương tự Đồng $Z=29$ có $3d^{10} 4s^1$)."
+  },
+  {
+    "id": 471,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "Một electron thuộc phân lớp $3d$ ($n = 3,\\ \\ell = 2$) trong nguyên tử có thể mang tập giá trị nào của số lượng tử từ $m_\\ell$ và tổng số bộ bốn số lượng tử $(n, \\ell, m_\\ell, m_s)$ phân biệt thuộc phân lớp $3d$ là bao nhiêu?",
+    "image": "",
+    "options": [
+      "$m_\\ell \\in \\{0, 1, 2\\}$; tổng cộng có $6$ bộ bốn số lượng tử",
+      "$m_\\ell \\in \\{-2, -1, 0, +1, +2\\}$; tổng cộng có $10$ bộ bốn số lượng tử khác nhau",
+      "$m_\\ell \\in \\{-1, 0, +1\\}$; tổng cộng có $6$ bộ",
+      "$m_\\ell \\in \\{-3, -2, -1, 0, +1, +2, +3\\}$; tổng cộng có $14$ bộ"
+    ],
+    "correct": 1,
+    "explanation": "Với $\\ell = 2$, $m_\\ell$ chạy từ $-\\ell$ đến $+\\ell$: $\\{-2, -1, 0, +1, +2\\}$ ($5$ obitan). Nhân với $2$ giá trị $m_s = \\pm 1/2$ cho ta đúng $5\\times 2 = 10$ trạng thái lượng tử độc lập trong phân lớp $3d$."
+  },
+  {
+    "id": 472,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "Xét một electron chuyển mức phát xạ phôtôn trong nguyên tử kiềm theo quy tắc lựa chọn $\\Delta\\ell = \\pm 1$. Chuyển dời nào sau đây **BỊ CẤM** đối với bức xạ lưỡng cực điện?",
+    "image": "",
+    "options": [
+      "$4d \\to 3s$ (hoặc $3d \\to 2s$)",
+      "$3p \\to 3s$",
+      "$3d \\to 3p$",
+      "$4s \\to 3p$"
+    ],
+    "correct": 0,
+    "explanation": "Chuyển dời từ $d$ ($\\ell = 2$) xuống $s$ ($\\ell = 0$) có $|\\Delta\\ell| = 2 \\neq 1$, vi phạm quy tắc lựa chọn $\\Delta\\ell = \\pm 1$ nên bị cấm trong gần đúng lưỡng cực điện. Các chuyển dời $p \\leftrightarrow s$ ($\\Delta\\ell = \\pm 1$) và $d \\leftrightarrow p$ ($\\Delta\\ell = \\pm 1$) đều được phép."
+  },
+  {
+    "id": 494,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Buồng cộng hưởng quang học Fabry - Perot của một máy phát laser khí $\\text{He-Ne}$ (chiết suất khí $n \\approx 1$) gồm hai gương phẳng song song đặt cách nhau $L = 30\\ \\text{cm}$. Khoảng cách tần số $\\Delta\\nu = \\dfrac{c}{2nL}$ giữa hai mode sóng dừng dọc kế tiếp nhau của buồng cộng hưởng này bằng:",
+    "image": "",
+    "options": [
+      "$\\Delta\\nu = 1000\\ \\text{MHz}$",
+      "$\\Delta\\nu = 250\\ \\text{MHz}$",
+      "$\\Delta\\nu = 500\\ \\text{MHz}$",
+      "$\\Delta\\nu = 50\\ \\text{MHz}$"
+    ],
+    "correct": 2,
+    "explanation": "Điều kiện sóng dừng cộng hưởng $2nL = m\\lambda_m = \\dfrac{mc}{\\nu_m} \\Rightarrow \\nu_m = m\\dfrac{c}{2nL}$. Khoảng cách tần số giữa hai mode dọc liên tiếp ($m$ và $m+1$) là $\\Delta\\nu = \\dfrac{c}{2nL} = \\dfrac{3\\times 10^8}{2\\times 1\\times 0{,}30} = 5\\times 10^8\\ \\text{Hz} = 500\\ \\text{MHz}$."
+  },
+  {
+    "id": 495,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Một máy phát laser xung Nd:YAG dùng trong gia công vật liệu phát ra các xung sáng cực ngắn, mỗi xung kéo dài $\\Delta t = 10\\ \\text{ns}$ ($10^{-8}\\ \\text{s}$) và mang năng lượng $W = 2{,}0\\ \\text{J}$. Công suất đỉnh tức thời của mỗi xung laser đó bằng:",
+    "image": "",
+    "options": [
+      "$P_{\\text{đỉnh}} = 20\\ \\text{MW}$",
+      "$P_{\\text{đỉnh}} = 200\\ \\text{MW}$ ($2\\times 10^8\\ \\text{W}$)",
+      "$P_{\\text{đỉnh}} = 2\\ \\text{GW}$",
+      "$P_{\\text{đỉnh}} = 200\\ \\text{kW}$"
+    ],
+    "correct": 1,
+    "explanation": "Nhờ nén toàn bộ năng lượng $2{,}0\\ \\text{J}$ vào khoảng thời gian cực ngắn $10^{-8}\\ \\text{s}$, công suất đỉnh của xung đạt $P_{\\text{đỉnh}} = \\dfrac{W}{\\Delta t} = \\dfrac{2{,}0}{10^{-8}} = 2\\times 10^8\\ \\text{W} = 200\\ \\text{MW}$."
+  },
+  {
+    "id": 496,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Một xung laser khí $\\text{CO}_2$ hoạt động ở bước sóng hồng ngoại $\\lambda = 10{,}6\\ \\mu\\text{m}$ mang năng lượng $W = 1{,}0\\ \\text{J}$. Cho $h = 6{,}625\\times 10^{-34}\\ \\text{J}\\cdot\\text{s},\\ c = 3\\times 10^8\\ \\text{m/s}$, số phôtôn chứa trong một xung này xấp xỉ là:",
+    "image": "",
+    "options": [
+      "$N \\approx 2{,}67\\times 10^{20}\\ \\text{phôtôn}$",
+      "$N \\approx 5{,}33\\times 10^{16}\\ \\text{phôtôn}$",
+      "$N \\approx 1{,}88\\times 10^{19}\\ \\text{phôtôn}$",
+      "$N \\approx 5{,}33\\times 10^{19}\\ \\text{phôtôn}$"
+    ],
+    "correct": 3,
+    "explanation": "Năng lượng $1$ phôtôn hồng ngoại $\\text{CO}_2$ là $\\varepsilon = \\dfrac{hc}{\\lambda} = \\dfrac{6{,}625\\times 10^{-34}\\times 3\\times 10^8}{10{,}6\\times 10^{-6}} \\approx 1{,}875\\times 10^{-20}\\ \\text{J}$. Số phôtôn trong xung: $N = \\dfrac{W}{\\varepsilon} = \\dfrac{1{,}0}{1{,}875\\times 10^{-20}} \\approx 5{,}33\\times 10^{19}$ hạt."
+  },
+  {
+    "id": 497,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "theory",
+    "question": "Trong cấu tạo buồng cộng hưởng quang học của laser thông thường gồm hai gương đối diện: một gương phản xạ gần $100\\%$ ($R_1 \\approx 1$) và một gương bán mạ (phản xạ $R_2 \\approx 95\\%\\text{–}99\\%$). Vai trò của gương bán mạ thứ hai là gì?",
+    "image": "",
+    "options": [
+      "Để lọc tách ánh sáng trắng thành 7 màu cầu vồng ngay trong ống laser",
+      "Để biến đổi ánh sáng phân cực thẳng thành ánh sáng tự nhiên",
+      "Giữ phần lớn phôtôn ($95\\text{–}99\\%$) quay ngược lại môi trường hoạt chất để tiếp tục kích thích khuếch đại dây chuyền, đồng thời cho một phần nhỏ ($1\\text{–}5\\%$) truyền qua làm tia laser đi ra ngoài sử dụng",
+      "Để hấp thụ nhiệt tỏa ra giúp hạ nhiệt độ môi trường hoạt chất xuống $0\\ \\text{K}$"
+    ],
+    "correct": 2,
+    "explanation": "Gương 2 vừa phải có hệ số phản xạ rất cao để duy trì mật độ phôtôn nội khoang vượt ngưỡng khuếch đại (bù đắp tổn hao), vừa phải truyền qua một tỉ lệ vài phần trăm để xuất chùm tia laser kết hợp ra ngoài buồng cộng hưởng."
+  },
+  {
+    "id": 498,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Trong gần đúng liên kết chặt, quan hệ tán sắc năng lượng ở đáy vùng dẫn một chiều có dạng $E(k) = E_c - 2\\gamma\\cos(ka)$ với $\\gamma = 1{,}0\\ \\text{eV}$ và hằng số mạng $a = 0{,}5\\ \\text{nm}$. Tính tỉ số giữa khối lượng hiệu dụng của electron tại đáy vùng dẫn ($k = 0$, $m^* = \\dfrac{\\hbar^2}{d^2 E/dk^2}$) và khối lượng electron tự do $m_e = 9{,}1\\times 10^{-31}\\ \\text{kg}$:",
+    "image": "",
+    "options": [
+      "$\\dfrac{m^*}{m_e} \\approx 0{,}153$ ($m^* \\approx 1{,}39\\times 10^{-31}\\ \\text{kg}$)",
+      "$\\dfrac{m^*}{m_e} \\approx 1{,}00$ ($m^* = m_e$)",
+      "$\\dfrac{m^*}{m_e} \\approx 6{,}54$",
+      "$\\dfrac{m^*}{m_e} \\approx 0{,}306$"
+    ],
+    "correct": 0,
+    "explanation": "Đạo hàm bậc hai tại $k = 0$: $\\left.\\dfrac{d^2 E}{dk^2}\\right|_{k=0} = 2\\gamma a^2\\cos(0) = 2(1{,}6\\times 10^{-19})(0{,}5\\times 10^{-9})^2 = 8{,}0\\times 10^{-38}\\ \\text{J}\\cdot\\text{m}^2$. Suy ra $m^* = \\dfrac{(1{,}055\\times 10^{-34})^2}{8{,}0\\times 10^{-38}} \\approx 1{,}39\\times 10^{-31}\\ \\text{kg}$, tức $m^* \\approx 0{,}153 m_e$."
+  },
+  {
+    "id": 499,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "theory",
+    "question": "Trong laser khí Heli - Neon ($\\text{He-Ne}$ phát vạch đỏ $\\lambda = 632{,}8\\ \\text{nm}$), vai trò thực sự của khí Heli ($\\text{He}$) có tỉ lệ lớn gấp khoảng $5\\text{–}10$ lần khí Neon ($\\text{Ne}$) trong ống phóng điện là gì?",
+    "image": "",
+    "options": [
+      "$\\text{He}$ và $\\text{Ne}$ kết hợp hóa học tạo thành hợp chất tinh thể rắn $\\text{HeNe}$",
+      "$\\text{He}$ có tác dụng hấp thụ lại toàn bộ tia laser đỏ để tránh quá nhiệt",
+      "Khí $\\text{He}$ trực tiếp phát ra phôtôn ánh sáng đỏ $632{,}8\\ \\text{nm}$, còn $\\text{Ne}$ chỉ làm mát ống thủy tinh",
+      "Các nguyên tử $\\text{He}$ bị kích thích do va chạm electron trong ống phóng điện lên mức siêu bền $2^1S$ có năng lượng gần như **trùng khít** với mức kích thích $3s$ của $\\text{Ne}$, sau đó va chạm truyền năng lượng cộng hưởng sang $\\text{Ne}$ giúp tạo nghịch đảo mật độ hiệu quả cho $\\text{Ne}$ (tác nhân thực sự phát tia laser là $\\text{Ne}$)"
+    ],
+    "correct": 3,
+    "explanation": "Ở laser $\\text{He-Ne}$, electron phóng điện kích thích $\\text{He}$ lên các mức giả bền ($\\approx 20{,}61\\ \\text{eV}$), mức này cộng hưởng gần sát mức $3s$ ($\\approx 20{,}66\\ \\text{eV}$) của $\\text{Ne}$. Nhờ va chạm loại II ($\\text{He}^* + \\text{Ne} \\to \\text{He} + \\text{Ne}^*$), nguyên tử $\\text{Ne}$ được bơm chọn lọc lên mức trên để phát các bước sóng $632{,}8\\ \\text{nm}$ (hoặc $1{,}15\\ \\mu\\text{m}, 3{,}39\\ \\mu\\text{m}$)."
+  },
+  {
+    "id": 500,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Chất bán dẫn vùng cấm thẳng Gali Nitrua ($\\text{GaN}$, nền tảng công nghệ chế tạo đèn LED xanh lam và trắng hiện đại) có độ rộng vùng cấm ở $300\\ \\text{K}$ là $\\Delta E_g = 3{,}40\\ \\text{eV}$. Nếu quá trình tái hợp trực tiếp từ đáy vùng dẫn xuống đỉnh vùng hóa trị phát ra phôtôn năng lượng $\\varepsilon \\approx \\Delta E_g$, bước sóng ánh sáng phát xạ xấp xỉ nằm ở ngưỡng nào?",
+    "image": "",
+    "options": [
+      "$\\lambda \\approx 875\\ \\text{nm}$ (vùng hồng ngoại gần giống $\\text{GaAs}$)",
+      "$\\lambda \\approx 1109\\ \\text{nm}$ (vùng hồng ngoại như $\\text{Si}$)",
+      "$\\lambda \\approx 650\\ \\text{nm}$ (vùng ánh sáng đỏ)",
+      "$\\lambda \\approx 365\\ \\text{nm}$ (vùng tử ngoại gần — khi pha thêm In tạo hợp kim $\\text{InGaN}$ sẽ thu hẹp vùng cấm phát xanh lam $450\\ \\text{nm}$)"
+    ],
+    "correct": 3,
+    "explanation": "Ta có $\\lambda = \\dfrac{hc}{\\Delta E_g} = \\dfrac{6{,}625\\times 10^{-34}\\times 3\\times 10^8}{3{,}40\\times 1{,}6\\times 10^{-19}} \\approx 3{,}654\\times 10^{-7}\\ \\text{m} \\approx 365\\ \\text{nm}$. Điều chỉnh nồng độ $\\text{In}$ trong $\\text{In}_x\\text{Ga}_{1-x}\\text{N}$ hạ vùng cấm từ $3{,}4\\ \\text{eV}$ xuống $\\sim 2{,}75\\ \\text{eV}$ phát ánh sáng xanh lam $450\\ \\text{nm}$ kết hợp bột huỳnh quang vàng tạo ánh sáng trắng hiệu suất cao."
+  }
+]

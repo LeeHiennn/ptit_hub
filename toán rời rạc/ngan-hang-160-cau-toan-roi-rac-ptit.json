@@ -1,0 +1,2082 @@
+[
+  {
+    "id": 101,
+    "topic": "Logic Mệnh Đề",
+    "question": "Mệnh đề đảo và mệnh đề phản đảo của mệnh đề kéo theo $p \\rightarrow q$ lần lượt là:",
+    "options": [
+      "Đảo: $\\neg p \\rightarrow \\neg q$; Phản đảo: $\\neg q \\rightarrow \\neg p$",
+      "Đảo: $q \\rightarrow p$; Phản đảo: $\\neg q \\rightarrow \\neg p$",
+      "Đảo: $q \\rightarrow p$; Phản đảo: $\\neg p \\rightarrow \\neg q$",
+      "Đảo: $\\neg q \\rightarrow \\neg p$; Phản đảo: $q \\rightarrow p$"
+    ],
+    "correct": 1,
+    "explanation": "Với mệnh đề $p \\rightarrow q$: mệnh đề <strong>đảo</strong> là $q \\rightarrow p$, mệnh đề <strong>phản</strong> là $\\neg p \\rightarrow \\neg q$, và mệnh đề <strong>phản đảo</strong> (luôn tương đương logic với $p \\rightarrow q$) là $\\neg q \\rightarrow \\neg p$."
+  },
+  {
+    "id": 102,
+    "topic": "Logic Mệnh Đề",
+    "question": "Theo quy ước thứ tự ưu tiên các phép toán trong Logic mệnh đề (Chương 1 - Giáo trình Toán Rời Rạc 1), thứ tự thực hiện từ <strong>cao nhất</strong> đến <strong>thấp nhất</strong> là:",
+    "options": [
+      "$\\neg \\succ \\lor \\succ \\land \\succ \\rightarrow \\succ \\leftrightarrow$",
+      "$\\land \\succ \\lor \\succ \\neg \\succ \\rightarrow \\succ \\leftrightarrow$",
+      "$\\neg \\succ \\land \\succ \\lor \\succ \\rightarrow \\succ \\leftrightarrow$",
+      "$\\neg \\succ \\rightarrow \\succ \\land \\succ \\lor \\succ \\leftrightarrow$"
+    ],
+    "correct": 2,
+    "explanation": "Thứ tự ưu tiên chuẩn từ cao xuống thấp: Phủ định ($\\neg$, mức 1) $\\succ$ Hội ($\\land$, mức 2) $\\succ$ Tuyển ($\\lor$, mức 3) $\\succ$ Kéo theo ($\\rightarrow$, mức 4) $\\succ$ Tương đương ($\\leftrightarrow$, mức 5)."
+  },
+  {
+    "id": 103,
+    "topic": "Logic Mệnh Đề",
+    "question": "Rút gọn biểu thức logic $\\neg(p \\lor (\\neg p \\land q))$ (Bài tập 2 - Chương 1) ta thu được mệnh đề tương đương nào sau đây?",
+    "options": [
+      "$\\neg p \\land \\neg q$",
+      "$\\neg p \\lor \\neg q$",
+      "$p \\land \\neg q$",
+      "$\\neg p \\land q$"
+    ],
+    "correct": 0,
+    "explanation": "Áp dụng luật phân phối và luật De Morgan: $$\\neg(p \\lor (\\neg p \\land q)) \\equiv \\neg((p \\lor \\neg p) \\land (p \\lor q)) \\equiv \\neg(T \\land (p \\lor q)) \\equiv \\neg(p \\lor q) \\equiv \\neg p \\land \\neg q.$$"
+  },
+  {
+    "id": 104,
+    "topic": "Logic Mệnh Đề",
+    "question": "Tìm <strong>dạng chuẩn tắc hội</strong> (Conjunctive Normal Form - CNF) của biểu thức $(p \\rightarrow q) \\rightarrow (p \\land q)$ (Slide 1-Background):",
+    "options": [
+      "$\\neg p \\land q$",
+      "$p \\lor (\\neg p \\land q)$",
+      "$(\\neg p \\lor q) \\land (p \\lor \\neg q)$",
+      "$p \\land (\\neg p \\lor q)$"
+    ],
+    "correct": 3,
+    "explanation": "Ta biến đổi tương đương: $$(p \\rightarrow q) \\rightarrow (p \\land q) \\equiv \\neg(\\neg p \\lor q) \\lor (p \\land q) \\equiv (p \\land \\neg q) \\lor (p \\land q)$$<br/>Áp dụng luật phân phối (hoặc giữ dạng hội các tuyển sơ cấp): $(p \\lor (p \\land q)) \\land (\\neg q \\lor p) \\equiv p \\land (\\neg p \\lor q)$."
+  },
+  {
+    "id": 105,
+    "topic": "Logic Mệnh Đề",
+    "question": "Biểu thức logic nào dưới đây là một <strong>hằng đúng</strong> (Tautology)?",
+    "options": [
+      "$(p \\rightarrow q) \\leftrightarrow (q \\rightarrow p)$",
+      "$((p \\rightarrow q) \\land q) \\rightarrow p$",
+      "$((p \\rightarrow q) \\land p) \\rightarrow q$",
+      "$(p \\lor q) \\rightarrow (p \\land q)$"
+    ],
+    "correct": 2,
+    "explanation": "Công thức $((p \\rightarrow q) \\land p) \\rightarrow q$ chính là quy tắc suy diễn <strong>Modus Ponens</strong>, luôn nhận giá trị Đúng ($T$) với mọi giá trị chân lý của $p, q$."
+  },
+  {
+    "id": 106,
+    "topic": "Logic Vị Từ & Lượng Từ",
+    "question": "Cho vị từ $P(x, y)$: \"$x$ đã gửi thư điện tử cho $y$\" trên miền xác định gồm tất cả sinh viên trong lớp. Biểu thức lượng từ $\\exists x \\forall y P(x, y)$ có ý nghĩa là:",
+    "options": [
+      "Mọi sinh viên trong lớp đều đã gửi thư điện tử cho ít nhất một sinh viên",
+      "Có ít nhất một sinh viên trong lớp đã gửi thư điện tử cho tất cả sinh viên trong lớp",
+      "Có một sinh viên nhận được thư điện tử từ tất cả sinh viên trong lớp",
+      "Mọi sinh viên trong lớp đều đã gửi thư điện tử cho nhau"
+    ],
+    "correct": 1,
+    "explanation": "Lượng từ $\\exists x$ (tồn tại sinh viên $x$) đứng trước $\\forall y$ (với mọi sinh viên $y$) biểu thị: Có ít nhất một sinh viên $x$ đã gửi email cho tất cả sinh viên $y$ trong lớp."
+  },
+  {
+    "id": 107,
+    "topic": "Logic Vị Từ & Lượng Từ",
+    "question": "Phủ định của mệnh đề lượng từ $\\forall x (P(x) \\rightarrow Q(x))$ tương đương logic với mệnh đề nào?",
+    "options": [
+      "$\\exists x (\\neg P(x) \\land Q(x))$",
+      "$\\exists x (\\neg P(x) \\rightarrow \\neg Q(x))$",
+      "$\\forall x (P(x) \\land \\neg Q(x))$",
+      "$\\exists x (P(x) \\land \\neg Q(x))$"
+    ],
+    "correct": 3,
+    "explanation": "Áp dụng quy tắc phủ định lượng từ $\\neg(\\forall x A(x)) \\equiv \\exists x \\neg A(x)$ và $\\neg(P(x) \\rightarrow Q(x)) \\equiv P(x) \\land \\neg Q(x)$, ta được $\\exists x (P(x) \\land \\neg Q(x))$."
+  },
+  {
+    "id": 108,
+    "topic": "Phép Toán Bit & Biểu Diễn Tập Hợp",
+    "question": "Cho hai xâu bit $x = 0110110110$ và $y = 1100011101$ có độ dài $10$ (Slide 1-Background). Kết quả của phép toán <strong>XOR</strong> ($x \\oplus y$) là:",
+    "options": [
+      "$1010101011$",
+      "$0100010100$",
+      "$1110111111$",
+      "$1010111011$"
+    ],
+    "correct": 0,
+    "explanation": "Phép XOR ($\\oplus$) từng cặp bit tương ứng cho kết quả $1$ khi hai bit khác nhau và $0$ khi hai bit giống nhau:<br/>$x = 0110110110$<br/>$y = 1100011101$<br/>$x \\oplus y = 1010101011$ (trong khi $x \\land y = 0100010100$ và $x \\lor y = 1110111111$)."
+  },
+  {
+    "id": 109,
+    "topic": "Phép Toán Bit & Biểu Diễn Tập Hợp",
+    "question": "Cho tập vũ trụ $U = \\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$. Tập con $A = \\{1, 2, 3, 4, 5\\}$ có xâu bit biểu diễn là $1111100000$ và tập lẻ $B = \\{1, 3, 5, 7, 9\\}$ có xâu bit là $1010101010$. Xâu bit biểu diễn tập giao $A \\cap B$ là:",
+    "options": [
+      "$1111101010$",
+      "$1010100000$",
+      "$0101000000$",
+      "$0101001010$"
+    ],
+    "correct": 1,
+    "explanation": "Xâu bit của $A \\cap B$ là tích hội từng bit (bitwise AND) của hai xâu bit: $1111100000 \\land 1010101010 = 1010100000$, tương ứng với tập $\\{1, 3, 5\\}$."
+  },
+  {
+    "id": 110,
+    "topic": "Quan Hệ & Tập Hợp",
+    "question": "Cho $A, B, C$ là các tập hợp bất kỳ (Bài tập 7 - Giáo trình Toán Rời Rạc 1). Đẳng thức tập hợp nào dưới đây là <strong>luôn đúng</strong>?",
+    "options": [
+      "$\\overline{A \\cup B} = \\overline{A} \\cup \\overline{B}$",
+      "$(A \\cup B) \\setminus (A \\cap B) = A \\setminus B$",
+      "$A \\cap (B \\setminus C) = (A \\cap B) \\cup (A \\cap C)$",
+      "$(B \\setminus A) \\cup (C \\setminus A) = (B \\cup C) \\setminus A$"
+    ],
+    "correct": 3,
+    "explanation": "Ta có $(B \\setminus A) \\cup (C \\setminus A) = (B \\cap \\overline{A}) \\cup (C \\cap \\overline{A}) = (B \\cup C) \\cap \\overline{A} = (B \\cup C) \\setminus A$."
+  },
+  {
+    "id": 111,
+    "topic": "Quan Hệ & Tập Hợp",
+    "question": "Trên tập các số nguyên $\\mathbb{Z}$, xét quan hệ đồng dư $aRb \\Leftrightarrow a \\equiv b \\pmod k$ (với $k > 1$ nguyên dương). Khẳng định nào sau đây là <strong>đúng</strong>?",
+    "options": [
+      "$R$ có tính phản xạ và đối xứng nhưng không có tính bắc cầu",
+      "$R$ là quan hệ thứ tự toàn phần trên $\\mathbb{Z}$",
+      "$R$ là quan hệ tương đương và chia $\\mathbb{Z}$ thành đúng $k$ lớp tương đương",
+      "$R$ chia $\\mathbb{Z}$ thành $k + 1$ lớp tương đương"
+    ],
+    "correct": 2,
+    "explanation": "Quan hệ đồng dư modulo $k$ thỏa mãn cả 3 tính chất: Phản xạ ($a - a = 0 \\vdots k$), Đối xứng ($a - b \\vdots k \\Rightarrow b - a \\vdots k$) và Bắc cầu. Do có $k$ số dư khi chia cho $k$ là $0, 1, \\dots, k-1$, nên $R$ phân hoạch $\\mathbb{Z}$ thành $k$ lớp tương đương."
+  },
+  {
+    "id": 112,
+    "topic": "Quan Hệ & Tập Hợp",
+    "question": "Cho tập $A = \\{1, 2, 3\\}$ và $B = \\{a, b, c, d\\}$. Số phần tử của tích Đề-các $A \\times B$ và số quan hệ hai ngôi từ $A$ đến $B$ lần lượt là:",
+    "options": [
+      "$|A \\times B| = 12$ và có $2^{12} = 4096$ quan hệ hai ngôi",
+      "$|A \\times B| = 7$ và có $2^7 = 128$ quan hệ hai ngôi",
+      "$|A \\times B| = 12$ và có $12! $ quan hệ hai ngôi",
+      "$|A \\times B| = 64$ và có $2^{64}$ quan hệ hai ngôi"
+    ],
+    "correct": 0,
+    "explanation": "Theo nguyên lý nhân, $|A \\times B| = |A| \\cdot |B| = 3 \\times 4 = 12$. Mỗi quan hệ hai ngôi từ $A$ đến $B$ là một tập con của $A \\times B$, nên số quan hệ hai ngôi là $2^{|A \\times B|} = 2^{12} = 4096$."
+  },
+  {
+    "id": 113,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Xét thuật toán sắp xếp nổi bọt (<strong>Bubble Sort</strong>) gồm hai vòng lặp: <code>for i := 1 to n - 1</code> và bên trong là <code>for j := i + 1 to n</code> so sánh hai phần tử. Độ phức tạp thời gian của thuật toán là:",
+    "options": [
+      "$O(n^3)$ với $\\frac{n(n-1)(n-2)}{6}$ phép so sánh",
+      "$O(n \\log n)$ với $n \\log_2 n$ phép so sánh",
+      "$O(n)$ với $n - 1$ phép so sánh",
+      "$O(n^2)$ với đúng $\\frac{n(n-1)}{2}$ phép so sánh"
+    ],
+    "correct": 3,
+    "explanation": "Số phép so sánh thực hiện là $(n-1) + (n-2) + \\dots + 1 = \\frac{n(n-1)}{2} = \\frac{1}{2}(n^2 - n) = O(n^2)$ (Ví dụ 5 - Slide 1-Background)."
+  },
+  {
+    "id": 114,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Tìm độ phức tạp tính toán của thuật toán cộng hai số nguyên $n$ bit và thuật toán nhân hai số nguyên $n$ bit theo cách đặt tính thông thường (Mục 1.3.4 - Giáo trình Toán Rời Rạc 1):",
+    "options": [
+      "Cộng hai số $n$ bit là $O(\\log n)$; Nhân hai số $n$ bit thông thường là $O(n \\log n)$",
+      "Cộng hai số $n$ bit là $O(n)$; Nhân hai số $n$ bit thông thường là $O(n^2)$",
+      "Cả phép cộng và phép nhân hai số $n$ bit đều có độ phức tạp $O(n)$",
+      "Cộng hai số $n$ bit là $O(n^2)$; Nhân hai số $n$ bit thông thường là $O(2^n)$"
+    ],
+    "correct": 1,
+    "explanation": "Thuật toán cộng hai số nhị phân $n$ bit duyệt qua $n$ cột từ phải sang trái nên tốn $O(n)$ phép toán bit. Thuật toán nhân thông thường cần dịch chuyển và cộng $n$ số hạng dài tới $2n$ bit nên có độ phức tạp $O(n^2)$."
+  },
+  {
+    "id": 115,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Cho hàm thời gian thực hiện của một thuật toán là $f(n) = 3n^3 + 20n^2 \\log n + 50n + 100$. Đánh giá độ phức tạp tiệm cận $O$-lớn chặt nhất của $f(n)$ là:",
+    "options": [
+      "$O(n^3)$",
+      "$O(n^2 \\log n)$",
+      "$O(n^4)$",
+      "$O(n \\log n)$"
+    ],
+    "correct": 0,
+    "explanation": "Khi $n \\to \\infty$, hạng tử bậc cao nhất quyết định tốc độ tăng của tổng là $3n^3$ (vì $\\lim_{n \\to \\infty} \\frac{n^2 \\log n}{n^3} = 0$). Do đó $f(n) = O(n^3)$."
+  },
+  {
+    "id": 116,
+    "topic": "Thuật Toán & Độ Phức Tạp",
+    "question": "Xét đoạn giả mã gồm 2 khối lệnh nối tiếp nhau: Khối 1 là một vòng lặp đơn chạy từ $1$ đến $n$ ($O(n)$), Khối 2 là hai vòng lặp lồng nhau chạy từ $1$ đến $n$ ($O(n^2)$). Theo quy tắc tổng độ phức tạp, độ phức tạp chung của cả đoạn chương trình là:",
+    "options": [
+      "$O(n)$",
+      "$O(n \\cdot n^2) = O(n^3)$",
+      "$O(\\max(n, n^2)) = O(n^2)$",
+      "$O(2^n)$"
+    ],
+    "correct": 2,
+    "explanation": "Với hai công việc thực hiện <strong>nối tiếp nhau</strong> có độ phức tạp $O(f_1(n))$ và $O(f_2(n))$, độ phức tạp tổng hợp là $O(f_1(n) + f_2(n)) = O(\\max(f_1(n), f_2(n))) = O(n^2)$."
+  },
+  {
+    "id": 201,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Một biển đăng ký ô tô gồm $2$ chữ cái tiếng Anh (trong bảng $26$ chữ cái) tiếp theo là $4$ chữ số thập phân (từ $0$ đến $9$). Hỏi có bao nhiêu biển số xe khác nhau nếu các chữ cái và chữ số có thể lặp lại, nhưng $4$ chữ số không được đồng thời bằng $0000$?",
+    "options": [
+      "$26 \\times 25 \\times 10^4 = 6\\,500\\,000$",
+      "$26^2 \\times (10^4 - 1) = 6\\,759\\,324$",
+      "$26^2 \\times 10^4 = 6\\,760\\,000$",
+      "$26^2 \\times 9^4 = 4\\,435\\,236$"
+    ],
+    "correct": 1,
+    "explanation": "Có $26 \\times 26 = 26^2$ cách chọn $2$ chữ cái đầu. Có $10^4$ bộ $4$ chữ số từ $0000$ đến $9999$, trừ đi bộ $0000$ còn $10^4 - 1 = 9999$ cách. Theo nguyên lý nhân có $26^2 \\times 9999 = 6\\,759\\,324$ biển số."
+  },
+  {
+    "id": 202,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Có bao nhiêu số nguyên dương có $5$ chữ số không chứa chữ số $1$ và không có $2$ chữ số nào giống nhau (Bài tập 14 - Giáo trình Toán Rời Rạc 1)?",
+    "options": [
+      "$8 \\times 7 \\times 6 \\times 5 \\times 4 = 6\\,720$",
+      "$9 \\times 9 \\times 8 \\times 7 \\times 6 = 27\\,216$",
+      "$8 \\times 8 \\times 7 \\times 6 \\times 5 = 13\\,440$",
+      "$8^5 = 32\\,768$"
+    ],
+    "correct": 2,
+    "explanation": "Tập chữ số được phép dùng là $\\{0, 2, 3, 4, 5, 6, 7, 8, 9\\}$ ($9$ chữ số). Chữ số hàng chục nghìn $a_1 \\neq 0$ có $8$ cách chọn; $a_2$ có $8$ cách chọn (khác $a_1$); $a_3$ có $7$ cách; $a_4$ có $6$ cách; $a_5$ có $5$ cách. Vậy có $8 \\times 8 \\times 7 \\times 6 \\times 5 = 13\\,440$ số."
+  },
+  {
+    "id": 203,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Một đoàn văn nghệ có $10$ nam và $8$ nữ. Cần chọn ra một tốp ca gồm $5$ người sao cho có <strong>ít nhất $2$ nữ</strong>. Số cách chọn là:",
+    "options": [
+      "$C_{18}^5 - (C_{10}^5 + C_8^1 C_{10}^4) = 6\\,636$",
+      "$C_8^2 C_{16}^3 = 15\\,680$",
+      "$C_8^2 C_{10}^3 = 3\\,360$",
+      "$C_{18}^5 - C_{10}^5 = 8\\,316$"
+    ],
+    "correct": 0,
+    "explanation": "Tổng số cách chọn $5$ người bất kỳ từ $18$ người là $C_{18}^5 = 8568$. Số cách chọn có $0$ nữ là $C_{10}^5 = 252$; số cách chọn có $1$ nữ là $C_8^1 C_{10}^4 = 8 \\times 210 = 1680$. Dùng phần bù: $8568 - (252 + 1680) = 6636$ cách."
+  },
+  {
+    "id": 204,
+    "topic": "Tổ Hợp Lặp & Chia Kẹo Euler",
+    "question": "Phương trình $x_1 + x_2 + x_3 + x_4 = 12$ có bao nhiêu nghiệm nguyên không âm ($x_i \\ge 0$)?",
+    "options": [
+      "$4^{12}$",
+      "$C_{12}^4 = 495$",
+      "$C_{16}^4 = 1\\,820$",
+      "$C_{4 - 1 + 12}^{12} = C_{15}^{12} = 455$"
+    ],
+    "correct": 3,
+    "explanation": "Áp dụng công thức số nghiệm nguyên không âm của phương trình $x_1 + x_2 + \\dots + x_n = k$ (Slide 2_Counting): $$N = C_{n - 1 + k}^k = C_{4 - 1 + 12}^{12} = C_{15}^{12} = C_{15}^3 = \\frac{15 \\times 14 \\times 13}{6} = 455.$$"
+  },
+  {
+    "id": 205,
+    "topic": "Tổ Hợp Lặp & Chia Kẹo Euler",
+    "question": "Phương trình $x_1 + x_2 + x_3 = 11$ có bao nhiêu nghiệm nguyên thỏa mãn điều kiện chặn dưới $x_1 \\ge 1, x_2 \\ge 2, x_3 \\ge 3$ (Slide 2_Counting)?",
+    "options": [
+      "$C_8^5 = 56$",
+      "$C_{13}^{11} = 78$",
+      "$C_7^5 = 21$",
+      "$C_{11}^3 = 165$"
+    ],
+    "correct": 2,
+    "explanation": "Đổi biến $y_1 = x_1 - 1 \\ge 0$, $y_2 = x_2 - 2 \\ge 0$, $y_3 = x_3 - 3 \\ge 0$. Phương trình trở thành $y_1 + y_2 + y_3 = 11 - (1 + 2 + 3) = 5$. Số nghiệm là $C_{3 - 1 + 5}^5 = C_7^5 = 21$."
+  },
+  {
+    "id": 206,
+    "topic": "Tổ Hợp Lặp & Nguyên Lý Bù Trừ",
+    "question": "Phương trình $x_1 + x_2 + x_3 = 11$ có bao nhiêu nghiệm nguyên không âm thỏa mãn điều kiện chặn trên $x_1 \\le 3, x_2 \\le 4, x_3 \\le 6$ (Ví dụ 12 - Slide 2_Counting)?",
+    "options": [
+      "$12$",
+      "$6$",
+      "$15$",
+      "$78$"
+    ],
+    "correct": 1,
+    "explanation": "Tổng số nghiệm không âm là $|U| = C_{13}^{11} = 78$. Gọi $A_1: x_1 \\ge 4$ ($|A_1|=C_9^7=36$), $A_2: x_2 \\ge 5$ ($|A_2|=C_8^6=28$), $A_3: x_3 \\ge 7$ ($|A_3|=C_6^4=15$). Giao từng đôi: $|A_1 \\cap A_2| = C_4^2 = 6$, $|A_1 \\cap A_3| = C_2^0 = 1$, $|A_2 \\cap A_3| = 0$, $|A_1 \\cap A_2 \\cap A_3| = 0$. Theo bù trừ: $78 - (36 + 28 + 15) + (6 + 1 + 0) - 0 = 6$ nghiệm."
+  },
+  {
+    "id": 207,
+    "topic": "Nguyên Lý Bù Trừ",
+    "question": "Trong tập các số nguyên dương từ $1$ đến $10\\,000$, có bao nhiêu số <strong>không</strong> chia hết cho bất kỳ số nào trong ba số $3, 4, 7$ (Ví dụ 10 - Slide 2_Counting)?",
+    "options": [
+      "$3\\,810$",
+      "$5\\,714$",
+      "$4\\,285$",
+      "$4\\,286$"
+    ],
+    "correct": 3,
+    "explanation": "Gọi $A_1, A_2, A_3$ là tập các số trong $\\{1..10000\\}$ chia hết cho $3, 4, 7$. Ta có:<br/>$N_1 = \\lfloor 10000/3 \\rfloor + \\lfloor 10000/4 \\rfloor + \\lfloor 10000/7 \\rfloor = 3333 + 2500 + 1428 = 7261$.<br/>$N_2 = \\lfloor 10000/12 \\rfloor + \\lfloor 10000/21 \\rfloor + \\lfloor 10000/28 \\rfloor = 833 + 476 + 357 = 1666$.<br/>$N_3 = \\lfloor 10000/84 \\rfloor = 119$.<br/>Số chia hết cho ít nhất một trong ba số là $7261 - 1666 + 119 = 5714$. Số không chia hết cho cả $3, 4, 7$ là $10000 - 5714 = 4286$."
+  },
+  {
+    "id": 208,
+    "topic": "Nguyên Lý Bù Trừ",
+    "question": "Hỏi có bao nhiêu xâu nhị phân độ dài $10$ bắt đầu bởi $00$ <strong>hoặc</strong> kết thúc bởi $11$?",
+    "options": [
+      "$2^8 + 2^8 - 2^6 = 448$",
+      "$2^8 + 2^8 = 512$",
+      "$2^{10} - 2^6 = 960$",
+      "$2^8 - 2^6 = 192$"
+    ],
+    "correct": 0,
+    "explanation": "Gọi $A$ là tập xâu bắt đầu bởi $00$ ($|A| = 2^8 = 256$), $B$ là tập xâu kết thúc bởi $11$ ($|B| = 2^8 = 256$). Giao $A \\cap B$ gồm các xâu vừa bắt đầu bởi $00$ vừa kết thúc bởi $11$ ($|A \\cap B| = 2^6 = 64$). Theo nguyên lý bù trừ: $|A \\cup B| = 256 + 256 - 64 = 448$."
+  },
+  {
+    "id": 209,
+    "topic": "Hoán Vị Không Điểm Bất Động (Mất Thứ Tự)",
+    "question": "Bài toán bỏ thư / Trả mũ (Derangements - Ví dụ 11 Slide 2_Counting): Có $n$ lá thư bỏ ngẫu nhiên vào $n$ phong bì đã ghi sẵn địa chỉ. Công thức tính số cách bỏ sao cho <strong>không có lá thư nào đúng địa chỉ</strong> ($D_n$) là:",
+    "options": [
+      "$D_n = n! - (n - 1)!$",
+      "$D_n = n! \\left(1 - \\frac{1}{1!} + \\frac{1}{2!} - \\frac{1}{3!} + \\dots + (-1)^n \\frac{1}{n!}\\right)$",
+      "$D_n = \\sum_{k=1}^n (-1)^{k-1} C_n^k (n-k)!$",
+      "$D_n = (n - 1)!$"
+    ],
+    "correct": 1,
+    "explanation": "Theo nguyên lý bù trừ, số hoán vị có ít nhất $1$ điểm bất động là $N = n!(\\frac{1}{1!} - \\frac{1}{2!} + \\dots + (-1)^{n-1}\\frac{1}{n!})$. Do đó số hoán vị không có điểm bất động nào là $D_n = n! - N = n! \\sum_{k=0}^n \\frac{(-1)^k}{k!}$."
+  },
+  {
+    "id": 210,
+    "topic": "Hoán Vị Không Điểm Bất Động (Mất Thứ Tự)",
+    "question": "Có $5$ người gửi mũ tại quầy giữ đồ. Khi trả mũ, nhân viên trả ngẫu nhiên cho mỗi người $1$ chiếc mũ. Hỏi có bao nhiêu cách trả sao cho <strong>không ai nhận lại đúng mũ của mình</strong> ($D_5$)?",
+    "options": [
+      "$60$",
+      "$45$",
+      "$24$",
+      "$44$"
+    ],
+    "correct": 3,
+    "explanation": "Áp dụng công thức $D_n = n!(1 - \\frac{1}{1!} + \\frac{1}{2!} - \\frac{1}{3!} + \\dots + \\frac{(-1)^n}{n!})$ với $n = 5$:<br/>$D_5 = 120 \\times (1 - 1 + \\frac{1}{2} - \\frac{1}{6} + \\frac{1}{24} - \\frac{1}{120}) = 60 - 20 + 5 - 1 = 44$ (Lưu ý: $D_1=0, D_2=1, D_3=2, D_4=9, D_5=44$)."
+  },
+  {
+    "id": 211,
+    "topic": "Bài Toán Xếp Khách Lucas",
+    "question": "Trong bài toán xếp khách của Lucas (Mục 2.1.4 - Giáo trình Toán Rời Rạc 1): Cần xếp $n$ cặp vợ chồng ($2n$ người) quanh một bàn tròn sao cho nam nữ xen kẽ và không có cặp vợ chồng nào ngồi cạnh nhau. Số phần tử của tập $A_i$ (cặp vợ chồng thứ $i$ ngồi cạnh nhau) liên hệ với số cách chọn $k$ điểm không kề nhau trên vòng tròn $2n$ điểm bởi công thức:",
+    "options": [
+      "$g(2n, k) = C_{2n}^k$",
+      "$g(2n, k) = C_{2n - k + 1}^k$",
+      "$g(2n, k) = \\frac{2n}{2n - k} C_{2n - k}^k$",
+      "$g(2n, k) = \\frac{n}{n - k} C_{n - k}^k$"
+    ],
+    "correct": 2,
+    "explanation": "Theo Bổ đề 2 (Mục 2.1.4 - Giáo trình Toán Rời Rạc 1 trang 31): Số cách chọn $k$ phần tử không kề nhau từ $m$ phần tử xếp trên đường tròn là $g(m, k) = \\frac{m}{m - k} C_{m - k}^k$. Khi áp dụng cho $m = 2n$ vị trí kề nhau trên bàn tròn, ta có $g(2n, k) = \\frac{2n}{2n - k} C_{2n - k}^k$."
+  },
+  {
+    "id": 212,
+    "topic": "Quy Về Bài Toán Con",
+    "question": "Một số nguyên dương được gọi là <strong>đối xứng (palindrome)</strong> nếu viết từ trái sang phải hay từ phải sang trái đều giống nhau. Hỏi có bao nhiêu số đối xứng có $7$ chữ số mà tổng các chữ số của nó bằng $18$ (Ví dụ 13 - Slide 2_Counting)?",
+    "options": [
+      "$285$",
+      "$330$",
+      "$240$",
+      "$220$"
+    ],
+    "correct": 0,
+    "explanation": "Số đối xứng $7$ chữ số có dạng $\\overline{x_1 x_2 x_3 x_4 x_3 x_2 x_1}$ với $x_1 \\ge 1$ và $2(x_1 + x_2 + x_3) + x_4 = 18$. Do đó $x_4$ phải là số chẵn ($x_4 = 2k$ với $k \\in \\{0, 1, 2, 3, 4\\}$) và $x_1 + x_2 + x_3 = 9 - k$ ($x_1 \\ge 1$). Tính tổng số nghiệm cho $k = 0, 1, 2, 3, 4$ ta được $\\sum_{k=0}^4 C_{10 - k}^2 = C_{10}^2 + C_9^2 + C_8^2 + C_7^2 + C_6^2$ (trừ trường hợp vượt $9$), kết quả theo Slide 2_Counting là $285$ số."
+  },
+  {
+    "id": 213,
+    "topic": "Khai Triển Nhị Thức Newton",
+    "question": "Tìm hệ số của số hạng chứa $x^5 y^8$ trong khai triển nhị thức Newton của $(x + y)^{13}$:",
+    "options": [
+      "$2^{13} = 8\\,192$",
+      "$C_{13}^7 = 1\\,716$",
+      "$A_{13}^5 = 154\\,440$",
+      "$C_{13}^5 = 1\\,287$"
+    ],
+    "correct": 3,
+    "explanation": "Theo công thức nhị thức Newton $(x + y)^n = \\sum_{k=0}^n C_n^k x^{n-k} y^k$, hệ số của $x^5 y^8$ ứng với $n = 13, k = 8$ là $C_{13}^8 = C_{13}^5 = \\frac{13 \\times 12 \\times 11 \\times 10 \\times 9}{120} = 1287$."
+  },
+  {
+    "id": 214,
+    "topic": "Tổ Hợp & Nhị Thức",
+    "question": "Cho tập hợp $X$ gồm $n$ phần tử ($n \\ge 1$). Tổng số các tập con có <strong>số chẵn phần tử</strong> của tập $X$ là:",
+    "options": [
+      "$2^n$",
+      "$2^{n-1}$",
+      "$2^n - 1$",
+      "$C_n^{\\lfloor n/2 \\rfloor}$"
+    ],
+    "correct": 1,
+    "explanation": "Từ khai triển $(1 - 1)^n = C_n^0 - C_n^1 + C_n^2 - C_n^3 + \\dots = 0$, suy ra tổng số tập con có số chẵn phần tử bằng tổng số tập con có số lẻ phần tử và bằng $\\frac{2^n}{2} = 2^{n-1}$."
+  },
+  {
+    "id": 215,
+    "topic": "Hình Vuông La-tinh",
+    "question": "Một <strong>hình vuông La-tinh</strong> cấp $n$ là bảng vuông $n \\times n$ gồm các số từ $1$ đến $n$ sao cho mỗi số xuất hiện đúng $1$ lần trên mỗi hàng và mỗi cột. Gọi $L(n, n)$ là số hình vuông La-tinh cấp $n$ và $l_n$ là số hình vuông La-tinh chuẩn hóa cấp $n$ (Mục 2.1.4 - Giáo trình Toán Rời Rạc 1). Hệ thức liên hệ đúng là:",
+    "options": [
+      "$L(n, n) = n! (n - 1)! l_n$",
+      "$L(n, n) = (n!)^2 l_n$",
+      "$L(n, n) = n! l_n$",
+      "$L(n, n) = (n - 1)! l_n$"
+    ],
+    "correct": 0,
+    "explanation": "Hình vuông La-tinh chuẩn hóa có hàng 1 và cột 1 đều theo thứ tự $1, 2, \\dots, n$. Từ mỗi hình vuông chuẩn hóa, hoán vị $n$ cột ($n!$ cách) và hoán vị $n - 1$ hàng dưới ($(n-1)!$ cách) tạo ra $n!(n-1)!$ hình vuông La-tinh phân biệt. Vậy $L(n, n) = n!(n-1)! l_n$ (với $l_3 = 1 \\Rightarrow L(3,3) = 6 \\times 2 \\times 1 = 12$)."
+  },
+  {
+    "id": 216,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Từ các chữ số $\\{1, 2, 3, 4, 5\\}$, lập được bao nhiêu số tự nhiên gồm $3$ chữ số đôi một khác nhau và là một <strong>số chẵn</strong>?",
+    "options": [
+      "$2 \\times 5 \\times 5 = 50$",
+      "$5 \\times 4 \\times 2 = 40$",
+      "$2 \\times 4 \\times 3 = 24$",
+      "$3 \\times 4 \\times 3 = 36$"
+    ],
+    "correct": 2,
+    "explanation": "Gọi số cần lập là $\\overline{abc}$. Vì số chẵn nên chữ số tận cùng $c \\in \\{2, 4\\}$ có $2$ cách chọn. Sau khi chọn $c$, chữ số $a$ có $4$ cách chọn và $b$ có $3$ cách chọn. Theo nguyên lý nhân có $2 \\times 4 \\times 3 = 24$ số."
+  },
+  {
+    "id": 301,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Trong bài toán <strong>Tháp Hà Nội</strong> (Ví dụ 16 - Slide 2_Counting): Gọi $H_n$ là số lần dịch chuyển đĩa ít nhất để chuyển $n$ đĩa từ cọc A sang cọc C (mỗi lần chuyển $1$ đĩa và đĩa lớn không đặt lên đĩa nhỏ). Hệ thức truy hồi và công thức nghiệm của $H_n$ là:",
+    "options": [
+      "$H_n = H_{n-1} + H_{n-2}$ ($H_1 = 1, H_2 = 2$) $\\Rightarrow H_n = F_{n+1}$",
+      "$H_n = 2H_{n-1} + 1$ ($H_1 = 1$) $\\Rightarrow H_n = 2^n - 1$",
+      "$H_n = 2H_{n-1}$ ($H_1 = 1$) $\\Rightarrow H_n = 2^{n-1}$",
+      "$H_n = 3H_{n-1} - 1$ ($H_1 = 1$) $\\Rightarrow H_n = \\frac{3^n - 1}{2}$"
+    ],
+    "correct": 1,
+    "explanation": "Để chuyển $n$ đĩa: chuyển $n-1$ đĩa trên sang cọc trung gian B ($H_{n-1}$ bước), chuyển đĩa lớn nhất sang C ($1$ bước), rồi chuyển $n-1$ đĩa từ B sang C ($H_{n-1}$ bước). Vậy $H_n = 2H_{n-1} + 1$ với $H_1 = 1 \\Rightarrow H_n = 2^n - 1$."
+  },
+  {
+    "id": 302,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Gọi $a_n$ là số xâu nhị phân độ dài $n$ <strong>không có hai chữ số $0$ liên tiếp</strong> (Ví dụ 17 - Slide 2_Counting). Biết $a_1 = 2, a_2 = 3$. Giá trị của $a_7$ bằng bao nhiêu?",
+    "options": [
+      "$55$",
+      "$21$",
+      "$34$",
+      "$13$"
+    ],
+    "correct": 2,
+    "explanation": "Xâu hợp lệ độ dài $n$ hoặc kết thúc bằng $1$ (có $a_{n-1}$ xâu) hoặc kết thúc bằng $10$ (có $a_{n-2}$ xâu), nên $a_n = a_{n-1} + a_{n-2}$. Tính lần lượt: $a_1=2, a_2=3, a_3=5, a_4=8, a_5=13, a_6=21, a_7 = 21 + 13 = 34$."
+  },
+  {
+    "id": 303,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Gọi $a_n$ là số xâu nhị phân có độ dài $n$ <strong>không chứa ba chữ số $0$ liên tiếp</strong> ($000$). Hệ thức truy hồi đúng của $a_n$ (với $n \\ge 4$) là:",
+    "options": [
+      "$a_n = a_{n-1} + a_{n-2} + a_{n-3}$",
+      "$a_n = a_{n-1} + 2a_{n-2}$",
+      "$a_n = 2a_{n-1} - a_{n-3}$",
+      "$a_n = a_{n-1} + a_{n-2}$"
+    ],
+    "correct": 0,
+    "explanation": "Xâu nhị phân độ dài $n$ không chứa $000$ có thể kết thúc bởi: $1$ ($a_{n-1}$ cách), $10$ ($a_{n-2}$ cách), hoặc $100$ ($a_{n-3}$ cách). Theo nguyên lý cộng: $a_n = a_{n-1} + a_{n-2} + a_{n-3}$."
+  },
+  {
+    "id": 304,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Một từ mã là một dãy các chữ số thập phân (từ $0$ đến $9$). Một từ mã được coi là hợp lệ nếu nó có một <strong>số chẵn các chữ số $0$</strong> (Ví dụ 18 - Slide 2_Counting). Gọi $a_n$ là số từ mã hợp lệ độ dài $n$. Hệ thức truy hồi của $a_n$ là:",
+    "options": [
+      "$a_n = 8a_{n-1} + 9^{n-1}$ với $a_1 = 9$",
+      "$a_n = 9a_{n-1} + 10^{n-1}$ với $a_1 = 9$",
+      "$a_n = 9a_{n-1} + a_{n-2}$ với $a_1 = 9, a_2 = 82$",
+      "$a_n = 8a_{n-1} + 10^{n-1}$ với $a_1 = 9$"
+    ],
+    "correct": 3,
+    "explanation": "Từ mã hợp lệ độ dài $n$: (1) Nếu tận cùng khác $0$ ($9$ cách chọn từ $1..9$) thì $n-1$ chữ số đầu phải hợp lệ $\\Rightarrow 9a_{n-1}$ cách; (2) Nếu tận cùng bằng $0$ ($1$ cách) thì $n-1$ chữ số đầu phải không hợp lệ $\\Rightarrow 10^{n-1} - a_{n-1}$ cách. Cộng lại: $a_n = 9a_{n-1} + (10^{n-1} - a_{n-1}) = 8a_{n-1} + 10^{n-1}$."
+  },
+  {
+    "id": 305,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Tìm nghiệm của hệ thức truy hồi tuyến tính thuần nhất bậc hai $a_n = a_{n-1} + 2a_{n-2}$ với điều kiện đầu $a_0 = 2, a_1 = 7$ (Ví dụ 20 - Slide 2_Counting):",
+    "options": [
+      "$a_n = 3 \\cdot 2^n + (-1)^n$",
+      "$a_n = 2 \\cdot 2^n + (-1)^n$",
+      "$a_n = 3 \\cdot 2^n - (-1)^n$",
+      "$a_n = 4 \\cdot 2^n - 2(-1)^n$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 - r - 2 = 0$ có $2$ nghiệm đơn $r_1 = 2, r_2 = -1$. Nghiệm tổng quát $a_n = \\alpha_1 2^n + \\alpha_2 (-1)^n$. Từ $a_0 = \\alpha_1 + \\alpha_2 = 2$ và $a_1 = 2\\alpha_1 - \\alpha_2 = 7$, giải ra $\\alpha_1 = 3, \\alpha_2 = -1$. Vậy $a_n = 3 \\cdot 2^n - (-1)^n$."
+  },
+  {
+    "id": 306,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Tìm nghiệm của hệ thức truy hồi $a_n = 6a_{n-1} - 9a_{n-2}$ với điều kiện đầu $a_0 = 1, a_1 = 6$ (Ví dụ 23 - Slide 2_Counting):",
+    "options": [
+      "$a_n = (1 + 2n)3^n$",
+      "$a_n = (1 + n)3^n$",
+      "$a_n = 3^n + n 3^{n-1}$",
+      "$a_n = (2 - n)3^n$"
+    ],
+    "correct": 1,
+    "explanation": "Phương trình đặc trưng $r^2 - 6r + 9 = 0 \\Leftrightarrow (r - 3)^2 = 0$ có <strong>nghiệm kép</strong> $r_0 = 3$ (bội $2$). Nghiệm tổng quát có dạng $a_n = (\\alpha_1 + \\alpha_2 n)3^n$. Thay $a_0 = 1 \\Rightarrow \\alpha_1 = 1$; thay $a_1 = 6 \\Rightarrow (1 + \\alpha_2) \\cdot 3 = 6 \\Rightarrow \\alpha_2 = 1$. Vậy $a_n = (1 + n)3^n$."
+  },
+  {
+    "id": 307,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Tìm nghiệm của hệ thức truy hồi bậc ba $a_n = 6a_{n-1} - 11a_{n-2} + 6a_{n-3}$ với điều kiện đầu $a_0 = 2, a_1 = 5, a_2 = 15$ (Ví dụ 22 - Slide 2_Counting):",
+    "options": [
+      "$a_n = 1 - 2 \\cdot 2^n + 3 \\cdot 3^n$",
+      "$a_n = 1 + 2^n + 3^n$",
+      "$a_n = 2 - 2^n + 3^n$",
+      "$a_n = 1 - 2^n + 2 \\cdot 3^n$"
+    ],
+    "correct": 3,
+    "explanation": "Phương trình đặc trưng $r^3 - 6r^2 + 11r - 6 = 0$ có $3$ nghiệm thực phân biệt $r_1 = 1, r_2 = 2, r_3 = 3$. Giải hệ $\\begin{cases} \\alpha_1 + \\alpha_2 + \\alpha_3 = 2 \\\\ \\alpha_1 + 2\\alpha_2 + 3\\alpha_3 = 5 \\\\ \\alpha_1 + 4\\alpha_2 + 9\\alpha_3 = 15 \\end{cases}$ ta được $\\alpha_1 = 1, \\alpha_2 = -1, \\alpha_3 = 2$. Vậy $a_n = 1 - 2^n + 2 \\cdot 3^n$."
+  },
+  {
+    "id": 308,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Xét hệ thức truy hồi $a_n = -3a_{n-1} - 3a_{n-2} - a_{n-3}$ với $a_0 = 1, a_1 = -2, a_2 = -1$ (Ví dụ 24 - Slide 2_Counting). Nghiệm của hệ thức là:",
+    "options": [
+      "$a_n = (1 + 3n - 2n^2)(-1)^n$",
+      "$a_n = (1 - 3n + 2n^2)(-1)^n$",
+      "$a_n = (1 + n + n^2)(-1)^n$",
+      "$a_n = (1 + 2n - 3n^2)(-1)^n$"
+    ],
+    "correct": 0,
+    "explanation": "Phương trình đặc trưng $r^3 + 3r^2 + 3r + 1 = (r + 1)^3 = 0$ có nghiệm bội $3$ là $r_0 = -1$. Nghiệm có dạng $a_n = (\\alpha_{1,0} + \\alpha_{1,1} n + \\alpha_{1,2} n^2)(-1)^n$. Thay $a_0=1, a_1=-2, a_2=-1$ giải được $\\alpha_{1,0}=1, \\alpha_{1,1}=3, \\alpha_{1,2}=-2$."
+  },
+  {
+    "id": 309,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Hệ thức truy hồi $x_n = 2x_{n-1} - 2x_{n-2}$ với $x_0 = 0, x_1 = 2$ có phương trình đặc trưng $r^2 - 2r + 2 = 0$ có hai nghiệm phức liên hợp $r_{1,2} = 1 \\pm i = \\sqrt{2}(\\cos \\frac{\\pi}{4} \\pm i \\sin \\frac{\\pi}{4})$ (Slide 2_Counting). Nghiệm thực của hệ thức là:",
+    "options": [
+      "$x_n = (\\sqrt{2})^n \\cos\\left(\\frac{n\\pi}{4}\\right)$",
+      "$x_n = (\\sqrt{2})^n \\cdot \\sqrt{2} \\sin\\left(\\frac{n\\pi}{4}\\right)$",
+      "$x_n = 2^n \\sin\\left(\\frac{n\\pi}{4}\\right)$",
+      "$x_n = (\\sqrt{2})^n \\left(\\cos\\frac{n\\pi}{4} + \\sin\\frac{n\\pi}{4}\\right)$"
+    ],
+    "correct": 1,
+    "explanation": "Khi phương trình đặc trưng có nghiệm phức $\\rho(\\cos\\theta \\pm i\\sin\\theta)$, nghiệm thực tổng quát có dạng $x_n = \\rho^n(k_1 \\cos n\\theta + k_2 \\sin n\\theta)$ với $\\rho = \\sqrt{2}, \\theta = \\pi/4$. Do $x_0 = 0 \\Rightarrow k_1 = 0$; $x_1 = \\sqrt{2} k_2 \\sin(\\pi/4) = k_2 = 2$. Vậy $x_n = 2(\\sqrt{2})^{n-1} \\sin(\\frac{n\\pi}{4}) = (\\sqrt{2})^n \\sqrt{2} \\sin(\\frac{n\\pi}{4})$."
+  },
+  {
+    "id": 310,
+    "topic": "Hệ Thức Chia Để Trị",
+    "question": "Trong thuật toán <strong>nhân nhanh hai số nguyên $2n$ bit (Karatsuba)</strong> bằng kỹ thuật chia để trị (Mục 2.2.3 - Giáo trình Toán Rời Rạc 1 trang 42), tích hai số $2n$ bit được đưa về mấy phép nhân các số $n$ bit và có độ phức tạp bao nhiêu?",
+    "options": [
+      "$3$ phép nhân số $n$ bit với độ phức tạp $O(n \\log_2 3)$",
+      "$4$ phép nhân số $n$ bit ($f(2n) = 4f(n) + Cn$) với độ phức tạp $O(n^2)$",
+      "$2$ phép nhân số $n$ bit ($f(2n) = 2f(n) + Cn$) với độ phức tạp $O(n \\log n)$",
+      "$3$ phép nhân số $n$ bit ($f(2n) = 3f(n) + Cn$) với độ phức tạp $O(n^{\\log_2 3}) \\approx O(n^{1.58})$"
+    ],
+    "correct": 3,
+    "explanation": "Bằng cách phân tích $ab = (2^{2n} + 2^n)A_1 B_1 + 2^n(A_1 - A_0)(B_0 - B_1) + (2^n + 1)A_0 B_0$, thuật toán chỉ cần $a = 3$ bài toán con cỡ $n/b = n/2$. Theo Định lý 3 (Master Theorem), vì $a = 3 > 1$, độ phức tạp là $O(n^{\\log_2 3}) \\approx O(n^{1.58})$."
+  },
+  {
+    "id": 311,
+    "topic": "Hệ Thức Chia Để Trị",
+    "question": "Thuật toán tìm kiếm nhị phân (<strong>Binary Search</strong>) chia dãy đã sắp xếp có $n$ phần tử thành bài toán con cỡ $n/2$ với tối đa $2$ phép so sánh ở mỗi bước: $f(n) = f(n/2) + 2$. Độ phức tạp thời gian của thuật toán là:",
+    "options": [
+      "$O(n \\log n)$",
+      "$O(n)$",
+      "$O(\\log n)$",
+      "$O(\\sqrt{n})$"
+    ],
+    "correct": 2,
+    "explanation": "Áp dụng Định lý chia để trị $f(n) = a f(n/b) + c$ với $a = 1, b = 2$: khi $a = 1$, ta có $f(n) = O(\\log_b n) = O(\\log n)$."
+  },
+  {
+    "id": 312,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Cần chọn một giỏ hoa quả gồm Táo, Lê, Cam (Ví dụ 27 - Slide 2_Counting) sao cho: số Táo là một số chẵn, số Lê chia hết cho $5$, và số Cam không quá $4$ quả. Hàm sinh $g(x) = \\sum_{n=0}^{\\infty} h_n x^n$ của bài toán này rút gọn thành:",
+    "options": [
+      "$g(x) = \\frac{1}{(1 - x^2)(1 - x)} = \\frac{1}{(1 + x)(1 - x)^2}$",
+      "$g(x) = \\frac{1}{(1 - x)^3}$",
+      "$g(x) = \\frac{1 - x^5}{(1 - x^2)(1 - x)}$",
+      "$g(x) = \\frac{1}{(1 - x^2)(1 - x^5)}$"
+    ],
+    "correct": 0,
+    "explanation": "Nhân tử cho Táo (chẵn): $1 + x^2 + x^4 + \\dots = \\frac{1}{1 - x^2}$. Nhân tử cho Lê (bội của 5): $1 + x^5 + x^{10} + \\dots = \\frac{1}{1 - x^5}$. Nhân tử cho Cam ($\\le 4$): $1 + x + x^2 + x^3 + x^4 = \\frac{1 - x^5}{1 - x}$. Nhân ba đa thức/chuỗi lại, triệt tiêu $(1 - x^5)$ ta được $g(x) = \\frac{1}{(1 - x^2)(1 - x)}$."
+  },
+  {
+    "id": 313,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Tìm hàm sinh cho số cách đổi $n$ đồng tiền từ $3$ loại tiền mệnh giá $1$ đồng, $2$ đồng và $5$ đồng (với số lượng mỗi loại không hạn chế - Ví dụ 28 Slide 2_Counting):",
+    "options": [
+      "$g(x) = \\frac{x^8}{(1 - x)(1 - x^2)(1 - x^5)}$",
+      "$g(x) = (1 + x)(1 + x^2)(1 + x^5)$",
+      "$g(x) = \\frac{1}{1 - x - x^2 - x^5}$",
+      "$g(x) = \\frac{1}{(1 - x)(1 - x^2)(1 - x^5)}$"
+    ],
+    "correct": 3,
+    "explanation": "Mỗi đồng mệnh giá $k$ đóng góp thừa số $(1 + x^k + x^{2k} + \\dots) = \\frac{1}{1 - x^k}$. Do đó với $3$ mệnh giá $1, 2, 5$, hàm sinh là $g(x) = \\frac{1}{(1 - x)(1 - x^2)(1 - x^5)}$."
+  },
+  {
+    "id": 314,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Khai triển chuỗi lũy thừa của hàm sinh $f(x) = \\frac{1}{(1 - x)^k}$ (với $k \\ge 1$ nguyên dương) có hệ số của $x^n$ bằng:",
+    "options": [
+      "$C_k^n$",
+      "$C_{n + k - 1}^n = C_{n + k - 1}^{k - 1}$",
+      "$k^n$",
+      "$n^k$"
+    ],
+    "correct": 1,
+    "explanation": "Tích của $k$ chuỗi $\\frac{1}{1 - x} = 1 + x + x^2 + \\dots$ chính là hàm sinh đếm số nghiệm nguyên không âm của $x_1 + x_2 + \\dots + x_k = n$, nên hệ số của $x^n$ là $C_{n + k - 1}^n$."
+  },
+  {
+    "id": 315,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Một người gửi tiết kiệm $P_0 = 10\\,000$ USD vào ngân hàng với lãi suất kép $11\\%$/năm (Ví dụ 14 - Slide 2_Counting). Gọi $P_n$ là số tiền có được sau $n$ năm. Biểu thức của $P_n$ là:",
+    "options": [
+      "$P_n = 1.11 P_{n-1} = 10\\,000 \\times (1.11)^n$",
+      "$P_n = P_{n-1} + 0.11 P_0 = 10\\,000 \\times (1 + 0.11n)$",
+      "$P_n = (0.11)^n \\times 10\\,000$",
+      "$P_n = 1.11^n + 10\\,000$"
+    ],
+    "correct": 0,
+    "explanation": "Sau mỗi năm, tổng số tiền bằng vốn đầu năm cộng thêm $11\\%$ lãi: $P_n = P_{n-1} + 0.11 P_{n-1} = 1.11 P_{n-1}$. Thế liên tiếp từ $P_0$ ta được $P_n = (1.11)^n P_0 = 10\\,000 \\times (1.11)^n$."
+  },
+  {
+    "id": 316,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Tìm nghiệm của hệ thức truy hồi $a_n = 7a_{n-1} - 10a_{n-2}$ với điều kiện đầu $a_0 = 2, a_1 = 3$ (Bài tập 26 - Giáo trình Toán Rời Rạc 1):",
+    "options": [
+      "$a_n = \\frac{5}{3} \\cdot 2^n + \\frac{1}{3} \\cdot 5^n$",
+      "$a_n = 2 \\cdot 2^n - 5^n$",
+      "$a_n = \\frac{7}{3} \\cdot 2^n - \\frac{1}{3} \\cdot 5^n$",
+      "$a_n = 3 \\cdot 2^n - 5^n$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 - 7r + 10 = 0 \\Leftrightarrow (r - 2)(r - 5) = 0$ có $r_1 = 2, r_2 = 5$. Hệ phương trình điều kiện đầu: $\\begin{cases} \\alpha_1 + \\alpha_2 = 2 \\\\ 2\\alpha_1 + 5\\alpha_2 = 3 \\end{cases} \\Leftrightarrow \\begin{cases} 3\\alpha_2 = -1 \\Rightarrow \\alpha_2 = -1/3 \\\\ \\alpha_1 = 7/3 \\end{cases}$. Vậy $a_n = \\frac{7}{3} \\cdot 2^n - \\frac{1}{3} \\cdot 5^n$."
+  },
+  {
+    "id": 401,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Trong <strong>thuật toán sinh xâu nhị phân độ dài $n$ kế tiếp</strong> theo thứ tự từ điển (Slide 3_Listing), cho xâu hiện tại là $x = 10110111$. Xâu nhị phân liền kề tiếp theo của $x$ là:",
+    "options": [
+      "$10111111$",
+      "$10111000$",
+      "$10111001$",
+      "$11000000$"
+    ],
+    "correct": 1,
+    "explanation": "Duyệt từ phải sang trái tìm bit $0$ đầu tiên: gặp $x_5 = 0$. Đổi $x_5$ thành $1$, và gán tất cả các bit phía sau ($x_6, x_7, x_8$) bằng $0$. Ta thu được $10111000$."
+  },
+  {
+    "id": 402,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Cho tập $X = \\{1, 2, \\dots, n\\}$. Khi liệt kê các tập con $k$ phần tử $(x_1, x_2, \\dots, x_k)$ ($1 \\le x_1 < x_2 < \\dots < x_k \\le n$) theo thứ tự từ điển (Mục 3.2.2 - Giáo trình Toán Rời Rạc 1), <strong>giá trị lớn nhất</strong> mà phần tử ở vị trí thứ $i$ ($1 \\le i \\le k$) có thể nhận là:",
+    "options": [
+      "$n - k$",
+      "$n - i + 1$",
+      "$n - k + i$",
+      "$k + i$"
+    ],
+    "correct": 2,
+    "explanation": "Ở cấu hình cuối cùng $(n - k + 1, n - k + 2, \\dots, n)$, phần tử thứ $i$ đạt giá trị cực đại là $n - k + i$. Do đó điều kiện tìm phần tử chưa đạt cực đại từ phải sang trái là $x_i < n - k + i$."
+  },
+  {
+    "id": 403,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Cho $n = 9, k = 5$ và tổ hợp hiện tại là $(1, 4, 5, 7, 9)$ (Bài tập 2 - Slide 3_Listing). Ba tổ hợp tiếp theo liên tiếp theo thứ tự từ điển lần lượt là:",
+    "options": [
+      "$(1, 4, 5, 8, 9) \\rightarrow (1, 4, 6, 7, 8) \\rightarrow (1, 4, 6, 7, 9)$",
+      "$(1, 4, 5, 8, 9) \\rightarrow (1, 4, 6, 8, 9) \\rightarrow (1, 5, 6, 7, 8)$",
+      "$(1, 4, 6, 7, 8) \\rightarrow (1, 4, 6, 7, 9) \\rightarrow (1, 4, 6, 8, 9)$",
+      "$(1, 4, 5, 8, 9) \\rightarrow (1, 4, 6, 7, 8) \\rightarrow (1, 5, 6, 7, 8)$"
+    ],
+    "correct": 0,
+    "explanation": "Từ $(1, 4, 5, 7, 9)$: tăng $x_4 = 7$ lên $8, x_5 = 9 \\Rightarrow (1, 4, 5, 8, 9)$. Tiếp theo, $x_4=8, x_5=9$ đã chạm trần $(8, 9)$, nên tăng $x_3 = 5$ lên $6$, rồi $x_4 = 7, x_5 = 8 \\Rightarrow (1, 4, 6, 7, 8)$. Tiếp theo tăng $x_5 = 8$ lên $9 \\Rightarrow (1, 4, 6, 7, 9)$."
+  },
+  {
+    "id": 404,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Cho $n = 9$ và hoán vị $x = (1, 6, 7, 5, 2, 9, 8, 4, 3)$ (Ví dụ trong Slide 3_Listing). Theo thuật toán sinh hoán vị kế tiếp, hoán vị đứng ngay sau $x$ theo thứ tự từ điển là:",
+    "options": [
+      "$(1, 6, 7, 8, 2, 3, 4, 5, 9)$",
+      "$(1, 6, 7, 5, 3, 9, 8, 4, 2)$",
+      "$(1, 6, 7, 5, 4, 2, 3, 8, 9)$",
+      "$(1, 6, 7, 5, 3, 2, 4, 8, 9)$"
+    ],
+    "correct": 3,
+    "explanation": "1) Tìm từ phải sang trái vị trí đầu tiên làm gãy tính tăng: $x_5 = 2 < x_6 = 9$ (đoạn đuôi giảm dần là $9, 8, 4, 3$).<br/>2) Phần tử nhỏ nhất trong đoạn đuôi lớn hơn $x_5 = 2$ là $x_9 = 3$; đổi chỗ $2$ và $3$ được $(1, 6, 7, 5, 3, 9, 8, 4, 2)$.<br/>3) Lật ngược đoạn đuôi $(9, 8, 4, 2)$ thành $(2, 4, 8, 9)$, ta được $(1, 6, 7, 5, 3, 2, 4, 8, 9)$."
+  },
+  {
+    "id": 405,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Cho $n = 7$ và hoán vị $a = (1, 3, 5, 7, 6, 4, 2)$ (Đề thi 2015 - Slide 3_Listing). Hoán vị kế tiếp ngay sau $a$ theo thứ tự từ điển là:",
+    "options": [
+      "$(1, 3, 5, 7, 6, 2, 4)$",
+      "$(1, 3, 6, 7, 5, 4, 2)$",
+      "$(1, 3, 6, 2, 4, 5, 7)$",
+      "$(1, 4, 2, 3, 5, 6, 7)$"
+    ],
+    "correct": 2,
+    "explanation": "Đoạn đuôi giảm dần dài nhất là $(7, 6, 4, 2)$, phần tử đứng trước là $a_3 = 5$. Số nhỏ nhất trong đuôi lớn hơn $5$ là $6$. Đổi chỗ $5$ và $6$ được $(1, 3, 6, 7, 5, 4, 2)$, sau đó lật ngược đuôi $(7, 5, 4, 2)$ thành $(2, 4, 5, 7)$ ta được $(1, 3, 6, 2, 4, 5, 7)$."
+  },
+  {
+    "id": 406,
+    "topic": "Thuật Toán Quay Lui (Backtracking)",
+    "question": "Trong bài toán <strong>xếp $n$ quân hậu</strong> trên bàn cờ $n \\times n$ bằng thuật toán quay lui (Slide 3_Listing), điều kiện để hai ô $(i, j)$ và $(p, q)$ nằm trên cùng một <strong>đường chéo xuôi</strong> (từ Tây-Bắc xuống Đông-Nam) hoặc cùng một <strong>đường chéo ngược</strong> (từ Đông-Bắc xuống Tây-Nam) là:",
+    "options": [
+      "Chéo xuôi: $i + j = p + q$; Chéo ngược: $i - j = p - q$",
+      "Chéo xuôi: $i - j = p - q$; Chéo ngược: $i + j = p + q$",
+      "Chéo xuôi: $i \\cdot j = p \\cdot q$; Chéo ngược: $i + j = p + q$",
+      "Chéo xuôi: $|i - p| = 1$; Chéo ngược: $|j - q| = 1$"
+    ],
+    "correct": 1,
+    "explanation": "Trên đường chéo xuôi (Tây-Bắc $\\rightarrow$ Đông-Nam), khi hàng $i$ tăng $1$ thì cột $j$ cũng tăng $1$, nên hiệu $i - j$ không đổi (nhận giá trị từ $1-n$ đến $n-1$, thường dịch chỉ số thành $i - j + n$). Trên đường chéo ngược (Đông-Bắc $\\rightarrow$ Tây-Nam), tổng $i + j$ không đổi (nhận giá trị từ $2$ đến $2n$)."
+  },
+  {
+    "id": 407,
+    "topic": "Thuật Toán Quay Lui (Backtracking)",
+    "question": "Trên bàn cờ vua chuẩn kích thước $8 \\times 8$, bài toán xếp $8$ quân hậu sao cho không có $2$ quân hậu nào ăn nhau có tất cả bao nhiêu nghiệm (Slide 3_Listing)?",
+    "options": [
+      "$12$ nghiệm",
+      "$64$ nghiệm",
+      "$40\\,320$ nghiệm",
+      "$92$ nghiệm"
+    ],
+    "correct": 3,
+    "explanation": "Theo kết quả của Gauss và thuật toán quay lui trong Slide 3_Listing (trang 45): tổng số cách đặt $8$ quân hậu trên bàn cờ $8 \\times 8$ là $C_{64}^8 = 4\\,426\\,165\\,368$, có $8! = 40\\,320$ hoán vị hàng/cột và có đúng <strong>$92$ nghiệm</strong> hợp lệ."
+  },
+  {
+    "id": 408,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Có $5$ loại học bổng khác nhau. Hỏi phải có <strong>ít nhất</strong> bao nhiêu sinh viên để chắc chắn rằng có ít ra là $6$ người cùng nhận học bổng như nhau (Ví dụ 6 - Slide 5_Existing)?",
+    "options": [
+      "$26$ sinh viên",
+      "$25$ sinh viên",
+      "$30$ sinh viên",
+      "$31$ sinh viên"
+    ],
+    "correct": 0,
+    "explanation": "Số sinh viên tối thiểu $N$ cần có để $\\lceil N / 5 \\rceil = 6$ là $N = 5 \\times (6 - 1) + 1 = 26$ sinh viên."
+  },
+  {
+    "id": 409,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Trong kỳ thi tuyển sinh khối A (Toán, Lý, Hóa), điểm mỗi môn được chấm từ $0$ đến $10$ với bước nhảy $0.5$ điểm, và không ai bị điểm liệt ($0$ điểm). Hỏi phải có <strong>ít nhất</strong> bao nhiêu thí sinh dự thi để chắc chắn có ít nhất $2$ thí sinh có <strong>tổng điểm 3 môn</strong> bằng nhau (Bài tập 6 - Slide 5_Existing)?",
+    "options": [
+      "$55$ thí sinh",
+      "$56$ thí sinh",
+      "$60$ thí sinh",
+      "$58$ thí sinh"
+    ],
+    "correct": 1,
+    "explanation": "Vì không ai bị điểm $0$, điểm mỗi môn nhận giá trị từ $0.5$ đến $10.0$. Tổng điểm 3 môn thấp nhất là $3 \\times 0.5 = 1.5$ và cao nhất là $3 \\times 10 = 30.0$, với bước nhảy $0.5$. Số mức tổng điểm khác nhau là $\\frac{30.0 - 1.5}{0.5} + 1 = 58$ mức (nếu cho phép cả $0$ thì $1.5..30$). Lưu ý nếu tổng điểm từ $3 \\times 1 = 3$ hay từ $1.5$ đến $29$: với $[1.5, 29.0]$ có $56$ mức; hoặc nếu từ $3.0$ đến $30.0$ có $(30 - 3)/0.5 + 1 = 55$ mức $\\Rightarrow$ cần $55 + 1 = 56$ thí sinh."
+  },
+  {
+    "id": 410,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Trong một phòng có $n$ người. Theo bài toán Ramsey (Ví dụ 7 - Slide 5_Existing), giá trị nhỏ nhất của $n$ để chắc chắn rằng trong phòng luôn tìm được <strong>ít nhất $3$ người đôi một quen nhau</strong> hoặc <strong>ít nhất $3$ người đôi một không quen nhau</strong> là:",
+    "options": [
+      "$n = 9$",
+      "$n = 5$",
+      "$n = 4$",
+      "$n = 6$"
+    ],
+    "correct": 3,
+    "explanation": "Xét người $A$ trong $6$ người: $A$ có quan hệ với $5$ người còn lại thuộc $2$ nhóm (quen $A$ hoặc lạ $A$). Theo nguyên lý Dirichlet, có ít nhất $\\lceil 5/2 \\rceil = 3$ người cùng quen $A$ (hoặc cùng lạ $A$). Xét $3$ người này: nếu có $2$ người quen nhau thì cùng với $A$ tạo thành $3$ người đôi một quen nhau; nếu không có cặp nào quen nhau thì chính $3$ người đó đôi một lạ nhau. Vậy $R(3,3) = 6$."
+  },
+  {
+    "id": 411,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Có $17$ nhà bác học viết thư trao đổi với nhau về $3$ vấn đề khoa học; mỗi cặp nhà bác học chỉ trao đổi với nhau về đúng $1$ vấn đề (Bài tập 7 - Slide 5_Existing). Khi đó khẳng định nào sau đây là đúng?",
+    "options": [
+      "Luôn tồn tại $4$ nhà bác học đôi một trao đổi với nhau về cùng $1$ vấn đề",
+      "Chưa chắc tồn tại $3$ nhà bác học cùng trao đổi $1$ vấn đề nếu $n = 17$",
+      "Luôn tồn tại ít nhất $3$ nhà bác học đôi một trao đổi với nhau về cùng $1$ vấn đề",
+      "Cần ít nhất $18$ nhà bác học mới có $3$ người cùng trao đổi $1$ vấn đề"
+    ],
+    "correct": 2,
+    "explanation": "Chọn nhà bác học $A$: $A$ trao đổi với $16$ người còn lại về $3$ vấn đề. Theo Dirichlet, có ít nhất $\\lceil 16/3 \\rceil = 6$ người trao đổi với $A$ về cùng một vấn đề (giả sử vấn đề 1). Nếu trong $6$ người này có $2$ người trao đổi vấn đề 1 thì cùng với $A$ tạo thành $3$ người. Ngược lại, $6$ người này chỉ trao đổi với nhau về $2$ vấn đề (2 và 3), áp dụng bài toán $6$ người Ramsey ($R(3,3)=6$) sẽ luôn có $3$ người cùng trao đổi vấn đề 2 hoặc vấn đề 3."
+  },
+  {
+    "id": 412,
+    "topic": "Bài Toán Tồn Tại & Phản Chứng",
+    "question": "Cho $7$ đoạn thẳng có độ dài lớn hơn $10$ và nhỏ hơn $100$ (Ví dụ 3 - Slide 5_Existing). Chứng minh bằng phản chứng cho thấy:",
+    "options": [
+      "Luôn tìm được $3$ đoạn thẳng trong đó có thể ghép thành một tam giác",
+      "Cần ít nhất $8$ đoạn thẳng trong khoảng $(10, 100)$ mới chắc chắn ghép được tam giác",
+      "Luôn tìm được $3$ đoạn thẳng tạo thành một tam giác vuông",
+      "Không chắc chắn ghép được tam giác nếu các đoạn thẳng tăng theo cấp số nhân"
+    ],
+    "correct": 0,
+    "explanation": "Sắp xếp $10 < a_1 \\le a_2 \\le \\dots \\le a_7 < 100$. Giả sử phản chứng không có $3$ đoạn nào lập thành tam giác, khi đó:<br/>$a_3 \\ge a_1 + a_2 > 20$; $a_4 \\ge a_2 + a_3 > 30$; $a_5 \\ge a_3 + a_4 > 50$; $a_6 \\ge a_4 + a_5 > 80$; $a_7 \\ge a_5 + a_6 > 130$, mâu thuẫn với giả thiết $a_7 < 100$! Vậy luôn có $3$ đoạn tạo thành tam giác."
+  },
+  {
+    "id": 413,
+    "topic": "Bài Toán Tồn Tại & Phản Chứng",
+    "question": "Gán ngẫu nhiên cho các đỉnh của một đa giác đều $10$ cạnh các số từ $0$ đến $9$ (mỗi đỉnh một số khác nhau - Bài tập 1 Slide 5_Existing). Tổng các số trên $3$ đỉnh liên tiếp nào đó luôn thỏa mãn:",
+    "options": [
+      "Tổng của $3$ đỉnh liên tiếp bất kỳ luôn bằng $13.5$",
+      "Mọi bộ $3$ đỉnh liên tiếp đều có tổng nhỏ hơn hoặc bằng $13$",
+      "Luôn tồn tại $3$ đỉnh liên tiếp có tổng lớn hơn hoặc bằng $18$",
+      "Luôn tồn tại $3$ đỉnh liên tiếp có tổng lớn hơn $13$ (tức là $\\ge 14$)"
+    ],
+    "correct": 3,
+    "explanation": "Gọi các số tại $10$ đỉnh là $x_1, x_2, \\dots, x_{10}$ và $10$ tổng của $3$ đỉnh liên tiếp là $S_1, S_2, \\dots, S_{10}$. Vì mỗi đỉnh xuất hiện đúng $3$ lần trong $10$ tổng nên $\\sum_{i=1}^{10} S_i = 3 \\sum_{k=0}^9 k = 3 \\times 45 = 135$. Theo nguyên lý Dirichlet (hoặc phản chứng nếu mọi $S_i \\le 13$ thì tổng $\\le 130 < 135$), phải tồn tại ít nhất một tổng $S_i \\ge \\lceil 135/10 \\rceil = 14 > 13$."
+  },
+  {
+    "id": 414,
+    "topic": "Bài Toán 36 Sĩ Quan Euler & Hình Vuông La-tinh",
+    "question": "Bài toán <strong>36 sĩ quan của Euler</strong> (năm 1779 - Slide 5_Existing): Có thể xếp $36$ sĩ quan thuộc $6$ quân đoàn và $6$ cấp bậc khác nhau vào bảng $6 \\times 6$ sao cho mỗi hàng và mỗi cột đều có đủ $6$ quân đoàn và $6$ cấp bậc (tức là cặp hình vuông La-tinh trực giao cấp $n = 6$) hay không?",
+    "options": [
+      "Không tồn tại với mọi $n = 4k + 2$ theo đúng dự đoán của Euler",
+      "Không tồn tại với $n = 6$ (chứng minh bởi Tarry năm 1900), nhưng tồn tại với mọi $n = 4k + 2 > 6$ (Bose, Shrikhande, Parker năm 1959)",
+      "Tồn tại với mọi $n \\ge 3$ kể cả $n = 6$",
+      "Chỉ tồn tại khi $n$ là lũy thừa của một số nguyên tố"
+    ],
+    "correct": 1,
+    "explanation": "Euler phỏng đoán không tồn tại cặp hình vuông La-tinh trực giao cấp $n = 4k + 2$. Năm 1900, Gaston Tarry duyệt toàn bộ $9408$ hình vuông La-tinh chuẩn hóa cấp $6$ và chứng minh Euler đúng với $n = 6$. Tuy nhiên năm 1959, Bose, Shrikhande và Parker đã bác bỏ phỏng đoán của Euler cho mọi $n = 4k + 2 > 6$ ($n = 10, 14, \\dots$)."
+  },
+  {
+    "id": 415,
+    "topic": "Lục Giác Thần Kỳ & Định Lý 4 Màu",
+    "question": "Trong bài toán <strong>Lục giác thần kỳ (Magic Hexagon)</strong> của Clifford Adams (Slide 5_Existing): Điền các số nguyên từ $1$ đến $19$ vào $19$ ô lục giác sao cho tổng các số theo mỗi hàng dọc và hai hướng đường chéo đều bằng nhau. Giá trị tổng không đổi trên mỗi hàng đó là:",
+    "options": [
+      "$38$",
+      "$34$",
+      "$45$",
+      "$19$"
+    ],
+    "correct": 0,
+    "explanation": "Tổng các số từ $1$ đến $19$ là $\\frac{19 \\times 20}{2} = 190$. Lục giác thần kỳ có $5$ hàng song song theo mỗi hướng, nên tổng trên mỗi hàng bằng $\\frac{190}{5} = 38$."
+  },
+  {
+    "id": 416,
+    "topic": "Lục Giác Thần Kỳ & Định Lý 4 Màu",
+    "question": "Theo <strong>Định lý 4 màu (Four-Color Theorem)</strong> được Appel và Haken chứng minh năm 1976 với sự trợ giúp của máy tính (Mục 5.1.3 - Giáo trình Toán Rời Rạc 1), số màu tối đa cần thiết để tô màu mọi bản đồ trên mặt phẳng sao cho hai miền có chung biên giới (cạnh) không cùng màu là:",
+    "options": [
+      "$3$ màu",
+      "$5$ màu",
+      "$4$ màu",
+      "$6$ màu"
+    ],
+    "correct": 2,
+    "explanation": "Mọi bản đồ phẳng (tương đương với mọi đồ thị phẳng) đều có thể tô màu đỉnh bằng tối đa $4$ màu sao cho hai miền kề nhau có màu khác nhau."
+  },
+  {
+    "id": 501,
+    "topic": "Tối Ưu Tổ Hợp & Nhánh Cận",
+    "question": "Xét <strong>Bài toán cái túi nguyên (Knapsack)</strong> (Mục 4.3.1 - Giáo trình Toán Rời Rạc 1 trang 82): $\\max \\sum_{i=1}^n c_i x_i$ với ràng buộc $\\sum_{i=1}^n a_i x_i \\le b$ ($x_i \\in \\mathbb{Z}^+$). Khi các đồ vật đã được sắp xếp theo thứ tự đơn giá giảm dần $\\frac{c_1}{a_1} \\ge \\frac{c_2}{a_2} \\ge \\dots \\ge \\frac{c_n}{a_n}$, công thức tính <strong>cận trên</strong> $g(x_1, \\dots, x_k)$ tại nút cấp $k$ trong thuật toán Nhánh cận là:",
+    "options": [
+      "$g = \\sigma_k + c_{k+1} \\cdot b_k$",
+      "$g = \\sigma_k + \\frac{c_{k+1} \\cdot b_k}{a_{k+1}}$ (với $\\sigma_k = \\sum_{i=1}^k c_i x_i$ và $b_k = b - \\sum_{i=1}^k a_i x_i$)",
+      "$g = \\sigma_k + \\min_{i > k} \\left(\\frac{c_i b_k}{a_i}\\right)$",
+      "$g = \\sigma_k + (n - k) \\cdot c_{k+1}$"
+    ],
+    "correct": 1,
+    "explanation": "Vì đồ vật thứ $k+1$ có giá trị trên một đơn vị trọng lượng $\\frac{c_{k+1}}{a_{k+1}}$ lớn nhất trong số các đồ vật còn lại ($k+1, \\dots, n$), nên trọng lượng còn lại $b_k$ mang lại giá trị tối đa không vượt quá $\\frac{c_{k+1}}{a_{k+1}} b_k$. Do đó cận trên là $g = \\sigma_k + \\frac{c_{k+1} b_k}{a_{k+1}}$."
+  },
+  {
+    "id": 502,
+    "topic": "Tối Ưu Tổ Hợp & Nhánh Cận",
+    "question": "Cho bài toán cái túi (Ví dụ 2 - Mục 4.3.1 Giáo trình Toán Rời Rạc 1): $\\max f = 10x_1 + 5x_2 + 3x_3 + 6x_4$ với $5x_1 + 3x_2 + 2x_3 + 4x_4 \\le 8$, $x_i \\in \\mathbb{Z}^+$. Tại bước đầu tiên khi chọn $x_1 = 1$ (trọng lượng còn lại $b_1 = 8 - 5 = 3$, giá trị hiện tại $\\sigma_1 = 10$), giá trị <strong>cận trên $g(x_1 = 1)$</strong> bằng bao nhiêu?",
+    "options": [
+      "$g = 10 + \\frac{6 \\times 3}{4} = 14.5$",
+      "$g = 10 + \\frac{3 \\times 3}{2} = 14.5$",
+      "$g = 10 + \\frac{5 \\times 3}{3} = 15$",
+      "$g = 16$"
+    ],
+    "correct": 2,
+    "explanation": "Kiểm tra tỷ số $c_i / a_i$: $10/5 = 2.0 > 5/3 \\approx 1.67 > 3/2 = 1.5 = 6/4$ (đã giảm dần). Với $x_1 = 1$: $\\sigma_1 = 10$, $b_1 = 8 - 5(1) = 3$. Áp dụng công thức cận trên: $g(x_1 = 1) = \\sigma_1 + \\frac{c_2 b_1}{a_2} = 10 + \\frac{5 \\times 3}{3} = 15$."
+  },
+  {
+    "id": 503,
+    "topic": "Tối Ưu Tổ Hợp & Nhánh Cận",
+    "question": "Cũng với bài toán cái túi $\\max f = 10x_1 + 5x_2 + 3x_3 + 6x_4$ với $5x_1 + 3x_2 + 2x_3 + 4x_4 \\le 8$ ($x_i \\in \\mathbb{Z}^+$), giá trị tối ưu $f^*$ và phương án tối ưu $X^* = (x_1, x_2, x_3, x_4)$ tìm được bằng thuật toán Nhánh cận là:",
+    "options": [
+      "$f^* = 15$ tại $X^* = (1, 1, 0, 0)$",
+      "$f^* = 16$ tại $X^* = (1, 0, 0, 1)$",
+      "$f^* = 14$ tại $X^* = (0, 2, 2, 0)$",
+      "$f^* = 13$ tại $X^* = (1, 0, 1, 0)$"
+    ],
+    "correct": 0,
+    "explanation": "Với $x_1 = 1, x_2 = 1, x_3 = 0, x_4 = 0$: trọng lượng là $5(1) + 3(1) = 8 \\le 8$ và tổng giá trị là $10(1) + 5(1) = 15$. Nhánh $x_1 = 0$ có cận trên $g = 0 + \\frac{5 \\times 8}{3} = 13.3 < 15$ nên bị cắt tỉa ngay. Vậy $f^* = 15$."
+  },
+  {
+    "id": 504,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Trong <strong>Bài toán người du lịch (TSP)</strong> gồm $n$ thành phố (Mục 4.3.2 - Giáo trình Toán Rời Rạc 1 trang 86): Giả sử hành trình bộ phận đã đi qua $k$ thành phố $1 \\to a_2 \\to \\dots \\to a_k$ với chi phí $\\partial$, và $c_{\\min}$ là chi phí nhỏ nhất giữa các cặp thành phố. Công thức tính <strong>cận dưới $g$</strong> của hành trình bộ phận này là:",
+    "options": [
+      "$g(1, a_2, \\dots, a_k) = \\partial + n \\cdot c_{\\min}$",
+      "$g(1, a_2, \\dots, a_k) = \\partial + (n - k) c_{\\min}$",
+      "$g(1, a_2, \\dots, a_k) = \\partial + k \\cdot c_{\\min}$",
+      "$g(1, a_2, \\dots, a_k) = \\partial + (n - k + 1) c_{\\min}$"
+    ],
+    "correct": 3,
+    "explanation": "Một chu trình khép kín đi qua $n$ thành phố rồi quay về thành phố $1$ có tổng cộng $n$ đoạn đường. Hành trình bộ phận $1 \\to a_2 \\to \\dots \\to a_k$ đã đi được $k - 1$ đoạn đường, nên còn phải đi thêm $n - (k - 1) = n - k + 1$ đoạn đường nữa, mỗi đoạn có chi phí ít nhất là $c_{\\min}$. Vậy $g = \\partial + (n - k + 1)c_{\\min}$."
+  },
+  {
+    "id": 505,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Trong thuật toán Nhánh cận giải bài toán Người du lịch sử dụng kỹ thuật <strong>rút gọn ma trận chi phí</strong> (Mục 4.3.3 - Giáo trình Toán Rời Rạc 1 trang 91): Một hàng (hoặc một cột) của ma trận chi phí được gọi là <strong>đã rút gọn</strong> khi nào?",
+    "options": [
+      "Khi tổng các phần tử trên hàng (hoặc cột) đó bằng $1$",
+      "Khi tất cả các phần tử trên hàng (hoặc cột) đó đều bằng $0$",
+      "Khi hàng (hoặc cột) đó chứa ít nhất một phần tử bằng $0$ và tất cả các phần tử còn lại đều không âm",
+      "Khi phần tử trên đường chéo chính của hàng (hoặc cột) đó bằng $0$"
+    ],
+    "correct": 2,
+    "explanation": "Thủ tục `Reduce(C)` trừ mỗi phần tử trên hàng $i$ đi phần tử nhỏ nhất của hàng đó, rồi trừ mỗi phần tử trên cột $j$ đi phần tử nhỏ nhất của cột đó, sao cho mỗi hàng và mỗi cột đều có ít nhất một số $0$ và các phần tử còn lại $\\ge 0$. Tổng các hằng số rút gọn chính là cận dưới của ma trận."
+  },
+  {
+    "id": 506,
+    "topic": "Bài Toán Người Du Lịch (TSP)",
+    "question": "Trong thuật toán Nhánh cận với ma trận rút gọn giải bài toán TSP (thủ tục `BestEdge` - Mục 4.3.3 Giáo trình Toán Rời Rạc 1), khi xét các ô có $C(i, j) = 0$, ta chọn cạnh phân nhánh $(p, q)$ theo tiêu chuẩn nào?",
+    "options": [
+      "Chọn ô $(p, q)$ có $C(p, q) = 0$ sao cho tổng phần tử nhỏ nhất hàng $p$ và cột $q$ là nhỏ nhất",
+      "Chọn ô $(p, q)$ có $C(p, q) = 0$ sao cho tổng (phần tử nhỏ nhất hàng $p$ khác cột $q$) $+$ (phần tử nhỏ nhất cột $q$ khác hàng $p$) là <strong>lớn nhất</strong>",
+      "Chọn ô $(p, q)$ có chỉ số hàng $p$ và cột $q$ nhỏ nhất",
+      "Chọn ngẫu nhiên một ô có giá trị bằng $0$ trong ma trận"
+    ],
+    "correct": 1,
+    "explanation": "Nếu không đi qua cạnh $(p, q)$ (nhánh $C(p, q) = \\infty$), ma trận sẽ phải rút gọn thêm một lượng đúng bằng $\\Delta(p, q) = \\min_{j \\neq q} C(p, j) + \\min_{i \\neq p} C(i, q)$. Chọn ô $(p, q)$ làm cực đại hóa $\\Delta(p, q)$ giúp cận dưới của nhánh không chứa $(p, q)$ tăng mạnh nhất, từ đó cắt tỉa nhánh nhanh nhất."
+  },
+  {
+    "id": 507,
+    "topic": "Các Bài Toán Tối Ưu Tổ Hợp Điển Hình",
+    "question": "Trong <strong>Bài toán cái túi 0-1</strong> gồm $n$ đồ vật (mỗi đồ vật chỉ được chọn hoặc không chọn: $x_i \\in \\{0, 1\\}$), nếu sử dụng phương pháp <strong>duyệt toàn bộ</strong> (Exhaustive Search - Mục 4.2 Giáo trình Toán Rời Rạc 1), số phương án cần xét và độ phức tạp thời gian là:",
+    "options": [
+      "$C_{2n}^n$ phương án với độ phức tạp $O(4^n)$",
+      "$n!$ phương án với độ phức tạp $O(n!)$",
+      "$n^2$ phương án với độ phức tạp $O(n^2)$",
+      "$2^n$ phương án với độ phức tạp $O(2^n)$ (hoặc $O(n 2^n)$)"
+    ],
+    "correct": 3,
+    "explanation": "Mỗi phương án $X = (x_1, x_2, \\dots, x_n)$ là một xâu nhị phân độ dài $n$, nên không gian nghiệm có $2^n$ phần tử, dẫn đến sự bùng nổ tổ hợp khi $n$ lớn."
+  },
+  {
+    "id": 508,
+    "topic": "Các Bài Toán Tối Ưu Tổ Hợp Điển Hình",
+    "question": "Trong <strong>Bài toán phân công công việc (Assignment Problem)</strong> (Mục 4.1.4 - Giáo trình Toán Rời Rạc 1): Có $n$ công nhân và $n$ công việc, mỗi người nhận đúng $1$ việc và mỗi việc giao cho đúng $1$ người. Mỗi phương án phân công tương ứng với cấu trúc tổ hợp nào và có bao nhiêu phương án?",
+    "options": [
+      "Mỗi phương án là một hoán vị của $\\{1, 2, \\dots, n\\}$ và có tất cả $n!$ phương án",
+      "Mỗi phương án là một xâu nhị phân độ dài $n$ và có $2^n$ phương án",
+      "Mỗi phương án là một tổ hợp chập $k$ của $n$ và có $C_n^k$ phương án",
+      "Có tất cả $(n - 1)!$ phương án phân công"
+    ],
+    "correct": 0,
+    "explanation": "Gọi $\\pi(i)$ là công việc giao cho công nhân $i$. Vì mỗi người làm đúng $1$ việc khác nhau nên $(\\pi(1), \\pi(2), \\dots, \\pi(n))$ là một hoán vị của $n$ phần tử, có $n!$ phương án."
+  },
+  {
+    "id": 509,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Cho đồ thị vô hướng $G = (V, E)$ có $|V|$ đỉnh và $|E|$ cạnh. Theo <strong>Định lý bắt tay (Handshaking Lemma)</strong>, khẳng định nào dưới đây là <strong>luôn đúng</strong>?",
+    "options": [
+      "Tổng bậc của tất cả các đỉnh bằng $|E|$, và số đỉnh bậc chẵn luôn là một số chẵn",
+      "Tổng bậc của tất cả các đỉnh bằng $2|E|$, và số đỉnh bậc lẻ luôn là một số chẵn",
+      "Tổng bậc của tất cả các đỉnh bằng $2|V|$",
+      "Số đỉnh bậc lẻ luôn bằng số đỉnh bậc chẵn"
+    ],
+    "correct": 1,
+    "explanation": "Mỗi cạnh vô hướng đóng góp $2$ vào tổng bậc của các đỉnh: $\\sum_{v \\in V} \\deg(v) = 2|E|$ (số chẵn). Vì tổng của các đỉnh bậc chẵn là chẵn nên tổng bậc các đỉnh bậc lẻ phải chẵn $\\Rightarrow$ số đỉnh bậc lẻ phải là số chẵn."
+  },
+  {
+    "id": 510,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Có thể nối $31$ máy vi tính thành một mạng sao cho mỗi máy vi tính được nối trực tiếp với đúng $5$ máy khác hay không (Bài tập 2 - Slide 5_Existing)?",
+    "options": [
+      "Có thể, nếu sắp xếp $31$ máy theo hình đa giác đều",
+      "Có thể, với tổng cộng $77$ dây cáp mạng",
+      "Có thể, với tổng cộng $155$ dây cáp mạng",
+      "Không thể, vì tổng bậc của $31$ đỉnh sẽ là $31 \\times 5 = 155$ (là số lẻ, trái với định lý bắt tay)"
+    ],
+    "correct": 3,
+    "explanation": "Nếu mỗi máy nối với đúng $5$ máy khác thì đồ thị có $31$ đỉnh bậc lẻ ($5$). Theo hệ quả định lý bắt tay, số đỉnh bậc lẻ phải là số chẵn (hoặc $2|E| = 31 \\times 5 = 155$ vô nghiệm nguyên), nên không thể thực hiện được."
+  },
+  {
+    "id": 511,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Một đồ thị vô hướng đơn gồm $6$ đỉnh và $11$ cạnh, trong đó mỗi đỉnh chỉ có bậc $3$ hoặc bậc $4$. Số đỉnh bậc $3$ và số đỉnh bậc $4$ của đồ thị lần lượt là:",
+    "options": [
+      "$3$ đỉnh bậc $3$ và $3$ đỉnh bậc $4$",
+      "$4$ đỉnh bậc $3$ và $2$ đỉnh bậc $4$",
+      "$2$ đỉnh bậc $3$ và $4$ đỉnh bậc $4$",
+      "$1$ đỉnh bậc $3$ và $5$ đỉnh bậc $4$"
+    ],
+    "correct": 2,
+    "explanation": "Gọi $x$ là số đỉnh bậc $3$ và $6 - x$ là số đỉnh bậc $4$. Áp dụng định lý bắt tay: $3x + 4(6 - x) = 2 \\times 11 = 22 \\Rightarrow 24 - x = 22 \\Rightarrow x = 2$. Vậy có $2$ đỉnh bậc $3$ và $4$ đỉnh bậc $4$."
+  },
+  {
+    "id": 512,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Số cạnh của đồ thị đầy đủ $K_n$ và số cạnh của đồ thị hai phía đầy đủ $K_{m,n}$ lần lượt là:",
+    "options": [
+      "$|E(K_n)| = \\frac{n(n-1)}{2}$ và $|E(K_{m,n})| = m \\cdot n$",
+      "$|E(K_n)| = n(n-1)$ và $|E(K_{m,n})| = m + n$",
+      "$|E(K_n)| = \\frac{n(n+1)}{2}$ và $|E(K_{m,n})| = \\frac{mn}{2}$",
+      "$|E(K_n)| = 2^n$ và $|E(K_{m,n})| = m^n$"
+    ],
+    "correct": 0,
+    "explanation": "Trong $K_n$, mỗi cặp đỉnh đều có đúng $1$ cạnh nối nên có $C_n^2 = \\frac{n(n-1)}{2}$ cạnh. Trong $K_{m,n}$, mỗi đỉnh trong $m$ đỉnh phía trái nối với cả $n$ đỉnh phía phải nên có $m \\cdot n$ cạnh."
+  },
+  {
+    "id": 513,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Đồ thị vô hướng liên thông $G = (V, E)$ có một <strong>đường đi Euler không khép kín</strong> (đi qua mọi cạnh đúng $1$ lần nhưng không phải chu trình Euler) khi và chỉ khi:",
+    "options": [
+      "Mọi đỉnh của $G$ đều có bậc lẻ",
+      "Mọi đỉnh của $G$ đều có bậc chẵn",
+      "$G$ có ít nhất $2$ đỉnh bậc chẵn",
+      "$G$ có đúng $2$ đỉnh bậc lẻ"
+    ],
+    "correct": 3,
+    "explanation": "Theo định lý Euler: Đồ thị vô hướng liên thông có chu trình Euler $\\Leftrightarrow$ mọi đỉnh bậc chẵn; có đường đi Euler không khép kín $\\Leftrightarrow$ có đúng $2$ đỉnh bậc lẻ (đường đi bắt đầu ở đỉnh bậc lẻ này và kết thúc ở đỉnh bậc lẻ kia)."
+  },
+  {
+    "id": 514,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Với giá trị nào của $n \\ge 3$ thì đồ thị đầy đủ $K_n$ có <strong>chu trình Euler</strong>?",
+    "options": [
+      "Khi và chỉ khi $n$ là số nguyên chẵn ($n = 4, 6, 8, \\dots$)",
+      "Khi và chỉ khi $n$ là số nguyên lẻ ($n = 3, 5, 7, \\dots$)",
+      "Với mọi $n \\ge 3$",
+      "Chỉ khi $n = 3$ hoặc $n = 4$"
+    ],
+    "correct": 1,
+    "explanation": "Trong đồ thị đầy đủ $K_n$, mỗi đỉnh đều có bậc bằng $n - 1$. Để $K_n$ có chu trình Euler, bậc của mọi đỉnh phải chẵn $\\Leftrightarrow n - 1$ chẵn $\\Leftrightarrow n$ là số lẻ."
+  },
+  {
+    "id": 515,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Cho đồ thị phẳng liên thông $G$ có $V = 10$ đỉnh, mỗi đỉnh đều có bậc bằng $4$. Biểu diễn phẳng của $G$ chia mặt phẳng thành bao nhiêu miền $F$ (kể cả miền vô hạn)?",
+    "options": [
+      "$12$ miền",
+      "$10$ miền",
+      "$14$ miền",
+      "$8$ miền"
+    ],
+    "correct": 0,
+    "explanation": "Số cạnh của đồ thị là $E = \\frac{10 \\times 4}{2} = 20$ cạnh. Áp dụng công thức Euler cho đồ thị phẳng liên thông: $V - E + F = 2 \\Rightarrow F = 2 - V + E = 2 - 10 + 20 = 12$ miền."
+  },
+  {
+    "id": 516,
+    "topic": "Lý Thuyết Đồ Thị",
+    "question": "Một cây (Tree) có $n$ đỉnh ($n \\ge 2$) luôn có bao nhiêu cạnh, và một rừng (Forest) gồm $k$ cây rời nhau trên tổng số $n$ đỉnh có bao nhiêu cạnh?",
+    "options": [
+      "Cây có $n - 1$ cạnh; Rừng $k$ cây có $n - 1$ cạnh",
+      "Cây có $n$ cạnh; Rừng $k$ cây có $n - k + 1$ cạnh",
+      "Cây có $n - 1$ cạnh; Rừng $k$ cây có $n - k$ cạnh",
+      "Cây có $n + 1$ cạnh; Rừng $k$ cây có $n + k$ cạnh"
+    ],
+    "correct": 2,
+    "explanation": "Mỗi cây $n_i$ đỉnh có đúng $n_i - 1$ cạnh. Rừng gồm $k$ cây rời nhau có tổng số cạnh là $\\sum_{i=1}^k (n_i - 1) = (\\sum_{i=1}^k n_i) - k = n - k$ cạnh."
+  },
+  {
+    "id": 81,
+    "topic": "Đếm & Tổ Hợp (Đề 1 - PTIT)",
+    "question": "Lớp học có $14$ bạn nam và $13$ bạn nữ. Hãy cho biết có bao nhiêu cách chọn đội văn nghệ của lớp sao cho số bạn nam đúng bằng $2$ lần số bạn nữ, biết rằng đội văn nghệ cần ít nhất $3$ và nhiều nhất $9$ thành viên?",
+    "options": [
+      "$938119$",
+      "$938116$",
+      "$938117$",
+      "$938118$"
+    ],
+    "correct": 0,
+    "explanation": "Gọi số bạn nữ là $k$ ($k \\in \\mathbb{N}^*$), suy ra số bạn nam là $2k$ và tổng số thành viên là $3k$. Vì $3 \\le 3k \\le 9 \\Rightarrow k \\in \\{1, 2, 3\\}$. Áp dụng quy tắc cộng và quy tắc nhân: $\\sum_{k=1}^{3} C_{14}^{2k} C_{13}^{k} = C_{14}^2 C_{13}^1 + C_{14}^4 C_{13}^2 + C_{14}^6 C_{13}^3 = 91\\times 13 + 1001\\times 78 + 3003\\times 286 = 1183 + 78078 + 858858 = 938119$."
+  },
+  {
+    "id": 82,
+    "topic": "Thuật Toán Sinh Tổ Hợp (Đề 1 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $6$ của các phần tử của $A$ theo thứ tự từ điển, hãy liệt kê $5$ tổ hợp liền kề tiếp theo của tổ hợp $(1,4,5,7,8,9)$.",
+    "options": [
+      "$(1,5,6,7,8,9),\\ (2,3,4,5,6,9),\\ (1,4,6,7,8,9),\\ (2,3,4,5,6,7),\\ (2,3,4,5,6,8)$",
+      "$(1,4,6,7,8,9),\\ (1,5,6,7,8,9),\\ (2,3,4,5,6,7),\\ (2,3,4,5,6,8),\\ (2,3,4,5,6,9)$",
+      "$(1,5,6,7,8,9),\\ (2,3,4,5,6,7),\\ (2,3,4,5,6,9),\\ (1,4,6,7,8,9),\\ (2,3,4,5,6,8)$",
+      "$(2,3,4,5,6,9),\\ (2,3,4,5,6,7),\\ (1,5,6,7,8,9),\\ (1,4,6,7,8,9),\\ (2,3,4,5,6,8)$"
+    ],
+    "correct": 1,
+    "explanation": "Với $n=9, k=6$, giới hạn cực đại tại vị trí $i$ là $n-k+i = 3+i$, tức cấu hình tối đa là $(4,5,6,7,8,9)$. Từ $(1,4,5,7,8,9)$, phần tử đầu tiên từ phải sang chưa đạt giới hạn là $x_3 = 5 < 6$, tăng lên $6$ được $(1,4,6,7,8,9)$; tiếp theo tăng $x_2 = 4$ thành $5$ và đặt lại đuôi nhỏ nhất được $(1,5,6,7,8,9)$; sau đó tăng $x_1 = 1$ thành $2$ được $(2,3,4,5,6,7)$, $(2,3,4,5,6,8)$, $(2,3,4,5,6,9)$."
+  },
+  {
+    "id": 83,
+    "topic": "Hệ Thức Truy Hồi Bậc 2 (Đề 1 - PTIT)",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = 14a_{n-1} + 15a_{n-2}$ với $n \\ge 2$ và $a_0 = 43,\\ a_1 = 421$ là:",
+    "options": [
+      "$a_n = -29\\cdot(-15)^n - 14$ với $n \\ge 0$",
+      "$a_n = -29\\cdot 15^n + 14$ với $n \\ge 0$",
+      "$a_n = 29\\cdot 15^n + 14\\cdot(-1)^n$ với $n \\ge 0$",
+      "$a_n = 29\\cdot(-15)^n - 14\\cdot(-1)^n$ với $n \\ge 0$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 - 14r - 15 = 0 \\iff (r - 15)(r + 1) = 0$ có $2$ nghiệm $r_1 = 15,\\ r_2 = -1$. Nghiệm tổng quát $a_n = A\\cdot 15^n + B\\cdot(-1)^n$. Thay $a_0 = 43, a_1 = 421$: $\\begin{cases} A + B = 43 \\\\ 15A - B = 421 \\end{cases} \\iff \\begin{cases} 16A = 464 \\Rightarrow A = 29 \\\\ B = 14 \\end{cases}$. Vậy $a_n = 29\\cdot 15^n + 14\\cdot(-1)^n$."
+  },
+  {
+    "id": 84,
+    "topic": "Hệ Thức Truy Hồi Nghiệm Kép (Đề 1 - PTIT)",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = -60a_{n-1} - 900a_{n-2}$ với $n \\ge 2$ và $a_0 = -20,\\ a_1 = 720$ là:",
+    "options": [
+      "$a_n = (20 - 4n)\\cdot 30^n$ với $n \\ge 0$",
+      "$a_n = (-20 + 4n)\\cdot 30^n$ với $n \\ge 0$",
+      "$a_n = (20 + 4n)\\cdot(-30)^n$ với $n \\ge 0$",
+      "$a_n = (-20 - 4n)\\cdot(-30)^n$ với $n \\ge 0$"
+    ],
+    "correct": 3,
+    "explanation": "Phương trình đặc trưng $r^2 + 60r + 900 = (r + 30)^2 = 0$ có nghiệm kép $r_0 = -30$. Nghiệm tổng quát $a_n = (A + Bn)(-30)^n$. Thay $n = 0 \\Rightarrow A = a_0 = -20$; thay $n = 1 \\Rightarrow (-20 + B)(-30) = 720 \\Rightarrow -20 + B = -24 \\Rightarrow B = -4$. Vậy $a_n = (-20 - 4n)\\cdot(-30)^n$."
+  },
+  {
+    "id": 85,
+    "topic": "Nguyên Lý Bù Trừ (Đề 1 - PTIT)",
+    "question": "Trong tập hợp $X = \\{332, 333, \\dots, 5130\\}$ có bao nhiêu số nguyên không chia hết cho bất kỳ số nào trong các số $2, 5, 7$?",
+    "options": [
+      "$1645$",
+      "$1642$",
+      "$1643$",
+      "$1644$"
+    ],
+    "correct": 0,
+    "explanation": "Dùng hàm $f(N) = N - \\lfloor N/2 \\rfloor - \\lfloor N/5 \\rfloor - \\lfloor N/7 \\rfloor + \\lfloor N/10 \\rfloor + \\lfloor N/14 \\rfloor + \\lfloor N/35 \\rfloor - \\lfloor N/70 \\rfloor$ đếm số nguyên dương $\\le N$ không chia hết cho $2, 5, 7$. Vì $70 = \\text{lcm}(2,5,7)$ và $\\varphi(70) = 24$: ta có $5130 = 73\\times 70 + 20 \\Rightarrow f(5130) = 73\\times 24 + f(20) = 1752 + 7 = 1759$; $331 = 4\\times 70 + 51 \\Rightarrow f(331) = 4\\times 24 + f(51) = 96 + 18 = 114$. Số phần tử cần tìm là $f(5130) - f(331) = 1759 - 114 = 1645$."
+  },
+  {
+    "id": 86,
+    "topic": "Nguyên Lý Dirichlet (Đề 1 - PTIT)",
+    "question": "Trong một kỳ thi trắc nghiệm, đề thi gồm có $2$ câu hỏi. Thí sinh được $2$ điểm cho mỗi câu trả lời đúng và $0$ điểm cho mỗi câu trả lời sai; giả thiết mỗi câu có $3$ đáp án và các bạn đều điền hết các câu. Hỏi cần ít nhất bao nhiêu thí sinh tham gia kỳ thi để chắc chắn rằng có ít nhất $4$ thí sinh có phương án chọn đáp án giống nhau?",
+    "options": [
+      "$109$",
+      "$28$",
+      "$37$",
+      "$26$"
+    ],
+    "correct": 1,
+    "explanation": "Đề có $2$ câu hỏi, mỗi câu có $3$ phương án chọn nên tổng số phương án làm bài khác nhau (số chuồng) là $M = 3^2 = 9$. Theo nguyên lý Dirichlet tổng quát, để chắc chắn có ít nhất $k = 4$ thí sinh có cùng phương án trả lời thì số thí sinh tối thiểu là $N = (k - 1)\\cdot M + 1 = (4 - 1)\\times 9 + 1 = 28$."
+  },
+  {
+    "id": 87,
+    "topic": "Đếm Số Thuận Nghịch (Đề 1 - PTIT)",
+    "question": "Có bao nhiêu số tự nhiên có $9$ chữ số tạo thành một số thuận nghịch (đối xứng) có tổng tất cả các chữ số bằng $N = 18$?",
+    "options": [
+      "$457$",
+      "$466$",
+      "$460$",
+      "$479$"
+    ],
+    "correct": 2,
+    "explanation": "Số thuận nghịch $9$ chữ số có dạng $\\overline{x_1 x_2 x_3 x_4 x_5 x_4 x_3 x_2 x_1}$ với $x_1 \\in \\{1..9\\}$, $x_2,x_3,x_4,x_5 \\in \\{0..9\\}$ và $2(x_1 + x_2 + x_3 + x_4) + x_5 = 18$. Do đó $x_5$ phải là số chẵn: $x_5 = 2m \\in \\{0, 2, 4, 6, 8\\}$. Khi đó $x_1 + x_2 + x_3 + x_4 = 9 - m$ với $x_1 \\ge 1 \\iff y_1 + x_2 + x_3 + x_4 = 8 - m$ ($y_1 = x_1 - 1 \\ge 0$). Vì $8 - m \\le 8 < 9$ nên không có biến nào vượt quá $9$. Số nghiệm là $\\sum_{m=0}^{4} C_{(8-m)+4-1}^{4-1} = C_{11}^3 + C_{10}^3 + C_9^3 + C_8^3 + C_7^3 = 165 + 120 + 84 + 56 + 35 = 460$."
+  },
+  {
+    "id": 88,
+    "topic": "Đếm Xâu Nhị Phân Truy Hồi (Đề 1 - PTIT)",
+    "question": "Gọi $a_n$ là số các xâu nhị phân có độ dài $n$ và không chứa $3$ chữ số $1$ liên tiếp. Khi đó, giá trị của $a_6$ là:",
+    "options": [
+      "$46$",
+      "$45$",
+      "$43$",
+      "$44$"
+    ],
+    "correct": 3,
+    "explanation": "Xâu nhị phân độ dài $n$ không chứa $111$ phân làm $3$ nhóm rời nhau theo phần đầu: bắt đầu bởi $0$ ($a_{n-1}$ xâu), bắt đầu bởi $10$ ($a_{n-2}$ xâu), bắt đầu bởi $110$ ($a_{n-3}$ xâu). Ta có hệ thức Tribonacci $a_n = a_{n-1} + a_{n-2} + a_{n-3}$ với $a_1 = 2,\\ a_2 = 4,\\ a_3 = 7$. Suy ra $a_4 = 2+4+7 = 13$, $a_5 = 4+7+13 = 24$, $a_6 = 7+13+24 = 44$."
+  },
+  {
+    "id": 89,
+    "topic": "Phương Trình Nghiệm Nguyên Bị Chặn (Đề 1 - PTIT)",
+    "question": "Số nghiệm nguyên không âm của phương trình $x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 47$ thỏa mãn $2 \\le x_2 \\le 7,\\ 4 \\le x_3 \\le 6$ là:",
+    "options": [
+      "$186045$",
+      "$186037$",
+      "$186050$",
+      "$186060$"
+    ],
+    "correct": 0,
+    "explanation": "Đặt $y_2 = x_2 - 2 \\ge 0$ (điều kiện $y_2 \\le 5$) và $y_3 = x_3 - 4 \\ge 0$ (điều kiện $y_3 \\le 2$). Phương trình thành $x_1 + y_2 + y_3 + x_4 + x_5 + x_6 = 47 - 6 = 41$. Tổng số nghiệm không ràng buộc cận trên là $C_{41+5}^5 = C_{46}^5$. Trừ đi trường hợp vi phạm $A: y_2 \\ge 6$ ($C_{40}^5$), vi phạm $B: y_3 \\ge 3$ ($C_{43}^5$) và cộng lại giao $A \\cap B: y_2 \\ge 6, y_3 \\ge 3$ ($C_{37}^5$). Kết quả: $C_{46}^5 - C_{40}^5 - C_{43}^5 + C_{37}^5 = 1370754 - 658008 - 962598 + 435897 = 186045$."
+  },
+  {
+    "id": 90,
+    "topic": "Tổ Hợp Lặp Cận Dưới (Đề 1 - PTIT)",
+    "question": "Số nghiệm nguyên không âm của phương trình $x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 78$ thỏa mãn $x_i \\ge 4$ với mọi $i = 1,2,3,4,5,6$ là:",
+    "options": [
+      "$C_{75}^5$",
+      "$C_{59}^5$",
+      "$C_{78}^5$",
+      "$C_{63}^5$"
+    ],
+    "correct": 1,
+    "explanation": "Đặt $y_i = x_i - 4 \\ge 0$ với mọi $i = 1..6$. Phương trình trở thành $y_1 + y_2 + y_3 + y_4 + y_5 + y_6 = 78 - 6\\times 4 = 54$. Số nghiệm nguyên không âm của phương trình $k = 6$ biến có tổng bằng $54$ là $C_{54 + 6 - 1}^{6 - 1} = C_{59}^5$."
+  },
+  {
+    "id": 91,
+    "topic": "Hệ Thức Truy Hồi Bậc 3 (Đề 1 - PTIT)",
+    "question": "Giải hệ thức truy hồi sau: $a_{n+3} = 4a_{n+2} + 7a_{n+1} - 10a_n$ với $n \\ge 0,\\ a_0 = 8,\\ a_1 = 18,\\ a_2 = 194$.",
+    "options": [
+      "$a_n = -7\\cdot 5^n - 6\\cdot(-2)^n - 5$",
+      "$a_n = 7\\cdot 5^n - 6\\cdot(-2)^n + 5$",
+      "$a_n = 7\\cdot 5^n + 6\\cdot(-2)^n - 5$",
+      "$a_n = -7\\cdot 5^n + 6\\cdot(-2)^n - 5$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^3 - 4r^2 - 7r + 10 = 0 \\iff (r - 1)(r + 2)(r - 5) = 0$ có $3$ nghiệm $r_1 = 5,\\ r_2 = -2,\\ r_3 = 1$. Nghiệm có dạng $a_n = A\\cdot 5^n + B\\cdot(-2)^n + C\\cdot 1^n$. Kiểm tra tại $n=0$: $7 + 6 - 5 = 8 = a_0$; tại $n=1$: $7(5) + 6(-2) - 5 = 35 - 12 - 5 = 18 = a_1$; tại $n=2$: $7(25) + 6(4) - 5 = 175 + 24 - 5 = 194 = a_2$. Vậy $a_n = 7\\cdot 5^n + 6\\cdot(-2)^n - 5$."
+  },
+  {
+    "id": 92,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1 (Đề 1 - PTIT)",
+    "question": "Giải bài toán cái túi dưới đây để chỉ ra giá trị tối ưu $f^*$: $$2x_1 + 5x_2 + 3x_3 + 2x_4 \\to \\max$$ với điều kiện $3x_1 + 2x_2 + x_3 + 2x_4 \\le 8$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$.",
+    "options": [
+      "$f^* = 14$",
+      "$f^* = 11$",
+      "$f^* = 17$",
+      "$f^* = 12$"
+    ],
+    "correct": 3,
+    "explanation": "Tổng trọng lượng cả $4$ đồ vật là $3 + 2 + 1 + 2 = 8 \\le 8$ (vừa khít sức chứa túi bằng $8$)! Do đó ta chọn được cả $4$ đồ vật $(x_1, x_2, x_3, x_4) = (1, 1, 1, 1)$ và thu được giá trị tối ưu $f^* = 2 + 5 + 3 + 2 = 12$."
+  },
+  {
+    "id": 93,
+    "topic": "Thuật Toán Sinh Hoán Vị (Đề 1 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh hoán vị theo thứ tự từ điển, hoán vị liền kề tiếp theo của hoán vị $(6,9,5,2,4,3,8,1,7)$ là:",
+    "options": [
+      "$(6,9,5,2,4,3,8,7,1)$",
+      "$(1,8,6,4,3,9,7,5,2)$",
+      "$(2,6,4,5,7,8,9,3,1)$",
+      "$(5,9,4,2,3,8,7,1,6)$"
+    ],
+    "correct": 0,
+    "explanation": "Duyệt từ phải sang trái trên $(6,9,5,2,4,3,8,1,7)$, cặp tăng đầu tiên là $a_8 = 1 < a_9 = 7$. Đổi chỗ $1$ và $7$ ta được ngay hoán vị liền kề tiếp theo là $(6,9,5,2,4,3,8,7,1)$."
+  },
+  {
+    "id": 94,
+    "topic": "Thuật Toán Sinh Xâu Nhị Phân (Đề 1 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (1,0,1,1,1,1,0,1)$. Giả sử áp dụng phương pháp sinh xâu nhị phân theo thứ tự từ điển, hãy liệt kê $3$ xâu nhị phân liền kề tiếp theo của $X$?",
+    "options": [
+      "$(1,1,0,0,0,0,0,0),\\ (1,0,1,1,1,1,1,0),\\ (1,0,1,1,1,1,1,1)$",
+      "$(1,0,1,1,1,1,1,0),\\ (1,0,1,1,1,1,1,1),\\ (1,1,0,0,0,0,0,0)$",
+      "$(1,1,0,0,0,0,0,0),\\ (1,0,1,1,1,1,1,1),\\ (1,0,1,1,1,1,1,0)$",
+      "$(1,0,1,1,1,1,1,1),\\ (1,0,1,1,1,1,1,0),\\ (1,1,0,0,0,0,0,0)$"
+    ],
+    "correct": 1,
+    "explanation": "Cộng $1$ nhị phân liên tiếp vào $X = 10111101_2$: xâu kế tiếp thứ nhất là $10111110_2$; thứ hai là $10111111_2$; thứ ba là $11000000_2$."
+  },
+  {
+    "id": 95,
+    "topic": "Nguyên Lý Bù Trừ Không Nguyên Tố Cùng Nhau (Đề 2 - PTIT)",
+    "question": "Trong tập hợp $X = \\{270, 271, \\dots, 8668\\}$ có bao nhiêu số nguyên không chia hết cho bất kỳ số nào trong các số $4, 6, 7$?",
+    "options": [
+      "$4798$",
+      "$4797$",
+      "$4799$",
+      "$4796$"
+    ],
+    "correct": 2,
+    "explanation": "Lưu ý $\\text{lcm}(4, 6) = 12$ (không phải $24$!), $\\text{lcm}(4, 7) = 28$, $\\text{lcm}(6, 7) = 42$, $\\text{lcm}(4, 6, 7) = 84$. Trong mỗi chu kỳ $84$ số nguyên liên tiếp, số phần tử không chia hết cho $4, 6, 7$ là $84 - (21 + 14 + 12) + (7 + 3 + 2) - 1 = 48$ số. Tổng số phần tử của $X$ là $8668 - 270 + 1 = 8399 = 99\\times 84 + 83$. Trong $99$ chu kỳ đầu có $99\\times 48 = 4752$ số; $83$ số còn lại chỉ thiếu đúng $1$ số chia hết cho $84$ nên có $48 - 1 = 47$ số. Tổng cộng: $4752 + 47 = 4799$."
+  },
+  {
+    "id": 96,
+    "topic": "Đếm & Tổ Hợp (Đề 2 - PTIT)",
+    "question": "Lớp học có $15$ bạn nam và $11$ bạn nữ. Hãy cho biết có bao nhiêu cách chọn đội văn nghệ của lớp sao cho số bạn nam đúng bằng $3$ lần số bạn nữ, biết rằng đội văn nghệ cần ít nhất $4$ và nhiều nhất $12$ thành viên?",
+    "options": [
+      "$1106103$",
+      "$1106102$",
+      "$1106104$",
+      "$1106105$"
+    ],
+    "correct": 3,
+    "explanation": "Gọi số nữ là $k \\Rightarrow$ số nam là $3k$, tổng số thành viên là $4k \\in [4, 12] \\Rightarrow k \\in \\{1, 2, 3\\}$. Số cách chọn là $C_{15}^3 C_{11}^1 + C_{15}^6 C_{11}^2 + C_{15}^9 C_{11}^3 = 455\\times 11 + 5005\\times 55 + 5005\\times 165 = 5005 + 275275 + 825825 = 1106105$."
+  },
+  {
+    "id": 97,
+    "topic": "Thuật Toán Sinh Tổ Hợp (Đề 3 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $6$ của các phần tử của $A$ theo thứ tự từ điển, hãy liệt kê $5$ tổ hợp liền kề tiếp theo của tổ hợp $(1,3,4,5,7,8)$.",
+    "options": [
+      "$(1,3,4,5,7,9),\\ (1,3,4,5,8,9),\\ (1,3,4,6,7,8),\\ (1,3,4,6,7,9),\\ (1,3,4,6,8,9)$",
+      "$(1,3,4,6,7,9),\\ (1,3,4,6,7,8),\\ (1,3,4,6,8,9),\\ (1,3,4,5,8,9),\\ (1,3,4,5,7,9)$",
+      "$(1,3,4,6,8,9),\\ (1,3,4,5,7,9),\\ (1,3,4,6,7,8),\\ (1,3,4,6,7,9),\\ (1,3,4,5,8,9)$",
+      "$(1,3,4,5,8,9),\\ (1,3,4,6,7,9),\\ (1,3,4,6,7,8),\\ (1,3,4,5,7,9),\\ (1,3,4,6,8,9)$"
+    ],
+    "correct": 0,
+    "explanation": "Từ $(1,3,4,5,7,8)$: tăng phần tử cuối được $(1,3,4,5,7,9)$; tiếp theo tăng vị trí thứ $5$ từ $7$ lên $8$ được $(1,3,4,5,8,9)$; tiếp theo tăng vị trí thứ $4$ từ $5$ lên $6$ và đặt lại đuôi nhỏ nhất được $(1,3,4,6,7,8)$, rồi $(1,3,4,6,7,9)$ và $(1,3,4,6,8,9)$."
+  },
+  {
+    "id": 98,
+    "topic": "Hệ Thức Truy Hồi Bậc 3 (Đề 3 - PTIT)",
+    "question": "Giải hệ thức truy hồi sau: $a_{n+3} = -10a_{n+2} - 27a_{n+1} - 18a_n$ với $n \\ge 0,\\ a_0 = 12,\\ a_1 = -40,\\ a_2 = 184$.",
+    "options": [
+      "$a_n = 4\\cdot(-3)^n - 4\\cdot(-1)^n - 4\\cdot(-6)^n$",
+      "$a_n = 4\\cdot(-3)^n + 4\\cdot(-1)^n + 4\\cdot(-6)^n$",
+      "$a_n = -4\\cdot(-3)^n - 4\\cdot(-1)^n + 4\\cdot(-6)^n$",
+      "$a_n = -4\\cdot(-3)^n + 4\\cdot(-1)^n + 4\\cdot(-6)^n$"
+    ],
+    "correct": 1,
+    "explanation": "Phương trình đặc trưng $r^3 + 10r^2 + 27r + 18 = (r+1)(r+3)(r+6) = 0$ có nghiệm $r \\in \\{-1, -3, -6\\}$. Kiểm tra $a_n = 4\\cdot(-3)^n + 4\\cdot(-1)^n + 4\\cdot(-6)^n$: tại $n=0 \\Rightarrow 4+4+4 = 12 = a_0$; tại $n=1 \\Rightarrow -12 - 4 - 24 = -40 = a_1$; tại $n=2 \\Rightarrow 36 + 4 + 144 = 184 = a_2$."
+  },
+  {
+    "id": 99,
+    "topic": "Hệ Thức Truy Hồi Nghiệm Kép (Đề 3 - PTIT)",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = 40a_{n-1} - 400a_{n-2}$ với $n \\ge 2$ và $a_0 = -28,\\ a_1 = -40$ là:",
+    "options": [
+      "$a_n = (-28 - 26n)\\cdot(-20)^n$ với $n \\ge 0$",
+      "$a_n = (28 - 26n)\\cdot 20^n$ với $n \\ge 0$",
+      "$a_n = (-28 + 26n)\\cdot 20^n$ với $n \\ge 0$",
+      "$a_n = (28 + 26n)\\cdot(-20)^n$ với $n \\ge 0$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 - 40r + 400 = (r - 20)^2 = 0$ có nghiệm kép $r_0 = 20$. Nghiệm tổng quát $a_n = (A + Bn)20^n$. Với $n=0 \\Rightarrow A = a_0 = -28$. Với $n=1 \\Rightarrow (-28 + B)\\times 20 = -40 \\Rightarrow -28 + B = -2 \\Rightarrow B = 26$. Vậy $a_n = (-28 + 26n)\\cdot 20^n$."
+  },
+  {
+    "id": 100,
+    "topic": "Nguyên Lý Dirichlet (Đề 3 - PTIT)",
+    "question": "Trong một kỳ thi trắc nghiệm, đề thi gồm có $5$ câu hỏi. Thí sinh được $1$ điểm cho mỗi câu trả lời đúng và $0$ điểm cho mỗi câu trả lời sai; giả thiết mỗi câu có $3$ đáp án và các bạn đều điền hết các câu. Hỏi cần ít nhất bao nhiêu thí sinh tham gia kỳ thi để chắc chắn rằng có ít nhất $4$ thí sinh có phương án chọn đáp án giống nhau?",
+    "options": [
+      "$728$",
+      "$973$",
+      "$2917$",
+      "$730$"
+    ],
+    "correct": 3,
+    "explanation": "Số phương án chọn đáp án cho $5$ câu hỏi (mỗi câu $3$ lựa chọn) là $M = 3^5 = 243$. Để chắc chắn có ít nhất $k = 4$ thí sinh có phương án giống nhau, cần ít nhất $(k - 1)\\cdot M + 1 = 3\\times 243 + 1 = 729 + 1 = 730$ thí sinh."
+  },
+  {
+    "id": 101,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1 (Đề 3 - PTIT)",
+    "question": "Giải bài toán cái túi dưới đây để chỉ ra giá trị tối ưu $f^*$: $$4x_1 + 3x_2 + 2x_3 + 3x_4 \\to \\max$$ với điều kiện $x_1 + 5x_2 + 3x_3 + x_4 \\le 8$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$.",
+    "options": [
+      "$f^* = 10$",
+      "$f^* = 16$",
+      "$f^* = 9$",
+      "$f^* = 14$"
+    ],
+    "correct": 0,
+    "explanation": "Xét các phương án khả thi: nếu chọn $(x_1, x_2, x_3, x_4) = (1, 1, 0, 1)$ thì trọng lượng là $1 + 5 + 0 + 1 = 7 \\le 8$ và giá trị là $4 + 3 + 0 + 3 = 10$. Nếu chọn $(1, 0, 1, 1)$ thì trọng lượng là $1 + 3 + 1 = 5 \\le 8$, giá trị là $4 + 2 + 3 = 9$. Không thể chọn cả $4$ vật vì $1+5+3+1 = 10 > 8$. Vậy $f^* = 10$."
+  },
+  {
+    "id": 102,
+    "topic": "Đếm Xâu Nhị Phân Có Chứa 000 (Đề 3 - PTIT)",
+    "question": "Gọi $a_n$ là số các xâu nhị phân có độ dài $n$ và CÓ chứa ít nhất một cụm $3$ chữ số $0$ liên tiếp. Khi đó, giá trị của $a_4$ là:",
+    "options": [
+      "$2$",
+      "$3$",
+      "$4$",
+      "$5$"
+    ],
+    "correct": 1,
+    "explanation": "Với $n = 4$, các xâu nhị phân độ dài $4$ có chứa ít nhất $3$ chữ số $0$ liên tiếp gồm: $0000$, $0001$, $1000$, tổng cộng có $3$ xâu (hoặc tính phần bù: $2^4 - 13 = 16 - 13 = 3$)."
+  },
+  {
+    "id": 103,
+    "topic": "Đếm Số Thuận Nghịch 7 Chữ Số (Đề 3 - PTIT)",
+    "question": "Có bao nhiêu số tự nhiên có $7$ chữ số tạo thành một số thuận nghịch (đối xứng) có tổng các chữ số bằng $N = 17$?",
+    "options": [
+      "$105$",
+      "$112$",
+      "$110$",
+      "$122$"
+    ],
+    "correct": 2,
+    "explanation": "Số thuận nghịch $7$ chữ số có dạng $\\overline{x_1 x_2 x_3 x_4 x_3 x_2 x_1}$ với $2(x_1 + x_2 + x_3) + x_4 = 17$. Vì tổng bằng $17$ lẻ nên $x_4$ phải là chữ số lẻ: $x_4 \\in \\{1, 3, 5, 7, 9\\}$. Đặt $y_1 = x_1 - 1 \\ge 0$, ta có $y_1 + x_2 + x_3 = \\dfrac{17 - x_4}{2} - 1 = k$ với $k \\in \\{7, 6, 5, 4, 3\\}$. Vì $k \\le 7 < 9$ nên không có biến nào vượt quá $9$. Số các số thỏa mãn là $\\sum_{k=3}^{7} C_{k+3-1}^{3-1} = C_5^2 + C_6^2 + C_7^2 + C_8^2 + C_9^2 = 10 + 15 + 21 + 28 + 36 = 110$."
+  },
+  {
+    "id": 104,
+    "topic": "Đếm Xâu Nhị Phân Có Chứa 000 (Đề 4 - PTIT)",
+    "question": "Gọi $a_n$ là số các xâu nhị phân có độ dài $n$ và CÓ chứa ít nhất một cụm $3$ chữ số $0$ liên tiếp. Khi đó, giá trị của $a_6$ là:",
+    "options": [
+      "$19$",
+      "$22$",
+      "$21$",
+      "$20$"
+    ],
+    "correct": 3,
+    "explanation": "Gọi $b_n$ là số xâu nhị phân độ dài $n$ KHÔNG chứa $3$ chữ số $0$ liên tiếp. Ta có $b_1 = 2, b_2 = 4, b_3 = 7, b_4 = 13, b_5 = 24, b_6 = 44$. Do đó số xâu độ dài $6$ CÓ chứa ít nhất $3$ chữ số $0$ liên tiếp là $a_6 = 2^6 - b_6 = 64 - 44 = 20$."
+  },
+  {
+    "id": 105,
+    "topic": "Đếm & Tổ Hợp (Đề 4 - PTIT)",
+    "question": "Lớp học có $15$ bạn nam và $12$ bạn nữ. Hãy cho biết có bao nhiêu cách chọn đội văn nghệ của lớp sao cho số bạn nam đúng bằng $2$ lần số bạn nữ, biết rằng đội văn nghệ cần ít nhất $3$ và nhiều nhất $9$ thành viên?",
+    "options": [
+      "$1192450$",
+      "$1192448$",
+      "$1192449$",
+      "$1192447$"
+    ],
+    "correct": 0,
+    "explanation": "Gọi số nữ là $k \\in \\{1, 2, 3\\} \\Rightarrow$ số nam là $2k \\in \\{2, 4, 6\\}$. Tổng số cách chọn là $C_{15}^2 C_{12}^1 + C_{15}^4 C_{12}^2 + C_{15}^6 C_{12}^3 = 105\\times 12 + 1365\\times 66 + 5005\\times 220 = 1260 + 90090 + 1101100 = 1192450$."
+  },
+  {
+    "id": 106,
+    "topic": "Hệ Thức Truy Hồi Bậc 3 (Đề 4 - PTIT)",
+    "question": "Giải hệ thức truy hồi sau: $a_{n+3} = 4a_{n+2} + 4a_{n+1} - 16a_n$ với $n \\ge 0,\\ a_0 = 3,\\ a_1 = 44,\\ a_2 = 72$.",
+    "options": [
+      "$a_n = -5\\cdot 4^n + 5\\cdot 2^n - 7\\cdot(-2)^n$",
+      "$a_n = 5\\cdot 4^n + 5\\cdot 2^n - 7\\cdot(-2)^n$",
+      "$a_n = 5\\cdot 4^n - 5\\cdot 2^n + 7\\cdot(-2)^n$",
+      "$a_n = -5\\cdot 4^n - 5\\cdot 2^n - 7\\cdot(-2)^n$"
+    ],
+    "correct": 1,
+    "explanation": "Phương trình đặc trưng $r^3 - 4r^2 - 4r + 16 = (r - 4)(r^2 - 4) = (r - 4)(r - 2)(r + 2) = 0$ có nghiệm $r \\in \\{4, 2, -2\\}$. Kiểm tra $a_n = 5\\cdot 4^n + 5\\cdot 2^n - 7\\cdot(-2)^n$: tại $n=0 \\Rightarrow 5 + 5 - 7 = 3 = a_0$; tại $n=1 \\Rightarrow 20 + 10 + 14 = 44 = a_1$; tại $n=2 \\Rightarrow 80 + 20 - 28 = 72 = a_2$."
+  },
+  {
+    "id": 107,
+    "topic": "Phương Trình Nghiệm Nguyên Bị Chặn (Đề 4 - PTIT)",
+    "question": "Số nghiệm nguyên không âm của phương trình $x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 52$ thỏa mãn $3 \\le x_2 \\le 7,\\ 4 \\le x_3 \\le 8$ là:",
+    "options": [
+      "$333269$",
+      "$333246$",
+      "$333250$",
+      "$333242$"
+    ],
+    "correct": 2,
+    "explanation": "Đặt $y_2 = x_2 - 3 \\in [0, 4]$ và $y_3 = x_3 - 4 \\in [0, 4]$. Phương trình thành $x_1 + y_2 + y_3 + x_4 + x_5 + x_6 = 52 - 7 = 45$. Theo nguyên lý bù trừ cho hai điều kiện vi phạm $y_2 \\ge 5$ và $y_3 \\ge 5$: số nghiệm là $C_{45+5}^5 - 2 C_{40+5}^5 + C_{35+5}^5 = C_{50}^5 - 2 C_{45}^5 + C_{40}^5 = 2118760 - 2\\times 1221759 + 658008 = 333250$."
+  },
+  {
+    "id": 108,
+    "topic": "Thuật Toán Sinh Hoán Vị (Đề 4 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh hoán vị theo thứ tự từ điển, hoán vị liền kề tiếp theo của hoán vị $(7,6,8,4,9,3,1,5,2)$ là:",
+    "options": [
+      "$(4,9,7,1,8,5,3,6,2)$",
+      "$(3,1,4,6,8,5,9,7,2)$",
+      "$(3,2,8,9,4,1,7,5,6)$",
+      "$(7,6,8,4,9,3,2,1,5)$"
+    ],
+    "correct": 3,
+    "explanation": "Trong $(7,6,8,4,9,3,1,5,2)$, duyệt từ phải sang trái thấy $a_7 = 1 < a_8 = 5$ (và $a_8 = 5 > a_9 = 2$). Phần tử nhỏ nhất bên phải $a_7 = 1$ mà lớn hơn $1$ là $2$. Đổi chỗ $1$ và $2$ được $(7,6,8,4,9,3,2,5,1)$, rồi lật ngược đoạn đuôi $(5,1)$ thành $(1,5)$, ta thu được $(7,6,8,4,9,3,2,1,5)$."
+  },
+  {
+    "id": 109,
+    "topic": "Thuật Toán Sinh Tổ Hợp (Đề 5 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $5$ của các phần tử của $A$ theo thứ tự từ điển, hãy liệt kê $6$ tổ hợp liền kề tiếp theo của tổ hợp $(1,2,4,7,8)$.",
+    "options": [
+      "$(1,2,4,7,9),\\ (1,2,4,8,9),\\ (1,2,5,6,7),\\ (1,2,5,6,8),\\ (1,2,5,6,9),\\ (1,2,5,7,8)$",
+      "$(1,2,5,6,9),\\ (1,2,5,7,8),\\ (1,2,5,6,7),\\ (1,2,5,6,8),\\ (1,2,4,8,9),\\ (1,2,4,7,9)$",
+      "$(1,2,5,7,8),\\ (1,2,5,6,8),\\ (1,2,5,6,7),\\ (1,2,5,6,9),\\ (1,2,4,8,9),\\ (1,2,4,7,9)$",
+      "$(1,2,5,7,8),\\ (1,2,5,6,8),\\ (1,2,4,7,9),\\ (1,2,5,6,7),\\ (1,2,5,6,9),\\ (1,2,4,8,9)$"
+    ],
+    "correct": 0,
+    "explanation": "Từ $(1,2,4,7,8)$ với $n=9, k=5$: lần lượt sinh được $(1,2,4,7,9) \\to (1,2,4,8,9) \\to$ tăng vị trí thứ $3$ từ $4$ lên $5$ và đặt đuôi nhỏ nhất thành $(1,2,5,6,7) \\to (1,2,5,6,8) \\to (1,2,5,6,9) \\to (1,2,5,7,8)$."
+  },
+  {
+    "id": 110,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1 (Đề 5 - PTIT)",
+    "question": "Giải bài toán cái túi dưới đây để chỉ ra giá trị tối ưu $f^*$: $$5x_1 + 2x_2 + 4x_3 + 3x_4 \\to \\max$$ với điều kiện $4x_1 + 6x_2 + 2x_3 + 6x_4 \\le 6$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$.",
+    "options": [
+      "$f^* = 8$",
+      "$f^* = 9$",
+      "$f^* = 18$",
+      "$f^* = 14$"
+    ],
+    "correct": 1,
+    "explanation": "Với sức chứa $b = 6$: chọn $x_1 = 1, x_3 = 1, x_2 = x_4 = 0$ có tổng trọng lượng $4 + 2 = 6 \\le 6$ và cho tổng giá trị lớn nhất $f^* = 5 + 4 = 9$."
+  },
+  {
+    "id": 111,
+    "topic": "Hệ Thức Truy Hồi Nghiệm Kép (Đề 5 - PTIT)",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = -52a_{n-1} - 676a_{n-2}$ với $n \\ge 2$ và $a_0 = -3,\\ a_1 = 858$ là:",
+    "options": [
+      "$a_n = (3 - 30n)\\cdot 26^n$ với $n \\ge 0$",
+      "$a_n = (3 + 30n)\\cdot(-26)^n$ với $n \\ge 0$",
+      "$a_n = (-3 - 30n)\\cdot(-26)^n$ với $n \\ge 0$",
+      "$a_n = (-3 + 30n)\\cdot 26^n$ với $n \\ge 0$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 + 52r + 676 = (r + 26)^2 = 0$ có nghiệm kép $r_0 = -26$. Đặt $a_n = (A + Bn)(-26)^n$. Với $n=0 \\Rightarrow A = -3$; với $n=1 \\Rightarrow (-3 + B)(-26) = 858 \\Rightarrow -3 + B = -33 \\Rightarrow B = -30$. Vậy $a_n = (-3 - 30n)\\cdot(-26)^n$."
+  },
+  {
+    "id": 112,
+    "topic": "Đếm Số Thuận Nghịch 7 Chữ Số (Đề 5 - PTIT)",
+    "question": "Có bao nhiêu số tự nhiên có $7$ chữ số tạo thành một số thuận nghịch (đối xứng) có tổng các chữ số bằng $N = 19$?",
+    "options": [
+      "$137$",
+      "$159$",
+      "$150$",
+      "$145$"
+    ],
+    "correct": 3,
+    "explanation": "Số thuận nghịch $7$ chữ số dạng $\\overline{x_1 x_2 x_3 x_4 x_3 x_2 x_1}$ có $2(x_1 + x_2 + x_3) + x_4 = 19$, với $x_4 \\in \\{1, 3, 5, 7, 9\\}$. Đặt $y_1 = x_1 - 1 \\ge 0 \\Rightarrow y_1 + x_2 + x_3 = k$ với $k = \\dfrac{19 - x_4}{2} - 1 \\in \\{8, 7, 6, 5, 4\\}$. Vì $k \\le 8 < 9$ nên không có chữ số nào vượt quá $9$ (ngoại trừ trường hợp $y_1 = 9 \\iff x_1 = 10$ không xảy ra vì $k \\le 8$). Vậy tổng số các số là $C_6^2 + C_7^2 + C_8^2 + C_9^2 + C_{10}^2 = 15 + 21 + 28 + 36 + 45 = 145$."
+  },
+  {
+    "id": 113,
+    "topic": "Thuật Toán Sinh Tổ Hợp (Đề 6 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $5$ của các phần tử của $A$ theo thứ tự từ điển, hãy liệt kê $4$ tổ hợp liền kề tiếp theo của tổ hợp $(1,5,7,8,9)$.",
+    "options": [
+      "$(1,6,7,8,9),\\ (2,3,4,5,6),\\ (2,3,4,5,7),\\ (2,3,4,5,8)$",
+      "$(2,3,4,5,8),\\ (2,3,4,5,6),\\ (2,3,4,5,7),\\ (1,6,7,8,9)$",
+      "$(2,3,4,5,8),\\ (2,3,4,5,6),\\ (1,6,7,8,9),\\ (2,3,4,5,7)$",
+      "$(2,3,4,5,8),\\ (1,6,7,8,9),\\ (2,3,4,5,7),\\ (2,3,4,5,6)$"
+    ],
+    "correct": 0,
+    "explanation": "Trong $(1,5,7,8,9)$, ba phần tử cuối $(7,8,9)$ đã đạt cực đại. Tăng vị trí thứ $2$ từ $5$ lên $6$ được $(1,6,7,8,9)$. Tiếp theo cả $4$ vị trí cuối $(6,7,8,9)$ đã đạt cực đại nên tăng vị trí đầu từ $1$ lên $2$ và đặt lại cấu hình nhỏ nhất $(2,3,4,5,6)$, tiếp theo là $(2,3,4,5,7)$ và $(2,3,4,5,8)$."
+  },
+  {
+    "id": 114,
+    "topic": "Đếm Số Thuận Nghịch 9 Chữ Số (Đề 6 - PTIT)",
+    "question": "Có bao nhiêu số tự nhiên có $9$ chữ số tạo thành một số thuận nghịch (đối xứng) có tổng các chữ số bằng $N = 19$?",
+    "options": [
+      "$457$",
+      "$460$",
+      "$480$",
+      "$462$"
+    ],
+    "correct": 1,
+    "explanation": "Số thuận nghịch $9$ chữ số $\\overline{x_1 x_2 x_3 x_4 x_5 x_4 x_3 x_2 x_1}$ có $2(x_1 + x_2 + x_3 + x_4) + x_5 = 19$. Vì $19$ lẻ nên $x_5 \\in \\{1, 3, 5, 7, 9\\}$ ($x_5 = 2m+1$ với $m = 0..4$). Khi đó $x_1 + x_2 + x_3 + x_4 = 9 - m \\iff y_1 + x_2 + x_3 + x_4 = 8 - m$ ($y_1 = x_1 - 1 \\ge 0$). Số nghiệm là $\\sum_{m=0}^{4} C_{(8-m)+3}^3 = C_{11}^3 + C_{10}^3 + C_9^3 + C_8^3 + C_7^3 = 165 + 120 + 84 + 56 + 35 = 460$."
+  },
+  {
+    "id": 115,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1 (Đề 6 - PTIT)",
+    "question": "Giải bài toán cái túi dưới đây để chỉ ra giá trị tối ưu $f^*$: $$4x_1 + 6x_2 + 5x_3 + 6x_4 \\to \\max$$ với điều kiện $3x_1 + 2x_2 + x_3 + 5x_4 \\le 9$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$.",
+    "options": [
+      "$f^* = 21$",
+      "$f^* = 16$",
+      "$f^* = 17$",
+      "$f^* = 26$"
+    ],
+    "correct": 2,
+    "explanation": "Xét bộ $(x_1, x_2, x_3, x_4) = (0, 1, 1, 1)$: trọng lượng là $2 + 1 + 5 = 8 \\le 9$ và giá trị đạt $6 + 5 + 6 = 17$. Nếu chọn $(1, 1, 1, 0)$ thì trọng lượng là $3+2+1 = 6 \\le 9$, giá trị là $4+6+5 = 15 < 17$. Không thể chọn cả $4$ đồ vật vì $3+2+1+5 = 11 > 9$. Vậy $f^* = 17$."
+  },
+  {
+    "id": 116,
+    "topic": "Thuật Toán Sinh Tổ Hợp (Đề 8 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $6$ của các phần tử của $A$ theo thứ tự từ điển, hãy liệt kê $6$ tổ hợp liền kề tiếp theo của tổ hợp $(2,5,6,7,8,9)$.",
+    "options": [
+      "$(3,4,5,6,7,9),\\ (3,5,6,7,8,9),\\ (3,4,5,6,7,8),\\ (3,4,5,6,8,9),\\ (3,4,5,7,8,9),\\ (3,4,6,7,8,9)$",
+      "$(3,4,5,7,8,9),\\ (3,4,5,6,7,8),\\ (3,4,6,7,8,9),\\ (3,4,5,6,7,9),\\ (3,5,6,7,8,9),\\ (3,4,5,6,8,9)$",
+      "$(3,4,5,7,8,9),\\ (3,5,6,7,8,9),\\ (3,4,6,7,8,9),\\ (3,4,5,6,8,9),\\ (3,4,5,6,7,9),\\ (3,4,5,6,7,8)$",
+      "$(3,4,5,6,7,8),\\ (3,4,5,6,7,9),\\ (3,4,5,6,8,9),\\ (3,4,5,7,8,9),\\ (3,4,6,7,8,9),\\ (3,5,6,7,8,9)$"
+    ],
+    "correct": 3,
+    "explanation": "Trong $(2,5,6,7,8,9)$, cả $5$ phần tử cuối $(5,6,7,8,9)$ đã đạt cực đại. Tăng phần tử đầu từ $2$ lên $3$ ta được $(3,4,5,6,7,8)$, sau đó lần lượt là $(3,4,5,6,7,9) \\to (3,4,5,6,8,9) \\to (3,4,5,7,8,9) \\to (3,4,6,7,8,9) \\to (3,5,6,7,8,9)$."
+  },
+  {
+    "id": 117,
+    "topic": "Nguyên Lý Bù Trừ (Đề 10 - PTIT)",
+    "question": "Trong tập hợp $X = \\{304, 305, \\dots, 6395\\}$ có bao nhiêu số nguyên không chia hết cho bất kỳ số nào trong các số $3, 5, 8$?",
+    "options": [
+      "$2842$",
+      "$2839$",
+      "$2841$",
+      "$2840$"
+    ],
+    "correct": 0,
+    "explanation": "Ba số $3, 5, 8$ đôi một nguyên tố cùng nhau có $\\text{lcm}(3,5,8) = 120$, trong mỗi chu kỳ $120$ số có $120\\times(1 - 1/3)(1 - 1/5)(1 - 1/8) = 56$ số không chia hết cho $3, 5, 8$. Tổng số phần tử của $X$ là $6395 - 304 + 1 = 6092 = 50\\times 120 + 92$. Trong $50$ chu kỳ có $50\\times 56 = 2800$ số. Trong $92$ số dư từ $6304$ đến $6395$ (tương đương $64..155 \\pmod{120}$) có $42$ số không chia hết cho $3, 5, 8$. Tổng cộng: $2800 + 42 = 2842$."
+  },
+  {
+    "id": 118,
+    "topic": "Hệ Thức Truy Hồi Bậc 3 (Đề 10 - PTIT)",
+    "question": "Giải hệ thức truy hồi sau: $a_{n+3} = a_{n+2} + 36a_{n+1} - 36a_n$ với $n \\ge 0,\\ a_0 = -1,\\ a_1 = -5,\\ a_2 = 139$.",
+    "options": [
+      "$a_n = -2\\cdot 6^n + 2\\cdot(-6)^n - 5$",
+      "$a_n = 2\\cdot 6^n + 2\\cdot(-6)^n - 5$",
+      "$a_n = 2\\cdot 6^n - 2\\cdot(-6)^n + 5$",
+      "$a_n = -2\\cdot 6^n - 2\\cdot(-6)^n - 5$"
+    ],
+    "correct": 1,
+    "explanation": "Phương trình đặc trưng $r^3 - r^2 - 36r + 36 = (r - 1)(r^2 - 36) = (r - 1)(r - 6)(r + 6) = 0$ có nghiệm $r \\in \\{6, -6, 1\\}$. Thử $a_n = 2\\cdot 6^n + 2\\cdot(-6)^n - 5$: tại $n=0 \\Rightarrow 2+2-5 = -1 = a_0$; tại $n=1 \\Rightarrow 12-12-5 = -5 = a_1$; tại $n=2 \\Rightarrow 72+72-5 = 139 = a_2$."
+  },
+  {
+    "id": 119,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1 (Đề 10 - PTIT)",
+    "question": "Giải bài toán cái túi dưới đây để chỉ ra giá trị tối ưu $f^*$: $$2x_1 + 5x_2 + 5x_3 + 6x_4 \\to \\max$$ với điều kiện $x_1 + x_2 + 2x_3 + 4x_4 \\le 8$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$.",
+    "options": [
+      "$f^* = 25$",
+      "$f^* = 17$",
+      "$f^* = 18$",
+      "$f^* = 20$"
+    ],
+    "correct": 2,
+    "explanation": "Tổng trọng lượng của cả $4$ đồ vật là $1 + 1 + 2 + 4 = 8 \\le 8$, vừa đúng sức chứa của túi! Do đó phương án tối ưu là chọn cả $4$ đồ vật $(1,1,1,1)$ với giá trị tối ưu $f^* = 2 + 5 + 5 + 6 = 18$."
+  },
+  {
+    "id": 120,
+    "topic": "Phương Trình Nghiệm Nguyên Bị Chặn (Đề 10 - PTIT)",
+    "question": "Số nghiệm nguyên không âm của phương trình $x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 30$ thỏa mãn $1 \\le x_2 \\le 6,\\ 4 \\le x_3 \\le 7$ là:",
+    "options": [
+      "$49711$",
+      "$49732$",
+      "$49720$",
+      "$49726$"
+    ],
+    "correct": 3,
+    "explanation": "Đặt $y_2 = x_2 - 1 \\in [0, 5]$ và $y_3 = x_3 - 4 \\in [0, 3]$. Phương trình thành $x_1 + y_2 + y_3 + x_4 + x_5 + x_6 = 30 - 5 = 25$. Theo nguyên lý bù trừ (trừ đi $y_2 \\ge 6$ và $y_3 \\ge 4$, cộng lại giao $y_2 \\ge 6 \\land y_3 \\ge 4$): $C_{25+5}^5 - C_{19+5}^5 - C_{21+5}^5 + C_{15+5}^5 = C_{30}^5 - C_{24}^5 - C_{26}^5 + C_{20}^5 = 142506 - 42504 - 65780 + 15504 = 49726$."
+  },
+  {
+    "id": 121,
+    "topic": "Đếm Xâu Nhị Phân Không Chứa 000 (Đề 10 - PTIT)",
+    "question": "Gọi $a_n$ là số các xâu nhị phân có độ dài $n$ và KHÔNG chứa $3$ chữ số $0$ liên tiếp. Khi đó, giá trị của $a_4$ là:",
+    "options": [
+      "$13$",
+      "$15$",
+      "$12$",
+      "$14$"
+    ],
+    "correct": 0,
+    "explanation": "Trong $2^4 = 16$ xâu nhị phân độ dài $4$, chỉ có $3$ xâu chứa $3$ chữ số $0$ liên tiếp là $0000, 0001, 1000$. Vậy số xâu không chứa $3$ chữ số $0$ liên tiếp là $a_4 = 16 - 3 = 13$."
+  },
+  {
+    "id": 122,
+    "topic": "Thuật Toán Sinh Xâu Nhị Phân (Đề 13 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (0,0,1,1,1,1,1,1,1)$. Giả sử áp dụng phương pháp sinh xâu nhị phân theo thứ tự từ điển, hãy liệt kê $3$ xâu nhị phân liền kề tiếp theo của $X$?",
+    "options": [
+      "$(0,1,0,0,0,0,0,1,0),\\ (0,1,0,0,0,0,0,0,0),\\ (0,1,0,0,0,0,0,0,1)$",
+      "$(0,1,0,0,0,0,0,0,0),\\ (0,1,0,0,0,0,0,0,1),\\ (0,1,0,0,0,0,0,1,0)$",
+      "$(0,1,0,0,0,0,0,0,1),\\ (0,1,0,0,0,0,0,0,0),\\ (0,1,0,0,0,0,0,1,0)$",
+      "$(0,1,0,0,0,0,0,0,0),\\ (0,1,0,0,0,0,0,1,0),\\ (0,1,0,0,0,0,0,0,1)$"
+    ],
+    "correct": 1,
+    "explanation": "Trong $X = (0,0,1,1,1,1,1,1,1)$, bit $0$ đầu tiên tính từ phải sang nằm ở vị trí thứ $2$: đổi thành $1$ và gán tất cả $7$ bit phía sau bằng $0$ được $(0,1,0,0,0,0,0,0,0)$; hai xâu kế tiếp là $(0,1,0,0,0,0,0,0,1)$ và $(0,1,0,0,0,0,0,1,0)$."
+  },
+  {
+    "id": 123,
+    "topic": "Thuật Toán Sinh Tổ Hợp Chập 8 (Đề 14 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $8$ của các phần tử của $A$ theo thứ tự từ điển, hãy liệt kê $5$ tổ hợp liền kề tiếp theo của tổ hợp $(1,2,3,4,5,7,8,9)$.",
+    "options": [
+      "$(1,2,4,5,6,7,8,9),\\ (1,3,4,5,6,7,8,9),\\ (1,2,3,5,6,7,8,9),\\ (2,3,4,5,6,7,8,9),\\ (1,2,3,4,6,7,8,9)$",
+      "$(1,3,4,5,6,7,8,9),\\ (2,3,4,5,6,7,8,9),\\ (1,2,3,4,6,7,8,9),\\ (1,2,3,5,6,7,8,9),\\ (1,2,4,5,6,7,8,9)$",
+      "$(1,2,3,4,6,7,8,9),\\ (1,2,3,5,6,7,8,9),\\ (1,2,4,5,6,7,8,9),\\ (1,3,4,5,6,7,8,9),\\ (2,3,4,5,6,7,8,9)$",
+      "$(1,2,3,4,6,7,8,9),\\ (1,2,3,5,6,7,8,9),\\ (1,2,4,5,6,7,8,9),\\ (2,3,4,5,6,7,8,9),\\ (1,3,4,5,6,7,8,9)$"
+    ],
+    "correct": 2,
+    "explanation": "Tổ hợp chập $8$ của $9$ phần tử thực chất tương ứng với việc bỏ đi $1$ phần tử: $(1,2,3,4,5,7,8,9)$ đang bỏ số $6$. Các tổ hợp kế tiếp theo thứ tự từ điển sẽ lần lượt bỏ số $5$, số $4$, số $3$, số $2$, số $1$, tức là $(1,2,3,4,6,7,8,9) \\to (1,2,3,5,6,7,8,9) \\to (1,2,4,5,6,7,8,9) \\to (1,3,4,5,6,7,8,9) \\to (2,3,4,5,6,7,8,9)$."
+  },
+  {
+    "id": 124,
+    "topic": "Nguyên Lý Dirichlet (Đề 15 - PTIT)",
+    "question": "Trong một kỳ thi trắc nghiệm, đề thi gồm có $6$ câu hỏi. Thí sinh được $1$ điểm cho mỗi câu trả lời đúng và $0$ điểm cho mỗi câu trả lời sai; giả thiết mỗi câu có $3$ đáp án và các bạn đều điền hết các câu. Hỏi cần ít nhất bao nhiêu thí sinh tham gia kỳ thi để chắc chắn rằng có ít nhất $3$ thí sinh có phương án chọn đáp án giống nhau?",
+    "options": [
+      "$2188$",
+      "$6562$",
+      "$1457$",
+      "$1459$"
+    ],
+    "correct": 3,
+    "explanation": "Tổng số phương án chọn đáp án cho $6$ câu hỏi là $M = 3^6 = 729$. Để chắc chắn có ít nhất $k = 3$ thí sinh có cùng phương án trả lời, số thí sinh tối thiểu là $(k - 1)\\cdot M + 1 = 2\\times 729 + 1 = 1458 + 1 = 1459$."
+  },
+  {
+    "id": 125,
+    "topic": "Hệ Thức Truy Hồi Bậc 2 (Đề 15 - PTIT)",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = 29a_{n-1} + 30a_{n-2}$ với $n \\ge 2$ và $a_0 = -17,\\ a_1 = -76$ là:",
+    "options": [
+      "$a_n = -3\\cdot 30^n - 14\\cdot(-1)^n$ với $n \\ge 0$",
+      "$a_n = 3\\cdot(-30)^n + 14$ với $n \\ge 0$",
+      "$a_n = -3\\cdot(-30)^n + 14\\cdot(-1)^n$ với $n \\ge 0$",
+      "$a_n = 3\\cdot 30^n - 14$ với $n \\ge 0$"
+    ],
+    "correct": 0,
+    "explanation": "Phương trình đặc trưng $r^2 - 29r - 30 = (r - 30)(r + 1) = 0$ có nghiệm $r_1 = 30,\\ r_2 = -1$. Đặt $a_n = A\\cdot 30^n + B\\cdot(-1)^n$. Với $n=0, 1$: $A + B = -17$ và $30A - B = -76 \\Rightarrow 31A = -93 \\Rightarrow A = -3,\\ B = -14$. Vậy $a_n = -3\\cdot 30^n - 14\\cdot(-1)^n$."
+  },
+  {
+    "id": 126,
+    "topic": "Đếm Xâu Nhị Phân Có Chứa 111 (Đề 16 - PTIT)",
+    "question": "Gọi $a_n$ là số các xâu nhị phân có độ dài $n$ và CÓ chứa ít nhất một cụm $3$ chữ số $1$ liên tiếp. Khi đó, giá trị của $a_5$ là:",
+    "options": [
+      "$7$",
+      "$8$",
+      "$9$",
+      "$10$"
+    ],
+    "correct": 1,
+    "explanation": "Số xâu nhị phân độ dài $5$ không chứa $111$ là $b_5 = 24$ (dãy $2, 4, 7, 13, 24$). Do đó số xâu độ dài $5$ có chứa ít nhất một cụm $111$ là $a_5 = 2^5 - 24 = 32 - 24 = 8$."
+  },
+  {
+    "id": 127,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1 (Đề 18 - PTIT)",
+    "question": "Giải bài toán cái túi dưới đây để chỉ ra giá trị tối ưu $f^*$: $$6x_1 + 3x_2 + 2x_3 + 2x_4 \\to \\max$$ với điều kiện $3x_1 + 5x_2 + 3x_3 + 2x_4 \\le 5$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$.",
+    "options": [
+      "$f^* = 14$",
+      "$f^* = 16$",
+      "$f^* = 8$",
+      "$f^* = 7$"
+    ],
+    "correct": 2,
+    "explanation": "Với sức chứa $b = 5$: chọn $x_1 = 1, x_4 = 1$ ($x_2 = x_3 = 0$) có tổng trọng lượng $3 + 2 = 5 \\le 5$ và đạt giá trị lớn nhất $f^* = 6 + 2 = 8$."
+  },
+  {
+    "id": 128,
+    "topic": "Logic Mệnh Đề (Đề 1-90 - PTIT)",
+    "question": "Cho mệnh đề logic $B = (p \\land q) \\Rightarrow p$. Hỏi khẳng định nào sau đây là đúng?",
+    "options": [
+      "$B$ là mệnh đề không thỏa được (mâu thuẫn)",
+      "Tất cả đều sai",
+      "$B$ chỉ đúng khi $p$ và $q$ cùng đúng",
+      "$B$ là mệnh đề hằng đúng (tautology)"
+    ],
+    "correct": 3,
+    "explanation": "Ta có $(p \\land q) \\Rightarrow p \\equiv \\neg(p \\land q) \\lor p \\equiv (\\neg p \\lor \\neg q) \\lor p \\equiv (p \\lor \\neg p) \\lor \\neg q \\equiv 1 \\lor \\neg q \\equiv 1$. Do đó $B$ luôn nhận giá trị chân lý Đúng với mọi $p, q$, tức $B$ là mệnh đề hằng đúng."
+  },
+  {
+    "id": 129,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 91 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$4x_1 + 5x_2 + 6x_3 + 3x_4 \\to \\max$$ với $x_1 + 3x_2 + 6x_3 + 6x_4 \\le 11$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho phương án bộ phận $(x_1, x_2, x_3) = (1, 0, 1)$:",
+    "options": [
+      "$g(1, 0, 1) = 12{,}0$",
+      "$g(1, 0, 1) = 12{,}5$",
+      "$g(1, 0, 1) = 11{,}0$",
+      "$g(1, 0, 1) = 13{,}0$"
+    ],
+    "correct": 0,
+    "explanation": "Các đồ vật đã được sắp theo đơn giá giảm dần: $c_1/a_1 = 4 > c_2/a_2 = 5/3 > c_3/a_3 = 1 > c_4/a_4 = 0{,}5$. Tại nút bộ phận $(1, 0, 1)$: giá trị hiện tại $\\sigma = 4(1) + 5(0) + 6(1) = 10$; trọng lượng đã dùng là $1(1) + 3(0) + 6(1) = 7$, nên trọng lượng còn lại của túi là $W = 11 - 7 = 4$. Đồ vật tiếp theo là $x_4$ có $c_4 = 3, a_4 = 6$, do đó cận trên là $g(1, 0, 1) = \\sigma + c_4 \\cdot \\dfrac{W}{a_4} = 10 + 3 \\times \\dfrac{4}{6} = 12{,}0$."
+  },
+  {
+    "id": 130,
+    "topic": "Liệt Kê Tổ Hợp Liền Trước (Đề 91 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $8$ của các phần tử của tập $A$. Hãy liệt kê $4$ tổ hợp LIỀN TRƯỚC của tổ hợp $(1,2,3,4,6,7,8,9)$.",
+    "options": [
+      "$(1,2,3,4,5,6,7,8),\\ (1,2,3,4,5,6,7,9),\\ (1,2,3,4,5,7,8,9),\\ (1,2,3,4,5,6,8,9)$",
+      "$(1,2,3,4,5,7,8,9),\\ (1,2,3,4,5,6,8,9),\\ (1,2,3,4,5,6,7,9),\\ (1,2,3,4,5,6,7,8)$",
+      "$(1,2,3,4,5,6,8,9),\\ (1,2,3,4,5,7,8,9),\\ (1,2,3,4,5,6,7,8),\\ (1,2,3,4,5,6,7,9)$",
+      "$(1,2,3,4,5,7,8,9),\\ (1,2,3,4,5,6,7,8),\\ (1,2,3,4,5,6,8,9),\\ (1,2,3,4,5,6,7,9)$"
+    ],
+    "correct": 1,
+    "explanation": "Tổ hợp chập $8$ của $9$ phần tử đầu tiên theo thứ tự từ điển là $(1,2,3,4,5,6,7,8)$, kế tiếp là $(1,2,3,4,5,6,7,9)$, $(1,2,3,4,5,6,8,9)$, $(1,2,3,4,5,7,8,9)$, rồi đến $(1,2,3,4,6,7,8,9)$. Do đó $4$ tổ hợp liền trước (lùi ngược từ cấu hình hiện tại về đầu) lần lượt là $(1,2,3,4,5,7,8,9)$, $(1,2,3,4,5,6,8,9)$, $(1,2,3,4,5,6,7,9)$, $(1,2,3,4,5,6,7,8)$."
+  },
+  {
+    "id": 131,
+    "topic": "Nguyên Lý Dirichlet - Bài Toán Bốc Bi (Đề 91 - PTIT)",
+    "question": "Một hộp đựng bi chứa các viên bi có kích thước thuộc một trong $27$ loại và màu sắc thuộc một trong $2$ màu khác nhau. Giả sử rằng số lượng mỗi loại bi là không hạn chế. Cần lấy ra ít nhất bao nhiêu viên bi trong hộp để chắc chắn rằng có ít nhất $11$ viên bi giống nhau cả kích thước lẫn màu sắc?",
+    "options": [
+      "$542$",
+      "$892$",
+      "$541$",
+      "$539$"
+    ],
+    "correct": 2,
+    "explanation": "Số phân loại viên bi (kích thước $\\times$ màu sắc) là $M = 27 \\times 2 = 54$ loại. Theo nguyên lý Dirichlet, để chắc chắn có ít nhất $k = 11$ viên bi thuộc cùng một loại thì số viên bi cần lấy ra ít nhất là $N = (k - 1)\\cdot M + 1 = (11 - 1)\\times 54 + 1 = 540 + 1 = 541$."
+  },
+  {
+    "id": 132,
+    "topic": "Logic Mệnh Đề - Luật Modus Ponens (Đề 91-100 - PTIT)",
+    "question": "Cho mệnh đề logic $B = [p \\land (p \\Rightarrow q)] \\Rightarrow p$. Hỏi khẳng định nào sau đây là đúng?",
+    "options": [
+      "$B$ là mệnh đề không thỏa được",
+      "Tất cả đều sai",
+      "$B$ là mệnh đề chỉ thỏa được khi $q$ đúng",
+      "$B$ là mệnh đề hằng đúng"
+    ],
+    "correct": 3,
+    "explanation": "Mệnh đề dạng $(p \\land X) \\Rightarrow p$ luôn hằng đúng với mọi mệnh đề $X$ vì nếu vế trái $p \\land X$ đúng thì bắt buộc $p$ đã đúng."
+  },
+  {
+    "id": 133,
+    "topic": "Phương Trình Nghiệm Nguyên Bị Chặn (Đề 91 - PTIT)",
+    "question": "Số nghiệm nguyên không âm của phương trình $x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 50$ thỏa mãn $2 \\le x_1 \\le 6$ và $x_3 \\ge 5$ là:",
+    "options": [
+      "$749706$",
+      "$749708$",
+      "$749707$",
+      "$749700$"
+    ],
+    "correct": 0,
+    "explanation": "Đặt $y_1 = x_1 - 2 \\in [0, 4]$ và $y_3 = x_3 - 5 \\ge 0$. Phương trình trở thành $y_1 + x_2 + y_3 + x_4 + x_5 + x_6 = 50 - 2 - 5 = 43$ với ràng buộc $y_1 \\le 4$. Số nghiệm bằng tổng số nghiệm không ràng buộc cận trên trừ đi số nghiệm vi phạm $y_1 \\ge 5$: $C_{43+5}^5 - C_{38+5}^5 = C_{48}^5 - C_{43}^5 = 1712304 - 962598 = 749706$."
+  },
+  {
+    "id": 134,
+    "topic": "Nguyên Lý Dirichlet - Ngày Sinh (Đề 91 - PTIT)",
+    "question": "Cần ít nhất bao nhiêu sinh viên trong trường/lớp để chắc chắn rằng có ít nhất $7$ sinh viên có cùng ngày sinh trong năm (tính cả năm nhuận có $366$ ngày)?",
+    "options": [
+      "$2198$",
+      "$2197$",
+      "$2191$",
+      "$2192$"
+    ],
+    "correct": 1,
+    "explanation": "Một năm có tối đa $M = 366$ ngày sinh có thể có. Theo nguyên lý Dirichlet, để chắc chắn có ít nhất $k = 7$ sinh viên có cùng ngày sinh thì cần ít nhất $N = (k - 1)\\times 366 + 1 = 6\\times 366 + 1 = 2196 + 1 = 2197$ sinh viên."
+  },
+  {
+    "id": 135,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân (Đề 91 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (0,0,0,1,1,0,0,0)$. Hãy xác định xem đó là xâu nhị phân thứ bao nhiêu nếu liệt kê tất cả các xâu nhị phân độ dài $8$ theo thứ tự từ điển (bắt đầu từ thứ $1$)?",
+    "options": [
+      "$28$",
+      "$27$",
+      "$25$",
+      "$26$"
+    ],
+    "correct": 2,
+    "explanation": "Xâu đầu tiên $(0,0,0,0,0,0,0,0)$ có giá trị thập phân là $0$ và đứng ở vị trí thứ $1$. Xâu $X = 00011000_2$ có giá trị thập phân là $2^4 + 2^3 = 16 + 8 = 24$, nên nó là xâu nhị phân thứ $24 + 1 = 25$."
+  },
+  {
+    "id": 136,
+    "topic": "Thuật Toán Sinh Hoán Vị Liên Tiếp (Đề 91 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh hoán vị theo thứ tự từ điển, $3$ hoán vị liền kề tiếp theo của hoán vị $(5,1,6,8,7,9,3,4,2)$ là:",
+    "options": [
+      "$(5,1,6,8,9,2,3,4,7);\\ (5,1,6,8,7,9,4,2,3);\\ (5,1,6,8,7,9,4,3,2)$",
+      "$(5,1,6,8,9,2,3,4,7);\\ (5,1,6,8,7,9,4,3,2);\\ (5,1,6,8,7,9,4,2,3)$",
+      "$(5,1,6,8,7,9,4,2,3);\\ (5,1,6,8,9,2,3,4,7);\\ (5,1,6,8,7,9,4,3,2)$",
+      "$(5,1,6,8,7,9,4,2,3);\\ (5,1,6,8,7,9,4,3,2);\\ (5,1,6,8,9,2,3,4,7)$"
+    ],
+    "correct": 3,
+    "explanation": "Từ $(5,1,6,8,7,9,3,4,2)$: tăng đoạn đuôi $(3,4,2)$ được $(5,1,6,8,7,9,4,2,3)$, tiếp theo đổi $2$ và $3$ được $(5,1,6,8,7,9,4,3,2)$. Lúc này $4$ số cuối $(9,4,3,2)$ đã giảm dần cực đại, nên tăng vị trí thứ $5$ từ $7$ lên $9$ và sắp xếp tăng dần $(2,3,4,7)$ được $(5,1,6,8,9,2,3,4,7)$."
+  },
+  {
+    "id": 137,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 92 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$3x_1 + 6x_2 + x_3 + x_4 \\to \\max$$ với $x_1 + 5x_2 + x_3 + 5x_4 \\le 7$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (0, 1, 1)$:",
+    "options": [
+      "$g(0, 1, 1) = 7{,}2$",
+      "$g(0, 1, 1) = 8{,}2$",
+      "$g(0, 1, 1) = 6{,}2$",
+      "$g(0, 1, 1) = 7{,}7$"
+    ],
+    "correct": 0,
+    "explanation": "Tại nút bộ phận $(0, 1, 1)$: giá trị hiện tại $\\sigma = 3(0) + 6(1) + 1(1) = 7$; trọng lượng đã dùng là $1(0) + 5(1) + 1(1) = 6$, trọng lượng còn lại $W = 7 - 6 = 1$. Đồ vật còn lại là $x_4$ ($c_4 = 1, a_4 = 5$), nên cận trên là $g(0, 1, 1) = 7 + 1 \\times \\dfrac{1}{5} = 7{,}2$."
+  },
+  {
+    "id": 138,
+    "topic": "Liệt Kê Tổ Hợp Liền Trước (Đề 92 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $7$ của các phần tử của tập $A$. Hãy liệt kê $4$ tổ hợp LIỀN TRƯỚC của tổ hợp $(1,2,4,5,6,8,9)$.",
+    "options": [
+      "$(1,2,4,5,6,7,8),\\ (1,2,4,5,6,7,9),\\ (1,2,3,5,7,8,9),\\ (1,2,3,6,7,8,9)$",
+      "$(1,2,4,5,6,7,9),\\ (1,2,4,5,6,7,8),\\ (1,2,3,6,7,8,9),\\ (1,2,3,5,7,8,9)$",
+      "$(1,2,4,5,6,7,8),\\ (1,2,4,5,6,7,9),\\ (1,2,3,6,7,8,9),\\ (1,2,3,5,7,8,9)$",
+      "$(1,2,4,5,6,7,9),\\ (1,2,4,5,6,7,8),\\ (1,2,3,5,7,8,9),\\ (1,2,3,6,7,8,9)$"
+    ],
+    "correct": 1,
+    "explanation": "Liệt kê tiến từ $(1,2,3,5,7,8,9) \\to (1,2,3,6,7,8,9) \\to (1,2,4,5,6,7,8) \\to (1,2,4,5,6,7,9) \\to (1,2,4,5,6,8,9)$. Do đó $4$ tổ hợp liền trước theo thứ tự lùi là $(1,2,4,5,6,7,9)$, $(1,2,4,5,6,7,8)$, $(1,2,3,6,7,8,9)$, $(1,2,3,5,7,8,9)$."
+  },
+  {
+    "id": 139,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân (Đề 92 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (0,0,1,0,1,0,0,0)$. Hãy xác định xem đó là xâu nhị phân thứ bao nhiêu nếu liệt kê các xâu độ dài $8$ theo thứ tự từ điển?",
+    "options": [
+      "$44$",
+      "$42$",
+      "$41$",
+      "$43$"
+    ],
+    "correct": 2,
+    "explanation": "Giá trị thập phân của $X = 00101000_2$ là $2^5 + 2^3 = 32 + 8 = 40$. Vì xâu $00000000_2 = 0$ là xâu thứ $1$ nên $X$ là xâu thứ $40 + 1 = 41$."
+  },
+  {
+    "id": 140,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân (Đề 93 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (0,0,1,0,0,1,0,1,0)$. Hãy xác định xem đó là xâu nhị phân thứ bao nhiêu nếu liệt kê các xâu độ dài $9$ theo thứ tự từ điển?",
+    "options": [
+      "$76$",
+      "$77$",
+      "$78$",
+      "$75$"
+    ],
+    "correct": 3,
+    "explanation": "Xâu $X = 001001010_2$ có độ dài $9$ bit, giá trị thập phân là $2^6 + 2^3 + 2^1 = 64 + 8 + 2 = 74$. Do đó vị trí của $X$ theo thứ tự từ điển là $74 + 1 = 75$."
+  },
+  {
+    "id": 141,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 93 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$3x_1 + 4x_2 + 3x_3 + x_4 \\to \\max$$ với $x_1 + 3x_2 + 4x_3 + 3x_4 \\le 7$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (1, 0, 0)$:",
+    "options": [
+      "$g(1, 0, 0) = 5{,}0$",
+      "$g(1, 0, 0) = 6{,}0$",
+      "$g(1, 0, 0) = 5{,}5$",
+      "$g(1, 0, 0) = 4{,}0$"
+    ],
+    "correct": 0,
+    "explanation": "Tại bộ phận $(x_1, x_2, x_3) = (1, 0, 0)$: giá trị hiện tại $\\sigma = 3(1) + 0 + 0 = 3$; trọng lượng đã dùng là $1(1) = 1$, trọng lượng còn lại là $W = 7 - 1 = 6$. Biến tự do còn lại là $x_4$ có $c_4 = 1, a_4 = 3$, nên theo công thức cận trên chuẩn của thuật toán Nhánh cận: $g(1, 0, 0) = \\sigma + c_4 \\cdot \\dfrac{W}{a_4} = 3 + 1 \\times \\dfrac{6}{3} = 5{,}0$."
+  },
+  {
+    "id": 142,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 94 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$5x_1 + 3x_2 + x_3 + 2x_4 \\to \\max$$ với $5x_1 + 4x_2 + 2x_3 + 5x_4 \\le 9$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (0, 0, 1)$:",
+    "options": [
+      "$g(0, 0, 1) = 4{,}3$",
+      "$g(0, 0, 1) = 3{,}8$",
+      "$g(0, 0, 1) = 4{,}8$",
+      "$g(0, 0, 1) = 2{,}8$"
+    ],
+    "correct": 1,
+    "explanation": "Tại bộ phận $(0, 0, 1)$: giá trị hiện tại $\\sigma = 1$, trọng lượng đã dùng là $2$, trọng lượng còn lại của túi là $W = 9 - 2 = 7$. Biến tiếp theo $x_4$ có $c_4 = 2, a_4 = 5$, suy ra $g(0, 0, 1) = \\sigma + c_4 \\cdot \\dfrac{W}{a_4} = 1 + 2 \\times \\dfrac{7}{5} = 1 + 2{,}8 = 3{,}8$."
+  },
+  {
+    "id": 143,
+    "topic": "Nguyên Lý Dirichlet - Bài Toán Bốc Bi (Đề 94 - PTIT)",
+    "question": "Một hộp đựng bi chứa các viên bi có kích thước thuộc một trong $32$ loại và màu sắc thuộc một trong $3$ màu khác nhau. Giả sử rằng số lượng mỗi loại bi là không hạn chế. Cần lấy ra ít nhất bao nhiêu viên bi trong hộp để chắc chắn rằng có ít nhất $14$ viên bi giống nhau cả kích thước lẫn màu sắc?",
+    "options": [
+      "$1250$",
+      "$1247$",
+      "$1249$",
+      "$1793$"
+    ],
+    "correct": 2,
+    "explanation": "Tổng số loại bi (kích thước $\\times$ màu sắc) là $M = 32 \\times 3 = 96$ loại. Để chắc chắn có ít nhất $k = 14$ viên bi cùng loại, số viên bi tối thiểu phải lấy ra là $N = (14 - 1)\\times 96 + 1 = 13\\times 96 + 1 = 1248 + 1 = 1249$."
+  },
+  {
+    "id": 144,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 95 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$5x_1 + 6x_2 + 2x_3 + x_4 \\to \\max$$ với $3x_1 + 5x_2 + 2x_3 + 2x_4 \\le 8$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (0, 1, 0)$:",
+    "options": [
+      "$g(0, 1, 0) = 8{,}0$",
+      "$g(0, 1, 0) = 8{,}5$",
+      "$g(0, 1, 0) = 6{,}5$",
+      "$g(0, 1, 0) = 7{,}5$"
+    ],
+    "correct": 3,
+    "explanation": "Tại bộ phận $(0, 1, 0)$: giá trị hiện tại $\\sigma = 6$, trọng lượng đã dùng là $5$, trọng lượng còn lại là $W = 8 - 5 = 3$. Với biến còn lại $x_4$ ($c_4 = 1, a_4 = 2$), giá trị hàm cận trên là $g(0, 1, 0) = 6 + 1 \\times \\dfrac{3}{2} = 7{,}5$."
+  },
+  {
+    "id": 145,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân (Đề 96 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (1,0,0,1,0,0,0,1)$. Hãy xác định xem đó là xâu nhị phân thứ bao nhiêu nếu liệt kê các xâu độ dài $8$ theo thứ tự từ điển?",
+    "options": [
+      "$146$",
+      "$148$",
+      "$147$",
+      "$149$"
+    ],
+    "correct": 0,
+    "explanation": "Giá trị thập phân của $X = 10010001_2$ là $2^7 + 2^4 + 2^0 = 128 + 16 + 1 = 145$. Do đó $X$ là xâu nhị phân thứ $145 + 1 = 146$ theo thứ tự từ điển."
+  },
+  {
+    "id": 146,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 96 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$3x_1 + 3x_2 + 5x_3 + 4x_4 \\to \\max$$ với $x_1 + 2x_2 + 6x_3 + 5x_4 \\le 9$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (0, 1, 0)$:",
+    "options": [
+      "$g(0, 1, 0) = 9{,}1$",
+      "$g(0, 1, 0) = 8{,}6$",
+      "$g(0, 1, 0) = 7{,}6$",
+      "$g(0, 1, 0) = 9{,}6$"
+    ],
+    "correct": 1,
+    "explanation": "Tại bộ phận $(0, 1, 0)$: giá trị hiện tại $\\sigma = 3(0) + 3(1) + 5(0) = 3$; trọng lượng đã dùng là $2$, trọng lượng còn lại là $W = 9 - 2 = 7$. Biến tiếp theo $x_4$ có $c_4 = 4, a_4 = 5$, nên cận trên là $g(0, 1, 0) = 3 + 4 \\times \\dfrac{7}{5} = 3 + 5{,}6 = 8{,}6$."
+  },
+  {
+    "id": 147,
+    "topic": "Liệt Kê Tổ Hợp Liền Trước (Đề 96 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $7$ của các phần tử của tập $A$. Hãy liệt kê $6$ tổ hợp LIỀN TRƯỚC của tổ hợp $(1,3,4,5,7,8,9)$.",
+    "options": [
+      "$(1,2,4,6,7,8,9),\\ (1,2,5,6,7,8,9),\\ (1,3,4,5,6,8,9),\\ (1,3,4,5,6,7,8),\\ (1,2,4,5,7,8,9),\\ (1,3,4,5,6,7,9)$",
+      "$(1,2,4,6,7,8,9),\\ (1,3,4,5,6,7,8),\\ (1,2,4,5,7,8,9),\\ (1,3,4,5,6,7,9),\\ (1,3,4,5,6,8,9),\\ (1,2,5,6,7,8,9)$",
+      "$(1,3,4,5,6,8,9),\\ (1,3,4,5,6,7,9),\\ (1,3,4,5,6,7,8),\\ (1,2,5,6,7,8,9),\\ (1,2,4,6,7,8,9),\\ (1,2,4,5,7,8,9)$",
+      "$(1,2,4,6,7,8,9),\\ (1,2,5,6,7,8,9),\\ (1,3,4,5,6,7,9),\\ (1,2,4,5,7,8,9),\\ (1,3,4,5,6,8,9),\\ (1,3,4,5,6,7,8)$"
+    ],
+    "correct": 2,
+    "explanation": "Lùi ngược theo thứ tự từ điển từ $(1,3,4,5,7,8,9)$: giảm vị trí thứ $5$ từ $7$ về $6$ được $(1,3,4,5,6,8,9) \\to (1,3,4,5,6,7,9) \\to (1,3,4,5,6,7,8)$; tiếp theo giảm vị trí thứ $2$ từ $3$ về $2$ và đặt phần sau lớn nhất được $(1,2,5,6,7,8,9) \\to (1,2,4,6,7,8,9) \\to (1,2,4,5,7,8,9)$."
+  },
+  {
+    "id": 148,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 97 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$4x_1 + 6x_2 + 5x_3 + 5x_4 \\to \\max$$ với $x_1 + 3x_2 + 4x_3 + 5x_4 \\le 8$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (0, 1, 0)$:",
+    "options": [
+      "$g(0, 1, 0) = 11{,}5$",
+      "$g(0, 1, 0) = 10{,}0$",
+      "$g(0, 1, 0) = 12{,}0$",
+      "$g(0, 1, 0) = 11{,}0$"
+    ],
+    "correct": 3,
+    "explanation": "Tại bộ phận $(0, 1, 0)$: giá trị hiện tại $\\sigma = 6$, trọng lượng đã dùng là $3$, trọng lượng còn lại là $W = 8 - 3 = 5$. Với biến còn lại $x_4$ ($c_4 = 5, a_4 = 5$), cận trên là $g(0, 1, 0) = 6 + 5 \\times \\dfrac{5}{5} = 11{,}0$."
+  },
+  {
+    "id": 149,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân (Đề 98 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (1,1,0,1,0,0,1,1,1)$. Hãy xác định xem đó là xâu nhị phân thứ bao nhiêu nếu liệt kê các xâu độ dài $9$ theo thứ tự từ điển?",
+    "options": [
+      "$424$",
+      "$427$",
+      "$426$",
+      "$425$"
+    ],
+    "correct": 0,
+    "explanation": "Giá trị thập phân của $X = 110100111_2$ là $2^8 + 2^7 + 2^5 + 2^2 + 2^1 + 2^0 = 256 + 128 + 32 + 4 + 2 + 1 = 423$. Do đó vị trí của $X$ theo thứ tự từ điển là $423 + 1 = 424$."
+  },
+  {
+    "id": 150,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 98 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$4x_1 + 6x_2 + 4x_3 + x_4 \\to \\max$$ với $x_1 + 3x_2 + 6x_3 + 5x_4 \\le 12$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (1, 0, 0)$:",
+    "options": [
+      "$g(1, 0, 0) = 5{,}2$",
+      "$g(1, 0, 0) = 6{,}2$",
+      "$g(1, 0, 0) = 7{,}2$",
+      "$g(1, 0, 0) = 6{,}7$"
+    ],
+    "correct": 1,
+    "explanation": "Tại bộ phận $(1, 0, 0)$: giá trị hiện tại $\\sigma = 4$, trọng lượng đã dùng là $1$, trọng lượng còn lại là $W = 12 - 1 = 11$. Với biến tiếp theo $x_4$ ($c_4 = 1, a_4 = 5$), cận trên là $g(1, 0, 0) = 4 + 1 \\times \\dfrac{11}{5} = 4 + 2{,}2 = 6{,}2$."
+  },
+  {
+    "id": 151,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 99 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$6x_1 + 4x_2 + 5x_3 + 4x_4 \\to \\max$$ với $x_1 + x_2 + 3x_3 + 4x_4 \\le 7$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (1, 0, 1)$:",
+    "options": [
+      "$g(1, 0, 1) = 13{,}0$",
+      "$g(1, 0, 1) = 14{,}5$",
+      "$g(1, 0, 1) = 14{,}0$",
+      "$g(1, 0, 1) = 15{,}0$"
+    ],
+    "correct": 2,
+    "explanation": "Tại bộ phận $(1, 0, 1)$: giá trị hiện tại $\\sigma = 6(1) + 4(0) + 5(1) = 11$; trọng lượng đã dùng là $1 + 0 + 3 = 4$, trọng lượng còn lại là $W = 7 - 4 = 3$. Với biến còn lại $x_4$ ($c_4 = 4, a_4 = 4$), cận trên là $g(1, 0, 1) = 11 + 4 \\times \\dfrac{3}{4} = 14{,}0$."
+  },
+  {
+    "id": 152,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân (Đề 100 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (1,0,1,1,0,1,1)$. Hãy xác định xem đó là xâu nhị phân thứ bao nhiêu nếu liệt kê các xâu độ dài $7$ theo thứ tự từ điển?",
+    "options": [
+      "$95$",
+      "$94$",
+      "$93$",
+      "$92$"
+    ],
+    "correct": 3,
+    "explanation": "Xâu $X = 1011011_2$ có độ dài $7$ bit, giá trị thập phân là $2^6 + 2^4 + 2^3 + 2^1 + 2^0 = 64 + 16 + 8 + 2 + 1 = 91$. Do đó vị trí của $X$ theo thứ tự từ điển là $91 + 1 = 92$."
+  },
+  {
+    "id": 153,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 100 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$5x_1 + 4x_2 + 4x_3 + 2x_4 \\to \\max$$ với $x_1 + 2x_2 + 4x_3 + 5x_4 \\le 9$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (0, 1, 1)$:",
+    "options": [
+      "$g(0, 1, 1) = 9{,}2$",
+      "$g(0, 1, 1) = 9{,}7$",
+      "$g(0, 1, 1) = 10{,}2$",
+      "$g(0, 1, 1) = 8{,}2$"
+    ],
+    "correct": 0,
+    "explanation": "Tại bộ phận $(0, 1, 1)$: giá trị hiện tại $\\sigma = 4 + 4 = 8$, trọng lượng đã dùng là $2 + 4 = 6$, trọng lượng còn lại là $W = 9 - 6 = 3$. Với biến tiếp theo $x_4$ ($c_4 = 2, a_4 = 5$), cận trên là $g(0, 1, 1) = 8 + 2 \\times \\dfrac{3}{5} = 8 + 1{,}2 = 9{,}2$."
+  },
+  {
+    "id": 154,
+    "topic": "Hệ Thức Truy Hồi Nghiệm Kép (Đề 100 - PTIT)",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = -24a_{n-1} - 144a_{n-2}$ với $n \\ge 2$ và $a_0 = -12,\\ a_1 = -36$ là:",
+    "options": [
+      "$a_n = (12 - 15n)\\cdot(-12)^n$ với $n \\ge 0$",
+      "$a_n = (-12 + 15n)\\cdot(-12)^n$ với $n \\ge 0$",
+      "$a_n = (-12 - 15n)\\cdot 12^n$ với $n \\ge 0$",
+      "$a_n = (12 + 15n)\\cdot 12^n$ với $n \\ge 0$"
+    ],
+    "correct": 1,
+    "explanation": "Phương trình đặc trưng $r^2 + 24r + 144 = (r + 12)^2 = 0$ có nghiệm kép $r_0 = -12$. Đặt $a_n = (A + Bn)(-12)^n$. Tại $n=0 \\Rightarrow A = -12$; tại $n=1 \\Rightarrow (-12 + B)(-12) = -36 \\Rightarrow -12 + B = 3 \\Rightarrow B = 15$. Vậy $a_n = (-12 + 15n)\\cdot(-12)^n$."
+  },
+  {
+    "id": 155,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Cho đồ thị phân đôi đầy đủ $K_{m,n}$ ($m, n \\ge 2$). Điều kiện cần và đủ về $m, n$ để $K_{m,n}$ là đồ thị Euler (có chu trình Euler) và điều kiện để $K_{m,n}$ là đồ thị Hamilton (có chu trình Hamilton) lần lượt là:",
+    "options": [
+      "Euler khi $m = n$; Hamilton khi $m, n$ cùng lẻ",
+      "Euler khi $m + n$ chẵn; Hamilton khi $m = n \\ge 2$",
+      "Euler khi cả $m$ và $n$ đều là số chẵn; Hamilton khi và chỉ khi $m = n \\ge 2$",
+      "Euler với mọi $m, n \\ge 2$; Hamilton khi $|m - n| \\le 1$"
+    ],
+    "correct": 2,
+    "explanation": "Trong $K_{m,n}$, các đỉnh thuộc tập thứ nhất có bậc $n$, các đỉnh thuộc tập thứ hai có bậc $m$. Để có chu trình Euler, mọi đỉnh phải có bậc chẵn $\\iff m$ và $n$ đều chẵn. Để có chu trình Hamilton trong đồ thị phân đôi, chu trình phải đi xen kẽ qua hai tập đỉnh nên hai tập phải có số đỉnh bằng nhau: $m = n \\ge 2$."
+  },
+  {
+    "id": 156,
+    "topic": "Lý Thuyết Đồ Thị - Công Thức Euler Cho Đồ Thị Phẳng",
+    "question": "Một đồ thị phẳng liên thông $G = (V, E)$ có $n = 10$ đỉnh, mỗi đỉnh đều có bậc bằng $3$ ($3$-chính quy). Khi biểu diễn phẳng không có các cạnh cắt nhau, đồ thị $G$ chia mặt phẳng thành bao nhiêu miền (kể cả miền vô hạn bên ngoài)?",
+    "options": [
+      "$5$ miền",
+      "$6$ miền",
+      "$8$ miền",
+      "$7$ miền"
+    ],
+    "correct": 3,
+    "explanation": "Theo bổ đề bắt tay: $2|E| = \\sum \\deg(v) = 10 \\times 3 = 30 \\Rightarrow |E| = 15$ cạnh. Theo công thức Euler cho đồ thị phẳng liên thông: $|V| - |E| + f = 2 \\Rightarrow f = 2 - |V| + |E| = 2 - 10 + 15 = 7$ miền."
+  },
+  {
+    "id": 157,
+    "topic": "Lý Thuyết Đồ Thị - Số Sắc Số (Chromatic Number)",
+    "question": "Số sắc số $\\chi(G)$ (số màu tối thiểu để tô màu các đỉnh sao cho hai đỉnh kề nhau có màu khác nhau) của đồ thị vòng $C_n$ ($n \\ge 3$) và đồ thị bánh xe $W_n$ (gồm vòng $C_n$ và $1$ đỉnh tâm nối với tất cả $n$ đỉnh của vòng) lần lượt là:",
+    "options": [
+      "Với $n$ chẵn: $\\chi(C_n) = 2,\\ \\chi(W_n) = 3$; với $n$ lẻ: $\\chi(C_n) = 3,\\ \\chi(W_n) = 4$",
+      "Với mọi $n \\ge 3$: $\\chi(C_n) = 2,\\ \\chi(W_n) = 3$",
+      "Với mọi $n \\ge 3$: $\\chi(C_n) = 3,\\ \\chi(W_n) = 4$",
+      "Với $n$ chẵn: $\\chi(C_n) = 3,\\ \\chi(W_n) = 4$; với $n$ lẻ: $\\chi(C_n) = 2,\\ \\chi(W_n) = 3$"
+    ],
+    "correct": 0,
+    "explanation": "Chu trình độ dài chẵn $C_{2k}$ là đồ thị hai phía nên cần $2$ màu, còn chu trình lẻ $C_{2k+1}$ cần $3$ màu. Đỉnh tâm của bánh xe $W_n$ kề với mọi đỉnh trên $C_n$ nên bắt buộc phải dùng $1$ màu mới khác tất cả các màu trên $C_n$, suy ra $\\chi(W_n) = \\chi(C_n) + 1$."
+  },
+  {
+    "id": 158,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Cho đồ thị vô hướng liên thông có trọng số $G = (V, E)$ gồm $n = 9$ đỉnh và $m = 18$ cạnh. Khi thuật toán Kruskal hoặc Prim kết thúc việc tìm cây khung nhỏ nhất (MST) của $G$, ta phải loại bỏ đi bao nhiêu cạnh khỏi $G$ (số chu trình cơ bản của $G$)?",
+    "options": [
+      "$9$ cạnh",
+      "$10$ cạnh",
+      "$8$ cạnh",
+      "$11$ cạnh"
+    ],
+    "correct": 1,
+    "explanation": "Mọi cây khung của đồ thị liên thông $n = 9$ đỉnh đều có đúng $n - 1 = 8$ cạnh. Vì đồ thị ban đầu có $m = 18$ cạnh nên số cạnh bị loại bỏ (cũng chính là số cạnh ngoài cây / số chu trình độc lập $m - n + 1$) là $18 - 8 = 10$ cạnh."
+  },
+  {
+    "id": 159,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Cho hàm Boole $3$ biến $f(x, y, z) = x y + x' z + y z$. Theo luật hấp thụ và đồng thuận (consensus theorem) trong đại số Boole, biểu thức tối giản nhất tương đương với $f(x, y, z)$ là:",
+    "options": [
+      "$x y + y z$",
+      "$x' z + y z$",
+      "$x y + x' z$",
+      "$x + y + z$"
+    ],
+    "correct": 2,
+    "explanation": "Theo định lý đồng thuận (Consensus): $y z = (x + x')y z = x y z + x' y z$. Khi đó $x y + x' z + y z = x y(1 + z) + x' z(1 + y) = x y + x' z$."
+  },
+  {
+    "id": 160,
+    "topic": "Quan Hệ Tương Đương & Quan Hệ Thứ Tự",
+    "question": "Trên tập hợp $A$ có $|A| = n$ phần tử, có bao nhiêu quan hệ hai ngôi $R \\subseteq A \\times A$ vừa có tính phản xạ, vừa có tính đối xứng?",
+    "options": [
+      "$2^{n^2}$",
+      "$2^{n(n-1)}$",
+      "$2^{n(n+1)/2}$",
+      "$2^{n(n-1)/2}$"
+    ],
+    "correct": 3,
+    "explanation": "Ma trận biểu diễn của quan hệ $R$ trên tập $n$ phần tử có kích thước $n \\times n$. Tính phản xạ bắt buộc toàn bộ $n$ phần tử trên đường chéo chính đều bằng $1$. Tính đối xứng bắt buộc $a_{ij} = a_{ji}$ với mọi $i \\ne j$, nên ta chỉ được tự do chọn giá trị $0$ hoặc $1$ cho $\\dfrac{n(n-1)}{2}$ phần tử nằm phía trên đường chéo chính. Số quan hệ thỏa mãn là $2^{n(n-1)/2}$."
+  }
+]

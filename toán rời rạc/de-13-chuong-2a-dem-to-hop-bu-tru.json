@@ -1,0 +1,392 @@
+[
+  {
+    "id": 661,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Một mật khẩu độ dài đúng $6$ ký tự được tạo thành từ $26$ chữ cái tiếng Anh viết thường và $10$ chữ số ($0$–$9$). Hỏi có bao nhiêu mật khẩu khác nhau có chứa <strong>ít nhất một chữ số</strong>?",
+    "options": [
+      "$26^5 \\cdot 10$",
+      "$6 \\cdot 10 \\cdot 36^5$",
+      "$36^6 - 26^6$",
+      "$36^6 - 10^6$"
+    ],
+    "correct": 2,
+    "explanation": "Tổng số xâu độ dài $6$ lập từ $26 + 10 = 36$ ký tự là $36^6$. Số xâu không chứa chữ số nào (chỉ gồm toàn chữ cái) là $26^6$. Áp dụng quy tắc phần bù, số mật khẩu chứa ít nhất $1$ chữ số là $36^6 - 26^6$."
+  },
+  {
+    "id": 662,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Có bao nhiêu số tự nhiên có $5$ chữ số đôi một khác nhau và chia hết cho $5$?",
+    "options": [
+      "$5712$",
+      "$6048$",
+      "$3024$",
+      "$5376$"
+    ],
+    "correct": 0,
+    "explanation": "Chia $2$ trường hợp cho chữ số tận cùng $e \\in \\{0, 5\\}$:<br/>• $e = 0$: $a_1$ có $9$ cách ($1..9$), $a_2, a_3, a_4$ có $8 \\times 7 \\times 6 = 336$ cách $\\Rightarrow 9 \\times 336 = 3024$ số.<br/>• $e = 5$: $a_1 \\ne 0, 5$ có $8$ cách, $a_2$ có $8$ cách (kể cả $0$), $a_3, a_4$ có $7 \\times 6$ cách $\\Rightarrow 8 \\times 8 \\times 7 \\times 6 = 2688$ số.<br/>Tổng cộng: $3024 + 2688 = 5712$ số."
+  },
+  {
+    "id": 663,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Có bao nhiêu cách xếp $5$ bạn nam và $4$ bạn nữ thành một hàng dọc sao cho <strong>không có $2$ bạn nữ nào đứng cạnh nhau</strong>?",
+    "options": [
+      "$5! \\cdot 4!$",
+      "$5! \\cdot A_6^4$",
+      "$9! - 5! \\cdot 4!$",
+      "$6! \\cdot 4!$"
+    ],
+    "correct": 1,
+    "explanation": "Xếp $5$ bạn nam trước có $5!$ cách, tạo ra $6$ khoảng trống (hai đầu và $4$ khe giữa). Xếp $4$ bạn nữ vào $4$ trong $6$ khoảng trống đó có $A_6^4 = C_6^4 \\cdot 4!$ cách. Tổng số cách là $5! \\cdot A_6^4 = 43\\,200$."
+  },
+  {
+    "id": 664,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Có bao nhiêu cách xếp $7$ đại biểu ngồi quanh một bàn tròn sao cho hai đại biểu An và Bình <strong>không</strong> ngồi cạnh nhau (hai cách xếp xoay vòng giống nhau coi là một)?",
+    "options": [
+      "$480$",
+      "$240$",
+      "$720$",
+      "$600$"
+    ],
+    "correct": 0,
+    "explanation": "Tổng số cách xếp $7$ người quanh bàn tròn là $(7-1)! = 6! = 720$. Số cách An và Bình ngồi cạnh nhau (coi như $1$ khối gồm $2$ hoán vị nội bộ) là $2! \\cdot (6-1)! = 2 \\times 120 = 240$. Số cách thỏa mãn là $720 - 240 = 480$."
+  },
+  {
+    "id": 665,
+    "topic": "Tổ Hợp & Nhị Thức",
+    "question": "Có thể lập được bao nhiêu xâu ký tự phân biệt (có hoặc không có nghĩa) bằng cách hoán vị tất cả các chữ cái của từ <code>TOANROIRAC</code>?",
+    "options": [
+      "$\\frac{10!}{3!\\, 2!}$",
+      "$\\frac{10!}{2!\\, 2!\\, 2!}$",
+      "$\\frac{10!}{2!\\, 2!}$",
+      "$10!$"
+    ],
+    "correct": 1,
+    "explanation": "Từ <code>TOANROIRAC</code> có $10$ chữ cái, trong đó chữ O xuất hiện $2$ lần, A xuất hiện $2$ lần, R xuất hiện $2$ lần, các chữ T, N, I, C mỗi chữ $1$ lần. Theo công thức hoán vị lặp: $\\frac{10!}{2!\\,2!\\,2!} = 453\\,600$."
+  },
+  {
+    "id": 666,
+    "topic": "Tổ Hợp & Nhị Thức",
+    "question": "Trên lưới tọa độ nguyên, một robot xuất phát từ $(0, 0)$ muốn đi đến $(6, 4)$ sao cho mỗi bước chỉ đi sang phải $1$ đơn vị hoặc lên trên $1$ đơn vị. Biết ô $(3, 2)$ có chướng ngại vật nên robot <strong>không được đi qua</strong>. Số đường đi hợp lệ là:",
+    "options": [
+      "$100$",
+      "$120$",
+      "$210$",
+      "$110$"
+    ],
+    "correct": 3,
+    "explanation": "Tổng số đường đi ngắn nhất từ $(0,0)$ đến $(6,4)$ là $C_{6+4}^4 = C_{10}^4 = 210$. Số đường đi qua $(3,2)$ là tích số đường từ $(0,0)\\to(3,2)$ và $(3,2)\\to(6,4)$, bằng $C_5^2 \\cdot C_5^2 = 10 \\times 10 = 100$. Vậy số đường đi tránh $(3,2)$ là $210 - 100 = 110$."
+  },
+  {
+    "id": 667,
+    "topic": "Tổ Hợp Lặp & Chia Kẹo Euler",
+    "question": "Số nghiệm nguyên không âm $(x_1, x_2, x_3, x_4)$ của bất phương trình $x_1 + x_2 + x_3 + x_4 \\le 10$ là:",
+    "options": [
+      "$1001$",
+      "$715$",
+      "$286$",
+      "$1365$"
+    ],
+    "correct": 0,
+    "explanation": "Đưa thêm biến bù không âm $x_5 = 10 - (x_1 + x_2 + x_3 + x_4) \\ge 0$, bài toán trở thành đếm nghiệm nguyên không âm của $x_1 + x_2 + x_3 + x_4 + x_5 = 10$. Số nghiệm là $C_{10+5-1}^{5-1} = C_{14}^4 = 1001$."
+  },
+  {
+    "id": 668,
+    "topic": "Tổ Hợp Lặp & Chia Kẹo Euler",
+    "question": "Phương trình $x_1 + x_2 + x_3 = 12$ có bao nhiêu nghiệm nguyên không âm sao cho $x_1$ là số chẵn và $x_2$ là số lẻ?",
+    "options": [
+      "$21$",
+      "$45$",
+      "$91$",
+      "$28$"
+    ],
+    "correct": 0,
+    "explanation": "Đặt $x_1 = 2a$ ($a \\ge 0$) và $x_2 = 2b + 1$ ($b \\ge 0$). Vì $12$ chẵn nên $x_3$ bắt buộc phải lẻ: $x_3 = 2c + 1$ ($c \\ge 0$). Thay vào phương trình: $2a + (2b+1) + (2c+1) = 12 \\iff a + b + c = 5$. Số nghiệm nguyên không âm là $C_{5+3-1}^{3-1} = C_7^2 = 21$."
+  },
+  {
+    "id": 669,
+    "topic": "Tổ Hợp Lặp & Nguyên Lý Bù Trừ",
+    "question": "Tìm số nghiệm nguyên không âm của phương trình $x_1 + x_2 + x_3 + x_4 + x_5 = 35$ thỏa mãn $2 \\le x_1 \\le 5,\\ 3 \\le x_2 \\le 6$ và $x_3 \\ge 4$:",
+    "options": [
+      "$5120$",
+      "$4820$",
+      "$7315$",
+      "$12455$"
+    ],
+    "correct": 1,
+    "explanation": "Đổi biến $y_1 = x_1 - 2$, $y_2 = x_2 - 3$, $y_3 = x_3 - 4$, ta được $y_1 + y_2 + y_3 + x_4 + x_5 = 26$ với $0 \\le y_1 \\le 3,\\ 0 \\le y_2 \\le 3$ và các biến còn lại $\\ge 0$. Áp dụng nguyên lý bù trừ:<br/>$$C_{30}^4 - C_{26}^4 - C_{26}^4 + C_{22}^4 = 27\\,405 - 2 \\times 14\\,950 + 7\\,315 = 4820.$$"
+  },
+  {
+    "id": 670,
+    "topic": "Tổ Hợp Lặp & Chia Kẹo Euler",
+    "question": "Phương trình $2x_1 + x_2 + x_3 = 10$ có bao nhiêu nghiệm nguyên không âm $(x_1, x_2, x_3)$?",
+    "options": [
+      "$36$",
+      "$42$",
+      "$66$",
+      "$30$"
+    ],
+    "correct": 0,
+    "explanation": "Với mỗi giá trị $x_1 \\in \\{0, 1, 2, 3, 4, 5\\}$, ta có $x_2 + x_3 = 10 - 2x_1$, phương trình này có $(10 - 2x_1) + 1 = 11 - 2x_1$ nghiệm nguyên không âm. Tổng số nghiệm là $11 + 9 + 7 + 5 + 3 + 1 = 36$."
+  },
+  {
+    "id": 671,
+    "topic": "Tổ Hợp Lặp & Chia Kẹo Euler",
+    "question": "Một cửa hàng bán $4$ loại bánh khác nhau (bánh mì, bánh ngọt, bánh quy, bánh bao). Có bao nhiêu cách mua một hộp gồm $10$ chiếc bánh sao cho mỗi loại có <strong>ít nhất $1$ chiếc</strong>?",
+    "options": [
+      "$286$",
+      "$84$",
+      "$120$",
+      "$210$"
+    ],
+    "correct": 1,
+    "explanation": "Gọi $x_1, x_2, x_3, x_4 \\ge 1$ là số chiếc bánh mỗi loại: $x_1 + x_2 + x_3 + x_4 = 10$. Số nghiệm nguyên dương là $C_{10-1}^{4-1} = C_9^3 = 84$."
+  },
+  {
+    "id": 672,
+    "topic": "Khai Triển Nhị Thức Newton",
+    "question": "Tìm hệ số của số hạng chứa $x^4$ trong khai triển của $\\left(2x - \\dfrac{1}{x^2}\\right)^{10}$ (với $x \\ne 0$):",
+    "options": [
+      "$11520$",
+      "$46080$",
+      "$-11520$",
+      "$5760$"
+    ],
+    "correct": 0,
+    "explanation": "Số hạng tổng quát là $C_{10}^k (2x)^{10-k} \\left(-x^{-2}\\right)^k = C_{10}^k 2^{10-k} (-1)^k x^{10-3k}$. Để có $x^4$ thì $10 - 3k = 4 \\Rightarrow k = 2$. Hệ số cần tìm là $C_{10}^2 \\cdot 2^8 \\cdot (-1)^2 = 45 \\times 256 = 11\\,520$."
+  },
+  {
+    "id": 673,
+    "topic": "Khai Triển Nhị Thức Newton",
+    "question": "Hệ số của số hạng chứa $x^2 y^3 z^4$ trong khai triển đa thức $(x + 2y - z)^9$ là:",
+    "options": [
+      "$20160$",
+      "$10080$",
+      "$1260$",
+      "$-10080$"
+    ],
+    "correct": 1,
+    "explanation": "Theo khai triển đa thức, hệ số của $x^2 y^3 z^4$ là $\\dfrac{9!}{2!\\,3!\\,4!} \\cdot 1^2 \\cdot 2^3 \\cdot (-1)^4 = 1260 \\times 8 \\times 1 = 10\\,080$."
+  },
+  {
+    "id": 674,
+    "topic": "Tổ Hợp & Nhị Thức",
+    "question": "Với mọi số nguyên dương $n \\ge 1$, giá trị của tổng $\\sum_{k=0}^{n} k \\binom{n}{k}$ bằng:",
+    "options": [
+      "$(n+1) \\cdot 2^{n-1}$",
+      "$n \\cdot 2^{n-1}$",
+      "$n \\cdot 2^n$",
+      "$2^n$"
+    ],
+    "correct": 1,
+    "explanation": "Lấy đạo hàm hai vế của $(1+x)^n = \\sum_{k=0}^n \\binom{n}{k} x^k$ ta được $n(1+x)^{n-1} = \\sum_{k=1}^n k\\binom{n}{k} x^{k-1}$. Thay $x = 1$ thu được $\\sum_{k=0}^n k\\binom{n}{k} = n\\cdot 2^{n-1}$."
+  },
+  {
+    "id": 675,
+    "topic": "Tổ Hợp & Nhị Thức",
+    "question": "Theo đồng nhất thức Vandermonde, tổng bình phương các hệ số nhị thức $\\sum_{k=0}^{n} \\binom{n}{k}^2$ bằng biểu thức nào sau đây?",
+    "options": [
+      "$\\binom{2n}{n-1}$",
+      "$\\binom{2n}{n}$",
+      "$n \\cdot \\binom{2n}{n}$",
+      "$2^{2n}$"
+    ],
+    "correct": 1,
+    "explanation": "Áp dụng đồng nhất thức Vandermonde $\\sum_{k=0}^r \\binom{m}{k}\\binom{n}{r-k} = \\binom{m+n}{r}$ với $m = n$ và $r = n$, sử dụng $\\binom{n}{n-k} = \\binom{n}{k}$, ta được $\\sum_{k=0}^n \\binom{n}{k}^2 = \\binom{2n}{n}$."
+  },
+  {
+    "id": 676,
+    "topic": "Khai Triển Nhị Thức Newton",
+    "question": "Rút gọn tổng $S = \\sum_{k=0}^{2025} (-1)^k 2^k \\binom{2025}{k}$, ta thu được kết quả là:",
+    "options": [
+      "$3^{2025}$",
+      "$1$",
+      "$-1$",
+      "$0$"
+    ],
+    "correct": 2,
+    "explanation": "Áp dụng nhị thức Newton $(1 + x)^n = \\sum_{k=0}^n \\binom{n}{k} x^k$ với $n = 2025$ và $x = -2$: $S = (1 - 2)^{2025} = (-1)^{2025} = -1$."
+  },
+  {
+    "id": 677,
+    "topic": "Nguyên Lý Bù Trừ",
+    "question": "Khảo sát $100$ sinh viên CNTT: có $50$ bạn biết C++, $45$ bạn biết Python, $40$ bạn biết Java; có $20$ bạn biết cả C++ và Python, $15$ bạn biết cả C++ và Java, $10$ bạn biết cả Python và Java; và $5$ bạn biết cả $3$ ngôn ngữ. Số sinh viên <strong>không biết ngôn ngữ nào</strong> và số sinh viên <strong>chỉ biết đúng $1$ ngôn ngữ</strong> lần lượt là:",
+    "options": [
+      "$5$ và $60$",
+      "$15$ và $60$",
+      "$10$ và $55$",
+      "$5$ và $50$"
+    ],
+    "correct": 0,
+    "explanation": "Số sinh viên biết ít nhất $1$ ngôn ngữ là $|C \\cup P \\cup J| = 50 + 45 + 40 - (20 + 15 + 10) + 5 = 95$. Suy ra số không biết ngôn ngữ nào là $100 - 95 = 5$. Số chỉ biết đúng $1$ ngôn ngữ: $50 + 45 + 40 - 2(20 + 15 + 10) + 3(5) = 60$."
+  },
+  {
+    "id": 678,
+    "topic": "Nguyên Lý Bù Trừ",
+    "question": "Trong tập hợp $X = \\{100, 101, \\dots, 5000\\}$ có bao nhiêu số nguyên <strong>không</strong> chia hết cho bất kỳ số nào trong các số $4, 6, 9$?",
+    "options": [
+      "$2992$",
+      "$2994$",
+      "$2996$",
+      "$2998$"
+    ],
+    "correct": 1,
+    "explanation": "Đặt $f(N)$ là số nguyên dương $\\le N$ không chia hết cho $4, 6, 9$. Lưu ý $\\text{lcm}(4,6)=12,\\ \\text{lcm}(4,9)=36,\\ \\text{lcm}(6,9)=18,\\ \\text{lcm}(4,6,9)=36$.<br/>$f(5000) = 5000 - 1250 - 833 - 555 + 416 + 138 + 277 - 138 = 3055$.<br/>$f(99) = 99 - 24 - 16 - 11 + 8 + 2 + 5 - 2 = 61$.<br/>Vậy trong $[100, 5000]$ có $f(5000) - f(99) = 3055 - 61 = 2994$ số."
+  },
+  {
+    "id": 679,
+    "topic": "Nguyên Lý Bù Trừ",
+    "question": "Trong tập hợp $\\{1, 2, \\dots, 1200\\}$, có bao nhiêu số nguyên dương <strong>nguyên tố cùng nhau</strong> với $120$?",
+    "options": [
+      "$320$",
+      "$240$",
+      "$400$",
+      "$300$"
+    ],
+    "correct": 0,
+    "explanation": "Phân tích $120 = 2^3 \\cdot 3 \\cdot 5$. Giá trị hàm Euler $\\varphi(120) = 120\\left(1 - \\frac{1}{2}\\right)\\left(1 - \\frac{1}{3}\\right)\\left(1 - \\frac{1}{5}\\right) = 32$. Vì $1200 = 10 \\times 120$ nên trong $[1, 1200]$ có đúng $10 \\times \\varphi(120) = 320$ số nguyên tố cùng nhau với $120$."
+  },
+  {
+    "id": 680,
+    "topic": "Nguyên Lý Bù Trừ",
+    "question": "Có bao nhiêu cách phân công $5$ lập trình viên khác nhau vào $3$ dự án khác nhau sao cho <strong>dự án nào cũng có ít nhất $1$ lập trình viên</strong>?",
+    "options": [
+      "$125$",
+      "$243$",
+      "$150$",
+      "$210$"
+    ],
+    "correct": 2,
+    "explanation": "Đây là số toàn ánh từ tập $5$ phần tử lên tập $3$ phần tử. Áp dụng nguyên lý bù trừ: $3^5 - C_3^1 2^5 + C_3^2 1^5 = 243 - 3\\times 32 + 3\\times 1 = 150$ cách."
+  },
+  {
+    "id": 681,
+    "topic": "Tổ Hợp & Nhị Thức",
+    "question": "Có bao nhiêu cách chia $5$ tác vụ khác nhau vào $3$ máy chủ <strong>giống hệt nhau</strong> sao cho không có máy chủ nào bị trống (Số Stirling loại 2 $S(5, 3)$)?",
+    "options": [
+      "$150$",
+      "$50$",
+      "$25$",
+      "$15$"
+    ],
+    "correct": 2,
+    "explanation": "Vì $3$ máy chủ giống nhau nên số cách chia chính là số Stirling loại 2: $S(5, 3) = \\frac{1}{3!}(3^5 - 3\\cdot 2^5 + 3\\cdot 1^5) = \\frac{150}{6} = 25$ (hoặc phân hoạch kích thước $3+1+1$ có $C_5^3=10$ cách, và $2+2+1$ có $\\frac{C_5^2 C_3^2}{2!}=15$ cách)."
+  },
+  {
+    "id": 682,
+    "topic": "Hoán Vị Không Điểm Bất Động (Mất Thứ Tự)",
+    "question": "Có bao nhiêu hoán vị của tập $\\{1, 2, 3, 4, 5, 6\\}$ mà có <strong>đúng $2$ phần tử</strong> nằm đúng vị trí ban đầu của nó?",
+    "options": [
+      "$90$",
+      "$265$",
+      "$135$",
+      "$720$"
+    ],
+    "correct": 2,
+    "explanation": "Chọn $2$ vị trí đứng yên có $C_6^2 = 15$ cách. Bốn phần tử còn lại phải mất thứ tự hoàn toàn (không phần tử nào đúng chỗ), có $D_4 = 4!(1 - 1 + \\frac{1}{2!} - \\frac{1}{3!} + \\frac{1}{4!}) = 9$ cách. Tổng số hoán vị là $15 \\times 9 = 135$."
+  },
+  {
+    "id": 683,
+    "topic": "Hoán Vị Không Điểm Bất Động (Mất Thứ Tự)",
+    "question": "Có $6$ nhân viên nộp $6$ chiếc thẻ khác nhau rồi phát lại ngẫu nhiên mỗi người $1$ thẻ. Số cách phát sao cho <strong>không có ai nhận lại đúng thẻ của mình</strong> ($D_6$) bằng:",
+    "options": [
+      "$360$",
+      "$120$",
+      "$265$",
+      "$44$"
+    ],
+    "correct": 2,
+    "explanation": "Sử dụng công thức truy hồi $D_n = (n-1)(D_{n-1} + D_{n-2})$ hoặc bù trừ: $D_4 = 9$, $D_5 = 44$, suy ra $D_6 = 5(44 + 9) = 265$ (hoặc $D_6 = 6 D_5 + (-1)^6 = 6\\times 44 + 1 = 265$)."
+  },
+  {
+    "id": 684,
+    "topic": "Hoán Vị Không Điểm Bất Động (Mất Thứ Tự)",
+    "question": "Có bao nhiêu hoán vị $(a_1, a_2, a_3, a_4, a_5)$ của $\\{1, 2, 3, 4, 5\\}$ sao cho <strong>không</strong> có $2$ phần tử liên tiếp nào có dạng $a_{k+1} = a_k + 1$ (tức các cặp $(1,2), (2,3), (3,4), (4,5)$ đều không đứng kề nhau theo thứ tự tăng)?",
+    "options": [
+      "$53$",
+      "$96$",
+      "$67$",
+      "$44$"
+    ],
+    "correct": 0,
+    "explanation": "Áp dụng nguyên lý bù trừ cho $4$ tính chất $P_i$: \"cặp $(i, i+1)$ đứng kề nhau\" ($i=1..4$). Nếu có $k$ tính chất xảy ra đồng thời, ta gộp thành $(5-k)$ khối nên có $(5-k)!$ cách: $\\sum_{k=0}^4 (-1)^k C_4^k (5-k)! = 120 - 4(24) + 6(6) - 4(2) + 1(1) = 53$ (cũng chính bằng $D_5 + D_4 = 44 + 9$)."
+  },
+  {
+    "id": 685,
+    "topic": "Bài Toán Xếp Khách Lucas",
+    "question": "Trong bài toán xếp khách của Lucas, sau khi đã xếp cố định $n$ người chồng ngồi xen kẽ tại các vị trí chẵn quanh bàn tròn, gọi $M_n$ là số cách xếp $n$ người vợ vào $n$ ghế lẻ còn lại sao cho không người vợ nào ngồi cạnh chồng mình. Với $n = 4$ và $n = 5$, giá trị của $M_4$ và $M_5$ lần lượt là:",
+    "options": [
+      "$M_4 = 9$ và $M_5 = 44$",
+      "$M_4 = 4$ và $M_5 = 16$",
+      "$M_4 = 3$ và $M_5 = 15$",
+      "$M_4 = 2$ và $M_5 = 13$"
+    ],
+    "correct": 3,
+    "explanation": "Theo công thức nghiệm bài toán Lucas: $M_n = \\sum_{k=0}^n (-1)^k \\frac{2n}{2n-k} C_{2n-k}^k (n-k)!$. Với $n=4$: $M_4 = 4! - 8\\cdot 3! + 20\\cdot 2! - 16\\cdot 1! + 2\\cdot 0! = 24 - 48 + 40 - 16 + 2 = 2$; tương tự với $n=5$ cho $M_5 = 13$."
+  },
+  {
+    "id": 686,
+    "topic": "Đếm Số Thuận Nghịch (PTIT)",
+    "question": "Có bao nhiêu số tự nhiên có $8$ chữ số tạo thành một số <strong>thuận nghịch (đối xứng)</strong> và có tổng tất cả các chữ số bằng $N = 20$?",
+    "options": [
+      "$219$",
+      "$220$",
+      "$218$",
+      "$224$"
+    ],
+    "correct": 0,
+    "explanation": "Số thuận nghịch $8$ chữ số có dạng $\\overline{x_1 x_2 x_3 x_4 x_4 x_3 x_2 x_1}$ với $1 \\le x_1 \\le 9$ và $0 \\le x_2, x_3, x_4 \\le 9$. Ta có $2(x_1 + x_2 + x_3 + x_4) = 20 \\iff x_1 + x_2 + x_3 + x_4 = 10$. Đặt $y_1 = x_1 - 1 \\ge 0$, được $y_1 + x_2 + x_3 + x_4 = 9$. Số nghiệm không âm là $C_{12}^3 = 220$, trừ đi đúng $1$ nghiệm vi phạm $y_1 = 9$ ($x_1=10$) còn $219$ số."
+  },
+  {
+    "id": 687,
+    "topic": "Nguyên Lý Đếm Cơ Bản",
+    "question": "Từ tập các chữ số $\\{0, 1, 2, 3, 4, 5\\}$, có thể lập được bao nhiêu số tự nhiên có $4$ chữ số (các chữ số có thể lặp lại) sao cho số đó <strong>chia hết cho $3$</strong>?",
+    "options": [
+      "$180$",
+      "$432$",
+      "$540$",
+      "$360$"
+    ],
+    "correct": 3,
+    "explanation": "Gọi số cần lập là $\\overline{abcd}$. Chọn $a \\in \\{1..5\\}$ có $5$ cách; $b, c \\in \\{0..5\\}$ mỗi chữ số có $6$ cách. Vì tập $\\{0,1,2,3,4,5\\}$ chia đều thành $3$ lớp đồng dư $\\bmod 3$ (mỗi lớp $2$ chữ số), với mọi bộ $(a,b,c)$ luôn có đúng $2$ cách chọn $d$ để $a+b+c+d \\equiv 0 \\pmod 3$. Vậy có $5 \\times 6 \\times 6 \\times 2 = 360$ số."
+  },
+  {
+    "id": 688,
+    "topic": "Tổ Hợp & Nhị Thức",
+    "question": "Từ tập $S = \\{1, 2, 3, \\dots, 15\\}$, có bao nhiêu cách chọn ra một tập con gồm $3$ số sao cho <strong>tổng của $3$ số đó chia hết cho $3$</strong>?",
+    "options": [
+      "$150$",
+      "$155$",
+      "$135$",
+      "$165$"
+    ],
+    "correct": 1,
+    "explanation": "Chia $15$ số thành $3$ nhóm theo số dư khi chia cho $3$, mỗi nhóm có đúng $5$ số. Để tổng $3$ số chia hết cho $3$: hoặc cả $3$ số thuộc cùng $1$ nhóm ($3\\cdot C_5^3 = 30$ cách), hoặc mỗi số thuộc $1$ nhóm khác nhau ($5 \\times 5 \\times 5 = 125$ cách). Tổng cộng có $30 + 125 = 155$ cách."
+  },
+  {
+    "id": 689,
+    "topic": "Quy Về Bài Toán Con",
+    "question": "Có bao nhiêu tập con của tập $X = \\{1, 2, \\dots, 10\\}$ (kể cả tập rỗng) sao cho tập con đó <strong>không</strong> chứa bất kỳ hai số nguyên liên tiếp nào?",
+    "options": [
+      "$144$",
+      "$233$",
+      "$121$",
+      "$89$"
+    ],
+    "correct": 0,
+    "explanation": "Mỗi tập con tương ứng $1-1$ với một xâu nhị phân độ dài $10$ không có hai bit $1$ đứng kề nhau. Đặt $a_n$ là số tập con thỏa mãn của $\\{1..n\\}$: $a_0 = 1, a_1 = 2, a_2 = 3, a_n = a_{n-1} + a_{n-2}$ (dãy Fibonacci dịch chỉ số). Tính tiếp: $a_3=5, a_4=8, a_5=13, a_6=21, a_7=34, a_8=55, a_9=89, a_{10}=144$."
+  },
+  {
+    "id": 690,
+    "topic": "Hình Vuông La-tinh",
+    "question": "Biết số hình vuông La-tinh <strong>chuẩn hóa</strong> cấp $4$ (hàng $1$ và cột $1$ là $(1,2,3,4)$) bằng $l_4 = 4$. Tổng số hình vuông La-tinh cấp $4$ phân biệt là:",
+    "options": [
+      "$96$",
+      "$144$",
+      "$2304$",
+      "$576$"
+    ],
+    "correct": 3,
+    "explanation": "Áp dụng công thức liên hệ $L(n, n) = n!\\,(n-1)!\\,l_n$ với $n = 4$: $L(4, 4) = 4! \\cdot 3! \\cdot 4 = 24 \\times 6 \\times 4 = 576$."
+  }
+]

@@ -1,0 +1,752 @@
+[
+  {
+    "id": 2,
+    "lab_name": "Chương 1: Dao động điện từ (LC, RLC) & Sóng (Doppler)",
+    "type": "calc",
+    "question": "Một mạch dao động điện từ điều hòa gồm tụ điện có điện dung $C = 0{,}25\\ \\mu\\text{F}$ và cuộn dây thuần cảm có độ tự cảm $L = 1{,}015\\ \\text{H}$, điện tích trên hai bản tụ biến thiên theo phương trình $q = 2{,}5\\times 10^{-6}\\cos(\\omega t)\\ (\\text{C})$. Phương trình cường độ dòng điện trong mạch là:",
+    "image": "",
+    "options": [
+      "$i = 5\\times 10^{-3}\\cos(2000t)\\ (\\text{A})$",
+      "$i = -5\\times 10^{-3}\\sin(2000t)\\ (\\text{A})$",
+      "$i = -2{,}5\\times 10^{-3}\\sin(1000t)\\ (\\text{A})$",
+      "$i = 2{,}5\\times 10^{-6}\\sin(2000t)\\ (\\text{A})$"
+    ],
+    "correct": 1,
+    "explanation": "Tần số góc riêng: $\\omega = \\dfrac{1}{\\sqrt{LC}} = \\dfrac{1}{\\sqrt{1{,}015 \\times 0{,}25\\times 10^{-6}}} \\approx 2000\\ \\text{rad/s}$. Cường độ dòng điện: $i = \\dfrac{dq}{dt} = -\\omega Q_0\\sin(\\omega t) = -5\\times 10^{-3}\\sin(2000t)\\ (\\text{A})$."
+  },
+  {
+    "id": 4,
+    "lab_name": "Chương 1: Dao động điện từ (LC, RLC) & Sóng (Doppler)",
+    "type": "calc",
+    "question": "Một mạch dao động điện từ $R, L, C$ có $L = \\dfrac{0{,}1}{\\pi}\\ (\\text{H})$ và $R = 2{,}5\\ \\Omega$. Hỏi sau thời gian bao lâu thì biên độ dao động giảm đi $e$ lần?",
+    "image": "",
+    "options": [
+      "$t = 0{,}08\\ \\text{s}$",
+      "$t = \\dfrac{0{,}04}{\\pi}\\ \\text{s}$",
+      "$t = \\dfrac{0{,}1}{\\pi}\\ \\text{s}$",
+      "$t = \\dfrac{0{,}08}{\\pi}\\ \\text{s} \\approx 2{,}55\\times 10^{-2}\\ \\text{s}$"
+    ],
+    "correct": 3,
+    "explanation": "Biên độ giảm theo quy luật $A(t) = A_0 e^{-\\beta t}$ với $\\beta = \\dfrac{R}{2L}$. Để biên độ giảm đi $e$ lần thì $\\beta t = 1 \\Rightarrow t = \\dfrac{1}{\\beta} = \\dfrac{2L}{R} = \\dfrac{2 \\times 0{,}1/\\pi}{2{,}5} = \\dfrac{0{,}08}{\\pi}\\ \\text{s}$."
+  },
+  {
+    "id": 6,
+    "lab_name": "Chương 1: Dao động điện từ (LC, RLC) & Sóng (Doppler)",
+    "type": "calc",
+    "question": "Một mạch dao động điện từ gồm tụ $C = 0{,}2\\times 10^{-6}\\ \\text{F}$, cuộn dây $L = 5{,}07\\times 10^{-3}\\ \\text{H}$ và điện trở $R$. Biết hiệu điện thế cực đại trên hai bản tụ giảm đi $3$ lần sau thời gian $t = 10^{-3}\\ \\text{s}$. Điện trở $R$ của mạch là:",
+    "image": "",
+    "options": [
+      "$R \\approx 5{,}56\\ \\Omega$",
+      "$R \\approx 11{,}1\\ \\Omega$",
+      "$R \\approx 22{,}2\\ \\Omega$",
+      "$R \\approx 3{,}04\\ \\Omega$"
+    ],
+    "correct": 1,
+    "explanation": "Ta có $\\dfrac{U(0)}{U(t)} = e^{\\beta t} = 3 \\Rightarrow \\beta = \\dfrac{\\ln 3}{t} = \\dfrac{\\ln 3}{10^{-3}} \\approx 1098{,}6\\ \\text{s}^{-1}$. Mà $\\beta = \\dfrac{R}{2L} \\Rightarrow R = 2L\\beta = 2 \\times 5{,}07\\times 10^{-3} \\times 1098{,}6 \\approx 11{,}1\\ \\Omega$."
+  },
+  {
+    "id": 8,
+    "lab_name": "Chương 1: Dao động điện từ (LC, RLC) & Sóng (Doppler)",
+    "type": "calc",
+    "question": "Một con dơi bay hướng vuông góc tới một bức tường với vận tốc $u = 6\\ \\text{m/s}$ và phát ra tia siêu âm có tần số $f = 4{,}5\\times 10^4\\ \\text{Hz}$. Biết vận tốc truyền âm trong không khí là $v = 340\\ \\text{m/s}$. Tần số âm phản xạ mà dơi nhận được là:",
+    "image": "",
+    "options": [
+      "$f'' \\approx 4{,}50\\times 10^4\\ \\text{Hz}$",
+      "$f'' \\approx 4{,}58\\times 10^4\\ \\text{Hz}$",
+      "$f'' \\approx 4{,}34\\times 10^4\\ \\text{Hz}$",
+      "$f'' \\approx 4{,}66\\times 10^4\\ \\text{Hz}$"
+    ],
+    "correct": 3,
+    "explanation": "Theo hiệu ứng Doppler: tường đứng yên nhận tần số $f' = \\dfrac{v}{v - u}f$; tường phản xạ lại đóng vai trò nguồn đứng yên và dơi bay lại gần với vận tốc $u$ nên dơi thu được $f'' = \\dfrac{v + u}{v}f' = \\dfrac{v + u}{v - u}f = \\dfrac{340 + 6}{340 - 6}\\times 4{,}5\\times 10^4 \\approx 4{,}66\\times 10^4\\ \\text{Hz}$."
+  },
+  {
+    "id": 10,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Vân Newton)",
+    "type": "theory",
+    "question": "Trong thí nghiệm vân tròn Newton quan sát qua chùm tia phản xạ, bán kính vân tối thứ $k$ được xác định theo công thức nào sau đây?",
+    "image": "",
+    "options": [
+      "$r_k = \\sqrt{(2k+1) \\frac{\\lambda R}{2}}$",
+      "$r_k = \\sqrt{k \\lambda R}$",
+      "$r_k = k \\lambda R$",
+      "$r_k = \\sqrt{\\frac{k \\lambda}{R}}$"
+    ],
+    "correct": 1,
+    "explanation": "Với hệ vân tròn Newton quan sát qua chùm tia phản xạ, hiệu quang lộ $\\Delta L = 2d_k + \\frac{\\lambda}{2}$. Điều kiện cực tiểu giao thoa cho độ dày $d_k = k\\frac{\\lambda}{2}$, suy ra bán kính vân tối thứ $k$: $r_k = \\sqrt{k \\lambda R}$."
+  },
+  {
+    "id": 12,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Vân Newton)",
+    "type": "calc",
+    "question": "Khoảng cách giữa hai khe Young là $\\ell = 1\\ \\text{mm}$, màn quan sát cách mặt phẳng hai khe $D = 1\\ \\text{m}$. Nếu đặt trước một trong hai khe một bản mỏng song song trong suốt có bề dày $e = 2\\ \\mu\\text{m}$, chiết suất $n = 1{,}5$ thì độ dịch chuyển $\\Delta y$ của hệ vân giao thoa trên màn là:",
+    "image": "",
+    "options": [
+      "$\\Delta y = 3{,}0\\ \\text{mm}$",
+      "$\\Delta y = 2{,}0\\ \\text{mm}$",
+      "$\\Delta y = 1{,}5\\ \\text{mm}$",
+      "$\\Delta y = 1{,}0\\ \\text{mm}$"
+    ],
+    "correct": 3,
+    "explanation": "Độ dịch chuyển của hệ vân khi đặt bản mỏng: $\\Delta y = \\dfrac{(n - 1)e D}{\\ell} = \\dfrac{(1{,}5 - 1)\\times 2\\times 10^{-6}\\times 1}{10^{-3}} = 10^{-3}\\ \\text{m} = 1{,}0\\ \\text{mm}$."
+  },
+  {
+    "id": 14,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Vân Newton)",
+    "type": "calc",
+    "question": "Một chùm sáng trắng ($0{,}4\\ \\mu\\text{m} \\le \\lambda \\le 0{,}7\\ \\mu\\text{m}$) được rọi vuông góc với bản thủy tinh mỏng hai mặt song song có bề dày $e = 0{,}4\\ \\mu\\text{m}$, chiết suất $n = 1{,}5$. Trong phạm vi quang phổ thấy được, chùm tia phản chiếu có bước sóng nào sẽ được tăng cường?",
+    "image": "",
+    "options": [
+      "$\\lambda = 0{,}60\\ \\mu\\text{m}$",
+      "$\\lambda = 0{,}48\\ \\mu\\text{m}$",
+      "$\\lambda = 0{,}40\\ \\mu\\text{m}$",
+      "$\\lambda = 0{,}55\\ \\mu\\text{m}$"
+    ],
+    "correct": 1,
+    "explanation": "Với tia tới vuông góc ($i = 0$), hiệu quang lộ phản xạ là $\\Delta L = 2ne - \\dfrac{\\lambda}{2} = k\\lambda \\Rightarrow \\lambda = \\dfrac{4ne}{2k + 1} = \\dfrac{2{,}4}{2k + 1}\\ (\\mu\\text{m})$. Trong khoảng $[0{,}4;\\ 0{,}7]\\ \\mu\\text{m}$ chỉ có $k = 2 \\Rightarrow \\lambda = \\dfrac{2{,}4}{5} = 0{,}48\\ \\mu\\text{m}$."
+  },
+  {
+    "id": 16,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Vân Newton)",
+    "type": "calc",
+    "question": "Một chùm ánh sáng đơn sắc chiếu vuông góc với bản mỏng nêm không khí có góc nghiêng $\\alpha = 1'$ ($1\\ \\text{phút góc} \\approx 2{,}91\\times 10^{-4}\\ \\text{rad}$). Cho biết độ rộng của $10$ khoảng vân kế tiếp là $10\\ \\text{mm}$. Bước sóng ánh sáng chiếu vào là:",
+    "image": "",
+    "options": [
+      "$\\lambda \\approx 0{,}52\\ \\mu\\text{m}$",
+      "$\\lambda \\approx 0{,}65\\ \\mu\\text{m}$",
+      "$\\lambda \\approx 0{,}48\\ \\mu\\text{m}$",
+      "$\\lambda \\approx 0{,}58\\ \\mu\\text{m}$"
+    ],
+    "correct": 3,
+    "explanation": "Khoảng vân $i = \\dfrac{10\\ \\text{mm}}{10} = 1\\ \\text{mm}$. Với nêm không khí: $i = \\dfrac{\\lambda}{2\\alpha} \\Rightarrow \\lambda = 2 i \\alpha = 2 \\times 10^{-3} \\times \\dfrac{\\pi}{180\\times 60} \\approx 0{,}582\\times 10^{-6}\\ \\text{m} \\approx 0{,}58\\ \\mu\\text{m}$."
+  },
+  {
+    "id": 18,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử)",
+    "type": "theory",
+    "question": "Trong nhiễu xạ của sóng cầu qua một lỗ tròn có chứa $n$ đới cầu Fresnel đối với điểm quan sát $M$ trên trục (gọi $I_0$ là cường độ sáng tại $M$ khi không có màn chắn), phát biểu nào sau đây là ĐÚNG?",
+    "image": "",
+    "options": [
+      "Nếu $n$ chẵn thì tâm $M$ sáng nhất; nếu $n$ lẻ thì tâm $M$ tối nhất",
+      "Nếu $n$ lẻ thì tâm $M$ sáng ($I_M > I_0$, sáng nhất $I_M = 4I_0$ khi $n = 1$); nếu $n$ chẵn thì tâm $M$ tối ($I_M < I_0$, tối nhất $I_M \\approx 0$ khi $n = 2$)",
+      "Cường độ sáng tại $M$ luôn tỉ lệ thuận với số đới cầu $n$ chứa trong lỗ tròn",
+      "Khi lỗ tròn chỉ chứa $1$ đới cầu Fresnel thì cường độ sáng tại $M$ bằng $I_0$"
+    ],
+    "correct": 1,
+    "explanation": "Biên độ tổng hợp tại $M$ là $a_M = \\dfrac{a_1}{2} \\pm \\dfrac{a_n}{2}$ (dấu $+$ khi $n$ lẻ, dấu $-$ khi $n$ chẵn). Khi không có màn chắn ($n \\to \\infty$), $a_M = \\dfrac{a_1}{2} \\Rightarrow I_0 = \\dfrac{a_1^2}{4}$. Khi $n = 1$: $a_M = a_1 \\Rightarrow I_M = a_1^2 = 4I_0$; khi $n = 2$: $a_M = \\dfrac{a_1 - a_2}{2} \\approx 0 \\Rightarrow I_M \\approx 0$."
+  },
+  {
+    "id": 20,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử)",
+    "type": "calc",
+    "question": "Một nguồn sáng điểm chiếu ánh sáng đơn sắc bước sóng $\\lambda = 0{,}62\\ \\mu\\text{m}$ vào một lỗ tròn có bán kính $r = 0{,}6\\ \\text{mm}$. Khoảng cách từ nguồn sáng đến lỗ tròn là $R = 1\\ \\text{m}$. Để tâm nhiễu xạ trên màn quan sát là tối nhất (lỗ tròn chứa $2$ đới Fresnel) thì khoảng cách $b$ từ lỗ tròn đến màn quan sát bằng:",
+    "image": "",
+    "options": [
+      "$b \\approx 0{,}29\\ \\text{m}$",
+      "$b \\approx 0{,}82\\ \\text{m}$",
+      "$b \\approx 1{,}00\\ \\text{m}$",
+      "$b \\approx 0{,}41\\ \\text{m}$"
+    ],
+    "correct": 3,
+    "explanation": "Tâm tối nhất khi lỗ tròn chứa $k = 2$ đới cầu Fresnel: $r^2 = k\\dfrac{R b \\lambda}{R + b} \\Rightarrow \\dfrac{1}{R} + \\dfrac{1}{b} = \\dfrac{k\\lambda}{r^2} = \\dfrac{2 \\times 0{,}62\\times 10^{-6}}{(0{,}6\\times 10^{-3})^2} \\approx 3{,}444\\ \\text{m}^{-1}$. Với $R = 1\\ \\text{m} \\Rightarrow \\dfrac{1}{b} = 2{,}444 \\Rightarrow b \\approx 0{,}41\\ \\text{m}$."
+  },
+  {
+    "id": 22,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử)",
+    "type": "calc",
+    "question": "Chiếu chùm tia sáng đơn sắc song song $\\lambda = 0{,}6\\ \\mu\\text{m}$ vuông góc với một khe hẹp chữ nhật bề rộng $b = 0{,}1\\ \\text{mm}$. Ngay sau khe đặt thấu kính hội tụ $L$. Bề rộng của vân cực đại giữa trên màn đặt tại mặt phẳng tiêu của thấu kính bằng $1{,}2\\ \\text{cm}$. Khoảng cách $D$ từ màn quan sát đến thấu kính (tiêu cự $f$) bằng:",
+    "image": "",
+    "options": [
+      "$D = 0{,}5\\ \\text{m}$",
+      "$D = 1{,}0\\ \\text{m}$",
+      "$D = 2{,}0\\ \\text{m}$",
+      "$D = 1{,}2\\ \\text{m}$"
+    ],
+    "correct": 1,
+    "explanation": "Bề rộng cực đại giữa là khoảng cách giữa hai cực tiểu bậc nhất ở hai bên: $L = 2 D \\sin\\varphi_1 \\approx \\dfrac{2\\lambda D}{b} \\Rightarrow D = \\dfrac{L \\cdot b}{2\\lambda} = \\dfrac{1{,}2\\times 10^{-2} \\times 10^{-4}}{2 \\times 0{,}6\\times 10^{-6}} = 1{,}0\\ \\text{m}$."
+  },
+  {
+    "id": 24,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử)",
+    "type": "calc",
+    "question": "Chùm tia sáng song song chiếu vuông góc vào một cách tử phẳng truyền qua. Trong quang phổ bậc ba ($k_2 = 3$), vạch có bước sóng $\\lambda_2$ nào sẽ trùng với vạch sáng đỏ $\\lambda_1 = 660\\ \\text{nm}$ trong quang phổ bậc hai ($k_1 = 2$)?",
+    "image": "",
+    "options": [
+      "$\\lambda_2 = 550\\ \\text{nm}$",
+      "$\\lambda_2 = 990\\ \\text{nm}$",
+      "$\\lambda_2 = 330\\ \\text{nm}$",
+      "$\\lambda_2 = 440\\ \\text{nm}$"
+    ],
+    "correct": 3,
+    "explanation": "Hai vạch trùng nhau có cùng góc nhiễu xạ $\\varphi$: $d\\sin\\varphi = k_1\\lambda_1 = k_2\\lambda_2 \\Rightarrow \\lambda_2 = \\dfrac{k_1\\lambda_1}{k_2} = \\dfrac{2 \\times 660}{3} = 440\\ \\text{nm}$."
+  },
+  {
+    "id": 26,
+    "lab_name": "Chương 4 & 5: Tán sắc, Hấp thụ, Phân cực (Malus, Brewster, Lưỡng chiết)",
+    "type": "theory",
+    "question": "Khi chiếu một chùm sáng phân cực thẳng (có véc-tơ sáng hợp với quang trục của bản tinh thể góc $\\alpha = 45^\\circ$) đi qua một bản phần tư bước sóng thỏa mãn $\\Delta L = |n_o - n_e|d = (2k + 1)\\dfrac{\\lambda}{4}$ và một bản nửa bước sóng thỏa mãn $\\Delta L = |n_o - n_e|d = (2k + 1)\\dfrac{\\lambda}{2}$, trạng thái phân cực của chùm sáng sau khi ra khỏi mỗi bản lần lượt là:",
+    "image": "",
+    "options": [
+      "Sau bản $\\lambda/4$ là ánh sáng tự nhiên; sau bản $\\lambda/2$ là ánh sáng phân cực tròn",
+      "Sau bản $\\lambda/4$ (với $\\alpha = 45^\\circ$) là ánh sáng phân cực tròn; sau bản $\\lambda/2$ vẫn là ánh sáng phân cực thẳng nhưng mặt phẳng phân cực quay đi góc $2\\alpha$",
+      "Cả hai bản đều biến ánh sáng phân cực thẳng thành ánh sáng phân cực tròn",
+      "Sau bản $\\lambda/4$ là ánh sáng phân cực thẳng; sau bản $\\lambda/2$ là ánh sáng phân cực elip"
+    ],
+    "correct": 1,
+    "explanation": "Bản $\\lambda/4$ tạo độ lệch pha $\\Delta\\varphi = \\pm\\pi/2$ giữa tia thường $o$ và tia bất thường $e$, khi $\\alpha = 45^\\circ$ biên độ hai thành phần bằng nhau nên cho phân cực tròn. Bản $\\lambda/2$ tạo độ lệch pha $\\pi$, giữ nguyên phân cực thẳng nhưng quay phương dao động đi góc $2\\alpha$."
+  },
+  {
+    "id": 28,
+    "lab_name": "Chương 4 & 5: Tán sắc, Hấp thụ, Phân cực (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Quang trục của kính phân cực và kính phân tích hợp với nhau một góc $30^\\circ$. Cho biết khi truyền qua mỗi kính, năng lượng ánh sáng bị phản xạ và hấp thụ mất $5\\%$. Sau khi ánh sáng tự nhiên truyền qua cả hai kính, cường độ sáng bị giảm đi bao nhiêu lần?",
+    "image": "",
+    "options": [
+      "$\\approx 2{,}11\\ \\text{lần}$",
+      "$\\approx 2{,}67\\ \\text{lần}$",
+      "$\\approx 8{,}86\\ \\text{lần}$",
+      "$\\approx 2{,}95\\ \\text{lần}$"
+    ],
+    "correct": 3,
+    "explanation": "Qua kính phân cực: $I_1 = \\dfrac{1}{2}(1 - 0{,}05)I_0 = 0{,}475 I_0$. Qua kính phân tích: $I_2 = (1 - 0{,}05)I_1\\cos^2 30^\\circ = 0{,}95 \\times 0{,}475 \\times 0{,}75 I_0 = 0{,}3384375 I_0 \\Rightarrow \\dfrac{I_0}{I_2} \\approx 2{,}95\\ \\text{lần}$."
+  },
+  {
+    "id": 30,
+    "lab_name": "Chương 4 & 5: Tán sắc, Hấp thụ, Phân cực (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Một chùm tia sáng sau khi truyền qua một chất lỏng đựng trong bình thủy tinh thì phản xạ trên đáy bình. Tia phản xạ bị phân cực toàn phần khi góc tới trên đáy bình bằng $i_B = 42^\\circ 37'$, biết chiết suất của bình thủy tinh là $n_2 = 1{,}5$. Chiết suất $n_1$ của chất lỏng là:",
+    "image": "",
+    "options": [
+      "$n_1 \\approx 1{,}38$",
+      "$n_1 \\approx 1{,}63$",
+      "$n_1 \\approx 1{,}33$",
+      "$n_1 \\approx 1{,}75$"
+    ],
+    "correct": 1,
+    "explanation": "Theo định luật Brewster cho tia sáng truyền từ chất lỏng ($n_1$) tới đáy thủy tinh ($n_2$): $\\tan i_B = \\dfrac{n_2}{n_1} \\Rightarrow n_1 = \\dfrac{n_2}{\\tan(42^\\circ 37')} \\approx \\dfrac{1{,}5}{0{,}920} \\approx 1{,}63$."
+  },
+  {
+    "id": 32,
+    "lab_name": "Chương 4 & 5: Tán sắc, Hấp thụ, Phân cực (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Giữa hai kính Nicol song song, người ta đặt một bản thạch anh có các mặt vuông góc với quang trục. Khi bản thạch anh có độ dày $d_1 = 2\\ \\text{mm}$ thì mặt phẳng phân cực của ánh sáng đơn sắc truyền qua nó bị quay đi một góc $\\varphi_1 = 53^\\circ$. Để ánh sáng đơn sắc không truyền qua được kính Nicol phân tích thì độ dày nhỏ nhất $d_2$ của bản thạch anh là:",
+    "image": "",
+    "options": [
+      "$d_2 \\approx 6{,}8\\ \\text{mm}$",
+      "$d_2 \\approx 4{,}0\\ \\text{mm}$",
+      "$d_2 \\approx 1{,}7\\ \\text{mm}$",
+      "$d_2 \\approx 3{,}4\\ \\text{mm}$"
+    ],
+    "correct": 3,
+    "explanation": "Hai Nicol song song sẽ chắn hoàn toàn ánh sáng khi mặt phẳng phân cực bị bản thạch anh quay đi góc $\\varphi_2 = 90^\\circ$. Vì góc quay tỉ lệ thuận với bề dày bản ($\\varphi \\propto d$): $d_2 = d_1\\dfrac{\\varphi_2}{\\varphi_1} = 2 \\times \\dfrac{90^\\circ}{53^\\circ} \\approx 3{,}4\\ \\text{mm}$."
+  },
+  {
+    "id": 34,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Khối lượng của hạt điện tử chuyển động bằng bao nhiêu lần khối lượng nghỉ $m_0$ khi động năng của nó lớn gấp $3$ lần năng lượng nghỉ?",
+    "image": "",
+    "options": [
+      "$m = 3 m_0$",
+      "$m = 4 m_0$",
+      "$m = 2 m_0$",
+      "$m = \\sqrt{10}\\,m_0$"
+    ],
+    "correct": 1,
+    "explanation": "Năng lượng toàn phần $E = E_0 + W_{\\text{đ}} = m_0 c^2 + 3 m_0 c^2 = 4 m_0 c^2$. Mà $E = m c^2 \\Rightarrow m = 4 m_0$."
+  },
+  {
+    "id": 36,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Tìm hiệu điện thế tăng tốc $U$ mà prôtôn vượt qua để kích thước của nó theo phương chuyển động trong hệ quy chiếu gắn với Trái Đất giảm đi $1{,}5$ lần. Cho $m_{0p} = 1{,}67\\times 10^{-27}\\ \\text{kg},\\ e = 1{,}6\\times 10^{-19}\\ \\text{C},\\ c = 3\\times 10^8\\ \\text{m/s}$.",
+    "image": "",
+    "options": [
+      "$U \\approx 2{,}35\\times 10^8\\ \\text{V}$",
+      "$U \\approx 9{,}4\\times 10^8\\ \\text{V}$",
+      "$U \\approx 1{,}4\\times 10^9\\ \\text{V}$",
+      "$U \\approx 4{,}7\\times 10^8\\ \\text{V} = 470\\ \\text{MV}$"
+    ],
+    "correct": 3,
+    "explanation": "Kích thước giảm $1{,}5$ lần $\\Rightarrow \\gamma = \\dfrac{1}{\\sqrt{1 - v^2/c^2}} = 1{,}5$. Động năng prôtôn nhận được từ điện trường: $eU = W_{\\text{đ}} = (\\gamma - 1)m_{0p} c^2 = 0{,}5 \\times 1{,}67\\times 10^{-27} \\times 9\\times 10^{16}\\ \\text{J} \\Rightarrow U = \\dfrac{0{,}5 m_{0p} c^2}{e} \\approx 4{,}70\\times 10^8\\ \\text{V}$."
+  },
+  {
+    "id": 38,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Khối lượng của hạt chuyển động lớn gấp $3$ lần khối lượng nghỉ của nó. Kích thước của hạt theo phương chuyển động trong hệ quy chiếu gắn với Trái Đất thay đổi như thế nào?",
+    "image": "",
+    "options": [
+      "Tăng lên $3$ lần ($\\ell = 3\\ell_0$)",
+      "Giảm đi $3$ lần ($\\ell = \\dfrac{\\ell_0}{3}$)",
+      "Giảm đi $9$ lần ($\\ell = \\dfrac{\\ell_0}{9}$)",
+      "Không thay đổi ($\\ell = \\ell_0$)"
+    ],
+    "correct": 1,
+    "explanation": "Ta có $\\dfrac{m}{m_0} = \\dfrac{1}{\\sqrt{1 - v^2/c^2}} = 3 \\Rightarrow \\sqrt{1 - v^2/c^2} = \\dfrac{1}{3}$. Do đó chiều dài $\\ell = \\ell_0\\sqrt{1 - v^2/c^2} = \\dfrac{\\ell_0}{3}$ (giảm đi $3$ lần)."
+  },
+  {
+    "id": 40,
+    "lab_name": "Chương 7: Bức xạ nhiệt, Quang điện & Tán xạ Compton",
+    "type": "theory",
+    "question": "Trong hiện tượng quang điện ngoài, phương trình Einstein liên hệ giữa hiệu điện thế hãm $U_h$, tần số ánh sáng kích thích $\\nu$ và công thoát $A_{th}$ của kim loại làm catốt là:",
+    "image": "",
+    "options": [
+      "$U_h = \\dfrac{e}{h}\\nu - \\dfrac{A_{th}}{h}$",
+      "$h\\nu = e U_h - A_{th} \\iff U_h = \\dfrac{h}{e}\\nu + \\dfrac{A_{th}}{e}$",
+      "$e U_h = \\dfrac{h\\nu}{A_{th}}$",
+      "$h\\nu = A_{th} + e U_h \\iff U_h = \\dfrac{h}{e}\\nu - \\dfrac{A_{th}}{e}$"
+    ],
+    "correct": 3,
+    "explanation": "Theo định luật bảo toàn năng lượng: $h\\nu = A_{th} + W_{\\text{đmax}}$. Để dòng quang điện triệt tiêu hoàn toàn, công cản điện trường bằng động năng ban đầu cực đại: $eU_h = W_{\\text{đmax}} \\Rightarrow U_h = \\dfrac{h}{e}\\nu - \\dfrac{A_{th}}{e}$."
+  },
+  {
+    "id": 42,
+    "lab_name": "Chương 7: Bức xạ nhiệt, Quang điện & Tán xạ Compton",
+    "type": "calc",
+    "question": "Dây tóc vônfram trong bóng đèn có đường kính $d = 0{,}03\\ \\text{cm}$, dài $\\ell = 5\\ \\text{cm}$. Khi mắc vào điện áp $110\\ \\text{V}$, dòng điện qua đèn là $0{,}5\\ \\text{A}$. Giả sử ở trạng thái cân bằng nhiệt, toàn bộ nhiệt lượng đèn phát ra đều ở dạng bức xạ và tỉ số năng suất phát xạ toàn phần của vônfram so với vật đen tuyệt đối là $\\alpha = 0{,}3$. Cho $\\sigma = 5{,}67\\times 10^{-8}\\ \\text{W/m}^2\\text{K}^4$. Nhiệt độ $T$ của dây tóc đèn là:",
+    "image": "",
+    "options": [
+      "$T \\approx 2620\\ \\text{K}$",
+      "$T \\approx 2878\\ \\text{K}$",
+      "$T \\approx 3150\\ \\text{K}$",
+      "$T \\approx 2400\\ \\text{K}$"
+    ],
+    "correct": 1,
+    "explanation": "Công suất điện $P = UI = 110 \\times 0{,}5 = 55\\ \\text{W}$. Diện tích xung quanh dây tóc $S = \\pi d \\ell = \\pi \\times 3\\times 10^{-4} \\times 0{,}05 \\approx 4{,}712\\times 10^{-5}\\ \\text{m}^2$. Từ $P = \\alpha \\sigma S T^4 \\Rightarrow T = \\sqrt[4]{\\dfrac{55}{0{,}3 \\times 5{,}67\\times 10^{-8} \\times 4{,}712\\times 10^{-5}}} \\approx 2878\\ \\text{K}$."
+  },
+  {
+    "id": 44,
+    "lab_name": "Chương 7: Bức xạ nhiệt, Quang điện & Tán xạ Compton",
+    "type": "calc",
+    "question": "Giới hạn quang điện của kim loại dùng làm catốt của tế bào quang điện là $\\lambda_0 = 0{,}5\\ \\mu\\text{m}$. Khi chiếu ánh sáng đơn sắc $\\lambda = 0{,}36\\ \\mu\\text{m}$ vào catốt thì hiệu điện thế hãm $U_h$ để không có electron nào đến được anốt là ($h = 6{,}625\\times 10^{-34}\\ \\text{J·s}, c = 3\\times 10^8\\ \\text{m/s}, e = 1{,}6\\times 10^{-19}\\ \\text{C}$):",
+    "image": "",
+    "options": [
+      "$U_h \\approx 3{,}10\\ \\text{V}$",
+      "$U_h \\approx 2{,}14\\ \\text{V}$",
+      "$U_h \\approx 1{,}25\\ \\text{V}$",
+      "$U_h \\approx 0{,}97\\ \\text{V}$"
+    ],
+    "correct": 3,
+    "explanation": "$U_h = \\dfrac{hc}{e}\\left(\\dfrac{1}{\\lambda} - \\dfrac{1}{\\lambda_0}\\right) = \\dfrac{6{,}625\\times 10^{-34}\\times 3\\times 10^8}{1{,}6\\times 10^{-19}}\\left(\\dfrac{1}{0{,}36\\times 10^{-6}} - \\dfrac{1}{0{,}5\\times 10^{-6}}\\right) \\approx 0{,}97\\ \\text{V}$."
+  },
+  {
+    "id": 46,
+    "lab_name": "Chương 7: Bức xạ nhiệt, Quang điện & Tán xạ Compton",
+    "type": "calc",
+    "question": "Tia X có năng lượng photon $E = 100\\ \\text{keV}$ bị tán xạ Compton trên một bia dưới góc tán xạ $\\theta = 90^\\circ$. Cho bước sóng Compton của electron $\\lambda_C = 2{,}426\\times 10^{-12}\\ \\text{m}$ (ứng với năng lượng nghỉ $m_0 c^2 \\approx 511\\ \\text{keV}$). Năng lượng $E'$ của photon tán xạ bằng:",
+    "image": "",
+    "options": [
+      "$E' \\approx 91{,}2\\ \\text{keV}$",
+      "$E' \\approx 83{,}6\\ \\text{keV}$",
+      "$E' \\approx 50{,}0\\ \\text{keV}$",
+      "$E' \\approx 67{,}0\\ \\text{keV}$"
+    ],
+    "correct": 1,
+    "explanation": "Từ $\\lambda' - \\lambda = \\lambda_C(1 - \\cos\\theta)$ với $\\theta = 90^\\circ \\Rightarrow \\lambda' = \\lambda + \\lambda_C \\Rightarrow E' = \\dfrac{E}{1 + \\dfrac{E}{m_0 c^2}(1 - \\cos 90^\\circ)} = \\dfrac{100}{1 + 100/511} \\approx 83{,}6\\ \\text{keV}$."
+  },
+  {
+    "id": 48,
+    "lab_name": "Chương 8 & 9: Cơ học lượng tử (de Broglie, Heisenberg) & Nguyên tử",
+    "type": "theory",
+    "question": "Một vi hạt khối lượng $m$ chuyển động trong giếng thế năng một chiều bề rộng $a$ có thành cao vô hạn ($U(x) = 0$ khi $0 < x < a$, $U(x) = \\infty$ ngoài khoảng đó). Biểu thức hàm sóng trạng thái dừng $\\psi_n(x)$ và mức năng lượng $E_n$ ($n = 1, 2, 3,\\dots$) của hạt là:",
+    "image": "",
+    "options": [
+      "$\\psi_n(x) = \\dfrac{2}{a}\\sin\\left(\\dfrac{n\\pi x}{a}\\right)$ và $E_n = \\dfrac{h^2}{2ma^2}n$",
+      "$\\psi_n(x) = \\sqrt{\\dfrac{1}{a}}\\cos\\left(\\dfrac{n\\pi x}{a}\\right)$ và $E_n = \\dfrac{\\pi^2\\hbar^2}{ma^2}n$",
+      "$\\psi_n(x) = \\sqrt{\\dfrac{2}{a}}\\sin\\left(\\dfrac{2n\\pi x}{a}\\right)$ và $E_n = -\\dfrac{Rh}{n^2}$",
+      "$\\psi_n(x) = \\sqrt{\\dfrac{2}{a}}\\sin\\left(\\dfrac{n\\pi x}{a}\\right)$ và $E_n = \\dfrac{\\pi^2\\hbar^2}{2ma^2}n^2$"
+    ],
+    "correct": 3,
+    "explanation": "Giải phương trình Schrödinger dừng trong giếng thế $0 < x < a$ với điều kiện biên $\\psi(0) = \\psi(a) = 0$ và chuẩn hóa $\\int_0^a |\\psi_n(x)|^2 dx = 1$ thu được $\\psi_n(x) = \\sqrt{\\dfrac{2}{a}}\\sin\\left(\\dfrac{n\\pi x}{a}\\right)$ và $E_n = \\dfrac{\\pi^2\\hbar^2}{2ma^2}n^2 = \\dfrac{n^2 h^2}{8ma^2}$."
+  },
+  {
+    "id": 50,
+    "lab_name": "Chương 8 & 9: Cơ học lượng tử (de Broglie, Heisenberg) & Nguyên tử",
+    "type": "calc",
+    "question": "Electron chuyển động tương đối tính với vận tốc $v = 2\\times 10^8\\ \\text{m/s}$. Bước sóng de Broglie của nó là ($h = 6{,}625\\times 10^{-34}\\ \\text{J·s}, m_{0e} = 9{,}1\\times 10^{-31}\\ \\text{kg}, c = 3\\times 10^8\\ \\text{m/s}$):",
+    "image": "",
+    "options": [
+      "$\\lambda \\approx 3{,}64\\times 10^{-12}\\ \\text{m}$",
+      "$\\lambda \\approx 2{,}71\\times 10^{-12}\\ \\text{m}$",
+      "$\\lambda \\approx 6{,}90\\times 10^{-12}\\ \\text{m}$",
+      "$\\lambda \\approx 1{,}23\\times 10^{-10}\\ \\text{m}$"
+    ],
+    "correct": 1,
+    "explanation": "Bước sóng de Broglie tương đối tính: $\\lambda = \\dfrac{h}{m_{0e} v}\\sqrt{1 - \\dfrac{v^2}{c^2}} = \\dfrac{6{,}625\\times 10^{-34}}{9{,}1\\times 10^{-31}\\times 2\\times 10^8}\\sqrt{1 - \\left(\\dfrac{2}{3}\\right)^2} \\approx 2{,}71\\times 10^{-12}\\ \\text{m}$."
+  },
+  {
+    "id": 52,
+    "lab_name": "Chương 8 & 9: Cơ học lượng tử (de Broglie, Heisenberg) & Nguyên tử",
+    "type": "calc",
+    "question": "Hạt vi mô có độ bất định về động lượng bằng $1\\%$ động lượng của nó ($\\Delta p = 0{,}01 p$). Tỉ số giữa độ bất định về tọa độ $\\Delta x$ và bước sóng de Broglie $\\lambda$ của hạt là:",
+    "image": "",
+    "options": [
+      "$\\dfrac{\\Delta x}{\\lambda} \\approx 1$",
+      "$\\dfrac{\\Delta x}{\\lambda} \\approx 0{,}01$",
+      "$\\dfrac{\\Delta x}{\\lambda} \\approx 2\\pi$",
+      "$\\dfrac{\\Delta x}{\\lambda} \\approx \\dfrac{100}{2\\pi} \\approx 15{,}9$ (nếu dùng $\\Delta x\\cdot\\Delta p \\approx \\hbar$) hoặc $\\dfrac{\\Delta x}{\\lambda} \\approx 100$ (nếu dùng $\\Delta x\\cdot\\Delta p \\approx h$)"
+    ],
+    "correct": 3,
+    "explanation": "Vì $p = \\dfrac{h}{\\lambda} \\Rightarrow \\Delta p = 0{,}01\\dfrac{h}{\\lambda}$. Nếu áp dụng $\\Delta x\\cdot\\Delta p \\approx \\hbar = \\dfrac{h}{2\\pi}$ thì $\\dfrac{\\Delta x}{\\lambda} = \\dfrac{100}{2\\pi}$; nếu áp dụng $\\Delta x\\cdot\\Delta p \\approx h$ thì $\\dfrac{\\Delta x}{\\lambda} = 100$ (Bài 8.22 tài liệu Bài tập VL3)."
+  },
+  {
+    "id": 54,
+    "lab_name": "Chương 8 & 9: Cơ học lượng tử (de Broglie, Heisenberg) & Nguyên tử",
+    "type": "calc",
+    "question": "Cho số bổ chính Rydberg đối với số hạng $3S$ của nguyên tử Natri ($\\text{Na}$) là $\\Delta_s = -1{,}37$; hằng số Rydberg $R = 3{,}29\\times 10^{15}\\ \\text{s}^{-1}$, $h = 6{,}625\\times 10^{-34}\\ \\text{J·s}$, $1\\ \\text{eV} = 1{,}6\\times 10^{-19}\\ \\text{J}$ ($Rh \\approx 13{,}6\\ \\text{eV}$). Năng lượng liên kết của electron hóa trị ở trạng thái $3S$ của nguyên tử $\\text{Na}$ bằng:",
+    "image": "",
+    "options": [
+      "$E_{\\text{lk}} \\approx 1{,}51\\ \\text{eV}$",
+      "$E_{\\text{lk}} = \\dfrac{Rh}{(3 + \\Delta_s)^2} \\approx 5{,}12\\ \\text{eV}$",
+      "$E_{\\text{lk}} \\approx 3{,}40\\ \\text{eV}$",
+      "$E_{\\text{lk}} \\approx 13{,}6\\ \\text{eV}$"
+    ],
+    "correct": 1,
+    "explanation": "Năng lượng của electron hóa trị trong nguyên tử kim loại kiềm ở trạng thái $(n, \\ell)$ là $E_{n,\\ell} = -\\dfrac{Rh}{(n + \\Delta_\\ell)^2}$. Với trạng thái $3S$ ($n = 3, \\Delta_s = -1{,}37$): năng lượng liên kết $E_{\\text{lk}} = |E_{3S}| = \\dfrac{13{,}6}{(3 - 1{,}37)^2} = \\dfrac{13{,}6}{1{,}63^2} \\approx 5{,}12\\ \\text{eV}$."
+  },
+  {
+    "id": 56,
+    "lab_name": "Bài 0: Lý thuyết sai số & Xử lý số liệu thực nghiệm",
+    "type": "error",
+    "question": "Khi đo trực tiếp một đại lượng vật lý $A$ nhiều lần độc lập với các giá trị $A_1, A_2, \\dots, A_n$, giá trị trung bình $\\bar{A}$, sai số ngẫu nhiên trung bình $\\overline{\\Delta A}$ và sai số tuyệt đối toàn phần $\\Delta A$ (với $\\Delta A_{\\text{dc}}$ là sai số dụng cụ) được tính theo công thức nào?",
+    "image": "",
+    "options": [
+      "$\\bar{A} = \\dfrac{1}{n}\\sum_{i=1}^{n} A_i,\\ \\overline{\\Delta A} = \\sum_{i=1}^{n} |A_i - \\bar{A}|,\\ \\Delta A = \\Delta A_{\\text{dc}}$",
+      "$\\bar{A} = \\dfrac{1}{n}\\sum_{i=1}^{n} A_i,\\ \\overline{\\Delta A} = \\dfrac{1}{n}\\sum_{i=1}^{n} (A_i - \\bar{A}),\\ \\Delta A = \\overline{\\Delta A} - \\Delta A_{\\text{dc}}$",
+      "$\\bar{A} = \\sqrt{A_1 A_n},\\ \\overline{\\Delta A} = \\max|A_i - \\bar{A}|,\\ \\Delta A = \\dfrac{\\overline{\\Delta A}}{\\Delta A_{\\text{dc}}}$",
+      "$\\bar{A} = \\dfrac{1}{n}\\sum_{i=1}^{n} A_i,\\ \\overline{\\Delta A} = \\dfrac{1}{n}\\sum_{i=1}^{n} |A_i - \\bar{A}|,\\ \\Delta A = \\overline{\\Delta A} + \\Delta A_{\\text{dc}}$"
+    ],
+    "correct": 3,
+    "explanation": "Theo Bài 0 - Lý thuyết sai số: sai số ngẫu nhiên trung bình là trung bình cộng các độ lệch tuyệt đối $\\overline{\\Delta A} = \\dfrac{1}{n}\\sum |A_i - \\bar{A}|$, và sai số tuyệt đối của phép đo là $\\Delta A = \\overline{\\Delta A} + \\Delta A_{\\text{dc}}$; kết quả viết dưới dạng $A = \\bar{A} \\pm \\Delta A$."
+  },
+  {
+    "id": 58,
+    "lab_name": "Bài 0: Lý thuyết sai số & Xử lý số liệu thực nghiệm",
+    "type": "error",
+    "question": "Một đồng hồ vạn năng hiện số đo hiệu điện thế một chiều ở thang đo $20\\ \\text{V}$, nhà sản xuất ghi độ chính xác là $\\pm(0{,}5\\% + 2\\text{ digit})$ với độ phân giải $0{,}01\\ \\text{V}$. Khi màn hình hiển thị $U = 10{,}00\\ \\text{V}$ thì sai số dụng cụ $\\Delta U_{\\text{dc}}$ bằng:",
+    "image": "",
+    "options": [
+      "$\\Delta U_{\\text{dc}} = 0{,}5\\% \\times 20{,}00 = 0{,}10\\ \\text{V}$",
+      "$\\Delta U_{\\text{dc}} = 0{,}5\\% \\times 10{,}00 + 2 \\times 0{,}01 = 0{,}07\\ \\text{V}$",
+      "$\\Delta U_{\\text{dc}} = 2 \\times 0{,}01 = 0{,}02\\ \\text{V}$",
+      "$\\Delta U_{\\text{dc}} = 0{,}5\\% \\times 10{,}00 = 0{,}05\\ \\text{V}$"
+    ],
+    "correct": 1,
+    "explanation": "Với dụng cụ đo hiện số (digital), sai số gồm tỷ lệ phần trăm của giá trị đọc cộng với sai số chữ số cuối (LSB): $\\Delta U_{\\text{dc}} = 0{,}005 \\times 10{,}00 + 2 \\times 0{,}01 = 0{,}05 + 0{,}02 = 0{,}07\\ \\text{V}$."
+  },
+  {
+    "id": 60,
+    "lab_name": "Bài 0: Lý thuyết sai số & Xử lý số liệu thực nghiệm",
+    "type": "error",
+    "question": "Cho phép đo gián tiếp đại lượng $F = \\dfrac{x^a \\cdot y^b}{z^c}$, trong đó $x, y, z$ là các đại lượng đo trực tiếp độc lập và $a, b, c > 0$ là các hằng số. Công thức tính sai số tương đối $\\varepsilon = \\dfrac{\\Delta F}{\\bar{F}}$ theo phương pháp vi phân logarit là:",
+    "image": "",
+    "options": [
+      "$\\varepsilon = \\dfrac{\\Delta F}{\\bar{F}} = \\Delta x + \\Delta y + \\Delta z$",
+      "$\\varepsilon = \\dfrac{\\Delta F}{\\bar{F}} = a\\dfrac{\\Delta x}{\\bar{x}} + b\\dfrac{\\Delta y}{\\bar{y}} - c\\dfrac{\\Delta z}{\\bar{z}}$",
+      "$\\varepsilon = \\dfrac{\\Delta F}{\\bar{F}} = \\dfrac{\\Delta x^a \\cdot \\Delta y^b}{\\Delta z^c}$",
+      "$\\varepsilon = \\dfrac{\\Delta F}{\\bar{F}} = a\\dfrac{\\Delta x}{\\bar{x}} + b\\dfrac{\\Delta y}{\\bar{y}} + c\\dfrac{\\Delta z}{\\bar{z}}$"
+    ],
+    "correct": 3,
+    "explanation": "Lấy logarit tự nhiên hai vế: $\\ln F = a\\ln x + b\\ln y - c\\ln z$, lấy vi phân và thay dấu âm bằng dấu cộng để đánh giá sai số cực đại: $\\dfrac{\\Delta F}{\\bar{F}} = a\\dfrac{\\Delta x}{\\bar{x}} + b\\dfrac{\\Delta y}{\\bar{y}} + c\\dfrac{\\Delta z}{\\bar{z}}$."
+  },
+  {
+    "id": 62,
+    "lab_name": "Bài 0: Lý thuyết sai số & Xử lý số liệu thực nghiệm",
+    "type": "error",
+    "question": "Khi biểu diễn số liệu thực nghiệm của hai đại lượng $(t_i, R_i)$ kèm sai số $(\\Delta t_i, \\Delta R_i)$ lên đồ thị, mỗi điểm thực nghiệm được vẽ thành một ô chữ nhật sai số có kích thước bao nhiêu và đường đồ thị phải vẽ theo nguyên tắc nào?",
+    "image": "",
+    "options": [
+      "Ô chữ nhật có cạnh ngang $\\Delta t_i$, cạnh đứng $\\Delta R_i$; nối các tâm $(t_i, R_i)$ bằng các đoạn thẳng gấp khúc liên tiếp",
+      "Ô chữ nhật có tâm $(t_i, R_i)$, cạnh ngang $2\\Delta t_i$, cạnh đứng $2\\Delta R_i$; đường đồ thị phải là đường trơn tru phân bố đều qua các ô chữ nhật sai số (không nối gấp khúc từng điểm)",
+      "Chỉ vẽ điểm đầu và điểm cuối của bảng số liệu rồi kẻ đường thẳng nối hai điểm đó",
+      "Bỏ qua mọi điểm thực nghiệm không nằm chính xác trên đường thẳng nối điểm đầu và điểm cuối"
+    ],
+    "correct": 1,
+    "explanation": "Theo Bài 0 - Lý thuyết sai số (trang 15-16): mỗi điểm đo với sai số $\\pm\\Delta t_i, \\pm\\Delta R_i$ tạo thành hình chữ nhật sai số kích thước $2\\Delta t_i \\times 2\\Delta R_i$; đường biểu diễn vật lý phải trơn và đi cân đối qua tập hợp các ô sai số."
+  },
+  {
+    "id": 64,
+    "lab_name": "Thí nghiệm Bài 1: Giao thoa Michelson & Hệ vân tròn Newton",
+    "type": "error",
+    "question": "Trong Bài thí nghiệm số 1 (Xác định bước sóng ánh sáng bằng giao thoa kế Michelson), khi dịch chuyển gương di động một đoạn $d_m$ làm cho ở tâm hệ vân giao thoa có $N$ vân sáng (hoặc $N$ vân tối) dịch chuyển qua vạch chuẩn, bước sóng ánh sáng $\\lambda$ được tính theo công thức nào?",
+    "image": "",
+    "options": [
+      "$\\lambda = 2 N d_m$",
+      "$\\lambda = \\dfrac{d_m}{N}$",
+      "$\\lambda = \\dfrac{d_m}{2 N}$",
+      "$\\lambda = \\dfrac{2 d_m}{N}$"
+    ],
+    "correct": 3,
+    "explanation": "Trong giao thoa kế Michelson, khi gương di động dịch chuyển một đoạn $\\Delta d = \\lambda/2$ thì quang lộ tia phản xạ thay đổi một lượng $2\\Delta d = \\lambda$, làm hệ vân dịch đi $1$ khoảng vân. Do đó khi dịch đi $N$ vân thì $d_m = N\\dfrac{\\lambda}{2} \\Rightarrow \\lambda = \\dfrac{2d_m}{N}$."
+  },
+  {
+    "id": 66,
+    "lab_name": "Thí nghiệm Bài 1: Giao thoa Michelson & Hệ vân tròn Newton",
+    "type": "calc",
+    "question": "Khi làm thí nghiệm đo bước sóng ánh sáng đỏ bằng giao thoa kế Michelson, sinh viên quay panme để tại tâm hệ vân có $N = 100$ vân sáng dịch chuyển qua và đọc được độ dịch chuyển của gương di động là $d_m = 31{,}6\\ \\mu\\text{m}$. Bước sóng ánh sáng $\\lambda$ đo được là:",
+    "image": "",
+    "options": [
+      "$\\lambda = 0{,}316\\ \\mu\\text{m} = 316\\ \\text{nm}$",
+      "$\\lambda = 0{,}632\\ \\mu\\text{m} = 632\\ \\text{nm}$",
+      "$\\lambda = 0{,}546\\ \\mu\\text{m} = 546\\ \\text{nm}$",
+      "$\\lambda = 1{,}264\\ \\mu\\text{m}$"
+    ],
+    "correct": 1,
+    "explanation": "Áp dụng công thức giao thoa kế Michelson: $\\lambda = \\dfrac{2 d_m}{N} = \\dfrac{2 \\times 31{,}6\\ \\mu\\text{m}}{100} = 0{,}632\\ \\mu\\text{m} = 632\\ \\text{nm}$ (bước sóng laser He-Ne)."
+  },
+  {
+    "id": 68,
+    "lab_name": "Thí nghiệm Bài 1: Giao thoa Michelson & Hệ vân tròn Newton",
+    "type": "error",
+    "question": "Trong thí nghiệm hệ vân tròn Newton, tại sao khi quay thước panme để dịch chuyển kính hiển vi đo các vị trí vân tối $n_k, n_i, n_i', n_k'$, người làm thí nghiệm bắt buộc phải quay panme theo MỘT CHIỀU DUY NHẤT từ đầu đến cuối phép đo?",
+    "image": "",
+    "options": [
+      "Để giữ cho bán kính cong $R$ của thấu kính không bị biến dạng nhiệt",
+      "Vì nếu quay ngược chiều thì bản thủy tinh phẳng sẽ tách rời khỏi thấu kính lồi",
+      "Vì quay ngược chiều sẽ làm thay đổi bước sóng của đèn Natri chiếu vào hệ",
+      "Để tránh sai số chết (độ rơ cơ khí của bước ren trục vít panme) khi đổi chiều quay làm sai lệch tọa độ đọc"
+    ],
+    "correct": 3,
+    "explanation": "Cơ cấu trục vít - đai ốc của thước panme luôn có một độ rơ cơ khí nhỏ (hành trình chết / backlash). Nếu vừa quay tiến vừa quay lùi, vị trí đọc trên trống chia độ sẽ lệch so với vị trí thực của kính hiển vi, gây sai số hệ thống lớn."
+  },
+  {
+    "id": 70,
+    "lab_name": "Thí nghiệm Bài 1: Giao thoa Michelson & Hệ vân tròn Newton",
+    "type": "error",
+    "question": "Trong thí nghiệm hệ vân tròn Newton, bước sóng được tính bởi $\\lambda = \\dfrac{B \\cdot b}{(k - i)R}$. Biết mỗi vị trí $n_k, n_i, n_k'$ đọc trên panme có sai số dụng cụ $\\Delta n_{\\text{dc}} = 0{,}01\\ \\text{mm}$ (nên $\\Delta B_{\\text{dc}} = \\Delta b_{\\text{dc}} = 0{,}02\\ \\text{mm}$). Công thức tính sai số tương đối $\\delta = \\dfrac{\\Delta\\lambda}{\\bar{\\lambda}}$ là:",
+    "image": "",
+    "options": [
+      "$\\delta = \\dfrac{\\Delta\\lambda}{\\bar{\\lambda}} = \\dfrac{\\Delta B}{\\bar{B}} - \\dfrac{\\Delta b}{\\bar{b}} - \\dfrac{\\Delta R}{R}$",
+      "$\\delta = \\dfrac{\\Delta\\lambda}{\\bar{\\lambda}} = \\dfrac{\\Delta B}{\\bar{B}} + \\dfrac{\\Delta b}{\\bar{b}} + \\dfrac{\\Delta R}{R}$ với $\\Delta B = \\overline{\\Delta B} + 0{,}02\\ \\text{mm}$ và $\\Delta b = \\overline{\\Delta b} + 0{,}02\\ \\text{mm}$",
+      "$\\delta = \\dfrac{\\Delta\\lambda}{\\bar{\\lambda}} = 2\\dfrac{\\Delta B}{\\bar{B}} + 2\\dfrac{\\Delta b}{\\bar{b}}$",
+      "$\\delta = \\Delta B + \\Delta b + \\Delta R$"
+    ],
+    "correct": 1,
+    "explanation": "Theo hướng dẫn xử lý số liệu Bài 1 (trang 265): lấy vi phân logarit của $\\lambda = \\dfrac{B \\cdot b}{(k - i)R}$ (với $k, i$ là các số nguyên không có sai số), ta được $\\delta = \\dfrac{\\Delta\\lambda}{\\bar{\\lambda}} = \\dfrac{\\Delta B}{\\bar{B}} + \\dfrac{\\Delta b}{\\bar{b}} + \\dfrac{\\Delta R}{R}$, trong đó mỗi hiệu hai vị trí đọc có sai số dụng cụ $0{,}01 + 0{,}01 = 0{,}02\\ \\text{mm}$."
+  },
+  {
+    "id": 72,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "error",
+    "question": "Trong Bài thí nghiệm khảo sát hiện tượng quang điện và xác định hằng số Planck (giáo trình trang 266-273), tế bào quang điện chân không được sử dụng có catốt phủ lớp nhạy quang nào, dòng tối nhỏ hơn bao nhiêu và bộ $4$ kính lọc sắc đơn sắc có các bước sóng nào?",
+    "image": "",
+    "options": [
+      "Catốt làm bằng bạch kim hoạt động ở áp suất khí quyển bình thường",
+      "Catốt làm bằng đồng nguyên chất, dòng tối $\\le 10\\ \\text{mA}$; chỉ dùng $1$ kính lọc sắc $500\\ \\text{nm}$",
+      "Catốt phủ lớp kẽm chỉ nhạy với tia tử ngoại $\\lambda < 300\\ \\text{nm}$",
+      "Catốt phủ lớp hợp kim $\\text{Cs-Sb}$ (Xêzi - Antimon), dòng tối $\\le 3\\ \\text{nA}$; bộ $4$ kính lọc sắc có bước sóng $635\\ \\text{nm},\\ 570\\ \\text{nm},\\ 540\\ \\text{nm}$ và $460\\ \\text{nm}$"
+    ],
+    "correct": 3,
+    "explanation": "Theo thông số thiết bị thí nghiệm Bài 2 (trang 270): tế bào quang điện chân không có catốt phủ lớp nhạy quang $\\text{Cs-Sb}$ nhạy trong miền khả kiến, dòng tối $\\le 3\\ \\text{nA}$ ở $-2\\ \\text{V}$, đi kèm $4$ kính lọc sắc $\\lambda_1 = 635\\ \\text{nm},\\ \\lambda_2 = 570\\ \\text{nm},\\ \\lambda_3 = 540\\ \\text{nm},\\ \\lambda_4 = 460\\ \\text{nm}$."
+  },
+  {
+    "id": 74,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "error",
+    "question": "Khi khảo sát đường đặc trưng Vôn - Ampe $I = f(U_{AK})$ của tế bào quang điện ứng với cùng một bước sóng kích thích $\\lambda$ nhưng ở hai khoảng cách đặt đèn khác nhau $r_1 < r_2$ (tức thông lượng sáng $\\Phi_1 > \\Phi_2$), hai đường cong Vôn - Ampe có đặc điểm gì?",
+    "image": "",
+    "options": [
+      "Hai đường có cùng dòng quang điện bão hòa ($I_{\\text{bh1}} = I_{\\text{bh2}}$) nhưng có hiệu điện thế hãm khác nhau ($U_{h1} > U_{h2}$)",
+      "Hai đường có giá trị dòng quang điện bão hòa khác nhau ($I_{\\text{bh1}} > I_{\\text{bh2}}$) nhưng hội tụ về CÙNG MỘT giá trị hiệu điện thế hãm $U_h$ trên trục hoành",
+      "Cả dòng bão hòa $I_{\\text{bh}}$ lẫn hiệu điện thế hãm $U_h$ đều tỉ lệ nghịch với $r^2$",
+      "Hai đường hoàn toàn trùng khít lên nhau ở mọi giá trị $U_{AK}$"
+    ],
+    "correct": 1,
+    "explanation": "Theo định luật quang điện thứ nhất và thứ hai: $I_{\\text{bh}}$ tỉ lệ thuận với thông lượng sáng $\\Phi$ nên $I_{\\text{bh1}} > I_{\\text{bh2}}$; còn động năng ban đầu cực đại của quang electron (và do đó $U_h$) chỉ phụ thuộc vào tần số $\\nu = c/\\lambda$ của ánh sáng chiếu vào chứ không phụ thuộc vào cường độ sáng."
+  },
+  {
+    "id": 76,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "calc",
+    "question": "Trong bài thí nghiệm xác định hằng số Planck, sinh viên lần lượt lắp kính lọc sắc lục $\\lambda_1 = 540\\ \\text{nm}$ ($\\nu_1 = 5{,}56\\times 10^{14}\\ \\text{Hz}$) và kính lọc sắc lam $\\lambda_2 = 460\\ \\text{nm}$ ($\\nu_2 = 6{,}52\\times 10^{14}\\ \\text{Hz}$), đo được độ lớn hiệu điện thế hãm tương ứng là $U_{h1} = 0{,}66\\ \\text{V}$ và $U_{h2} = 1{,}05\\ \\text{V}$. Cho $e = 1{,}6\\times 10^{-19}\\ \\text{C}$. Giá trị hằng số Planck $h$ thu được từ cặp phép đo này là:",
+    "image": "",
+    "options": [
+      "$h \\approx 1{,}05\\times 10^{-34}\\ \\text{J·s}$",
+      "$h \\approx 4{,}12\\times 10^{-34}\\ \\text{J·s}$",
+      "$h \\approx 8{,}25\\times 10^{-34}\\ \\text{J·s}$",
+      "$h \\approx 6{,}50\\times 10^{-34}\\ \\text{J·s}$"
+    ],
+    "correct": 3,
+    "explanation": "Áp dụng công thức xử lý số liệu Bài 2: $h = \\dfrac{e(U_{h2} - U_{h1})}{\\nu_2 - \\nu_1} = \\dfrac{1{,}6\\times 10^{-19} \\times (1{,}05 - 0{,}66)}{(6{,}52 - 5{,}56)\\times 10^{14}} = \\dfrac{1{,}6\\times 10^{-19} \\times 0{,}39}{0{,}96\\times 10^{14}} = 6{,}50\\times 10^{-34}\\ \\text{J·s}$."
+  },
+  {
+    "id": 78,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "error",
+    "question": "Trong thí nghiệm thực tế với tế bào quang điện chân không, tại sao ngay cả khi đã điều chỉnh hiệu điện thế phân cực ngược $U_{AK} < -U_h$, đồng hồ đo dòng siêu nhạy vẫn có thể chỉ một dòng điện rất nhỏ cỡ vài nanoampe ($\\text{nA}$) và cần phải hiệu chỉnh điểm $0$ (trừ dòng tối)?",
+    "image": "",
+    "options": [
+      "Do các quang electron có vận tốc lớn hơn vận tốc ánh sáng $c$ trong chân không",
+      "Do dòng rò bề mặt thủy tinh của bóng quang điện, phát xạ nhiệt electron ở nhiệt độ phòng và hiệu ứng quang điện ngược trên anốt",
+      "Do định luật bảo toàn năng lượng của Einstein không đúng với ánh sáng nhìn thấy",
+      "Do các phôtôn tự mang điện tích âm truyền thẳng từ catốt sang anốt"
+    ],
+    "correct": 1,
+    "explanation": "Trong thực tế (giáo trình trang 269-271), ở điện áp ngược vẫn tồn tại dòng tối nhỏ ($\\le 3\\ \\text{nA}$) do dòng rò cách điện trên vỏ thủy tinh, phát xạ nhiệt điện tử ở nhiệt độ phòng và một phần nhỏ ánh sáng tán xạ gây quang điện trên anốt; vì vậy phải che tối để chỉnh $0$ dòng tối trước khi đo $U_h$."
+  },
+  {
+    "id": 80,
+    "lab_name": "Thí nghiệm Bài 2: Hiện tượng quang điện & Xác định hằng số Planck",
+    "type": "calc",
+    "question": "Từ đồ thị $U_h(\\nu)$ trong thí nghiệm Bài 2, một nhóm sinh viên xác định được giao điểm của đường thẳng thực nghiệm với trục tần số là $\\nu_0 = 4{,}35\\times 10^{14}\\ \\text{Hz}$. Lấy $h = 6{,}625\\times 10^{-34}\\ \\text{J·s}$, $c = 3\\times 10^8\\ \\text{m/s}$, $1\\ \\text{eV} = 1{,}6\\times 10^{-19}\\ \\text{J}$. Công thoát $A_{th}$ và bước sóng giới hạn quang điện $\\lambda_0$ của lớp phủ catốt là:",
+    "image": "",
+    "options": [
+      "$A_{th} \\approx 3{,}10\\ \\text{eV};\\ \\lambda_0 \\approx 0{,}400\\ \\mu\\text{m}$",
+      "$A_{th} \\approx 2{,}45\\ \\text{eV};\\ \\lambda_0 \\approx 0{,}506\\ \\mu\\text{m}$",
+      "$A_{th} \\approx 1{,}20\\ \\text{eV};\\ \\lambda_0 \\approx 1{,}03\\ \\mu\\text{m}$",
+      "$A_{th} \\approx 1{,}80\\ \\text{eV};\\ \\lambda_0 \\approx 0{,}690\\ \\mu\\text{m} = 690\\ \\text{nm}$"
+    ],
+    "correct": 3,
+    "explanation": "Tại giao điểm với trục hoành ($U_h = 0$): $A_{th} = h\\nu_0 = \\dfrac{6{,}625\\times 10^{-34} \\times 4{,}35\\times 10^{14}}{1{,}6\\times 10^{-19}} \\approx 1{,}80\\ \\text{eV}$, và giới hạn quang điện $\\lambda_0 = \\dfrac{c}{\\nu_0} = \\dfrac{3\\times 10^8}{4{,}35\\times 10^{14}} \\approx 6{,}90\\times 10^{-7}\\ \\text{m} = 690\\ \\text{nm}$."
+  },
+  {
+    "id": 82,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Nguyên lý phát xạ Laser",
+    "type": "theory",
+    "question": "Trong chất bán dẫn tinh khiết (bán dẫn riêng) ở nhiệt độ xác định, mức năng lượng Fermi $E_F$ nằm ở vị trí nào và khi pha tạp chất nhóm V (như $\\text{P, As, Sb}$ vào $\\text{Si}$) hoặc tạp chất nhóm III (như $\\text{B, In, Ga}$ vào $\\text{Si}$) thì mức Fermi dịch chuyển như thế nào?",
+    "image": "",
+    "options": [
+      "Trong bán dẫn tinh khiết mức Fermi nằm sâu trong vùng dẫn; pha tạp nhóm V làm tạo thành bán dẫn loại $p$",
+      "Trong bán dẫn tinh khiết mức Fermi nằm ở chính giữa vùng cấm; khi pha tạp nhóm V (bán dẫn loại $n$, mức đôno) mức Fermi dịch lên gần đáy vùng dẫn, còn khi pha tạp nhóm III (bán dẫn loại $p$, mức axepto) mức Fermi dịch xuống gần đỉnh vùng hóa trị",
+      "Pha tạp nhóm III vào $\\text{Si}$ tạo ra các mức đôno nằm sát đáy vùng dẫn và hạt tải đa số là electron",
+      "Vị trí mức Fermi không bao giờ thay đổi khi pha tạp chất hoặc khi thay đổi nhiệt độ"
+    ],
+    "correct": 1,
+    "explanation": "Bán dẫn riêng có nồng độ điện tử $n$ bằng nồng độ lỗ trống $p$ nên mức Fermi $E_F$ nằm giữa vùng cấm. Bán dẫn loại $n$ (pha tạp nguyên tố hóa trị V tạo mức đôno sát đáy vùng dẫn) có $E_F$ dịch về phía đáy vùng dẫn; bán dẫn loại $p$ (pha tạp nguyên tố hóa trị III tạo mức axepto sát đỉnh vùng hóa trị) có $E_F$ dịch về phía đỉnh vùng hóa trị."
+  },
+  {
+    "id": 84,
+    "lab_name": "Chương 4 & 5: Tán sắc, Hấp thụ, Phân cực (Malus, Brewster, Lưỡng chiết)",
+    "type": "theory",
+    "question": "Theo lý thuyết tán sắc, hấp thụ và tán xạ ánh sáng (Chương 4 - giáo trình Vật lý 3), cường độ ánh sáng tán xạ Rayleigh trên các hạt rất nhỏ so với bước sóng ($d \\ll \\lambda$) và cường độ chùm sáng truyền qua lớp môi trường hấp thụ bề dày $x$ (định luật Bouguer - Lambert) tuân theo các quy luật nào?",
+    "image": "",
+    "options": [
+      "Hệ số hấp thụ $\\alpha$ luôn bằng $0$ đối với mọi chất lỏng và chất khí thực tế",
+      "Cường độ tán xạ Rayleigh tỉ lệ thuận với $\\lambda^4$; định luật hấp thụ là $I(x) = I_0(1 + \\alpha x)$",
+      "Ánh sáng đỏ bị tán xạ Rayleigh mạnh gấp $16$ lần ánh sáng tím nên bầu trời ban ngày có màu đỏ",
+      "Cường độ tán xạ Rayleigh tỉ lệ nghịch với lũy thừa bậc $4$ của bước sóng ($I_{\\text{tx}} \\propto \\dfrac{1}{\\lambda^4}$); định luật hấp thụ Bouguer - Lambert là $I(x) = I_0 e^{-\\alpha x}$ (với $\\alpha$ là hệ số hấp thụ)"
+    ],
+    "correct": 3,
+    "explanation": "Theo định luật Rayleigh, khi kích thước phần tử bất đồng nhất nhỏ hơn nhiều so với $\\lambda$, cường độ ánh sáng tán xạ $I_{\\text{tx}} \\propto 1/\\lambda^4$ (do đó ánh sáng lam-tím bước sóng ngắn bị tán xạ mạnh hơn ánh sáng đỏ làm bầu trời có màu xanh). Định luật Bouguer - Lambert cho cường độ truyền qua $I(x) = I_0 e^{-\\alpha x}$."
+  },
+  {
+    "id": 86,
+    "lab_name": "Chương 8 & 9: Cơ học lượng tử (de Broglie, Heisenberg) & Nguyên tử",
+    "type": "calc",
+    "question": "Một hạt electron chuyển động trong giếng thế năng một chiều bề rộng $a = 10^{-9}\\ \\text{m} = 1\\ \\text{nm}$ có thành cao vô hạn. Cho $h = 6{,}625\\times 10^{-34}\\ \\text{J·s}$, $m_e = 9{,}1\\times 10^{-31}\\ \\text{kg}$, $1\\ \\text{eV} = 1{,}6\\times 10^{-19}\\ \\text{J}$. Hiệu năng lượng $\\Delta E = E_2 - E_1$ giữa mức kích thích thứ nhất ($n = 2$) và mức cơ bản ($n = 1$) là:",
+    "image": "",
+    "options": [
+      "$\\Delta E \\approx 0{,}377\\ \\text{eV}$",
+      "$\\Delta E = \\dfrac{3 h^2}{8 m_e a^2} \\approx 1{,}13\\ \\text{eV}$",
+      "$\\Delta E \\approx 1{,}51\\ \\text{eV}$",
+      "$\\Delta E \\approx 3{,}40\\ \\text{eV}$"
+    ],
+    "correct": 1,
+    "explanation": "Mức năng lượng trong giếng thế 1 chiều sâu vô hạn là $E_n = \\dfrac{n^2 h^2}{8 m_e a^2}$. Với $n = 1$: $E_1 = \\dfrac{(6{,}625\\times 10^{-34})^2}{8 \\times 9{,}1\\times 10^{-31} \\times (10^{-9})^2 \\times 1{,}6\\times 10^{-19}} \\approx 0{,}377\\ \\text{eV}$. Do đó $\\Delta E = E_2 - E_1 = 3 E_1 \\approx 1{,}13\\ \\text{eV}$."
+  },
+  {
+    "id": 88,
+    "lab_name": "Chương 8 & 9: Cơ học lượng tử (de Broglie, Heisenberg) & Nguyên tử",
+    "type": "theory",
+    "question": "Trong nguyên tử Hiđrô và các ion giống Hiđrô, trạng thái của electron (khi kể cả spin) được xác định bởi bộ $4$ số lượng tử $(n, \\ell, m_\\ell, m_s)$. Với lớp lượng tử ứng với số lượng tử chính $n$, số giá trị của số lượng tử phụ $\\ell$, số giá trị của $m_\\ell$ ứng với mỗi $\\ell$, và tổng số trạng thái lượng tử tối đa trong lớp $n$ lần lượt là:",
+    "image": "",
+    "options": [
+      "$\\ell = n$; $m_\\ell = \\pm \\dfrac{1}{2}$; tổng số trạng thái là $2n$",
+      "$\\ell \\in \\{1, 2, \\dots, n\\}$; $m_\\ell$ có $\\ell$ giá trị; tổng số trạng thái là $n^2$",
+      "$\\ell \\in \\{0, 1, \\dots, n\\}$; $m_\\ell$ có $2n + 1$ giá trị; tổng số trạng thái là $4n$",
+      "$\\ell \\in \\{0, 1, \\dots, n-1\\}$ ($n$ giá trị); $m_\\ell \\in \\{-\\ell, \\dots, +\\ell\\}$ ($2\\ell + 1$ giá trị); tổng số trạng thái có kể spin là $2n^2$"
+    ],
+    "correct": 3,
+    "explanation": "Ứng với số lượng tử chính $n$, số lượng tử orbital $\\ell$ nhận $n$ giá trị từ $0$ đến $n-1$; với mỗi $\\ell$ có $2\\ell + 1$ giá trị $m_\\ell$ và $2$ giá trị hình chiếu spin $m_s = \\pm 1/2$. Tổng số trạng thái trong lớp $n$ là $\\sum_{\\ell=0}^{n-1} 2(2\\ell + 1) = 2n^2$."
+  },
+  {
+    "id": 1,
+    "lab_name": "Chương 1: Dao động điện từ (LC, RLC) & Sóng (Doppler)",
+    "type": "theory",
+    "question": "Trong mạch dao động điện từ tắt dần $R, L, C$ nối tiếp, hệ số tắt dần $\\beta$, tần số góc dao động tắt dần $\\omega$ và điện trở tới hạn $R_0$ được xác định bởi hệ thức nào sau đây?",
+    "image": "",
+    "options": [
+      "$\\beta = \\dfrac{R}{2L},\\ \\omega = \\sqrt{\\dfrac{1}{LC} - \\left(\\dfrac{R}{2L}\\right)^2},\\ R_0 = 2\\sqrt{\\dfrac{L}{C}}$",
+      "$\\beta = \\dfrac{R}{L},\\ \\omega = \\sqrt{\\dfrac{1}{LC} + \\left(\\dfrac{R}{L}\\right)^2},\\ R_0 = \\sqrt{\\dfrac{L}{C}}$",
+      "$\\beta = \\dfrac{2R}{L},\\ \\omega = \\dfrac{1}{\\sqrt{LC}},\\ R_0 = \\dfrac{1}{2}\\sqrt{\\dfrac{L}{C}}$",
+      "$\\beta = \\dfrac{R}{2C},\\ \\omega = \\sqrt{\\dfrac{1}{LC} - \\left(\\dfrac{R}{2C}\\right)^2},\\ R_0 = 2\\sqrt{\\dfrac{C}{L}}$"
+    ],
+    "correct": 0,
+    "explanation": "Từ phương trình vi phân $\\dfrac{d^2 i}{dt^2} + 2\\beta\\dfrac{di}{dt} + \\omega_0^2 i = 0$ với $\\beta = \\dfrac{R}{2L}$ và $\\omega_0 = \\dfrac{1}{\\sqrt{LC}}$, điều kiện có dao động tắt dần là $\\omega_0 > \\beta \\iff R < R_0 = 2\\sqrt{\\dfrac{L}{C}}$, tần số góc $\\omega = \\sqrt{\\omega_0^2 - \\beta^2}$."
+  },
+  {
+    "id": 3,
+    "lab_name": "Chương 1: Dao động điện từ (LC, RLC) & Sóng (Doppler)",
+    "type": "calc",
+    "question": "Một mạch dao động điện từ gồm tụ điện $C = 2{,}5\\times 10^{-6}\\ \\text{F}$, cuộn dây có hệ số tự cảm $L = 120\\ \\text{mH}$ và điện trở thuần $R = 40\\ \\Omega$. Chu kỳ dao động điện từ $T$ và lượng giảm lôga $\\delta$ trong mạch là:",
+    "image": "",
+    "options": [
+      "$T \\approx 3{,}46\\times 10^{-3}\\ \\text{s};\\ \\delta \\approx 1{,}15$",
+      "$T \\approx 1{,}82\\times 10^{-3}\\ \\text{s};\\ \\delta \\approx 0{,}25$",
+      "$T \\approx 3{,}46\\times 10^{-3}\\ \\text{s};\\ \\delta \\approx 0{,}58$",
+      "$T \\approx 6{,}28\\times 10^{-3}\\ \\text{s};\\ \\delta \\approx 0{,}58$"
+    ],
+    "correct": 2,
+    "explanation": "Hệ số tắt dần $\\beta = \\dfrac{R}{2L} = \\dfrac{40}{2\\times 0{,}12} \\approx 166{,}7\\ \\text{s}^{-1}$. $\\omega_0 = \\dfrac{1}{\\sqrt{LC}} \\approx 1825{,}7\\ \\text{rad/s}$. $\\omega = \\sqrt{\\omega_0^2 - \\beta^2} \\approx 1818\\ \\text{rad/s} \\Rightarrow T = \\dfrac{2\\pi}{\\omega} \\approx 3{,}46\\times 10^{-3}\\ \\text{s}$ và lượng giảm lôga $\\delta = \\beta T \\approx 0{,}58$."
+  },
+  {
+    "id": 5,
+    "lab_name": "Chương 1: Dao động điện từ (LC, RLC) & Sóng (Doppler)",
+    "type": "calc",
+    "question": "Tỉ số giữa năng lượng điện trường $W_e$ và năng lượng từ trường $W_m$ trong mạch dao động điện từ điều hòa (với $q = Q_0\\cos\\omega t$) tại thời điểm $t = \\dfrac{T}{8}$ ($T$ là chu kỳ dao động) bằng:",
+    "image": "",
+    "options": [
+      "$\\dfrac{W_e}{W_m} = 1$",
+      "$\\dfrac{W_e}{W_m} = 2$",
+      "$\\dfrac{W_e}{W_m} = \\dfrac{1}{2}$",
+      "$\\dfrac{W_e}{W_m} = 3$"
+    ],
+    "correct": 0,
+    "explanation": "Tại $t = T/8$, góc pha $\\omega t = \\dfrac{2\\pi}{T}\\cdot\\dfrac{T}{8} = \\dfrac{\\pi}{4}$. Khi đó $\\cos^2(\\pi/4) = \\sin^2(\\pi/4) = \\dfrac{1}{2}$, nên $W_e = W_m = \\dfrac{1}{2}W \\Rightarrow \\dfrac{W_e}{W_m} = 1$."
+  },
+  {
+    "id": 7,
+    "lab_name": "Chương 1: Dao động điện từ (LC, RLC) & Sóng (Doppler)",
+    "type": "calc",
+    "question": "Mạch chọn sóng của máy thu thanh gồm cuộn cảm $L$ cố định và tụ điện có điện dung biến thiên. Khi điện dung là $C_1$, mạch thu được sóng điện từ có bước sóng $\\lambda_1 = 100\\ \\text{m}$; khi điện dung là $C_2$, mạch thu được sóng có bước sóng $\\lambda_2 = 1\\ \\text{km}$. Tỉ số $\\dfrac{C_2}{C_1}$ bằng:",
+    "image": "",
+    "options": [
+      "$\\dfrac{C_2}{C_1} = 1000$",
+      "$\\dfrac{C_2}{C_1} = 10$",
+      "$\\dfrac{C_2}{C_1} = 100$",
+      "$\\dfrac{C_2}{C_1} = 0{,}01$"
+    ],
+    "correct": 2,
+    "explanation": "Bước sóng điện từ thu được $\\lambda = c T = 2\\pi c\\sqrt{LC} \\Rightarrow \\lambda \\propto \\sqrt{C}$. Do đó $\\dfrac{C_2}{C_1} = \\left(\\dfrac{\\lambda_2}{\\lambda_1}\\right)^2 = \\left(\\dfrac{1000}{100}\\right)^2 = 100$."
+  },
+  {
+    "id": 9,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Vân Newton)",
+    "type": "theory",
+    "question": "Trong bức tranh giao thoa của hai sóng ánh sáng kết hợp có bước sóng $\\lambda$, tập hợp các điểm tạo thành vân sáng và vân tối thỏa mãn điều kiện nào về hiệu quang lộ $\\Delta L = L_1 - L_2$?",
+    "image": "",
+    "options": [
+      "Vân sáng: $\\Delta L = k\\lambda$; Vân tối: $\\Delta L = (2k + 1)\\dfrac{\\lambda}{2}$ với $k = 0, \\pm 1, \\pm 2,\\dots$",
+      "Vân sáng: $\\Delta L = (2k + 1)\\dfrac{\\lambda}{2}$; Vân tối: $\\Delta L = k\\lambda$ với $k = 0, \\pm 1, \\pm 2,\\dots$",
+      "Vân sáng: $\\Delta L = 2k\\lambda$; Vân tối: $\\Delta L = (2k + 1)\\lambda$ với $k = 0, \\pm 1, \\pm 2,\\dots$",
+      "Vân sáng: $\\Delta L = k\\dfrac{\\lambda}{2}$; Vân tối: $\\Delta L = k\\lambda$ với $k = 0, \\pm 1, \\pm 2,\\dots$"
+    ],
+    "correct": 0,
+    "explanation": "Hai dao động sáng tăng cường nhau (vân sáng) khi hiệu pha $\\Delta\\varphi = 2k\\pi \\iff \\Delta L = k\\lambda$, và triệt tiêu nhau (vân tối) khi $\\Delta\\varphi = (2k+1)\\pi \\iff \\Delta L = (2k+1)\\dfrac{\\lambda}{2}$."
+  },
+  {
+    "id": 11,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Vân Newton)",
+    "type": "error",
+    "question": "Trong phép đo bước sóng $\\lambda$ bằng hệ vân tròn Newton, vì sao không áp dụng trực tiếp công thức $\\lambda = \\dfrac{r_k^2}{k R}$ cho một vân tối thứ $k$ mà phải đo hai vân tối thứ $k$ và thứ $i$ rồi tính theo $\\lambda = \\dfrac{r_k^2 - r_i^2}{(k - i)R}$?",
+    "image": "",
+    "options": [
+      "Vì bán kính cong $R$ của thấu kính thay đổi theo bậc của vân giao thoa",
+      "Vì các vân tối gần tâm không tuân theo định luật giao thoa ánh sáng",
+      "Vì thực tế không đạt được tiếp xúc điểm hoàn hảo giữa thấu kính và bản phẳng (do bụi hoặc biến dạng), dùng hiệu $r_k^2 - r_i^2$ giúp khử sai số hệ thống tại tâm tiếp xúc",
+      "Vì ánh sáng chiếu vào bị tán sắc thành nhiều bước sóng khác nhau"
+    ],
+    "correct": 2,
+    "explanation": "Theo giáo trình (trang 263), thực tế không đạt được sự tiếp xúc điểm giữa mặt lồi thấu kính $L$ và bản phẳng $P$ nên vân tối chính giữa không phải là một điểm mà là một hình tròn. Lấy hiệu $r_k^2 - r_i^2 = (k - i)\\lambda R$ loại bỏ được độ dày dư tại tâm."
+  }
+]

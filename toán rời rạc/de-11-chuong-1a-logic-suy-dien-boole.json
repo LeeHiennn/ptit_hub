@@ -1,0 +1,392 @@
+[
+  {
+    "id": 601,
+    "topic": "Logic Mệnh Đề",
+    "question": "Cho các mệnh đề $p$: \"Bạn hoàn thành tất cả bài tập\" và $q$: \"Bạn được dự thi cuối kỳ\". Phát biểu \"Bạn được dự thi cuối kỳ <strong>chỉ khi</strong> bạn hoàn thành tất cả bài tập\" tương đương với mệnh đề logic nào?",
+    "options": [
+      "$\\neg p \\rightarrow q$",
+      "$q \\rightarrow p$",
+      "$p \\rightarrow q$",
+      "$q \\leftrightarrow \\neg p$"
+    ],
+    "correct": 1,
+    "explanation": "Trong logic mệnh đề, cấu trúc \"$q$ <strong>chỉ khi</strong> $p$\" (q only if p) có nghĩa là $p$ là điều kiện cần để có $q$, tức là nếu có $q$ thì bắt buộc phải có $p$: $q \\rightarrow p$."
+  },
+  {
+    "id": 602,
+    "topic": "Logic Mệnh Đề",
+    "question": "Phép tuyển loại $p \\oplus q$ (XOR) <strong>không</strong> tương đương logic với biểu thức nào sau đây?",
+    "options": [
+      "$(p \\land \\neg q) \\lor (\\neg p \\land q)$",
+      "$(p \\rightarrow q) \\land (q \\rightarrow p)$",
+      "$(p \\lor q) \\land \\neg(p \\land q)$",
+      "$\\neg(p \\leftrightarrow q)$"
+    ],
+    "correct": 1,
+    "explanation": "Biểu thức $(p \\rightarrow q) \\land (q \\rightarrow p)$ chính là phép tương đương hai chiều $p \\leftrightarrow q$ (đúng khi $p, q$ cùng chân trị), ngược hoàn toàn với $p \\oplus q$ (đúng khi $p, q$ khác chân trị)."
+  },
+  {
+    "id": 603,
+    "topic": "Logic Mệnh Đề",
+    "question": "Biểu thức logic $(p \\rightarrow q) \\land (p \\rightarrow r)$ tương đương với mệnh đề nào dưới đây?",
+    "options": [
+      "$p \\rightarrow (q \\land r)$",
+      "$(p \\lor q) \\rightarrow r$",
+      "$p \\rightarrow (q \\lor r)$",
+      "$(p \\land q) \\rightarrow r$"
+    ],
+    "correct": 0,
+    "explanation": "Ta có $(p \\rightarrow q) \\land (p \\rightarrow r) \\equiv (\\neg p \\lor q) \\land (\\neg p \\lor r) \\equiv \\neg p \\lor (q \\land r) \\equiv p \\rightarrow (q \\land r)$ (áp dụng luật phân phối)."
+  },
+  {
+    "id": 604,
+    "topic": "Logic Mệnh Đề",
+    "question": "Theo luật xuất-nhập (Exportation) trong logic mệnh đề, biểu thức $p \\rightarrow (q \\rightarrow r)$ tương đương với:",
+    "options": [
+      "$(p \\land \\neg q) \\rightarrow r$",
+      "$(p \\rightarrow q) \\rightarrow r$",
+      "$(p \\lor q) \\rightarrow r$",
+      "$(p \\land q) \\rightarrow r$"
+    ],
+    "correct": 3,
+    "explanation": "Biến đổi tương đương: $p \\rightarrow (q \\rightarrow r) \\equiv \\neg p \\lor (\\neg q \\lor r) \\equiv (\\neg p \\lor \\neg q) \\lor r \\equiv \\neg(p \\land q) \\lor r \\equiv (p \\land q) \\rightarrow r$."
+  },
+  {
+    "id": 605,
+    "topic": "Logic Mệnh Đề",
+    "question": "Biểu thức mệnh đề nào sau đây là một <strong>mâu thuẫn</strong> (Contradiction / hằng sai)?",
+    "options": [
+      "$(p \\lor \\neg p) \\rightarrow (q \\land \\neg q)$",
+      "$(p \\land q) \\land (p \\rightarrow \\neg q)$",
+      "$(p \\rightarrow q) \\lor (q \\rightarrow p)$",
+      "Cả hai biểu thức $(p \\lor \\neg p) \\rightarrow (q \\land \\neg q)$ và $(p \\land q) \\land (p \\rightarrow \\neg q)$"
+    ],
+    "correct": 3,
+    "explanation": "Ta có $(p \\lor \\neg p) \\rightarrow (q \\land \\neg q) \\equiv T \\rightarrow F \\equiv F$; đồng thời $(p \\land q) \\land (p \\rightarrow \\neg q) \\equiv (p \\land q) \\land \\neg(p \\land q) \\equiv F$. Cả hai đều là hằng sai."
+  },
+  {
+    "id": 606,
+    "topic": "Logic Mệnh Đề",
+    "question": "Với $3$ biến mệnh đề $p, q, r$, có thể tạo ra tối đa bao nhiêu bảng chân trị (hàm logic) đôi một không tương đương với nhau?",
+    "options": [
+      "$8$",
+      "$64$",
+      "$512$",
+      "$256$"
+    ],
+    "correct": 3,
+    "explanation": "Bảng chân trị của $n = 3$ biến có $2^3 = 8$ dòng. Mỗi dòng có thể nhận $2$ giá trị ($T$ hoặc $F$), do đó số hàm logic phân biệt là $2^{2^3} = 2^8 = 256$."
+  },
+  {
+    "id": 607,
+    "topic": "Logic Mệnh Đề",
+    "question": "Dạng chuẩn tắc tuyển (Disjunctive Normal Form - DNF) của mệnh đề tương đương $p \\leftrightarrow q$ là:",
+    "options": [
+      "$(p \\land q) \\lor (\\neg p \\land \\neg q)$",
+      "$(p \\land \\neg q) \\lor (\\neg p \\land q)$",
+      "$(p \\lor q) \\land (\\neg p \\lor \\neg q)$",
+      "$(p \\lor \\neg q) \\land (\\neg p \\lor q)$"
+    ],
+    "correct": 0,
+    "explanation": "Phép tương đương $p \\leftrightarrow q$ nhận giá trị $T$ khi $p, q$ cùng đúng ($p \\land q$) hoặc cùng sai ($\\neg p \\land \\neg q$). Do đó DNF là $(p \\land q) \\lor (\\neg p \\land \\neg q)$ (còn $(p \\lor \\neg q) \\land (\\neg p \\lor q)$ là dạng CNF)."
+  },
+  {
+    "id": 608,
+    "topic": "Logic Mệnh Đề",
+    "question": "Một biểu thức logic $f(p, q, r)$ chỉ nhận giá trị Sai ($F$) tại đúng hai bộ $(p, q, r) = (1, 0, 1)$ và $(0, 1, 0)$, các bộ còn lại đều Đúng ($T$). Dạng chuẩn tắc hội chính quy (Full CNF) của $f$ là:",
+    "options": [
+      "$(p \\land \\neg q \\land r) \\lor (\\neg p \\land q \\land \\neg r)$",
+      "$(\\neg p \\lor q \\lor \\neg r) \\land (p \\lor \\neg q \\lor r)$",
+      "$(p \\lor \\neg q \\lor r) \\land (\\neg p \\lor q \\lor \\neg r)$",
+      "$(\\neg p \\land q \\land \\neg r) \\lor (p \\land \\neg q \\land r)$"
+    ],
+    "correct": 1,
+    "explanation": "Mỗi dòng nhận giá trị $F$ tạo ra một tuyển sơ cấp (maxterm) bằng cách đảo các biến có giá trị $1$ và giữ nguyên biến có giá trị $0$: dòng $(1,0,1)$ cho $(\\neg p \\lor q \\lor \\neg r)$, dòng $(0,1,0)$ cho $(p \\lor \\neg q \\lor r)$. Hội hai tuyển này cho Full CNF."
+  },
+  {
+    "id": 609,
+    "topic": "Quy Tắc Suy Diễn",
+    "question": "Xét suy luận: \"Nếu hệ thống bị quá tải thì máy chủ sẽ phản hồi chậm. Máy chủ không phản hồi chậm. Suy ra hệ thống không bị quá tải.\" Suy luận này sử dụng quy tắc nào?",
+    "options": [
+      "Tam đoạn luận giả định (Hypothetical Syllogism)",
+      "Modus Tollens (Phủ định hậu kiện)",
+      "Tam đoạn luận rời (Disjunctive Syllogism)",
+      "Modus Ponens (Khẳng định tiền đề)"
+    ],
+    "correct": 1,
+    "explanation": "Suy luận có dạng: từ $p \\rightarrow q$ và $\\neg q$ suy ra $\\neg p$. Đây chính là quy tắc suy diễn hợp lệ <strong>Modus Tollens</strong>."
+  },
+  {
+    "id": 610,
+    "topic": "Quy Tắc Suy Diễn",
+    "question": "Trong các mô hình lập luận sau đây, mô hình nào là một <strong>ngụy biện (suy luận không hợp lệ)</strong>?",
+    "options": [
+      "Từ $p \\land q$ suy ra $p$",
+      "Từ $p \\lor q$ và $\\neg p$ suy ra $q$",
+      "Từ $p \\rightarrow q$ và $q \\rightarrow r$ suy ra $p \\rightarrow r$",
+      "Từ $p \\rightarrow q$ và $q$ suy ra $p$"
+    ],
+    "correct": 3,
+    "explanation": "Lập luận \"Từ $p \\rightarrow q$ và $q$ suy ra $p$\" là <strong>ngụy biện khẳng định hậu kiện</strong> (Fallacy of affirming the conclusion), vì khi $p = F, q = T$ thì các tiền đề đều đúng nhưng kết luận $p$ lại sai."
+  },
+  {
+    "id": 611,
+    "topic": "Quy Tắc Suy Diễn",
+    "question": "Theo quy tắc <strong>hợp giải (Resolution)</strong>, từ hai mệnh đề tuyển $(p \\lor q)$ và $(\\neg p \\lor r)$ ta rút ra được kết luận hợp lệ nào?",
+    "options": [
+      "$p \\lor q \\lor r$",
+      "$q \\land r$",
+      "$q \\lor r$",
+      "$\\neg q \\lor r$"
+    ],
+    "correct": 2,
+    "explanation": "Quy tắc hợp giải khẳng định $((p \\lor q) \\land (\\neg p \\lor r)) \\rightarrow (q \\lor r)$ là một hằng đúng (nếu $p$ sai thì $q$ đúng; nếu $p$ đúng thì $r$ đúng, nên $q \\lor r$ luôn đúng)."
+  },
+  {
+    "id": 612,
+    "topic": "Quy Tắc Suy Diễn",
+    "question": "Để chứng minh định lý dạng $p \\rightarrow q$ bằng phương pháp <strong>phản chứng (Proof by Contradiction)</strong>, ta cần xuất phát từ giả thiết nào để dẫn tới một mâu thuẫn?",
+    "options": [
+      "Giả sử $q$ đúng và chứng minh $p$ đúng",
+      "Giả sử $\\neg p$ đúng và $q$ đúng",
+      "Giả sử $p$ đúng và $\\neg q$ đúng (tức giả sử $p \\land \\neg q$)",
+      "Giả sử $\\neg p$ đúng và $\\neg q$ đúng"
+    ],
+    "correct": 2,
+    "explanation": "Vì $\\neg(p \\rightarrow q) \\equiv p \\land \\neg q$, để chứng minh $p \\rightarrow q$ bằng phản chứng, ta giả sử điều ngược lại là $p$ đúng và $q$ sai ($p \\land \\neg q$), rồi suy ra điều vô lý."
+  },
+  {
+    "id": 613,
+    "topic": "Logic Vị Từ & Lượng Từ",
+    "question": "Xét trên miền số thực $\\mathbb{R}$. Khẳng định nào sau đây có giá trị chân lý là <strong>Sai (False)</strong>?",
+    "options": [
+      "$\\exists y \\in \\mathbb{R},\\ \\forall x \\in \\mathbb{R}: x \\cdot y = 0$",
+      "$\\forall x \\in \\mathbb{R},\\ \\exists y \\in \\mathbb{R}: y > x$",
+      "$\\forall x \\in \\mathbb{R},\\ \\exists y \\in \\mathbb{R}: x + y = 0$",
+      "$\\exists x \\in \\mathbb{R},\\ \\forall y \\in \\mathbb{R}: x + y = 0$"
+    ],
+    "correct": 3,
+    "explanation": "Mệnh đề $\\exists x \\in \\mathbb{R}, \\forall y \\in \\mathbb{R}: x + y = 0$ đòi hỏi tồn tại một số thực $x$ cố định cộng với <strong>mọi</strong> số thực $y$ đều bằng $0$, điều này vô lý (vì $y = -x$ phụ thuộc vào $x$)."
+  },
+  {
+    "id": 614,
+    "topic": "Logic Vị Từ & Lượng Từ",
+    "question": "Trên miền tập các số nguyên $\\mathbb{Z}$, mệnh đề nào dưới đây nhận giá trị <strong>Đúng (True)</strong>?",
+    "options": [
+      "$\\forall x \\in \\mathbb{Z},\\ \\exists y \\in \\mathbb{Z}: 2y = x$",
+      "$\\forall x \\in \\mathbb{Z},\\ \\forall y \\in \\mathbb{Z}: (x^2 = y^2 \\rightarrow x = y)$",
+      "$\\forall x \\in \\mathbb{Z},\\ \\exists y \\in \\mathbb{Z}: x + y = 1$",
+      "$\\forall x \\in \\mathbb{Z},\\ \\exists y \\in \\mathbb{Z}: y^2 = x$"
+    ],
+    "correct": 2,
+    "explanation": "Với mọi $x \\in \\mathbb{Z}$, luôn chọn được $y = 1 - x \\in \\mathbb{Z}$ thỏa mãn $x + y = 1$. Ba câu còn lại sai (lần lượt phản ví dụ $x=1$, $x=2$, và $x=2, y=-2$)."
+  },
+  {
+    "id": 615,
+    "topic": "Logic Vị Từ & Lượng Từ",
+    "question": "Phủ định của mệnh đề có 3 lượng từ lồng nhau $\\forall x \\exists y \\forall z \\big(P(x, y, z) \\land \\neg Q(y, z)\\big)$ là:",
+    "options": [
+      "$\\exists x \\forall y \\exists z \\big(\\neg P(x, y, z) \\land Q(y, z)\\big)$",
+      "$\\exists x \\forall y \\exists z \\big(\\neg P(x, y, z) \\lor Q(y, z)\\big)$",
+      "$\\exists x \\exists y \\exists z \\big(\\neg P(x, y, z) \\lor Q(y, z)\\big)$",
+      "$\\forall x \\exists y \\forall z \\big(\\neg P(x, y, z) \\lor Q(y, z)\\big)$"
+    ],
+    "correct": 1,
+    "explanation": "Khi đẩy dấu $\\neg$ vào trong: $\\forall$ đổi thành $\\exists$, $\\exists$ đổi thành $\\forall$, và theo De Morgan $\\neg(P \\land \\neg Q) \\equiv \\neg P \\lor Q$. Thu được $\\exists x \\forall y \\exists z (\\neg P(x, y, z) \\lor Q(y, z))$."
+  },
+  {
+    "id": 616,
+    "topic": "Logic Vị Từ & Lượng Từ",
+    "question": "Ký hiệu lượng từ duy nhất $\\exists! x\\, P(x)$ (\"tồn tại duy nhất $x$ sao cho $P(x)$ đúng\") tương đương với công thức vị từ nào sau đây?",
+    "options": [
+      "$\\forall x \\big(P(x) \\rightarrow \\exists y\\, (y = x)\\big)$",
+      "$\\exists x\\, P(x) \\land \\forall y\\, P(y)$",
+      "$\\exists x \\big(P(x) \\lor \\forall y\\, (y \\ne x \\rightarrow P(y))\\big)$",
+      "$\\exists x \\big(P(x) \\land \\forall y\\, (P(y) \\rightarrow y = x)\\big)$"
+    ],
+    "correct": 3,
+    "explanation": "Tồn tại duy nhất nghĩa là: (1) có ít nhất một $x$ thỏa $P(x)$, và (2) mọi $y$ thỏa $P(y)$ đều phải trùng với $x$, tức $\\exists x (P(x) \\land \\forall y (P(y) \\rightarrow y = x))$."
+  },
+  {
+    "id": 617,
+    "topic": "Logic Vị Từ & Lượng Từ",
+    "question": "Khẳng định tương đương nào dưới đây về lượng từ là <strong>SAI</strong> trong trường hợp tổng quát?",
+    "options": [
+      "$\\forall x\\,(P(x) \\land Q(x)) \\equiv \\forall x\\, P(x) \\land \\forall x\\, Q(x)$",
+      "$\\neg \\exists x\\, P(x) \\equiv \\forall x\\, \\neg P(x)$",
+      "$\\forall x\\,(P(x) \\lor Q(x)) \\equiv \\forall x\\, P(x) \\lor \\forall x\\, Q(x)$",
+      "$\\exists x\\,(P(x) \\lor Q(x)) \\equiv \\exists x\\, P(x) \\lor \\exists x\\, Q(x)$"
+    ],
+    "correct": 2,
+    "explanation": "Lượng từ $\\forall$ <strong>không</strong> phân phối qua phép tuyển $\\lor$. Ví dụ trên $\\mathbb{Z}$: mọi số nguyên đều chẵn hoặc lẻ ($\\forall x (C(x) \\lor L(x))$ đúng), nhưng không thể kết luận mọi số đều chẵn hoặc mọi số đều lẻ."
+  },
+  {
+    "id": 618,
+    "topic": "Logic Vị Từ & Lượng Từ",
+    "question": "Cho miền xác định hữu hạn $D = \\{1, 2, 3\\}$. Biểu thức $\\exists x \\in D,\\, \\forall y \\in D,\\, P(x, y)$ khi khai triển thành mệnh đề không chứa lượng từ là:",
+    "options": [
+      "$P(1,1) \\land P(2,2) \\land P(3,3)$",
+      "$\\big(P(1,1) \\land P(1,2) \\land P(1,3)\\big) \\lor \\big(P(2,1) \\land P(2,2) \\land P(2,3)\\big) \\lor \\big(P(3,1) \\land P(3,2) \\land P(3,3)\\big)$",
+      "$\\big(P(1,1) \\lor P(1,2) \\lor P(1,3)\\big) \\land \\big(P(2,1) \\lor P(2,2) \\lor P(2,3)\\big) \\land \\big(P(3,1) \\lor P(3,2) \\lor P(3,3)\\big)$",
+      "$P(1,1) \\lor P(1,2) \\lor \\dots \\lor P(3,3)$"
+    ],
+    "correct": 1,
+    "explanation": "Trên miền hữu hạn, $\\exists x$ khai triển thành phép tuyển ($\\lor$) theo $x \\in \\{1,2,3\\}$, còn $\\forall y$ khai triển thành phép hội ($\\land$) theo $y \\in \\{1,2,3\\}$."
+  },
+  {
+    "id": 619,
+    "topic": "Logic Mệnh Đề",
+    "question": "Trên hòn đảo chỉ có Hiệp sĩ (luôn nói thật) và Kẻ nói dối (luôn nói dối), bạn gặp hai người $A$ và $B$. Người $A$ nói: \"Cả hai chúng tôi đều là kẻ nói dối.\" Hãy xác định thân phận của $A$ và $B$:",
+    "options": [
+      "$A$ là Hiệp sĩ, $B$ là Kẻ nói dối",
+      "$A$ là Kẻ nói dối, $B$ là Hiệp sĩ",
+      "Không đủ dữ kiện để xác định",
+      "Cả $A$ và $B$ đều là Kẻ nói dối"
+    ],
+    "correct": 1,
+    "explanation": "Nếu $A$ là Hiệp sĩ thì câu nói \"cả hai là kẻ nói dối\" là đúng, mâu thuẫn với việc $A$ là Hiệp sĩ. Vậy $A$ bắt buộc là Kẻ nói dối. Vì lời của $A$ sai nên không thể cả hai đều là kẻ nói dối, suy ra $B$ là Hiệp sĩ."
+  },
+  {
+    "id": 620,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Trong Đại số Boole, phần bù của biểu thức $f(x, y, z) = x y + z$ (tức $\\overline{x y + z}$) bằng biểu thức nào sau đây?",
+    "options": [
+      "$(x + y) z'$",
+      "$x' y' z'$",
+      "$x' y' + z'$",
+      "$(x' + y') z'$"
+    ],
+    "correct": 3,
+    "explanation": "Áp dụng định lý De Morgan hai lần: $\\overline{x y + z} = \\overline{(x y)} \\cdot \\overline{z} = (x' + y') z'$."
+  },
+  {
+    "id": 621,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Hàm Boole $3$ biến $f(x, y, z)$ nhận giá trị $1$ tại các bộ $(x,y,z)$ ứng với minterm $m_1, m_3, m_6$ (theo thứ tự nhị phân $xyz$), các vị trí khác bằng $0$. Dạng tổng chuẩn tắc chính quy (SOP) của $f$ là:",
+    "options": [
+      "$x' y' z + x' y z + x y z'$",
+      "$(x + y + z')(x + y' + z')(x' + y' + z)$",
+      "$x' y' z' + x' y z' + x y' z$",
+      "$x y' z + x y z + x' y' z$"
+    ],
+    "correct": 0,
+    "explanation": "Đổi chỉ số thập phân sang nhị phân 3 bit $(x,y,z)$: $1 = 001_2 \\to x'y'z$; $3 = 011_2 \\to x'yz$; $6 = 110_2 \\to xyz'$. Tổng các minterm cho kết quả $x'y'z + x'yz + xyz'$."
+  },
+  {
+    "id": 622,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Sử dụng bìa Karnaugh để tối giản hàm Boole $3$ biến $f(x, y, z) = \\sum m(0, 2, 4, 5, 6)$. Biểu thức tối giản nhất của $f$ là:",
+    "options": [
+      "$y' + x z'$",
+      "$z + x' y$",
+      "$z' + x y'$",
+      "$x' z' + x y'$"
+    ],
+    "correct": 2,
+    "explanation": "Các ô $m_0(000), m_2(010), m_4(100), m_6(110)$ ghép thành nhóm $4$ ô ứng với $z'$. Ô $m_5(101)$ ghép với $m_4(100)$ thành nhóm $2$ ô ứng với $x y'$. Vậy $f(x, y, z) = z' + x y'$."
+  },
+  {
+    "id": 623,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Cho hàm Boole $4$ biến $f(w, x, y, z) = \\sum m(0, 1, 2, 3, 8, 9, 10, 11)$. Sau khi rút gọn bằng bìa Karnaugh, hàm $f$ tương đương với:",
+    "options": [
+      "$w' x'$",
+      "$y'$",
+      "$w'$",
+      "$x'$"
+    ],
+    "correct": 3,
+    "explanation": "Viết dạng nhị phân 4 bit $(w, x, y, z)$: từ $0..3$ là $0000..0011$ và từ $8..11$ là $1000..1011$. Tập $8$ ô này hợp thành một tế bào lớn loại bỏ cả $w, y, z$, chỉ còn lại duy nhất điều kiện $x = 0$, tức $f = x'$."
+  },
+  {
+    "id": 624,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Trên bìa Karnaugh $4$ biến $(w, x, y, z)$, $4$ ô ở $4$ góc bảng tương ứng với $f(w, x, y, z) = \\sum m(0, 2, 8, 10)$ ghép thành một tế bào lớn $4$ ô. Biểu thức rút gọn là:",
+    "options": [
+      "$w' z'$",
+      "$x' y'$",
+      "$x' z'$",
+      "$w' y'$"
+    ],
+    "correct": 2,
+    "explanation": "Bốn ô góc là $0(0000), 2(0010), 8(1000), 10(1010)$. Ta thấy $w$ và $y$ đều thay đổi giữa $0$ và $1$, chỉ có $x = 0$ và $z = 0$ giữ nguyên, nên kết quả là $x' z'$."
+  },
+  {
+    "id": 625,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Một hàm Boole $n$ biến được gọi là <strong>tự đối ngẫu (self-dual)</strong> nếu $f(x_1, \\dots, x_n) = \\overline{f(\\overline{x_1}, \\dots, \\overline{x_n})}$ với mọi bộ biến. Có bao nhiêu hàm Boole $3$ biến là hàm tự đối ngẫu?",
+    "options": [
+      "$8$",
+      "$16$",
+      "$32$",
+      "$128$"
+    ],
+    "correct": 1,
+    "explanation": "Bảng chân trị $3$ biến có $2^3 = 8$ dòng, chia thành $4$ cặp dòng bù nhau (như $000$ và $111$). Chỉ cần chọn giá trị cho $4$ dòng đầu, $4$ dòng còn lại được xác định duy nhất bằng phần bù. Vậy số hàm tự đối ngẫu là $2^4 = 16$."
+  },
+  {
+    "id": 626,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Do cổng NAND ($x \\uparrow y = \\overline{x \\cdot y}$) là hệ đầy đủ hàm, ta có thể biểu diễn phép toán OR ($x + y$) chỉ bằng các cổng NAND như thế nào?",
+    "options": [
+      "$(x \\uparrow y) \\uparrow x$",
+      "$x \\uparrow (y \\uparrow y)$",
+      "$(x \\uparrow y) \\uparrow (x \\uparrow y)$",
+      "$(x \\uparrow x) \\uparrow (y \\uparrow y)$"
+    ],
+    "correct": 3,
+    "explanation": "Ta có $x \\uparrow x = \\overline{x \\cdot x} = x'$ và tương tự $y \\uparrow y = y'$. Khi đó $(x \\uparrow x) \\uparrow (y \\uparrow y) = \\overline{x' \\cdot y'} = x + y$ theo luật De Morgan."
+  },
+  {
+    "id": 627,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Cho hàm mạch logic $F(x, y, z) = (x \\oplus y) \\cdot z + \\overline{x \\cdot y}$. Giá trị đầu ra của cặp đầu vào $(x, y, z) = (1, 1, 0)$ và $(1, 0, 1)$ lần lượt là:",
+    "options": [
+      "$1$ và $0$",
+      "$1$ và $1$",
+      "$0$ và $0$",
+      "$0$ và $1$"
+    ],
+    "correct": 3,
+    "explanation": "Với $(1, 1, 0)$: $(1 \\oplus 1)\\cdot 0 + \\overline{1\\cdot 1} = 0 + 0 = 0$. Với $(1, 0, 1)$: $(1 \\oplus 0)\\cdot 1 + \\overline{1\\cdot 0} = 1 + 1 = 1$."
+  },
+  {
+    "id": 628,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Hàm Boole đối ngẫu $f^d(x, y, z)$ của biểu thức $f(x, y, z) = x \\cdot (y' + z) + 0$ thu được bằng cách hoán đổi phép $+ \\leftrightarrow \\cdot$ và $0 \\leftrightarrow 1$. Biểu thức của $f^d$ là:",
+    "options": [
+      "$(x' + y z') + 1$",
+      "$(x + y' \\cdot z) \\cdot 1 = x + y' z$",
+      "$x + y + z'$",
+      "$x' \\cdot (y + z') \\cdot 1$"
+    ],
+    "correct": 1,
+    "explanation": "Theo nguyên lý đối ngẫu Boole, giữ nguyên các biến và phần bù của biến, chỉ đổi $+$ thành $\\cdot$, $\\cdot$ thành $+$, $0$ thành $1$, ta được $f^d = (x + y' \\cdot z) \\cdot 1 = x + y' z$."
+  },
+  {
+    "id": 629,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Trong thiết kế mạch số, cổng <strong>XNOR</strong> ($\\overline{x \\oplus y}$, phép tương đương Boole) cho đầu ra bằng $1$ khi nào và có biểu thức SOP là gì?",
+    "options": [
+      "Khi $x \\ne y$; biểu thức $x' y + x y'$",
+      "Khi $x = y$; biểu thức $x y + x' y'$",
+      "Khi $x = 0$ và $y = 0$; biểu thức $x' y'$",
+      "Khi $x = 1$ hoặc $y = 1$; biểu thức $x + y$"
+    ],
+    "correct": 1,
+    "explanation": "XNOR là phủ định của XOR nên bằng $1$ khi hai đầu vào giống nhau ($00$ hoặc $11$), tương ứng với hai minterm $x' y' + x y$."
+  },
+  {
+    "id": 630,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Cho hàm Boole $3$ biến có điều kiện tùy định (Don't care): $f(x, y, z) = \\sum m(1, 3, 7) + \\sum d(0, 2, 5)$. Biểu thức rút gọn tối giản nhất của $f$ là:",
+    "options": [
+      "$x' + y z$",
+      "$z$",
+      "$y z + x' z$",
+      "$x' + z$"
+    ],
+    "correct": 1,
+    "explanation": "Biểu diễn nhị phân $(x,y,z)$: các minterm bắt buộc là $1(001), 3(011), 7(111)$. Tận dụng tùy định $d_5(101) = 1$ (và đặt $d_0 = d_2 = 0$), ta ghép được tế bào $4$ ô $\\{1, 3, 5, 7\\}$, cho kết quả tối giản nhất chỉ gồm một biến là $f = z$."
+  }
+]

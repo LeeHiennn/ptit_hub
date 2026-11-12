@@ -1,0 +1,210 @@
+[
+  {
+    "id": 81,
+    "topic": "Đếm & Tổ Hợp (Đề 1 - PTIT)",
+    "question": "Lớp học có $14$ bạn nam và $13$ bạn nữ. Hãy cho biết có bao nhiêu cách chọn đội văn nghệ của lớp sao cho số bạn nam đúng bằng $2$ lần số bạn nữ, biết rằng đội văn nghệ cần ít nhất $3$ và nhiều nhất $9$ thành viên?",
+    "options": [
+      "$938119$",
+      "$938116$",
+      "$938117$",
+      "$938118$"
+    ],
+    "correct": 0,
+    "explanation": "Gọi số bạn nữ là $k$ ($k \\in \\mathbb{N}^*$), suy ra số bạn nam là $2k$ và tổng số thành viên là $3k$. Vì $3 \\le 3k \\le 9 \\Rightarrow k \\in \\{1, 2, 3\\}$. Áp dụng quy tắc cộng và quy tắc nhân: $\\sum_{k=1}^{3} C_{14}^{2k} C_{13}^{k} = C_{14}^2 C_{13}^1 + C_{14}^4 C_{13}^2 + C_{14}^6 C_{13}^3 = 91\\times 13 + 1001\\times 78 + 3003\\times 286 = 1183 + 78078 + 858858 = 938119$."
+  },
+  {
+    "id": 82,
+    "topic": "Thuật Toán Sinh Tổ Hợp (Đề 1 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $6$ của các phần tử của $A$ theo thứ tự từ điển, hãy liệt kê $5$ tổ hợp liền kề tiếp theo của tổ hợp $(1,4,5,7,8,9)$.",
+    "options": [
+      "$(1,5,6,7,8,9),\\ (2,3,4,5,6,9),\\ (1,4,6,7,8,9),\\ (2,3,4,5,6,7),\\ (2,3,4,5,6,8)$",
+      "$(1,4,6,7,8,9),\\ (1,5,6,7,8,9),\\ (2,3,4,5,6,7),\\ (2,3,4,5,6,8),\\ (2,3,4,5,6,9)$",
+      "$(1,5,6,7,8,9),\\ (2,3,4,5,6,7),\\ (2,3,4,5,6,9),\\ (1,4,6,7,8,9),\\ (2,3,4,5,6,8)$",
+      "$(2,3,4,5,6,9),\\ (2,3,4,5,6,7),\\ (1,5,6,7,8,9),\\ (1,4,6,7,8,9),\\ (2,3,4,5,6,8)$"
+    ],
+    "correct": 1,
+    "explanation": "Với $n=9, k=6$, giới hạn cực đại tại vị trí $i$ là $n-k+i = 3+i$, tức cấu hình tối đa là $(4,5,6,7,8,9)$. Từ $(1,4,5,7,8,9)$, phần tử đầu tiên từ phải sang chưa đạt giới hạn là $x_3 = 5 < 6$, tăng lên $6$ được $(1,4,6,7,8,9)$; tiếp theo tăng $x_2 = 4$ thành $5$ và đặt lại đuôi nhỏ nhất được $(1,5,6,7,8,9)$; sau đó tăng $x_1 = 1$ thành $2$ được $(2,3,4,5,6,7)$, $(2,3,4,5,6,8)$, $(2,3,4,5,6,9)$."
+  },
+  {
+    "id": 83,
+    "topic": "Hệ Thức Truy Hồi Bậc 2 (Đề 1 - PTIT)",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = 14a_{n-1} + 15a_{n-2}$ với $n \\ge 2$ và $a_0 = 43,\\ a_1 = 421$ là:",
+    "options": [
+      "$a_n = -29\\cdot(-15)^n - 14$ với $n \\ge 0$",
+      "$a_n = -29\\cdot 15^n + 14$ với $n \\ge 0$",
+      "$a_n = 29\\cdot 15^n + 14\\cdot(-1)^n$ với $n \\ge 0$",
+      "$a_n = 29\\cdot(-15)^n - 14\\cdot(-1)^n$ với $n \\ge 0$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 - 14r - 15 = 0 \\iff (r - 15)(r + 1) = 0$ có $2$ nghiệm $r_1 = 15,\\ r_2 = -1$. Nghiệm tổng quát $a_n = A\\cdot 15^n + B\\cdot(-1)^n$. Thay $a_0 = 43, a_1 = 421$: $\\begin{cases} A + B = 43 \\\\ 15A - B = 421 \\end{cases} \\iff \\begin{cases} 16A = 464 \\Rightarrow A = 29 \\\\ B = 14 \\end{cases}$. Vậy $a_n = 29\\cdot 15^n + 14\\cdot(-1)^n$."
+  },
+  {
+    "id": 84,
+    "topic": "Hệ Thức Truy Hồi Nghiệm Kép (Đề 1 - PTIT)",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = -60a_{n-1} - 900a_{n-2}$ với $n \\ge 2$ và $a_0 = -20,\\ a_1 = 720$ là:",
+    "options": [
+      "$a_n = (20 - 4n)\\cdot 30^n$ với $n \\ge 0$",
+      "$a_n = (-20 + 4n)\\cdot 30^n$ với $n \\ge 0$",
+      "$a_n = (20 + 4n)\\cdot(-30)^n$ với $n \\ge 0$",
+      "$a_n = (-20 - 4n)\\cdot(-30)^n$ với $n \\ge 0$"
+    ],
+    "correct": 3,
+    "explanation": "Phương trình đặc trưng $r^2 + 60r + 900 = (r + 30)^2 = 0$ có nghiệm kép $r_0 = -30$. Nghiệm tổng quát $a_n = (A + Bn)(-30)^n$. Thay $n = 0 \\Rightarrow A = a_0 = -20$; thay $n = 1 \\Rightarrow (-20 + B)(-30) = 720 \\Rightarrow -20 + B = -24 \\Rightarrow B = -4$. Vậy $a_n = (-20 - 4n)\\cdot(-30)^n$."
+  },
+  {
+    "id": 85,
+    "topic": "Nguyên Lý Bù Trừ (Đề 1 - PTIT)",
+    "question": "Trong tập hợp $X = \\{332, 333, \\dots, 5130\\}$ có bao nhiêu số nguyên không chia hết cho bất kỳ số nào trong các số $2, 5, 7$?",
+    "options": [
+      "$1645$",
+      "$1642$",
+      "$1643$",
+      "$1644$"
+    ],
+    "correct": 0,
+    "explanation": "Dùng hàm $f(N) = N - \\lfloor N/2 \\rfloor - \\lfloor N/5 \\rfloor - \\lfloor N/7 \\rfloor + \\lfloor N/10 \\rfloor + \\lfloor N/14 \\rfloor + \\lfloor N/35 \\rfloor - \\lfloor N/70 \\rfloor$ đếm số nguyên dương $\\le N$ không chia hết cho $2, 5, 7$. Vì $70 = \\text{lcm}(2,5,7)$ và $\\varphi(70) = 24$: ta có $5130 = 73\\times 70 + 20 \\Rightarrow f(5130) = 73\\times 24 + f(20) = 1752 + 7 = 1759$; $331 = 4\\times 70 + 51 \\Rightarrow f(331) = 4\\times 24 + f(51) = 96 + 18 = 114$. Số phần tử cần tìm là $f(5130) - f(331) = 1759 - 114 = 1645$."
+  },
+  {
+    "id": 86,
+    "topic": "Nguyên Lý Dirichlet (Đề 1 - PTIT)",
+    "question": "Trong một kỳ thi trắc nghiệm, đề thi gồm có $2$ câu hỏi. Thí sinh được $2$ điểm cho mỗi câu trả lời đúng và $0$ điểm cho mỗi câu trả lời sai; giả thiết mỗi câu có $3$ đáp án và các bạn đều điền hết các câu. Hỏi cần ít nhất bao nhiêu thí sinh tham gia kỳ thi để chắc chắn rằng có ít nhất $4$ thí sinh có phương án chọn đáp án giống nhau?",
+    "options": [
+      "$109$",
+      "$28$",
+      "$37$",
+      "$26$"
+    ],
+    "correct": 1,
+    "explanation": "Đề có $2$ câu hỏi, mỗi câu có $3$ phương án chọn nên tổng số phương án làm bài khác nhau (số chuồng) là $M = 3^2 = 9$. Theo nguyên lý Dirichlet tổng quát, để chắc chắn có ít nhất $k = 4$ thí sinh có cùng phương án trả lời thì số thí sinh tối thiểu là $N = (k - 1)\\cdot M + 1 = (4 - 1)\\times 9 + 1 = 28$."
+  },
+  {
+    "id": 87,
+    "topic": "Đếm Số Thuận Nghịch (Đề 1 - PTIT)",
+    "question": "Có bao nhiêu số tự nhiên có $9$ chữ số tạo thành một số thuận nghịch (đối xứng) có tổng tất cả các chữ số bằng $N = 18$?",
+    "options": [
+      "$457$",
+      "$466$",
+      "$460$",
+      "$479$"
+    ],
+    "correct": 2,
+    "explanation": "Số thuận nghịch $9$ chữ số có dạng $\\overline{x_1 x_2 x_3 x_4 x_5 x_4 x_3 x_2 x_1}$ với $x_1 \\in \\{1..9\\}$, $x_2,x_3,x_4,x_5 \\in \\{0..9\\}$ và $2(x_1 + x_2 + x_3 + x_4) + x_5 = 18$. Do đó $x_5$ phải là số chẵn: $x_5 = 2m \\in \\{0, 2, 4, 6, 8\\}$. Khi đó $x_1 + x_2 + x_3 + x_4 = 9 - m$ với $x_1 \\ge 1 \\iff y_1 + x_2 + x_3 + x_4 = 8 - m$ ($y_1 = x_1 - 1 \\ge 0$). Vì $8 - m \\le 8 < 9$ nên không có biến nào vượt quá $9$. Số nghiệm là $\\sum_{m=0}^{4} C_{(8-m)+4-1}^{4-1} = C_{11}^3 + C_{10}^3 + C_9^3 + C_8^3 + C_7^3 = 165 + 120 + 84 + 56 + 35 = 460$."
+  },
+  {
+    "id": 88,
+    "topic": "Đếm Xâu Nhị Phân Truy Hồi (Đề 1 - PTIT)",
+    "question": "Gọi $a_n$ là số các xâu nhị phân có độ dài $n$ và không chứa $3$ chữ số $1$ liên tiếp. Khi đó, giá trị của $a_6$ là:",
+    "options": [
+      "$46$",
+      "$45$",
+      "$43$",
+      "$44$"
+    ],
+    "correct": 3,
+    "explanation": "Xâu nhị phân độ dài $n$ không chứa $111$ phân làm $3$ nhóm rời nhau theo phần đầu: bắt đầu bởi $0$ ($a_{n-1}$ xâu), bắt đầu bởi $10$ ($a_{n-2}$ xâu), bắt đầu bởi $110$ ($a_{n-3}$ xâu). Ta có hệ thức Tribonacci $a_n = a_{n-1} + a_{n-2} + a_{n-3}$ với $a_1 = 2,\\ a_2 = 4,\\ a_3 = 7$. Suy ra $a_4 = 2+4+7 = 13$, $a_5 = 4+7+13 = 24$, $a_6 = 7+13+24 = 44$."
+  },
+  {
+    "id": 89,
+    "topic": "Phương Trình Nghiệm Nguyên Bị Chặn (Đề 1 - PTIT)",
+    "question": "Số nghiệm nguyên không âm của phương trình $x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 47$ thỏa mãn $2 \\le x_2 \\le 7,\\ 4 \\le x_3 \\le 6$ là:",
+    "options": [
+      "$186045$",
+      "$186037$",
+      "$186050$",
+      "$186060$"
+    ],
+    "correct": 0,
+    "explanation": "Đặt $y_2 = x_2 - 2 \\ge 0$ (điều kiện $y_2 \\le 5$) và $y_3 = x_3 - 4 \\ge 0$ (điều kiện $y_3 \\le 2$). Phương trình thành $x_1 + y_2 + y_3 + x_4 + x_5 + x_6 = 47 - 6 = 41$. Tổng số nghiệm không ràng buộc cận trên là $C_{41+5}^5 = C_{46}^5$. Trừ đi trường hợp vi phạm $A: y_2 \\ge 6$ ($C_{40}^5$), vi phạm $B: y_3 \\ge 3$ ($C_{43}^5$) và cộng lại giao $A \\cap B: y_2 \\ge 6, y_3 \\ge 3$ ($C_{37}^5$). Kết quả: $C_{46}^5 - C_{40}^5 - C_{43}^5 + C_{37}^5 = 1370754 - 658008 - 962598 + 435897 = 186045$."
+  },
+  {
+    "id": 90,
+    "topic": "Tổ Hợp Lặp Cận Dưới (Đề 1 - PTIT)",
+    "question": "Số nghiệm nguyên không âm của phương trình $x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 78$ thỏa mãn $x_i \\ge 4$ với mọi $i = 1,2,3,4,5,6$ là:",
+    "options": [
+      "$C_{75}^5$",
+      "$C_{59}^5$",
+      "$C_{78}^5$",
+      "$C_{63}^5$"
+    ],
+    "correct": 1,
+    "explanation": "Đặt $y_i = x_i - 4 \\ge 0$ với mọi $i = 1..6$. Phương trình trở thành $y_1 + y_2 + y_3 + y_4 + y_5 + y_6 = 78 - 6\\times 4 = 54$. Số nghiệm nguyên không âm của phương trình $k = 6$ biến có tổng bằng $54$ là $C_{54 + 6 - 1}^{6 - 1} = C_{59}^5$."
+  },
+  {
+    "id": 91,
+    "topic": "Hệ Thức Truy Hồi Bậc 3 (Đề 1 - PTIT)",
+    "question": "Giải hệ thức truy hồi sau: $a_{n+3} = 4a_{n+2} + 7a_{n+1} - 10a_n$ với $n \\ge 0,\\ a_0 = 8,\\ a_1 = 18,\\ a_2 = 194$.",
+    "options": [
+      "$a_n = -7\\cdot 5^n - 6\\cdot(-2)^n - 5$",
+      "$a_n = 7\\cdot 5^n - 6\\cdot(-2)^n + 5$",
+      "$a_n = 7\\cdot 5^n + 6\\cdot(-2)^n - 5$",
+      "$a_n = -7\\cdot 5^n + 6\\cdot(-2)^n - 5$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^3 - 4r^2 - 7r + 10 = 0 \\iff (r - 1)(r + 2)(r - 5) = 0$ có $3$ nghiệm $r_1 = 5,\\ r_2 = -2,\\ r_3 = 1$. Nghiệm có dạng $a_n = A\\cdot 5^n + B\\cdot(-2)^n + C\\cdot 1^n$. Kiểm tra tại $n=0$: $7 + 6 - 5 = 8 = a_0$; tại $n=1$: $7(5) + 6(-2) - 5 = 35 - 12 - 5 = 18 = a_1$; tại $n=2$: $7(25) + 6(4) - 5 = 175 + 24 - 5 = 194 = a_2$. Vậy $a_n = 7\\cdot 5^n + 6\\cdot(-2)^n - 5$."
+  },
+  {
+    "id": 92,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1 (Đề 1 - PTIT)",
+    "question": "Giải bài toán cái túi dưới đây để chỉ ra giá trị tối ưu $f^*$: $$2x_1 + 5x_2 + 3x_3 + 2x_4 \\to \\max$$ với điều kiện $3x_1 + 2x_2 + x_3 + 2x_4 \\le 8$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$.",
+    "options": [
+      "$f^* = 14$",
+      "$f^* = 11$",
+      "$f^* = 17$",
+      "$f^* = 12$"
+    ],
+    "correct": 3,
+    "explanation": "Tổng trọng lượng cả $4$ đồ vật là $3 + 2 + 1 + 2 = 8 \\le 8$ (vừa khít sức chứa túi bằng $8$)! Do đó ta chọn được cả $4$ đồ vật $(x_1, x_2, x_3, x_4) = (1, 1, 1, 1)$ và thu được giá trị tối ưu $f^* = 2 + 5 + 3 + 2 = 12$."
+  },
+  {
+    "id": 93,
+    "topic": "Thuật Toán Sinh Hoán Vị (Đề 1 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh hoán vị theo thứ tự từ điển, hoán vị liền kề tiếp theo của hoán vị $(6,9,5,2,4,3,8,1,7)$ là:",
+    "options": [
+      "$(6,9,5,2,4,3,8,7,1)$",
+      "$(1,8,6,4,3,9,7,5,2)$",
+      "$(2,6,4,5,7,8,9,3,1)$",
+      "$(5,9,4,2,3,8,7,1,6)$"
+    ],
+    "correct": 0,
+    "explanation": "Duyệt từ phải sang trái trên $(6,9,5,2,4,3,8,1,7)$, cặp tăng đầu tiên là $a_8 = 1 < a_9 = 7$. Đổi chỗ $1$ và $7$ ta được ngay hoán vị liền kề tiếp theo là $(6,9,5,2,4,3,8,7,1)$."
+  },
+  {
+    "id": 94,
+    "topic": "Thuật Toán Sinh Xâu Nhị Phân (Đề 1 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (1,0,1,1,1,1,0,1)$. Giả sử áp dụng phương pháp sinh xâu nhị phân theo thứ tự từ điển, hãy liệt kê $3$ xâu nhị phân liền kề tiếp theo của $X$?",
+    "options": [
+      "$(1,1,0,0,0,0,0,0),\\ (1,0,1,1,1,1,1,0),\\ (1,0,1,1,1,1,1,1)$",
+      "$(1,0,1,1,1,1,1,0),\\ (1,0,1,1,1,1,1,1),\\ (1,1,0,0,0,0,0,0)$",
+      "$(1,1,0,0,0,0,0,0),\\ (1,0,1,1,1,1,1,1),\\ (1,0,1,1,1,1,1,0)$",
+      "$(1,0,1,1,1,1,1,1),\\ (1,0,1,1,1,1,1,0),\\ (1,1,0,0,0,0,0,0)$"
+    ],
+    "correct": 1,
+    "explanation": "Cộng $1$ nhị phân liên tiếp vào $X = 10111101_2$: xâu kế tiếp thứ nhất là $10111110_2$; thứ hai là $10111111_2$; thứ ba là $11000000_2$."
+  },
+  {
+    "id": 95,
+    "topic": "Nguyên Lý Bù Trừ Không Nguyên Tố Cùng Nhau (Đề 2 - PTIT)",
+    "question": "Trong tập hợp $X = \\{270, 271, \\dots, 8668\\}$ có bao nhiêu số nguyên không chia hết cho bất kỳ số nào trong các số $4, 6, 7$?",
+    "options": [
+      "$4798$",
+      "$4797$",
+      "$4799$",
+      "$4796$"
+    ],
+    "correct": 2,
+    "explanation": "Lưu ý $\\text{lcm}(4, 6) = 12$ (không phải $24$!), $\\text{lcm}(4, 7) = 28$, $\\text{lcm}(6, 7) = 42$, $\\text{lcm}(4, 6, 7) = 84$. Trong mỗi chu kỳ $84$ số nguyên liên tiếp, số phần tử không chia hết cho $4, 6, 7$ là $84 - (21 + 14 + 12) + (7 + 3 + 2) - 1 = 48$ số. Tổng số phần tử của $X$ là $8668 - 270 + 1 = 8399 = 99\\times 84 + 83$. Trong $99$ chu kỳ đầu có $99\\times 48 = 4752$ số; $83$ số còn lại chỉ thiếu đúng $1$ số chia hết cho $84$ nên có $48 - 1 = 47$ số. Tổng cộng: $4752 + 47 = 4799$."
+  },
+  {
+    "id": 96,
+    "topic": "Đếm & Tổ Hợp (Đề 2 - PTIT)",
+    "question": "Lớp học có $15$ bạn nam và $11$ bạn nữ. Hãy cho biết có bao nhiêu cách chọn đội văn nghệ của lớp sao cho số bạn nam đúng bằng $3$ lần số bạn nữ, biết rằng đội văn nghệ cần ít nhất $4$ và nhiều nhất $12$ thành viên?",
+    "options": [
+      "$1106103$",
+      "$1106102$",
+      "$1106104$",
+      "$1106105$"
+    ],
+    "correct": 3,
+    "explanation": "Gọi số nữ là $k \\Rightarrow$ số nam là $3k$, tổng số thành viên là $4k \\in [4, 12] \\Rightarrow k \\in \\{1, 2, 3\\}$. Số cách chọn là $C_{15}^3 C_{11}^1 + C_{15}^6 C_{11}^2 + C_{15}^9 C_{11}^3 = 455\\times 11 + 5005\\times 55 + 5005\\times 165 = 5005 + 275275 + 825825 = 1106105$."
+  }
+]

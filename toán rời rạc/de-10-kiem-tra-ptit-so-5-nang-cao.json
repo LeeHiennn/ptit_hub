@@ -1,0 +1,210 @@
+[
+  {
+    "id": 145,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân (Đề 96 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (1,0,0,1,0,0,0,1)$. Hãy xác định xem đó là xâu nhị phân thứ bao nhiêu nếu liệt kê các xâu độ dài $8$ theo thứ tự từ điển?",
+    "options": [
+      "$146$",
+      "$148$",
+      "$147$",
+      "$149$"
+    ],
+    "correct": 0,
+    "explanation": "Giá trị thập phân của $X = 10010001_2$ là $2^7 + 2^4 + 2^0 = 128 + 16 + 1 = 145$. Do đó $X$ là xâu nhị phân thứ $145 + 1 = 146$ theo thứ tự từ điển."
+  },
+  {
+    "id": 146,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 96 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$3x_1 + 3x_2 + 5x_3 + 4x_4 \\to \\max$$ với $x_1 + 2x_2 + 6x_3 + 5x_4 \\le 9$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (0, 1, 0)$:",
+    "options": [
+      "$g(0, 1, 0) = 9{,}1$",
+      "$g(0, 1, 0) = 8{,}6$",
+      "$g(0, 1, 0) = 7{,}6$",
+      "$g(0, 1, 0) = 9{,}6$"
+    ],
+    "correct": 1,
+    "explanation": "Tại bộ phận $(0, 1, 0)$: giá trị hiện tại $\\sigma = 3(0) + 3(1) + 5(0) = 3$; trọng lượng đã dùng là $2$, trọng lượng còn lại là $W = 9 - 2 = 7$. Biến tiếp theo $x_4$ có $c_4 = 4, a_4 = 5$, nên cận trên là $g(0, 1, 0) = 3 + 4 \\times \\dfrac{7}{5} = 3 + 5{,}6 = 8{,}6$."
+  },
+  {
+    "id": 147,
+    "topic": "Liệt Kê Tổ Hợp Liền Trước (Đề 96 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $7$ của các phần tử của tập $A$. Hãy liệt kê $6$ tổ hợp LIỀN TRƯỚC của tổ hợp $(1,3,4,5,7,8,9)$.",
+    "options": [
+      "$(1,2,4,6,7,8,9),\\ (1,2,5,6,7,8,9),\\ (1,3,4,5,6,8,9),\\ (1,3,4,5,6,7,8),\\ (1,2,4,5,7,8,9),\\ (1,3,4,5,6,7,9)$",
+      "$(1,2,4,6,7,8,9),\\ (1,3,4,5,6,7,8),\\ (1,2,4,5,7,8,9),\\ (1,3,4,5,6,7,9),\\ (1,3,4,5,6,8,9),\\ (1,2,5,6,7,8,9)$",
+      "$(1,3,4,5,6,8,9),\\ (1,3,4,5,6,7,9),\\ (1,3,4,5,6,7,8),\\ (1,2,5,6,7,8,9),\\ (1,2,4,6,7,8,9),\\ (1,2,4,5,7,8,9)$",
+      "$(1,2,4,6,7,8,9),\\ (1,2,5,6,7,8,9),\\ (1,3,4,5,6,7,9),\\ (1,2,4,5,7,8,9),\\ (1,3,4,5,6,8,9),\\ (1,3,4,5,6,7,8)$"
+    ],
+    "correct": 2,
+    "explanation": "Lùi ngược theo thứ tự từ điển từ $(1,3,4,5,7,8,9)$: giảm vị trí thứ $5$ từ $7$ về $6$ được $(1,3,4,5,6,8,9) \\to (1,3,4,5,6,7,9) \\to (1,3,4,5,6,7,8)$; tiếp theo giảm vị trí thứ $2$ từ $3$ về $2$ và đặt phần sau lớn nhất được $(1,2,5,6,7,8,9) \\to (1,2,4,6,7,8,9) \\to (1,2,4,5,7,8,9)$."
+  },
+  {
+    "id": 148,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 97 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$4x_1 + 6x_2 + 5x_3 + 5x_4 \\to \\max$$ với $x_1 + 3x_2 + 4x_3 + 5x_4 \\le 8$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (0, 1, 0)$:",
+    "options": [
+      "$g(0, 1, 0) = 11{,}5$",
+      "$g(0, 1, 0) = 10{,}0$",
+      "$g(0, 1, 0) = 12{,}0$",
+      "$g(0, 1, 0) = 11{,}0$"
+    ],
+    "correct": 3,
+    "explanation": "Tại bộ phận $(0, 1, 0)$: giá trị hiện tại $\\sigma = 6$, trọng lượng đã dùng là $3$, trọng lượng còn lại là $W = 8 - 3 = 5$. Với biến còn lại $x_4$ ($c_4 = 5, a_4 = 5$), cận trên là $g(0, 1, 0) = 6 + 5 \\times \\dfrac{5}{5} = 11{,}0$."
+  },
+  {
+    "id": 149,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân (Đề 98 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (1,1,0,1,0,0,1,1,1)$. Hãy xác định xem đó là xâu nhị phân thứ bao nhiêu nếu liệt kê các xâu độ dài $9$ theo thứ tự từ điển?",
+    "options": [
+      "$424$",
+      "$427$",
+      "$426$",
+      "$425$"
+    ],
+    "correct": 0,
+    "explanation": "Giá trị thập phân của $X = 110100111_2$ là $2^8 + 2^7 + 2^5 + 2^2 + 2^1 + 2^0 = 256 + 128 + 32 + 4 + 2 + 1 = 423$. Do đó vị trí của $X$ theo thứ tự từ điển là $423 + 1 = 424$."
+  },
+  {
+    "id": 150,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 98 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$4x_1 + 6x_2 + 4x_3 + x_4 \\to \\max$$ với $x_1 + 3x_2 + 6x_3 + 5x_4 \\le 12$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (1, 0, 0)$:",
+    "options": [
+      "$g(1, 0, 0) = 5{,}2$",
+      "$g(1, 0, 0) = 6{,}2$",
+      "$g(1, 0, 0) = 7{,}2$",
+      "$g(1, 0, 0) = 6{,}7$"
+    ],
+    "correct": 1,
+    "explanation": "Tại bộ phận $(1, 0, 0)$: giá trị hiện tại $\\sigma = 4$, trọng lượng đã dùng là $1$, trọng lượng còn lại là $W = 12 - 1 = 11$. Với biến tiếp theo $x_4$ ($c_4 = 1, a_4 = 5$), cận trên là $g(1, 0, 0) = 4 + 1 \\times \\dfrac{11}{5} = 4 + 2{,}2 = 6{,}2$."
+  },
+  {
+    "id": 151,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 99 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$6x_1 + 4x_2 + 5x_3 + 4x_4 \\to \\max$$ với $x_1 + x_2 + 3x_3 + 4x_4 \\le 7$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (1, 0, 1)$:",
+    "options": [
+      "$g(1, 0, 1) = 13{,}0$",
+      "$g(1, 0, 1) = 14{,}5$",
+      "$g(1, 0, 1) = 14{,}0$",
+      "$g(1, 0, 1) = 15{,}0$"
+    ],
+    "correct": 2,
+    "explanation": "Tại bộ phận $(1, 0, 1)$: giá trị hiện tại $\\sigma = 6(1) + 4(0) + 5(1) = 11$; trọng lượng đã dùng là $1 + 0 + 3 = 4$, trọng lượng còn lại là $W = 7 - 4 = 3$. Với biến còn lại $x_4$ ($c_4 = 4, a_4 = 4$), cận trên là $g(1, 0, 1) = 11 + 4 \\times \\dfrac{3}{4} = 14{,}0$."
+  },
+  {
+    "id": 152,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân (Đề 100 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (1,0,1,1,0,1,1)$. Hãy xác định xem đó là xâu nhị phân thứ bao nhiêu nếu liệt kê các xâu độ dài $7$ theo thứ tự từ điển?",
+    "options": [
+      "$95$",
+      "$94$",
+      "$93$",
+      "$92$"
+    ],
+    "correct": 3,
+    "explanation": "Xâu $X = 1011011_2$ có độ dài $7$ bit, giá trị thập phân là $2^6 + 2^4 + 2^3 + 2^1 + 2^0 = 64 + 16 + 8 + 2 + 1 = 91$. Do đó vị trí của $X$ theo thứ tự từ điển là $91 + 1 = 92$."
+  },
+  {
+    "id": 153,
+    "topic": "Nhánh Cận Cái Túi - Hàm Cận Trên (Đề 100 - PTIT)",
+    "question": "Cho bài toán cái túi dưới đây: $$5x_1 + 4x_2 + 4x_3 + 2x_4 \\to \\max$$ với $x_1 + 2x_2 + 4x_3 + 5x_4 \\le 9$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$. Tìm giá trị của hàm cận trên $g$ cho bộ phận $(x_1, x_2, x_3) = (0, 1, 1)$:",
+    "options": [
+      "$g(0, 1, 1) = 9{,}2$",
+      "$g(0, 1, 1) = 9{,}7$",
+      "$g(0, 1, 1) = 10{,}2$",
+      "$g(0, 1, 1) = 8{,}2$"
+    ],
+    "correct": 0,
+    "explanation": "Tại bộ phận $(0, 1, 1)$: giá trị hiện tại $\\sigma = 4 + 4 = 8$, trọng lượng đã dùng là $2 + 4 = 6$, trọng lượng còn lại là $W = 9 - 6 = 3$. Với biến tiếp theo $x_4$ ($c_4 = 2, a_4 = 5$), cận trên là $g(0, 1, 1) = 8 + 2 \\times \\dfrac{3}{5} = 8 + 1{,}2 = 9{,}2$."
+  },
+  {
+    "id": 154,
+    "topic": "Hệ Thức Truy Hồi Nghiệm Kép (Đề 100 - PTIT)",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = -24a_{n-1} - 144a_{n-2}$ với $n \\ge 2$ và $a_0 = -12,\\ a_1 = -36$ là:",
+    "options": [
+      "$a_n = (12 - 15n)\\cdot(-12)^n$ với $n \\ge 0$",
+      "$a_n = (-12 + 15n)\\cdot(-12)^n$ với $n \\ge 0$",
+      "$a_n = (-12 - 15n)\\cdot 12^n$ với $n \\ge 0$",
+      "$a_n = (12 + 15n)\\cdot 12^n$ với $n \\ge 0$"
+    ],
+    "correct": 1,
+    "explanation": "Phương trình đặc trưng $r^2 + 24r + 144 = (r + 12)^2 = 0$ có nghiệm kép $r_0 = -12$. Đặt $a_n = (A + Bn)(-12)^n$. Tại $n=0 \\Rightarrow A = -12$; tại $n=1 \\Rightarrow (-12 + B)(-12) = -36 \\Rightarrow -12 + B = 3 \\Rightarrow B = 15$. Vậy $a_n = (-12 + 15n)\\cdot(-12)^n$."
+  },
+  {
+    "id": 155,
+    "topic": "Lý Thuyết Đồ Thị - Chu Trình Euler & Hamilton",
+    "question": "Cho đồ thị phân đôi đầy đủ $K_{m,n}$ ($m, n \\ge 2$). Điều kiện cần và đủ về $m, n$ để $K_{m,n}$ là đồ thị Euler (có chu trình Euler) và điều kiện để $K_{m,n}$ là đồ thị Hamilton (có chu trình Hamilton) lần lượt là:",
+    "options": [
+      "Euler khi $m = n$; Hamilton khi $m, n$ cùng lẻ",
+      "Euler khi $m + n$ chẵn; Hamilton khi $m = n \\ge 2$",
+      "Euler khi cả $m$ và $n$ đều là số chẵn; Hamilton khi và chỉ khi $m = n \\ge 2$",
+      "Euler với mọi $m, n \\ge 2$; Hamilton khi $|m - n| \\le 1$"
+    ],
+    "correct": 2,
+    "explanation": "Trong $K_{m,n}$, các đỉnh thuộc tập thứ nhất có bậc $n$, các đỉnh thuộc tập thứ hai có bậc $m$. Để có chu trình Euler, mọi đỉnh phải có bậc chẵn $\\iff m$ và $n$ đều chẵn. Để có chu trình Hamilton trong đồ thị phân đôi, chu trình phải đi xen kẽ qua hai tập đỉnh nên hai tập phải có số đỉnh bằng nhau: $m = n \\ge 2$."
+  },
+  {
+    "id": 156,
+    "topic": "Lý Thuyết Đồ Thị - Công Thức Euler Cho Đồ Thị Phẳng",
+    "question": "Một đồ thị phẳng liên thông $G = (V, E)$ có $n = 10$ đỉnh, mỗi đỉnh đều có bậc bằng $3$ ($3$-chính quy). Khi biểu diễn phẳng không có các cạnh cắt nhau, đồ thị $G$ chia mặt phẳng thành bao nhiêu miền (kể cả miền vô hạn bên ngoài)?",
+    "options": [
+      "$5$ miền",
+      "$6$ miền",
+      "$8$ miền",
+      "$7$ miền"
+    ],
+    "correct": 3,
+    "explanation": "Theo bổ đề bắt tay: $2|E| = \\sum \\deg(v) = 10 \\times 3 = 30 \\Rightarrow |E| = 15$ cạnh. Theo công thức Euler cho đồ thị phẳng liên thông: $|V| - |E| + f = 2 \\Rightarrow f = 2 - |V| + |E| = 2 - 10 + 15 = 7$ miền."
+  },
+  {
+    "id": 157,
+    "topic": "Lý Thuyết Đồ Thị - Số Sắc Số (Chromatic Number)",
+    "question": "Số sắc số $\\chi(G)$ (số màu tối thiểu để tô màu các đỉnh sao cho hai đỉnh kề nhau có màu khác nhau) của đồ thị vòng $C_n$ ($n \\ge 3$) và đồ thị bánh xe $W_n$ (gồm vòng $C_n$ và $1$ đỉnh tâm nối với tất cả $n$ đỉnh của vòng) lần lượt là:",
+    "options": [
+      "Với $n$ chẵn: $\\chi(C_n) = 2,\\ \\chi(W_n) = 3$; với $n$ lẻ: $\\chi(C_n) = 3,\\ \\chi(W_n) = 4$",
+      "Với mọi $n \\ge 3$: $\\chi(C_n) = 2,\\ \\chi(W_n) = 3$",
+      "Với mọi $n \\ge 3$: $\\chi(C_n) = 3,\\ \\chi(W_n) = 4$",
+      "Với $n$ chẵn: $\\chi(C_n) = 3,\\ \\chi(W_n) = 4$; với $n$ lẻ: $\\chi(C_n) = 2,\\ \\chi(W_n) = 3$"
+    ],
+    "correct": 0,
+    "explanation": "Chu trình độ dài chẵn $C_{2k}$ là đồ thị hai phía nên cần $2$ màu, còn chu trình lẻ $C_{2k+1}$ cần $3$ màu. Đỉnh tâm của bánh xe $W_n$ kề với mọi đỉnh trên $C_n$ nên bắt buộc phải dùng $1$ màu mới khác tất cả các màu trên $C_n$, suy ra $\\chi(W_n) = \\chi(C_n) + 1$."
+  },
+  {
+    "id": 158,
+    "topic": "Cây & Cây Khung Nhỏ Nhất (Kruskal / Prim)",
+    "question": "Cho đồ thị vô hướng liên thông có trọng số $G = (V, E)$ gồm $n = 9$ đỉnh và $m = 18$ cạnh. Khi thuật toán Kruskal hoặc Prim kết thúc việc tìm cây khung nhỏ nhất (MST) của $G$, ta phải loại bỏ đi bao nhiêu cạnh khỏi $G$ (số chu trình cơ bản của $G$)?",
+    "options": [
+      "$9$ cạnh",
+      "$10$ cạnh",
+      "$8$ cạnh",
+      "$11$ cạnh"
+    ],
+    "correct": 1,
+    "explanation": "Mọi cây khung của đồ thị liên thông $n = 9$ đỉnh đều có đúng $n - 1 = 8$ cạnh. Vì đồ thị ban đầu có $m = 18$ cạnh nên số cạnh bị loại bỏ (cũng chính là số cạnh ngoài cây / số chu trình độc lập $m - n + 1$) là $18 - 8 = 10$ cạnh."
+  },
+  {
+    "id": 159,
+    "topic": "Đại Số Boole & Mạng Logic",
+    "question": "Cho hàm Boole $3$ biến $f(x, y, z) = x y + x' z + y z$. Theo luật hấp thụ và đồng thuận (consensus theorem) trong đại số Boole, biểu thức tối giản nhất tương đương với $f(x, y, z)$ là:",
+    "options": [
+      "$x y + y z$",
+      "$x' z + y z$",
+      "$x y + x' z$",
+      "$x + y + z$"
+    ],
+    "correct": 2,
+    "explanation": "Theo định lý đồng thuận (Consensus): $y z = (x + x')y z = x y z + x' y z$. Khi đó $x y + x' z + y z = x y(1 + z) + x' z(1 + y) = x y + x' z$."
+  },
+  {
+    "id": 160,
+    "topic": "Quan Hệ Tương Đương & Quan Hệ Thứ Tự",
+    "question": "Trên tập hợp $A$ có $|A| = n$ phần tử, có bao nhiêu quan hệ hai ngôi $R \\subseteq A \\times A$ vừa có tính phản xạ, vừa có tính đối xứng?",
+    "options": [
+      "$2^{n^2}$",
+      "$2^{n(n-1)}$",
+      "$2^{n(n+1)/2}$",
+      "$2^{n(n-1)/2}$"
+    ],
+    "correct": 3,
+    "explanation": "Ma trận biểu diễn của quan hệ $R$ trên tập $n$ phần tử có kích thước $n \\times n$. Tính phản xạ bắt buộc toàn bộ $n$ phần tử trên đường chéo chính đều bằng $1$. Tính đối xứng bắt buộc $a_{ij} = a_{ji}$ với mọi $i \\ne j$, nên ta chỉ được tự do chọn giá trị $0$ hoặc $1$ cho $\\dfrac{n(n-1)}{2}$ phần tử nằm phía trên đường chéo chính. Số quan hệ thỏa mãn là $2^{n(n-1)/2}$."
+  }
+]

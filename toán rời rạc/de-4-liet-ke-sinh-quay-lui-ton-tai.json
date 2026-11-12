@@ -1,0 +1,210 @@
+[
+  {
+    "id": 401,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Trong <strong>thuật toán sinh xâu nhị phân độ dài $n$ kế tiếp</strong> theo thứ tự từ điển (Slide 3_Listing), cho xâu hiện tại là $x = 10110111$. Xâu nhị phân liền kề tiếp theo của $x$ là:",
+    "options": [
+      "$10111111$",
+      "$10111000$",
+      "$10111001$",
+      "$11000000$"
+    ],
+    "correct": 1,
+    "explanation": "Duyệt từ phải sang trái tìm bit $0$ đầu tiên: gặp $x_5 = 0$. Đổi $x_5$ thành $1$, và gán tất cả các bit phía sau ($x_6, x_7, x_8$) bằng $0$. Ta thu được $10111000$."
+  },
+  {
+    "id": 402,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Cho tập $X = \\{1, 2, \\dots, n\\}$. Khi liệt kê các tập con $k$ phần tử $(x_1, x_2, \\dots, x_k)$ ($1 \\le x_1 < x_2 < \\dots < x_k \\le n$) theo thứ tự từ điển (Mục 3.2.2 - Giáo trình Toán Rời Rạc 1), <strong>giá trị lớn nhất</strong> mà phần tử ở vị trí thứ $i$ ($1 \\le i \\le k$) có thể nhận là:",
+    "options": [
+      "$n - k$",
+      "$n - i + 1$",
+      "$n - k + i$",
+      "$k + i$"
+    ],
+    "correct": 2,
+    "explanation": "Ở cấu hình cuối cùng $(n - k + 1, n - k + 2, \\dots, n)$, phần tử thứ $i$ đạt giá trị cực đại là $n - k + i$. Do đó điều kiện tìm phần tử chưa đạt cực đại từ phải sang trái là $x_i < n - k + i$."
+  },
+  {
+    "id": 403,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Cho $n = 9, k = 5$ và tổ hợp hiện tại là $(1, 4, 5, 7, 9)$ (Bài tập 2 - Slide 3_Listing). Ba tổ hợp tiếp theo liên tiếp theo thứ tự từ điển lần lượt là:",
+    "options": [
+      "$(1, 4, 5, 8, 9) \\rightarrow (1, 4, 6, 7, 8) \\rightarrow (1, 4, 6, 7, 9)$",
+      "$(1, 4, 5, 8, 9) \\rightarrow (1, 4, 6, 8, 9) \\rightarrow (1, 5, 6, 7, 8)$",
+      "$(1, 4, 6, 7, 8) \\rightarrow (1, 4, 6, 7, 9) \\rightarrow (1, 4, 6, 8, 9)$",
+      "$(1, 4, 5, 8, 9) \\rightarrow (1, 4, 6, 7, 8) \\rightarrow (1, 5, 6, 7, 8)$"
+    ],
+    "correct": 0,
+    "explanation": "Từ $(1, 4, 5, 7, 9)$: tăng $x_4 = 7$ lên $8, x_5 = 9 \\Rightarrow (1, 4, 5, 8, 9)$. Tiếp theo, $x_4=8, x_5=9$ đã chạm trần $(8, 9)$, nên tăng $x_3 = 5$ lên $6$, rồi $x_4 = 7, x_5 = 8 \\Rightarrow (1, 4, 6, 7, 8)$. Tiếp theo tăng $x_5 = 8$ lên $9 \\Rightarrow (1, 4, 6, 7, 9)$."
+  },
+  {
+    "id": 404,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Cho $n = 9$ và hoán vị $x = (1, 6, 7, 5, 2, 9, 8, 4, 3)$ (Ví dụ trong Slide 3_Listing). Theo thuật toán sinh hoán vị kế tiếp, hoán vị đứng ngay sau $x$ theo thứ tự từ điển là:",
+    "options": [
+      "$(1, 6, 7, 8, 2, 3, 4, 5, 9)$",
+      "$(1, 6, 7, 5, 3, 9, 8, 4, 2)$",
+      "$(1, 6, 7, 5, 4, 2, 3, 8, 9)$",
+      "$(1, 6, 7, 5, 3, 2, 4, 8, 9)$"
+    ],
+    "correct": 3,
+    "explanation": "1) Tìm từ phải sang trái vị trí đầu tiên làm gãy tính tăng: $x_5 = 2 < x_6 = 9$ (đoạn đuôi giảm dần là $9, 8, 4, 3$).<br/>2) Phần tử nhỏ nhất trong đoạn đuôi lớn hơn $x_5 = 2$ là $x_9 = 3$; đổi chỗ $2$ và $3$ được $(1, 6, 7, 5, 3, 9, 8, 4, 2)$.<br/>3) Lật ngược đoạn đuôi $(9, 8, 4, 2)$ thành $(2, 4, 8, 9)$, ta được $(1, 6, 7, 5, 3, 2, 4, 8, 9)$."
+  },
+  {
+    "id": 405,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Cho $n = 7$ và hoán vị $a = (1, 3, 5, 7, 6, 4, 2)$ (Đề thi 2015 - Slide 3_Listing). Hoán vị kế tiếp ngay sau $a$ theo thứ tự từ điển là:",
+    "options": [
+      "$(1, 3, 5, 7, 6, 2, 4)$",
+      "$(1, 3, 6, 7, 5, 4, 2)$",
+      "$(1, 3, 6, 2, 4, 5, 7)$",
+      "$(1, 4, 2, 3, 5, 6, 7)$"
+    ],
+    "correct": 2,
+    "explanation": "Đoạn đuôi giảm dần dài nhất là $(7, 6, 4, 2)$, phần tử đứng trước là $a_3 = 5$. Số nhỏ nhất trong đuôi lớn hơn $5$ là $6$. Đổi chỗ $5$ và $6$ được $(1, 3, 6, 7, 5, 4, 2)$, sau đó lật ngược đuôi $(7, 5, 4, 2)$ thành $(2, 4, 5, 7)$ ta được $(1, 3, 6, 2, 4, 5, 7)$."
+  },
+  {
+    "id": 406,
+    "topic": "Thuật Toán Quay Lui (Backtracking)",
+    "question": "Trong bài toán <strong>xếp $n$ quân hậu</strong> trên bàn cờ $n \\times n$ bằng thuật toán quay lui (Slide 3_Listing), điều kiện để hai ô $(i, j)$ và $(p, q)$ nằm trên cùng một <strong>đường chéo xuôi</strong> (từ Tây-Bắc xuống Đông-Nam) hoặc cùng một <strong>đường chéo ngược</strong> (từ Đông-Bắc xuống Tây-Nam) là:",
+    "options": [
+      "Chéo xuôi: $i + j = p + q$; Chéo ngược: $i - j = p - q$",
+      "Chéo xuôi: $i - j = p - q$; Chéo ngược: $i + j = p + q$",
+      "Chéo xuôi: $i \\cdot j = p \\cdot q$; Chéo ngược: $i + j = p + q$",
+      "Chéo xuôi: $|i - p| = 1$; Chéo ngược: $|j - q| = 1$"
+    ],
+    "correct": 1,
+    "explanation": "Trên đường chéo xuôi (Tây-Bắc $\\rightarrow$ Đông-Nam), khi hàng $i$ tăng $1$ thì cột $j$ cũng tăng $1$, nên hiệu $i - j$ không đổi (nhận giá trị từ $1-n$ đến $n-1$, thường dịch chỉ số thành $i - j + n$). Trên đường chéo ngược (Đông-Bắc $\\rightarrow$ Tây-Nam), tổng $i + j$ không đổi (nhận giá trị từ $2$ đến $2n$)."
+  },
+  {
+    "id": 407,
+    "topic": "Thuật Toán Quay Lui (Backtracking)",
+    "question": "Trên bàn cờ vua chuẩn kích thước $8 \\times 8$, bài toán xếp $8$ quân hậu sao cho không có $2$ quân hậu nào ăn nhau có tất cả bao nhiêu nghiệm (Slide 3_Listing)?",
+    "options": [
+      "$12$ nghiệm",
+      "$64$ nghiệm",
+      "$40\\,320$ nghiệm",
+      "$92$ nghiệm"
+    ],
+    "correct": 3,
+    "explanation": "Theo kết quả của Gauss và thuật toán quay lui trong Slide 3_Listing (trang 45): tổng số cách đặt $8$ quân hậu trên bàn cờ $8 \\times 8$ là $C_{64}^8 = 4\\,426\\,165\\,368$, có $8! = 40\\,320$ hoán vị hàng/cột và có đúng <strong>$92$ nghiệm</strong> hợp lệ."
+  },
+  {
+    "id": 408,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Có $5$ loại học bổng khác nhau. Hỏi phải có <strong>ít nhất</strong> bao nhiêu sinh viên để chắc chắn rằng có ít ra là $6$ người cùng nhận học bổng như nhau (Ví dụ 6 - Slide 5_Existing)?",
+    "options": [
+      "$26$ sinh viên",
+      "$25$ sinh viên",
+      "$30$ sinh viên",
+      "$31$ sinh viên"
+    ],
+    "correct": 0,
+    "explanation": "Số sinh viên tối thiểu $N$ cần có để $\\lceil N / 5 \\rceil = 6$ là $N = 5 \\times (6 - 1) + 1 = 26$ sinh viên."
+  },
+  {
+    "id": 409,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Trong kỳ thi tuyển sinh khối A (Toán, Lý, Hóa), điểm mỗi môn được chấm từ $0$ đến $10$ với bước nhảy $0.5$ điểm, và không ai bị điểm liệt ($0$ điểm). Hỏi phải có <strong>ít nhất</strong> bao nhiêu thí sinh dự thi để chắc chắn có ít nhất $2$ thí sinh có <strong>tổng điểm 3 môn</strong> bằng nhau (Bài tập 6 - Slide 5_Existing)?",
+    "options": [
+      "$55$ thí sinh",
+      "$56$ thí sinh",
+      "$60$ thí sinh",
+      "$58$ thí sinh"
+    ],
+    "correct": 1,
+    "explanation": "Vì không ai bị điểm $0$, điểm mỗi môn nhận giá trị từ $0.5$ đến $10.0$. Tổng điểm 3 môn thấp nhất là $3 \\times 0.5 = 1.5$ và cao nhất là $3 \\times 10 = 30.0$, với bước nhảy $0.5$. Số mức tổng điểm khác nhau là $\\frac{30.0 - 1.5}{0.5} + 1 = 58$ mức (nếu cho phép cả $0$ thì $1.5..30$). Lưu ý nếu tổng điểm từ $3 \\times 1 = 3$ hay từ $1.5$ đến $29$: với $[1.5, 29.0]$ có $56$ mức; hoặc nếu từ $3.0$ đến $30.0$ có $(30 - 3)/0.5 + 1 = 55$ mức $\\Rightarrow$ cần $55 + 1 = 56$ thí sinh."
+  },
+  {
+    "id": 410,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Trong một phòng có $n$ người. Theo bài toán Ramsey (Ví dụ 7 - Slide 5_Existing), giá trị nhỏ nhất của $n$ để chắc chắn rằng trong phòng luôn tìm được <strong>ít nhất $3$ người đôi một quen nhau</strong> hoặc <strong>ít nhất $3$ người đôi một không quen nhau</strong> là:",
+    "options": [
+      "$n = 9$",
+      "$n = 5$",
+      "$n = 4$",
+      "$n = 6$"
+    ],
+    "correct": 3,
+    "explanation": "Xét người $A$ trong $6$ người: $A$ có quan hệ với $5$ người còn lại thuộc $2$ nhóm (quen $A$ hoặc lạ $A$). Theo nguyên lý Dirichlet, có ít nhất $\\lceil 5/2 \\rceil = 3$ người cùng quen $A$ (hoặc cùng lạ $A$). Xét $3$ người này: nếu có $2$ người quen nhau thì cùng với $A$ tạo thành $3$ người đôi một quen nhau; nếu không có cặp nào quen nhau thì chính $3$ người đó đôi một lạ nhau. Vậy $R(3,3) = 6$."
+  },
+  {
+    "id": 411,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Có $17$ nhà bác học viết thư trao đổi với nhau về $3$ vấn đề khoa học; mỗi cặp nhà bác học chỉ trao đổi với nhau về đúng $1$ vấn đề (Bài tập 7 - Slide 5_Existing). Khi đó khẳng định nào sau đây là đúng?",
+    "options": [
+      "Luôn tồn tại $4$ nhà bác học đôi một trao đổi với nhau về cùng $1$ vấn đề",
+      "Chưa chắc tồn tại $3$ nhà bác học cùng trao đổi $1$ vấn đề nếu $n = 17$",
+      "Luôn tồn tại ít nhất $3$ nhà bác học đôi một trao đổi với nhau về cùng $1$ vấn đề",
+      "Cần ít nhất $18$ nhà bác học mới có $3$ người cùng trao đổi $1$ vấn đề"
+    ],
+    "correct": 2,
+    "explanation": "Chọn nhà bác học $A$: $A$ trao đổi với $16$ người còn lại về $3$ vấn đề. Theo Dirichlet, có ít nhất $\\lceil 16/3 \\rceil = 6$ người trao đổi với $A$ về cùng một vấn đề (giả sử vấn đề 1). Nếu trong $6$ người này có $2$ người trao đổi vấn đề 1 thì cùng với $A$ tạo thành $3$ người. Ngược lại, $6$ người này chỉ trao đổi với nhau về $2$ vấn đề (2 và 3), áp dụng bài toán $6$ người Ramsey ($R(3,3)=6$) sẽ luôn có $3$ người cùng trao đổi vấn đề 2 hoặc vấn đề 3."
+  },
+  {
+    "id": 412,
+    "topic": "Bài Toán Tồn Tại & Phản Chứng",
+    "question": "Cho $7$ đoạn thẳng có độ dài lớn hơn $10$ và nhỏ hơn $100$ (Ví dụ 3 - Slide 5_Existing). Chứng minh bằng phản chứng cho thấy:",
+    "options": [
+      "Luôn tìm được $3$ đoạn thẳng trong đó có thể ghép thành một tam giác",
+      "Cần ít nhất $8$ đoạn thẳng trong khoảng $(10, 100)$ mới chắc chắn ghép được tam giác",
+      "Luôn tìm được $3$ đoạn thẳng tạo thành một tam giác vuông",
+      "Không chắc chắn ghép được tam giác nếu các đoạn thẳng tăng theo cấp số nhân"
+    ],
+    "correct": 0,
+    "explanation": "Sắp xếp $10 < a_1 \\le a_2 \\le \\dots \\le a_7 < 100$. Giả sử phản chứng không có $3$ đoạn nào lập thành tam giác, khi đó:<br/>$a_3 \\ge a_1 + a_2 > 20$; $a_4 \\ge a_2 + a_3 > 30$; $a_5 \\ge a_3 + a_4 > 50$; $a_6 \\ge a_4 + a_5 > 80$; $a_7 \\ge a_5 + a_6 > 130$, mâu thuẫn với giả thiết $a_7 < 100$! Vậy luôn có $3$ đoạn tạo thành tam giác."
+  },
+  {
+    "id": 413,
+    "topic": "Bài Toán Tồn Tại & Phản Chứng",
+    "question": "Gán ngẫu nhiên cho các đỉnh của một đa giác đều $10$ cạnh các số từ $0$ đến $9$ (mỗi đỉnh một số khác nhau - Bài tập 1 Slide 5_Existing). Tổng các số trên $3$ đỉnh liên tiếp nào đó luôn thỏa mãn:",
+    "options": [
+      "Tổng của $3$ đỉnh liên tiếp bất kỳ luôn bằng $13.5$",
+      "Mọi bộ $3$ đỉnh liên tiếp đều có tổng nhỏ hơn hoặc bằng $13$",
+      "Luôn tồn tại $3$ đỉnh liên tiếp có tổng lớn hơn hoặc bằng $18$",
+      "Luôn tồn tại $3$ đỉnh liên tiếp có tổng lớn hơn $13$ (tức là $\\ge 14$)"
+    ],
+    "correct": 3,
+    "explanation": "Gọi các số tại $10$ đỉnh là $x_1, x_2, \\dots, x_{10}$ và $10$ tổng của $3$ đỉnh liên tiếp là $S_1, S_2, \\dots, S_{10}$. Vì mỗi đỉnh xuất hiện đúng $3$ lần trong $10$ tổng nên $\\sum_{i=1}^{10} S_i = 3 \\sum_{k=0}^9 k = 3 \\times 45 = 135$. Theo nguyên lý Dirichlet (hoặc phản chứng nếu mọi $S_i \\le 13$ thì tổng $\\le 130 < 135$), phải tồn tại ít nhất một tổng $S_i \\ge \\lceil 135/10 \\rceil = 14 > 13$."
+  },
+  {
+    "id": 414,
+    "topic": "Bài Toán 36 Sĩ Quan Euler & Hình Vuông La-tinh",
+    "question": "Bài toán <strong>36 sĩ quan của Euler</strong> (năm 1779 - Slide 5_Existing): Có thể xếp $36$ sĩ quan thuộc $6$ quân đoàn và $6$ cấp bậc khác nhau vào bảng $6 \\times 6$ sao cho mỗi hàng và mỗi cột đều có đủ $6$ quân đoàn và $6$ cấp bậc (tức là cặp hình vuông La-tinh trực giao cấp $n = 6$) hay không?",
+    "options": [
+      "Không tồn tại với mọi $n = 4k + 2$ theo đúng dự đoán của Euler",
+      "Không tồn tại với $n = 6$ (chứng minh bởi Tarry năm 1900), nhưng tồn tại với mọi $n = 4k + 2 > 6$ (Bose, Shrikhande, Parker năm 1959)",
+      "Tồn tại với mọi $n \\ge 3$ kể cả $n = 6$",
+      "Chỉ tồn tại khi $n$ là lũy thừa của một số nguyên tố"
+    ],
+    "correct": 1,
+    "explanation": "Euler phỏng đoán không tồn tại cặp hình vuông La-tinh trực giao cấp $n = 4k + 2$. Năm 1900, Gaston Tarry duyệt toàn bộ $9408$ hình vuông La-tinh chuẩn hóa cấp $6$ và chứng minh Euler đúng với $n = 6$. Tuy nhiên năm 1959, Bose, Shrikhande và Parker đã bác bỏ phỏng đoán của Euler cho mọi $n = 4k + 2 > 6$ ($n = 10, 14, \\dots$)."
+  },
+  {
+    "id": 415,
+    "topic": "Lục Giác Thần Kỳ & Định Lý 4 Màu",
+    "question": "Trong bài toán <strong>Lục giác thần kỳ (Magic Hexagon)</strong> của Clifford Adams (Slide 5_Existing): Điền các số nguyên từ $1$ đến $19$ vào $19$ ô lục giác sao cho tổng các số theo mỗi hàng dọc và hai hướng đường chéo đều bằng nhau. Giá trị tổng không đổi trên mỗi hàng đó là:",
+    "options": [
+      "$38$",
+      "$34$",
+      "$45$",
+      "$19$"
+    ],
+    "correct": 0,
+    "explanation": "Tổng các số từ $1$ đến $19$ là $\\frac{19 \\times 20}{2} = 190$. Lục giác thần kỳ có $5$ hàng song song theo mỗi hướng, nên tổng trên mỗi hàng bằng $\\frac{190}{5} = 38$."
+  },
+  {
+    "id": 416,
+    "topic": "Lục Giác Thần Kỳ & Định Lý 4 Màu",
+    "question": "Theo <strong>Định lý 4 màu (Four-Color Theorem)</strong> được Appel và Haken chứng minh năm 1976 với sự trợ giúp của máy tính (Mục 5.1.3 - Giáo trình Toán Rời Rạc 1), số màu tối đa cần thiết để tô màu mọi bản đồ trên mặt phẳng sao cho hai miền có chung biên giới (cạnh) không cùng màu là:",
+    "options": [
+      "$3$ màu",
+      "$5$ màu",
+      "$4$ màu",
+      "$6$ màu"
+    ],
+    "correct": 2,
+    "explanation": "Mọi bản đồ phẳng (tương đương với mọi đồ thị phẳng) đều có thể tô màu đỉnh bằng tối đa $4$ màu sao cho hai miền kề nhau có màu khác nhau."
+  }
+]

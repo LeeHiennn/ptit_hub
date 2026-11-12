@@ -1,0 +1,752 @@
+[
+  {
+    "id": 306,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Mạch dao động $LC$ điều hòa có $L = 100\\ \\mu\\text{H}$ và $C = 10\\ \\text{nF}$. Khoảng thời gian ngắn nhất kể từ lúc hiệu điện thế trên tụ đạt cực đại $U_0$ đến lúc năng lượng từ trường trong cuộn dây bằng $3$ lần năng lượng điện trường trong tụ là:",
+    "image": "",
+    "options": [
+      "$\\Delta t = \\dfrac{\\pi}{6}\\ \\mu\\text{s} \\approx 0{,}52\\ \\mu\\text{s}$",
+      "$\\Delta t = \\dfrac{\\pi}{3}\\ \\mu\\text{s} \\approx 1{,}05\\ \\mu\\text{s}$",
+      "$\\Delta t = \\dfrac{\\pi}{4}\\ \\mu\\text{s} \\approx 0{,}79\\ \\mu\\text{s}$",
+      "$\\Delta t = \\dfrac{2\\pi}{3}\\ \\mu\\text{s} \\approx 2{,}09\\ \\mu\\text{s}$"
+    ],
+    "correct": 1,
+    "explanation": "Chu kỳ dao động riêng $T = 2\\pi\\sqrt{LC} = 2\\pi\\sqrt{10^{-4}\\cdot 10^{-8}} = 2\\pi\\ \\mu\\text{s}$. Khi $W_m = 3W_e \\Rightarrow W_e = \\dfrac{1}{4}W \\Rightarrow |u| = \\dfrac{U_0}{2}$. Thời gian ngắn nhất đi từ $u = U_0$ đến $u = \\dfrac{U_0}{2}$ là $\\Delta t = \\dfrac{T}{6} = \\dfrac{\\pi}{3}\\ \\mu\\text{s} \\approx 1{,}05\\ \\mu\\text{s}$."
+  },
+  {
+    "id": 307,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "theory",
+    "question": "Đối với một hệ dao động tắt dần yếu ($\\beta \\ll \\omega_0$), hệ số phẩm chất $Q = \\dfrac{\\pi}{\\delta}$ thể hiện ý nghĩa vật lý nào sau đây?",
+    "image": "",
+    "options": [
+      "Tốc độ truyền năng lượng của sóng điện từ qua một đơn vị diện tích trong môi trường dẫn",
+      "Tỉ số giữa $2\\pi$ lần năng lượng toàn phần dự trữ trong hệ chia cho phần năng lượng bị tiêu hao trong một chu kỳ dao động; $Q$ càng lớn thì dao động tắt dần càng chậm",
+      "Bình phương tỉ số giữa biên độ lực cưỡng bức và điện trở thuần của mạch",
+      "Số chu kỳ dao động thực hiện được trong đúng $1$ giây đầu tiên; $Q$ càng nhỏ hệ dao động càng bền"
+    ],
+    "correct": 1,
+    "explanation": "Trong một chu kỳ, $\\dfrac{|\\Delta W|}{W} \\approx 2\\delta$ (khi tắt dần yếu). Do đó $Q = 2\\pi\\dfrac{W}{|\\Delta W|} \\approx \\dfrac{\\pi}{\\delta} = \\dfrac{\\omega_0}{2\\beta}$. $Q$ càng lớn thì mức tiêu hao năng lượng mỗi chu kỳ càng nhỏ và đỉnh cộng hưởng càng sắc nét."
+  },
+  {
+    "id": 308,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Một chất điểm thực hiện đồng thời hai dao động điều hòa cùng phương, cùng tần số có phương trình $x_1 = 6\\cos\\left(\\omega t + \\dfrac{\\pi}{6}\\right)\\ (\\text{cm})$ và $x_2 = 6\\cos\\left(\\omega t + \\dfrac{5\\pi}{6}\\right)\\ (\\text{cm})$. Phương trình dao động tổng hợp của chất điểm là:",
+    "image": "",
+    "options": [
+      "$x = 12\\cos\\left(\\omega t + \\dfrac{\\pi}{3}\\right)\\ (\\text{cm})$",
+      "$x = 6\\cos\\left(\\omega t + \\dfrac{\\pi}{3}\\right)\\ (\\text{cm})$",
+      "$x = 6\\cos\\left(\\omega t + \\dfrac{\\pi}{2}\\right)\\ (\\text{cm})$",
+      "$x = 6\\sqrt{3}\\cos\\left(\\omega t + \\dfrac{\\pi}{2}\\right)\\ (\\text{cm})$"
+    ],
+    "correct": 2,
+    "explanation": "Độ lệch pha $\\Delta\\varphi = \\dfrac{5\\pi}{6} - \\dfrac{\\pi}{6} = \\dfrac{2\\pi}{3}$. Biên độ tổng hợp $A = \\sqrt{6^2 + 6^2 + 2\\cdot 6\\cdot 6\\cos\\dfrac{2\\pi}{3}} = 6\\ \\text{cm}$. Vì hai biên độ thành phần bằng nhau nên pha tổng hợp nằm chính giữa: $\\varphi = \\dfrac{\\pi/6 + 5\\pi/6}{2} = \\dfrac{\\pi}{2}$."
+  },
+  {
+    "id": 309,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Chất điểm tham gia đồng thời hai dao động điều hòa vuông góc cùng tần số: $x = 3\\cos(\\omega t)\\ (\\text{cm})$ và $y = 4\\cos\\left(\\omega t + \\dfrac{\\pi}{2}\\right)\\ (\\text{cm})$. Quỹ đạo chuyển động và chiều quay của chất điểm là:",
+    "image": "",
+    "options": [
+      "Quỹ đạo hình elip $\\dfrac{x^2}{9} + \\dfrac{y^2}{16} = 1$, chiều quay ngược chiều kim đồng hồ",
+      "Quỹ đạo đoạn thẳng $4x - 3y = 0$, dao động điều hòa qua lại",
+      "Quỹ đạo hình elip $\\dfrac{x^2}{9} + \\dfrac{y^2}{16} = 1$, chiều quay thuận chiều kim đồng hồ (chiều âm lượng giác)",
+      "Quỹ đạo hình tròn tâm $O$ bán kính $R = 5\\ \\text{cm}$"
+    ],
+    "correct": 2,
+    "explanation": "Ta có $\\cos(\\omega t) = \\dfrac{x}{3}$ và $\\cos\\left(\\omega t + \\dfrac{\\pi}{2}\\right) = -\\sin(\\omega t) = \\dfrac{y}{4}$. Bình phương cộng vế cho phương trình elip $\\dfrac{x^2}{9} + \\dfrac{y^2}{16} = 1$. Tại $t = 0$: $x = 3,\\ y = 0$; sau đó $t > 0$ nhỏ thì $x$ giảm và $y = -4\\sin(\\omega t) < 0$, nên chất điểm đi xuống phía góc phần tư thứ IV (thuận chiều kim đồng hồ)."
+  },
+  {
+    "id": 310,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Nguồn sóng $O$ dao động điều hòa với phương trình $u_O = 4\\cos(20\\pi t)\\ (\\text{mm})$, tạo ra sóng cơ lan truyền trên một sợi dây đàn hồi dài với tốc độ $v = 80\\ \\text{cm/s}$. Bước sóng $\\lambda$ và phương trình sóng tại điểm $M$ nằm sau nguồn $O$ một đoạn $d = 2\\ \\text{cm}$ (bỏ qua suy giảm biên độ) là:",
+    "image": "",
+    "options": [
+      "$\\lambda = 8\\ \\text{cm};\\ u_M = 4\\cos\\left(20\\pi t + \\dfrac{\\pi}{2}\\right)\\ (\\text{mm})$",
+      "$\\lambda = 16\\ \\text{cm};\\ u_M = 4\\cos\\left(20\\pi t - \\dfrac{\\pi}{4}\\right)\\ (\\text{mm})$",
+      "$\\lambda = 4\\ \\text{cm};\\ u_M = 4\\cos(20\\pi t - \\pi)\\ (\\text{mm})$",
+      "$\\lambda = 8\\ \\text{cm};\\ u_M = 4\\cos\\left(20\\pi t - \\dfrac{\\pi}{2}\\right)\\ (\\text{mm})$"
+    ],
+    "correct": 3,
+    "explanation": "Tần số sóng $f = \\dfrac{\\omega}{2\\pi} = 10\\ \\text{Hz}$, suy ra bước sóng $\\lambda = \\dfrac{v}{f} = \\dfrac{80}{10} = 8\\ \\text{cm}$. Sóng truyền tới $M$ trễ pha hơn nguồn $O$ một góc $\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda} = \\dfrac{2\\pi\\cdot 2}{8} = \\dfrac{\\pi}{2}$, nên $u_M = 4\\cos\\left(20\\pi t - \\dfrac{\\pi}{2}\\right)\\ (\\text{mm})$."
+  },
+  {
+    "id": 324,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "calc",
+    "question": "Trong thí nghiệm giao thoa khe Young ($D = 1{,}5\\ \\text{m}$, khoảng cách hai khe $\\ell = 0{,}6\\ \\text{mm}$), người ta đo được khoảng cách giữa $6$ vân sáng liên tiếp trên màn là $7{,}5\\ \\text{mm}$. Bước sóng ánh sáng đơn sắc dùng trong thí nghiệm là:",
+    "image": "",
+    "options": [
+      "$\\lambda = 0{,}60\\ \\mu\\text{m}$",
+      "$\\lambda = 0{,}72\\ \\mu\\text{m}$",
+      "$\\lambda = 0{,}48\\ \\mu\\text{m}$",
+      "$\\lambda = 0{,}50\\ \\mu\\text{m}$"
+    ],
+    "correct": 0,
+    "explanation": "Khoảng cách giữa $6$ vân sáng liên tiếp chứa $6 - 1 = 5$ khoảng vân, suy ra $i = \\dfrac{7{,}5}{5} = 1{,}5\\ \\text{mm}$. Bước sóng $\\lambda = \\dfrac{i\\ell}{D} = \\dfrac{1{,}5\\times 10^{-3}\\times 0{,}6\\times 10^{-3}}{1{,}5} = 0{,}60\\ \\mu\\text{m}$."
+  },
+  {
+    "id": 325,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "calc",
+    "question": "Trên màn quan sát trong thí nghiệm khe Young, khoảng vân đo được là $i = 1{,}2\\ \\text{mm}$. Trong bề rộng đối xứng của vùng giao thoa $L = 13\\ \\text{mm}$ (tính từ $-6{,}5\\ \\text{mm}$ đến $+6{,}5\\ \\text{mm}$), tổng số vân sáng và số vân tối quan sát được lần lượt là:",
+    "image": "",
+    "options": [
+      "$11$ vân sáng và $12$ vân tối",
+      "$11$ vân sáng và $10$ vân tối",
+      "$12$ vân sáng và $11$ vân tối",
+      "$13$ vân sáng và $10$ vân tối"
+    ],
+    "correct": 1,
+    "explanation": "Nửa bề rộng vùng giao thoa là $L/2 = 6{,}5\\ \\text{mm}$, tỉ số $\\dfrac{L}{2i} = \\dfrac{6{,}5}{1{,}2} \\approx 5{,}42$. Số vân sáng: $N_s = 2\\lfloor 5{,}42\\rfloor + 1 = 2\\times 5 + 1 = 11$. Số vân tối: $N_t = 2\\lfloor 5{,}42 + 0{,}5\\rfloor = 2\\lfloor 5{,}92\\rfloor = 2\\times 5 = 10$ (vì vân tối thứ 6 ở tọa độ $\\pm 5{,}5 i = \\pm 6{,}6\\ \\text{mm}$ nằm ngoài vùng $6{,}5\\ \\text{mm}$)."
+  },
+  {
+    "id": 326,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "calc",
+    "question": "Chiếu ánh sáng trắng ($0{,}40\\ \\mu\\text{m} \\le \\lambda \\le 0{,}76\\ \\mu\\text{m}$) vào hai khe Young cách nhau $\\ell = 2\\ \\text{mm}$, màn đặt cách hai khe $D = 2\\ \\text{m}$. Bề rộng của quang phổ bậc 2 (tính từ mép tím bậc 2 đến mép đỏ bậc 2 cùng một phía vân trung tâm) trên màn bằng:",
+    "image": "",
+    "options": [
+      "$\\Delta x_2 = 0{,}54\\ \\text{mm}$",
+      "$\\Delta x_2 = 0{,}72\\ \\text{mm}$",
+      "$\\Delta x_2 = 1{,}08\\ \\text{mm}$",
+      "$\\Delta x_2 = 0{,}36\\ \\text{mm}$"
+    ],
+    "correct": 1,
+    "explanation": "Vị trí vân sáng bậc $k = 2$ của bước sóng $\\lambda$ là $x_2 = 2\\dfrac{\\lambda D}{\\ell}$. Bề rộng quang phổ bậc 2 là $\\Delta x_2 = 2\\dfrac{(\\lambda_{\\max} - \\lambda_{\\min})D}{\\ell} = 2\\cdot\\dfrac{(0{,}76 - 0{,}40)\\times 10^{-6}\\cdot 2}{2\\times 10^{-3}} = 0{,}72\\ \\text{mm}$."
+  },
+  {
+    "id": 338,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "calc",
+    "question": "Chiếu chùm sáng đơn sắc song song $\\lambda = 0{,}5\\ \\mu\\text{m}$ vuông góc với một khe hẹp bề rộng $b = 0{,}2\\ \\text{mm}$. Ngay sau khe đặt thấu kính hội tụ tiêu cự $f = 50\\ \\text{cm}$. Bề rộng vân sáng trung tâm $L_0$ và khoảng cách giữa cực tiểu bậc $2$ và cực tiểu bậc $5$ ở cùng một phía vân trung tâm trên màn tiêu diện lần lượt bằng:",
+    "image": "",
+    "options": [
+      "$L_0 = 2{,}50\\ \\text{mm};\\ d_{2\\to 5} = 3{,}75\\ \\text{mm}$",
+      "$L_0 = 5{,}00\\ \\text{mm};\\ d_{2\\to 5} = 6{,}25\\ \\text{mm}$",
+      "$L_0 = 2{,}50\\ \\text{mm};\\ d_{2\\to 5} = 2{,}50\\ \\text{mm}$",
+      "$L_0 = 1{,}25\\ \\text{mm};\\ d_{2\\to 5} = 3{,}75\\ \\text{mm}$"
+    ],
+    "correct": 0,
+    "explanation": "Khoảng cách từ tâm tới cực tiểu bậc $k$ (với góc nhỏ) là $x_k = k\\dfrac{f\\lambda}{b}$. Vậy bề rộng cực đại trung tâm (giữa hai cực tiểu bậc $\\pm 1$) là $L_0 = 2\\dfrac{f\\lambda}{b} = 2\\cdot\\dfrac{0{,}5\\cdot 0{,}5\\times 10^{-6}}{0{,}2\\times 10^{-3}} = 2{,}50\\ \\text{mm}$. Khoảng cách giữa bậc $2$ và bậc $5$ cùng phía là $(5 - 2)\\dfrac{f\\lambda}{b} = 3\\times 1{,}25 = 3{,}75\\ \\text{mm}$."
+  },
+  {
+    "id": 339,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "calc",
+    "question": "Trong hiện tượng nhiễu xạ Fraunhofer qua một khe hẹp có bề rộng $b = 0{,}15\\ \\text{mm}$ với ánh sáng bước sóng $\\lambda = 0{,}6\\ \\mu\\text{m}$, góc lệch gần đúng của **cực đại phụ thứ nhất** ($\\sin\\varphi_1 \\approx \\dfrac{3\\lambda}{2b}$) có giá trị:",
+    "image": "",
+    "options": [
+      "$\\sin\\varphi_1 = 0{,}008 \\Rightarrow \\varphi_1 \\approx 0{,}46^\\circ$",
+      "$\\sin\\varphi_1 = 0{,}002 \\Rightarrow \\varphi_1 \\approx 0{,}11^\\circ$",
+      "$\\sin\\varphi_1 = 0{,}004 \\Rightarrow \\varphi_1 \\approx 0{,}23^\\circ$",
+      "$\\sin\\varphi_1 = 0{,}006 \\Rightarrow \\varphi_1 \\approx 0{,}34^\\circ$ (khoảng $20{,}6'$)"
+    ],
+    "correct": 3,
+    "explanation": "Cực đại phụ bậc $k = 1$ nằm xấp xỉ chính giữa cực tiểu bậc 1 và cực tiểu bậc 2: $\\sin\\varphi_1 \\approx \\left(1 + \\dfrac{1}{2}\\right)\\dfrac{\\lambda}{b} = \\dfrac{1{,}5\\times 0{,}6\\times 10^{-6}}{0{,}15\\times 10^{-3}} = 0{,}006 \\Rightarrow \\varphi_1 \\approx 0{,}344^\\circ \\approx 20{,}6'$."
+  },
+  {
+    "id": 340,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "calc",
+    "question": "Chiếu chùm sáng đơn sắc bước sóng $\\lambda = 0{,}6\\ \\mu\\text{m}$ vuông góc với một khe hẹp bề rộng $b = 2{,}8\\ \\mu\\text{m}$. Tổng số cực tiểu nhiễu xạ có thể quan sát được ở cả hai phía màn đối xứng là:",
+    "image": "",
+    "options": [
+      "$8$ cực tiểu",
+      "$4$ cực tiểu",
+      "$10$ cực tiểu",
+      "$9$ cực tiểu"
+    ],
+    "correct": 0,
+    "explanation": "Điều kiện cực tiểu nhiễu xạ 1 khe là $\\sin\\varphi = k\\dfrac{\\lambda}{b}$. Do $|\\sin\\varphi| < 1$ (tia lệch hợp lý trên màn $k \\neq 0$), ta có $|k| < \\dfrac{b}{\\lambda} = \\dfrac{2{,}8}{0{,}6} \\approx 4{,}67 \\Rightarrow k \\in \\{\\pm 1, \\pm 2, \\pm 3, \\pm 4\\}$. Tổng cộng có $2\\times 4 = 8$ cực tiểu."
+  },
+  {
+    "id": 341,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "theory",
+    "question": "Trong nhiễu xạ ánh sáng song song qua một khe hẹp bề rộng $b$ (nhiễu xạ Fraunhofer), vì sao trên thực tế năng lượng tập trung gần như hoàn toàn ở vân sáng chính giữa ($I_0 \\approx 1$), còn các cực đại phụ bậc $1, 2, \\dots$ tắt dần rất nhanh?",
+    "image": "",
+    "options": [
+      "Do độ dày của mép khe hẹp hấp thụ mất $95\\%$ ánh sáng truyền lệch góc",
+      "Do chỉ có tia sáng đi sát tâm khe mới giao thoa được, các tia ở góc lớn mất tính kết hợp",
+      "Do định luật bảo toàn năng lượng chỉ cho phép cường độ phụ bằng $I_0 / k$",
+      "Do tỉ số cường độ theo quy luật $I \\propto \\left(\\dfrac{\\sin u}{u}\\right)^2$ với $u = \\dfrac{\\pi b\\sin\\varphi}{\\lambda}$; ở cực đại phụ thứ nhất chỉ còn $1$ đới rộng $b/3$ không bị triệt tiêu (biên độ $\\approx \\dfrac{2}{3\\pi}E_0$) nên $I_1 \\approx 0{,}045 I_0$ và $I_2 \\approx 0{,}016 I_0$"
+    ],
+    "correct": 3,
+    "explanation": "Chia bề rộng khe $b$ thành các dải chắn ngang phát sóng lệch pha nhau $\\pi$. Tại cực đại phụ thứ nhất ($b\\sin\\varphi \\approx 3\\lambda/2$), khe chứa 3 dải: 2 dải tự triệt tiêu và chỉ còn $1/3$ diện tích khe đóng góp biên độ phân tán nên cường độ giảm đi hơn $20$ lần ($4{,}5\\% I_0$)."
+  },
+  {
+    "id": 358,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Một bản thủy tinh dày $\\ell = 5\\ \\text{cm}$ có hệ số hấp thụ ánh sáng $k = 0{,}05\\ \\text{cm}^{-1}$. Biết hệ số phản xạ ánh sáng ở mỗi mặt giới hạn thủy tinh – không khí là $r = 4\\%$. Tính tỉ lệ phần trăm cường độ chùm sáng ló ra khỏi bản (kể cả suy hao do phản xạ ở hai mặt) so với cường độ tới $I_0$:",
+    "image": "",
+    "options": [
+      "$\\dfrac{I}{I_0} \\approx 69{,}1\\%$",
+      "$\\dfrac{I}{I_0} \\approx 74{,}8\\%$",
+      "$\\dfrac{I}{I_0} \\approx 71{,}8\\%$",
+      "$\\dfrac{I}{I_0} \\approx 77{,}9\\%$"
+    ],
+    "correct": 2,
+    "explanation": "Qua mặt vào mất $r = 4\\%$ nên cường độ đi vào lớp là $(1 - r)I_0$; sau quãng đường $\\ell$ còn $(1-r)I_0 e^{-k\\ell}$; qua mặt ra lại mất thêm $r$ phần trăm nữa nên $I = (1 - r)^2 I_0 e^{-k\\ell} = 0{,}96^2 \\cdot e^{-0{,}25} I_0 \\approx 0{,}9216 \\times 0{,}7788\\,I_0 \\approx 71{,}8\\% I_0$."
+  },
+  {
+    "id": 359,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Mật độ quang học (hay độ hấp thụ quang học) của một bản lọc sáng được định nghĩa là $D = \\lg\\dfrac{I_0}{I}$. Nếu ghép nối tiếp hai kính lọc màu có mật độ quang học lần lượt là $D_1 = 1{,}2$ và $D_2 = 0{,}8$ (bỏ qua phản xạ giữa hai kính), hệ số truyền qua tổng cộng $T = \\dfrac{I}{I_0}$ của bộ lọc ghép bằng:",
+    "image": "",
+    "options": [
+      "$T = 2\\%$ (do $D_{\\text{tổng}} = 2{,}0$)",
+      "$T = 10\\%$ (do $D_{\\text{tổng}} = 1{,}0$)",
+      "$T = 0{,}96\\%$",
+      "$T = 1\\%$ (do $D_{\\text{tổng}} = 2{,}0$)"
+    ],
+    "correct": 3,
+    "explanation": "Do $I = I_0\\cdot 10^{-D_1}\\cdot 10^{-D_2} = I_0\\cdot 10^{-(D_1+D_2)}$, mật độ quang học có tính cộng: $D = D_1 + D_2 = 1{,}2 + 0{,}8 = 2{,}0$. Vậy hệ số truyền qua $T = 10^{-D} = 10^{-2} = 0{,}01 = 1\\%$."
+  },
+  {
+    "id": 360,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Chiếu chùm sáng đơn sắc qua một cuvet đựng dung dịch chất hấp thụ có nồng độ $C_1 = 0{,}1\\ \\text{mol/L}$, thấy cường độ sáng truyền qua giảm đi một nửa ($T_1 = 50\\%$). Dùng đúng cuvet đó, muốn cường độ ánh sáng truyền qua giảm chỉ còn $12{,}5\\%$ ($1/8$) cường độ tới thì nồng độ $C_2$ phải pha (trong vùng nghiệm đúng Lambert - Beer) là:",
+    "image": "",
+    "options": [
+      "$C_2 = 0{,}2\\ \\text{mol/L}$",
+      "$C_2 = 0{,}3\\ \\text{mol/L}$",
+      "$C_2 = 0{,}8\\ \\text{mol/L}$",
+      "$C_2 = 0{,}4\\ \\text{mol/L}$"
+    ],
+    "correct": 1,
+    "explanation": "Theo định luật Lambert - Beer: $\\dfrac{I}{I_0} = e^{-\\alpha C\\ell} \\Rightarrow \\ln\\dfrac{I}{I_0} \\propto C$. Vì $0{,}125 = (0{,}5)^3 \\Rightarrow \\ln(0{,}125) = 3\\ln(0{,}5)$, suy ra $C_2 = 3 C_1 = 0{,}3\\ \\text{mol/L}$."
+  },
+  {
+    "id": 361,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Một dung dịch loãng nồng độ $C_1 = 0{,}2\\ \\text{M}$ đặt trong cuvet bề dày $\\ell_1 = 1{,}5\\ \\text{cm}$ có độ truyền qua $T = 60\\%$. Đem cùng loại dung dịch này đổ vào cuvet dày $\\ell_2 = 3{,}0\\ \\text{cm}$; để giữ nguyên độ truyền qua đúng bằng $60\\%$, nồng độ dung dịch $C_2$ cần thiết là:",
+    "image": "",
+    "options": [
+      "$C_2 = 0{,}15\\ \\text{M}$",
+      "$C_2 = 0{,}05\\ \\text{M}$",
+      "$C_2 = 0{,}1\\ \\text{M}$",
+      "$C_2 = 0{,}4\\ \\text{M}$"
+    ],
+    "correct": 2,
+    "explanation": "Theo định luật Lambert - Beer: $T = e^{-\\alpha C \\ell}$. Để giữ $T$ không đổi trên cùng một chất dung dịch ($\\alpha = \\text{const}$), tích $C_1\\ell_1 = C_2\\ell_2 \\Rightarrow C_2 = \\dfrac{0{,}2\\times 1{,}5}{3{,}0} = 0{,}1\\ \\text{M}$."
+  },
+  {
+    "id": 362,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Trong nước biển sạch, ánh sáng xanh lam có hệ số hấp thụ vào loại nhỏ nhất cỡ $k = 0{,}02\\ \\text{m}^{-1}$. Ở độ sâu $h$ nào tính từ mặt nước thì cường độ ánh sáng xanh lam giảm đi $e^2 \\approx 7{,}39$ lần?",
+    "image": "",
+    "options": [
+      "$h = 25\\ \\text{m}$",
+      "$h = 200\\ \\text{m}$",
+      "$h = 50\\ \\text{m}$",
+      "$h = 100\\ \\text{m}$"
+    ],
+    "correct": 3,
+    "explanation": "Theo định luật Bouguer - Lambert: $\\dfrac{I_0}{I} = e^{kh} = e^2 \\Rightarrow kh = 2 \\Rightarrow h = \\dfrac{2}{0{,}02} = 100\\ \\text{m}$."
+  },
+  {
+    "id": 363,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "theory",
+    "question": "Theo định luật Bouguer - Lambert ($I = I_0 e^{-k\\ell}$), hệ số hấp thụ $k$ phụ thuộc vào những yếu tố nào trong điều kiện quang học tuyến tính thông thường?",
+    "image": "",
+    "options": [
+      "Tỉ lệ thuận với bình phương cường độ sáng tới $I_0$ và tăng tuyến tính theo bề dày $\\ell$",
+      "Phụ thuộc bản chất môi trường và bước sóng $\\lambda$ (tần số) của ánh sáng; **không** phụ thuộc vào cường độ ánh sáng tới $I_0$ và bề dày $\\ell$",
+      "Giống hệt nhau với mọi bước sóng từ hồng ngoại đến tử ngoại nếu môi trường trong suốt",
+      "Luôn bằng đúng nồng độ phân tử khí $N_0$"
+    ],
+    "correct": 1,
+    "explanation": "Trong vùng ánh sáng cường độ vừa phải (quang học tuyến tính), hệ số hấp thụ $k(\\lambda)$ là đặc trưng riêng cho từng chất tại bước sóng $\\lambda$, không đổi theo $I_0$ hay $\\ell$. Chỉ khi dùng chùm laser cực mạnh mới nảy sinh sự bão hòa hấp thụ hoặc hấp thụ đa phôtôn phi tuyến."
+  },
+  {
+    "id": 364,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "theory",
+    "question": "Vì sao định luật hấp thụ Lambert - Beer ($k = \\alpha C$, với $C$ là nồng độ chất hòa tan) chỉ nghiệm đúng đối với các **dung dịch loãng** có dung môi không hấp thụ?",
+    "image": "",
+    "options": [
+      "Vì hằng số Planck tự thay đổi trong chất lỏng đậm đặc",
+      "Vì các phân tử tan có nồng độ lớn sẽ phản xạ 100% ánh sáng tại mặt thoáng cuvet",
+      "Khi nồng độ $C$ quá cao, khoảng cách giữa các phân tử tan rất gần làm xuất hiện tương tác điện từ lẫn nhau (thay đổi tần số riêng và xác suất chuyển mức hấp thụ) hoặc sự liên kết/phân ly hóa học làm $\\alpha$ không còn giữ giá trị hằng số",
+      "Vì khi nồng độ cao, dung dịch sẽ đóng băng ở nhiệt độ phòng"
+    ],
+    "correct": 2,
+    "explanation": "Định luật Beer giả thiết các phân tử chất tan hấp thụ độc lập nhau như các tâm hấp thụ rời rạc. Ở nồng độ lớn ($> 10^{-2}\\ \\text{M}$ thường bắt đầu sai lệch), tương tác giữa các phân tử tan và sự thay đổi chiết suất nền làm sai lệch quy luật tuyến tính $k \\propto C$."
+  },
+  {
+    "id": 384,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Một bản phần tư bước sóng ($\\lambda/4$) làm từ tinh thể băng lan (canxit $\\text{CaCO}_3$) cắt song song với quang trục, có $n_o = 1{,}658$ và $n_e = 1{,}486$ đối với bức xạ $\\lambda = 0{,}516\\ \\mu\\text{m}$. Bề dày nhỏ nhất $d_{\\min}$ của bản đối với bước sóng này bằng:",
+    "image": "",
+    "options": [
+      "$d_{\\min} = 3{,}00\\ \\mu\\text{m}$",
+      "$d_{\\min} = 1{,}50\\ \\mu\\text{m}$",
+      "$d_{\\min} = 0{,}375\\ \\mu\\text{m}$",
+      "$d_{\\min} = 0{,}75\\ \\mu\\text{m}$"
+    ],
+    "correct": 3,
+    "explanation": "Hiệu quang lộ qua bản $\\lambda/4$ nhỏ nhất là $\\Delta L = |n_o - n_e|d_{\\min} = \\dfrac{\\lambda}{4}$. Thay số: $d_{\\min} = \\dfrac{0{,}516}{4(1{,}658 - 1{,}486)} = \\dfrac{0{,}516}{4\\times 0{,}172} = 0{,}75\\ \\mu\\text{m}$."
+  },
+  {
+    "id": 385,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Chiếu chùm sáng phân cực thẳng đơn sắc bước sóng $\\lambda$ vuông góc vào một bản nửa bước sóng ($\\lambda/2$, có quang trục song song mặt bản). Biết phương dao động của véc-tơ điện trường tới hợp với quang trục của bản góc $\\theta = 25^\\circ$. Chùm sáng ló ra khỏi bản sẽ:",
+    "image": "",
+    "options": [
+      "Trở thành ánh sáng phân cực thẳng hợp với quang trục góc $12{,}5^\\circ$",
+      "Trở thành ánh sáng phân cực tròn quay phải",
+      "Vẫn là ánh sáng phân cực thẳng, nhưng phương dao động bị quay đi một góc $2\\theta = 50^\\circ$ (nằm đối xứng qua quang trục)",
+      "Bị triệt tiêu hoàn toàn nếu không có kính phân tích đi kèm"
+    ],
+    "correct": 2,
+    "explanation": "Bản $\\lambda/2$ làm dịch pha tương đối giữa thành phần song song và vuông góc với quang trục đúng bằng $\\pi$ (đảo dấu một thành phần so với thành phần kia). Do đó biên độ tổng hợp vẫn là dao động thẳng nhưng hướng vectơ sáng lật đối xứng qua quang trục — tức quay đi góc $2\\theta = 50^\\circ$."
+  },
+  {
+    "id": 386,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Đặt một bản nửa bước sóng ($\\lambda/2$) vào giữa hai lăng kính Nicol bắt chéo vuông góc ($N_1 \\perp N_2$) sao cho quang trục của bản hợp với mặt phẳng chính của $N_1$ góc $30^\\circ$. Gọi $I_1$ là cường độ ánh sáng phân cực thẳng sau khi qua $N_1$; cường độ ánh sáng ló ra khỏi $N_2$ (bỏ qua mất mát phản xạ) là:",
+    "image": "",
+    "options": [
+      "$I_2 = I_1$",
+      "$I_2 = 0{,}75\\,I_1$",
+      "$I_2 = 0{,}25\\,I_1$",
+      "$I_2 = 0$"
+    ],
+    "correct": 1,
+    "explanation": "Ánh sáng qua $N_1$ có véc-tơ dao động hợp với quang trục bản $\\lambda/2$ góc $30^\\circ$. Đi qua bản $\\lambda/2$, phương dao động quay đi $2\\times 30^\\circ = 60^\\circ$ so với trục $N_1$. Vì $N_2 \\perp N_1$, phương dao động mới chỉ hợp với mặt chính $N_2$ góc $90^\\circ - 60^\\circ = 30^\\circ$. Theo định luật Malus: $I_2 = I_1\\cos^2 30^\\circ = 0{,}75 I_1$."
+  },
+  {
+    "id": 387,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Để biến đổi một chùm ánh sáng phân cực thẳng có cường độ $I_1$ thành ánh sáng **phân cực tròn** sau khi đi qua một bản phần tư bước sóng ($\\lambda/4$), góc hợp bởi phương dao động của ánh sáng tới và quang trục của bản $\\lambda/4$ phải bằng bao nhiêu?",
+    "image": "",
+    "options": [
+      "$45^\\circ$ (hoặc $135^\\circ$)",
+      "$30^\\circ$ hoặc $60^\\circ$",
+      "$22{,}5^\\circ$",
+      "$0^\\circ$ hoặc $90^\\circ$"
+    ],
+    "correct": 0,
+    "explanation": "Ánh sáng ló ra từ bản $\\lambda/4$ là sự tổng hợp hai dao động vuông góc lệch pha $\\pm\\pi/2$ dọc theo trục $o$ và $e$: $E_o = E_1\\sin\\theta$ và $E_e = E_1\\cos\\theta$. Để quỹ đạo tổng hợp là **đường tròn** thì hai biên độ phải bằng nhau: $\\sin\\theta = \\cos\\theta \\Rightarrow \\theta = 45^\\circ$."
+  },
+  {
+    "id": 388,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Một ống nghiệm phân cực kế dài $\\ell = 20\\ \\text{cm}$ đựng dung dịch đường mía có năng suất quay cực riêng $[\\alpha] = 66{,}5^\\circ\\ \\text{dm}^{-1}\\cdot(\\text{g/cm}^3)^{-1}$ làm mặt phẳng phân cực của ánh sáng vàng Natri quay một góc $\\alpha = 13{,}3^\\circ$. Nồng độ khối lượng $\\rho$ của dung dịch đường đó là:",
+    "image": "",
+    "options": [
+      "$\\rho = 0{,}50\\ \\text{g/cm}^3$",
+      "$\\rho = 0{,}10\\ \\text{g/cm}^3$ ($10\\ \\text{g}$ đường trong $100\\ \\text{cm}^3$ dung dịch)",
+      "$\\rho = 0{,}01\\ \\text{g/cm}^3$",
+      "$\\rho = 0{,}20\\ \\text{g/cm}^3$"
+    ],
+    "correct": 1,
+    "explanation": "Đổi chiều dài ống $\\ell = 20\\ \\text{cm} = 2\\ \\text{dm}$. Áp dụng định luật Biot cho dung dịch hoạt quang: $\\alpha = [\\alpha]\\rho\\ell \\Rightarrow \\rho = \\dfrac{\\alpha}{[\\alpha]\\ell} = \\dfrac{13{,}3}{66{,}5\\times 2} = 0{,}10\\ \\text{g/cm}^3$."
+  },
+  {
+    "id": 405,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Một hạt có khối lượng nghỉ $m_0$ chuyển động sao cho động năng tương đối tính của nó bằng $2$ lần năng lượng nghỉ ($W_{\\text{đ}} = 2 m_0 c^2$). Độ lớn động lượng tương đối tính $p$ của hạt đó bằng:",
+    "image": "",
+    "options": [
+      "$p = 2\\sqrt{2}\\,m_0 c$",
+      "$p = 3\\,m_0 c$",
+      "$p = 2\\,m_0 c$",
+      "$p = \\sqrt{3}\\,m_0 c$"
+    ],
+    "correct": 0,
+    "explanation": "Năng lượng toàn phần $E = E_0 + W_{\\text{đ}} = 3 m_0 c^2$. Từ hệ thức bất biến $E^2 = m_0^2 c^4 + p^2 c^2 \\Rightarrow p c = \\sqrt{E^2 - E_0^2} = \\sqrt{(3 E_0)^2 - E_0^2} = \\sqrt{8}\\,m_0 c^2 \\Rightarrow p = 2\\sqrt{2}\\,m_0 c$."
+  },
+  {
+    "id": 406,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Mặt Trời bức xạ năng lượng điện từ ra không gian với tổng công suất gần như không đổi $P \\approx 3{,}87\\times 10^{26}\\ \\text{W}$. Theo hệ thức Einstein $\\Delta E = \\Delta m c^2$, mỗi giây khối lượng nghỉ của Mặt Trời bị chuyển hóa thành bức xạ mất đi xấp xỉ:",
+    "image": "",
+    "options": [
+      "$\\Delta m \\approx 4{,}3\\times 10^6\\ \\text{kg/s}$",
+      "$\\Delta m \\approx 4{,}3\\times 10^9\\ \\text{kg/s}$ ($4{,}3$ triệu tấn mỗi giây)",
+      "$\\Delta m \\approx 8{,}6\\times 10^{10}\\ \\text{kg/s}$",
+      "$\\Delta m \\approx 1{,}29\\times 10^{18}\\ \\text{kg/s}$"
+    ],
+    "correct": 1,
+    "explanation": "Mỗi giây Mặt Trời bức xạ năng lượng $\\Delta E = 3{,}87\\times 10^{26}\\ \\text{J}$, ứng với độ hụt khối lượng $\\Delta m = \\dfrac{\\Delta E}{c^2} = \\dfrac{3{,}87\\times 10^{26}}{(3\\times 10^8)^2} = \\dfrac{3{,}87\\times 10^{26}}{9\\times 10^{16}} = 4{,}3\\times 10^9\\ \\text{kg}$."
+  },
+  {
+    "id": 407,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Một hạt có khối lượng nghỉ $M$ đang đứng yên thì tự phân rã thành hai hạt giống hệt nhau có khối lượng nghỉ mỗi hạt là $m_0$, bay ra ngược chiều với cùng tốc độ $v = 0{,}6c$. Tỉ số khối lượng nghỉ $\\dfrac{M}{m_0}$ bằng:",
+    "image": "",
+    "options": [
+      "$\\dfrac{M}{m_0} = 2{,}0$",
+      "$\\dfrac{M}{m_0} = 1{,}25$",
+      "$\\dfrac{M}{m_0} = 3{,}33$",
+      "$\\dfrac{M}{m_0} = 2{,}5$"
+    ],
+    "correct": 3,
+    "explanation": "Theo bảo toàn năng lượng toàn phần (bỏ qua tương tác sau phân rã): $M c^2 = 2\\gamma m_0 c^2$ với $\\gamma = \\dfrac{1}{\\sqrt{1 - 0{,}6^2}} = 1{,}25$. Suy ra $\\dfrac{M}{m_0} = 2\\times 1{,}25 = 2{,}5$ (lớn hơn tổng $2m_0$ vì một phần khối lượng nghỉ $M$ đã chuyển hóa thành động năng của hai hạt con!)."
+  },
+  {
+    "id": 408,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Hai hạt có cùng khối lượng nghỉ $m_0$ chuyển động đối đầu với cùng tốc độ $v = 0{,}8c$ va chạm mềm dính vào nhau thành một hạt tổng hợp đứng yên có khối lượng nghỉ $M$. Khối lượng nghỉ $M$ của hạt mới tạo thành bằng:",
+    "image": "",
+    "options": [
+      "$M = \\dfrac{8}{3}m_0$",
+      "$M = 2 m_0$",
+      "$M = \\dfrac{10}{3}m_0$",
+      "$M = \\dfrac{5}{3}m_0$"
+    ],
+    "correct": 2,
+    "explanation": "Trong va chạm mềm tương đối tính, **năng lượng toàn phần** bảo toàn chứ khối lượng nghỉ không bảo toàn: $M c^2 = 2\\gamma m_0 c^2 = \\dfrac{2}{\\sqrt{1 - 0{,}8^2}}m_0 c^2 = \\dfrac{2}{0{,}6}m_0 c^2 = \\dfrac{10}{3}m_0 c^2 \\Rightarrow M = \\dfrac{10}{3}m_0$."
+  },
+  {
+    "id": 409,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Một phôtôn và một electron ($E_0 = m_e c^2 \\approx 0{,}511\\ \\text{MeV}$) có **cùng năng lượng toàn phần** $E = 2{,}0\\ \\text{MeV}$. So sánh độ lớn động lượng $p_\\gamma$ của phôtôn và $p_e$ của electron, tỉ số $\\dfrac{p_e}{p_\\gamma}$ xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$\\dfrac{p_e}{p_\\gamma} \\approx 0{,}744$",
+      "$\\dfrac{p_e}{p_\\gamma} \\approx 0{,}967$ (động lượng phôtôn lớn hơn nhẹ)",
+      "$\\dfrac{p_e}{p_\\gamma} \\approx 1{,}034$ (động lượng electron lớn hơn)",
+      "$\\dfrac{p_e}{p_\\gamma} = 1{,}000$ (bằng nhau hoàn toàn)"
+    ],
+    "correct": 1,
+    "explanation": "Với phôtôn ($m_0 = 0$): $p_\\gamma = \\dfrac{E}{c}$. Với electron: $p_e = \\dfrac{\\sqrt{E^2 - E_0^2}}{c}$. Suy ra $\\dfrac{p_e}{p_\\gamma} = \\sqrt{1 - \\left(\\dfrac{E_0}{E}\\right)^2} = \\sqrt{1 - \\left(\\dfrac{0{,}511}{2{,}0}\\right)^2} \\approx 0{,}967$."
+  },
+  {
+    "id": 410,
+    "lab_name": "Chương 6: Thuyết tương đối hẹp Einstein",
+    "type": "calc",
+    "question": "Cần thực hiện một công tối thiểu bằng bao nhiêu (tính theo $\\text{MeV}$) để tăng tốc một electron (năng lượng nghỉ $E_0 = 0{,}511\\ \\text{MeV}$) từ tốc độ $v_1 = 0{,}6c$ lên tốc độ $v_2 = 0{,}8c$?",
+    "image": "",
+    "options": [
+      "$A \\approx 0{,}213\\ \\text{MeV}$",
+      "$A \\approx 0{,}072\\ \\text{MeV}$",
+      "$A \\approx 0{,}341\\ \\text{MeV}$",
+      "$A \\approx 0{,}511\\ \\text{MeV}$"
+    ],
+    "correct": 0,
+    "explanation": "Hệ số Lorentz tại hai tốc độ: $\\gamma_1 = \\dfrac{1}{\\sqrt{1-0{,}6^2}} = \\dfrac{5}{4}$ và $\\gamma_2 = \\dfrac{1}{\\sqrt{1-0{,}8^2}} = \\dfrac{5}{3}$. Công tăng tốc bằng độ tăng năng lượng toàn phần: $A = (\\gamma_2 - \\gamma_1)E_0 = \\left(\\dfrac{5}{3} - \\dfrac{5}{4}\\right)\\times 0{,}511 = \\dfrac{5}{12}\\times 0{,}511 \\approx 0{,}213\\ \\text{MeV}$."
+  },
+  {
+    "id": 426,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Ánh sáng Mặt Trời chiếu vuông góc lên một cánh buồm mặt trời có cường độ bức xạ (mật độ công suất) $I = 1200\\ \\text{W/m}^2$ và hệ số phản xạ của cánh buồm là $\\rho = 0{,}8$ ($80\\%$). Áp suất ánh sáng tác dụng lên cánh buồm ($p = (1 + \\rho)\\dfrac{I}{c}$) bằng:",
+    "image": "",
+    "options": [
+      "$p = 3{,}2\\times 10^{-6}\\ \\text{Pa}$",
+      "$p = 8{,}0\\times 10^{-6}\\ \\text{Pa}$",
+      "$p = 4{,}0\\times 10^{-6}\\ \\text{Pa}$",
+      "$p = 7{,}2\\times 10^{-6}\\ \\text{Pa}$"
+    ],
+    "correct": 3,
+    "explanation": "Mỗi phôtôn bị hấp thụ truyền xung lượng $E/c$, còn phôtôn phản xạ truyền $2E/c$. Với hệ số phản xạ $\\rho = 0{,}8$, áp suất bức xạ vuông góc bằng $p = (1 + \\rho)\\dfrac{I}{c} = (1 + 0{,}8)\\dfrac{1200}{3\\times 10^8} = 7{,}2\\times 10^{-6}\\ \\text{N/m}^2$."
+  },
+  {
+    "id": 427,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Phân tích bức xạ nhiệt phát ra từ một lò nung coi như vật đen tuyệt đối cho thấy năng suất phát xạ đơn sắc đạt giá trị cực đại tại bước sóng hồng ngoại gần $\\lambda_{\\max} = 1{,}449\\ \\mu\\text{m}$. Cho hằng số Wien $b = 2{,}898\\times 10^{-3}\\ \\text{m}\\cdot\\text{K}$, nhiệt độ tuyệt đối của lò bằng:",
+    "image": "",
+    "options": [
+      "$T = 4000\\ \\text{K}$",
+      "$T = 1500\\ \\text{K}$",
+      "$T = 2000\\ \\text{K}$ ($1727^\\circ\\text{C}$)",
+      "$T = 2898\\ \\text{K}$"
+    ],
+    "correct": 2,
+    "explanation": "Theo định luật dịch chuyển Wien: $\\lambda_{\\max} T = b \\Rightarrow T = \\dfrac{b}{\\lambda_{\\max}} = \\dfrac{2{,}898\\times 10^{-3}}{1{,}449\\times 10^{-6}} = 2000\\ \\text{K}$."
+  },
+  {
+    "id": 428,
+    "lab_name": "Chương 7: Quang học lượng tử (Bức xạ nhiệt, Quang điện, Compton)",
+    "type": "calc",
+    "question": "Một lò nung kín được nung nóng ở nhiệt độ không đổi $T = 1000\\ \\text{K}$ có khoét một lỗ tròn nhỏ bán kính $r = 2\\ \\text{cm}$ (đóng vai trò là một vật đen tuyệt đối có hệ số hấp thụ $a = 1$). Lấy $\\sigma = 5{,}67\\times 10^{-8}\\ \\text{W}\\cdot\\text{m}^{-2}\\cdot\\text{K}^{-4}$, công suất bức xạ nhiệt thoát ra ngoài qua lỗ nhỏ đó xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$P \\approx 142{,}5\\ \\text{W}$",
+      "$P \\approx 28{,}5\\ \\text{W}$",
+      "$P \\approx 71{,}3\\ \\text{W}$",
+      "$P \\approx 22{,}7\\ \\text{W}$"
+    ],
+    "correct": 2,
+    "explanation": "Diện tích lỗ bức xạ là $S = \\pi r^2 = \\pi(0{,}02)^2 \\approx 1{,}2566\\times 10^{-3}\\ \\text{m}^2$. Công suất thoát qua lỗ theo định luật Stefan-Boltzmann: $P = \\sigma S T^4 = 5{,}67\\times 10^{-8}\\times \\pi(0{,}02)^2\\times (1000)^4 \\approx 71{,}25\\ \\text{W}$."
+  },
+  {
+    "id": 439,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Theo điều kiện lượng tử hóa quỹ đạo dừng bằng sóng dừng de Broglie ($2\\pi r_n = n\\lambda$), biết bán kính quỹ đạo Bohr thứ nhất ($n = 1$) của electron trong nguyên tử Hiđrô là $r_1 = 0{,}529\\ \\text{Å}$. Bước sóng de Broglie $\\lambda$ và tốc độ $v_1$ của electron trên quỹ đạo này xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$\\lambda \\approx 6{,}65\\ \\text{Å};\\ v_1 \\approx 1{,}09\\times 10^6\\ \\text{m/s}$",
+      "$\\lambda \\approx 0{,}529\\ \\text{Å};\\ v_1 \\approx 1{,}38\\times 10^7\\ \\text{m/s}$",
+      "$\\lambda \\approx 3{,}32\\ \\text{Å};\\ v_1 \\approx 2{,}19\\times 10^6\\ \\text{m/s}$",
+      "$\\lambda \\approx 1{,}66\\ \\text{Å};\\ v_1 \\approx 4{,}38\\times 10^6\\ \\text{m/s}$"
+    ],
+    "correct": 2,
+    "explanation": "Quỹ đạo cơ bản chứa đúng một bước sóng de Broglie khép kín: $\\lambda = 2\\pi r_1 = 2\\pi\\times 0{,}529 \\approx 3{,}324\\ \\text{Å} = 3{,}324\\times 10^{-10}\\ \\text{m}$. Tốc độ electron: $v_1 = \\dfrac{h}{m_e \\lambda} = \\dfrac{6{,}625\\times 10^{-34}}{9{,}1\\times 10^{-31}\\times 3{,}324\\times 10^{-10}} \\approx 2{,}19\\times 10^6\\ \\text{m/s}$."
+  },
+  {
+    "id": 440,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Trong thí nghiệm kinh điển Davisson - Germer khẳng định sóng de Broglie, một chùm electron (ban đầu đứng yên) được tăng tốc qua hiệu điện thế $U = 54\\ \\text{V}$ rồi chiếu vào đơn tinh thể Niken. Bước sóng de Broglie của chùm electron đó xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$\\lambda \\approx 0{,}54\\ \\text{Å}$",
+      "$\\lambda \\approx 3{,}34\\ \\text{Å}$",
+      "$\\lambda \\approx 1{,}67\\ \\text{Å}$ ($0{,}167\\ \\text{nm}$)",
+      "$\\lambda \\approx 0{,}23\\ \\text{Å}$"
+    ],
+    "correct": 2,
+    "explanation": "Sử dụng công thức phi tương đối ($eU = 54\\ \\text{eV} \\ll m_e c^2$): $\\lambda = \\dfrac{h}{\\sqrt{2 m_e e U}} = \\dfrac{6{,}625\\times 10^{-34}}{\\sqrt{2\\times 9{,}1\\times 10^{-31}\\times 1{,}6\\times 10^{-19}\\times 54}} \\approx 1{,}67\\times 10^{-10}\\ \\text{m} = 1{,}67\\ \\text{Å}$."
+  },
+  {
+    "id": 441,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Một electron bị giam giữ trong một chấm lượng tử kích thước tuyến tính $\\Delta x = 2{,}0\\ \\text{nm}$. Lấy $\\hbar = 1{,}055\\times 10^{-34}\\ \\text{J}\\cdot\\text{s},\\ m_e = 9{,}1\\times 10^{-31}\\ \\text{kg}$ và dùng hệ thức bất định Heisenberg dạng $\\Delta x\\cdot\\Delta p_x \\approx \\hbar$, độ bất định vận tốc $\\Delta v_x$ của electron đó cỡ:",
+    "image": "",
+    "options": [
+      "$\\Delta v_x \\approx 3{,}64\\times 10^5\\ \\text{m/s}$",
+      "$\\Delta v_x \\approx 1{,}16\\times 10^5\\ \\text{m/s}$",
+      "$\\Delta v_x \\approx 2{,}90\\times 10^4\\ \\text{m/s}$",
+      "$\\Delta v_x \\approx 5{,}80\\times 10^4\\ \\text{m/s}$"
+    ],
+    "correct": 3,
+    "explanation": "Từ $\\Delta p_x = m_e\\Delta v_x \\approx \\dfrac{\\hbar}{\\Delta x} \\Rightarrow \\Delta v_x \\approx \\dfrac{\\hbar}{m_e\\Delta x} = \\dfrac{1{,}055\\times 10^{-34}}{9{,}1\\times 10^{-31}\\times 2{,}0\\times 10^{-9}} \\approx 5{,}80\\times 10^4\\ \\text{m/s}$."
+  },
+  {
+    "id": 442,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Một mức năng lượng kích thích của nguyên tử có thời gian sống trung bình trước khi chuyển xuống mức cơ bản là $\\Delta t = 10^{-8}\\ \\text{s}$. Theo hệ thức bất định năng lượng – thời gian $\\Delta E\\cdot\\Delta t \\approx \\hbar$ (với $\\hbar = 1{,}055\\times 10^{-34}\\ \\text{J}\\cdot\\text{s}$), độ nhòe (bề rộng tự nhiên) năng lượng $\\Delta E$ của mức này xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$\\Delta E \\approx 3{,}30\\times 10^{-8}\\ \\text{eV}$",
+      "$\\Delta E \\approx 4{,}14\\times 10^{-7}\\ \\text{eV}$",
+      "$\\Delta E \\approx 1{,}06\\times 10^{-26}\\ \\text{eV}$",
+      "$\\Delta E \\approx 6{,}59\\times 10^{-8}\\ \\text{eV}$"
+    ],
+    "correct": 3,
+    "explanation": "Độ bất định năng lượng theo hệ thức Heisenberg: $\\Delta E \\approx \\dfrac{\\hbar}{\\Delta t} = \\dfrac{1{,}055\\times 10^{-34}}{10^{-8}} = 1{,}055\\times 10^{-26}\\ \\text{J}$. Đổi sang electron-volt: $\\Delta E \\approx \\dfrac{1{,}055\\times 10^{-26}}{1{,}6\\times 10^{-19}} \\approx 6{,}59\\times 10^{-8}\\ \\text{eV}$."
+  },
+  {
+    "id": 443,
+    "lab_name": "Chương 8: Cơ học lượng tử (de Broglie, Heisenberg, Schrödinger)",
+    "type": "calc",
+    "question": "Một vi hạt ở trạng thái cơ bản ($n = 1$) chuyển động trong giếng thế năng một chiều bề rộng $a$ thành cao vô hạn ($0 \\le x \\le a$), có hàm sóng chuẩn hóa là $\\psi_1(x) = \\sqrt{\\dfrac{2}{a}}\\sin\\left(\\dfrac{\\pi x}{a}\\right)$. Xác suất tìm thấy hạt nằm trong nửa khoảng chính giữa giếng $\\left[\\dfrac{a}{4},\\ \\dfrac{3a}{4}\\right]$ bằng:",
+    "image": "",
+    "options": [
+      "$P = \\dfrac{1}{2} - \\dfrac{1}{\\pi} \\approx 18{,}2\\%$",
+      "$P = \\dfrac{1}{2} + \\dfrac{1}{\\pi} \\approx 81{,}8\\%$",
+      "$P = 100\\%$",
+      "$P = 50{,}0\\%$ (chia đều như cơ học cổ điển)"
+    ],
+    "correct": 1,
+    "explanation": "Xác suất bằng $P = \\displaystyle\\int_{a/4}^{3a/4} \\dfrac{2}{a}\\sin^2\\left(\\dfrac{\\pi x}{a}\\right)dx = \\dfrac{1}{a}\\displaystyle\\int_{a/4}^{3a/4}\\left[1 - \\cos\\left(\\dfrac{2\\pi x}{a}\\right)\\right]dx = \\left[\\dfrac{x}{a} - \\dfrac{1}{2\\pi}\\sin\\left(\\dfrac{2\\pi x}{a}\\right)\\right]_{a/4}^{3a/4} = \\dfrac{1}{2} + \\dfrac{1}{\\pi} \\approx 81{,}8\\%$."
+  },
+  {
+    "id": 458,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "theory",
+    "question": "Cơ chế hình thành vạch tia X đặc trưng (dãy $K_\\alpha, K_\\beta$) khi chùm electron năng lượng cao bắn phá bia kim loại và nội dung định luật Moseley ($\\sqrt{\\nu} = a(Z - \\sigma)$) là gì?",
+    "image": "",
+    "options": [
+      "Electron tới đánh bật một electron ở lớp **trong cùng** (như lớp $K, n=1$) ra khỏi nguyên tử, ngay sau đó electron từ lớp cao hơn ($L, M$) nhảy xuống lấp chỗ trống và phát ra phôtôn tia X năng lượng cao có tần số thỏa $\\sqrt{\\nu} \\propto (Z - \\sigma)$ (giúp xác định chính xác số hiệu nguyên tử $Z$ của nguyên tố)",
+      "Do các electron tự do va chạm làm phanh hãm liên tục trong điện trường hạt nhân phát phổ liên tục",
+      "Do chuyển dời của electron hóa trị lớp ngoài cùng giữa các mức kích thích $n=5 \\to 4$",
+      "Do sự phân hạch hạt nhân của nguyên tử bia phát ra tia gamma"
+    ],
+    "correct": 0,
+    "explanation": "Quang phổ hãm cho phổ liên tục, còn các vạch tia X đặc trưng nhọn xuất phát từ tái sắp xếp lớp vỏ sâu bên trong. Với chuyển dời $L \\to K$ (vạch $K_\\alpha$), điện tích hiệu dụng hạt nhân nhìn thấy bị chắn đi $\\sigma \\approx 1$ còn $(Z - 1)$, dẫn đến công thức Moseley nổi tiếng $\\nu_{K\\alpha} = \\dfrac{3}{4}R(Z-1)^2$."
+  },
+  {
+    "id": 459,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "Theo công thức Moseley cho vạch tia X đặc trưng $K_\\alpha$ (electron nhảy từ lớp $L, n=2$ về lớp $K, n=1$): $\\nu_{K\\alpha} = R(Z - 1)^2\\left(\\dfrac{1}{1^2} - \\dfrac{1}{2^2}\\right)$ với $R = 3{,}29\\times 10^{15}\\ \\text{s}^{-1}$. Khi bắn phá bia Đồng nguyên chất ($Z = 29$), bước sóng vạch $K_\\alpha$ tính theo công thức này xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$\\lambda_{K\\alpha} \\approx 0{,}155\\ \\text{nm}$ ($1{,}55\\ \\text{Å}$)",
+      "$\\lambda_{K\\alpha} \\approx 0{,}144\\ \\text{nm}$",
+      "$\\lambda_{K\\alpha} \\approx 1{,}55\\ \\text{nm}$",
+      "$\\lambda_{K\\alpha} \\approx 0{,}078\\ \\text{nm}$"
+    ],
+    "correct": 0,
+    "explanation": "Thay $Z = 29$ vào công thức Moseley: $\\nu_{K\\alpha} = 3{,}29\\times 10^{15}\\times (29 - 1)^2\\times \\dfrac{3}{4} = 3{,}29\\times 10^{15}\\times 784\\times 0{,}75 \\approx 1{,}935\\times 10^{18}\\ \\text{Hz}$. Bước sóng $\\lambda_{K\\alpha} = \\dfrac{c}{\\nu_{K\\alpha}} = \\dfrac{3\\times 10^8}{1{,}935\\times 10^{18}} \\approx 1{,}55\\times 10^{-10}\\ \\text{m} = 0{,}155\\ \\text{nm}$."
+  },
+  {
+    "id": 460,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "Cho năng lượng các trạng thái dừng của nguyên tử Hiđrô là $E_n = -\\dfrac{13{,}6}{n^2}\\ (\\text{eV})$. Một nguyên tử Hiđrô đang ở trạng thái kích thích đầu tiên ($n = 2$). Để ion hóa nguyên tử Hiđrô này (tách hoàn toàn electron ra xa vô cực khỏi trạng thái $n=2$), cần cung cấp năng lượng tối thiểu bằng:",
+    "image": "",
+    "options": [
+      "$3{,}40\\ \\text{eV}$",
+      "$10{,}2\\ \\text{eV}$",
+      "$13{,}6\\ \\text{eV}$",
+      "$1{,}51\\ \\text{eV}$"
+    ],
+    "correct": 0,
+    "explanation": "Ở trạng thái $n = 2$, năng lượng liên kết của electron là $E_2 = -\\dfrac{13{,}6}{2^2} = -3{,}40\\ \\text{eV}$. Muốn đưa electron lên mức $n \\to \\infty$ ($E_\\infty = 0$) cần cung cấp năng lượng tối thiểu $\\Delta E = 0 - (-3{,}40) = 3{,}40\\ \\text{eV}$."
+  },
+  {
+    "id": 461,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "Một nguyên tử Hiđrô ban đầu đứng yên ở trạng thái kích thích $n = 2$ chuyển về trạng thái cơ bản $n = 1$, phát ra phôtôn vạch Lyman-alpha có năng lượng $10{,}2\\ \\text{eV}$. Biết khối lượng nguyên tử Hiđrô $M_H \\approx 1{,}67\\times 10^{-27}\\ \\text{kg}$, tốc độ giật lùi của nguyên tử Hiđrô sau khi phát phôtôn bằng:",
+    "image": "",
+    "options": [
+      "$v \\approx 0{,}33\\ \\text{m/s}$",
+      "$v \\approx 1{,}63\\ \\text{m/s}$",
+      "$v \\approx 32{,}6\\ \\text{m/s}$",
+      "$v \\approx 3{,}26\\ \\text{m/s}$"
+    ],
+    "correct": 3,
+    "explanation": "Động lượng của phôtôn phát ra: $p_\\gamma = \\dfrac{\\varepsilon}{c} = \\dfrac{10{,}2\\times 1{,}6\\times 10^{-19}}{3\\times 10^8} = 5{,}44\\times 10^{-27}\\ \\text{kg}\\cdot\\text{m/s}$. Theo bảo toàn động lượng, nguyên tử giật lùi với động lượng đúng bằng $p_\\gamma$, nên $v = \\dfrac{p_\\gamma}{M_H} = \\dfrac{5{,}44\\times 10^{-27}}{1{,}67\\times 10^{-27}} \\approx 3{,}26\\ \\text{m/s}$."
+  },
+  {
+    "id": 462,
+    "lab_name": "Chương 9: Vật lý nguyên tử (Hiđrô, Kim loại kiềm, Zeeman, Spin)",
+    "type": "calc",
+    "question": "Một electron trong nguyên tử ở trạng thái $d$ ($\\ell = 2$) đặt trong từ trường ngoài có phương trục $Oz$. Độ lớn mômen động lượng orbital $L = \\sqrt{\\ell(\\ell+1)}\\hbar$ và góc nhỏ nhất $\\theta_{\\min}$ hợp bởi véc-tơ $\\vec{L}$ với phương trục từ trường $+Oz$ là:",
+    "image": "",
+    "options": [
+      "$L = 2\\hbar;\\ \\theta_{\\min} = 0^\\circ$ (song song hoàn toàn với $Oz$)",
+      "$L = \\sqrt{2}\\,\\hbar;\\ \\theta_{\\min} = 45^\\circ$",
+      "$L = \\sqrt{6}\\,\\hbar;\\ \\theta_{\\min} = \\arccos\\dfrac{2}{\\sqrt{6}} \\approx 35{,}3^\\circ$",
+      "$L = \\sqrt{6}\\,\\hbar;\\ \\theta_{\\min} = \\arccos\\dfrac{1}{\\sqrt{6}} \\approx 65{,}9^\\circ$"
+    ],
+    "correct": 2,
+    "explanation": "Với $\\ell = 2$: $L = \\sqrt{2(2+1)}\\hbar = \\sqrt{6}\\,\\hbar$. Hình chiếu cực đại trên $Oz$ ứng với $m_{\\ell\\max} = +\\ell = +2$ ($L_z = 2\\hbar$). Do đó $\\cos\\theta_{\\min} = \\dfrac{L_z}{L} = \\dfrac{2}{\\sqrt{6}} \\approx 0{,}8165 \\Rightarrow \\theta_{\\min} \\approx 35{,}26^\\circ$ (véc-tơ $\\vec{L}$ không bao giờ trùng khít trục $Oz$ để tránh vi phạm bất định các thành phần khác)."
+  },
+  {
+    "id": 480,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Theo hàm phân bố Fermi - Dirac $f(E, T) = \\dfrac{1}{\\exp\\left(\\dfrac{E - E_F}{k_B T}\\right) + 1}$, ở nhiệt độ phòng $T = 300\\ \\text{K}$ ($k_B T \\approx 0{,}0259\\ \\text{eV}$), xác suất tìm thấy electron chiếm một mức năng lượng nằm cao hơn mức Fermi là $f(E) = 1\\%$ ($0{,}01$) khi hiệu năng lượng $(E - E_F)$ bằng:",
+    "image": "",
+    "options": [
+      "$E - E_F \\approx +0{,}119\\ \\text{eV}$",
+      "$E - E_F \\approx +0{,}026\\ \\text{eV}$",
+      "$E - E_F \\approx -0{,}119\\ \\text{eV}$",
+      "$E - E_F \\approx +2{,}59\\ \\text{eV}$"
+    ],
+    "correct": 0,
+    "explanation": "Từ $\\dfrac{1}{e^x + 1} = 0{,}01 \\Rightarrow e^x = 99 \\Rightarrow x = \\dfrac{E - E_F}{k_B T} = \\ln 99 \\approx 4{,}595$. Vậy $E - E_F = 4{,}595\\times \\dfrac{1{,}38\\times 10^{-23}\\times 300}{1{,}6\\times 10^{-19}} \\approx 0{,}119\\ \\text{eV}$."
+  },
+  {
+    "id": 481,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Biết xác suất để một mức năng lượng $E_1$ (nằm trên mức Fermi một đoạn $\\Delta E = 0{,}10\\ \\text{eV}$) có electron chiếm giữ ở $T = 300\\ \\text{K}$ là $2{,}0\\%$. Theo tính đối xứng của phân bố Fermi - Dirac, xác suất để một mức $E_2$ nằm **dưới** mức Fermi đúng đoạn $\\Delta E = 0{,}10\\ \\text{eV}$ còn **trống (bị lỗ trống chiếm giữ)** bằng:",
+    "image": "",
+    "options": [
+      "$98{,}0\\%$",
+      "$2{,}0\\%$",
+      "$4{,}0\\%$",
+      "$50{,}0\\%$"
+    ],
+    "correct": 1,
+    "explanation": "Xác suất mức $E_2 = E_F - \\Delta E$ bị **trống** là $1 - f(E_F - \\Delta E) = 1 - \\dfrac{1}{e^{-\\Delta E/k_B T} + 1} = \\dfrac{e^{-\\Delta E/k_B T}}{e^{-\\Delta E/k_B T} + 1} = \\dfrac{1}{e^{+\\Delta E/k_B T} + 1} = f(E_F + \\Delta E) = 2{,}0\\%$!"
+  },
+  {
+    "id": 482,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "theory",
+    "question": "Trên giản đồ vùng năng lượng của chất bán dẫn ở nhiệt độ phòng, vị trí mức Fermi $E_F$ thay đổi ra sao khi chuyển từ bán dẫn **thuần** sang pha tạp loại **$n$** và loại **$p$**?",
+    "image": "",
+    "options": [
+      "Ở bán dẫn thuần, $E_F$ bằng $0\\ \\text{eV}$ trùng với năng lượng của electron tự do trong chân không",
+      "Ở cả ba loại bán dẫn, mức Fermi luôn nằm sâu bên trong vùng dẫn cao hơn đáy vùng dẫn",
+      "Khi pha tạp loại $n$, $E_F$ dịch xuống sát đỉnh vùng hóa trị",
+      "Ở bán dẫn thuần, $E_F$ nằm xấp xỉ **chính giữa vùng cấm**; khi pha tạp donor (loại $n$) $E_F$ dịch **lên sát đáy vùng dẫn**; khi pha tạp acceptor (loại $p$) $E_F$ dịch **xuống sát đỉnh vùng hóa trị**"
+    ],
+    "correct": 3,
+    "explanation": "Mức Fermi đánh dấu ranh giới trung tâm xác suất chiếm trạng thái ($f = 1/2$). Ở bán dẫn thuần $n = p$ nên $E_F$ nằm giữa khe năng lượng. Pha donor tăng mật độ electron vùng dẫn ($n \\gg p$) kéo $E_F$ lên gần vùng dẫn; pha acceptor tạo nhiều lỗ trống kéo $E_F$ xuống gần vùng hóa trị."
+  },
+  {
+    "id": 483,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Ở nhiệt độ $300\\ \\text{K}$, Silic tinh khiết (bán dẫn thuần) có mật độ hạt tải nội tại $n_i = p_i = 1{,}5\\times 10^{16}\\ \\text{m}^{-3}$, độ linh động của electron là $\\mu_n = 0{,}135\\ \\text{m}^2/(\\text{V}\\cdot\\text{s})$ và của lỗ trống là $\\mu_p = 0{,}048\\ \\text{m}^2/(\\text{V}\\cdot\\text{s})$. Độ dẫn điện $\\sigma$ của Silic tinh khiết ở $300\\ \\text{K}$ bằng:",
+    "image": "",
+    "options": [
+      "$\\sigma \\approx 4{,}39\\times 10^{-4}\\ \\text{S/m}$",
+      "$\\sigma \\approx 4{,}39\\times 10^{-2}\\ \\text{S/m}$",
+      "$\\sigma \\approx 1{,}15\\times 10^{-4}\\ \\text{S/m}$",
+      "$\\sigma \\approx 3{,}24\\times 10^{-4}\\ \\text{S/m}$"
+    ],
+    "correct": 0,
+    "explanation": "Công thức độ dẫn điện: $\\sigma = e(n\\mu_n + p\\mu_p) = e n_i(\\mu_n + \\mu_p) = 1{,}6\\times 10^{-19}\\times 1{,}5\\times 10^{16}\\times (0{,}135 + 0{,}048) \\approx 4{,}39\\times 10^{-4}\\ \\text{S/m}$ (hay $\\Omega^{-1}\\cdot\\text{m}^{-1}$)."
+  },
+  {
+    "id": 484,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Pha tạp Phốtpho (nhóm V) với nồng độ donor $N_d = 10^{22}\\ \\text{m}^{-3}$ vào Silic (ở $300\\ \\text{K}$, $n_i = 1{,}5\\times 10^{16}\\ \\text{m}^{-3}$, $\\mu_n = 0{,}135\\ \\text{m}^2/\\text{V}\\cdot\\text{s}$, tạp chất ion hóa hoàn toàn nên $n \\approx N_d$). Độ dẫn điện $\\sigma$ và nồng độ lỗ trống thiểu số $p$ (theo định luật tác dụng khối lượng $np = n_i^2$) lần lượt bằng:",
+    "image": "",
+    "options": [
+      "$\\sigma = 216\\ \\text{S/m};\\ p = 2{,}25\\times 10^{10}\\ \\text{m}^{-3}$",
+      "$\\sigma = 216\\ \\text{S/m};\\ p = 1{,}50\\times 10^{16}\\ \\text{m}^{-3}$",
+      "$\\sigma = 21{,}6\\ \\text{S/m};\\ p = 1{,}50\\times 10^{10}\\ \\text{m}^{-3}$",
+      "$\\sigma = 108\\ \\text{S/m};\\ p = 2{,}25\\times 10^{12}\\ \\text{m}^{-3}$"
+    ],
+    "correct": 0,
+    "explanation": "Vì $n \\approx N_d = 10^{22}\\ \\text{m}^{-3} \\gg p$, độ dẫn điện chủ yếu do electron đa số: $\\sigma \\approx e N_d \\mu_n = 1{,}6\\times 10^{-19}\\times 10^{22}\\times 0{,}135 = 216\\ \\text{S/m}$. Nồng độ lỗ trống thiểu số bị áp chế theo cân bằng nhiệt động: $p = \\dfrac{n_i^2}{n} = \\dfrac{(1{,}5\\times 10^{16})^2}{10^{22}} = 2{,}25\\times 10^{10}\\ \\text{m}^{-3}$."
+  },
+  {
+    "id": 485,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Đo hiệu ứng Hall trên một mẫu bán dẫn ở nhiệt độ phòng xác định được hằng số Hall là $R_H = -1{,}25\\times 10^{-4}\\ \\text{m}^3/\\text{C}$. Dấu âm của $R_H$ và giá trị mật độ hạt tải đa số tính theo công thức $|R_H| = \\dfrac{1}{n e}$ cho kết quả nào sau đây?",
+    "image": "",
+    "options": [
+      "Bán dẫn loại $p$ (hạt tải đa số là lỗ trống); mật độ lỗ trống $p = 5{,}0\\times 10^{22}\\ \\text{m}^{-3}$",
+      "Bán dẫn thuần; $n = p = 2{,}5\\times 10^{22}\\ \\text{m}^{-3}$",
+      "Bán dẫn loại $n$ (hạt tải đa số là electron); mật độ electron $n = 5{,}0\\times 10^{22}\\ \\text{m}^{-3}$",
+      "Bán dẫn loại $n$; mật độ electron $n = 8{,}0\\times 10^{22}\\ \\text{m}^{-3}$"
+    ],
+    "correct": 2,
+    "explanation": "Vì lực Lorentz đẩy các hạt tải về một cạnh tạo hiệu điện thế Hall $U_H$, dấu âm của $R_H$ chứng tỏ hạt tải chủ yếu mang điện tích âm (bán dẫn loại $n$). Mật độ electron $n = \\dfrac{1}{e|R_H|} = \\dfrac{1}{1{,}6\\times 10^{-19}\\times 1{,}25\\times 10^{-4}} = 5{,}0\\times 10^{22}\\ \\text{m}^{-3}$."
+  },
+  {
+    "id": 486,
+    "lab_name": "Chương 10: Vật lý chất rắn, Bán dẫn & Laser",
+    "type": "calc",
+    "question": "Theo mô hình khí electron tự do Fermi trong kim loại, năng lượng Fermi ở $0\\ \\text{K}$ được tính bằng $E_F = \\dfrac{\\hbar^2}{2m_e}(3\\pi^2 n)^{2/3}$. Với Đồng ($\\text{Cu}$) có mật độ electron tự do $n = 8{,}45\\times 10^{28}\\ \\text{m}^{-3}$ ($\\hbar = 1{,}055\\times 10^{-34}\\ \\text{J}\\cdot\\text{s},\\ m_e = 9{,}1\\times 10^{-31}\\ \\text{kg}$), năng lượng Fermi $E_F$ của Đồng xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$E_F \\approx 3{,}51\\ \\text{eV}$",
+      "$E_F \\approx 0{,}026\\ \\text{eV}$",
+      "$E_F \\approx 14{,}1\\ \\text{eV}$",
+      "$E_F \\approx 7{,}03\\ \\text{eV}$"
+    ],
+    "correct": 3,
+    "explanation": "Tính $(3\\pi^2 n)^{2/3} = (3\\pi^2\\times 8{,}45\\times 10^{28})^{2/3} \\approx 1{,}844\\times 10^{20}\\ \\text{m}^{-2}$. Suy ra $E_F = \\dfrac{(1{,}055\\times 10^{-34})^2}{2\\times 9{,}1\\times 10^{-31}}\\times 1{,}844\\times 10^{20} \\approx 1{,}127\\times 10^{-18}\\ \\text{J} \\approx 7{,}04\\ \\text{eV}$ (chú ý $E_F \\gg k_B T \\approx 0{,}026\\ \\text{eV}$, nên khí electron trong kim loại suy biến rất mạnh)."
+  }
+]

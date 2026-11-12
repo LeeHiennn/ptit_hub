@@ -1,0 +1,752 @@
+[
+  {
+    "id": 301,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "theory",
+    "question": "Trong dao động cưỡng bức ổn định của hệ cơ học (hoặc mạch $RLC$ nối tiếp chịu suất điện động điều hòa $\\xi = \\xi_0\\cos\\Omega t$), hiện tượng cộng hưởng dòng điện xảy ra khi nào và tần số dòng điện cưỡng bức bằng bao nhiêu?",
+    "image": "",
+    "options": [
+      "Xảy ra ở mọi giá trị $\\Omega$; tần số dòng điện cưỡng bức bằng $\\sqrt{\\omega_0^2 - \\Omega^2}$",
+      "Xảy ra khi $\\Omega \\gg \\omega_0$; biên độ dòng điện cưỡng bức không phụ thuộc điện trở thuần $R$",
+      "Xảy ra khi tần số góc ngoại lực $\\Omega$ bằng tần số góc riêng $\\omega_0 = \\dfrac{1}{\\sqrt{LC}}$; tần số dao động ổn định bằng đúng tần số $\\Omega$ của ngoại lực",
+      "Xảy ra khi $\\Omega = \\beta = \\dfrac{R}{2L}$; tần số dao động ổn định luôn bằng tần số dao động tắt dần $\\omega$"
+    ],
+    "correct": 2,
+    "explanation": "Dao động cưỡng bức ổn định luôn có tần số bằng tần số $\\Omega$ của lực/suất điện động kích thích. Khi $\\Omega = \\omega_0 = \\dfrac{1}{\\sqrt{LC}}$ ($Z_L = Z_C$), tổng trở $Z = R$ đạt cực tiểu nên biên độ cường độ dòng điện đạt cực đại $I_0 = \\dfrac{\\xi_0}{R}$."
+  },
+  {
+    "id": 302,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Một con lắc lò xo nằm ngang gồm vật khối lượng $m = 200\\ \\text{g}$ gắn vào lò xo độ cứng $k = 80\\ \\text{N/m}$. Tại thời điểm ban đầu, kéo vật lệch khỏi vị trí cân bằng đoạn $x_0 = 4\\ \\text{cm}$ rồi truyền cho vật vận tốc $v_0 = 60\\ \\text{cm/s}$. Biên độ $A$ và cơ năng toàn phần $W$ của dao động là:",
+    "image": "",
+    "options": [
+      "$A = 4\\ \\text{cm};\\ W = 0{,}064\\ \\text{J}$",
+      "$A = 5\\ \\text{cm};\\ W = 0{,}2\\ \\text{J}$",
+      "$A = 7\\ \\text{cm};\\ W = 0{,}196\\ \\text{J}$",
+      "$A = 5\\ \\text{cm};\\ W = 0{,}1\\ \\text{J}$"
+    ],
+    "correct": 3,
+    "explanation": "Tần số góc riêng $\\omega_0 = \\sqrt{\\dfrac{k}{m}} = \\sqrt{\\dfrac{80}{0{,}2}} = 20\\ \\text{rad/s}$. Biên độ $A = \\sqrt{x_0^2 + \\left(\\dfrac{v_0}{\\omega_0}\\right)^2} = \\sqrt{4^2 + \\left(\\dfrac{60}{20}\\right)^2} = 5\\ \\text{cm} = 0{,}05\\ \\text{m}$. Cơ năng $W = \\dfrac{1}{2}kA^2 = \\dfrac{1}{2}\\cdot 80\\cdot 0{,}05^2 = 0{,}1\\ \\text{J}$."
+  },
+  {
+    "id": 303,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Một hệ cơ học dao động tắt dần chậm với biên độ sau mỗi chu kỳ giảm đi $10\\%$ so với đầu chu kỳ đó (tức $A_{n+1} = 0{,}9 A_n$). Lượng giảm lôga $\\delta$ và phần trăm cơ năng bị mất đi sau chu kỳ đầu tiên lần lượt là:",
+    "image": "",
+    "options": [
+      "$\\delta \\approx 0{,}105;\\ \\dfrac{|\\Delta W|}{W} = 19\\%$",
+      "$\\delta \\approx 0{,}105;\\ \\dfrac{|\\Delta W|}{W} = 10\\%$",
+      "$\\delta \\approx 0{,}046;\\ \\dfrac{|\\Delta W|}{W} = 19\\%$",
+      "$\\delta \\approx 0{,}210;\\ \\dfrac{|\\Delta W|}{W} = 20\\%$"
+    ],
+    "correct": 0,
+    "explanation": "Lượng giảm lôga được định nghĩa bởi $\\delta = \\ln\\dfrac{A_n}{A_{n+1}} = \\ln\\dfrac{1}{0{,}9} \\approx 0{,}1054$. Vì cơ năng tỷ lệ với bình phương biên độ ($W \\propto A^2$), tỉ số cơ năng mất đi sau chu kỳ đầu là $\\dfrac{W_0 - W_1}{W_0} = 1 - 0{,}9^2 = 0{,}19 = 19\\%$."
+  },
+  {
+    "id": 304,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Mạch điện gồm tụ điện có điện dung $C = 5\\ \\mu\\text{F}$, cuộn cảm thuần có độ tự cảm $L = 0{,}2\\ \\text{H}$ và biến trở $R$ mắc nối tiếp. Điện trở tới hạn $R_0$ của mạch (giá trị $R$ mà nếu $R \\ge R_0$ mạch không còn dao động tắt dần) bằng:",
+    "image": "",
+    "options": [
+      "$R_0 = 400\\ \\Omega$",
+      "$R_0 = 200\\ \\Omega$",
+      "$R_0 = 800\\ \\Omega$",
+      "$R_0 = 100\\ \\Omega$"
+    ],
+    "correct": 0,
+    "explanation": "Điều kiện có dao động điện từ tắt dần là $\\beta < \\omega_0 \\iff \\dfrac{R}{2L} < \\dfrac{1}{\\sqrt{LC}} \\iff R < 2\\sqrt{\\dfrac{L}{C}}$. Suy ra điện trở tới hạn $R_0 = 2\\sqrt{\\dfrac{L}{C}} = 2\\sqrt{\\dfrac{0{,}2}{5\\times 10^{-6}}} = 2\\times 200 = 400\\ \\Omega$."
+  },
+  {
+    "id": 305,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Một mạch dao động điện từ lí tưởng gồm cuộn dây thuần cảm $L = 4\\ \\text{mH}$ và tụ điện $C = 10\\ \\mu\\text{F}$. Biết hiệu điện thế cực đại giữa hai bản tụ là $U_0 = 10\\ \\text{V}$. Tại thời điểm hiệu điện thế tức thời trên tụ có độ lớn $u = 6\\ \\text{V}$, cường độ dòng điện chạy qua cuộn dây có độ lớn bằng:",
+    "image": "",
+    "options": [
+      "$|i| = 0{,}4\\ \\text{A}$",
+      "$|i| = 0{,}5\\ \\text{A}$",
+      "$|i| = 0{,}8\\ \\text{A}$",
+      "$|i| = 0{,}2\\ \\text{A}$"
+    ],
+    "correct": 0,
+    "explanation": "Áp dụng bảo toàn năng lượng điện từ: $\\dfrac{1}{2}CU_0^2 = \\dfrac{1}{2}Cu^2 + \\dfrac{1}{2}Li^2 \\Rightarrow |i| = \\sqrt{\\dfrac{C}{L}(U_0^2 - u^2)} = \\sqrt{\\dfrac{10\\times 10^{-6}}{4\\times 10^{-3}}(10^2 - 6^2)} = 0{,}05 \\times 8 = 0{,}4\\ \\text{A}$."
+  },
+  {
+    "id": 306,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Mạch dao động $LC$ điều hòa có $L = 100\\ \\mu\\text{H}$ và $C = 10\\ \\text{nF}$. Khoảng thời gian ngắn nhất kể từ lúc hiệu điện thế trên tụ đạt cực đại $U_0$ đến lúc năng lượng từ trường trong cuộn dây bằng $3$ lần năng lượng điện trường trong tụ là:",
+    "image": "",
+    "options": [
+      "$\\Delta t = \\dfrac{\\pi}{6}\\ \\mu\\text{s} \\approx 0{,}52\\ \\mu\\text{s}$",
+      "$\\Delta t = \\dfrac{2\\pi}{3}\\ \\mu\\text{s} \\approx 2{,}09\\ \\mu\\text{s}$",
+      "$\\Delta t = \\dfrac{\\pi}{3}\\ \\mu\\text{s} \\approx 1{,}05\\ \\mu\\text{s}$",
+      "$\\Delta t = \\dfrac{\\pi}{4}\\ \\mu\\text{s} \\approx 0{,}79\\ \\mu\\text{s}$"
+    ],
+    "correct": 2,
+    "explanation": "Chu kỳ dao động riêng $T = 2\\pi\\sqrt{LC} = 2\\pi\\sqrt{10^{-4}\\cdot 10^{-8}} = 2\\pi\\ \\mu\\text{s}$. Khi $W_m = 3W_e \\Rightarrow W_e = \\dfrac{1}{4}W \\Rightarrow |u| = \\dfrac{U_0}{2}$. Thời gian ngắn nhất đi từ $u = U_0$ đến $u = \\dfrac{U_0}{2}$ là $\\Delta t = \\dfrac{T}{6} = \\dfrac{\\pi}{3}\\ \\mu\\text{s} \\approx 1{,}05\\ \\mu\\text{s}$."
+  },
+  {
+    "id": 307,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "theory",
+    "question": "Đối với một hệ dao động tắt dần yếu ($\\beta \\ll \\omega_0$), hệ số phẩm chất $Q = \\dfrac{\\pi}{\\delta}$ thể hiện ý nghĩa vật lý nào sau đây?",
+    "image": "",
+    "options": [
+      "Tỉ số giữa $2\\pi$ lần năng lượng toàn phần dự trữ trong hệ chia cho phần năng lượng bị tiêu hao trong một chu kỳ dao động; $Q$ càng lớn thì dao động tắt dần càng chậm",
+      "Số chu kỳ dao động thực hiện được trong đúng $1$ giây đầu tiên; $Q$ càng nhỏ hệ dao động càng bền",
+      "Bình phương tỉ số giữa biên độ lực cưỡng bức và điện trở thuần của mạch",
+      "Tốc độ truyền năng lượng của sóng điện từ qua một đơn vị diện tích trong môi trường dẫn"
+    ],
+    "correct": 0,
+    "explanation": "Trong một chu kỳ, $\\dfrac{|\\Delta W|}{W} \\approx 2\\delta$ (khi tắt dần yếu). Do đó $Q = 2\\pi\\dfrac{W}{|\\Delta W|} \\approx \\dfrac{\\pi}{\\delta} = \\dfrac{\\omega_0}{2\\beta}$. $Q$ càng lớn thì mức tiêu hao năng lượng mỗi chu kỳ càng nhỏ và đỉnh cộng hưởng càng sắc nét."
+  },
+  {
+    "id": 308,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Một chất điểm thực hiện đồng thời hai dao động điều hòa cùng phương, cùng tần số có phương trình $x_1 = 6\\cos\\left(\\omega t + \\dfrac{\\pi}{6}\\right)\\ (\\text{cm})$ và $x_2 = 6\\cos\\left(\\omega t + \\dfrac{5\\pi}{6}\\right)\\ (\\text{cm})$. Phương trình dao động tổng hợp của chất điểm là:",
+    "image": "",
+    "options": [
+      "$x = 12\\cos\\left(\\omega t + \\dfrac{\\pi}{3}\\right)\\ (\\text{cm})$",
+      "$x = 6\\cos\\left(\\omega t + \\dfrac{\\pi}{2}\\right)\\ (\\text{cm})$",
+      "$x = 6\\cos\\left(\\omega t + \\dfrac{\\pi}{3}\\right)\\ (\\text{cm})$",
+      "$x = 6\\sqrt{3}\\cos\\left(\\omega t + \\dfrac{\\pi}{2}\\right)\\ (\\text{cm})$"
+    ],
+    "correct": 1,
+    "explanation": "Độ lệch pha $\\Delta\\varphi = \\dfrac{5\\pi}{6} - \\dfrac{\\pi}{6} = \\dfrac{2\\pi}{3}$. Biên độ tổng hợp $A = \\sqrt{6^2 + 6^2 + 2\\cdot 6\\cdot 6\\cos\\dfrac{2\\pi}{3}} = 6\\ \\text{cm}$. Vì hai biên độ thành phần bằng nhau nên pha tổng hợp nằm chính giữa: $\\varphi = \\dfrac{\\pi/6 + 5\\pi/6}{2} = \\dfrac{\\pi}{2}$."
+  },
+  {
+    "id": 309,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Chất điểm tham gia đồng thời hai dao động điều hòa vuông góc cùng tần số: $x = 3\\cos(\\omega t)\\ (\\text{cm})$ và $y = 4\\cos\\left(\\omega t + \\dfrac{\\pi}{2}\\right)\\ (\\text{cm})$. Quỹ đạo chuyển động và chiều quay của chất điểm là:",
+    "image": "",
+    "options": [
+      "Quỹ đạo hình elip $\\dfrac{x^2}{9} + \\dfrac{y^2}{16} = 1$, chiều quay ngược chiều kim đồng hồ",
+      "Quỹ đạo đoạn thẳng $4x - 3y = 0$, dao động điều hòa qua lại",
+      "Quỹ đạo hình tròn tâm $O$ bán kính $R = 5\\ \\text{cm}$",
+      "Quỹ đạo hình elip $\\dfrac{x^2}{9} + \\dfrac{y^2}{16} = 1$, chiều quay thuận chiều kim đồng hồ (chiều âm lượng giác)"
+    ],
+    "correct": 3,
+    "explanation": "Ta có $\\cos(\\omega t) = \\dfrac{x}{3}$ và $\\cos\\left(\\omega t + \\dfrac{\\pi}{2}\\right) = -\\sin(\\omega t) = \\dfrac{y}{4}$. Bình phương cộng vế cho phương trình elip $\\dfrac{x^2}{9} + \\dfrac{y^2}{16} = 1$. Tại $t = 0$: $x = 3,\\ y = 0$; sau đó $t > 0$ nhỏ thì $x$ giảm và $y = -4\\sin(\\omega t) < 0$, nên chất điểm đi xuống phía góc phần tư thứ IV (thuận chiều kim đồng hồ)."
+  },
+  {
+    "id": 310,
+    "lab_name": "Chương 1: Dao động & Sóng (Cơ, LC, RLC, Doppler, Maxwell)",
+    "type": "calc",
+    "question": "Nguồn sóng $O$ dao động điều hòa với phương trình $u_O = 4\\cos(20\\pi t)\\ (\\text{mm})$, tạo ra sóng cơ lan truyền trên một sợi dây đàn hồi dài với tốc độ $v = 80\\ \\text{cm/s}$. Bước sóng $\\lambda$ và phương trình sóng tại điểm $M$ nằm sau nguồn $O$ một đoạn $d = 2\\ \\text{cm}$ (bỏ qua suy giảm biên độ) là:",
+    "image": "",
+    "options": [
+      "$\\lambda = 8\\ \\text{cm};\\ u_M = 4\\cos\\left(20\\pi t - \\dfrac{\\pi}{2}\\right)\\ (\\text{mm})$",
+      "$\\lambda = 16\\ \\text{cm};\\ u_M = 4\\cos\\left(20\\pi t - \\dfrac{\\pi}{4}\\right)\\ (\\text{mm})$",
+      "$\\lambda = 4\\ \\text{cm};\\ u_M = 4\\cos(20\\pi t - \\pi)\\ (\\text{mm})$",
+      "$\\lambda = 8\\ \\text{cm};\\ u_M = 4\\cos\\left(20\\pi t + \\dfrac{\\pi}{2}\\right)\\ (\\text{mm})$"
+    ],
+    "correct": 0,
+    "explanation": "Tần số sóng $f = \\dfrac{\\omega}{2\\pi} = 10\\ \\text{Hz}$, suy ra bước sóng $\\lambda = \\dfrac{v}{f} = \\dfrac{80}{10} = 8\\ \\text{cm}$. Sóng truyền tới $M$ trễ pha hơn nguồn $O$ một góc $\\Delta\\varphi = \\dfrac{2\\pi d}{\\lambda} = \\dfrac{2\\pi\\cdot 2}{8} = \\dfrac{\\pi}{2}$, nên $u_M = 4\\cos\\left(20\\pi t - \\dfrac{\\pi}{2}\\right)\\ (\\text{mm})$."
+  },
+  {
+    "id": 321,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "theory",
+    "question": "Trong thí nghiệm giao thoa khe Young dùng một khe nguồn sơ cấp $S$ có bề rộng $b$, vì sao hệ vân giao thoa bị mờ dần và có thể biến mất hoàn toàn nếu mở rộng khe $S$ quá lớn?",
+    "image": "",
+    "options": [
+      "Do khoảng vân $i = \\dfrac{\\lambda D}{\\ell}$ tỷ lệ nghịch với bề rộng $b$ của khe nguồn sơ cấp",
+      "Mỗi điểm khác nhau trên khe nguồn $S$ tạo ra một hệ vân giao thoa hơi lệch pha nhau (mất tính kết hợp không gian); khi độ rộng $b$ đạt ngưỡng $b = \\dfrac{\\lambda d_s}{\\ell}$ thì cực đại của hệ vân mép nguồn trùng đúng cực tiểu của tâm nguồn làm vân bị xóa nhòa",
+      "Do cường độ sáng từ nguồn mạnh quá làm màn quan sát bị bão hòa quang học",
+      "Do khi khe $S$ rộng ra thì bước sóng ánh sáng tự động giảm đi một nửa"
+    ],
+    "correct": 1,
+    "explanation": "Nguồn mở rộng gồm vô số nguồn điểm không kết hợp theo phương ngang. Nếu khoảng lệch cực đại $\\Delta y = \\dfrac{bD}{2d_s}$ đạt tới $i/2$, cực đại ứng với mép nguồn lấp đầy cực tiểu ứng với phần còn lại của nguồn dẫn tới mất tương phản hệ vân."
+  },
+  {
+    "id": 322,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "theory",
+    "question": "Khi quan sát hệ vân tròn Newton bằng chùm tia **truyền qua** (khác với chùm phản xạ thông thường) trong không khí tại tâm tiếp xúc giữa thấu kính và bản phẳng thủy tinh, điểm tâm hệ vân là gì và vì sao?",
+    "image": "",
+    "options": [
+      "Vẫn là vân tối như trong chùm phản xạ vì bề dày không khí $d = 0$",
+      "Là vân tối bậc 1 có màu đỏ do tán sắc qua bản thủy tinh",
+      "Là vân **sáng**, vì tia truyền thẳng không phản xạ và tia phản xạ 2 lần bên trong lớp không khí đều giữ nguyên pha không mất $\\lambda/2$ (tổng bước nhảy pha là $0$ hoặc $2\\pi$)",
+      "Không quan sát được bất kỳ hệ vân nào trong chùm truyền qua"
+    ],
+    "correct": 2,
+    "explanation": "Trong chùm truyền qua, tia 1 đi thẳng không phản xạ, tia 2 phản xạ hai lần tại các mặt tiếp xúc không khí – thủy tinh (cả hai lần phản xạ trên môi trường chiết suất lớn $n > 1$ làm tăng pha $\\pi + \\pi = 2\\pi \\equiv 0$). Do đó tại tâm $d = 0$, hiệu quang lộ bằng $0 = 0\\cdot\\lambda$, cho vân sáng!"
+  },
+  {
+    "id": 323,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "calc",
+    "question": "Trong thí nghiệm giao thoa khe Young ($\\ell = 1\\ \\text{mm}$, $D = 2\\ \\text{m}$, $\\lambda = 0{,}5\\ \\mu\\text{m}$), người ta đặt trước khe $S_1$ một bản mặt song song trong suốt dày $e = 10\\ \\mu\\text{m}$ chiết suất $n = 1{,}5$. Hệ vân giao thoa trên màn sẽ dịch chuyển như thế nào?",
+    "image": "",
+    "options": [
+      "Dịch chuyển một đoạn $15\\ \\text{mm}$ về phía khe $S_1$",
+      "Không dịch chuyển vị trí vân trung tâm mà chỉ thay đổi khoảng vân $i$",
+      "Dịch chuyển một đoạn $10\\ \\text{mm}$ về phía khe $S_2$ không bị che",
+      "Dịch chuyển một đoạn $10\\ \\text{mm}$ (tương ứng $10$ khoảng vân) về phía khe bị che $S_1$"
+    ],
+    "correct": 3,
+    "explanation": "Khoảng vân $i = \\dfrac{\\lambda D}{\\ell} = 1\\ \\text{mm}$. Bản mỏng làm tăng quang lộ tia đi qua khe $S_1$ thêm $(n-1)e$, nên toàn bộ hệ vân dịch chuyển về phía khe $S_1$ một đoạn $\\Delta x = \\dfrac{(n-1)eD}{\\ell} = \\dfrac{0{,}5\\cdot 10\\times 10^{-6}\\cdot 2}{10^{-3}} = 10\\ \\text{mm}$ ($= 10$ khoảng vân)."
+  },
+  {
+    "id": 324,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "calc",
+    "question": "Trong thí nghiệm giao thoa khe Young ($D = 1{,}5\\ \\text{m}$, khoảng cách hai khe $\\ell = 0{,}6\\ \\text{mm}$), người ta đo được khoảng cách giữa $6$ vân sáng liên tiếp trên màn là $7{,}5\\ \\text{mm}$. Bước sóng ánh sáng đơn sắc dùng trong thí nghiệm là:",
+    "image": "",
+    "options": [
+      "$\\lambda = 0{,}50\\ \\mu\\text{m}$",
+      "$\\lambda = 0{,}60\\ \\mu\\text{m}$",
+      "$\\lambda = 0{,}48\\ \\mu\\text{m}$",
+      "$\\lambda = 0{,}72\\ \\mu\\text{m}$"
+    ],
+    "correct": 1,
+    "explanation": "Khoảng cách giữa $6$ vân sáng liên tiếp chứa $6 - 1 = 5$ khoảng vân, suy ra $i = \\dfrac{7{,}5}{5} = 1{,}5\\ \\text{mm}$. Bước sóng $\\lambda = \\dfrac{i\\ell}{D} = \\dfrac{1{,}5\\times 10^{-3}\\times 0{,}6\\times 10^{-3}}{1{,}5} = 0{,}60\\ \\mu\\text{m}$."
+  },
+  {
+    "id": 325,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "calc",
+    "question": "Trên màn quan sát trong thí nghiệm khe Young, khoảng vân đo được là $i = 1{,}2\\ \\text{mm}$. Trong bề rộng đối xứng của vùng giao thoa $L = 13\\ \\text{mm}$ (tính từ $-6{,}5\\ \\text{mm}$ đến $+6{,}5\\ \\text{mm}$), tổng số vân sáng và số vân tối quan sát được lần lượt là:",
+    "image": "",
+    "options": [
+      "$11$ vân sáng và $10$ vân tối",
+      "$12$ vân sáng và $11$ vân tối",
+      "$13$ vân sáng và $10$ vân tối",
+      "$11$ vân sáng và $12$ vân tối"
+    ],
+    "correct": 0,
+    "explanation": "Nửa bề rộng vùng giao thoa là $L/2 = 6{,}5\\ \\text{mm}$, tỉ số $\\dfrac{L}{2i} = \\dfrac{6{,}5}{1{,}2} \\approx 5{,}42$. Số vân sáng: $N_s = 2\\lfloor 5{,}42\\rfloor + 1 = 2\\times 5 + 1 = 11$. Số vân tối: $N_t = 2\\lfloor 5{,}42 + 0{,}5\\rfloor = 2\\lfloor 5{,}92\\rfloor = 2\\times 5 = 10$ (vì vân tối thứ 6 ở tọa độ $\\pm 5{,}5 i = \\pm 6{,}6\\ \\text{mm}$ nằm ngoài vùng $6{,}5\\ \\text{mm}$)."
+  },
+  {
+    "id": 326,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "calc",
+    "question": "Chiếu ánh sáng trắng ($0{,}40\\ \\mu\\text{m} \\le \\lambda \\le 0{,}76\\ \\mu\\text{m}$) vào hai khe Young cách nhau $\\ell = 2\\ \\text{mm}$, màn đặt cách hai khe $D = 2\\ \\text{m}$. Bề rộng của quang phổ bậc 2 (tính từ mép tím bậc 2 đến mép đỏ bậc 2 cùng một phía vân trung tâm) trên màn bằng:",
+    "image": "",
+    "options": [
+      "$\\Delta x_2 = 0{,}72\\ \\text{mm}$",
+      "$\\Delta x_2 = 1{,}08\\ \\text{mm}$",
+      "$\\Delta x_2 = 0{,}36\\ \\text{mm}$",
+      "$\\Delta x_2 = 0{,}54\\ \\text{mm}$"
+    ],
+    "correct": 0,
+    "explanation": "Vị trí vân sáng bậc $k = 2$ của bước sóng $\\lambda$ là $x_2 = 2\\dfrac{\\lambda D}{\\ell}$. Bề rộng quang phổ bậc 2 là $\\Delta x_2 = 2\\dfrac{(\\lambda_{\\max} - \\lambda_{\\min})D}{\\ell} = 2\\cdot\\dfrac{(0{,}76 - 0{,}40)\\times 10^{-6}\\cdot 2}{2\\times 10^{-3}} = 0{,}72\\ \\text{mm}$."
+  },
+  {
+    "id": 327,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "calc",
+    "question": "Một váng dầu mỏng (chiết suất $n = 1{,}4$) nổi trên mặt nước (chiết suất $n_w = 1{,}33$) được chiếu vuông góc từ không khí bằng ánh sáng đơn sắc $\\lambda = 0{,}56\\ \\mu\\text{m}$. Chiều dày nhỏ nhất khác không $d_{\\min}$ của váng dầu để khi nhìn từ trên xuống (ánh sáng phản xạ) ta thấy váng dầu **sáng cực đại** là:",
+    "image": "",
+    "options": [
+      "$d_{\\min} = 0{,}10\\ \\mu\\text{m}$",
+      "$d_{\\min} = 0{,}40\\ \\mu\\text{m}$",
+      "$d_{\\min} = 0{,}20\\ \\mu\\text{m}$",
+      "$d_{\\min} = 0{,}14\\ \\mu\\text{m}$"
+    ],
+    "correct": 0,
+    "explanation": "Vì $n_{\\text{kk}} < n < n_w$ không xảy ra ở mặt dưới ($n = 1{,}4 > n_w = 1{,}33$), chỉ tia phản xạ trên mặt thoáng không khí – dầu bị mất nửa bước sóng $\\lambda/2$, tia phản xạ tại mặt dầu – nước giữ nguyên pha. Hiệu quang lộ là $\\Delta L = 2nd + \\dfrac{\\lambda}{2}$. Điều kiện cực đại nhỏ nhất ($k=1$): $2nd_{\\min} + \\dfrac{\\lambda}{2} = \\lambda \\Rightarrow d_{\\min} = \\dfrac{\\lambda}{4n} = \\dfrac{0{,}56}{4\\times 1{,}4} = 0{,}10\\ \\mu\\text{m}$."
+  },
+  {
+    "id": 328,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "calc",
+    "question": "Chiếu vuông góc ánh sáng đơn sắc bước sóng $\\lambda_1 = 0{,}60\\ \\mu\\text{m}$ vào một nêm không khí (trong không khí), đo được khoảng vân giao thoa $i_1 = 0{,}30\\ \\text{mm}$. Nếu đưa toàn bộ hệ nêm này vào trong một chất lỏng trong suốt chiết suất $n = 1{,}5$ và chiếu bằng bức xạ $\\lambda_2 = 0{,}45\\ \\mu\\text{m}$ thì khoảng vân mới $i_2$ bằng:",
+    "image": "",
+    "options": [
+      "$i_2 = 0{,}3375\\ \\text{mm}$",
+      "$i_2 = 0{,}225\\ \\text{mm}$",
+      "$i_2 = 0{,}10\\ \\text{mm}$",
+      "$i_2 = 0{,}15\\ \\text{mm}$"
+    ],
+    "correct": 3,
+    "explanation": "Khoảng vân của bản mỏng hình nêm chiết suất $n$, góc nghiêng $\\alpha$ là $i = \\dfrac{\\lambda}{2n\\alpha}$. Lập tỉ số: $\\dfrac{i_2}{i_1} = \\dfrac{\\lambda_2}{n\\lambda_1} \\Rightarrow i_2 = 0{,}30\\times\\dfrac{0{,}45}{1{,}5\\times 0{,}60} = 0{,}15\\ \\text{mm}$."
+  },
+  {
+    "id": 329,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "calc",
+    "question": "Trong thí nghiệm vân tròn Newton (chiếu vuông góc ánh sáng đơn sắc $\\lambda = 0{,}5\\ \\mu\\text{m}$ xuống mặt phẳng tiếp xúc trong không khí với thấu kính có bán kính cong $R = 4\\ \\text{m}$), bán kính của **vân sáng thứ $5$** (kể từ tâm tối) trong chùm phản xạ bằng:",
+    "image": "",
+    "options": [
+      "$r_{s5} = 3{,}0\\ \\text{mm}$",
+      "$r_{s5} = 3{,}16\\ \\text{mm}$",
+      "$r_{s5} = 1{,}5\\ \\text{mm}$",
+      "$r_{s5} = 2{,}83\\ \\text{mm}$"
+    ],
+    "correct": 0,
+    "explanation": "Với chùm phản xạ trong không khí, vân sáng thứ $k$ ($k=1,2,\\dots$) ứng với hiệu quang lộ $2d + \\dfrac{\\lambda}{2} = k\\lambda \\Rightarrow d = \\left(k - \\dfrac{1}{2}\\right)\\dfrac{\\lambda}{2}$. Từ $r = \\sqrt{2Rd}$, suy ra $r_{s5} = \\sqrt{(5 - 0{,}5)\\lambda R} = \\sqrt{4{,}5\\times 0{,}5\\times 10^{-6}\\times 4} = \\sqrt{9\\times 10^{-6}} = 3{,}0\\ \\text{mm}$."
+  },
+  {
+    "id": 330,
+    "lab_name": "Chương 2: Giao thoa ánh sáng (Young, Bản mỏng, Nêm, Newton, Michelson)",
+    "type": "calc",
+    "question": "Dùng giao thoa kế Rayleigh với hai ống khí giống nhau dài $\\ell = 20\\ \\text{cm}$ và ánh sáng vàng Natri $\\lambda = 0{,}589\\ \\mu\\text{m}$. Ban đầu cả hai ống chứa không khí chiết suất $n_0 = 1{,}000292$. Khi hút hết không khí ở một ống rồi bơm đầy khí amoniac ($\\text{NH}_3$) vào, hệ vân dịch chuyển $m = 30$ vân. Chiết suất của khí $\\text{NH}_3$ (với $n > n_0$) gần nhất với:",
+    "image": "",
+    "options": [
+      "$n \\approx 1{,}000380$",
+      "$n \\approx 1{,}000468$",
+      "$n \\approx 1{,}000204$",
+      "$n \\approx 1{,}000336$"
+    ],
+    "correct": 0,
+    "explanation": "Sự chênh lệch quang lộ qua hai ống bằng $(n - n_0)\\ell = m\\lambda \\Rightarrow n = n_0 + \\dfrac{m\\lambda}{\\ell} = 1{,}000292 + \\dfrac{30\\times 0{,}589\\times 10^{-6}}{0{,}20} \\approx 1{,}000292 + 0{,}00008835 \\approx 1{,}000380$."
+  },
+  {
+    "id": 333,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "theory",
+    "question": "Khi sóng cầu chiếu vào một màn chắn có lỗ tròn chứa đúng $n$ đới cầu Fresnel đầu tiên đối với điểm quan sát $M$ nằm trên trục đối xứng, phát biểu nào sau đây là ĐÚNG?",
+    "image": "",
+    "options": [
+      "Tâm $M$ sáng cực đại khi $n$ là số nguyên chẵn và tối khi $n$ là số nguyên lẻ",
+      "Tâm $M$ sáng cực đại khi $n$ là số nguyên **lẻ** ($n = 1, 3, 5\\dots$), và tối (cực tiểu tương đối) khi $n$ là số nguyên **chẵn** ($n = 2, 4, 6\\dots$)",
+      "Cường độ tại $M$ luôn bằng cường độ khi không có màn chắn dù $n = 1$",
+      "Cường độ tại $M$ tăng tỉ lệ thuận với $n^2$ bất kể $n$ chẵn hay lẻ"
+    ],
+    "correct": 1,
+    "explanation": "Vì hai đới Fresnel kế tiếp nhau gửi tới $M$ hai dao động ngược pha ($\\Delta\\varphi = \\pi$), biên độ tổng hợp là $E = E_1 - E_2 + E_3 - E_4 + \\dots \\pm E_n$. Với $n$ lẻ các biên độ triệt tiêu từng cặp chẵn và dư ra góp cộng pha tại $M$ nên sáng cực đại; với $n$ chẵn thì triệt tiêu nhau gần hết nên cho cực tiểu."
+  },
+  {
+    "id": 334,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "theory",
+    "question": "Gọi $I_0$ là cường độ sáng tại điểm $M$ trên trục khi không có màn chắn sáng (trọn mặt sóng truyền tự do), còn $I_1$ là cường độ tại $M$ khi đặt một lỗ tròn chỉ mở đúng đới cầu Fresnel thứ nhất. Tỉ số $\\dfrac{I_1}{I_0}$ bằng:",
+    "image": "",
+    "options": [
+      "$1$",
+      "$4$",
+      "$1/4$",
+      "$2$"
+    ],
+    "correct": 1,
+    "explanation": "Khi mặt sóng hoàn toàn không bị che chắn, biên độ tại $M$ là $E_0 = \\dfrac{E_1}{2}$. Khi chỉ để lọt đúng đới Fresnel thứ nhất, biên độ là $E_1 = 2 E_0$. Vì cường độ tỉ lệ với bình phương biên độ ($I \\propto E^2$), ta có $I_1 = 4 I_0$ — tức lỗ nhỏ lại cho cường độ tại tâm sáng gấp 4 lần lúc không chắn!"
+  },
+  {
+    "id": 335,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "calc",
+    "question": "Một nguồn sáng điểm phát bức xạ đơn sắc bước sóng $\\lambda = 0{,}5\\ \\mu\\text{m}$ đặt cách lỗ tròn $R = 2\\ \\text{m}$, màn quan sát đặt sau lỗ tròn một đoạn $b = 2\\ \\text{m}$. Bán kính lỗ tròn bằng bao nhiêu để lỗ tròn chứa vừa đúng $3$ đới cầu Fresnel?",
+    "image": "",
+    "options": [
+      "$r_3 \\approx 1{,}732\\ \\text{mm}$",
+      "$r_3 \\approx 2{,}450\\ \\text{mm}$",
+      "$r_3 \\approx 1{,}225\\ \\text{mm}$",
+      "$r_3 \\approx 0{,}707\\ \\text{mm}$"
+    ],
+    "correct": 2,
+    "explanation": "Bán kính đới cầu Fresnel thứ $k$: $r_k = \\sqrt{k\\dfrac{Rb}{R+b}\\lambda}$. Với $k=3, R=2\\ \\text{m}, b=2\\ \\text{m}, \\lambda = 0{,}5\\times 10^{-6}\\ \\text{m}$, ta có $r_3 = \\sqrt{3\\cdot\\dfrac{2\\cdot 2}{2+2}\\cdot 0{,}5\\times 10^{-6}} = \\sqrt{1{,}5}\\ \\text{mm} \\approx 1{,}225\\ \\text{mm}$."
+  },
+  {
+    "id": 336,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "calc",
+    "question": "Đặt một lỗ tròn bán kính $r = 0{,}7\\ \\text{mm}$ nằm chính giữa nguồn sáng điểm ($R = 1\\ \\text{m}$) và màn quan sát ($b = 1\\ \\text{m}$). Chiếu bức xạ đơn sắc có bước sóng nào dưới đây trong vùng ánh sáng khả kiến để lỗ tròn chứa đúng $2$ đới Fresnel và điểm tâm trên màn **tối nhất**?",
+    "image": "",
+    "options": [
+      "$\\lambda = 0{,}40\\ \\mu\\text{m}$",
+      "$\\lambda = 0{,}72\\ \\mu\\text{m}$",
+      "$\\lambda = 0{,}65\\ \\mu\\text{m}$",
+      "$\\lambda = 0{,}49\\ \\mu\\text{m}$"
+    ],
+    "correct": 3,
+    "explanation": "Điểm tâm tối khi lỗ chứa số chẵn đới Fresnel ($k = 2$). Từ công thức $r^2 = k\\dfrac{Rb}{R+b}\\lambda \\Rightarrow \\lambda = \\dfrac{r^2(R+b)}{kRb} = \\dfrac{(0{,}7\\times 10^{-3})^2 \\cdot 2}{2\\cdot 1\\cdot 1} = 0{,}49\\times 10^{-6}\\ \\text{m} = 0{,}49\\ \\mu\\text{m}$."
+  },
+  {
+    "id": 337,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "calc",
+    "question": "Chiếu chùm tia sáng song song đơn sắc bước sóng $\\lambda = 0{,}5\\ \\mu\\text{m}$ ($R = \\infty$) vuông góc lên một đĩa tròn chắn sáng bán kính $r = 1\\ \\text{mm}$. Khoảng cách $b$ từ đĩa tới màn ảnh để đĩa tròn đó che mất đúng $1$ đới cầu Fresnel đầu tiên là:",
+    "image": "",
+    "options": [
+      "$b = 2{,}0\\ \\text{m}$",
+      "$b = 0{,}5\\ \\text{m}$",
+      "$b = 4{,}0\\ \\text{m}$",
+      "$b = 1{,}0\\ \\text{m}$"
+    ],
+    "correct": 0,
+    "explanation": "Đối với sóng phẳng ($R \\to \\infty$), bán kính đới Fresnel thứ $k$ rút gọn thành $r_k = \\sqrt{k b \\lambda}$. Để đĩa che vừa $k = 1$ đới đầu: $b = \\dfrac{r_1^2}{\\lambda} = \\dfrac{(10^{-3})^2}{0{,}5\\times 10^{-6}} = 2{,}0\\ \\text{m}$ (khi đó tại tâm bóng đĩa vẫn xuất hiện điểm sáng Poisson)."
+  },
+  {
+    "id": 338,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "calc",
+    "question": "Chiếu chùm sáng đơn sắc song song $\\lambda = 0{,}5\\ \\mu\\text{m}$ vuông góc với một khe hẹp bề rộng $b = 0{,}2\\ \\text{mm}$. Ngay sau khe đặt thấu kính hội tụ tiêu cự $f = 50\\ \\text{cm}$. Bề rộng vân sáng trung tâm $L_0$ và khoảng cách giữa cực tiểu bậc $2$ và cực tiểu bậc $5$ ở cùng một phía vân trung tâm trên màn tiêu diện lần lượt bằng:",
+    "image": "",
+    "options": [
+      "$L_0 = 2{,}50\\ \\text{mm};\\ d_{2\\to 5} = 3{,}75\\ \\text{mm}$",
+      "$L_0 = 2{,}50\\ \\text{mm};\\ d_{2\\to 5} = 2{,}50\\ \\text{mm}$",
+      "$L_0 = 5{,}00\\ \\text{mm};\\ d_{2\\to 5} = 6{,}25\\ \\text{mm}$",
+      "$L_0 = 1{,}25\\ \\text{mm};\\ d_{2\\to 5} = 3{,}75\\ \\text{mm}$"
+    ],
+    "correct": 0,
+    "explanation": "Khoảng cách từ tâm tới cực tiểu bậc $k$ (với góc nhỏ) là $x_k = k\\dfrac{f\\lambda}{b}$. Vậy bề rộng cực đại trung tâm (giữa hai cực tiểu bậc $\\pm 1$) là $L_0 = 2\\dfrac{f\\lambda}{b} = 2\\cdot\\dfrac{0{,}5\\cdot 0{,}5\\times 10^{-6}}{0{,}2\\times 10^{-3}} = 2{,}50\\ \\text{mm}$. Khoảng cách giữa bậc $2$ và bậc $5$ cùng phía là $(5 - 2)\\dfrac{f\\lambda}{b} = 3\\times 1{,}25 = 3{,}75\\ \\text{mm}$."
+  },
+  {
+    "id": 339,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "calc",
+    "question": "Trong hiện tượng nhiễu xạ Fraunhofer qua một khe hẹp có bề rộng $b = 0{,}15\\ \\text{mm}$ với ánh sáng bước sóng $\\lambda = 0{,}6\\ \\mu\\text{m}$, góc lệch gần đúng của **cực đại phụ thứ nhất** ($\\sin\\varphi_1 \\approx \\dfrac{3\\lambda}{2b}$) có giá trị:",
+    "image": "",
+    "options": [
+      "$\\sin\\varphi_1 = 0{,}002 \\Rightarrow \\varphi_1 \\approx 0{,}11^\\circ$",
+      "$\\sin\\varphi_1 = 0{,}006 \\Rightarrow \\varphi_1 \\approx 0{,}34^\\circ$ (khoảng $20{,}6'$)",
+      "$\\sin\\varphi_1 = 0{,}008 \\Rightarrow \\varphi_1 \\approx 0{,}46^\\circ$",
+      "$\\sin\\varphi_1 = 0{,}004 \\Rightarrow \\varphi_1 \\approx 0{,}23^\\circ$"
+    ],
+    "correct": 1,
+    "explanation": "Cực đại phụ bậc $k = 1$ nằm xấp xỉ chính giữa cực tiểu bậc 1 và cực tiểu bậc 2: $\\sin\\varphi_1 \\approx \\left(1 + \\dfrac{1}{2}\\right)\\dfrac{\\lambda}{b} = \\dfrac{1{,}5\\times 0{,}6\\times 10^{-6}}{0{,}15\\times 10^{-3}} = 0{,}006 \\Rightarrow \\varphi_1 \\approx 0{,}344^\\circ \\approx 20{,}6'$."
+  },
+  {
+    "id": 340,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "calc",
+    "question": "Chiếu chùm sáng đơn sắc bước sóng $\\lambda = 0{,}6\\ \\mu\\text{m}$ vuông góc với một khe hẹp bề rộng $b = 2{,}8\\ \\mu\\text{m}$. Tổng số cực tiểu nhiễu xạ có thể quan sát được ở cả hai phía màn đối xứng là:",
+    "image": "",
+    "options": [
+      "$4$ cực tiểu",
+      "$10$ cực tiểu",
+      "$9$ cực tiểu",
+      "$8$ cực tiểu"
+    ],
+    "correct": 3,
+    "explanation": "Điều kiện cực tiểu nhiễu xạ 1 khe là $\\sin\\varphi = k\\dfrac{\\lambda}{b}$. Do $|\\sin\\varphi| < 1$ (tia lệch hợp lý trên màn $k \\neq 0$), ta có $|k| < \\dfrac{b}{\\lambda} = \\dfrac{2{,}8}{0{,}6} \\approx 4{,}67 \\Rightarrow k \\in \\{\\pm 1, \\pm 2, \\pm 3, \\pm 4\\}$. Tổng cộng có $2\\times 4 = 8$ cực tiểu."
+  },
+  {
+    "id": 341,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "theory",
+    "question": "Trong nhiễu xạ ánh sáng song song qua một khe hẹp bề rộng $b$ (nhiễu xạ Fraunhofer), vì sao trên thực tế năng lượng tập trung gần như hoàn toàn ở vân sáng chính giữa ($I_0 \\approx 1$), còn các cực đại phụ bậc $1, 2, \\dots$ tắt dần rất nhanh?",
+    "image": "",
+    "options": [
+      "Do chỉ có tia sáng đi sát tâm khe mới giao thoa được, các tia ở góc lớn mất tính kết hợp",
+      "Do tỉ số cường độ theo quy luật $I \\propto \\left(\\dfrac{\\sin u}{u}\\right)^2$ với $u = \\dfrac{\\pi b\\sin\\varphi}{\\lambda}$; ở cực đại phụ thứ nhất chỉ còn $1$ đới rộng $b/3$ không bị triệt tiêu (biên độ $\\approx \\dfrac{2}{3\\pi}E_0$) nên $I_1 \\approx 0{,}045 I_0$ và $I_2 \\approx 0{,}016 I_0$",
+      "Do định luật bảo toàn năng lượng chỉ cho phép cường độ phụ bằng $I_0 / k$",
+      "Do độ dày của mép khe hẹp hấp thụ mất $95\\%$ ánh sáng truyền lệch góc"
+    ],
+    "correct": 1,
+    "explanation": "Chia bề rộng khe $b$ thành các dải chắn ngang phát sóng lệch pha nhau $\\pi$. Tại cực đại phụ thứ nhất ($b\\sin\\varphi \\approx 3\\lambda/2$), khe chứa 3 dải: 2 dải tự triệt tiêu và chỉ còn $1/3$ diện tích khe đóng góp biên độ phân tán nên cường độ giảm đi hơn $20$ lần ($4{,}5\\% I_0$)."
+  },
+  {
+    "id": 342,
+    "lab_name": "Chương 3: Nhiễu xạ ánh sáng (Đới Fresnel, Khe hẹp, Cách tử, Bragg)",
+    "type": "calc",
+    "question": "Một cách tử phẳng truyền qua có chu kỳ $d = 2{,}4\\ \\mu\\text{m}$ được chiếu vuông góc bằng ánh sáng đơn sắc $\\lambda = 0{,}5\\ \\mu\\text{m}$. Bậc cực đại chính cao nhất và tổng số cực đại chính có thể quan sát được là:",
+    "image": "",
+    "options": [
+      "Bậc cao nhất $k_{\\max} = 3$; tổng cộng $7$ cực đại chính",
+      "Bậc cao nhất $k_{\\max} = 5$; tổng cộng $11$ cực đại chính",
+      "Bậc cao nhất $k_{\\max} = 4$; tổng cộng $9$ cực đại chính",
+      "Bậc cao nhất $k_{\\max} = 4$; tổng cộng $8$ cực đại chính"
+    ],
+    "correct": 2,
+    "explanation": "Điều kiện cực đại chính của cách tử: $d\\sin\\varphi = k\\lambda \\Rightarrow |k| < \\dfrac{d}{\\lambda} = \\dfrac{2{,}4}{0{,}5} = 4{,}8$. Suy ra bậc cực đại chính cao nhất là $k_{\\max} = 4$. Tính cả cực đại trung tâm $k = 0$ và hai bên $\\pm 1, \\pm 2, \\pm 3, \\pm 4$, có $2\\times 4 + 1 = 9$ cực đại chính."
+  },
+  {
+    "id": 351,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Chiết suất của một loại thủy tinh tuân theo công thức Cauchy hai số hạng $n(\\lambda) = A + \\dfrac{B}{\\lambda^2}$ với $A = 1{,}50$ và $B = 4{,}2\\times 10^{-15}\\ \\text{m}^2$. Đối với ánh sáng đơn sắc $\\lambda = 0{,}5\\ \\mu\\text{m}$, chiết suất $n$ và độ tán sắc $D = \\dfrac{dn}{d\\lambda}$ của thủy tinh này bằng:",
+    "image": "",
+    "options": [
+      "$n = 1{,}6680;\\ D = -6{,}72\\times 10^5\\ \\text{m}^{-1}$",
+      "$n = 1{,}5168;\\ D = -6{,}72\\times 10^4\\ \\text{m}^{-1}$",
+      "$n = 1{,}5168;\\ D = +6{,}72\\times 10^4\\ \\text{m}^{-1}$",
+      "$n = 1{,}5084;\\ D = -3{,}36\\times 10^4\\ \\text{m}^{-1}$"
+    ],
+    "correct": 1,
+    "explanation": "Thay $\\lambda = 5\\times 10^{-7}\\ \\text{m}$ vào công thức Cauchy: $n = 1{,}50 + \\dfrac{4{,}2\\times 10^{-15}}{(5\\times 10^{-7})^2} = 1{,}50 + 0{,}0168 = 1{,}5168$. Độ tán sắc $D = \\dfrac{dn}{d\\lambda} = -\\dfrac{2B}{\\lambda^3} = -\\dfrac{8{,}4\\times 10^{-15}}{1{,}25\\times 10^{-19}} = -6{,}72\\times 10^4\\ \\text{m}^{-1}$ (tán sắc thường)."
+  },
+  {
+    "id": 352,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Chiếu chùm ánh sáng trắng hẹp vào một lăng kính thủy tinh có góc chiết quang nhỏ $A = 6^\\circ$. Biết chiết suất của thủy tinh đối với tia đỏ là $n_{\\text{đ}} = 1{,}51$ và đối với tia tím là $n_{\\text{t}} = 1{,}54$. Góc mở giữa tia ló màu tím và tia ló màu đỏ (độ tán sắc góc $\\Delta\\delta$) xấp xỉ bằng:",
+    "image": "",
+    "options": [
+      "$\\Delta\\delta = 0{,}18^\\circ$",
+      "$\\Delta\\delta = 3{,}15^\\circ$",
+      "$\\Delta\\delta = 0{,}36^\\circ$",
+      "$\\Delta\\delta = 0{,}09^\\circ$"
+    ],
+    "correct": 0,
+    "explanation": "Với góc chiết quang $A$ nhỏ và góc tới nhỏ, góc lệch của tia sáng qua lăng kính là $\\delta = (n - 1)A$. Do đó góc hợp bởi tia tím và tia đỏ là $\\Delta\\delta = \\delta_{\\text{t}} - \\delta_{\\text{đ}} = (n_{\\text{t}} - n_{\\text{đ}})A = (1{,}54 - 1{,}51)\\times 6^\\circ = 0{,}18^\\circ$."
+  },
+  {
+    "id": 353,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Trong môi trường trong suốt tán sắc thường, mối liên hệ giữa chiết suất nhóm $n_g$ (quyết định vận tốc nhóm truyền xung tín hiệu $v_g = \\dfrac{c}{n_g}$) và độ tán sắc $\\dfrac{dn}{d\\lambda}$ là $n_g = n - \\lambda\\dfrac{dn}{d\\lambda}$. Với bước sóng $\\lambda = 0{,}5\\ \\mu\\text{m}$ có $n = 1{,}50$ và $\\dfrac{dn}{d\\lambda} = -1{,}2\\times 10^5\\ \\text{m}^{-1}$, chiết suất nhóm $n_g$ và vận tốc nhóm $v_g$ là:",
+    "image": "",
+    "options": [
+      "$n_g = 1{,}44;\\ v_g \\approx 2{,}08\\times 10^8\\ \\text{m/s}$",
+      "$n_g = 1{,}56;\\ v_g \\approx 1{,}92\\times 10^8\\ \\text{m/s}$",
+      "$n_g = 1{,}50;\\ v_g = 2{,}00\\times 10^8\\ \\text{m/s}$",
+      "$n_g = 1{,}62;\\ v_g \\approx 1{,}85\\times 10^8\\ \\text{m/s}$"
+    ],
+    "correct": 1,
+    "explanation": "Chiết suất nhóm $n_g = 1{,}50 - (0{,}5\\times 10^{-6})(-1{,}2\\times 10^5) = 1{,}50 + 0{,}06 = 1{,}56$. Vận tốc truyền xung năng lượng $v_g = \\dfrac{c}{n_g} = \\dfrac{3\\times 10^8}{1{,}56} \\approx 1{,}923\\times 10^8\\ \\text{m/s}$ (nhỏ hơn vận tốc pha $v_p = c/n = 2\\times 10^8\\ \\text{m/s}$)."
+  },
+  {
+    "id": 354,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "theory",
+    "question": "Theo thuyết điện tử cổ điển giải thích hiện tượng tán sắc ánh sáng, ở vùng bước sóng nào thì xuất hiện **tán sắc dị thường** ($\\dfrac{dn}{d\\lambda} > 0$) thay vì tán sắc thường ($\\dfrac{dn}{d\\lambda} < 0$)?",
+    "image": "",
+    "options": [
+      "Chỉ khi cường độ ánh sáng tiến dần về $0$ trên vùng phổ nhìn thấy của thủy tinh sạch",
+      "Ngay trong **vùng hấp thụ cộng hưởng** của môi trường (khi tần số ánh sáng $\\omega$ rất gần các tần số dao động riêng $\\omega_{0i}$ của các electron liên kết)",
+      "Khi ánh sáng truyền qua chân không tuyệt đối",
+      "Ở mọi bước sóng hồng ngoại cực dài ($\\lambda \\to \\infty$)"
+    ],
+    "correct": 1,
+    "explanation": "Ngoài vùng hấp thụ, chiết suất tăng khi bước sóng giảm (tán sắc thường $dn/d\\lambda < 0$). Ngay trong dải tần hấp thụ cộng hưởng $\\omega \\approx \\omega_{0i}$, biên độ dao động điện tử lớn và lệch pha mạnh khiến chiết suất sụt giảm nhanh theo tần số tăng (tức tăng theo bước sóng $dn/d\\lambda > 0$ — tán sắc dị thường)."
+  },
+  {
+    "id": 355,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "theory",
+    "question": "Nguyên nhân vật lý vi mô cốt lõi gây ra sự phụ thuộc của chiết suất $n$ vào tần số ánh sáng (sự tán sắc) trong môi trường điện môi là gì?",
+    "image": "",
+    "options": [
+      "Vì khe giao thoa và lăng kính làm đổi tần số dao động của sóng ánh sáng khi đi vào thủy tinh",
+      "Vì tốc độ ánh sáng trong chân không thay đổi tùy theo màu sắc của tia sáng",
+      "Vì các phôtôn đỏ va chạm đàn hồi mất động lượng nhiều hơn phôtôn tím",
+      "Sóng điện từ ánh sáng cưỡng bức các electron trong nguyên tử dao động với cùng tần số $\\omega$; biên độ và pha dao động của các lưỡng cực điện cảm ứng phụ thuộc vào $\\omega$ so với tần số riêng $\\omega_0$, làm độ phân cực điện môi $\\varepsilon(\\omega)$ thay đổi theo $\\omega$"
+    ],
+    "correct": 3,
+    "explanation": "Khi sóng ánh sáng truyền vào môi trường, điện trường $\\vec{E}(\\omega)$ tác dụng lực cưỡng bức làm electron liên kết dao động tạo mômen lưỡng cực cảm ứng tỉ lệ nghịch với $(\\omega_0^2 - \\omega^2)$. Điều này làm hằng số điện môi $\\varepsilon(\\omega) = n^2(\\omega)$ phụ thuộc chặt chẽ vào tần số sóng (lưu ý tần số sóng vẫn không đổi khi truyền qua môi trường)."
+  },
+  {
+    "id": 356,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "theory",
+    "question": "Trong kỹ thuật thông tin sợi quang, để hạn chế hiện tượng dãn rộng xung ánh sáng (suy giảm băng thông truyền dẫn) do tán sắc vật liệu gây ra, người ta thường thiết kế nguồn phát laser hoạt động quanh vùng bước sóng \\\"tán sắc bằng không\\\" nào của sợi quang thạch anh ($\\text{SiO}_2$)?",
+    "image": "",
+    "options": [
+      "Vùng ánh sáng tím $\\lambda \\approx 0{,}40\\ \\mu\\text{m}$",
+      "Vùng tia X $\\lambda \\approx 0{,}1\\ \\text{nm}$",
+      "Vùng bước sóng $\\lambda \\approx 1{,}3\\ \\mu\\text{m}$ (hoặc kết hợp sợi dịch chuyển tán sắc quanh $1{,}55\\ \\mu\\text{m}$ nơi suy hao thấp nhất)",
+      "Vùng tử ngoại $\\lambda \\approx 0{,}25\\ \\mu\\text{m}$"
+    ],
+    "correct": 2,
+    "explanation": "Ở thủy tinh thạch anh tinh khiết, độ tán sắc vật liệu triệt tiêu ($\\dfrac{d^2 n}{d\\lambda^2} = 0$) tại bước sóng $\\lambda \\approx 1{,}31\\ \\mu\\text{m}$ (cửa sổ thứ hai), và kết hợp thiết kế lõi để dịch điểm tán sắc không về $1{,}55\\ \\mu\\text{m}$ (cửa sổ thứ ba suy hao cực tiểu $0{,}2\\ \\text{dB/km}$)."
+  },
+  {
+    "id": 357,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Chùm tia sáng đơn sắc truyền thẳng góc qua một tấm thủy tinh dày $\\ell_1 = 2\\ \\text{cm}$ thì cường độ sáng bị giảm đi $20\\%$ (bỏ qua phần phản xạ ở hai mặt). Hệ số hấp thụ $k$ của thủy tinh và phần trăm cường độ sáng truyền qua nếu tấm thủy tinh dày gấp đôi ($\\ell_2 = 4\\ \\text{cm}$) là:",
+    "image": "",
+    "options": [
+      "$k \\approx 0{,}805\\ \\text{cm}^{-1};\\ I_2 = 64\\% I_0$",
+      "$k \\approx 0{,}056\\ \\text{cm}^{-1};\\ I_2 = 80\\% I_0$",
+      "$k \\approx 0{,}112\\ \\text{cm}^{-1};\\ I_2 = 64\\% I_0$",
+      "$k \\approx 0{,}112\\ \\text{cm}^{-1};\\ I_2 = 60\\% I_0$"
+    ],
+    "correct": 2,
+    "explanation": "Cường độ ló ra còn $80\\% I_0 \\Rightarrow \\dfrac{I_1}{I_0} = 0{,}8 = e^{-k\\ell_1} \\Rightarrow k = -\\dfrac{\\ln(0{,}8)}{2} \\approx 0{,}1116\\ \\text{cm}^{-1}$. Khi bề dày tăng gấp đôi $\\ell_2 = 2\\ell_1$, theo hàm mũ Bouguer: $\\dfrac{I_2}{I_0} = e^{-2k\\ell_1} = (0{,}8)^2 = 0{,}64 = 64\\%$."
+  },
+  {
+    "id": 358,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Một bản thủy tinh dày $\\ell = 5\\ \\text{cm}$ có hệ số hấp thụ ánh sáng $k = 0{,}05\\ \\text{cm}^{-1}$. Biết hệ số phản xạ ánh sáng ở mỗi mặt giới hạn thủy tinh – không khí là $r = 4\\%$. Tính tỉ lệ phần trăm cường độ chùm sáng ló ra khỏi bản (kể cả suy hao do phản xạ ở hai mặt) so với cường độ tới $I_0$:",
+    "image": "",
+    "options": [
+      "$\\dfrac{I}{I_0} \\approx 69{,}1\\%$",
+      "$\\dfrac{I}{I_0} \\approx 74{,}8\\%$",
+      "$\\dfrac{I}{I_0} \\approx 71{,}8\\%$",
+      "$\\dfrac{I}{I_0} \\approx 77{,}9\\%$"
+    ],
+    "correct": 2,
+    "explanation": "Qua mặt vào mất $r = 4\\%$ nên cường độ đi vào lớp là $(1 - r)I_0$; sau quãng đường $\\ell$ còn $(1-r)I_0 e^{-k\\ell}$; qua mặt ra lại mất thêm $r$ phần trăm nữa nên $I = (1 - r)^2 I_0 e^{-k\\ell} = 0{,}96^2 \\cdot e^{-0{,}25} I_0 \\approx 0{,}9216 \\times 0{,}7788\\,I_0 \\approx 71{,}8\\% I_0$."
+  },
+  {
+    "id": 359,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Mật độ quang học (hay độ hấp thụ quang học) của một bản lọc sáng được định nghĩa là $D = \\lg\\dfrac{I_0}{I}$. Nếu ghép nối tiếp hai kính lọc màu có mật độ quang học lần lượt là $D_1 = 1{,}2$ và $D_2 = 0{,}8$ (bỏ qua phản xạ giữa hai kính), hệ số truyền qua tổng cộng $T = \\dfrac{I}{I_0}$ của bộ lọc ghép bằng:",
+    "image": "",
+    "options": [
+      "$T = 2\\%$ (do $D_{\\text{tổng}} = 2{,}0$)",
+      "$T = 1\\%$ (do $D_{\\text{tổng}} = 2{,}0$)",
+      "$T = 0{,}96\\%$",
+      "$T = 10\\%$ (do $D_{\\text{tổng}} = 1{,}0$)"
+    ],
+    "correct": 1,
+    "explanation": "Do $I = I_0\\cdot 10^{-D_1}\\cdot 10^{-D_2} = I_0\\cdot 10^{-(D_1+D_2)}$, mật độ quang học có tính cộng: $D = D_1 + D_2 = 1{,}2 + 0{,}8 = 2{,}0$. Vậy hệ số truyền qua $T = 10^{-D} = 10^{-2} = 0{,}01 = 1\\%$."
+  },
+  {
+    "id": 360,
+    "lab_name": "Chương 4: Tán sắc, Hấp thụ & Tán xạ ánh sáng",
+    "type": "calc",
+    "question": "Chiếu chùm sáng đơn sắc qua một cuvet đựng dung dịch chất hấp thụ có nồng độ $C_1 = 0{,}1\\ \\text{mol/L}$, thấy cường độ sáng truyền qua giảm đi một nửa ($T_1 = 50\\%$). Dùng đúng cuvet đó, muốn cường độ ánh sáng truyền qua giảm chỉ còn $12{,}5\\%$ ($1/8$) cường độ tới thì nồng độ $C_2$ phải pha (trong vùng nghiệm đúng Lambert - Beer) là:",
+    "image": "",
+    "options": [
+      "$C_2 = 0{,}2\\ \\text{mol/L}$",
+      "$C_2 = 0{,}8\\ \\text{mol/L}$",
+      "$C_2 = 0{,}3\\ \\text{mol/L}$",
+      "$C_2 = 0{,}4\\ \\text{mol/L}$"
+    ],
+    "correct": 2,
+    "explanation": "Theo định luật Lambert - Beer: $\\dfrac{I}{I_0} = e^{-\\alpha C\\ell} \\Rightarrow \\ln\\dfrac{I}{I_0} \\propto C$. Vì $0{,}125 = (0{,}5)^3 \\Rightarrow \\ln(0{,}125) = 3\\ln(0{,}5)$, suy ra $C_2 = 3 C_1 = 0{,}3\\ \\text{mol/L}$."
+  },
+  {
+    "id": 379,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Chiếu chùm ánh sáng tự nhiên cường độ $I_0$ lần lượt đi qua $3$ kính phân cực lý tưởng $P_1, P_2, P_3$. Biết quang trục của $P_1$ và $P_3$ vuông góc với nhau, còn quang trục của $P_2$ nằm xen giữa và hợp với cả $P_1$ lẫn $P_3$ góc $45^\\circ$. Cường độ ánh sáng ló ra khỏi $P_3$ bằng:",
+    "image": "",
+    "options": [
+      "$I_3 = 0$",
+      "$I_3 = \\dfrac{I_0}{2}$",
+      "$I_3 = \\dfrac{I_0}{8}$",
+      "$I_3 = \\dfrac{I_0}{4}$"
+    ],
+    "correct": 2,
+    "explanation": "Qua $P_1$ cường độ còn $I_1 = \\dfrac{I_0}{2}$ (phân cực thẳng theo trục $P_1$). Qua $P_2$ (hợp với $P_1$ góc $45^\\circ$): $I_2 = I_1\\cos^2 45^\\circ = \\dfrac{I_0}{4}$ (lúc này phân cực theo $P_2$). Qua $P_3$ (hợp với $P_2$ góc $45^\\circ$): $I_3 = I_2\\cos^2 45^\\circ = \\dfrac{I_0}{8}$."
+  },
+  {
+    "id": 380,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Chiếu chùm ánh sáng tự nhiên cường độ $I_0$ qua hai kính phân cực giống nhau có quang trục đặt **song song** với nhau. Biết mỗi kính khi cho thành phần ánh sáng đúng hướng truyền qua vẫn hấp thụ và phản xạ mất $10\\%$ cường độ (hệ số truyền qua dọc quang trục là $0{,}9$). Cường độ sáng ló ra khỏi kính thứ hai bằng bao nhiêu phần trăm $I_0$?",
+    "image": "",
+    "options": [
+      "$45{,}0\\%$",
+      "$81{,}0\\%$",
+      "$40{,}5\\%$",
+      "$50{,}0\\%$"
+    ],
+    "correct": 2,
+    "explanation": "Ánh sáng tự nhiên qua kính 1 bị tách mất một nửa thành phần vuông góc và thêm mất mát $10\\%$ trên kính: $I_1 = 0{,}5\\times 0{,}9\\,I_0 = 0{,}45 I_0$. Qua kính 2 song song ($\\cos^2 0^\\circ = 1$) nhưng vẫn chịu hệ số truyền qua $0{,}9$: $I_2 = 0{,}45\\times 0{,}9\\,I_0 = 0{,}405 I_0 = 40{,}5\\% I_0$."
+  },
+  {
+    "id": 381,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Chùm ánh sáng tự nhiên có cường độ $I_0$ sau khi truyền qua hệ gồm một kính phân cực và một kính phân tích lý tưởng (bỏ qua hấp thụ) thì cường độ giảm đi $8$ lần so với $I_0$. Góc nhọn $\\alpha$ hợp bởi quang trục của hai kính bằng:",
+    "image": "",
+    "options": [
+      "$\\alpha = 30^\\circ$",
+      "$\\alpha = 75^\\circ$",
+      "$\\alpha = 45^\\circ$",
+      "$\\alpha = 60^\\circ$"
+    ],
+    "correct": 3,
+    "explanation": "Qua kính phân cực: $I_1 = \\dfrac{I_0}{2}$. Áp dụng định luật Malus cho kính phân tích: $I_2 = I_1\\cos^2\\alpha = \\dfrac{I_0}{2}\\cos^2\\alpha = \\dfrac{I_0}{8} \\Rightarrow \\cos^2\\alpha = \\dfrac{1}{4} \\Rightarrow \\alpha = 60^\\circ$."
+  },
+  {
+    "id": 382,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Ánh sáng tự nhiên truyền từ nước ($n_1 = \\dfrac{4}{3}$) tới mặt phân cách phẳng với thủy tinh nặng ($n_2 = 1{,}6$). Để tia phản xạ trở nên phân cực thẳng hoàn toàn thì góc tới Brewster $i_B$ và góc khúc xạ $r$ tương ứng bằng:",
+    "image": "",
+    "options": [
+      "$i_B \\approx 58{,}0^\\circ;\\ r \\approx 32{,}0^\\circ$",
+      "$i_B \\approx 50{,}2^\\circ;\\ r \\approx 39{,}8^\\circ$",
+      "$i_B \\approx 39{,}8^\\circ;\\ r \\approx 50{,}2^\\circ$",
+      "$i_B \\approx 53{,}1^\\circ;\\ r \\approx 36{,}9^\\circ$"
+    ],
+    "correct": 1,
+    "explanation": "Áp dụng công thức Brewster: $\\tan i_B = \\dfrac{n_2}{n_1} = \\dfrac{1{,}6}{4/3} = 1{,}2 \\Rightarrow i_B \\approx 50{,}19^\\circ$. Tại góc Brewster, tia phản xạ vuông góc với tia khúc xạ nên $r = 90^\\circ - i_B \\approx 39{,}81^\\circ$."
+  },
+  {
+    "id": 383,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "theory",
+    "question": "Chiếu tia sáng tự nhiên từ không khí tới mặt trên của một bản mặt song song bằng thủy tinh (chiết suất $n$) dưới đúng góc tới Brewster $i_B = \\arctan n$. Tia khúc xạ truyền xuống mặt dưới của bản thủy tinh và phản xạ ngược lên; hỏi tia phản xạ tại mặt dưới này có bị phân cực toàn phần không?",
+    "image": "",
+    "options": [
+      "Không, vì bản thủy tinh có mặt trên và mặt dưới song song nên mất tính chất phản xạ vuông góc",
+      "Không, vì tia tới mặt dưới xuất phát từ tia khúc xạ đã phân cực tròn hoàn toàn",
+      "Chỉ có khi $n = \\sqrt{2}$ thì mặt dưới mới cho tia phân cực toàn phần",
+      "Có, vì góc tới của tia sáng từ thủy tinh ra không khí tại mặt dưới chính bằng $r = 90^\\circ - i_B$, thỏa mãn $\\tan r = \\cot i_B = \\dfrac{1}{n}$, đúng bằng góc Brewster cho tia đi từ thủy tinh ra không khí"
+    ],
+    "correct": 3,
+    "explanation": "Khi mặt trên bản song song thỏa $\\tan i_B = n$, góc khúc xạ là $r = 90^\\circ - i_B$, cũng là góc tới ở mặt dưới (chiếu từ $n$ ra $1$). Khi đó $\\tan r = \\tan(90^\\circ - i_B) = \\dfrac{1}{\\tan i_B} = \\dfrac{1}{n} = \\dfrac{n_{\\text{kk}}}{n}$, thỏa chính xác điều kiện Brewster thứ hai! Đây là nguyên lý chế tạo cột bản mặt song song làm kính phân cực phản xạ."
+  },
+  {
+    "id": 384,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Một bản phần tư bước sóng ($\\lambda/4$) làm từ tinh thể băng lan (canxit $\\text{CaCO}_3$) cắt song song với quang trục, có $n_o = 1{,}658$ và $n_e = 1{,}486$ đối với bức xạ $\\lambda = 0{,}516\\ \\mu\\text{m}$. Bề dày nhỏ nhất $d_{\\min}$ của bản đối với bước sóng này bằng:",
+    "image": "",
+    "options": [
+      "$d_{\\min} = 3{,}00\\ \\mu\\text{m}$",
+      "$d_{\\min} = 1{,}50\\ \\mu\\text{m}$",
+      "$d_{\\min} = 0{,}375\\ \\mu\\text{m}$",
+      "$d_{\\min} = 0{,}75\\ \\mu\\text{m}$"
+    ],
+    "correct": 3,
+    "explanation": "Hiệu quang lộ qua bản $\\lambda/4$ nhỏ nhất là $\\Delta L = |n_o - n_e|d_{\\min} = \\dfrac{\\lambda}{4}$. Thay số: $d_{\\min} = \\dfrac{0{,}516}{4(1{,}658 - 1{,}486)} = \\dfrac{0{,}516}{4\\times 0{,}172} = 0{,}75\\ \\mu\\text{m}$."
+  },
+  {
+    "id": 385,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Chiếu chùm sáng phân cực thẳng đơn sắc bước sóng $\\lambda$ vuông góc vào một bản nửa bước sóng ($\\lambda/2$, có quang trục song song mặt bản). Biết phương dao động của véc-tơ điện trường tới hợp với quang trục của bản góc $\\theta = 25^\\circ$. Chùm sáng ló ra khỏi bản sẽ:",
+    "image": "",
+    "options": [
+      "Trở thành ánh sáng phân cực thẳng hợp với quang trục góc $12{,}5^\\circ$",
+      "Trở thành ánh sáng phân cực tròn quay phải",
+      "Vẫn là ánh sáng phân cực thẳng, nhưng phương dao động bị quay đi một góc $2\\theta = 50^\\circ$ (nằm đối xứng qua quang trục)",
+      "Bị triệt tiêu hoàn toàn nếu không có kính phân tích đi kèm"
+    ],
+    "correct": 2,
+    "explanation": "Bản $\\lambda/2$ làm dịch pha tương đối giữa thành phần song song và vuông góc với quang trục đúng bằng $\\pi$ (đảo dấu một thành phần so với thành phần kia). Do đó biên độ tổng hợp vẫn là dao động thẳng nhưng hướng vectơ sáng lật đối xứng qua quang trục — tức quay đi góc $2\\theta = 50^\\circ$."
+  },
+  {
+    "id": 386,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Đặt một bản nửa bước sóng ($\\lambda/2$) vào giữa hai lăng kính Nicol bắt chéo vuông góc ($N_1 \\perp N_2$) sao cho quang trục của bản hợp với mặt phẳng chính của $N_1$ góc $30^\\circ$. Gọi $I_1$ là cường độ ánh sáng phân cực thẳng sau khi qua $N_1$; cường độ ánh sáng ló ra khỏi $N_2$ (bỏ qua mất mát phản xạ) là:",
+    "image": "",
+    "options": [
+      "$I_2 = I_1$",
+      "$I_2 = 0$",
+      "$I_2 = 0{,}25\\,I_1$",
+      "$I_2 = 0{,}75\\,I_1$"
+    ],
+    "correct": 3,
+    "explanation": "Ánh sáng qua $N_1$ có véc-tơ dao động hợp với quang trục bản $\\lambda/2$ góc $30^\\circ$. Đi qua bản $\\lambda/2$, phương dao động quay đi $2\\times 30^\\circ = 60^\\circ$ so với trục $N_1$. Vì $N_2 \\perp N_1$, phương dao động mới chỉ hợp với mặt chính $N_2$ góc $90^\\circ - 60^\\circ = 30^\\circ$. Theo định luật Malus: $I_2 = I_1\\cos^2 30^\\circ = 0{,}75 I_1$."
+  },
+  {
+    "id": 387,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Để biến đổi một chùm ánh sáng phân cực thẳng có cường độ $I_1$ thành ánh sáng **phân cực tròn** sau khi đi qua một bản phần tư bước sóng ($\\lambda/4$), góc hợp bởi phương dao động của ánh sáng tới và quang trục của bản $\\lambda/4$ phải bằng bao nhiêu?",
+    "image": "",
+    "options": [
+      "$22{,}5^\\circ$",
+      "$45^\\circ$ (hoặc $135^\\circ$)",
+      "$0^\\circ$ hoặc $90^\\circ$",
+      "$30^\\circ$ hoặc $60^\\circ$"
+    ],
+    "correct": 1,
+    "explanation": "Ánh sáng ló ra từ bản $\\lambda/4$ là sự tổng hợp hai dao động vuông góc lệch pha $\\pm\\pi/2$ dọc theo trục $o$ và $e$: $E_o = E_1\\sin\\theta$ và $E_e = E_1\\cos\\theta$. Để quỹ đạo tổng hợp là **đường tròn** thì hai biên độ phải bằng nhau: $\\sin\\theta = \\cos\\theta \\Rightarrow \\theta = 45^\\circ$."
+  },
+  {
+    "id": 388,
+    "lab_name": "Chương 5: Phân cực ánh sáng (Malus, Brewster, Lưỡng chiết)",
+    "type": "calc",
+    "question": "Một ống nghiệm phân cực kế dài $\\ell = 20\\ \\text{cm}$ đựng dung dịch đường mía có năng suất quay cực riêng $[\\alpha] = 66{,}5^\\circ\\ \\text{dm}^{-1}\\cdot(\\text{g/cm}^3)^{-1}$ làm mặt phẳng phân cực của ánh sáng vàng Natri quay một góc $\\alpha = 13{,}3^\\circ$. Nồng độ khối lượng $\\rho$ của dung dịch đường đó là:",
+    "image": "",
+    "options": [
+      "$\\rho = 0{,}01\\ \\text{g/cm}^3$",
+      "$\\rho = 0{,}20\\ \\text{g/cm}^3$",
+      "$\\rho = 0{,}50\\ \\text{g/cm}^3$",
+      "$\\rho = 0{,}10\\ \\text{g/cm}^3$ ($10\\ \\text{g}$ đường trong $100\\ \\text{cm}^3$ dung dịch)"
+    ],
+    "correct": 3,
+    "explanation": "Đổi chiều dài ống $\\ell = 20\\ \\text{cm} = 2\\ \\text{dm}$. Áp dụng định luật Biot cho dung dịch hoạt quang: $\\alpha = [\\alpha]\\rho\\ell \\Rightarrow \\rho = \\dfrac{\\alpha}{[\\alpha]\\ell} = \\dfrac{13{,}3}{66{,}5\\times 2} = 0{,}10\\ \\text{g/cm}^3$."
+  }
+]

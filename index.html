@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trang Tổng - Cổng Ôn Tập &amp; Công Cụ Học Tập PTIT</title>
+  <link rel="icon" type="image/png" href="./assets/ptit-logo-simple.png" />
+
+  <!-- Google Fonts: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            ptit: {
+              50: '#fff1f2',
+              100: '#ffe4e6',
+              200: '#fecdd3',
+              400: '#f87171',
+              500: '#ef4444',
+              600: '#c80000',
+              700: '#9e0000',
+              800: '#7f1d1d',
+              900: '#450a0a',
+              950: '#1b0b0b'
+            }
+          }
+        }
+      }
+    };
+    (function () {
+      try {
+        var hubTheme = localStorage.getItem('ptit_hub_theme_v1');
+        var dmTheme = localStorage.getItem('discrete_math_theme_v1');
+        var vlRaw = localStorage.getItem('vlttn3_theme');
+        var vlTheme = vlRaw ? JSON.parse(vlRaw) : null;
+        var saved = hubTheme || dmTheme || vlTheme;
+        var prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        if (saved === 'dark' || (!saved && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    html {
+      color-scheme: light;
+      scroll-behavior: smooth;
+      overflow-x: clip;
+    }
+    html.dark {
+      color-scheme: dark;
+    }
+    body {
+      background-color: #f6f5f2;
+      color: #1f1718;
+      overflow-x: clip;
+    }
+    html.dark body {
+      background-color: #0f1012;
+      color: #ece9ea;
+    }
+
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #ebe8e3;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #cfc9c3;
+      border-radius: 9999px;
+    }
+    html.dark ::-webkit-scrollbar-track {
+      background: #17181c;
+    }
+    html.dark ::-webkit-scrollbar-thumb {
+      background: #343740;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Fluid heading & spacing utilities */
+    .hero-title {
+      font-size: clamp(1.6rem, 3.1vw, 2.75rem);
+      line-height: 1.16;
+    }
+    .section-title {
+      font-size: clamp(1.375rem, 2.5vw, 1.95rem);
+      line-height: 1.22;
+    }
+
+    /* Full-screen sections + scroll snap strictly on spacious desktops */
+    .hub-section {
+      padding-top: 2.25rem;
+      padding-bottom: 2.5rem;
+      scroll-margin-top: 5.5rem;
+    }
+    @media (min-width: 1024px) and (min-height: 760px) {
+      html {
+        scroll-snap-type: y proximity;
+      }
+      .hub-section {
+        min-height: calc(100vh - 4.5rem);
+        min-height: calc(100svh - 4.5rem);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 2rem;
+        padding-bottom: 2.5rem;
+        scroll-margin-top: 4.5rem;
+        scroll-snap-align: start;
+      }
+      #catalog.hub-section {
+        justify-content: flex-start;
+        padding-top: 2.25rem;
+        padding-bottom: 3.5rem;
+      }
+    }
+
+    @keyframes floatDown {
+      0%, 100% { transform: translate3d(0, 0, 0); opacity: 0.75; }
+      50% { transform: translate3d(0, 7px, 0); opacity: 1; }
+    }
+    .animate-float-down {
+      animation: floatDown 2s ease-in-out infinite;
+    }
+
+    @keyframes heroEnter {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 22px, 0) scale(0.985);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+    #hero .reveal-item {
+      opacity: 1;
+      transform: none;
+      animation: heroEnter 0.68s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms) both;
+    }
+
+    /* Staggered 3D Scroll Reveal (GPU-composited, zero blur stall) */
+    .reveal-item {
+      opacity: 0;
+      transform: perspective(900px) translate3d(0, 26px, 0) rotateX(4deg) scale(0.975);
+      transition:
+        opacity 0.62s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms),
+        transform 0.62s cubic-bezier(0.22, 1, 0.36, 1) var(--reveal-delay, 0ms);
+      will-change: opacity, transform;
+    }
+    .reveal-item.is-visible {
+      opacity: 1;
+      transform: perspective(900px) translate3d(0, 0, 0) rotateX(0deg) scale(1);
+    }
+
+    /* 3D Perspective Tilt + Radial Mouse Spotlight Glow (Fine-pointer desktop only) */
+    .tilt-card {
+      position: relative;
+      isolation: isolate;
+    }
+    .tilt-card > * {
+      position: relative;
+      z-index: 2;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .tilt-card {
+        transform-style: preserve-3d;
+        transition:
+          transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.25s ease,
+          border-color 0.25s ease;
+        will-change: transform;
+      }
+      .tilt-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.28s ease;
+        background: radial-gradient(
+          420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(184, 0, 0, 0.09),
+          rgba(245, 158, 11, 0.06) 42%,
+          transparent 72%
+        );
+      }
+      .tilt-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1px;
+        pointer-events: none;
+        z-index: 1;
+        opacity: 0;
+        transition: opacity 0.28s ease;
+        background: radial-gradient(
+          280px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(184, 0, 0, 0.42),
+          transparent 70%
+        );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+      }
+      .tilt-card:hover::before,
+      .tilt-card:hover::after {
+        opacity: 1;
+      }
+      html.dark .tilt-card::before {
+        background: radial-gradient(
+          420px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(244, 63, 94, 0.14),
+          rgba(251, 191, 36, 0.07) 42%,
+          transparent 72%
+        );
+      }
+      html.dark .tilt-card::after {
+        background: radial-gradient(
+          280px circle at var(--mouse-x, 50%) var(--mouse-y, 50%),
+          rgba(251, 191, 36, 0.48),
+          transparent 70%
+        );
+      }
+
+      /* Interactive Hero Card 3D Tilt, Glare & Parallax + Stat Mini-Card Glow */
+      .hero-interactive {
+        transform-style: preserve-3d;
+        transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease;
+        will-change: transform;
+      }
+      .hero-spotlight {
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        z-index: 2;
+        opacity: 0;
+        transition: opacity 0.32s ease;
+        background: radial-gradient(
+          560px circle at var(--hx, 50%) var(--hy, 50%),
+          rgba(255, 255, 255, 0.14),
+          rgba(251, 191, 36, 0.11) 38%,
+          transparent 72%
+        );
+      }
+      .hero-interactive:hover .hero-spotlight {
+        opacity: 1;
+      }
+      .hero-interactive::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        padding: 1.25px;
+        pointer-events: none;
+        z-index: 3;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        background: radial-gradient(
+          380px circle at var(--hx, 50%) var(--hy, 50%),
+          rgba(253, 224, 71, 0.65),
+          rgba(244, 63, 94, 0.45) 45%,
+          transparent 74%
+        );
+        -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+      }
+      .hero-interactive:hover::after {
+        opacity: 1;
+      }
+      .hero-orb {
+        transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        will-change: transform;
+      }
+      .hero-stat-card {
+        position: relative;
+        overflow: hidden;
+        transition:
+          transform 0.25s cubic-bezier(0.22, 1, 0.36, 1),
+          border-color 0.25s ease,
+          background-color 0.25s ease,
+          box-shadow 0.25s ease;
+      }
+      .hero-stat-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        background: radial-gradient(
+          220px circle at var(--sx, 50%) var(--sy, 50%),
+          rgba(251, 191, 36, 0.22),
+          transparent 70%
+        );
+      }
+      .hero-stat-card:hover {
+        transform: translate3d(0, -4px, 12px) scale(1.02);
+        border-color: rgba(253, 224, 71, 0.48);
+        background-color: rgba(0, 0, 0, 0.34);
+        box-shadow: 0 12px 26px -8px rgba(0, 0, 0, 0.45);
+      }
+      .hero-stat-card:hover::before {
+        opacity: 1;
+      }
+    }
+
+    /* Magnetic CTA + Shimmer Sweep */
+    .btn-magnetic {
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.2s cubic-bezier(0.22, 1, 0.36, 1), background-color 0.2s ease, box-shadow 0.2s ease;
+      will-change: transform;
+    }
+    .btn-magnetic::after {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 45%;
+      height: 200%;
+      transform: rotate(22deg) translate3d(-120%, 0, 0);
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.42), transparent);
+      pointer-events: none;
+    }
+    @media (hover: hover) and (pointer: fine) {
+      .btn-magnetic:hover::after {
+        transform: rotate(22deg) translate3d(420%, 0, 0);
+        transition: transform 0.72s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+    }
+
+    /* Right-edge section progress dots */
+    .section-dot {
+      transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .section-dot.active {
+      background-color: #b80000;
+      transform: scale(1.38);
+      box-shadow: 0 0 0 4px rgba(184, 0, 0, 0.2);
+    }
+    html.dark .section-dot.active {
+      background-color: #f43f5e;
+      box-shadow: 0 0 0 4px rgba(244, 63, 94, 0.26);
+    }
+
+    /* Mobile bottom nav active highlight */
+    .mobile-nav-item.active {
+      color: #b80000;
+      background-color: rgba(200, 0, 0, 0.1);
+    }
+    html.dark .mobile-nav-item.active {
+      color: #fca5a5;
+      background-color: rgba(244, 63, 94, 0.14);
+    }
+
+    @keyframes heroGradientFlow {
+      0% { background-position: 0% 45%; }
+      50% { background-position: 100% 55%; }
+      100% { background-position: 0% 45%; }
+    }
+    @keyframes heroAuroraDrift {
+      0% { transform: translate3d(-8%, -6%, 0) scale(1) rotate(0deg); }
+      50% { transform: translate3d(8%, 6%, 0) scale(1.12) rotate(8deg); }
+      100% { transform: translate3d(-8%, -6%, 0) scale(1) rotate(0deg); }
+    }
+    .hero-animated-bg {
+      background: linear-gradient(125deg, #870000 0%, #b80000 28%, #9a0026 58%, #590009 85%, #870000 100%);
+      background-size: 260% 260%;
+      animation: heroGradientFlow 12s ease-in-out infinite;
+    }
+    html.dark .hero-animated-bg {
+      background: linear-gradient(125deg, #170c10 0%, #450b19 30%, #2a0d21 62%, #130e14 86%, #170c10 100%);
+      background-size: 260% 260%;
+      animation: heroGradientFlow 12s ease-in-out infinite;
+    }
+    .hero-aurora {
+      position: absolute;
+      inset: -25%;
+      pointer-events: none;
+      z-index: 1;
+      background:
+        radial-gradient(circle at 24% 30%, rgba(251, 191, 36, 0.22), transparent 44%),
+        radial-gradient(circle at 78% 70%, rgba(244, 63, 94, 0.24), transparent 48%);
+      animation: heroAuroraDrift 16s ease-in-out infinite;
+      will-change: transform;
+    }
+    html.dark .hero-aurora {
+      background:
+        radial-gradient(circle at 22% 28%, rgba(225, 29, 72, 0.24), transparent 45%),
+        radial-gradient(circle at 76% 68%, rgba(251, 191, 36, 0.14), transparent 46%);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+        scroll-snap-type: none;
+      }
+      .reveal-item {
+        opacity: 1 !important;
+        transform: none !important;
+        animation: none !important;
+        transition: none !important;
+      }
+      .tilt-card,
+      .hero-interactive,
+      .hero-stat-card,
+      .hero-orb,
+      .btn-magnetic {
+        transform: none !important;
+        transition: none !important;
+      }
+      .tilt-card::before,
+      .tilt-card::after,
+      .hero-spotlight,
+      .hero-interactive::after,
+      .hero-stat-card::before,
+      .btn-magnetic::after {
+        display: none !important;
+      }
+      .animate-float-down,
+      .hero-animated-bg,
+      .hero-aurora {
+        animation: none !important;
+      }
+    }
+  </style>
+</head>
+<body class="font-sans min-h-screen flex flex-col transition-colors duration-200 selection:bg-[#c80000] selection:text-white">
+
+  <!-- Interactive Constellation / Quantum Graph Canvas -->
+  <canvas id="bgConstellation" class="fixed inset-0 w-full h-full pointer-events-none z-0" aria-hidden="true"></canvas>
+
+  <!-- Scroll Progress Bar bám mép trên cùng -->
+  <div class="fixed top-0 left-0 right-0 h-[3px] z-50 pointer-events-none bg-transparent">
+    <div id="scrollProgressBar" class="h-full w-full origin-left bg-gradient-to-r from-[#960000] via-[#e11d48] to-amber-400 shadow-[0_0_8px_rgba(200,0,0,0.45)]" style="transform: scaleX(0);"></div>
+  </div>
+
+  <!-- =====================================================================
+       HEADER ĐIỀU HƯỚNG TỔNG (PTIT THEME)
+       ===================================================================== -->
+  <header class="sticky top-0 z-30 bg-[#fcfbf9]/92 dark:bg-[#141519]/92 backdrop-blur-md border-b border-[#e6e2de] dark:border-[#2a2c32] shadow-xs">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex flex-wrap md:flex-nowrap items-center justify-between gap-2.5 sm:gap-3">
+      <a href="./index.html" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
+        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#fcfbf9] border border-[#e6e2de] dark:border-[#343740] p-1 flex items-center justify-center shadow-md shadow-red-600/15 group-hover:scale-105 transition">
+          <img src="./assets/ptit-logo-simple.png" alt="Logo PTIT" class="w-full h-full object-contain" />
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="text-sm sm:text-lg font-extrabold tracking-tight text-slate-900 dark:text-[#ece9ea] whitespace-nowrap">
+              PTIT Study Hub
+            </span>
+            <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-red-50 dark:bg-red-500/20 text-[#b80000] dark:text-[#fda4af] border border-red-200 dark:border-red-500/35">
+              Trang Tổng
+            </span>
+          </div>
+          <p class="text-xs text-slate-500 dark:text-[#a19fa6] hidden 2xl:block">
+            Học viện Công nghệ Bưu chính Viễn thông • Cổng Ôn Tập &amp; Công Cụ Học Tập
+          </p>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-1 lg:gap-2 shrink-0">
+        <a href="#hero" class="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-[#c7c5cc] hover:bg-red-50 hover:text-[#b80000] dark:hover:bg-[#202227] dark:hover:text-[#fda4af] transition">
+          <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
+          <span>Tổng quan</span>
+        </a>
+        <a href="#subjects" class="inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-[#c7c5cc] hover:bg-red-50 hover:text-[#b80000] dark:hover:bg-[#202227] dark:hover:text-[#fda4af] transition">
+          <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
+          <span>Môn học</span>
+        </a>
+        <a href="#videos" class="inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-[#c7c5cc] hover:bg-red-50 hover:text-[#b80000] dark:hover:bg-[#202227] dark:hover:text-[#fda4af] transition">
+          <i data-lucide="play-circle" class="w-3.5 h-3.5"></i>
+          <span>Học Video</span>
+        </a>
+        <a href="#catalog" class="inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-[#c7c5cc] hover:bg-red-50 hover:text-[#b80000] dark:hover:bg-[#202227] dark:hover:text-[#fda4af] transition">
+          <i data-lucide="folder-kanban" class="w-3.5 h-3.5"></i>
+          <span>Kho bộ đề</span>
+        </a>
+        <a href="#tools" class="inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-[#c7c5cc] hover:bg-red-50 hover:text-[#b80000] dark:hover:bg-[#202227] dark:hover:text-[#fda4af] transition">
+          <i data-lucide="history" class="w-3.5 h-3.5"></i>
+          <span>Lịch sử</span>
+        </a>
+      </nav>
+
+      <!-- Thanh tìm kiếm nhanh (trải full trên mobile hàng 2 để không ép rớt Logo/Theme) -->
+      <div class="relative w-full order-last md:order-none md:w-56 lg:w-64 md:shrink-0">
+        <i data-lucide="search" class="w-4 h-4 text-slate-400 dark:text-[#a19fa6] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+        <input
+          id="quickSearchInput"
+          type="search"
+          placeholder="Tìm đề, chương... (Ctrl+K)"
+          class="w-full pl-9 pr-3 py-2 rounded-xl text-xs sm:text-sm bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740] text-slate-800 dark:text-[#ece9ea] placeholder:text-slate-400 dark:placeholder:text-[#9c7e85] focus:outline-none focus:ring-2 focus:ring-[#b80000] dark:focus:ring-[#f43f5e] transition"
+        />
+      </div>
+
+      <!-- Nút chuyển chế độ Sáng / Tối đồng bộ -->
+      <button
+        id="btnToggleTheme"
+        onclick="toggleHubTheme()"
+        class="inline-flex items-center gap-1.5 px-3 py-2 min-h-[38px] rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-[#ece9ea] bg-[#fcfbf9] dark:bg-[#202227] hover:bg-[#f1efeb] dark:hover:bg-[#2a2c32] border border-[#e6e2de] dark:border-[#343740] shadow-xs transition shrink-0"
+        title="Đổi giao diện Sáng / Tối PTIT (đồng bộ tất cả môn)"
+        aria-label="Đổi giao diện Sáng / Tối"
+      >
+        <i id="themeIcon" data-lucide="moon" class="w-4 h-4 text-[#c80000] dark:text-amber-300"></i>
+        <span id="themeText" class="hidden sm:inline">Tối</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Thanh chấm điều hướng các phần bên phải màn hình Desktop -->
+  <nav id="sectionDots" aria-label="Điều hướng phần" class="hidden xl:flex flex-col items-center gap-3 fixed right-6 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-[#fcfbf9]/85 dark:bg-[#17181c]/85 backdrop-blur-md border border-[#e6e2de] dark:border-[#2a2c32] shadow-md">
+    <a href="#hero" data-dot="hero" title="Tổng quan" class="section-dot active w-2.5 h-2.5 rounded-full bg-[#d8d3ce] dark:bg-[#343740]"></a>
+    <a href="#subjects" data-dot="subjects" title="Các môn ôn luyện" class="section-dot w-2.5 h-2.5 rounded-full bg-[#d8d3ce] dark:bg-[#343740]"></a>
+    <a href="#videos" data-dot="videos" title="Học tập bằng Video" class="section-dot w-2.5 h-2.5 rounded-full bg-[#d8d3ce] dark:bg-[#343740]"></a>
+    <a href="#catalog" data-dot="catalog" title="Kho bộ đề &amp; JSON" class="section-dot w-2.5 h-2.5 rounded-full bg-[#d8d3ce] dark:bg-[#343740]"></a>
+    <a href="#tools" data-dot="tools" title="Lịch sử ôn tập" class="section-dot w-2.5 h-2.5 rounded-full bg-[#d8d3ce] dark:bg-[#343740]"></a>
+  </nav>
+
+  <!-- Thanh điều hướng đáy nổi cho Mobile / Tablet nhỏ -->
+  <nav id="mobileBottomNav" aria-label="Điều hướng nhanh di động" class="md:hidden fixed bottom-3 left-3 right-3 z-30 rounded-2xl bg-[#fcfbf9]/90 dark:bg-[#141519]/90 backdrop-blur-lg border border-[#e6e2de] dark:border-[#2a2c32] shadow-xl px-1.5 py-1.5 grid grid-cols-5 gap-1">
+    <a href="#hero" data-mobile-nav="hero" class="mobile-nav-item active flex flex-col items-center justify-center py-1.5 rounded-xl text-[10px] font-bold text-slate-600 dark:text-[#c7c5cc] transition">
+      <i data-lucide="sparkles" class="w-4 h-4 mb-0.5"></i>
+      <span>Tổng quan</span>
+    </a>
+    <a href="#subjects" data-mobile-nav="subjects" class="mobile-nav-item flex flex-col items-center justify-center py-1.5 rounded-xl text-[10px] font-bold text-slate-600 dark:text-[#c7c5cc] transition">
+      <i data-lucide="book-open" class="w-4 h-4 mb-0.5"></i>
+      <span>Môn học</span>
+    </a>
+    <a href="#videos" data-mobile-nav="videos" class="mobile-nav-item flex flex-col items-center justify-center py-1.5 rounded-xl text-[10px] font-bold text-slate-600 dark:text-[#c7c5cc] transition">
+      <i data-lucide="play-circle" class="w-4 h-4 mb-0.5"></i>
+      <span>Video</span>
+    </a>
+    <a href="#catalog" data-mobile-nav="catalog" class="mobile-nav-item flex flex-col items-center justify-center py-1.5 rounded-xl text-[10px] font-bold text-slate-600 dark:text-[#c7c5cc] transition">
+      <i data-lucide="folder-kanban" class="w-4 h-4 mb-0.5"></i>
+      <span>Kho đề</span>
+    </a>
+    <a href="#tools" data-mobile-nav="tools" class="mobile-nav-item flex flex-col items-center justify-center py-1.5 rounded-xl text-[10px] font-bold text-slate-600 dark:text-[#c7c5cc] transition">
+      <i data-lucide="history" class="w-4 h-4 mb-0.5"></i>
+      <span>Lịch sử</span>
+    </a>
+  </nav>
+
+  <main class="relative z-10 flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+
+    <!-- =====================================================================
+         HERO & THỐNG KÊ TỔNG QUAN (ĐỎ ĐÔ PTIT)
+         ===================================================================== -->
+    <section id="hero" class="hub-section relative">
+      <div id="heroCard" class="hero-interactive hero-animated-bg rounded-3xl text-[#ece9ea] p-6 sm:p-10 lg:p-14 shadow-2xl border border-red-700/40 dark:border-red-900/60 relative overflow-hidden">
+        <div class="hero-aurora" aria-hidden="true"></div>
+        <div class="hidden dark:block absolute inset-0 pointer-events-none opacity-45" style="background-image: radial-gradient(rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 20px 20px;"></div>
+        <div class="hero-spotlight" aria-hidden="true"></div>
+        <div id="heroOrb1" class="hero-orb absolute -top-24 -right-24 w-80 h-80 rounded-full bg-white/15 dark:bg-red-500/20 blur-3xl pointer-events-none"></div>
+        <div id="heroOrb2" class="hero-orb absolute -bottom-24 -left-24 w-80 h-80 rounded-full bg-amber-300/15 dark:bg-rose-500/15 blur-3xl pointer-events-none"></div>
+
+        <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center">
+          <div class="lg:col-span-7 space-y-5 reveal-item" style="--reveal-delay: 40ms">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 border border-white/20 text-xs font-semibold text-red-50">
+              <span class="w-5 h-5 rounded-full bg-[#fcfbf9] p-0.5 flex items-center justify-center shrink-0 shadow-xs">
+                <img src="./assets/ptit-logo-simple.png" alt="PTIT" class="w-full h-full object-contain" />
+              </span>
+              <span>PTIT • Học viện Công nghệ Bưu chính Viễn thông</span>
+            </div>
+            <h1 class="hero-title font-extrabold tracking-tight">
+              Trung tâm Ôn luyện Tổng hợp<br class="hidden sm:inline" />
+              <span class="text-amber-300">
+                Toán Rời Rạc &amp; Vật Lý 3
+              </span>
+            </h1>
+            <p class="text-sm sm:text-lg text-red-50/90 dark:text-rose-100/85 max-w-2xl leading-relaxed">
+              Truy cập nhanh toàn bộ <strong>2.000 câu hỏi trắc nghiệm</strong> có lời giải chi tiết bằng công thức KaTeX,
+              chế độ Luyện tập / Thi thử đếm ngược, bảng tra cứu lý thuyết, máy tính khoa học và kho tệp JSON chuẩn hóa.
+            </p>
+            <div class="flex flex-col sm:flex-row flex-wrap gap-3.5 pt-2">
+              <a
+                href="./to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html"
+                class="btn-magnetic inline-flex items-center justify-center gap-2 px-6 py-3.5 min-h-[48px] rounded-2xl text-sm sm:text-base font-bold bg-white hover:bg-red-50 text-[#a30000] shadow-lg"
+              >
+                <i data-lucide="sigma" class="w-5 h-5"></i>
+                <span>Ôn Toán Rời Rạc (1000 câu)</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+              <a
+                href="./vatly3/index.html"
+                class="btn-magnetic inline-flex items-center justify-center gap-2 px-6 py-3.5 min-h-[48px] rounded-2xl text-sm sm:text-base font-bold bg-[#141519]/85 hover:bg-[#141519] text-amber-300 border border-white/20 shadow-lg"
+              >
+                <i data-lucide="atom" class="w-5 h-5"></i>
+                <span>Ôn Vật Lý 3 (1000 câu)</span>
+                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- 4 Ô thống kê tổng hợp từ localStorage (có Count-Up & Hover Spotlight) -->
+          <div class="lg:col-span-5 grid grid-cols-2 gap-3 sm:gap-4">
+            <a href="#subjects" class="hero-stat-card reveal-item block rounded-2xl bg-black/20 border border-white/15 p-4 sm:p-5 space-y-1.5 group cursor-pointer" style="--reveal-delay: 120ms">
+              <div class="text-xs text-red-100 flex items-center gap-1.5">
+                <i data-lucide="database" class="w-3.5 h-3.5 text-amber-300 group-hover:scale-110 transition-transform"></i>
+                <span>Tổng ngân hàng</span>
+              </div>
+              <div class="text-2xl sm:text-4xl font-extrabold text-white"><span id="heroStatBank" data-count-target="2000">2000</span> <span class="text-sm font-semibold text-red-100">câu</span></div>
+              <div class="text-[11px] sm:text-xs text-red-100/80">1000 Toán Rời Rạc • 1000 Vật Lý 3</div>
+            </a>
+
+            <a href="./to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html" class="hero-stat-card reveal-item block rounded-2xl bg-black/20 border border-white/15 p-4 sm:p-5 space-y-1.5 group cursor-pointer" style="--reveal-delay: 190ms">
+              <div class="text-xs text-red-100 flex items-center gap-1.5">
+                <i data-lucide="trophy" class="w-3.5 h-3.5 text-amber-300 group-hover:scale-110 transition-transform"></i>
+                <span>Kỷ lục Toán Rời Rạc</span>
+              </div>
+              <div id="statDmBest" class="text-2xl sm:text-4xl font-extrabold text-amber-300">--</div>
+              <div id="statDmCount" class="text-[11px] sm:text-xs text-red-100/80">0 lượt đã hoàn thành</div>
+            </a>
+
+            <a href="./vatly3/index.html" class="hero-stat-card reveal-item block rounded-2xl bg-black/20 border border-white/15 p-4 sm:p-5 space-y-1.5 group cursor-pointer" style="--reveal-delay: 260ms">
+              <div class="text-xs text-red-100 flex items-center gap-1.5">
+                <i data-lucide="activity" class="w-3.5 h-3.5 text-amber-300 group-hover:scale-110 transition-transform"></i>
+                <span>Tiến độ Vật Lý 3</span>
+              </div>
+              <div id="statVlSeen" class="text-2xl sm:text-4xl font-extrabold text-white">0 <span class="text-sm font-semibold text-red-100">câu</span></div>
+              <div id="statVlCount" class="text-[11px] sm:text-xs text-red-100/80">0 lượt đã hoàn thành</div>
+            </a>
+
+            <a href="#catalog" class="hero-stat-card reveal-item block rounded-2xl bg-black/20 border border-white/15 p-4 sm:p-5 space-y-1.5 group cursor-pointer" style="--reveal-delay: 330ms">
+              <div class="text-xs text-red-100 flex items-center gap-1.5">
+                <i data-lucide="layers" class="w-3.5 h-3.5 text-amber-300 group-hover:scale-110 transition-transform"></i>
+                <span>Kho học liệu &amp; JSON</span>
+              </div>
+              <div class="text-2xl sm:text-4xl font-extrabold text-emerald-300"><span id="heroStatFiles" data-count-target="36">36</span> <span class="text-sm font-semibold">tệp</span></div>
+              <div class="text-[11px] sm:text-xs text-red-100/80">Sẵn sàng mở hoặc tải về</div>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-6 hidden lg:flex justify-center">
+        <a href="#subjects" class="inline-flex flex-col items-center gap-1 text-xs font-semibold text-slate-500 dark:text-[#a19fa6] hover:text-[#b80000] dark:hover:text-red-300 transition">
+          <span>Cuộn xuống để chọn môn học</span>
+          <i data-lucide="chevrons-down" class="w-5 h-5 animate-float-down text-[#b80000] dark:text-[#fb7185]"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         PHẦN 1: HAI MÔN HỌC CHÍNH
+         ===================================================================== -->
+    <section id="subjects" class="hub-section space-y-6 sm:space-y-7">
+      <div class="flex items-center justify-between flex-wrap gap-2 reveal-item" style="--reveal-delay: 40ms">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-red-50 dark:bg-red-500/20 text-[#b80000] dark:text-[#fda4af] border border-red-200 dark:border-red-500/35 mb-2">
+            Phần 1 / 4 • Môn học trọng tâm
+          </span>
+          <h2 class="section-title font-extrabold text-slate-900 dark:text-[#ece9ea] flex items-center gap-3">
+            <i data-lucide="book-open-check" class="w-7 h-7 text-[#b80000] dark:text-[#fb7185] shrink-0"></i>
+            <span>Các môn ôn luyện trọng tâm</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-[#a19fa6] mt-1">
+            Chọn môn học hoặc bấm thẳng vào chế độ thi thử / bộ đề mong muốn
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7">
+
+        <!-- CARD TOÁN RỜI RẠC -->
+        <div class="reveal-item flex" style="--reveal-delay: 120ms">
+          <article class="tilt-card w-full rounded-3xl bg-[#fcfbf9] dark:bg-[#17181c] border border-[#e6e2de] dark:border-[#2a2c32] shadow-md hover:shadow-xl overflow-hidden flex flex-col">
+            <div class="p-6 sm:p-7 space-y-5 flex-1">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex items-center gap-3.5">
+                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#c80000] to-[#8a0000] text-white flex items-center justify-center shadow-md shadow-red-600/25 shrink-0">
+                    <i data-lucide="sigma" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-[#ece9ea]">
+                      Toán Rời Rạc 1 &amp; 2 (PTIT)
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-[#a19fa6] mt-0.5">
+                      Logic, Đếm, Truy hồi, Sinh, Nhánh cận &amp; Lý thuyết Đồ thị
+                    </p>
+                  </div>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-red-50 dark:bg-red-500/20 text-[#b80000] dark:text-[#fda4af] border border-red-200 dark:border-red-500/35 shrink-0">
+                  1000 câu
+                </span>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2.5 text-center">
+                <div class="p-2.5 rounded-xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740]">
+                  <div class="text-xs text-slate-500 dark:text-[#a19fa6]">Bộ đề</div>
+                  <div class="text-base font-extrabold text-slate-900 dark:text-[#ece9ea]">28 bộ</div>
+                </div>
+                <div class="p-2.5 rounded-xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740]">
+                  <div class="text-xs text-slate-500 dark:text-[#a19fa6]">Điểm cao nhất</div>
+                  <div id="cardDmBest" class="text-base font-extrabold text-[#b80000] dark:text-[#fb7185]">Chưa có</div>
+                </div>
+                <div class="p-2.5 rounded-xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740]">
+                  <div class="text-xs text-slate-500 dark:text-[#a19fa6]">Lượt thi</div>
+                  <div id="cardDmCount" class="text-base font-extrabold text-slate-900 dark:text-[#ece9ea]">0</div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-[#a19fa6]">Lối tắt vào thẳng chế độ:</div>
+                <div class="flex flex-wrap gap-2">
+                  <a href="./to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html?exam=random15&mode=exam" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-rose-50 dark:bg-rose-500/15 text-rose-800 dark:text-rose-200 border border-rose-200 dark:border-rose-500/35 hover:bg-rose-100 dark:hover:bg-rose-500/25 transition">
+                    ⚡ KT 30 phút (15 câu)
+                  </a>
+                  <a href="./to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html?exam=random25&mode=exam" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-amber-50 dark:bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-200 dark:border-amber-500/35 hover:bg-amber-100 dark:hover:bg-amber-500/25 transition">
+                    🎲 Thi thử (25 câu)
+                  </a>
+                  <a href="./to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html?exam=random40&mode=exam" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-orange-50 dark:bg-orange-500/15 text-orange-800 dark:text-orange-200 border border-orange-200 dark:border-orange-500/35 hover:bg-orange-100 dark:hover:bg-orange-500/25 transition">
+                    🔥 Cuối kỳ (40 câu)
+                  </a>
+                  <a href="./to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html?exam=ext600" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-red-50 dark:bg-red-500/15 text-[#9e0000] dark:text-red-200 border border-red-200 dark:border-red-500/35 hover:bg-red-100 dark:hover:bg-red-500/25 transition">
+                    ✨ 600 câu mới
+                  </a>
+                  <a href="./to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html?exam=all1000" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-50 dark:bg-emerald-500/15 text-emerald-800 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-500/35 hover:bg-emerald-100 dark:hover:bg-emerald-500/25 transition">
+                    🏆 Trọn bộ 1000 câu
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-6 py-4 bg-[#f1efeb] dark:bg-[#202227] border-t border-[#e6e2de] dark:border-[#2a2c32] flex items-center justify-between gap-3">
+              <span class="text-xs text-slate-500 dark:text-[#a19fa6]">Sổ tay 5 chương, Máy tính khoa học &amp; Trình sinh đề 8 chương</span>
+              <a
+                href="./to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html"
+                class="inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] rounded-xl text-xs sm:text-sm font-bold text-white bg-[#b80000] hover:bg-[#960000] shadow-sm transition shrink-0"
+              >
+                <span>Mở ứng dụng</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- CARD VẬT LÝ 3 -->
+        <div class="reveal-item flex" style="--reveal-delay: 220ms">
+          <article class="tilt-card w-full rounded-3xl bg-[#fcfbf9] dark:bg-[#17181c] border border-[#e6e2de] dark:border-[#2a2c32] shadow-md hover:shadow-xl overflow-hidden flex flex-col">
+            <div class="p-6 sm:p-7 space-y-5 flex-1">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex items-center gap-3.5">
+                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#9e0000] to-[#450a0a] text-amber-300 flex items-center justify-center shadow-md shadow-red-900/25 shrink-0">
+                    <i data-lucide="atom" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-[#ece9ea]">
+                      Vật Lý 3 &amp; Thí Nghiệm (PTIT)
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-[#a19fa6] mt-0.5">
+                      Quang học sóng, Lượng tử, Cơ học lượng tử, Nguyên tử &amp; Chất rắn
+                    </p>
+                  </div>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-500/35 shrink-0">
+                  1000 câu
+                </span>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2.5 text-center">
+                <div class="p-2.5 rounded-xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740]">
+                  <div class="text-xs text-slate-500 dark:text-[#a19fa6]">Chuyên đề</div>
+                  <div class="text-base font-extrabold text-slate-900 dark:text-[#ece9ea]">10 × 100c</div>
+                </div>
+                <div class="p-2.5 rounded-xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740]">
+                  <div class="text-xs text-slate-500 dark:text-[#a19fa6]">Điểm cao nhất</div>
+                  <div id="cardVlBest" class="text-base font-extrabold text-[#b80000] dark:text-[#fb7185]">Chưa có</div>
+                </div>
+                <div class="p-2.5 rounded-xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740]">
+                  <div class="text-xs text-slate-500 dark:text-[#a19fa6]">Đã luyện</div>
+                  <div id="cardVlSeen" class="text-base font-extrabold text-slate-900 dark:text-[#ece9ea]">0 câu</div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-[#a19fa6]">Lối tắt vào thẳng bộ đề mới:</div>
+                <div class="flex flex-wrap gap-2">
+                  <a href="./vatly3/index.html?exam=ck3&mode=exam" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-rose-50 dark:bg-rose-500/15 text-rose-800 dark:text-rose-200 border border-rose-200 dark:border-rose-500/35 hover:bg-rose-100 dark:hover:bg-rose-500/25 transition">
+                    🎯 Đề Số 3 (50c)
+                  </a>
+                  <a href="./vatly3/index.html?exam=ck4&mode=exam" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-amber-50 dark:bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-200 dark:border-amber-500/35 hover:bg-amber-100 dark:hover:bg-amber-500/25 transition">
+                    🎯 Đề Số 4 (50c)
+                  </a>
+                  <a href="./vatly3/index.html?exam=ck5&mode=exam" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-orange-50 dark:bg-orange-500/15 text-orange-800 dark:text-orange-200 border border-orange-200 dark:border-orange-500/35 hover:bg-orange-100 dark:hover:bg-orange-500/25 transition">
+                    🔥 Đề Số 5 (50c)
+                  </a>
+                  <a href="./vatly3/index.html?exam=ck6&mode=exam" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-red-50 dark:bg-red-500/15 text-[#9e0000] dark:text-red-200 border border-red-200 dark:border-red-500/35 hover:bg-red-100 dark:hover:bg-red-500/25 transition">
+                    🚀 Đề Số 6 (50c)
+                  </a>
+                  <a href="./vatly3/index.html?exam=thuchanh" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-sky-50 dark:bg-sky-500/15 text-sky-800 dark:text-sky-200 border border-sky-200 dark:border-sky-500/35 hover:bg-sky-100 dark:hover:bg-sky-500/25 transition">
+                    🧪 Thực hành (25c)
+                  </a>
+                  <a href="./vatly3/index.html?exam=new500" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-red-50 dark:bg-red-500/15 text-[#9e0000] dark:text-red-200 border border-red-200 dark:border-red-500/35 hover:bg-red-100 dark:hover:bg-red-500/25 transition">
+                    ✨ 500 câu mới
+                  </a>
+                  <a href="./vatly3/index.html?exam=all1000" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-50 dark:bg-emerald-500/15 text-emerald-800 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-500/35 hover:bg-emerald-100 dark:hover:bg-emerald-500/25 transition">
+                    🏆 Trọn bộ 1000 câu
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-6 py-4 bg-[#f1efeb] dark:bg-[#202227] border-t border-[#e6e2de] dark:border-[#2a2c32] flex items-center justify-between gap-3">
+              <span class="text-xs text-slate-500 dark:text-[#a19fa6]">Tích hợp Máy tính khoa học, Bảng hằng số &amp; Sổ tay</span>
+              <a
+                href="./vatly3/index.html"
+                class="inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] rounded-xl text-xs sm:text-sm font-bold text-white bg-[#1b0b0b] hover:bg-[#331317] dark:bg-[#e11d48] dark:hover:bg-[#be123c] shadow-sm transition shrink-0"
+              >
+                <span>Mở ứng dụng</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <div class="pt-2 hidden lg:flex justify-center reveal-item" style="--reveal-delay: 280ms">
+        <a href="#videos" class="inline-flex flex-col items-center gap-1 text-xs font-semibold text-slate-500 dark:text-[#a19fa6] hover:text-[#b80000] dark:hover:text-red-300 transition">
+          <span>Cuộn xuống Phòng học Video bài giảng</span>
+          <i data-lucide="chevrons-down" class="w-5 h-5 animate-float-down text-[#b80000] dark:text-[#fb7185]"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         PHẦN 2: GIỚI THIỆU PHÒNG HỌC VIDEO BÀI GIẢNG PTIT
+         ===================================================================== -->
+    <section id="videos" class="hub-section space-y-6 sm:space-y-7">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 reveal-item" style="--reveal-delay: 40ms">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-red-50 dark:bg-red-500/20 text-[#b80000] dark:text-[#fda4af] border border-red-200 dark:border-red-500/35 mb-2">
+            Phần 2 / 4 • Học tập bằng Video
+          </span>
+          <h2 class="section-title font-extrabold text-slate-900 dark:text-[#ece9ea] flex items-center gap-3">
+            <i data-lucide="clapperboard" class="w-7 h-7 text-[#b80000] dark:text-[#fb7185] shrink-0"></i>
+            <span>Học tập bằng Video Bài Giảng</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-[#a19fa6] mt-1">
+            Ôn lý thuyết trực quan qua video theo chuyên đề hoặc mở trực tiếp bài giảng YouTube &amp; video cá nhân tại trang riêng
+          </p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-7">
+
+        <!-- CARD 1: LỘ TRÌNH VIDEO PTIT THEO MÔN -->
+        <div class="reveal-item flex" style="--reveal-delay: 120ms">
+          <article class="tilt-card w-full rounded-3xl bg-[#fcfbf9] dark:bg-[#17181c] border border-[#e6e2de] dark:border-[#2a2c32] shadow-md hover:shadow-xl overflow-hidden flex flex-col">
+            <div class="p-6 sm:p-7 space-y-5 flex-1">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex items-center gap-3.5">
+                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#c80000] to-[#8a0000] text-white flex items-center justify-center shadow-md shadow-red-600/25 shrink-0">
+                    <i data-lucide="play-circle" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-[#ece9ea]">
+                      Lộ trình Video Bài Giảng PTIT
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-[#a19fa6] mt-0.5">
+                      8 bài giảng Toán Rời Rạc (Chương 1–5) &amp; 28 bài giảng Vật Lý 3 (Chương 1–9) kèm đề luyện từng phần
+                    </p>
+                  </div>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-red-50 dark:bg-red-500/20 text-[#b80000] dark:text-[#fda4af] border border-red-200 dark:border-red-500/35 shrink-0">
+                  36 video
+                </span>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2.5 text-center">
+                <div class="p-2.5 rounded-xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740]">
+                  <div class="text-xs text-slate-500 dark:text-[#a19fa6]">Môn học</div>
+                  <div class="text-base font-extrabold text-slate-900 dark:text-[#ece9ea]">2 môn</div>
+                </div>
+                <div class="p-2.5 rounded-xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740]">
+                  <div class="text-xs text-slate-500 dark:text-[#a19fa6]">Đã học xong</div>
+                  <div id="cardVidWatched" class="text-base font-extrabold text-[#b80000] dark:text-[#fb7185]">0 / 36</div>
+                </div>
+                <div class="p-2.5 rounded-xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740]">
+                  <div class="text-xs text-slate-500 dark:text-[#a19fa6]">Link sẵn có</div>
+                  <div id="cardVidLinks" class="text-base font-extrabold text-slate-900 dark:text-[#ece9ea]">36</div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-[#a19fa6]">Lối tắt vào chuyên đề video:</div>
+                <div class="flex flex-wrap gap-2">
+                  <a href="./video/index.html?group=trr" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-rose-50 dark:bg-rose-500/15 text-rose-800 dark:text-rose-200 border border-rose-200 dark:border-rose-500/35 hover:bg-rose-100 dark:hover:bg-rose-500/25 transition">
+                    🎬 Toán Rời Rạc (8 bài Ch 1–5)
+                  </a>
+                  <a href="./video/index.html?group=vl3" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-amber-50 dark:bg-amber-500/15 text-amber-800 dark:text-amber-200 border border-amber-200 dark:border-amber-500/35 hover:bg-amber-100 dark:hover:bg-amber-500/25 transition">
+                    ⚛️ Vật Lý 3 (28 bài Ch 1–9)
+                  </a>
+                  <a href="./video/index.html?id=vid-trr-3" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-red-50 dark:bg-red-500/15 text-[#9e0000] dark:text-red-200 border border-red-200 dark:border-red-500/35 hover:bg-red-100 dark:hover:bg-red-500/25 transition">
+                    🧮 Bài toán Đếm &amp; Tối ưu
+                  </a>
+                  <a href="./video/index.html?id=vid-vl3-1" class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-emerald-50 dark:bg-emerald-500/15 text-emerald-800 dark:text-emerald-200 border border-emerald-200 dark:border-emerald-500/35 hover:bg-emerald-100 dark:hover:bg-emerald-500/25 transition">
+                    🌊 Dao động &amp; Giao thoa
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-6 py-4 bg-[#f1efeb] dark:bg-[#202227] border-t border-[#e6e2de] dark:border-[#2a2c32] flex items-center justify-between gap-3">
+              <span class="text-xs text-slate-500 dark:text-[#a19fa6]">Đánh dấu tiến độ &amp; chuyển thẳng sang làm đề từng chương</span>
+              <a
+                href="./video/index.html"
+                class="inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] rounded-xl text-xs sm:text-sm font-bold text-white bg-[#b80000] hover:bg-[#960000] shadow-sm transition shrink-0"
+              >
+                <span>Mở Phòng Video</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+        <!-- CARD 2: THÊM VIDEO CÁ NHÂN & OFFLINE -->
+        <div class="reveal-item flex" style="--reveal-delay: 220ms">
+          <article class="tilt-card w-full rounded-3xl bg-[#fcfbf9] dark:bg-[#17181c] border border-[#e6e2de] dark:border-[#2a2c32] shadow-md hover:shadow-xl overflow-hidden flex flex-col">
+            <div class="p-6 sm:p-7 space-y-5 flex-1">
+              <div class="flex items-start justify-between gap-4">
+                <div class="flex items-center gap-3.5">
+                  <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-[#9e0000] to-[#450a0a] text-amber-300 flex items-center justify-center shadow-md shadow-red-900/25 shrink-0">
+                    <i data-lucide="list-plus" class="w-6 h-6"></i>
+                  </div>
+                  <div>
+                    <h3 class="text-lg sm:text-xl font-extrabold text-slate-900 dark:text-[#ece9ea]">
+                      Kho Video Cá Nhân &amp; Ghi chú
+                    </h3>
+                    <p class="text-xs text-slate-500 dark:text-[#a19fa6] mt-0.5">
+                      Thêm link YouTube / Playlist riêng, phát file video offline &amp; lưu ghi chú công thức
+                    </p>
+                  </div>
+                </div>
+                <span class="px-3 py-1 rounded-full text-xs font-bold bg-amber-50 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-200 dark:border-amber-500/35 shrink-0">
+                  Tùy biến
+                </span>
+              </div>
+
+              <div class="grid grid-cols-3 gap-2.5 text-center">
+                <div class="p-2.5 rounded-xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740]">
+                  <div class="text-xs text-slate-500 dark:text-[#a19fa6]">Video đã thêm</div>
+                  <div id="cardVidCustom" class="text-base font-extrabold text-slate-900 dark:text-[#ece9ea]">0</div>
+                </div>
+                <div class="p-2.5 rounded-xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740]">
+                  <div class="text-xs text-slate-500 dark:text-[#a19fa6]">Ghi chú đã lưu</div>
+                  <div id="cardVidNotes" class="text-base font-extrabold text-amber-600 dark:text-amber-400">0</div>
+                </div>
+                <div class="p-2.5 rounded-xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740]">
+                  <div class="text-xs text-slate-500 dark:text-[#a19fa6]">Định dạng</div>
+                  <div class="text-base font-extrabold text-slate-900 dark:text-[#ece9ea]">YT / MP4</div>
+                </div>
+              </div>
+
+              <div class="space-y-2">
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-400 dark:text-[#a19fa6]">Tính năng tại trang xem Video:</div>
+                <div class="flex flex-wrap gap-2">
+                  <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#f1efeb] dark:bg-[#202227] text-slate-700 dark:text-[#c7c5cc] border border-[#e6e2de] dark:border-[#343740]">
+                    🔗 Nhúng YouTube / Playlist
+                  </span>
+                  <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#f1efeb] dark:bg-[#202227] text-slate-700 dark:text-[#c7c5cc] border border-[#e6e2de] dark:border-[#343740]">
+                    💻 Mở video từ máy (.mp4/.webm)
+                  </span>
+                  <span class="px-3 py-1.5 rounded-xl text-xs font-semibold bg-[#f1efeb] dark:bg-[#202227] text-slate-700 dark:text-[#c7c5cc] border border-[#e6e2de] dark:border-[#343740]">
+                    📝 Ghi chú tự động lưu
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            <div class="px-6 py-4 bg-[#f1efeb] dark:bg-[#202227] border-t border-[#e6e2de] dark:border-[#2a2c32] flex items-center justify-between gap-3">
+              <span class="text-xs text-slate-500 dark:text-[#a19fa6]">Thêm link bài giảng riêng hoặc phát video ngoại tuyến</span>
+              <a
+                href="./video/index.html?tab=custom"
+                class="inline-flex items-center gap-1.5 px-4 py-2 min-h-[40px] rounded-xl text-xs sm:text-sm font-bold text-white bg-[#1b0b0b] hover:bg-[#331317] dark:bg-[#e11d48] dark:hover:bg-[#be123c] shadow-sm transition shrink-0"
+              >
+                <span>Thêm &amp; Xem Video</span>
+                <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+              </a>
+            </div>
+          </article>
+        </div>
+
+      </div>
+
+      <div class="pt-2 hidden lg:flex justify-center reveal-item" style="--reveal-delay: 280ms">
+        <a href="#catalog" class="inline-flex flex-col items-center gap-1 text-xs font-semibold text-slate-500 dark:text-[#a19fa6] hover:text-[#b80000] dark:hover:text-red-300 transition">
+          <span>Cuộn xuống để duyệt 32 bộ đề &amp; tệp JSON</span>
+          <i data-lucide="chevrons-down" class="w-5 h-5 animate-float-down text-[#b80000] dark:text-[#fb7185]"></i>
+        </a>
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         PHẦN 3: DANH MỤC ĐẦY ĐỦ BỘ ĐỀ & KHO DỮ LIỆU JSON
+         ===================================================================== -->
+    <section id="catalog" class="hub-section space-y-6">
+      <div class="flex flex-col lg:flex-row lg:items-end justify-between gap-4 reveal-item" style="--reveal-delay: 40ms">
+        <div>
+          <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-red-50 dark:bg-red-500/20 text-[#b80000] dark:text-[#fda4af] border border-red-200 dark:border-red-500/35 mb-2">
+            Phần 3 / 4 • Kho bộ đề chuẩn hóa
+          </span>
+          <h2 class="section-title font-extrabold text-slate-900 dark:text-[#ece9ea] flex items-center gap-3">
+            <i data-lucide="folder-kanban" class="w-7 h-7 text-[#b80000] dark:text-[#fb7185] shrink-0"></i>
+            <span>Danh mục Bộ đề, Chương &amp; Tệp JSON</span>
+          </h2>
+          <p class="text-xs sm:text-sm text-slate-500 dark:text-[#a19fa6] mt-1">
+            Mở làm bài trực tiếp từng bộ đề Toán Rời Rạc &amp; Vật Lý 3 hoặc tải tệp JSON chuẩn của cả hai môn
+          </p>
+        </div>
+
+        <!-- Bộ lọc nhóm (trượt ngang mượt trên Mobile) -->
+        <div class="flex flex-nowrap overflow-x-auto snap-x no-scrollbar gap-1.5 p-1.5 rounded-2xl bg-[#ece9e4] dark:bg-[#17181c] border border-[#e6e2de] dark:border-[#2a2c32] w-full lg:w-auto shrink-0" id="catalogFilterTabs">
+          <button onclick="setCatalogFilter('all')" data-filter="all" class="cat-filter-btn shrink-0 snap-start whitespace-nowrap px-3.5 py-2 rounded-xl text-xs font-bold transition bg-white dark:bg-[#c80000] text-[#c80000] dark:text-[#ece9ea] shadow-xs">
+            Tất cả (36)
+          </button>
+          <button onclick="setCatalogFilter('trr-core')" data-filter="trr-core" class="cat-filter-btn shrink-0 snap-start whitespace-nowrap px-3.5 py-2 rounded-xl text-xs font-semibold transition text-slate-600 dark:text-[#c7c5cc] hover:text-slate-900 dark:hover:text-[#ece9ea]">
+            TRR Chuyên đề &amp; PTIT (10)
+          </button>
+          <button onclick="setCatalogFilter('trr-chapters')" data-filter="trr-chapters" class="cat-filter-btn shrink-0 snap-start whitespace-nowrap px-3.5 py-2 rounded-xl text-xs font-semibold transition text-slate-600 dark:text-[#c7c5cc] hover:text-slate-900 dark:hover:text-[#ece9ea]">
+            TRR 8 Chương &amp; Tổng hợp (12)
+          </button>
+          <button onclick="setCatalogFilter('vl3')" data-filter="vl3" class="cat-filter-btn shrink-0 snap-start whitespace-nowrap px-3.5 py-2 rounded-xl text-xs font-semibold transition text-slate-600 dark:text-[#c7c5cc] hover:text-slate-900 dark:hover:text-[#ece9ea]">
+            Vật Lý 3 (14)
+          </button>
+        </div>
+      </div>
+
+      <div id="catalogGrid" class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
+        <!-- Render động bởi JS -->
+      </div>
+    </section>
+
+    <!-- =====================================================================
+         PHẦN 4: HOẠT ĐỘNG ÔN TẬP GẦN ĐÂY
+         ===================================================================== -->
+    <section id="tools" class="hub-section space-y-6">
+      <div class="reveal-item" style="--reveal-delay: 40ms">
+        <span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold uppercase tracking-wider bg-red-50 dark:bg-red-500/20 text-[#b80000] dark:text-[#fda4af] border border-red-200 dark:border-red-500/35 mb-2">
+          Phần 4 / 4 • Nhật ký ôn tập
+        </span>
+        <h2 class="section-title font-extrabold text-slate-900 dark:text-[#ece9ea] flex items-center gap-3">
+          <i data-lucide="history" class="w-7 h-7 text-[#b80000] dark:text-[#fb7185] shrink-0"></i>
+          <span>Lịch sử Ôn tập gần đây</span>
+        </h2>
+      </div>
+
+      <!-- Hoạt động làm bài gần đây (toàn chiều rộng) -->
+      <div class="reveal-item rounded-3xl bg-[#fcfbf9] dark:bg-[#17181c] border border-[#e6e2de] dark:border-[#2a2c32] shadow-md p-6 sm:p-8 space-y-4" style="--reveal-delay: 120ms">
+        <div class="flex items-center justify-between gap-2">
+          <div>
+            <h3 class="text-base sm:text-lg font-extrabold text-slate-900 dark:text-[#ece9ea] flex items-center gap-2">
+              <i data-lucide="history" class="w-5 h-5 text-[#b80000] dark:text-[#fb7185]"></i>
+              <span>Hoạt động ôn tập gần đây</span>
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-[#a19fa6]">
+              Tổng hợp lịch sử từ trình duyệt (<code class="font-mono">localStorage</code>) của Toán Rời Rạc &amp; Vật Lý 3
+            </p>
+          </div>
+        </div>
+
+        <div id="recentActivityList" class="grid grid-cols-1 md:grid-cols-2 gap-3">
+          <!-- Render động bởi JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="relative z-10 border-t border-[#e6e2de] dark:border-[#2a2c32] bg-[#fcfbf9]/92 dark:bg-[#141519]/92 backdrop-blur-md pb-24 md:pb-5">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 flex flex-wrap items-center justify-between gap-3 text-xs text-slate-500 dark:text-[#a19fa6]">
+      <div class="flex items-center gap-2.5">
+        <img src="./assets/ptit-logo.png" alt="Logo PTIT" class="w-7 h-7 rounded-lg bg-white border border-[#e6e2de] dark:border-[#343740] object-contain shrink-0" />
+        <span class="font-extrabold text-[#b80000] dark:text-[#fb7185]">PTIT Study Hub</span>
+        <span>•</span>
+        <span>Toán Rời Rạc (1000 câu) &amp; Vật Lý 3 (1000 câu)</span>
+      </div>
+      <div>Phím tắt: <code class="px-1.5 py-0.5 rounded bg-red-50 dark:bg-[#202227] text-[#b80000] dark:text-[#fda4af] font-mono">Ctrl + K</code> để tìm nhanh bộ đề</div>
+    </div>
+  </footer>
+
+  <script>
+    const TRR_URL = "./to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html";
+    const TRR_DIR = "./to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/";
+
+    const CATALOG_ITEMS = [
+      { group: "trr-core", subject: "Toán Rời Rạc", badge: "16 câu", title: "Đề 1: Logic, Tập Hợp, Bit & Độ Phức Tạp", desc: "Chương 1 Giáo trình & Slide 1-Background (mệnh đề, CNF, lượng từ, quan hệ, O-lớn).", examId: "de1", jsonFile: TRR_DIR + "de-1-logic-tap-hop-thuat-toan.json" },
+      { group: "trr-core", subject: "Toán Rời Rạc", badge: "16 câu", title: "Đề 2: Bài Toán Đếm, Bù Trừ & Tổ Hợp Lặp", desc: "Chương 2.1–2.3: nguyên lý đếm, chia kẹo Euler, Lucas, mất thứ tự & Hình vuông La-tinh.", examId: "de2", jsonFile: TRR_DIR + "de-2-bai-toan-dem-bu-tru.json" },
+      { group: "trr-core", subject: "Toán Rời Rạc", badge: "16 câu", title: "Đề 3: Hệ Thức Truy Hồi & Hàm Sinh", desc: "Chương 2.4–2.5: thiết lập truy hồi, giải nghiệm thuần nhất, chia để trị & hàm sinh.", examId: "de3", jsonFile: TRR_DIR + "de-3-he-thuc-truy-hoi-ham-sinh.json" },
+      { group: "trr-core", subject: "Toán Rời Rạc", badge: "16 câu", title: "Đề 4: Liệt Kê Sinh, Quay Lui & Dirichlet", desc: "Chương 3 & 4: sinh kế tiếp, bài toán 8 hậu, Ramsey, Dirichlet & Định lý 4 màu.", examId: "de4", jsonFile: TRR_DIR + "de-4-liet-ke-sinh-quay-lui-ton-tai.json" },
+      { group: "trr-core", subject: "Toán Rời Rạc", badge: "16 câu", title: "Đề 5: Tối Ưu Nhánh Cận & Lý Thuyết Đồ Thị", desc: "Chương 5 & Đồ thị: cái túi, TSP rút gọn ma trận, bắt tay, Euler & đồ thị phẳng.", examId: "de5", jsonFile: TRR_DIR + "de-5-toi-uu-nhanh-can-do-thi.json" },
+      { group: "trr-core", subject: "Thực chiến PTIT", badge: "16 câu", title: "Đề PTIT #1: Kiểm tra 30 phút tổng hợp", desc: "Trích bộ 100 đề kiểm tra trắc nghiệm Toán Rời Rạc 1 PTIT (TS. Nguyễn Kiều Linh).", examId: "ptit1", jsonFile: TRR_DIR + "de-6-kiem-tra-ptit-so-1.json" },
+      { group: "trr-core", subject: "Thực chiến PTIT", badge: "16 câu", title: "Đề PTIT #2: Bù trừ 2 đầu & Số thuận nghịch", desc: "Phương trình nghiệm nguyên bị chặn, số thuận nghịch 7 chữ số & truy hồi bậc 3.", examId: "ptit2", jsonFile: TRR_DIR + "de-7-kiem-tra-ptit-so-2.json" },
+      { group: "trr-core", subject: "Thực chiến PTIT", badge: "16 câu", title: "Đề PTIT #3: Truy hồi nghiệm kép & BCNN", desc: "Nghiệm kép truy hồi, bù trừ chia hết, đếm xâu nhị phân & tối ưu cái túi 0-1.", examId: "ptit3", jsonFile: TRR_DIR + "de-8-kiem-tra-ptit-so-3.json" },
+      { group: "trr-core", subject: "Thực chiến PTIT", badge: "16 câu", title: "Đề PTIT #4: Tổ hợp liền trước & Cận trên", desc: "Liệt kê tổ hợp liền trước, thứ tự từ điển xâu nhị phân & hàm cận trên g(x).", examId: "ptit4", jsonFile: TRR_DIR + "de-9-kiem-tra-ptit-so-4-nhanh-can.json" },
+      { group: "trr-core", subject: "Thực chiến PTIT", badge: "16 câu", title: "Đề PTIT #5: Nâng cao Đồ thị & Đại số Boole", desc: "Chu trình Euler/Hamilton, sắc số, MST, hàm Boole đồng thuận & quan hệ.", examId: "ptit5", jsonFile: TRR_DIR + "de-10-kiem-tra-ptit-so-5-nang-cao.json" },
+
+      { group: "trr-chapters", subject: "TRR Mở Rộng", badge: "30 câu", title: "Chương 1A: Logic, Suy Diễn & Đại Số Boole", desc: "Chuẩn tắc CNF/DNF, Modus Tollens, hợp giải, lượng từ lồng nhau & tối giản Karnaugh.", examId: "ch1a", jsonFile: TRR_DIR + "de-11-chuong-1a-logic-suy-dien-boole.json" },
+      { group: "trr-chapters", subject: "TRR Mở Rộng", badge: "30 câu", title: "Chương 1B: Tập Hợp, Quan Hệ, Ánh Xạ & Big-O", desc: "Bao đóng Warshall, biểu đồ Hasse, đồng dư/CRT, Euclid mở rộng & Định lý Thợ.", examId: "ch1b", jsonFile: TRR_DIR + "de-12-chuong-1b-tap-hop-quan-he-ham-do-phuc-tap.json" },
+      { group: "trr-chapters", subject: "TRR Mở Rộng", badge: "30 câu", title: "Chương 2A: Nguyên Lý Đếm, Tổ Hợp & Bù Trừ", desc: "Hoán vị lặp, chia kẹo Euler có cận, đồng nhất thức Vandermonde, Derangement & Stirling.", examId: "ch2a", jsonFile: TRR_DIR + "de-13-chuong-2a-dem-to-hop-bu-tru.json" },
+      { group: "trr-chapters", subject: "TRR Mở Rộng", badge: "30 câu", title: "Chương 2B: Hệ Thức Truy Hồi & Hàm Sinh", desc: "Lát gạch, Catalan, Tháp Hà Nội biến thể, truy hồi không thuần nhất cộng hưởng, OGF & EGF.", examId: "ch2b", jsonFile: TRR_DIR + "de-14-chuong-2b-truy-hoi-ham-sinh.json" },
+      { group: "trr-chapters", subject: "TRR Mở Rộng", badge: "30 câu", title: "Chương 3–4: Sinh, Quay Lui & Dirichlet", desc: "Rank/Unrank từ điển, mã Gray, phân hoạch số, quay lui N-hậu, Ramsey & bất biến.", examId: "ch34", jsonFile: TRR_DIR + "de-15-chuong-3-4-sinh-quay-lui-ton-tai.json" },
+      { group: "trr-chapters", subject: "TRR Mở Rộng", badge: "30 câu", title: "Chương 5: Tối Ưu Tổ Hợp & Nhánh Cận", desc: "Cái túi 0-1/nguyên, cắt tỉa cận trên g, TSP rút gọn ma trận, BestEdge & phân công.", examId: "ch5", jsonFile: TRR_DIR + "de-16-chuong-5-toi-uu-nhanh-can.json" },
+      { group: "trr-chapters", subject: "TRR Mở Rộng", badge: "30 câu", title: "Chương 6A: Đồ Thị, Duyệt DFS/BFS, Euler & Hamilton", desc: "Havel–Hakimi, siêu khối Q_n, lũy thừa ma trận A^k, SCC, điều kiện Dirac & Ore.", examId: "ch6a", jsonFile: TRR_DIR + "de-17-chuong-6a-do-thi-duyet-euler-hamilton.json" },
+      { group: "trr-chapters", subject: "TRR Mở Rộng", badge: "30 câu", title: "Chương 6B: Đồ Thị Phẳng, Cây, MST & Shortest Path", desc: "Kuratowski, sắc số, mã Prüfer, Kruskal/Prim, Dijkstra, Bellman–Ford, Floyd & Max-Flow.", examId: "ch6b", jsonFile: TRR_DIR + "de-18-chuong-6b-do-thi-phang-cay-mst-duong-di-ngan-nhat.json" },
+      { group: "trr-chapters", subject: "Tổng hợp TRR", badge: "240 câu", title: "Bộ Mở Rộng Theo 8 Chương (240 câu mới)", desc: "Tổng hợp trọn bộ 240 câu hỏi mới tạo qua 8 chương trọng tâm Toán Rời Rạc.", examId: "all240", jsonFile: TRR_DIR + "ngan-hang-240-cau-mo-rong-toan-roi-rac.json" },
+      { group: "trr-chapters", subject: "Tổng hợp TRR", badge: "400 câu", title: "Ngân Hàng Gốc Toán Rời Rạc (400 câu)", desc: "Tệp JSON hợp nhất 160 câu gốc PTIT + 240 câu mở rộng 8 chương (ID duy nhất).", examId: "all400", jsonFile: TRR_DIR + "ngan-hang-400-cau-toan-roi-rac-ptit.json" },
+      { group: "trr-chapters", subject: "TRR Mới (1000c)", badge: "600 câu mới", title: "Bộ Bổ Sung Nâng Cao 8 Chương (600 câu mới)", desc: "600 câu mới có giải thích chi tiết trải đều 8 chương Toán Rời Rạc (ID 841–1440).", examId: "ext600", jsonFile: TRR_DIR + "ngan-hang-600-cau-bo-sung-toan-roi-rac.json" },
+      { group: "trr-chapters", subject: "Tổng hợp TRR", badge: "1000 câu", title: "Ngân Hàng Toàn Bộ Toán Rời Rạc (1000 câu)", desc: "Tệp JSON hợp nhất trọn bộ 1.000 câu hỏi Toán Rời Rạc PTIT (đủ 8 chương, ID duy nhất).", examId: "all1000", jsonFile: TRR_DIR + "ngan-hang-1000-cau-toan-roi-rac-ptit.json" },
+
+      { group: "vl3", subject: "Vật Lý 3", badge: "50 câu", title: "Đề Thi Cuối Kỳ Vật Lý 3 — Số 1 (50 câu)", desc: "Bộ đề tổng hợp cuối kỳ chuẩn PTIT gồm 50 câu trải đều 10 chương.", appUrl: "./vatly3/index.html?exam=ck1&mode=exam", jsonFile: "./vatly3/de-thi-cuoi-ky-so-1-50-cau.json" },
+      { group: "vl3", subject: "Vật Lý 3", badge: "50 câu", title: "Đề Thi Cuối Kỳ Vật Lý 3 — Số 2 (50 câu)", desc: "Đề luyện thi cuối kỳ số 2 bao phủ quang học sóng, lượng tử và vật lý nguyên tử.", appUrl: "./vatly3/index.html?exam=ck2&mode=exam", jsonFile: "./vatly3/de-thi-cuoi-ky-so-2-50-cau.json" },
+      { group: "vl3", subject: "Vật Lý 3 (Mới)", badge: "50 câu mới", title: "Đề Thi Cuối Kỳ Vật Lý 3 — Số 3 (50 câu mới)", desc: "Đề thi thử hoàn toàn mới phủ đủ 10 chương (Dao động, Quang sóng, Tán sắc, Lượng tử, Laser).", appUrl: "./vatly3/index.html?exam=ck3&mode=exam", jsonFile: "./vatly3/de-thi-cuoi-ky-so-3-50-cau.json" },
+      { group: "vl3", subject: "Vật Lý 3 (Mới)", badge: "50 câu mới", title: "Đề Thi Cuối Kỳ Vật Lý 3 — Số 4 (50 câu mới)", desc: "Đề thi thử hoàn toàn mới phủ 10 chương (Doppler, Giao thoa Rayleigh, Malus/Kerr, Zeeman, Bán dẫn).", appUrl: "./vatly3/index.html?exam=ck4&mode=exam", jsonFile: "./vatly3/de-thi-cuoi-ky-so-4-50-cau.json" },
+      { group: "vl3", subject: "Vật Lý 3 (Mới)", badge: "50 câu mới", title: "Đề Thi Cuối Kỳ Vật Lý 3 — Số 5 (50 câu mới)", desc: "Đề luyện nâng cao: Tương đối hẹp, Compton, Giếng thế lượng tử, Moseley & Diode Shockley.", appUrl: "./vatly3/index.html?exam=ck5&mode=exam", jsonFile: "./vatly3/de-thi-cuoi-ky-so-5-50-cau.json" },
+      { group: "vl3", subject: "Vật Lý 3 (Mới)", badge: "50 câu mới", title: "Đề Thi Cuối Kỳ Vật Lý 3 — Số 6 (50 câu mới)", desc: "Đề tổng hợp toàn diện cuối kỳ: Đường ngầm STM, Fresnel, Raman, Laser xung & Mạng tinh thể.", appUrl: "./vatly3/index.html?exam=ck6&mode=exam", jsonFile: "./vatly3/de-thi-cuoi-ky-so-6-50-cau.json" },
+      { group: "vl3", subject: "Vật Lý 3 (Mới)", badge: "50 câu mới", title: "Đề Ôn Chuyên Đề Phần 1: Quang Sóng Ch 1–5", desc: "50 câu mới chuyên sâu Phần 1 (10 câu/chương): Dao động, Giao thoa, Nhiễu xạ, Tán sắc & Phân cực.", appUrl: "./vatly3/index.html?exam=gk1", jsonFile: "./vatly3/de-on-tap-phan-1-quang-hoc-song-50-cau.json" },
+      { group: "vl3", subject: "Vật Lý 3 (Mới)", badge: "50 câu mới", title: "Đề Ôn Chuyên Đề Phần 2: Lượng Tử & Rắn Ch 6–10", desc: "50 câu mới chuyên sâu Phần 2 (10 câu/chương): Tương đối, Lượng tử, Nguyên tử & Laser/Bán dẫn.", appUrl: "./vatly3/index.html?exam=gk2", jsonFile: "./vatly3/de-on-tap-phan-2-luong-tu-chat-ran-50-cau.json" },
+      { group: "vl3", subject: "Vật Lý 3", badge: "25 câu", title: "Đề Thực Hành Thí Nghiệm & Sai Số Vật Lý 3", desc: "Câu hỏi về phương pháp đo đạc, xử lý số liệu và tính toán sai số thực nghiệm.", appUrl: "./vatly3/index.html?exam=thuchanh", jsonFile: "./vatly3/de-thuc-hanh-thi-nghiem-sai-so.json" },
+      { group: "vl3", subject: "Vật Lý 3", badge: "88 câu", title: "Ngân Hàng 88 Câu Trọng Tâm Vật Lý 3 (JSON)", desc: "Bộ câu hỏi trích lọc trọng tâm Vật Lý 3 PTIT dạng JSON chuẩn.", appUrl: "./vatly3/index.html", jsonFile: "./vatly3/ngan-hang-85-cau-vat-ly-3-ptit.json" },
+      { group: "vl3", subject: "Tổng hợp VL3", badge: "200 câu mới", title: "Bộ 200 Câu Mới Sinh Vật Lý 3 PTIT (ID 301–500)", desc: "Trọn bộ 200 câu mới sinh qua cả 10 chương giúp cân bằng đúng 50 câu/chương.", appUrl: "./vatly3/index.html?exam=new200", jsonFile: "./vatly3/ngan-hang-200-cau-moi-vat-ly-3-ptit.json" },
+      { group: "vl3", subject: "Tổng hợp VL3", badge: "500 câu", title: "Ngân Hàng Gốc Vật Lý 3 (500 câu chuẩn)", desc: "Tệp JSON hợp nhất 500 câu gốc Vật Lý 3 PTIT (10 chương x 50 câu/chương).", appUrl: "./vatly3/index.html?exam=all500", jsonFile: "./vatly3/ngan-hang-500-cau-vat-ly-3-ptit.json" },
+      { group: "vl3", subject: "VL3 Mới (1000c)", badge: "500 câu mới", title: "Bộ 500 Câu Mới Sinh Vật Lý 3 PTIT (ID 501–1000)", desc: "500 câu mới phủ đều 10 chương (50 câu/chương), nâng tổng ngân hàng lên 1.000 câu.", appUrl: "./vatly3/index.html?exam=new500", jsonFile: "./vatly3/ngan-hang-500-cau-moi-vat-ly-3-ptit.json" },
+      { group: "vl3", subject: "Tổng hợp VL3", badge: "1000 câu", title: "Ngân Hàng Toàn Bộ Vật Lý 3 (1000 câu)", desc: "Tệp JSON hợp nhất toàn bộ 1.000 câu hỏi Vật Lý 3 PTIT (10 chương x 100 câu/chương).", appUrl: "./vatly3/index.html?exam=all1000", jsonFile: "./vatly3/ngan-hang-1000-cau-vat-ly-3-ptit.json" }
+    ];
+
+    let activeCatalogFilter = "all";
+    let searchKeyword = "";
+
+    function prefersReducedMotion() {
+      return Boolean(window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches);
+    }
+
+    function supportsFineHover() {
+      return Boolean(window.matchMedia && window.matchMedia("(hover: hover) and (pointer: fine)").matches);
+    }
+
+    function applyHubTheme(isDark) {
+      document.documentElement.classList.toggle("dark", isDark);
+      const btn = document.getElementById("btnToggleTheme");
+      if (btn) {
+        btn.innerHTML = `<i id="themeIcon" data-lucide="${isDark ? "sun" : "moon"}" class="w-4 h-4 ${isDark ? "text-amber-300" : "text-[#c80000]"}"></i><span id="themeText" class="hidden sm:inline">${isDark ? "Sáng" : "Tối"}</span>`;
+        if (window.lucide && typeof window.lucide.createIcons === "function") {
+          window.lucide.createIcons();
+        }
+      }
+    }
+
+    function toggleHubTheme() {
+      const nextDark = !document.documentElement.classList.contains("dark");
+      const val = nextDark ? "dark" : "light";
+      try {
+        localStorage.setItem("ptit_hub_theme_v1", val);
+        localStorage.setItem("discrete_math_theme_v1", val);
+        localStorage.setItem("vlttn3_theme", JSON.stringify(val));
+      } catch (e) {}
+      applyHubTheme(nextDark);
+    }
+
+    function initHubTheme() {
+      let saved = null;
+      try {
+        const hub = localStorage.getItem("ptit_hub_theme_v1");
+        const dm = localStorage.getItem("discrete_math_theme_v1");
+        const vlRaw = localStorage.getItem("vlttn3_theme");
+        const vl = vlRaw ? JSON.parse(vlRaw) : null;
+        saved = hub || dm || vl;
+      } catch (e) {}
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      applyHubTheme(saved ? saved === "dark" : Boolean(prefersDark));
+    }
+
+    function safeReadJson(key, fallback) {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : fallback;
+      } catch {
+        return fallback;
+      }
+    }
+
+    function animateCounter(el, target, formatFn, duration = 900) {
+      if (!el) return;
+      const numTarget = Number(target) || 0;
+      if (prefersReducedMotion() || typeof requestAnimationFrame !== "function" || numTarget === 0) {
+        el.innerHTML = formatFn(numTarget);
+        return;
+      }
+      const start = (typeof performance !== "undefined" && performance.now) ? performance.now() : Date.now();
+      function frame(now) {
+        const currentNow = now || Date.now();
+        const progress = Math.min(1, (currentNow - start) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.innerHTML = formatFn(numTarget * eased);
+        if (progress < 1) {
+          requestAnimationFrame(frame);
+        } else {
+          el.innerHTML = formatFn(numTarget);
+        }
+      }
+      requestAnimationFrame(frame);
+    }
+
+    function loadDashboardStats() {
+      let dmBest = null;
+      try {
+        const rawBest = localStorage.getItem("discrete_math_quiz_best_v1");
+        if (rawBest !== null && !Number.isNaN(parseFloat(rawBest))) {
+          dmBest = parseFloat(rawBest);
+        }
+      } catch {}
+      const dmHistory = safeReadJson("discrete_math_quiz_history_v1", []);
+      const dmCount = Array.isArray(dmHistory) ? dmHistory.length : 0;
+      const dmBestStr = dmBest !== null ? `${dmBest.toFixed(1)} / 10` : "Chưa có";
+
+      animateCounter(document.getElementById("heroStatBank"), 900, v => String(Math.round(v)), 950);
+      animateCounter(document.getElementById("heroStatFiles"), 32, v => String(Math.round(v)), 850);
+
+      const elStatDmBest = document.getElementById("statDmBest");
+      if (dmBest !== null) {
+        animateCounter(elStatDmBest, dmBest, v => v.toFixed(1), 850);
+      } else if (elStatDmBest) {
+        elStatDmBest.textContent = "--";
+      }
+      const elStatDmCount = document.getElementById("statDmCount");
+      if (elStatDmCount) elStatDmCount.textContent = `${dmCount} lượt đã hoàn thành`;
+
+      const elCardDmBest = document.getElementById("cardDmBest");
+      if (elCardDmBest) elCardDmBest.textContent = dmBestStr;
+      animateCounter(document.getElementById("cardDmCount"), dmCount, v => String(Math.round(v)), 700);
+
+      const vlHistory = safeReadJson("vlttn3_history", []);
+      const vlProgress = safeReadJson("vlttn3_progress", {});
+      const vlCount = Array.isArray(vlHistory) ? vlHistory.length : 0;
+      const vlSeenCount = vlProgress && typeof vlProgress === "object" ? Object.keys(vlProgress).length : 0;
+      const vlBestPct = vlCount > 0 ? Math.max(...vlHistory.map(h => Number(h.pct) || 0)) : null;
+
+      animateCounter(
+        document.getElementById("statVlSeen"),
+        vlSeenCount,
+        v => `${Math.round(v)} <span class="text-sm font-semibold text-red-100">câu</span>`,
+        850
+      );
+      const elStatVlCount = document.getElementById("statVlCount");
+      if (elStatVlCount) elStatVlCount.textContent = `${vlCount} lượt đã hoàn thành`;
+
+      const elCardVlBest = document.getElementById("cardVlBest");
+      if (elCardVlBest) elCardVlBest.textContent = vlBestPct !== null ? `${(vlBestPct / 10).toFixed(1)} / 10` : "Chưa có";
+      const elCardVlSeen = document.getElementById("cardVlSeen");
+      if (elCardVlSeen) elCardVlSeen.textContent = `${vlSeenCount} câu`;
+
+      renderRecentActivity(dmHistory, vlHistory);
+    }
+
+    function renderRecentActivity(dmHistory, vlHistory) {
+      const container = document.getElementById("recentActivityList");
+      const items = [];
+
+      if (Array.isArray(dmHistory)) {
+        dmHistory.slice(0, 5).forEach(h => {
+          items.push({
+            subject: "Toán Rời Rạc",
+            color: "bg-red-50 dark:bg-red-500/20 text-[#b80000] dark:text-[#fda4af] border-red-200 dark:border-red-500/35",
+            title: h.deckName || "Bài ôn tập Toán Rời Rạc",
+            meta: `${h.mode || "Luyện tập"} • ${h.date || ""} • ${h.timeSpent || ""}`,
+            score: `${Number(h.score10 || 0).toFixed(1)} đ`,
+            subScore: `${h.correctCount || 0}/${h.total || 0} (${h.accuracyPct || 0}%)`,
+            href: TRR_URL
+          });
+        });
+      }
+
+      if (Array.isArray(vlHistory)) {
+        vlHistory.slice(0, 5).forEach(h => {
+          const dt = h.date ? new Date(h.date).toLocaleString("vi-VN") : "";
+          const pct = Number(h.pct) || 0;
+          items.push({
+            subject: "Vật Lý 3",
+            color: "bg-amber-50 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-500/35",
+            title: h.lab || "Bài ôn tập Vật Lý 3",
+            meta: `${h.mode === "exam" ? "Thi thử" : "Luyện tập"} • ${dt}`,
+            score: `${(pct / 10).toFixed(1)} đ`,
+            subScore: `${h.right || 0}/${h.total || 0} (${pct}%)`,
+            href: "./vatly3/index.html"
+          });
+        });
+      }
+
+      if (items.length === 0) {
+        container.innerHTML = `
+          <div class="col-span-full text-center py-8 px-4 rounded-2xl bg-[#f1efeb] dark:bg-[#202227] border border-dashed border-[#d8d3ce] dark:border-[#343740] text-slate-500 dark:text-[#a19fa6] text-sm">
+            Chưa có lịch sử làm bài nào. Hãy chọn một môn học ở trên để bắt đầu ôn luyện!
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = items.slice(0, 6).map(item => `
+        <a href="${item.href}" class="flex items-center justify-between gap-3 p-3.5 rounded-2xl bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740] hover:border-[#b80000] dark:hover:border-[#f43f5e] transition">
+          <div class="min-w-0 space-y-1">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span class="px-2 py-0.5 rounded-md text-[11px] font-bold border ${item.color}">${item.subject}</span>
+              <span class="font-bold text-xs sm:text-sm text-slate-900 dark:text-[#ece9ea] truncate">${item.title}</span>
+            </div>
+            <div class="text-xs text-slate-500 dark:text-[#a19fa6] truncate">${item.meta}</div>
+          </div>
+          <div class="text-right shrink-0">
+            <div class="font-extrabold text-sm sm:text-base text-[#b80000] dark:text-[#fb7185]">${item.score}</div>
+            <div class="text-[11px] text-slate-500 dark:text-[#a19fa6]">${item.subScore}</div>
+          </div>
+        </a>
+      `).join("");
+    }
+
+    function setCatalogFilter(filter) {
+      activeCatalogFilter = filter;
+      document.querySelectorAll(".cat-filter-btn").forEach(btn => {
+        const isAct = btn.getAttribute("data-filter") === filter;
+        btn.className = isAct
+          ? "cat-filter-btn shrink-0 snap-start whitespace-nowrap px-3.5 py-2 rounded-xl text-xs font-bold transition bg-white dark:bg-[#c80000] text-[#c80000] dark:text-[#ece9ea] shadow-xs"
+          : "cat-filter-btn shrink-0 snap-start whitespace-nowrap px-3.5 py-2 rounded-xl text-xs font-semibold transition text-slate-600 dark:text-[#c7c5cc] hover:text-slate-900 dark:hover:text-[#ece9ea]";
+      });
+      renderCatalog();
+    }
+
+    function renderCatalog() {
+      const grid = document.getElementById("catalogGrid");
+      const q = searchKeyword.trim().toLowerCase();
+
+      const filtered = CATALOG_ITEMS.filter(item => {
+        const matchGroup = activeCatalogFilter === "all" || item.group === activeCatalogFilter;
+        const matchSearch = !q ||
+          item.title.toLowerCase().includes(q) ||
+          item.desc.toLowerCase().includes(q) ||
+          item.subject.toLowerCase().includes(q);
+        return matchGroup && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = `
+          <div class="col-span-full text-center py-10 px-4 rounded-2xl bg-[#fcfbf9] dark:bg-[#17181c] border border-dashed border-[#d8d3ce] dark:border-[#343740] text-slate-500 dark:text-[#a19fa6] text-sm">
+            Không tìm thấy bộ đề phù hợp với từ khóa "<strong>${searchKeyword}</strong>".
+          </div>
+        `;
+        return;
+      }
+
+      grid.innerHTML = filtered.map((item, idx) => {
+        const openUrl = item.examId ? `${TRR_URL}?exam=${item.examId}` : item.appUrl;
+        const isVl3 = item.group === "vl3";
+        const isNew = item.group === "trr-chapters";
+        const badgeStyle = isVl3
+          ? "bg-amber-50 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300 border-amber-200 dark:border-amber-500/35"
+          : isNew
+          ? "bg-rose-50 dark:bg-rose-500/20 text-rose-800 dark:text-rose-200 border-rose-200 dark:border-rose-500/35"
+          : "bg-red-50 dark:bg-red-500/20 text-[#b80000] dark:text-[#fda4af] border-red-200 dark:border-red-500/35";
+        const delayMs = Math.min(idx % 3, 2) * 55;
+
+        return `
+          <div class="reveal-item flex" style="--reveal-delay: ${delayMs}ms">
+            <article class="tilt-card w-full rounded-2xl bg-[#fcfbf9] dark:bg-[#17181c] border border-[#e6e2de] dark:border-[#2a2c32] p-5 flex flex-col justify-between gap-4 hover:border-[#b80000] dark:hover:border-[#f43f5e] hover:shadow-lg">
+              <div class="space-y-2">
+                <div class="flex items-center justify-between gap-2">
+                  <span class="px-2.5 py-0.5 rounded-full text-[11px] font-bold border ${badgeStyle}">
+                    ${item.subject}
+                  </span>
+                  <span class="text-xs font-mono font-bold text-slate-500 dark:text-[#a19fa6]">
+                    ${item.badge}
+                  </span>
+                </div>
+                <h3 class="font-bold text-sm sm:text-base text-slate-900 dark:text-[#ece9ea] leading-snug">
+                  ${item.title}
+                </h3>
+                <p class="text-xs text-slate-500 dark:text-[#a19fa6] leading-relaxed">
+                  ${item.desc}
+                </p>
+              </div>
+
+              <div class="flex items-center justify-between gap-2 pt-2 border-t border-[#e6e2de] dark:border-[#2a2c32]">
+                <a
+                  href="${openUrl}"
+                  class="inline-flex items-center gap-1.5 px-3 py-2 rounded-xl text-xs font-bold text-white ${isVl3 ? 'bg-[#1b0b0b] hover:bg-[#331317] dark:bg-[#e11d48] dark:hover:bg-[#be123c]' : 'bg-[#b80000] hover:bg-[#960000]'} transition"
+                >
+                  <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                  <span>${item.examId ? "Làm bộ đề này" : "Mở Vật Lý 3"}</span>
+                </a>
+                <a
+                  href="${item.jsonFile}"
+                  download
+                  class="inline-flex items-center gap-1 px-2.5 py-2 rounded-xl text-xs font-semibold text-slate-600 dark:text-[#c7c5cc] bg-[#f1efeb] dark:bg-[#202227] hover:bg-red-50 dark:hover:bg-[#381f26] border border-[#e6e2de] dark:border-[#343740] transition"
+                  title="Tải tệp dữ liệu JSON"
+                >
+                  <i data-lucide="file-json" class="w-3.5 h-3.5"></i>
+                  <span>JSON</span>
+                </a>
+              </div>
+            </article>
+          </div>
+        `;
+      }).join("");
+
+      if (window.lucide && typeof window.lucide.createIcons === "function") {
+        window.lucide.createIcons();
+      }
+      bindDynamicTiltCards();
+      observeRevealItems();
+    }
+
+    function initVideoHub() {
+      const watched = safeReadJson("ptit_hub_watched_videos_v1", {});
+      const links = safeReadJson("ptit_hub_lesson_links_v1", {});
+      const custom = safeReadJson("ptit_hub_custom_videos_v1", []);
+      const notes = safeReadJson("ptit_hub_video_notes_v1", {});
+
+      const trrIds = Array.from({ length: 8 }, (_, i) => `vid-trr-${i + 1}`);
+      const vl3Ids = Array.from({ length: 28 }, (_, i) => `vid-vl3-${i + 1}`);
+      const coreIds = [...trrIds, ...vl3Ids];
+      const watchedCount = coreIds.filter(id => watched && watched[id]).length;
+
+      const linkedSet = new Set(coreIds);
+      if (links && typeof links === "object") {
+        Object.entries(links).forEach(([id, url]) => {
+          if (String(url || "").trim()) linkedSet.add(id);
+        });
+      }
+      const linksCount = linkedSet.size;
+      const customCount = Array.isArray(custom) ? custom.length : 0;
+      const notesCount = notes && typeof notes === "object" ? Object.values(notes).filter(v => String(v || "").trim()).length : 0;
+
+      const elWatched = document.getElementById("cardVidWatched");
+      if (elWatched) elWatched.textContent = `${watchedCount} / ${coreIds.length}`;
+      animateCounter(document.getElementById("cardVidLinks"), linksCount, v => String(Math.round(v)), 700);
+      animateCounter(document.getElementById("cardVidCustom"), customCount, v => String(Math.round(v)), 700);
+      animateCounter(document.getElementById("cardVidNotes"), notesCount, v => String(Math.round(v)), 700);
+    }
+
+    /* =====================================================================
+       3D PERSPECTIVE TILT, SPOTLIGHT GLOW & MAGNETIC BUTTONS (FINE POINTER)
+       ===================================================================== */
+    function bindTiltToElement(card) {
+      if (!card || card.dataset.tiltBound === "1") return;
+      card.dataset.tiltBound = "1";
+
+      card.addEventListener("mousemove", (e) => {
+        const rect = card.getBoundingClientRect();
+        if (!rect.width || !rect.height) return;
+        const px = (e.clientX - rect.left) / rect.width;
+        const py = (e.clientY - rect.top) / rect.height;
+        const rotY = (px - 0.5) * 9;
+        const rotX = (0.5 - py) * 9;
+        card.style.transition = "transform 0.06s linear, box-shadow 0.25s ease, border-color 0.25s ease";
+        card.style.setProperty("--mouse-x", `${(px * 100).toFixed(1)}%`);
+        card.style.setProperty("--mouse-y", `${(py * 100).toFixed(1)}%`);
+        card.style.transform = `perspective(1000px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg) scale3d(1.012, 1.012, 1)`;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        card.style.transition = "transform 0.42s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s ease, border-color 0.25s ease";
+        card.style.transform = "";
+      });
+    }
+
+    function bindDynamicTiltCards() {
+      if (prefersReducedMotion() || !supportsFineHover()) return;
+      document.querySelectorAll(".tilt-card").forEach(bindTiltToElement);
+    }
+
+    function initMagneticButtons() {
+      if (prefersReducedMotion() || !supportsFineHover()) return;
+      document.querySelectorAll(".btn-magnetic").forEach(btn => {
+        if (btn.dataset.magBound === "1") return;
+        btn.dataset.magBound = "1";
+        btn.addEventListener("mousemove", (e) => {
+          const rect = btn.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          const dx = (e.clientX - (rect.left + rect.width / 2)) * 0.14;
+          const dy = (e.clientY - (rect.top + rect.height / 2)) * 0.18;
+          btn.style.transform = `translate3d(${dx.toFixed(1)}px, ${dy.toFixed(1)}px, 0)`;
+        });
+        btn.addEventListener("mouseleave", () => {
+          btn.style.transform = "";
+        });
+      });
+    }
+
+    function initHeroInteraction() {
+      if (prefersReducedMotion() || !supportsFineHover()) return;
+      const heroCard = document.getElementById("heroCard");
+      const orb1 = document.getElementById("heroOrb1");
+      const orb2 = document.getElementById("heroOrb2");
+
+      if (heroCard && heroCard.dataset.heroBound !== "1") {
+        heroCard.dataset.heroBound = "1";
+        heroCard.addEventListener("mousemove", (e) => {
+          const rect = heroCard.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          const px = (e.clientX - rect.left) / rect.width;
+          const py = (e.clientY - rect.top) / rect.height;
+          const rotY = (px - 0.5) * 5;
+          const rotX = (0.5 - py) * 5;
+          heroCard.style.transition = "transform 0.08s linear, box-shadow 0.3s ease";
+          heroCard.style.setProperty("--hx", `${(px * 100).toFixed(1)}%`);
+          heroCard.style.setProperty("--hy", `${(py * 100).toFixed(1)}%`);
+          heroCard.style.transform = `perspective(1400px) rotateX(${rotX.toFixed(2)}deg) rotateY(${rotY.toFixed(2)}deg)`;
+
+          if (orb1) orb1.style.transform = `translate3d(${((0.5 - px) * 28).toFixed(1)}px, ${((0.5 - py) * 24).toFixed(1)}px, 0)`;
+          if (orb2) orb2.style.transform = `translate3d(${((px - 0.5) * 24).toFixed(1)}px, ${((py - 0.5) * 20).toFixed(1)}px, 0)`;
+        });
+
+        heroCard.addEventListener("mouseleave", () => {
+          heroCard.style.transition = "transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s ease";
+          heroCard.style.transform = "";
+          if (orb1) orb1.style.transform = "";
+          if (orb2) orb2.style.transform = "";
+        });
+      }
+
+      document.querySelectorAll(".hero-stat-card").forEach(stat => {
+        if (stat.dataset.statBound === "1") return;
+        stat.dataset.statBound = "1";
+        stat.addEventListener("mousemove", (e) => {
+          const rect = stat.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          const px = ((e.clientX - rect.left) / rect.width) * 100;
+          const py = ((e.clientY - rect.top) / rect.height) * 100;
+          stat.style.setProperty("--sx", `${px.toFixed(1)}%`);
+          stat.style.setProperty("--sy", `${py.toFixed(1)}%`);
+        });
+      });
+    }
+
+    /* =====================================================================
+       CONSTELLATION / QUANTUM GRAPH CANVAS BACKGROUND (60FPS)
+       ===================================================================== */
+    function initConstellationCanvas() {
+      const canvas = document.getElementById("bgConstellation");
+      if (!canvas || typeof canvas.getContext !== "function") return;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      const reduced = prefersReducedMotion();
+      let width = 0;
+      let height = 0;
+      let dpr = 1;
+      let nodes = [];
+      let rafId = null;
+      const mouse = { x: -9999, y: -9999, active: false };
+
+      function createNodes() {
+        const isMobile = width < 768;
+        const count = isMobile ? 26 : 62;
+        const speedScale = isMobile ? 0.25 : 0.36;
+        nodes = Array.from({ length: count }, (_, idx) => ({
+          x: Math.random() * width,
+          y: Math.random() * height,
+          vx: (Math.random() - 0.5) * speedScale * 2,
+          vy: (Math.random() - 0.5) * speedScale * 2,
+          r: isMobile ? 1.5 + (idx % 2) * 0.7 : 1.7 + (idx % 3) * 0.75,
+          amber: idx % 5 === 0
+        }));
+      }
+
+      function resize() {
+        width = window.innerWidth || 1280;
+        height = window.innerHeight || 720;
+        dpr = Math.min(window.devicePixelRatio || 1, 2);
+        canvas.width = Math.floor(width * dpr);
+        canvas.height = Math.floor(height * dpr);
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        createNodes();
+      }
+
+      function drawFrame() {
+        ctx.clearRect(0, 0, width, height);
+        const isDark = document.documentElement.classList.contains("dark");
+        const maxDist = width < 768 ? 110 : 145;
+        const maxDistSq = maxDist * maxDist;
+
+        for (let i = 0; i < nodes.length; i++) {
+          const n = nodes[i];
+          if (!reduced) {
+            if (mouse.active) {
+              const mdx = n.x - mouse.x;
+              const mdy = n.y - mouse.y;
+              const mDistSq = mdx * mdx + mdy * mdy;
+              if (mDistSq > 1 && mDistSq < 19600) {
+                const dist = Math.sqrt(mDistSq);
+                const push = ((140 - dist) / 140) * 0.18;
+                n.vx += (mdx / dist) * push;
+                n.vy += (mdy / dist) * push;
+              }
+            }
+
+            const speed = Math.hypot(n.vx, n.vy);
+            if (speed > 1.2) {
+              n.vx = (n.vx / speed) * 1.2;
+              n.vy = (n.vy / speed) * 1.2;
+            }
+            n.x += n.vx;
+            n.y += n.vy;
+
+            if (n.x < -10) n.x = width + 10;
+            else if (n.x > width + 10) n.x = -10;
+            if (n.y < -10) n.y = height + 10;
+            else if (n.y > height + 10) n.y = -10;
+          }
+
+          ctx.beginPath();
+          ctx.arc(n.x, n.y, n.r, 0, Math.PI * 2);
+          if (isDark) {
+            ctx.fillStyle = n.amber ? "rgba(251, 191, 36, 0.44)" : "rgba(244, 63, 94, 0.36)";
+          } else {
+            ctx.fillStyle = n.amber ? "rgba(217, 119, 6, 0.24)" : "rgba(184, 0, 0, 0.20)";
+          }
+          ctx.fill();
+
+          for (let j = i + 1; j < nodes.length; j++) {
+            const m = nodes[j];
+            const dx = n.x - m.x;
+            const dy = n.y - m.y;
+            const dSq = dx * dx + dy * dy;
+            if (dSq < maxDistSq) {
+              const alpha = (1 - Math.sqrt(dSq) / maxDist) * (isDark ? 0.22 : 0.14);
+              ctx.beginPath();
+              ctx.moveTo(n.x, n.y);
+              ctx.lineTo(m.x, m.y);
+              ctx.strokeStyle = isDark ? `rgba(244, 63, 94, ${alpha.toFixed(3)})` : `rgba(184, 0, 0, ${alpha.toFixed(3)})`;
+              ctx.lineWidth = 1;
+              ctx.stroke();
+            }
+          }
+        }
+
+        if (!reduced && !document.hidden) {
+          rafId = requestAnimationFrame(drawFrame);
+        }
+      }
+
+      resize();
+      drawFrame();
+
+      window.addEventListener("resize", () => {
+        resize();
+        if (reduced) drawFrame();
+      }, { passive: true });
+
+      if (!reduced && supportsFineHover()) {
+        window.addEventListener("mousemove", (e) => {
+          mouse.x = e.clientX;
+          mouse.y = e.clientY;
+          mouse.active = true;
+        }, { passive: true });
+        window.addEventListener("mouseleave", () => {
+          mouse.active = false;
+        }, { passive: true });
+      }
+
+      document.addEventListener("visibilitychange", () => {
+        if (!reduced) {
+          if (document.hidden && rafId) {
+            cancelAnimationFrame(rafId);
+            rafId = null;
+          } else if (!document.hidden && !rafId) {
+            drawFrame();
+          }
+        }
+      });
+    }
+
+    /* =====================================================================
+       SCROLL PROGRESS BAR, INTERSECTION REVEAL & NAVIGATION SYNC
+       ===================================================================== */
+    function initScrollProgressBar() {
+      const bar = document.getElementById("scrollProgressBar");
+      if (!bar) return;
+      let scheduled = false;
+
+      function update() {
+        scheduled = false;
+        const docEl = document.documentElement;
+        const scrollTop = window.scrollY || docEl.scrollTop || 0;
+        const maxScroll = Math.max(1, (docEl.scrollHeight || 0) - (window.innerHeight || docEl.clientHeight || 0));
+        const ratio = Math.min(1, Math.max(0, scrollTop / maxScroll));
+        bar.style.transform = `scaleX(${ratio.toFixed(4)})`;
+      }
+
+      update();
+      window.addEventListener("scroll", () => {
+        if (!scheduled) {
+          scheduled = true;
+          if (typeof requestAnimationFrame === "function") {
+            requestAnimationFrame(update);
+          } else {
+            update();
+          }
+        }
+      }, { passive: true });
+      window.addEventListener("resize", update, { passive: true });
+    }
+
+    let hubRevealObserver = null;
+
+    function sweepVisibleRevealItems() {
+      const vh = window.innerHeight || document.documentElement.clientHeight || 800;
+      document.querySelectorAll(".reveal-item:not(.is-visible)").forEach(item => {
+        if (typeof item.getBoundingClientRect !== "function") {
+          item.classList.add("is-visible");
+          return;
+        }
+        const rect = item.getBoundingClientRect();
+        if (rect.top <= vh + 40 && rect.bottom >= -40) {
+          item.classList.add("is-visible");
+          if (hubRevealObserver) hubRevealObserver.unobserve(item);
+        }
+      });
+    }
+
+    function observeRevealItems() {
+      const items = Array.from(document.querySelectorAll(".reveal-item:not(.is-visible)"));
+      if (prefersReducedMotion() || typeof IntersectionObserver !== "function") {
+        items.forEach(item => item.classList.add("is-visible"));
+        return;
+      }
+      if (!hubRevealObserver) {
+        hubRevealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("is-visible");
+              hubRevealObserver.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.01, rootMargin: "30px 0px -15px 0px" });
+      }
+      items.forEach(item => hubRevealObserver.observe(item));
+      sweepVisibleRevealItems();
+    }
+
+    function revealCatalogIfNeeded() {
+      const cat = document.getElementById("catalog");
+      if (!cat) return;
+      cat.querySelectorAll(".reveal-item").forEach(item => item.classList.add("is-visible"));
+    }
+
+    function initScrollAnimations() {
+      const sections = Array.from(document.querySelectorAll(".hub-section"));
+      const dots = Array.from(document.querySelectorAll("[data-dot]"));
+      const mobileItems = Array.from(document.querySelectorAll("[data-mobile-nav]"));
+
+      const setActiveSection = (id) => {
+        dots.forEach(d => d.classList.toggle("active", d.getAttribute("data-dot") === id));
+        mobileItems.forEach(m => m.classList.toggle("active", m.getAttribute("data-mobile-nav") === id));
+      };
+
+      const updateActiveOnScroll = () => {
+        sweepVisibleRevealItems();
+        if (!sections.length) return;
+        const probeY = (window.innerHeight || 800) * 0.35;
+        let currentId = sections[0].id;
+        for (const sec of sections) {
+          if (typeof sec.getBoundingClientRect !== "function") continue;
+          const rect = sec.getBoundingClientRect();
+          if (rect.top <= probeY) {
+            currentId = sec.id || currentId;
+          }
+        }
+        if (currentId) setActiveSection(currentId);
+      };
+
+      observeRevealItems();
+      updateActiveOnScroll();
+
+      let navTicking = false;
+      window.addEventListener("scroll", () => {
+        if (!navTicking) {
+          navTicking = true;
+          const run = () => {
+            navTicking = false;
+            updateActiveOnScroll();
+          };
+          if (typeof requestAnimationFrame === "function") requestAnimationFrame(run);
+          else run();
+        }
+      }, { passive: true });
+      window.addEventListener("hashchange", () => setTimeout(updateActiveOnScroll, 60));
+    }
+
+    function initHub() {
+      initHubTheme();
+      if (window.location && window.location.protocol === "file:") {
+        try {
+          const sp = new URLSearchParams(window.location.search || "");
+          if (sp.get("noRedirect") !== "1") {
+            (async () => {
+              for (const p of [8080, 8081]) {
+                try {
+                  const ctrl = new AbortController();
+                  const tid = setTimeout(() => ctrl.abort(), 350);
+                  const r = await fetch(`http://127.0.0.1:${p}/index.html`, { method: "HEAD", signal: ctrl.signal });
+                  clearTimeout(tid);
+                  if (r.ok) {
+                    window.location.replace(`http://127.0.0.1:${p}/index.html${window.location.search || ""}${window.location.hash || ""}`);
+                    return;
+                  }
+                } catch {}
+              }
+            })();
+          }
+        } catch {}
+      }
+
+      loadDashboardStats();
+      initVideoHub();
+      renderCatalog();
+      bindDynamicTiltCards();
+      initHeroInteraction();
+      initMagneticButtons();
+      initScrollProgressBar();
+      initScrollAnimations();
+      initConstellationCanvas();
+
+      const searchInput = document.getElementById("quickSearchInput");
+      searchInput.addEventListener("input", (e) => {
+        searchKeyword = e.target.value;
+        renderCatalog();
+        if (searchKeyword.trim()) {
+          revealCatalogIfNeeded();
+          const cat = document.getElementById("catalog");
+          if (cat && typeof cat.scrollIntoView === "function") {
+            cat.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        }
+      });
+
+      document.addEventListener("keydown", (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+          e.preventDefault();
+          searchInput.focus();
+          searchInput.select();
+        }
+      });
+
+      if (window.lucide && typeof window.lucide.createIcons === "function") {
+        window.lucide.createIcons();
+      }
+    }
+
+    window.addEventListener("DOMContentLoaded", initHub);
+  </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+[
+  {
+    "id": 301,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Trong bài toán <strong>Tháp Hà Nội</strong> (Ví dụ 16 - Slide 2_Counting): Gọi $H_n$ là số lần dịch chuyển đĩa ít nhất để chuyển $n$ đĩa từ cọc A sang cọc C (mỗi lần chuyển $1$ đĩa và đĩa lớn không đặt lên đĩa nhỏ). Hệ thức truy hồi và công thức nghiệm của $H_n$ là:",
+    "options": [
+      "$H_n = H_{n-1} + H_{n-2}$ ($H_1 = 1, H_2 = 2$) $\\Rightarrow H_n = F_{n+1}$",
+      "$H_n = 2H_{n-1} + 1$ ($H_1 = 1$) $\\Rightarrow H_n = 2^n - 1$",
+      "$H_n = 2H_{n-1}$ ($H_1 = 1$) $\\Rightarrow H_n = 2^{n-1}$",
+      "$H_n = 3H_{n-1} - 1$ ($H_1 = 1$) $\\Rightarrow H_n = \\frac{3^n - 1}{2}$"
+    ],
+    "correct": 1,
+    "explanation": "Để chuyển $n$ đĩa: chuyển $n-1$ đĩa trên sang cọc trung gian B ($H_{n-1}$ bước), chuyển đĩa lớn nhất sang C ($1$ bước), rồi chuyển $n-1$ đĩa từ B sang C ($H_{n-1}$ bước). Vậy $H_n = 2H_{n-1} + 1$ với $H_1 = 1 \\Rightarrow H_n = 2^n - 1$."
+  },
+  {
+    "id": 302,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Gọi $a_n$ là số xâu nhị phân độ dài $n$ <strong>không có hai chữ số $0$ liên tiếp</strong> (Ví dụ 17 - Slide 2_Counting). Biết $a_1 = 2, a_2 = 3$. Giá trị của $a_7$ bằng bao nhiêu?",
+    "options": [
+      "$55$",
+      "$21$",
+      "$34$",
+      "$13$"
+    ],
+    "correct": 2,
+    "explanation": "Xâu hợp lệ độ dài $n$ hoặc kết thúc bằng $1$ (có $a_{n-1}$ xâu) hoặc kết thúc bằng $10$ (có $a_{n-2}$ xâu), nên $a_n = a_{n-1} + a_{n-2}$. Tính lần lượt: $a_1=2, a_2=3, a_3=5, a_4=8, a_5=13, a_6=21, a_7 = 21 + 13 = 34$."
+  },
+  {
+    "id": 303,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Gọi $a_n$ là số xâu nhị phân có độ dài $n$ <strong>không chứa ba chữ số $0$ liên tiếp</strong> ($000$). Hệ thức truy hồi đúng của $a_n$ (với $n \\ge 4$) là:",
+    "options": [
+      "$a_n = a_{n-1} + a_{n-2} + a_{n-3}$",
+      "$a_n = a_{n-1} + 2a_{n-2}$",
+      "$a_n = 2a_{n-1} - a_{n-3}$",
+      "$a_n = a_{n-1} + a_{n-2}$"
+    ],
+    "correct": 0,
+    "explanation": "Xâu nhị phân độ dài $n$ không chứa $000$ có thể kết thúc bởi: $1$ ($a_{n-1}$ cách), $10$ ($a_{n-2}$ cách), hoặc $100$ ($a_{n-3}$ cách). Theo nguyên lý cộng: $a_n = a_{n-1} + a_{n-2} + a_{n-3}$."
+  },
+  {
+    "id": 304,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Một từ mã là một dãy các chữ số thập phân (từ $0$ đến $9$). Một từ mã được coi là hợp lệ nếu nó có một <strong>số chẵn các chữ số $0$</strong> (Ví dụ 18 - Slide 2_Counting). Gọi $a_n$ là số từ mã hợp lệ độ dài $n$. Hệ thức truy hồi của $a_n$ là:",
+    "options": [
+      "$a_n = 8a_{n-1} + 9^{n-1}$ với $a_1 = 9$",
+      "$a_n = 9a_{n-1} + 10^{n-1}$ với $a_1 = 9$",
+      "$a_n = 9a_{n-1} + a_{n-2}$ với $a_1 = 9, a_2 = 82$",
+      "$a_n = 8a_{n-1} + 10^{n-1}$ với $a_1 = 9$"
+    ],
+    "correct": 3,
+    "explanation": "Từ mã hợp lệ độ dài $n$: (1) Nếu tận cùng khác $0$ ($9$ cách chọn từ $1..9$) thì $n-1$ chữ số đầu phải hợp lệ $\\Rightarrow 9a_{n-1}$ cách; (2) Nếu tận cùng bằng $0$ ($1$ cách) thì $n-1$ chữ số đầu phải không hợp lệ $\\Rightarrow 10^{n-1} - a_{n-1}$ cách. Cộng lại: $a_n = 9a_{n-1} + (10^{n-1} - a_{n-1}) = 8a_{n-1} + 10^{n-1}$."
+  },
+  {
+    "id": 305,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Tìm nghiệm của hệ thức truy hồi tuyến tính thuần nhất bậc hai $a_n = a_{n-1} + 2a_{n-2}$ với điều kiện đầu $a_0 = 2, a_1 = 7$ (Ví dụ 20 - Slide 2_Counting):",
+    "options": [
+      "$a_n = 3 \\cdot 2^n + (-1)^n$",
+      "$a_n = 2 \\cdot 2^n + (-1)^n$",
+      "$a_n = 3 \\cdot 2^n - (-1)^n$",
+      "$a_n = 4 \\cdot 2^n - 2(-1)^n$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 - r - 2 = 0$ có $2$ nghiệm đơn $r_1 = 2, r_2 = -1$. Nghiệm tổng quát $a_n = \\alpha_1 2^n + \\alpha_2 (-1)^n$. Từ $a_0 = \\alpha_1 + \\alpha_2 = 2$ và $a_1 = 2\\alpha_1 - \\alpha_2 = 7$, giải ra $\\alpha_1 = 3, \\alpha_2 = -1$. Vậy $a_n = 3 \\cdot 2^n - (-1)^n$."
+  },
+  {
+    "id": 306,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Tìm nghiệm của hệ thức truy hồi $a_n = 6a_{n-1} - 9a_{n-2}$ với điều kiện đầu $a_0 = 1, a_1 = 6$ (Ví dụ 23 - Slide 2_Counting):",
+    "options": [
+      "$a_n = (1 + 2n)3^n$",
+      "$a_n = (1 + n)3^n$",
+      "$a_n = 3^n + n 3^{n-1}$",
+      "$a_n = (2 - n)3^n$"
+    ],
+    "correct": 1,
+    "explanation": "Phương trình đặc trưng $r^2 - 6r + 9 = 0 \\Leftrightarrow (r - 3)^2 = 0$ có <strong>nghiệm kép</strong> $r_0 = 3$ (bội $2$). Nghiệm tổng quát có dạng $a_n = (\\alpha_1 + \\alpha_2 n)3^n$. Thay $a_0 = 1 \\Rightarrow \\alpha_1 = 1$; thay $a_1 = 6 \\Rightarrow (1 + \\alpha_2) \\cdot 3 = 6 \\Rightarrow \\alpha_2 = 1$. Vậy $a_n = (1 + n)3^n$."
+  },
+  {
+    "id": 307,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Tìm nghiệm của hệ thức truy hồi bậc ba $a_n = 6a_{n-1} - 11a_{n-2} + 6a_{n-3}$ với điều kiện đầu $a_0 = 2, a_1 = 5, a_2 = 15$ (Ví dụ 22 - Slide 2_Counting):",
+    "options": [
+      "$a_n = 1 - 2 \\cdot 2^n + 3 \\cdot 3^n$",
+      "$a_n = 1 + 2^n + 3^n$",
+      "$a_n = 2 - 2^n + 3^n$",
+      "$a_n = 1 - 2^n + 2 \\cdot 3^n$"
+    ],
+    "correct": 3,
+    "explanation": "Phương trình đặc trưng $r^3 - 6r^2 + 11r - 6 = 0$ có $3$ nghiệm thực phân biệt $r_1 = 1, r_2 = 2, r_3 = 3$. Giải hệ $\\begin{cases} \\alpha_1 + \\alpha_2 + \\alpha_3 = 2 \\\\ \\alpha_1 + 2\\alpha_2 + 3\\alpha_3 = 5 \\\\ \\alpha_1 + 4\\alpha_2 + 9\\alpha_3 = 15 \\end{cases}$ ta được $\\alpha_1 = 1, \\alpha_2 = -1, \\alpha_3 = 2$. Vậy $a_n = 1 - 2^n + 2 \\cdot 3^n$."
+  },
+  {
+    "id": 308,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Xét hệ thức truy hồi $a_n = -3a_{n-1} - 3a_{n-2} - a_{n-3}$ với $a_0 = 1, a_1 = -2, a_2 = -1$ (Ví dụ 24 - Slide 2_Counting). Nghiệm của hệ thức là:",
+    "options": [
+      "$a_n = (1 + 3n - 2n^2)(-1)^n$",
+      "$a_n = (1 - 3n + 2n^2)(-1)^n$",
+      "$a_n = (1 + n + n^2)(-1)^n$",
+      "$a_n = (1 + 2n - 3n^2)(-1)^n$"
+    ],
+    "correct": 0,
+    "explanation": "Phương trình đặc trưng $r^3 + 3r^2 + 3r + 1 = (r + 1)^3 = 0$ có nghiệm bội $3$ là $r_0 = -1$. Nghiệm có dạng $a_n = (\\alpha_{1,0} + \\alpha_{1,1} n + \\alpha_{1,2} n^2)(-1)^n$. Thay $a_0=1, a_1=-2, a_2=-1$ giải được $\\alpha_{1,0}=1, \\alpha_{1,1}=3, \\alpha_{1,2}=-2$."
+  },
+  {
+    "id": 309,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Hệ thức truy hồi $x_n = 2x_{n-1} - 2x_{n-2}$ với $x_0 = 0, x_1 = 2$ có phương trình đặc trưng $r^2 - 2r + 2 = 0$ có hai nghiệm phức liên hợp $r_{1,2} = 1 \\pm i = \\sqrt{2}(\\cos \\frac{\\pi}{4} \\pm i \\sin \\frac{\\pi}{4})$ (Slide 2_Counting). Nghiệm thực của hệ thức là:",
+    "options": [
+      "$x_n = (\\sqrt{2})^n \\cos\\left(\\frac{n\\pi}{4}\\right)$",
+      "$x_n = (\\sqrt{2})^n \\cdot \\sqrt{2} \\sin\\left(\\frac{n\\pi}{4}\\right)$",
+      "$x_n = 2^n \\sin\\left(\\frac{n\\pi}{4}\\right)$",
+      "$x_n = (\\sqrt{2})^n \\left(\\cos\\frac{n\\pi}{4} + \\sin\\frac{n\\pi}{4}\\right)$"
+    ],
+    "correct": 1,
+    "explanation": "Khi phương trình đặc trưng có nghiệm phức $\\rho(\\cos\\theta \\pm i\\sin\\theta)$, nghiệm thực tổng quát có dạng $x_n = \\rho^n(k_1 \\cos n\\theta + k_2 \\sin n\\theta)$ với $\\rho = \\sqrt{2}, \\theta = \\pi/4$. Do $x_0 = 0 \\Rightarrow k_1 = 0$; $x_1 = \\sqrt{2} k_2 \\sin(\\pi/4) = k_2 = 2$. Vậy $x_n = 2(\\sqrt{2})^{n-1} \\sin(\\frac{n\\pi}{4}) = (\\sqrt{2})^n \\sqrt{2} \\sin(\\frac{n\\pi}{4})$."
+  },
+  {
+    "id": 310,
+    "topic": "Hệ Thức Chia Để Trị",
+    "question": "Trong thuật toán <strong>nhân nhanh hai số nguyên $2n$ bit (Karatsuba)</strong> bằng kỹ thuật chia để trị (Mục 2.2.3 - Giáo trình Toán Rời Rạc 1 trang 42), tích hai số $2n$ bit được đưa về mấy phép nhân các số $n$ bit và có độ phức tạp bao nhiêu?",
+    "options": [
+      "$3$ phép nhân số $n$ bit với độ phức tạp $O(n \\log_2 3)$",
+      "$4$ phép nhân số $n$ bit ($f(2n) = 4f(n) + Cn$) với độ phức tạp $O(n^2)$",
+      "$2$ phép nhân số $n$ bit ($f(2n) = 2f(n) + Cn$) với độ phức tạp $O(n \\log n)$",
+      "$3$ phép nhân số $n$ bit ($f(2n) = 3f(n) + Cn$) với độ phức tạp $O(n^{\\log_2 3}) \\approx O(n^{1.58})$"
+    ],
+    "correct": 3,
+    "explanation": "Bằng cách phân tích $ab = (2^{2n} + 2^n)A_1 B_1 + 2^n(A_1 - A_0)(B_0 - B_1) + (2^n + 1)A_0 B_0$, thuật toán chỉ cần $a = 3$ bài toán con cỡ $n/b = n/2$. Theo Định lý 3 (Master Theorem), vì $a = 3 > 1$, độ phức tạp là $O(n^{\\log_2 3}) \\approx O(n^{1.58})$."
+  },
+  {
+    "id": 311,
+    "topic": "Hệ Thức Chia Để Trị",
+    "question": "Thuật toán tìm kiếm nhị phân (<strong>Binary Search</strong>) chia dãy đã sắp xếp có $n$ phần tử thành bài toán con cỡ $n/2$ với tối đa $2$ phép so sánh ở mỗi bước: $f(n) = f(n/2) + 2$. Độ phức tạp thời gian của thuật toán là:",
+    "options": [
+      "$O(n \\log n)$",
+      "$O(n)$",
+      "$O(\\log n)$",
+      "$O(\\sqrt{n})$"
+    ],
+    "correct": 2,
+    "explanation": "Áp dụng Định lý chia để trị $f(n) = a f(n/b) + c$ với $a = 1, b = 2$: khi $a = 1$, ta có $f(n) = O(\\log_b n) = O(\\log n)$."
+  },
+  {
+    "id": 312,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Cần chọn một giỏ hoa quả gồm Táo, Lê, Cam (Ví dụ 27 - Slide 2_Counting) sao cho: số Táo là một số chẵn, số Lê chia hết cho $5$, và số Cam không quá $4$ quả. Hàm sinh $g(x) = \\sum_{n=0}^{\\infty} h_n x^n$ của bài toán này rút gọn thành:",
+    "options": [
+      "$g(x) = \\frac{1}{(1 - x^2)(1 - x)} = \\frac{1}{(1 + x)(1 - x)^2}$",
+      "$g(x) = \\frac{1}{(1 - x)^3}$",
+      "$g(x) = \\frac{1 - x^5}{(1 - x^2)(1 - x)}$",
+      "$g(x) = \\frac{1}{(1 - x^2)(1 - x^5)}$"
+    ],
+    "correct": 0,
+    "explanation": "Nhân tử cho Táo (chẵn): $1 + x^2 + x^4 + \\dots = \\frac{1}{1 - x^2}$. Nhân tử cho Lê (bội của 5): $1 + x^5 + x^{10} + \\dots = \\frac{1}{1 - x^5}$. Nhân tử cho Cam ($\\le 4$): $1 + x + x^2 + x^3 + x^4 = \\frac{1 - x^5}{1 - x}$. Nhân ba đa thức/chuỗi lại, triệt tiêu $(1 - x^5)$ ta được $g(x) = \\frac{1}{(1 - x^2)(1 - x)}$."
+  },
+  {
+    "id": 313,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Tìm hàm sinh cho số cách đổi $n$ đồng tiền từ $3$ loại tiền mệnh giá $1$ đồng, $2$ đồng và $5$ đồng (với số lượng mỗi loại không hạn chế - Ví dụ 28 Slide 2_Counting):",
+    "options": [
+      "$g(x) = \\frac{x^8}{(1 - x)(1 - x^2)(1 - x^5)}$",
+      "$g(x) = (1 + x)(1 + x^2)(1 + x^5)$",
+      "$g(x) = \\frac{1}{1 - x - x^2 - x^5}$",
+      "$g(x) = \\frac{1}{(1 - x)(1 - x^2)(1 - x^5)}$"
+    ],
+    "correct": 3,
+    "explanation": "Mỗi đồng mệnh giá $k$ đóng góp thừa số $(1 + x^k + x^{2k} + \\dots) = \\frac{1}{1 - x^k}$. Do đó với $3$ mệnh giá $1, 2, 5$, hàm sinh là $g(x) = \\frac{1}{(1 - x)(1 - x^2)(1 - x^5)}$."
+  },
+  {
+    "id": 314,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Khai triển chuỗi lũy thừa của hàm sinh $f(x) = \\frac{1}{(1 - x)^k}$ (với $k \\ge 1$ nguyên dương) có hệ số của $x^n$ bằng:",
+    "options": [
+      "$C_k^n$",
+      "$C_{n + k - 1}^n = C_{n + k - 1}^{k - 1}$",
+      "$k^n$",
+      "$n^k$"
+    ],
+    "correct": 1,
+    "explanation": "Tích của $k$ chuỗi $\\frac{1}{1 - x} = 1 + x + x^2 + \\dots$ chính là hàm sinh đếm số nghiệm nguyên không âm của $x_1 + x_2 + \\dots + x_k = n$, nên hệ số của $x^n$ là $C_{n + k - 1}^n$."
+  },
+  {
+    "id": 315,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Một người gửi tiết kiệm $P_0 = 10\\,000$ USD vào ngân hàng với lãi suất kép $11\\%$/năm (Ví dụ 14 - Slide 2_Counting). Gọi $P_n$ là số tiền có được sau $n$ năm. Biểu thức của $P_n$ là:",
+    "options": [
+      "$P_n = 1.11 P_{n-1} = 10\\,000 \\times (1.11)^n$",
+      "$P_n = P_{n-1} + 0.11 P_0 = 10\\,000 \\times (1 + 0.11n)$",
+      "$P_n = (0.11)^n \\times 10\\,000$",
+      "$P_n = 1.11^n + 10\\,000$"
+    ],
+    "correct": 0,
+    "explanation": "Sau mỗi năm, tổng số tiền bằng vốn đầu năm cộng thêm $11\\%$ lãi: $P_n = P_{n-1} + 0.11 P_{n-1} = 1.11 P_{n-1}$. Thế liên tiếp từ $P_0$ ta được $P_n = (1.11)^n P_0 = 10\\,000 \\times (1.11)^n$."
+  },
+  {
+    "id": 316,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Tìm nghiệm của hệ thức truy hồi $a_n = 7a_{n-1} - 10a_{n-2}$ với điều kiện đầu $a_0 = 2, a_1 = 3$ (Bài tập 26 - Giáo trình Toán Rời Rạc 1):",
+    "options": [
+      "$a_n = \\frac{5}{3} \\cdot 2^n + \\frac{1}{3} \\cdot 5^n$",
+      "$a_n = 2 \\cdot 2^n - 5^n$",
+      "$a_n = \\frac{7}{3} \\cdot 2^n - \\frac{1}{3} \\cdot 5^n$",
+      "$a_n = 3 \\cdot 2^n - 5^n$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 - 7r + 10 = 0 \\Leftrightarrow (r - 2)(r - 5) = 0$ có $r_1 = 2, r_2 = 5$. Hệ phương trình điều kiện đầu: $\\begin{cases} \\alpha_1 + \\alpha_2 = 2 \\\\ 2\\alpha_1 + 5\\alpha_2 = 3 \\end{cases} \\Leftrightarrow \\begin{cases} 3\\alpha_2 = -1 \\Rightarrow \\alpha_2 = -1/3 \\\\ \\alpha_1 = 7/3 \\end{cases}$. Vậy $a_n = \\frac{7}{3} \\cdot 2^n - \\frac{1}{3} \\cdot 5^n$."
+  }
+]

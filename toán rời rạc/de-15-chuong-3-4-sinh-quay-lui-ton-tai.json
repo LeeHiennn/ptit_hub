@@ -1,0 +1,392 @@
+[
+  {
+    "id": 721,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Khi liệt kê tất cả các xâu nhị phân độ dài $6$ theo thứ tự từ điển, cần thực hiện bao nhiêu bước sinh kế tiếp để đi từ xâu $X = (0,1,0,1,1,0)$ đến xâu $Y = (1,0,0,0,1,1)$?",
+    "options": [
+      "$12$ bước",
+      "$13$ bước",
+      "$14$ bước",
+      "$15$ bước"
+    ],
+    "correct": 1,
+    "explanation": "Đổi sang hệ thập phân: $(010110)_2 = 16 + 4 + 2 = 22$; $(100011)_2 = 32 + 2 + 1 = 35$. Số bước sinh kế tiếp đúng bằng hiệu thứ tự: $35 - 22 = 13$ bước."
+  },
+  {
+    "id": 722,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân",
+    "question": "Cho xâu nhị phân $X = (1,0,1,0,0,0,0)$ độ dài $7$. Nếu đánh số từ $1$ theo thứ tự từ điển, thì $X$ đứng ở thứ tự thứ bao nhiêu và xâu nhị phân <strong>liền trước</strong> của $X$ là xâu nào?",
+    "options": [
+      "Thứ $80$; liền trước là $(1,0,0,1,1,1,1)$",
+      "Thứ $79$; liền trước là $(1,0,0,1,1,1,0)$",
+      "Thứ $81$; liền trước là $(1,0,0,1,1,1,1)$",
+      "Thứ $81$; liền trước là $(1,0,1,0,0,0,1)$"
+    ],
+    "correct": 2,
+    "explanation": "Giá trị thập phân của $(1010000)_2$ là $2^6 + 2^4 = 64 + 16 = 80$. Vì xâu $(0000000)_2$ đứng thứ $1$ nên $X$ đứng thứ $80 + 1 = 81$. Xâu liền trước có giá trị $79 = (1001111)_2$."
+  },
+  {
+    "id": 723,
+    "topic": "Thứ Tự Từ Điển Xâu Nhị Phân",
+    "question": "Khi liệt kê toàn bộ xâu nhị phân độ dài $8$ theo thứ tự từ điển (bắt đầu từ xâu thứ $1$ là $00000000$), xâu đứng ở vị trí thứ <strong>$175$</strong> là:",
+    "options": [
+      "$(1,0,1,1,0,0,0,0)$",
+      "$(1,0,1,0,1,1,1,1)$",
+      "$(1,0,1,0,1,1,0,1)$",
+      "$(1,0,1,0,1,1,1,0)$"
+    ],
+    "correct": 3,
+    "explanation": "Xâu thứ $k$ (đếm từ $1$) có giá trị thập phân bằng $k - 1 = 175 - 1 = 174$. Đổi sang nhị phân $8$ bit: $174 = 128 + 32 + 8 + 4 + 2 = (1,0,1,0,1,1,1,0)$."
+  },
+  {
+    "id": 724,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Liệt kê các xâu nhị phân độ dài $6$ chứa <strong>đúng $3$ bit $1$</strong> theo thứ tự từ điển tăng dần. Xâu đứng ngay sau xâu $(0,0,1,1,1,0)$ là:",
+    "options": [
+      "$(0,1,1,0,0,1)$",
+      "$(0,1,0,1,1,0)$",
+      "$(0,0,1,1,0,1)$",
+      "$(0,1,0,0,1,1)$"
+    ],
+    "correct": 3,
+    "explanation": "Xâu nhỏ nhất lớn hơn $(0,0,1,1,1,0)$ mà vẫn giữ đúng ba bit $1$ là tăng bit $0$ ở vị trí thứ $2$ lên $1$, rồi đẩy hai bit $1$ còn lại về tận cùng bên phải, thu được $(0,1,0,0,1,1)$."
+  },
+  {
+    "id": 725,
+    "topic": "Thuật Toán Sinh Tổ Hợp",
+    "question": "Cho tập $A = \\{1, 2, \\dots, 10\\}$. Áp dụng thuật toán sinh tổ hợp chập $6$ theo thứ tự từ điển, hãy liệt kê $3$ tổ hợp liền kề tiếp theo của tổ hợp $(1, 3, 5, 8, 9, 10)$:",
+    "options": [
+      "$(1,3,6,7,8,9),\\ (1,3,6,7,9,10),\\ (1,3,6,8,9,10)$",
+      "$(1,3,6,8,9,10),\\ (1,4,5,6,7,8),\\ (1,4,5,6,7,9)$",
+      "$(1,3,6,7,8,9),\\ (1,3,6,7,8,10),\\ (1,3,6,7,9,10)$",
+      "$(1,3,5,8,9,10),\\ (1,3,6,7,8,9),\\ (1,3,6,8,9,10)$"
+    ],
+    "correct": 2,
+    "explanation": "Với $n=10, k=6$, giới hạn trên tại vị trí $i$ là $4 + i$ (cấu hình cuối là $(5,6,7,8,9,10)$). Từ $(1,3,5,8,9,10)$, ba phần tử cuối đã chạm trần nên tăng $x_3 = 5 \\to 6$ và đặt lại đuôi nhỏ nhất thành $(1,3,6,7,8,9)$; tiếp theo là $(1,3,6,7,8,10)$ và $(1,3,6,7,9,10)$."
+  },
+  {
+    "id": 726,
+    "topic": "Liệt Kê Tổ Hợp Liền Trước",
+    "question": "Cho tập $A = \\{1, 2, \\dots, 8\\}$. Áp dụng thứ tự từ điển của các tổ hợp chập $5$, hãy liệt kê $3$ tổ hợp <strong>liền trước</strong> (theo thứ tự từ ngay trước lùi dần về trước) của tổ hợp $(1, 3, 4, 5, 6)$:",
+    "options": [
+      "$(1,2,6,7,8),\\ (1,2,6,7,7),\\ (1,2,5,6,7)$",
+      "$(1,2,5,6,8),\\ (1,2,5,7,8),\\ (1,2,6,7,8)$",
+      "$(1,2,6,7,8),\\ (1,2,5,7,8),\\ (1,2,5,6,8)$",
+      "$(1,2,4,5,6),\\ (1,2,3,4,5),\\ (1,2,3,4,8)$"
+    ],
+    "correct": 2,
+    "explanation": "Vì $3,4,5,6$ nối tiếp nhau liên tục sau $x_1 = 1$, cấu hình ngay trước $(1,3,4,5,6)$ phải giảm $x_2 = 3 \\to 2$ và đẩy $3$ phần tử cuối lên lớn nhất có thể là $(6,7,8)$, tức $(1,2,6,7,8)$. Lùi tiếp được $(1,2,5,7,8)$ và $(1,2,5,6,8)$."
+  },
+  {
+    "id": 727,
+    "topic": "Thuật Toán Sinh Tổ Hợp",
+    "question": "Liệt kê tất cả các tổ hợp chập $3$ của tập $\\{1, 2, 3, 4, 5, 6\\}$ theo thứ tự từ điển (đánh số từ $1$). Tổ hợp $(2, 4, 5)$ đứng ở vị trí thứ bao nhiêu?",
+    "options": [
+      "$13$",
+      "$15$",
+      "$14$",
+      "$16$"
+    ],
+    "correct": 2,
+    "explanation": "Số tổ hợp đứng trước $(2,4,5)$ gồm: bắt đầu bằng $1$ có $C_5^2 = 10$ tổ hợp; bắt đầu bằng $(2, 3, \\dots)$ có $C_3^1 = 3$ tổ hợp ($(2,3,4), (2,3,5), (2,3,6)$). Vậy $(2,4,5)$ đứng thứ $10 + 3 + 1 = 14$."
+  },
+  {
+    "id": 728,
+    "topic": "Thuật Toán Sinh Tổ Hợp",
+    "question": "Trong danh sách tất cả các tổ hợp chập $4$ của tập $\\{1, 2, 3, 4, 5, 6, 7\\}$ theo thứ tự từ điển (bắt đầu từ $1$), tổ hợp đứng ở vị trí thứ <strong>$20$</strong> là:",
+    "options": [
+      "$(1, 5, 6, 7)$",
+      "$(1, 4, 6, 7)$",
+      "$(2, 3, 4, 6)$",
+      "$(2, 3, 4, 5)$"
+    ],
+    "correct": 0,
+    "explanation": "Số tổ hợp chập $4$ bắt đầu bằng phần tử $1$ đúng bằng $C_6^3 = 20$. Do đó, tổ hợp đứng thứ $20$ chính là tổ hợp lớn nhất có chứa $1$ ở đầu, tức là $(1, 5, 6, 7)$."
+  },
+  {
+    "id": 729,
+    "topic": "Thuật Toán Sinh Hoán Vị",
+    "question": "Cho hoán vị của tập $\\{1, 2, \\dots, 9\\}$ là $X = (3, 8, 9, 7, 6, 5, 4, 2, 1)$. Hoán vị liền kề tiếp theo của $X$ theo thứ tự từ điển là:",
+    "options": [
+      "$(3, 9, 1, 2, 4, 5, 6, 7, 8)$",
+      "$(3, 9, 8, 7, 6, 5, 4, 2, 1)$",
+      "$(4, 1, 2, 3, 5, 6, 7, 8, 9)$",
+      "$(3, 9, 7, 6, 5, 4, 2, 1, 8)$"
+    ],
+    "correct": 0,
+    "explanation": "Duyệt từ phải sang trái tìm cặp tăng đầu tiên: $x_2 = 8 < x_3 = 9$ (đoạn $(9,7,6,5,4,2,1)$ đang giảm dần). Số nhỏ nhất bên phải lớn hơn $8$ là $9$. Đổi chỗ $8$ và $9$, rồi lật ngược đoạn đuôi $(8,7,6,5,4,2,1)$ thành $(1,2,4,5,6,7,8)$, thu được $(3,9,1,2,4,5,6,7,8)$."
+  },
+  {
+    "id": 730,
+    "topic": "Thuật Toán Sinh Hoán Vị",
+    "question": "Hoán vị <strong>liền trước</strong> của hoán vị $(4, 2, 1, 3, 5)$ trong thứ tự từ điển các hoán vị của $\\{1, 2, 3, 4, 5\\}$ là:",
+    "options": [
+      "$(4, 1, 3, 5, 2)$",
+      "$(4, 2, 1, 5, 3)$",
+      "$(3, 5, 4, 2, 1)$",
+      "$(4, 1, 5, 3, 2)$"
+    ],
+    "correct": 3,
+    "explanation": "Để tìm hoán vị liền trước, duyệt từ phải sang tìm vị trí giảm đầu tiên: $x_2 = 2 > x_3 = 1$ (đoạn đuôi $(1, 3, 5)$ đang tăng dần). Đổi $2$ với số lớn nhất bên phải nhỏ hơn $2$ (là $1$), rồi lật ngược đuôi thành giảm dần $(5, 3, 2)$, ta được $(4, 1, 5, 3, 2)$."
+  },
+  {
+    "id": 731,
+    "topic": "Thuật Toán Sinh Hoán Vị",
+    "question": "Liệt kê $24$ hoán vị của $\\{1, 2, 3, 4\\}$ theo thứ tự từ điển (từ $1$ đến $24$). Hoán vị $(3, 1, 4, 2)$ đứng ở vị trí thứ bao nhiêu?",
+    "options": [
+      "$14$",
+      "$16$",
+      "$13$",
+      "$15$"
+    ],
+    "correct": 0,
+    "explanation": "Số hoán vị đứng trước $(3, 1, 4, 2)$: bắt đầu bằng $1$ hoặc $2$ có $2 \\times 3! = 12$; bắt đầu bằng $(3, 1, 2, \\dots)$ có $1 \\times 1! = 1$. Vậy $(3, 1, 4, 2)$ đứng ở vị trí $12 + 1 + 1 = 14$."
+  },
+  {
+    "id": 732,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Trong thuật toán sinh tất cả các cách phân tích số $n = 9$ thành tổng các số nguyên dương theo thứ tự từ điển giảm dần (bắt đầu từ $(9)$ và kết thúc ở $(1,1,\\dots,1)$), cấu hình kế tiếp ngay sau $(4, 3, 1, 1)$ là:",
+    "options": [
+      "$(4, 2, 3)$",
+      "$(3, 3, 3)$",
+      "$(4, 2, 1, 1, 1)$",
+      "$(4, 2, 2, 1)$"
+    ],
+    "correct": 3,
+    "explanation": "Tìm từ phải sang trái phần tử đầu tiên khác $1$, đó là $3$. Giảm $3$ xuống $2$, phần tổng còn thiếu ở bên phải là $1 + 1 + 1 = 3$ được chia thành các phần lớn nhất không vượt quá $2$: $3 = 2 + 1$. Thu được $(4, 2, 2, 1)$."
+  },
+  {
+    "id": 733,
+    "topic": "Phương Pháp Sinh (Generation)",
+    "question": "Trong <strong>mã Gray (Gray code)</strong> $3$-bit phản xạ nhị phân chuẩn, dãy mã bắt đầu bằng $000, 001, 011, 010, \\dots$ thì $4$ mã tiếp theo lần lượt là:",
+    "options": [
+      "$110, 111, 101, 100$",
+      "$101, 100, 110, 111$",
+      "$110, 100, 101, 111$",
+      "$100, 101, 110, 111$"
+    ],
+    "correct": 0,
+    "explanation": "Mã Gray $n$-bit được sinh bằng cách lấy mã $(n-1)$-bit ghi xuôi gắn bit $0$ ở đầu, nối với mã $(n-1)$-bit ghi ngược gắn bit $1$ ở đầu. Đảo ngược $(00, 01, 11, 10)$ thành $(10, 11, 01, 00)$ và thêm $1$ vào đầu thu được $110, 111, 101, 100$."
+  },
+  {
+    "id": 734,
+    "topic": "Thuật Toán Quay Lui (Backtracking)",
+    "question": "Với thuật toán quay lui cho bài toán xếp $n$ quân hậu trên bàn cờ $n \\times n$, số lượng nghiệm phân biệt ứng với $n = 3,\\ n = 4$ và $n = 5$ lần lượt là:",
+    "options": [
+      "$1,\\ 2$ và $8$",
+      "$2,\\ 4$ và $10$",
+      "$0,\\ 2$ và $10$",
+      "$0,\\ 4$ và $12$"
+    ],
+    "correct": 2,
+    "explanation": "Với $n = 2$ và $n = 3$ bài toán vô nghiệm ($0$ nghiệm). Với $n = 4$ có đúng $2$ nghiệm (đối xứng qua trục dọc: $(2,4,1,3)$ và $(3,1,4,2)$). Với $n = 5$ có $10$ nghiệm."
+  },
+  {
+    "id": 735,
+    "topic": "Thuật Toán Quay Lui (Backtracking)",
+    "question": "Trên bàn cờ $4 \\times 4$ (đánh số hàng và cột từ $1$ đến $4$), giả sử thuật toán quay lui đã đặt quân hậu hàng $1$ tại cột $2$ và quân hậu hàng $2$ tại cột $4$. Ở hàng thứ $3$, quân hậu có thể đặt hợp lệ vào cột nào?",
+    "options": [
+      "Không có cột nào hợp lệ, phải quay lui về hàng $2$",
+      "Chỉ đặt được vào cột $3$",
+      "Chỉ đặt được vào cột $1$",
+      "Đặt được vào cột $1$ hoặc cột $3$"
+    ],
+    "correct": 2,
+    "explanation": "Hậu $(1, 2)$ khống chế cột $2$ và ô $(3, 4)$ trên đường chéo xuôi ($3 - 4 = 1 - 2$). Hậu $(2, 4)$ khống chế cột $4$ và ô $(3, 3)$ trên đường chéo ngược ($3 + 3 = 2 + 4$). Vậy ở hàng $3$, các cột $2, 3, 4$ đều bị ăn, chỉ duy nhất cột $1$ hợp lệ (và dẫn tới nghiệm $(2, 4, 1, 3)$)."
+  },
+  {
+    "id": 736,
+    "topic": "Thuật Toán Quay Lui (Backtracking)",
+    "question": "Trong thuật toán quay lui sinh tất cả các cấu hình (không cắt tỉa), số lượng lá của cây tìm kiếm khi liệt kê toàn bộ xâu nhị phân độ dài $n$ và toàn bộ hoán vị của $n$ phần tử lần lượt là:",
+    "options": [
+      "$2^n$ và $n^n$",
+      "$2^{n+1}-1$ và $n!$",
+      "$n^2$ và $n!$",
+      "$2^n$ và $n!$"
+    ],
+    "correct": 3,
+    "explanation": "Mỗi lá ở độ sâu $n$ tương ứng với một cấu hình hoàn chỉnh: có $2^n$ xâu nhị phân độ dài $n$ và $n!$ hoán vị độ dài $n$."
+  },
+  {
+    "id": 737,
+    "topic": "Thuật Toán Quay Lui (Backtracking)",
+    "question": "Trong thuật toán quay lui giải bài toán tìm tập con có tổng bằng $M$ (Subset Sum) cho dãy số dương $A = (a_1, \\dots, a_n)$ đã sắp xếp tăng dần. Giả sử tại bước $i$, tổng tạm thời là $S$ và tổng các phần tử còn lại từ $i$ đến $n$ là $R$. Hai điều kiện <strong>cắt tỉa nhánh (pruning)</strong> chuẩn xác là:",
+    "options": [
+      "$S = M$ hoặc $a_i > M$",
+      "$S + a_i > M$ hoặc $S + R < M$",
+      "$S > M$ hoặc $R < M$",
+      "$S + a_i < M$ và $S + R > M$"
+    ],
+    "correct": 1,
+    "explanation": "Vì các số đều dương và đã sắp tăng dần: nếu $S + a_i > M$ thì không thể chọn thêm bất kỳ phần tử nào từ $i$ trở đi; nếu $S + R < M$ thì dù lấy hết các phần tử còn lại cũng không đủ đạt $M$. Cả hai trường hợp đều cắt nhánh ngay."
+  },
+  {
+    "id": 738,
+    "topic": "Thuật Toán Quay Lui (Backtracking)",
+    "question": "Khi giải bài toán <strong>Mã đi tuần (Knight's Tour)</strong> trên bàn cờ $n \\times n$ bằng quay lui, quy tắc heuristic <strong>Warnsdorff</strong> giúp tăng tốc độ tìm lời giải gần như tức thời bằng cách ưu tiên chọn ô kế tiếp thỏa mãn điều kiện nào?",
+    "options": [
+      "Ô nằm ở bốn góc bàn cờ trước tiên",
+      "Ô có <strong>ít đường đi tiếp hợp lệ nhất</strong> (bậc thoát ra nhỏ nhất)",
+      "Ô có <strong>nhiều đường đi tiếp hợp lệ nhất</strong>",
+      "Ô nằm gần tâm bàn cờ nhất"
+    ],
+    "correct": 1,
+    "explanation": "Quy tắc Warnsdorff ưu tiên đi vào ô kề hợp lệ có <strong>ít nước đi tiếp theo nhất</strong> (tức những ô \"ngõ cụt\" hay sát biên), tránh việc bỏ sót những ô khó đi để rồi cuối cùng bị mắc kẹt."
+  },
+  {
+    "id": 739,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Cần chọn ra từ tập $S = \\{1, 2, 3, \\dots, 20\\}$ <strong>ít nhất bao nhiêu số</strong> để chắc chắn rằng trong các số được chọn luôn có $2$ số mà số này <strong>chia hết</strong> cho số kia?",
+    "options": [
+      "$15$ số",
+      "$12$ số",
+      "$11$ số",
+      "$10$ số"
+    ],
+    "correct": 2,
+    "explanation": "Mỗi số $x \\in \\{1..20\\}$ viết được duy nhất dưới dạng $x = 2^k \\cdot m$ với $m$ là số lẻ thuộc $\\{1, 3, 5, \\dots, 19\\}$ (có đúng $10$ số lẻ — coi là $10$ chuồng). Nếu chọn $11$ số, theo nguyên lý Dirichlet sẽ có $2$ số có cùng phần lẻ $m$, do đó số lớn hơn chắc chắn chia hết cho số nhỏ hơn. (Với $10$ số có thể chọn $\\{11, 12, \\dots, 20\\}$ không có cặp nào chia hết nhau)."
+  },
+  {
+    "id": 740,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Cần lấy ngẫu nhiên từ tập $\\{1, 2, \\dots, 20\\}$ <strong>ít nhất bao nhiêu số</strong> để chắc chắn luôn có $2$ số có <strong>tổng bằng $21$</strong>?",
+    "options": [
+      "$12$",
+      "$10$",
+      "$19$",
+      "$11$"
+    ],
+    "correct": 3,
+    "explanation": "Chia $20$ số thành $10$ cặp có tổng bằng $21$: $\\{1, 20\\}, \\{2, 19\\}, \\dots, \\{10, 11\\}$. Theo nguyên lý Dirichlet, chỉ cần chọn $10 + 1 = 11$ số là chắc chắn có ít nhất $2$ số rơi vào cùng một cặp (có tổng bằng $21$)."
+  },
+  {
+    "id": 741,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Trong một hộp kín có $15$ bi đỏ, $12$ bi xanh, $9$ bi vàng và $6$ bi trắng. Cần lấy ra ngẫu nhiên <strong>ít nhất bao nhiêu viên bi</strong> để chắc chắn thu được ít nhất $8$ viên bi cùng màu?",
+    "options": [
+      "$29$ viên",
+      "$30$ viên",
+      "$32$ viên",
+      "$28$ viên"
+    ],
+    "correct": 3,
+    "explanation": "Xét trường hợp xấu nhất không có màu nào đạt $8$ viên: ta bốc hết toàn bộ $6$ viên bi trắng (vì trắng có ít hơn $8$), và mỗi màu còn lại (đỏ, xanh, vàng) bốc tối đa $7$ viên. Tổng cộng đã bốc $6 + 7 + 7 + 7 = 27$ viên mà chưa đạt yêu cầu. Chỉ cần bốc thêm $1$ viên nữa ($28$ viên) thì chắc chắn có $8$ viên cùng màu."
+  },
+  {
+    "id": 742,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Đặt ngẫu nhiên $5$ điểm vào bên trong hoặc trên cạnh một hình vuông có độ dài cạnh bằng $2$. Theo nguyên lý Dirichlet, khẳng định nào dưới đây <strong>luôn đúng</strong>?",
+    "options": [
+      "Luôn tồn tại $2$ điểm có khoảng cách không vượt quá $\\sqrt{2}$",
+      "Luôn tồn tại $2$ điểm có khoảng cách không vượt quá $1$",
+      "Luôn tồn tại $2$ điểm nằm trên cùng một cạnh hình vuông",
+      "Luôn tồn tại $3$ điểm tạo thành tam giác đều"
+    ],
+    "correct": 0,
+    "explanation": "Chia hình vuông cạnh $2$ thành $4$ hình vuông con bằng nhau có cạnh $1$. Đặt $5$ điểm vào $4$ hình vuông con thì có ít nhất $2$ điểm nằm trong cùng một hình vuông con cạnh $1$. Khoảng cách giữa $2$ điểm bất kỳ trong hình vuông cạnh $1$ tối đa bằng độ dài đường chéo $\\sqrt{1^2 + 1^2} = \\sqrt{2}$."
+  },
+  {
+    "id": 743,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Cho một tam giác đều có cạnh bằng $1$. Nếu đặt $10$ điểm phân biệt bất kỳ bên trong (hoặc trên cạnh) tam giác đó, thì luôn tồn tại ít nhất $2$ điểm có khoảng cách nhỏ hơn hoặc bằng:",
+    "options": [
+      "$\\frac{1}{4}$",
+      "$\\frac{1}{2}$",
+      "$\\frac{1}{3}$",
+      "$\\frac{1}{9}$"
+    ],
+    "correct": 2,
+    "explanation": "Chia mỗi cạnh tam giác đều thành $3$ phần bằng nhau rồi nối các đường song song với các cạnh, ta chia tam giác ban đầu thành $3^2 = 9$ tam giác đều nhỏ cạnh $\\frac{1}{3}$. Với $10$ điểm phân bổ vào $9$ tam giác nhỏ, luôn có ít nhất $2$ điểm cùng nằm trong $1$ tam giác nhỏ, nên khoảng cách giữa chúng $\\le \\frac{1}{3}$."
+  },
+  {
+    "id": 744,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Theo định lý Erdős–Szekeres (một hệ quả kinh điển của nguyên lý Dirichlet), trong một dãy gồm $n = 10$ số thực phân biệt bất kỳ, luôn tồn tại một dãy con (không nhất thiết liên tiếp) đơn điệu tăng hoặc đơn điệu giảm có độ dài <strong>ít nhất</strong> là:",
+    "options": [
+      "$6$",
+      "$3$",
+      "$5$",
+      "$4$"
+    ],
+    "correct": 3,
+    "explanation": "Định lý Erdős–Szekeres khẳng định mọi dãy gồm $ab + 1$ số thực phân biệt luôn chứa dãy con tăng dài $a+1$ hoặc giảm dài $b+1$. Với $n = 10 = 3 \\times 3 + 1$ ($a = b = 3$), luôn tồn tại dãy con đơn điệu có độ dài ít nhất $3 + 1 = 4$."
+  },
+  {
+    "id": 745,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Trong bài toán Ramsey, giá trị nhỏ nhất của $n$ (tức số Ramsey $R(3, 4)$) để trong một buổi tiệc $n$ người bất kỳ luôn tìm được hoặc $3$ người đôi một quen nhau, hoặc $4$ người đôi một không quen nhau là:",
+    "options": [
+      "$9$",
+      "$8$",
+      "$10$",
+      "$6$"
+    ],
+    "correct": 0,
+    "explanation": "Ta biết $R(3, 3) = 6$ và $R(3, 4) = 9$. (Với $8$ người có thể dựng đồ thị tuần hoàn $8$ đỉnh nối với các đỉnh cách $1, 2, 4$ không chứa $K_3$ lẫn tập độc lập cỡ $4$; với $9$ người luôn tồn tại ít nhất $1$ trong $2$ cấu trúc trên)."
+  },
+  {
+    "id": 746,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Cho $10$ số nguyên dương đôi một phân biệt thuộc đoạn $[1, 100]$. Để chứng minh luôn tồn tại $2$ tập con khác rỗng rời nhau có tổng các phần tử bằng nhau, ta dùng nguyên lý Dirichlet bằng cách so sánh số tập con khác rỗng ($1023$) với tổng lớn nhất có thể có của một tập con là bao nhiêu?",
+    "options": [
+      "$1020$",
+      "$900$",
+      "$955$",
+      "$1000$"
+    ],
+    "correct": 2,
+    "explanation": "Tổng lớn nhất của một tập con trích từ $10$ số phân biệt $\\le 100$ không vượt quá $91 + 92 + \\dots + 100 = 955$. Vì có $2^{10} - 1 = 1023 > 955$ tập con khác rỗng, chắc chắn có $2$ tập con khác nhau có cùng tổng; bỏ đi các phần tử chung ta thu được $2$ tập con rời nhau có tổng bằng nhau."
+  },
+  {
+    "id": 747,
+    "topic": "Bài Toán Tồn Tại & Phản Chứng",
+    "question": "Trên bảng viết $2025$ số nguyên dương từ $1$ đến $2025$. Mỗi bước ta xóa $2$ số $a, b$ bất kỳ và viết thay bằng số $|a - b|$. Lặp lại đến khi trên bảng chỉ còn duy nhất $1$ số. Bằng phép xét <strong>bất biến</strong>, số cuối cùng còn lại chắc chắn là:",
+    "options": [
+      "Chắc chắn bằng $0$",
+      "Một số chẵn",
+      "Chắc chắn bằng $1$",
+      "Một số lẻ"
+    ],
+    "correct": 3,
+    "explanation": "Khi thay $a, b$ bởi $|a - b|$, tổng tất cả các số trên bảng giảm đi $a + b - |a - b| = 2\\min(a, b)$ (là một số chẵn), nên <strong>tính chẵn lẻ của tổng</strong> là một bất biến. Tổng ban đầu $\\frac{2025 \\times 2026}{2} = 2025 \\times 1013$ là số lẻ, suy ra số duy nhất còn lại cuối cùng bắt buộc phải là một số lẻ."
+  },
+  {
+    "id": 748,
+    "topic": "Bài Toán Tồn Tại & Phản Chứng",
+    "question": "Bàn cờ vua chuẩn $8 \\times 8$ bị cắt bỏ hai ô ở hai góc đối diện nhau trên cùng một đường chéo chính (còn lại $62$ ô). Có thể phủ kín $62$ ô còn lại bằng $31$ quân domino kích thước $1 \\times 2$ không?",
+    "options": [
+      "Không, vì hai ô góc đối diện luôn có cùng màu nên số ô đen và ô trắng còn lại không bằng nhau ($32$ và $30$)",
+      "Có, luôn phủ được nhiều cách",
+      "Có, nếu xoay ngang dọc xen kẽ",
+      "Không, vì số ô còn lại không chia hết cho $4$"
+    ],
+    "correct": 0,
+    "explanation": "Tô bàn cờ theo kiểu đen-trắng xen kẽ ($32$ trắng, $32$ đen). Hai ô ở hai góc đối diện trên cùng đường chéo chính có cùng màu, nên khi cắt bỏ đi sẽ còn lại $32$ ô một màu và $30$ ô màu kia. Mỗi quân domino $1 \\times 2$ luôn phủ đúng $1$ ô trắng và $1$ ô đen, nên $31$ quân domino không thể phủ được $32$ ô cùng màu."
+  },
+  {
+    "id": 749,
+    "topic": "Bài Toán Tồn Tại & Nguyên Lý Dirichlet",
+    "question": "Khi chọn bất kỳ $n + 1$ số nguyên từ tập $\\{1, 2, \\dots, 2n\\}$, để chứng minh chắc chắn tồn tại hai số nguyên tố cùng nhau (có $\\gcd = 1$), ta chia $\\{1, 2, \\dots, 2n\\}$ thành $n$ chuồng như thế nào?",
+    "options": [
+      "Chia thành $n$ cặp có tổng bằng $2n + 1$",
+      "Chia thành tập các số nguyên tố và tập hợp số",
+      "Chia thành $n$ cặp số nguyên liên tiếp: $\\{1,2\\}, \\{3,4\\}, \\dots, \\{2n-1, 2n\\}$",
+      "Chia theo số dư khi chia cho $n$"
+    ],
+    "correct": 2,
+    "explanation": "Chia $\\{1..2n\\}$ thành $n$ cặp số liên tiếp $\\{1,2\\}, \\{3,4\\}, \\dots, \\{2n-1, 2n\\}$. Khi chọn $n+1$ số thì có ít nhất $2$ số rơi vào cùng một cặp $(k, k+1)$, và hai số nguyên liên tiếp luôn có $\\gcd(k, k+1) = 1$."
+  },
+  {
+    "id": 750,
+    "topic": "Bài Toán Tồn Tại & Phản Chứng",
+    "question": "Cho đồ thị hai phía $G = (X \\cup Y, E)$. Theo <strong>Định lý Hôn nhân Hall (Hall's Marriage Theorem)</strong>, tồn tại một ghép cặp bão hòa toàn bộ tập đỉnh $X$ (mỗi đỉnh thuộc $X$ ghép với $1$ đỉnh phân biệt thuộc $Y$) khi và chỉ khi với mọi tập con $S \\subseteq X$:",
+    "options": [
+      "$|N(S)| \\le |S|$ (với $N(S)$ là tập các đỉnh kề với $S$ trong $Y$)",
+      "$|N(S)| \\ge |S|$ (số láng giềng của $S$ trong $Y$ ít nhất bằng $|S|$)",
+      "$\\deg(x) = \\deg(y)$ với mọi $x \\in X, y \\in Y$",
+      "$|X| = |Y|$ và đồ thị liên thông"
+    ],
+    "correct": 1,
+    "explanation": "Định lý Hall phát biểu: điều kiện cần và đủ để có ghép cặp phủ hết $X$ là mọi tập con $S \\subseteq X$ phải có số đỉnh kề bên $Y$ không nhỏ hơn kích thước của $S$, tức $|N(S)| \\ge |S|$."
+  }
+]

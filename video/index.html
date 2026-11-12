@@ -1,0 +1,1088 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <title>Phòng Học Video Bài Giảng - PTIT Study Hub</title>
+  <link rel="icon" type="image/png" href="../assets/ptit-logo-simple.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = { darkMode: 'class' };
+    (function () {
+      try {
+        var hub = localStorage.getItem('ptit_hub_theme_v1');
+        var dm = localStorage.getItem('discrete_math_theme_v1');
+        var vlRaw = localStorage.getItem('vlttn3_theme');
+        var vl = vlRaw ? JSON.parse(vlRaw) : null;
+        var saved = hub || dm || vl;
+        var dark = saved ? saved === 'dark' : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches);
+        if (dark) document.documentElement.classList.add('dark');
+      } catch (e) {}
+    })();
+  </script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    body{font-family:'Segoe UI',system-ui,sans-serif;background-color:#f6f5f2;color:#1f1718;transition:background-color .2s,color .2s}
+    .tb-btn{display:flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.18);padding:.4rem .75rem;border-radius:.5rem;font-size:.85rem;color:#fff}
+    .tb-btn:hover{background:rgba(255,255,255,.24)}.tb-btn svg{width:16px;height:16px}
+    .bg-white{background-color:#fcfbf9!important}
+    html.dark{color-scheme:dark}
+    html.dark body{background-color:#0f1012;color:#ece9ea}
+    html.dark header{background-color:#141519!important;border-color:#2a2c32!important}
+    html.dark .tb-btn{background:#202227;border-color:#343740}
+    html.dark .tb-btn:hover{background:#2a2c32}
+    html.dark .bg-white{background-color:#17181c!important;color:#ece9ea}
+    html.dark .border{border-color:#2a2c32!important}
+    .fade{animation:fade .22s ease}
+    @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+  </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+  <header class="bg-[#9e0000] text-white sticky top-0 z-30 shadow border-b border-[#7a0000]">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex flex-wrap items-center gap-3">
+      <button id="backBtn" onclick="goBackHub()" class="tb-btn text-amber-200" title="Quay về Trang Tổng">
+        <i data-lucide="arrow-left"></i>
+        <span class="hidden sm:inline">Trang tổng</span>
+      </button>
+      <div class="flex items-center gap-2.5 mr-auto cursor-pointer" onclick="window.location.href='../index.html#videos'">
+        <span class="w-8 h-8 rounded-lg bg-[#fcfbf9] p-1 flex items-center justify-center shadow-xs shrink-0"><img src="../assets/ptit-logo-simple.png" alt="Logo PTIT" class="w-full h-full object-contain" /></span>
+        <h1 class="font-bold text-lg">Phòng Học Video <span class="text-red-100 text-sm font-normal hidden sm:inline">· Toán Rời Rạc &amp; Vật Lý 3 (PTIT)</span></h1>
+      </div>
+      <span id="videoProgressBadge" class="font-mono bg-[#1b0b0b] text-amber-300 border border-amber-400/40 px-3 py-1 rounded-lg text-xs sm:text-sm">
+        Đã học: <b id="videoWatchedCount">0/36</b>
+      </span>
+      <button onclick="toggleTheme()" id="themeBtn" class="tb-btn" title="Đổi giao diện Sáng / Tối PTIT">
+        <i id="themeIcon" data-lucide="moon"></i>
+        <span id="themeText" class="hidden sm:inline">Tối</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 py-6 fade space-y-6">
+    <section class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+
+      <!-- Trình phát & Ghi chú (8/12) -->
+      <div class="lg:col-span-8 bg-white rounded-3xl border border-red-100 shadow-md p-5 sm:p-6 space-y-4">
+        <!-- Thanh thêm video / gắn link / mở file offline -->
+        <div class="space-y-2">
+          <div class="grid grid-cols-1 sm:grid-cols-12 gap-2">
+            <input
+              id="videoTitleInput"
+              type="text"
+              placeholder="Tên video (tuỳ chọn khi thêm mới)..."
+              class="sm:col-span-4 px-3 py-2 rounded-xl text-xs sm:text-sm bg-[#faf5f5] dark:bg-[#2b181d] border border-red-100 dark:border-[#4b2a33] text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-[#9c7e85] focus:outline-none focus:ring-2 focus:ring-[#c80000] dark:focus:ring-red-400"
+            />
+            <div class="sm:col-span-8 flex flex-wrap sm:flex-nowrap gap-2">
+              <div class="relative flex-1 min-w-0">
+                <i data-lucide="link" class="w-4 h-4 text-slate-400 dark:text-[#a88c93] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+                <input
+                  id="videoUrlInput"
+                  type="url"
+                  placeholder="Dán link YouTube (video / playlist) hoặc URL .mp4..."
+                  class="w-full pl-9 pr-3 py-2 rounded-xl text-xs sm:text-sm bg-[#faf5f5] dark:bg-[#2b181d] border border-red-100 dark:border-[#4b2a33] text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-[#9c7e85] focus:outline-none focus:ring-2 focus:ring-[#c80000] dark:focus:ring-red-400"
+                />
+              </div>
+              <button
+                type="button"
+                onclick="saveVideoToLesson()"
+                class="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#c80000] hover:bg-[#a30000] text-white transition shrink-0"
+                title="Gắn link này vào bài giảng đang chọn hoặc cập nhật link"
+              >
+                <i data-lucide="play" class="w-3.5 h-3.5"></i>
+                <span>Phát ngay</span>
+              </button>
+              <button
+                type="button"
+                onclick="addNewCustomVideo()"
+                class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#1b0b0b] hover:bg-[#331317] text-amber-300 border border-red-900/40 transition shrink-0"
+                title="Thêm mới thành mục riêng trong Kho đã lưu"
+              >
+                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                <span>Thêm mới</span>
+              </button>
+              <label class="inline-flex items-center justify-center gap-1.5 px-3 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-[#f6efef] dark:bg-[#2b181d] hover:bg-red-50 dark:hover:bg-[#381f26] text-slate-700 dark:text-[#f3e8ea] border border-red-100 dark:border-[#4b2a33] cursor-pointer transition shrink-0">
+                <i data-lucide="folder-open" class="w-3.5 h-3.5 text-[#c80000] dark:text-amber-300"></i>
+                <span>File máy</span>
+                <input id="localVideoInput" type="file" accept="video/*" class="hidden" onchange="handleLocalVideoFile(this.files && this.files[0])" />
+              </label>
+            </div>
+          </div>
+          <p id="videoStatusMsg" class="hidden text-xs font-medium text-emerald-600 dark:text-emerald-400"></p>
+        </div>
+
+        <!-- Khung màn hình phát 16:9 -->
+        <div id="videoStage" class="relative w-full aspect-video rounded-2xl overflow-hidden bg-[#1b0b0b] border border-red-900/40 flex items-center justify-center"></div>
+
+        <!-- Thông tin bài giảng & Điều khiển -->
+        <div class="flex flex-wrap items-start justify-between gap-3 pt-1">
+          <div class="min-w-0 space-y-1 flex-1">
+            <div class="flex items-center gap-2 flex-wrap">
+              <span id="videoCurrentSubject" class="px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-red-50 dark:bg-red-500/20 text-[#b00000] dark:text-red-300 border border-red-200 dark:border-red-500/35"></span>
+              <span id="videoCurrentChapter" class="text-xs font-mono text-slate-500 dark:text-[#b8a2a7]"></span>
+            </div>
+            <h2 id="videoCurrentTitle" class="font-extrabold text-base sm:text-xl text-slate-900 dark:text-white leading-snug"></h2>
+            <p id="videoCurrentDesc" class="text-xs sm:text-sm text-slate-500 dark:text-[#b8a2a7] leading-relaxed"></p>
+          </div>
+          <div class="flex flex-wrap gap-2 shrink-0">
+            <a
+              id="videoOpenExternalBtn"
+              href="https://www.youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="hidden inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold border border-red-200 dark:border-[#4b2a33] bg-white dark:bg-[#2b181d] text-[#c80000] dark:text-amber-300 hover:border-[#c80000] transition"
+            >
+              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              <span>Mở trên YouTube</span>
+            </a>
+            <button
+              id="videoWatchBtn"
+              type="button"
+              onclick="toggleCurrentVideoWatched()"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold border transition"
+            ></button>
+            <a
+              id="videoQuizBtn"
+              href="../to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html"
+              class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-[#1b0b0b] hover:bg-[#331317] dark:bg-[#c80000] dark:hover:bg-[#a30000] text-amber-300 dark:text-white transition"
+            >
+              <i data-lucide="file-check-2" class="w-3.5 h-3.5"></i>
+              <span>Làm đề chương này</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Ghi chú bài giảng -->
+        <div class="pt-3 border-t border-red-100 dark:border-[#3d2027] space-y-1.5">
+          <div class="flex items-center justify-between text-xs">
+            <label for="videoNoteInput" class="font-bold text-slate-700 dark:text-[#f3e8ea] flex items-center gap-1.5">
+              <i data-lucide="notebook-pen" class="w-3.5 h-3.5 text-[#c80000] dark:text-red-400"></i>
+              <span>Ghi chú bài giảng (tự động lưu)</span>
+            </label>
+            <span id="videoNoteSaved" class="text-[11px] text-emerald-600 dark:text-emerald-400 opacity-0 transition">Đã lưu ✓</span>
+          </div>
+          <textarea
+            id="videoNoteInput"
+            rows="3"
+            oninput="saveCurrentVideoNote(this.value)"
+            placeholder="Ghi lại định lý, công thức quan trọng hoặc mốc thời gian cần xem lại..."
+            class="w-full rounded-xl p-3 text-xs sm:text-sm bg-[#faf5f5] dark:bg-[#2b181d] border border-red-100 dark:border-[#4b2a33] text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-[#9c7e85] focus:outline-none focus:ring-2 focus:ring-[#c80000] dark:focus:ring-red-400"
+          ></textarea>
+        </div>
+      </div>
+
+      <!-- Danh sách chuyên đề & Video cá nhân (4/12) -->
+      <aside class="lg:col-span-4 bg-white rounded-3xl border border-red-100 shadow-md p-5 sm:p-6 flex flex-col gap-4 lg:sticky lg:top-20">
+        <div class="flex items-center justify-between gap-2">
+          <h3 class="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white flex items-center gap-2">
+            <i data-lucide="list-video" class="w-5 h-5 text-[#c80000] dark:text-red-400"></i>
+            <span>Lộ trình &amp; Kho Video</span>
+          </h3>
+        </div>
+
+        <div class="flex flex-wrap gap-1.5 p-1 rounded-2xl bg-[#f3eaea] dark:bg-[#2b181d] border border-red-100 dark:border-[#4b2a33]" id="videoFilterTabs">
+          <button onclick="setVideoFilter('all')" data-vfilter="all" class="vid-filter-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition bg-white dark:bg-[#c80000] text-[#c80000] dark:text-white shadow-xs">Tất cả (36)</button>
+          <button onclick="setVideoFilter('trr')" data-vfilter="trr" class="vid-filter-btn px-2.5 py-1.5 rounded-xl text-xs font-semibold transition text-slate-600 dark:text-[#d9c7cb]">TRR (8)</button>
+          <button onclick="setVideoFilter('vl3')" data-vfilter="vl3" class="vid-filter-btn px-2.5 py-1.5 rounded-xl text-xs font-semibold transition text-slate-600 dark:text-[#d9c7cb]">Vật Lý 3 (28)</button>
+          <button onclick="setVideoFilter('custom')" data-vfilter="custom" class="vid-filter-btn px-2.5 py-1.5 rounded-xl text-xs font-semibold transition text-slate-600 dark:text-[#d9c7cb]">Đã lưu</button>
+        </div>
+
+        <div class="relative">
+          <i data-lucide="search" class="w-3.5 h-3.5 text-slate-400 dark:text-[#a88c93] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
+          <input
+            id="videoSearchInput"
+            type="search"
+            oninput="videoSearchKeyword=this.value;renderVideoPlaylist()"
+            placeholder="Tìm chương, bài giảng video..."
+            class="w-full pl-8 pr-3 py-1.5 rounded-xl text-xs bg-[#faf5f5] dark:bg-[#2b181d] border border-red-100 dark:border-[#4b2a33] text-slate-800 dark:text-white placeholder:text-slate-400 dark:placeholder:text-[#9c7e85] focus:outline-none focus:ring-2 focus:ring-[#c80000] dark:focus:ring-red-400"
+          />
+        </div>
+
+        <div id="videoPlaylistList" class="space-y-2.5 max-h-[34rem] overflow-y-auto pr-1"></div>
+      </aside>
+
+    </section>
+  </main>
+
+  <script>
+    const TRR_URL = "../to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html";
+    const VL3_URL = "../vatly3/index.html";
+
+    const VIDEO_STORAGE_WATCHED = "ptit_hub_watched_videos_v1";
+    const VIDEO_STORAGE_NOTES = "ptit_hub_video_notes_v1";
+    const VIDEO_STORAGE_CUSTOM = "ptit_hub_custom_videos_v1";
+    const VIDEO_STORAGE_LINKS = "ptit_hub_lesson_links_v1";
+
+    const VIDEO_CURRICULUM = [
+      // Toán Rời Rạc 1 PTIT — Chương 1: Một số kiến thức cơ bản
+      {
+        id: "vid-trr-1",
+        group: "trr",
+        subject: "Toán Rời Rạc",
+        chapter: "Chương 1: Một số kiến thức cơ bản",
+        title: "1. Chương 1 : MỘT SỐ KIẾN THỨC CƠ BẢN P1 (TRR1 PTIT)",
+        desc: "Kiến thức nền tảng về tập hợp, logic mệnh đề, lượng từ và các quy tắc suy diễn cơ bản trong Toán Rời Rạc 1 PTIT.",
+        videoUrl: "https://www.youtube.com/watch?v=DI7RqKPVHkE",
+        quizUrl: `${TRR_URL}?exam=ch1a`
+      },
+      {
+        id: "vid-trr-2",
+        group: "trr",
+        subject: "Toán Rời Rạc",
+        chapter: "Chương 1: Một số kiến thức cơ bản",
+        title: "2. Chương 1 : MỘT SỐ KIẾN THỨC CƠ BẢN P2 (TRR1 PTIT)",
+        desc: "Tiếp tục kiến thức cơ bản phần 2: quan hệ, ánh xạ, biểu diễn thuật toán và đánh giá độ phức tạp tính toán.",
+        videoUrl: "https://www.youtube.com/watch?v=HcU1PpDSQYU",
+        quizUrl: `${TRR_URL}?exam=ch1b`
+      },
+      // Toán Rời Rạc 1 PTIT — Chương 2: Bài toán đếm
+      {
+        id: "vid-trr-3",
+        group: "trr",
+        subject: "Toán Rời Rạc",
+        chapter: "Chương 2: Bài toán đếm",
+        title: "3. Chương 2 : BÀI TOÁN ĐẾM P1 (TRR1 PTIT)",
+        desc: "Các nguyên lý đếm cơ bản, chỉnh hợp, hoán vị, tổ hợp và ứng dụng giải bài toán tổ hợp Phần 1.",
+        videoUrl: "https://www.youtube.com/watch?v=r9TqM-UL0IM",
+        quizUrl: `${TRR_URL}?exam=ch2a`
+      },
+      {
+        id: "vid-trr-4",
+        group: "trr",
+        subject: "Toán Rời Rạc",
+        chapter: "Chương 2: Bài toán đếm",
+        title: "4. Chương 2 : BÀI TOÁN ĐẾM P2 (TRR1 PTIT)",
+        desc: "Nguyên lý bù trừ, hệ thức truy hồi và kỹ thuật giải bài toán đếm nâng cao Phần 2.",
+        videoUrl: "https://www.youtube.com/watch?v=zkLF4x-dlmc",
+        quizUrl: `${TRR_URL}?exam=ch2b`
+      },
+      // Toán Rời Rạc 1 PTIT — Chương 3: Bài toán liệt kê
+      {
+        id: "vid-trr-5",
+        group: "trr",
+        subject: "Toán Rời Rạc",
+        chapter: "Chương 3: Bài toán liệt kê",
+        title: "5. Chương 3 : BÀI TOÁN LIỆT KÊ (TRR1 PTIT)",
+        desc: "Phương pháp sinh kế tiếp (xâu nhị phân, tổ hợp, hoán vị) và thuật toán quay lui (Backtracking).",
+        videoUrl: "https://www.youtube.com/watch?v=zT1MLxaqND4",
+        quizUrl: `${TRR_URL}?exam=ch34`
+      },
+      // Toán Rời Rạc 1 PTIT — Chương 4: Bài toán tối ưu
+      {
+        id: "vid-trr-6",
+        group: "trr",
+        subject: "Toán Rời Rạc",
+        chapter: "Chương 4: Bài toán tối ưu",
+        title: "6. Chương 4 : BÀI TOÁN TỐI ƯU P1 (TRR1 PTIT)",
+        desc: "Mô hình bài toán tối ưu tổ hợp và thuật toán nhánh cận (Branch and Bound) Phần 1.",
+        videoUrl: "https://www.youtube.com/watch?v=ReBB9omk4Ak",
+        quizUrl: `${TRR_URL}?exam=ch5`
+      },
+      {
+        id: "vid-trr-7",
+        group: "trr",
+        subject: "Toán Rời Rạc",
+        chapter: "Chương 4: Bài toán tối ưu",
+        title: "7. Chương 4 : BÀI TOÁN TỐI ƯU P2 (TRR1 PTIT)",
+        desc: "Tiếp tục bài toán tối ưu Phần 2: cái túi, người du lịch (TSP) và chiến lược cắt tỉa nhánh cận.",
+        videoUrl: "https://www.youtube.com/watch?v=pFVIq5Z-qpU",
+        quizUrl: `${TRR_URL}?exam=ch5`
+      },
+      // Toán Rời Rạc 1 PTIT — Chương 5: Bài toán tồn tại
+      {
+        id: "vid-trr-8",
+        group: "trr",
+        subject: "Toán Rời Rạc",
+        chapter: "Chương 5: Bài toán tồn tại",
+        title: "8. Chương 5 : BÀI TOÁN TỒN TẠI (TRR1 PTIT)",
+        desc: "Nguyên lý Dirichlet, định lý Ramsey, phương pháp phản chứng và chứng minh sự tồn tại nghiệm tổ hợp.",
+        videoUrl: "https://www.youtube.com/watch?v=w2WE7ogT1y8",
+        quizUrl: `${TRR_URL}?exam=ch34`
+      },
+      // Vật Lý 3 — Chương 1: Dao động và Sóng
+      {
+        id: "vid-vl3-1",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 1: Dao động và Sóng",
+        title: "1. Chữa BT Chương 1 (P1)",
+        desc: "Hướng dẫn giải bài tập Chương 1 Dao động và Sóng điện từ/sóng cơ (Phần 1).",
+        videoUrl: "https://www.youtube.com/watch?v=W6PDILoPiAA",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      {
+        id: "vid-vl3-2",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 1: Dao động và Sóng",
+        title: "2. Chữa BT Chương 1 (P2)",
+        desc: "Hướng dẫn giải bài tập Chương 1 Dao động và Sóng (Phần 2).",
+        videoUrl: "https://www.youtube.com/watch?v=TUNQyJTEYQI",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      {
+        id: "vid-vl3-3",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 1–2: Dao động & Giao thoa",
+        title: "3. Chữa BT Chương 1 (P3) + Chương 2 (P1)",
+        desc: "Hoàn thành bài tập Chương 1 và mở đầu Giao thoa ánh sáng Chương 2 (Phần 1).",
+        videoUrl: "https://www.youtube.com/watch?v=IfwZK-wyvJc",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      // Chương 2: Giao thoa ánh sáng
+      {
+        id: "vid-vl3-4",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 2: Giao thoa ánh sáng",
+        title: "4. Giao thoa bởi bản mỏng + Chương 3: Nhiễu xạ ánh sáng (1)",
+        desc: "Lý thuyết giao thoa trên bản mỏng, nêm không khí và chuyển tiếp sang Nhiễu xạ ánh sáng.",
+        videoUrl: "https://www.youtube.com/watch?v=3t8w3s6t0z8",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      {
+        id: "vid-vl3-5",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 2: Giao thoa ánh sáng",
+        title: "5. Chữa BT chương 2 (P2)",
+        desc: "Chữa bài tập chuyên đề Giao thoa ánh sáng Chương 2 (Phần 2).",
+        videoUrl: "https://www.youtube.com/watch?v=oRQlepIgOKw",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      // Chương 3: Nhiễu xạ ánh sáng
+      {
+        id: "vid-vl3-6",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 3: Nhiễu xạ ánh sáng",
+        title: "6. Chương 3: Nhiễu xạ - Bài 1: Nhiễu xạ bởi sóng cầu",
+        desc: "Phương pháp đới cầu Fresnel và phân tích nhiễu xạ qua lỗ tròn / đĩa tròn.",
+        videoUrl: "https://www.youtube.com/watch?v=MIDO-9f5laE",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      {
+        id: "vid-vl3-7",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 3: Nhiễu xạ ánh sáng",
+        title: "7. Chương 3: Nhiễu xạ - Bài 2: Nhiễu xạ bởi sóng phẳng",
+        desc: "Nhiễu xạ Fraunhofer qua một khe hẹp và phân bố cực đại/cực tiểu nhiễu xạ.",
+        videoUrl: "https://www.youtube.com/watch?v=N-_ggkpjoto",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      {
+        id: "vid-vl3-8",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 3: Nhiễu xạ ánh sáng",
+        title: "8. Chương 3: Nhiễu xạ - Bài 2: Nhiễu xạ bởi sóng phẳng (P2)",
+        desc: "Cách tử nhiễu xạ phẳng, điều kiện cực đại chính và ứng dụng đo bước sóng.",
+        videoUrl: "https://www.youtube.com/watch?v=tYlAj-DmFi4",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      {
+        id: "vid-vl3-9",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 3: Nhiễu xạ ánh sáng",
+        title: "9. Chữa BT chương 3 (P1)",
+        desc: "Chữa bài tập Nhiễu xạ sóng cầu & sóng phẳng Chương 3 (Phần 1).",
+        videoUrl: "https://www.youtube.com/watch?v=tXwIGWurljE",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      {
+        id: "vid-vl3-10",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 3: Nhiễu xạ ánh sáng",
+        title: "10. Chữa BT chương 3 (P2)",
+        desc: "Chữa bài tập Cách tử nhiễu xạ & năng suất phân ly Chương 3 (Phần 2).",
+        videoUrl: "https://www.youtube.com/watch?v=mubPee_MPCI",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      // Chương 4 & 5: Tán sắc, tán xạ, hấp thụ & Phân cực ánh sáng
+      {
+        id: "vid-vl3-11",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 4–5: Tán sắc & Phân cực",
+        title: "11. Chương 4: Tán sắc, tán xạ, hấp thụ ánh sáng + Chương 5: Phân cực ánh sáng",
+        desc: "Tổng hợp hiện tượng tán sắc, tán xạ Rayleigh, hấp thụ Bouguer-Lambert và mở đầu Phân cực.",
+        videoUrl: "https://www.youtube.com/watch?v=6k00Yw5QKGg",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      {
+        id: "vid-vl3-12",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 5: Phân cực ánh sáng",
+        title: "12. Chương 5: Phân cực ánh sáng - Bài 1: Ánh sáng phân cực",
+        desc: "Phân loại ánh sáng tự nhiên/phân cực, định luật Malus và phân cực do phản xạ/khúc xạ (Brewster).",
+        videoUrl: "https://www.youtube.com/watch?v=haMtAbYY0Xs",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      {
+        id: "vid-vl3-13",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 5: Phân cực ánh sáng",
+        title: "13. Chương 5: Phân cực ánh sáng - Bài 2: Phân cực do lưỡng chiết",
+        desc: "Tia thường, tia bất thường trong tinh thể đơn trục và các bản phần tư/nửa bước sóng.",
+        videoUrl: "https://www.youtube.com/watch?v=Y9vTPy3UrUY",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      {
+        id: "vid-vl3-14",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 5: Phân cực ánh sáng",
+        title: "14. Chương 5: Phân cực ánh sáng - Bài 2: Phân cực do lưỡng chiết (P2)",
+        desc: "Giao thoa ánh sáng phân cực, phân cực quay mặt phẳng và hiệu ứng quang đàn hồi.",
+        videoUrl: "https://www.youtube.com/watch?v=H6WIO9Uhj3U",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      {
+        id: "vid-vl3-15",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 5: Phân cực ánh sáng",
+        title: "15. Chữa BT chương 5",
+        desc: "Chữa bài tập định luật Malus, góc Brewster và bản tinh thể Chương 5.",
+        videoUrl: "https://www.youtube.com/watch?v=Eo1A40RzaOg",
+        quizUrl: `${VL3_URL}?exam=gk1`
+      },
+      // Chương 6: Cơ học tương đối
+      {
+        id: "vid-vl3-16",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 6: Cơ học tương đối",
+        title: "16. Chương 6: Cơ học tương đối",
+        desc: "Hai tiên đề Einstein, phép biến đổi Lorentz, co độ dài, giãn thời gian và động lực học tương đối.",
+        videoUrl: "https://www.youtube.com/watch?v=37qFmNyJsMY",
+        quizUrl: `${VL3_URL}?exam=gk2`
+      },
+      {
+        id: "vid-vl3-17",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 6: Cơ học tương đối",
+        title: "17. Chữa BT chương 6",
+        desc: "Chữa bài tập tương đối hẹp: vận tốc cộng tương đối, khối lượng và năng lượng toàn phần.",
+        videoUrl: "https://www.youtube.com/watch?v=fO2q8iLEk9I",
+        quizUrl: `${VL3_URL}?exam=gk2`
+      },
+      // Chương 7: Quang học lượng tử
+      {
+        id: "vid-vl3-18",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 7: Quang học lượng tử",
+        title: "18. Chương 7: Quang học lượng tử - Bài 1: Bức xạ nhiệt",
+        desc: "Vật đen tuyệt đối, định luật Kirchhoff, Stefan-Boltzmann, Wien và giả thuyết lượng tử Planck.",
+        videoUrl: "https://www.youtube.com/watch?v=LwGphTPMTP4",
+        quizUrl: `${VL3_URL}?exam=gk2`
+      },
+      {
+        id: "vid-vl3-19",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 7: Quang học lượng tử",
+        title: "19. Chương 7: Quang học lượng tử - Bài 2: Hiện tượng quang điện và hiện tượng COMPTON",
+        desc: "Thuyết photon Einstein, công thức quang điện ngoài và cơ chế tán xạ Compton.",
+        videoUrl: "https://www.youtube.com/watch?v=mpV6ts_VkNI",
+        quizUrl: `${VL3_URL}?exam=gk2`
+      },
+      {
+        id: "vid-vl3-20",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 7: Quang học lượng tử",
+        title: "20. Chương 7: Quang học lượng tử - Bài 2: Hiện tượng quang điện và hiện tượng COMPTON (P2)",
+        desc: "Phân tích tiếp độ dịch bước sóng Compton, bảo toàn năng lượng-động lượng photon và bài tập.",
+        videoUrl: "https://www.youtube.com/watch?v=GzByunniuf8",
+        quizUrl: `${VL3_URL}?exam=gk2`
+      },
+      // Chương 8: Cơ học lượng tử
+      {
+        id: "vid-vl3-21",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 8: Cơ học lượng tử",
+        title: "21. Chương 8: Cơ học lượng tử",
+        desc: "Giả thuyết sóng De Broglie, hệ thức bất định Heisenberg và khái niệm hàm sóng.",
+        videoUrl: "https://www.youtube.com/watch?v=IuhQ7tcwzbM",
+        quizUrl: `${VL3_URL}?exam=gk2`
+      },
+      {
+        id: "vid-vl3-22",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 8: Cơ học lượng tử",
+        title: "22. Chương 8: Cơ học lượng tử - Bài 4: Phương trình Schrodinger",
+        desc: "Phương trình Schrödinger dừng, bài toán hạt trong giếng thế 1 chiều và hiệu ứng đường ngầm.",
+        videoUrl: "https://www.youtube.com/watch?v=CGlhrua5JDU",
+        quizUrl: `${VL3_URL}?exam=gk2`
+      },
+      {
+        id: "vid-vl3-23",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 8: Cơ học lượng tử",
+        title: "23. Chữa BT chương 8",
+        desc: "Chữa bài tập bước sóng De Broglie, bất định Heisenberg và mức năng lượng giếng thế.",
+        videoUrl: "https://www.youtube.com/watch?v=2JFNYelIC4E",
+        quizUrl: `${VL3_URL}?exam=gk2`
+      },
+      // Chương 9: Vật lý nguyên tử
+      {
+        id: "vid-vl3-24",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 9: Vật lý nguyên tử",
+        title: "24. Chương 9: Vật lý nguyên tử - Bài 1: Nguyên tử hidro",
+        desc: "Giải bài toán nguyên tử Hydro trong cơ học lượng tử và bộ 3 số lượng tử n, l, m.",
+        videoUrl: "https://www.youtube.com/watch?v=XzxAF7xurRw",
+        quizUrl: `${VL3_URL}?exam=all500`
+      },
+      {
+        id: "vid-vl3-25",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 9: Vật lý nguyên tử",
+        title: "25. Chương 9: Vật Lý nguyên tử - Bài 2: Nguyên tử kim loại kiềm",
+        desc: "Quang phổ nguyên tử kim loại kiềm, hiệu ứng chắn và cấu trúc tinh tế vạch phổ.",
+        videoUrl: "https://www.youtube.com/watch?v=RXQd1Poz4Q8",
+        quizUrl: `${VL3_URL}?exam=all500`
+      },
+      {
+        id: "vid-vl3-26",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 9: Vật lý nguyên tử",
+        title: "26. Chương 9: Vật lý nguyên tử - Bài 3: Mômen động lượng, Mômen từ của electron & Bài 4: Spin electron",
+        desc: "Lượng tử hóa không gian mômen động lượng, magneton Bohr và spin bán nguyên của electron.",
+        videoUrl: "https://www.youtube.com/watch?v=ErG3SUaI1-0",
+        quizUrl: `${VL3_URL}?exam=all500`
+      },
+      {
+        id: "vid-vl3-27",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 9: Vật lý nguyên tử",
+        title: "27. Chương 9: Vật lý nguyên tử - Bài 3 & Bài 4: Các ví dụ",
+        desc: "Bài tập áp dụng tính mômen động lượng, mômen từ và tách mức năng lượng do spin.",
+        videoUrl: "https://www.youtube.com/watch?v=Yj3WDwNt3sw",
+        quizUrl: `${VL3_URL}?exam=all500`
+      },
+      {
+        id: "vid-vl3-28",
+        group: "vl3",
+        subject: "Vật Lý 3",
+        chapter: "Chương 9: Vật lý nguyên tử",
+        title: "28. Chữa BT chương 9",
+        desc: "Tổng hợp chữa bài tập Chương 9 Vật lý nguyên tử PTIT.",
+        videoUrl: "https://www.youtube.com/watch?v=VdBhlPYS7Y4",
+        quizUrl: `${VL3_URL}?exam=all500`
+      }
+    ];
+
+    let activeVideoFilter = "all";
+    let videoSearchKeyword = "";
+    let currentVideoId = VIDEO_CURRICULUM[0].id;
+    let activeLocalMedia = null;
+    let forceIframeOnFile = false;
+
+    function isFileProtocol() {
+      return typeof window !== "undefined" && window.location && window.location.protocol === "file:";
+    }
+
+    function escHtml(str) {
+      return String(str ?? "")
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;");
+    }
+
+    function safeReadJson(key, fallback) {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : fallback;
+      } catch {
+        return fallback;
+      }
+    }
+
+    function icons() {
+      if (window.lucide && typeof window.lucide.createIcons === "function") {
+        window.lucide.createIcons();
+      }
+    }
+
+    function applyTheme(isDark) {
+      document.documentElement.classList.toggle("dark", isDark);
+      const ic = document.getElementById("themeIcon");
+      const tx = document.getElementById("themeText");
+      if (ic) ic.setAttribute("data-lucide", isDark ? "sun" : "moon");
+      if (tx) tx.textContent = isDark ? "Sáng" : "Tối";
+      icons();
+    }
+
+    function toggleTheme() {
+      const dark = !document.documentElement.classList.contains("dark");
+      const val = dark ? "dark" : "light";
+      try {
+        localStorage.setItem("ptit_hub_theme_v1", val);
+        localStorage.setItem("discrete_math_theme_v1", val);
+        localStorage.setItem("vlttn3_theme", JSON.stringify(val));
+      } catch {}
+      applyTheme(dark);
+    }
+
+    function initTheme() {
+      let saved = null;
+      try {
+        saved = localStorage.getItem("ptit_hub_theme_v1") || localStorage.getItem("discrete_math_theme_v1");
+        if (!saved) {
+          const vlRaw = localStorage.getItem("vlttn3_theme");
+          if (vlRaw) saved = JSON.parse(vlRaw);
+        }
+      } catch {}
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      applyTheme(saved ? saved === "dark" : Boolean(prefersDark));
+    }
+
+    function goBackHub() {
+      if (typeof history !== "undefined" && history.length > 1 && document.referrer && document.referrer.includes("index.html")) {
+        history.back();
+      } else {
+        window.location.href = "../index.html#videos";
+      }
+    }
+
+    function parseVideoSource(rawUrl) {
+      const url = String(rawUrl || "").trim();
+      if (!url) return null;
+      try {
+        const u = new URL(url);
+        const host = u.hostname.replace(/^www\./, "").toLowerCase();
+        const listId = u.searchParams.get("list");
+        const originParam = (typeof window !== "undefined" && window.location && window.location.origin && window.location.origin !== "null")
+          ? `&origin=${encodeURIComponent(window.location.origin)}`
+          : "";
+
+        if (host === "youtu.be") {
+          const vid = u.pathname.split("/").filter(Boolean)[0];
+          if (vid) {
+            return {
+              kind: "youtube",
+              videoId: vid,
+              listId: listId || "",
+              watchUrl: `https://www.youtube.com/watch?v=${encodeURIComponent(vid)}`,
+              embedUrl: `https://www.youtube.com/embed/${encodeURIComponent(vid)}?rel=0&playsinline=1${originParam}`
+            };
+          }
+        }
+        if (host === "youtube.com" || host === "m.youtube.com" || host === "youtube-nocookie.com") {
+          const vid = u.searchParams.get("v");
+          if (vid) {
+            const listQuery = listId ? `&list=${encodeURIComponent(listId)}` : "";
+            return {
+              kind: "youtube",
+              videoId: vid,
+              listId: listId || "",
+              watchUrl: `https://www.youtube.com/watch?v=${encodeURIComponent(vid)}${listQuery}`,
+              embedUrl: `https://www.youtube.com/embed/${encodeURIComponent(vid)}?rel=0&playsinline=1${listQuery}${originParam}`
+            };
+          }
+          if (u.pathname.startsWith("/shorts/") || u.pathname.startsWith("/embed/")) {
+            const seg = u.pathname.split("/").filter(Boolean)[1];
+            if (seg) {
+              return {
+                kind: "youtube",
+                videoId: seg,
+                listId: "",
+                watchUrl: `https://www.youtube.com/watch?v=${encodeURIComponent(seg)}`,
+                embedUrl: `https://www.youtube.com/embed/${encodeURIComponent(seg)}?rel=0&playsinline=1${originParam}`
+              };
+            }
+          }
+          if (listId) {
+            return {
+              kind: "youtube",
+              videoId: "",
+              listId,
+              watchUrl: `https://www.youtube.com/playlist?list=${encodeURIComponent(listId)}`,
+              embedUrl: `https://www.youtube.com/embed/videoseries?list=${encodeURIComponent(listId)}&rel=0&playsinline=1${originParam}`
+            };
+          }
+        }
+        if (/\.(mp4|webm|ogg|m4v)(\?|$)/i.test(url) || url.startsWith("blob:")) {
+          return { kind: "html5", mediaUrl: url };
+        }
+      } catch {}
+      return null;
+    }
+
+    function getAllVideos() {
+      const custom = safeReadJson(VIDEO_STORAGE_CUSTOM, []);
+      const validCustom = Array.isArray(custom) ? custom : [];
+      const base = activeLocalMedia
+        ? [{
+            id: activeLocalMedia.id,
+            group: "custom",
+            subject: "File máy",
+            chapter: "Video offline",
+            title: activeLocalMedia.title,
+            desc: "Đang phát trực tiếp tệp video từ máy tính của bạn.",
+            mediaUrl: activeLocalMedia.objectUrl,
+            quizUrl: TRR_URL
+          }]
+        : [];
+      return [...base, ...validCustom, ...VIDEO_CURRICULUM];
+    }
+
+    function getVideoEffectiveUrl(item) {
+      if (item.mediaUrl) return item.mediaUrl;
+      const links = safeReadJson(VIDEO_STORAGE_LINKS, {});
+      if (links && links[item.id]) return links[item.id];
+      return item.videoUrl || "";
+    }
+
+    function showStatusMsg(msg, isError) {
+      const el = document.getElementById("videoStatusMsg");
+      if (!el) return;
+      el.textContent = msg;
+      el.className = `text-xs font-medium ${isError ? "text-red-600 dark:text-red-400" : "text-emerald-600 dark:text-emerald-400"}`;
+      clearTimeout(window.__vidStatusTimer);
+      window.__vidStatusTimer = setTimeout(() => el.classList.add("hidden"), 2600);
+    }
+
+    function renderVideoPlayer() {
+      const all = getAllVideos();
+      const item = all.find(v => v.id === currentVideoId) || all[0];
+      if (!item) return;
+      currentVideoId = item.id;
+
+      const stage = document.getElementById("videoStage");
+      const rawUrl = getVideoEffectiveUrl(item);
+      const parsed = parseVideoSource(rawUrl);
+      const extBtn = document.getElementById("videoOpenExternalBtn");
+      if (extBtn) {
+        if (parsed && parsed.kind === "youtube" && parsed.watchUrl) {
+          extBtn.href = parsed.watchUrl;
+          extBtn.classList.remove("hidden");
+        } else {
+          extBtn.classList.add("hidden");
+        }
+      }
+
+      if (parsed && parsed.kind === "youtube") {
+        if (isFileProtocol() && !forceIframeOnFile) {
+          const thumbUrl = parsed.videoId ? `https://i.ytimg.com/vi/${encodeURIComponent(parsed.videoId)}/hqdefault.jpg` : "";
+          const watchHref = parsed.watchUrl || rawUrl;
+          stage.innerHTML = `
+            <div class="relative w-full h-full flex items-center justify-center overflow-y-auto bg-[#14090b]">
+              ${thumbUrl ? `<img src="${thumbUrl}" alt="${escHtml(item.title)}" class="absolute inset-0 w-full h-full object-cover opacity-35 scale-105 blur-[1px]" />` : ""}
+              <div class="absolute inset-0 bg-gradient-to-t from-[#0d0507]/95 via-[#18090c]/80 to-[#0d0507]/75"></div>
+              <div class="relative z-10 p-4 sm:p-6 text-center max-w-xl mx-auto space-y-2.5 my-auto">
+                <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-bold bg-amber-400/20 text-amber-200 border border-amber-300/35">
+                  <i data-lucide="alert-triangle" class="w-3.5 h-3.5"></i>
+                  <span>Đang mở ở chế độ file:// (YouTube chặn nhúng trực tiếp — Lỗi 153)</span>
+                </div>
+                <div class="space-y-1">
+                  <div class="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-amber-300">${escHtml(item.chapter)}</div>
+                  <h4 class="text-sm sm:text-lg font-extrabold text-white leading-snug line-clamp-2">${escHtml(item.title)}</h4>
+                  <p class="text-[11px] sm:text-xs text-red-100/85 leading-relaxed">
+                    Để phát video <strong>trực tiếp trong khung web này</strong>, hãy đóng tab hiện tại và nhấp đúp file <code class="px-1.5 py-0.5 rounded bg-white/15 text-amber-200 font-mono">mo-ptit-study-hub.bat</code> trong thư mục dự án — hoặc bấm nút dưới để mở ngay trên YouTube.
+                  </p>
+                </div>
+                <div class="flex flex-wrap justify-center gap-2 pt-0.5">
+                  <a href="${escHtml(watchHref)}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#c80000] hover:bg-[#a30000] text-white shadow-lg shadow-red-900/40 transition">
+                    <i data-lucide="play" class="w-4 h-4 fill-current"></i>
+                    <span>Xem video trên YouTube ↗</span>
+                  </a>
+                  <button type="button" onclick="forceIframeOnFile=true;renderVideoPlayer()" class="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 transition">
+                    <i data-lucide="monitor-play" class="w-3.5 h-3.5"></i>
+                    <span>Thử nhúng trong trang</span>
+                  </button>
+                </div>
+              </div>
+            </div>`;
+        } else {
+          stage.innerHTML = `<iframe class="w-full h-full" src="${parsed.embedUrl}" title="${escHtml(item.title)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>`;
+        }
+      } else if (parsed && parsed.kind === "html5") {
+        stage.innerHTML = `<video class="w-full h-full bg-black" controls playsinline src="${escHtml(parsed.mediaUrl)}"></video>`;
+      } else {
+        const ytSearchUrl = `https://www.youtube.com/results?search_query=${encodeURIComponent(item.searchQuery || item.title)}`;
+        stage.innerHTML = `
+          <div class="p-6 sm:p-8 text-center max-w-lg mx-auto space-y-4">
+            <div class="w-14 h-14 mx-auto rounded-2xl bg-[#c80000]/25 border border-red-400/40 text-amber-300 flex items-center justify-center">
+              <i data-lucide="play-circle" class="w-8 h-8"></i>
+            </div>
+            <div class="space-y-1.5">
+              <div class="text-xs font-bold uppercase tracking-wider text-amber-300">${escHtml(item.chapter)}</div>
+              <h4 class="text-base sm:text-xl font-extrabold text-white leading-snug">${escHtml(item.title)}</h4>
+              <p class="text-xs text-red-100/80 leading-relaxed">
+                Hãy bấm tìm bài giảng trên YouTube hoặc dán link YouTube bất kỳ vào ô phía trên rồi bấm <strong>Phát ngay</strong> hoặc <strong>Thêm mới</strong> để lưu lại.
+              </p>
+            </div>
+            <div class="flex flex-wrap justify-center gap-2.5">
+              <a href="${ytSearchUrl}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-[#c80000] hover:bg-[#a30000] text-white shadow transition">
+                <i data-lucide="youtube" class="w-4 h-4"></i>
+                <span>Tìm bài giảng trên YouTube</span>
+              </a>
+              <button type="button" onclick="document.getElementById('videoUrlInput').focus()" class="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold bg-white/10 hover:bg-white/20 text-white border border-white/20 transition">
+                <i data-lucide="link-2" class="w-4 h-4"></i>
+                <span>Dán link YouTube</span>
+              </button>
+            </div>
+          </div>`;
+      }
+
+      document.getElementById("videoCurrentSubject").textContent = item.subject;
+      document.getElementById("videoCurrentChapter").textContent = item.chapter;
+      document.getElementById("videoCurrentTitle").textContent = item.title;
+      document.getElementById("videoCurrentDesc").textContent = item.desc;
+      document.getElementById("videoUrlInput").value = item.mediaUrl ? "" : rawUrl;
+      document.getElementById("videoQuizBtn").href = item.quizUrl || TRR_URL;
+
+      const watched = safeReadJson(VIDEO_STORAGE_WATCHED, {});
+      const isDone = Boolean(watched && watched[item.id]);
+      const watchBtn = document.getElementById("videoWatchBtn");
+      watchBtn.className = isDone
+        ? "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold border bg-emerald-50 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 border-emerald-200 dark:border-emerald-500/40 transition"
+        : "inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold border bg-[#faf5f5] dark:bg-[#2b181d] text-slate-700 dark:text-[#f3e8ea] border-red-100 dark:border-[#4b2a33] hover:border-[#c80000] transition";
+      watchBtn.innerHTML = `<i data-lucide="${isDone ? "check-check" : "check"}" class="w-3.5 h-3.5"></i><span>${isDone ? "Đã học xong" : "Đánh dấu đã xem"}</span>`;
+
+      const notes = safeReadJson(VIDEO_STORAGE_NOTES, {});
+      document.getElementById("videoNoteInput").value = (notes && notes[item.id]) || "";
+      icons();
+    }
+
+    function renderVideoPlaylist() {
+      const listEl = document.getElementById("videoPlaylistList");
+      const watched = safeReadJson(VIDEO_STORAGE_WATCHED, {});
+      const links = safeReadJson(VIDEO_STORAGE_LINKS, {});
+      const all = getAllVideos();
+
+      const doneCoreCount = VIDEO_CURRICULUM.filter(v => watched && watched[v.id]).length;
+      const countEl = document.getElementById("videoWatchedCount");
+      if (countEl) countEl.textContent = `${doneCoreCount}/${VIDEO_CURRICULUM.length}`;
+
+      const kw = (videoSearchKeyword || "").trim().toLowerCase();
+      const filtered = all.filter(v => {
+        const matchGroup = activeVideoFilter === "all" || v.group === activeVideoFilter;
+        const matchKw = !kw || v.title.toLowerCase().includes(kw) || v.chapter.toLowerCase().includes(kw) || v.subject.toLowerCase().includes(kw);
+        return matchGroup && matchKw;
+      });
+      if (!filtered.length) {
+        listEl.innerHTML = `<div class="text-center py-8 px-4 rounded-2xl bg-[#faf5f5] dark:bg-[#2b181d] border border-dashed border-red-200 dark:border-[#4b2a33] text-xs text-slate-500 dark:text-[#b8a2a7]">Chưa có video nào trong mục này. Hãy dán link YouTube hoặc mở file máy!</div>`;
+        return;
+      }
+
+      listEl.innerHTML = filtered.map(v => {
+        const active = v.id === currentVideoId;
+        const done = Boolean(watched && watched[v.id]);
+        const hasLink = Boolean(v.mediaUrl || v.videoUrl || (links && links[v.id]));
+        const isCustom = v.group === "custom" && !v.mediaUrl;
+        return `
+          <div class="flex items-stretch gap-1.5">
+            <button
+              type="button"
+              onclick="selectVideo('${escHtml(v.id)}')"
+              class="flex-1 text-left rounded-2xl p-3 border transition ${active ? "border-[#c80000] bg-red-50/70 dark:bg-red-500/20 dark:border-red-400 shadow-xs" : "border-red-100 dark:border-[#4b2a33] bg-[#faf5f5] dark:bg-[#2b181d] hover:border-[#c80000]"}"
+            >
+              <div class="flex items-center justify-between gap-2 mb-1">
+                <span class="text-[10px] font-bold px-2 py-0.5 rounded-full ${v.group === "vl3" ? "bg-amber-100 dark:bg-amber-500/20 text-amber-800 dark:text-amber-300" : "bg-red-100 dark:bg-red-500/25 text-[#9e0000] dark:text-red-200"}">${escHtml(v.subject)}</span>
+                <div class="flex items-center gap-1.5 text-[10px]">
+                  ${hasLink ? `<span class="px-1.5 py-0.5 rounded bg-sky-100 dark:bg-sky-500/20 text-sky-700 dark:text-sky-300 font-semibold">Sẵn sàng</span>` : ""}
+                  ${done ? `<span class="px-1.5 py-0.5 rounded bg-emerald-100 dark:bg-emerald-500/20 text-emerald-700 dark:text-emerald-300 font-bold">✓ Xong</span>` : ""}
+                </div>
+              </div>
+              <div class="font-bold text-xs sm:text-sm text-slate-900 dark:text-white leading-snug">${escHtml(v.title)}</div>
+              <div class="text-[11px] text-slate-500 dark:text-[#b8a2a7] mt-0.5">${escHtml(v.chapter)}</div>
+            </button>
+            ${isCustom ? `<button type="button" onclick="deleteCustomVideo('${escHtml(v.id)}')" title="Xóa video đã lưu" class="px-2.5 rounded-2xl border border-red-100 dark:border-[#4b2a33] text-red-500 hover:bg-red-50 dark:hover:bg-red-500/20 transition"><i data-lucide="trash-2" class="w-4 h-4"></i></button>` : ""}
+          </div>`;
+      }).join("");
+      icons();
+    }
+
+    function selectVideo(id) {
+      forceIframeOnFile = false;
+      currentVideoId = id;
+      renderVideoPlayer();
+      renderVideoPlaylist();
+    }
+
+    function setVideoFilter(filter) {
+      activeVideoFilter = filter;
+      document.querySelectorAll(".vid-filter-btn").forEach(btn => {
+        const isAct = btn.getAttribute("data-vfilter") === filter;
+        btn.className = isAct
+          ? "vid-filter-btn px-2.5 py-1.5 rounded-xl text-xs font-bold transition bg-white dark:bg-[#c80000] text-[#c80000] dark:text-white shadow-xs"
+          : "vid-filter-btn px-2.5 py-1.5 rounded-xl text-xs font-semibold transition text-slate-600 dark:text-[#d9c7cb]";
+      });
+      renderVideoPlaylist();
+    }
+
+    function saveVideoToLesson() {
+      const inp = document.getElementById("videoUrlInput");
+      const rawUrl = (inp && inp.value || "").trim();
+      const parsed = parseVideoSource(rawUrl);
+      if (!parsed) {
+        showStatusMsg("Vui lòng dán link YouTube (video / playlist) hoặc URL .mp4 / .webm hợp lệ.", true);
+        return;
+      }
+
+      const isCore = VIDEO_CURRICULUM.some(v => v.id === currentVideoId);
+      if (isCore) {
+        const links = safeReadJson(VIDEO_STORAGE_LINKS, {});
+        links[currentVideoId] = rawUrl;
+        try { localStorage.setItem(VIDEO_STORAGE_LINKS, JSON.stringify(links)); } catch {}
+        showStatusMsg("Đã gắn và phát video cho bài giảng hiện tại!", false);
+      } else {
+        const custom = safeReadJson(VIDEO_STORAGE_CUSTOM, []);
+        const idx = custom.findIndex(v => v.id === currentVideoId);
+        if (idx >= 0) {
+          custom[idx].videoUrl = rawUrl;
+          custom[idx].desc = rawUrl;
+          try { localStorage.setItem(VIDEO_STORAGE_CUSTOM, JSON.stringify(custom)); } catch {}
+          showStatusMsg("Đã cập nhật link video cá nhân!", false);
+        } else {
+          return addNewCustomVideo();
+        }
+      }
+      renderVideoPlayer();
+      renderVideoPlaylist();
+    }
+
+    function addNewCustomVideo() {
+      const inp = document.getElementById("videoUrlInput");
+      const titleInp = document.getElementById("videoTitleInput");
+      const rawUrl = (inp && inp.value || "").trim();
+      const parsed = parseVideoSource(rawUrl);
+      if (!parsed) {
+        showStatusMsg("Vui lòng dán link YouTube (video / playlist) hoặc URL .mp4 / .webm hợp lệ.", true);
+        return;
+      }
+      const custom = safeReadJson(VIDEO_STORAGE_CUSTOM, []);
+      const customTitle = (titleInp && titleInp.value || "").trim() || `Bài giảng cá nhân #${custom.length + 1}`;
+      const newId = "vid-custom-" + Date.now();
+      custom.unshift({
+        id: newId,
+        group: "custom",
+        subject: "Video đã lưu",
+        chapter: parsed.kind === "youtube" ? "YouTube cá nhân" : "Video URL",
+        title: customTitle,
+        desc: rawUrl,
+        videoUrl: rawUrl,
+        quizUrl: TRR_URL
+      });
+      try { localStorage.setItem(VIDEO_STORAGE_CUSTOM, JSON.stringify(custom.slice(0, 25))); } catch {}
+      if (titleInp) titleInp.value = "";
+      currentVideoId = newId;
+      setVideoFilter("custom");
+      renderVideoPlayer();
+      showStatusMsg("Đã thêm video mới vào kho đã lưu!", false);
+    }
+
+    function handleLocalVideoFile(file) {
+      if (!file) return;
+      if (activeLocalMedia && activeLocalMedia.objectUrl && typeof URL !== "undefined" && URL.revokeObjectURL) {
+        try { URL.revokeObjectURL(activeLocalMedia.objectUrl); } catch {}
+      }
+      const objectUrl = typeof URL !== "undefined" && URL.createObjectURL ? URL.createObjectURL(file) : "";
+      if (!objectUrl) return;
+      activeLocalMedia = { id: "vid-local-file", title: file.name, objectUrl };
+      currentVideoId = activeLocalMedia.id;
+      renderVideoPlayer();
+      renderVideoPlaylist();
+      showStatusMsg(`Đang phát file offline: ${file.name}`, false);
+    }
+
+    function toggleCurrentVideoWatched() {
+      const watched = safeReadJson(VIDEO_STORAGE_WATCHED, {});
+      watched[currentVideoId] = !watched[currentVideoId];
+      try { localStorage.setItem(VIDEO_STORAGE_WATCHED, JSON.stringify(watched)); } catch {}
+      renderVideoPlayer();
+      renderVideoPlaylist();
+    }
+
+    function saveCurrentVideoNote(text) {
+      const notes = safeReadJson(VIDEO_STORAGE_NOTES, {});
+      notes[currentVideoId] = text;
+      try { localStorage.setItem(VIDEO_STORAGE_NOTES, JSON.stringify(notes)); } catch {}
+      const badge = document.getElementById("videoNoteSaved");
+      if (badge) {
+        badge.classList.remove("opacity-0");
+        clearTimeout(window.__noteTimer);
+        window.__noteTimer = setTimeout(() => badge.classList.add("opacity-0"), 1400);
+      }
+    }
+
+    function deleteCustomVideo(id) {
+      const custom = safeReadJson(VIDEO_STORAGE_CUSTOM, []).filter(v => v.id !== id);
+      try { localStorage.setItem(VIDEO_STORAGE_CUSTOM, JSON.stringify(custom)); } catch {}
+      if (currentVideoId === id) currentVideoId = VIDEO_CURRICULUM[0].id;
+      renderVideoPlayer();
+      renderVideoPlaylist();
+    }
+
+    function initFromParams() {
+      try {
+        const params = new URLSearchParams(window.location?.search || "");
+        const group = params.get("group");
+        const tab = params.get("tab");
+        const id = params.get("id");
+        if (id && getAllVideos().some(v => v.id === id)) {
+          currentVideoId = id;
+        } else if (group && ["trr", "vl3"].includes(group)) {
+          activeVideoFilter = group;
+          const first = VIDEO_CURRICULUM.find(v => v.group === group);
+          if (first) currentVideoId = first.id;
+        }
+        if (tab === "custom") activeVideoFilter = "custom";
+      } catch {}
+    }
+
+    function upgradeFromFileIfServerAlive() {
+      if (!isFileProtocol()) return;
+      try {
+        const sp = new URLSearchParams(window.location?.search || "");
+        if (sp.get("noRedirect") === "1") return;
+      } catch {}
+      const ports = [8080, 8081];
+      (async () => {
+        for (const p of ports) {
+          try {
+            const ctrl = new AbortController();
+            const tid = setTimeout(() => ctrl.abort(), 400);
+            const r = await fetch(`http://127.0.0.1:${p}/video/index.html`, { method: "HEAD", signal: ctrl.signal });
+            clearTimeout(tid);
+            if (r.ok) {
+              window.location.replace(`http://127.0.0.1:${p}/video/index.html${window.location.search || ""}`);
+              return;
+            }
+          } catch {}
+        }
+      })();
+    }
+
+    window.addEventListener("DOMContentLoaded", () => {
+      upgradeFromFileIfServerAlive();
+      initTheme();
+      initFromParams();
+      setVideoFilter(activeVideoFilter);
+      renderVideoPlayer();
+      icons();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+[
+  {
+    "id": 113,
+    "topic": "Thuật Toán Sinh Tổ Hợp (Đề 6 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $5$ của các phần tử của $A$ theo thứ tự từ điển, hãy liệt kê $4$ tổ hợp liền kề tiếp theo của tổ hợp $(1,5,7,8,9)$.",
+    "options": [
+      "$(1,6,7,8,9),\\ (2,3,4,5,6),\\ (2,3,4,5,7),\\ (2,3,4,5,8)$",
+      "$(2,3,4,5,8),\\ (2,3,4,5,6),\\ (2,3,4,5,7),\\ (1,6,7,8,9)$",
+      "$(2,3,4,5,8),\\ (2,3,4,5,6),\\ (1,6,7,8,9),\\ (2,3,4,5,7)$",
+      "$(2,3,4,5,8),\\ (1,6,7,8,9),\\ (2,3,4,5,7),\\ (2,3,4,5,6)$"
+    ],
+    "correct": 0,
+    "explanation": "Trong $(1,5,7,8,9)$, ba phần tử cuối $(7,8,9)$ đã đạt cực đại. Tăng vị trí thứ $2$ từ $5$ lên $6$ được $(1,6,7,8,9)$. Tiếp theo cả $4$ vị trí cuối $(6,7,8,9)$ đã đạt cực đại nên tăng vị trí đầu từ $1$ lên $2$ và đặt lại cấu hình nhỏ nhất $(2,3,4,5,6)$, tiếp theo là $(2,3,4,5,7)$ và $(2,3,4,5,8)$."
+  },
+  {
+    "id": 114,
+    "topic": "Đếm Số Thuận Nghịch 9 Chữ Số (Đề 6 - PTIT)",
+    "question": "Có bao nhiêu số tự nhiên có $9$ chữ số tạo thành một số thuận nghịch (đối xứng) có tổng các chữ số bằng $N = 19$?",
+    "options": [
+      "$457$",
+      "$460$",
+      "$480$",
+      "$462$"
+    ],
+    "correct": 1,
+    "explanation": "Số thuận nghịch $9$ chữ số $\\overline{x_1 x_2 x_3 x_4 x_5 x_4 x_3 x_2 x_1}$ có $2(x_1 + x_2 + x_3 + x_4) + x_5 = 19$. Vì $19$ lẻ nên $x_5 \\in \\{1, 3, 5, 7, 9\\}$ ($x_5 = 2m+1$ với $m = 0..4$). Khi đó $x_1 + x_2 + x_3 + x_4 = 9 - m \\iff y_1 + x_2 + x_3 + x_4 = 8 - m$ ($y_1 = x_1 - 1 \\ge 0$). Số nghiệm là $\\sum_{m=0}^{4} C_{(8-m)+3}^3 = C_{11}^3 + C_{10}^3 + C_9^3 + C_8^3 + C_7^3 = 165 + 120 + 84 + 56 + 35 = 460$."
+  },
+  {
+    "id": 115,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1 (Đề 6 - PTIT)",
+    "question": "Giải bài toán cái túi dưới đây để chỉ ra giá trị tối ưu $f^*$: $$4x_1 + 6x_2 + 5x_3 + 6x_4 \\to \\max$$ với điều kiện $3x_1 + 2x_2 + x_3 + 5x_4 \\le 9$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$.",
+    "options": [
+      "$f^* = 21$",
+      "$f^* = 16$",
+      "$f^* = 17$",
+      "$f^* = 26$"
+    ],
+    "correct": 2,
+    "explanation": "Xét bộ $(x_1, x_2, x_3, x_4) = (0, 1, 1, 1)$: trọng lượng là $2 + 1 + 5 = 8 \\le 9$ và giá trị đạt $6 + 5 + 6 = 17$. Nếu chọn $(1, 1, 1, 0)$ thì trọng lượng là $3+2+1 = 6 \\le 9$, giá trị là $4+6+5 = 15 < 17$. Không thể chọn cả $4$ đồ vật vì $3+2+1+5 = 11 > 9$. Vậy $f^* = 17$."
+  },
+  {
+    "id": 116,
+    "topic": "Thuật Toán Sinh Tổ Hợp (Đề 8 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $6$ của các phần tử của $A$ theo thứ tự từ điển, hãy liệt kê $6$ tổ hợp liền kề tiếp theo của tổ hợp $(2,5,6,7,8,9)$.",
+    "options": [
+      "$(3,4,5,6,7,9),\\ (3,5,6,7,8,9),\\ (3,4,5,6,7,8),\\ (3,4,5,6,8,9),\\ (3,4,5,7,8,9),\\ (3,4,6,7,8,9)$",
+      "$(3,4,5,7,8,9),\\ (3,4,5,6,7,8),\\ (3,4,6,7,8,9),\\ (3,4,5,6,7,9),\\ (3,5,6,7,8,9),\\ (3,4,5,6,8,9)$",
+      "$(3,4,5,7,8,9),\\ (3,5,6,7,8,9),\\ (3,4,6,7,8,9),\\ (3,4,5,6,8,9),\\ (3,4,5,6,7,9),\\ (3,4,5,6,7,8)$",
+      "$(3,4,5,6,7,8),\\ (3,4,5,6,7,9),\\ (3,4,5,6,8,9),\\ (3,4,5,7,8,9),\\ (3,4,6,7,8,9),\\ (3,5,6,7,8,9)$"
+    ],
+    "correct": 3,
+    "explanation": "Trong $(2,5,6,7,8,9)$, cả $5$ phần tử cuối $(5,6,7,8,9)$ đã đạt cực đại. Tăng phần tử đầu từ $2$ lên $3$ ta được $(3,4,5,6,7,8)$, sau đó lần lượt là $(3,4,5,6,7,9) \\to (3,4,5,6,8,9) \\to (3,4,5,7,8,9) \\to (3,4,6,7,8,9) \\to (3,5,6,7,8,9)$."
+  },
+  {
+    "id": 117,
+    "topic": "Nguyên Lý Bù Trừ (Đề 10 - PTIT)",
+    "question": "Trong tập hợp $X = \\{304, 305, \\dots, 6395\\}$ có bao nhiêu số nguyên không chia hết cho bất kỳ số nào trong các số $3, 5, 8$?",
+    "options": [
+      "$2842$",
+      "$2839$",
+      "$2841$",
+      "$2840$"
+    ],
+    "correct": 0,
+    "explanation": "Ba số $3, 5, 8$ đôi một nguyên tố cùng nhau có $\\text{lcm}(3,5,8) = 120$, trong mỗi chu kỳ $120$ số có $120\\times(1 - 1/3)(1 - 1/5)(1 - 1/8) = 56$ số không chia hết cho $3, 5, 8$. Tổng số phần tử của $X$ là $6395 - 304 + 1 = 6092 = 50\\times 120 + 92$. Trong $50$ chu kỳ có $50\\times 56 = 2800$ số. Trong $92$ số dư từ $6304$ đến $6395$ (tương đương $64..155 \\pmod{120}$) có $42$ số không chia hết cho $3, 5, 8$. Tổng cộng: $2800 + 42 = 2842$."
+  },
+  {
+    "id": 118,
+    "topic": "Hệ Thức Truy Hồi Bậc 3 (Đề 10 - PTIT)",
+    "question": "Giải hệ thức truy hồi sau: $a_{n+3} = a_{n+2} + 36a_{n+1} - 36a_n$ với $n \\ge 0,\\ a_0 = -1,\\ a_1 = -5,\\ a_2 = 139$.",
+    "options": [
+      "$a_n = -2\\cdot 6^n + 2\\cdot(-6)^n - 5$",
+      "$a_n = 2\\cdot 6^n + 2\\cdot(-6)^n - 5$",
+      "$a_n = 2\\cdot 6^n - 2\\cdot(-6)^n + 5$",
+      "$a_n = -2\\cdot 6^n - 2\\cdot(-6)^n - 5$"
+    ],
+    "correct": 1,
+    "explanation": "Phương trình đặc trưng $r^3 - r^2 - 36r + 36 = (r - 1)(r^2 - 36) = (r - 1)(r - 6)(r + 6) = 0$ có nghiệm $r \\in \\{6, -6, 1\\}$. Thử $a_n = 2\\cdot 6^n + 2\\cdot(-6)^n - 5$: tại $n=0 \\Rightarrow 2+2-5 = -1 = a_0$; tại $n=1 \\Rightarrow 12-12-5 = -5 = a_1$; tại $n=2 \\Rightarrow 72+72-5 = 139 = a_2$."
+  },
+  {
+    "id": 119,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1 (Đề 10 - PTIT)",
+    "question": "Giải bài toán cái túi dưới đây để chỉ ra giá trị tối ưu $f^*$: $$2x_1 + 5x_2 + 5x_3 + 6x_4 \\to \\max$$ với điều kiện $x_1 + x_2 + 2x_3 + 4x_4 \\le 8$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$.",
+    "options": [
+      "$f^* = 25$",
+      "$f^* = 17$",
+      "$f^* = 18$",
+      "$f^* = 20$"
+    ],
+    "correct": 2,
+    "explanation": "Tổng trọng lượng của cả $4$ đồ vật là $1 + 1 + 2 + 4 = 8 \\le 8$, vừa đúng sức chứa của túi! Do đó phương án tối ưu là chọn cả $4$ đồ vật $(1,1,1,1)$ với giá trị tối ưu $f^* = 2 + 5 + 5 + 6 = 18$."
+  },
+  {
+    "id": 120,
+    "topic": "Phương Trình Nghiệm Nguyên Bị Chặn (Đề 10 - PTIT)",
+    "question": "Số nghiệm nguyên không âm của phương trình $x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 30$ thỏa mãn $1 \\le x_2 \\le 6,\\ 4 \\le x_3 \\le 7$ là:",
+    "options": [
+      "$49711$",
+      "$49732$",
+      "$49720$",
+      "$49726$"
+    ],
+    "correct": 3,
+    "explanation": "Đặt $y_2 = x_2 - 1 \\in [0, 5]$ và $y_3 = x_3 - 4 \\in [0, 3]$. Phương trình thành $x_1 + y_2 + y_3 + x_4 + x_5 + x_6 = 30 - 5 = 25$. Theo nguyên lý bù trừ (trừ đi $y_2 \\ge 6$ và $y_3 \\ge 4$, cộng lại giao $y_2 \\ge 6 \\land y_3 \\ge 4$): $C_{25+5}^5 - C_{19+5}^5 - C_{21+5}^5 + C_{15+5}^5 = C_{30}^5 - C_{24}^5 - C_{26}^5 + C_{20}^5 = 142506 - 42504 - 65780 + 15504 = 49726$."
+  },
+  {
+    "id": 121,
+    "topic": "Đếm Xâu Nhị Phân Không Chứa 000 (Đề 10 - PTIT)",
+    "question": "Gọi $a_n$ là số các xâu nhị phân có độ dài $n$ và KHÔNG chứa $3$ chữ số $0$ liên tiếp. Khi đó, giá trị của $a_4$ là:",
+    "options": [
+      "$13$",
+      "$15$",
+      "$12$",
+      "$14$"
+    ],
+    "correct": 0,
+    "explanation": "Trong $2^4 = 16$ xâu nhị phân độ dài $4$, chỉ có $3$ xâu chứa $3$ chữ số $0$ liên tiếp là $0000, 0001, 1000$. Vậy số xâu không chứa $3$ chữ số $0$ liên tiếp là $a_4 = 16 - 3 = 13$."
+  },
+  {
+    "id": 122,
+    "topic": "Thuật Toán Sinh Xâu Nhị Phân (Đề 13 - PTIT)",
+    "question": "Cho xâu nhị phân $X = (0,0,1,1,1,1,1,1,1)$. Giả sử áp dụng phương pháp sinh xâu nhị phân theo thứ tự từ điển, hãy liệt kê $3$ xâu nhị phân liền kề tiếp theo của $X$?",
+    "options": [
+      "$(0,1,0,0,0,0,0,1,0),\\ (0,1,0,0,0,0,0,0,0),\\ (0,1,0,0,0,0,0,0,1)$",
+      "$(0,1,0,0,0,0,0,0,0),\\ (0,1,0,0,0,0,0,0,1),\\ (0,1,0,0,0,0,0,1,0)$",
+      "$(0,1,0,0,0,0,0,0,1),\\ (0,1,0,0,0,0,0,0,0),\\ (0,1,0,0,0,0,0,1,0)$",
+      "$(0,1,0,0,0,0,0,0,0),\\ (0,1,0,0,0,0,0,1,0),\\ (0,1,0,0,0,0,0,0,1)$"
+    ],
+    "correct": 1,
+    "explanation": "Trong $X = (0,0,1,1,1,1,1,1,1)$, bit $0$ đầu tiên tính từ phải sang nằm ở vị trí thứ $2$: đổi thành $1$ và gán tất cả $7$ bit phía sau bằng $0$ được $(0,1,0,0,0,0,0,0,0)$; hai xâu kế tiếp là $(0,1,0,0,0,0,0,0,1)$ và $(0,1,0,0,0,0,0,1,0)$."
+  },
+  {
+    "id": 123,
+    "topic": "Thuật Toán Sinh Tổ Hợp Chập 8 (Đề 14 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $8$ của các phần tử của $A$ theo thứ tự từ điển, hãy liệt kê $5$ tổ hợp liền kề tiếp theo của tổ hợp $(1,2,3,4,5,7,8,9)$.",
+    "options": [
+      "$(1,2,4,5,6,7,8,9),\\ (1,3,4,5,6,7,8,9),\\ (1,2,3,5,6,7,8,9),\\ (2,3,4,5,6,7,8,9),\\ (1,2,3,4,6,7,8,9)$",
+      "$(1,3,4,5,6,7,8,9),\\ (2,3,4,5,6,7,8,9),\\ (1,2,3,4,6,7,8,9),\\ (1,2,3,5,6,7,8,9),\\ (1,2,4,5,6,7,8,9)$",
+      "$(1,2,3,4,6,7,8,9),\\ (1,2,3,5,6,7,8,9),\\ (1,2,4,5,6,7,8,9),\\ (1,3,4,5,6,7,8,9),\\ (2,3,4,5,6,7,8,9)$",
+      "$(1,2,3,4,6,7,8,9),\\ (1,2,3,5,6,7,8,9),\\ (1,2,4,5,6,7,8,9),\\ (2,3,4,5,6,7,8,9),\\ (1,3,4,5,6,7,8,9)$"
+    ],
+    "correct": 2,
+    "explanation": "Tổ hợp chập $8$ của $9$ phần tử thực chất tương ứng với việc bỏ đi $1$ phần tử: $(1,2,3,4,5,7,8,9)$ đang bỏ số $6$. Các tổ hợp kế tiếp theo thứ tự từ điển sẽ lần lượt bỏ số $5$, số $4$, số $3$, số $2$, số $1$, tức là $(1,2,3,4,6,7,8,9) \\to (1,2,3,5,6,7,8,9) \\to (1,2,4,5,6,7,8,9) \\to (1,3,4,5,6,7,8,9) \\to (2,3,4,5,6,7,8,9)$."
+  },
+  {
+    "id": 124,
+    "topic": "Nguyên Lý Dirichlet (Đề 15 - PTIT)",
+    "question": "Trong một kỳ thi trắc nghiệm, đề thi gồm có $6$ câu hỏi. Thí sinh được $1$ điểm cho mỗi câu trả lời đúng và $0$ điểm cho mỗi câu trả lời sai; giả thiết mỗi câu có $3$ đáp án và các bạn đều điền hết các câu. Hỏi cần ít nhất bao nhiêu thí sinh tham gia kỳ thi để chắc chắn rằng có ít nhất $3$ thí sinh có phương án chọn đáp án giống nhau?",
+    "options": [
+      "$2188$",
+      "$6562$",
+      "$1457$",
+      "$1459$"
+    ],
+    "correct": 3,
+    "explanation": "Tổng số phương án chọn đáp án cho $6$ câu hỏi là $M = 3^6 = 729$. Để chắc chắn có ít nhất $k = 3$ thí sinh có cùng phương án trả lời, số thí sinh tối thiểu là $(k - 1)\\cdot M + 1 = 2\\times 729 + 1 = 1458 + 1 = 1459$."
+  },
+  {
+    "id": 125,
+    "topic": "Hệ Thức Truy Hồi Bậc 2 (Đề 15 - PTIT)",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = 29a_{n-1} + 30a_{n-2}$ với $n \\ge 2$ và $a_0 = -17,\\ a_1 = -76$ là:",
+    "options": [
+      "$a_n = -3\\cdot 30^n - 14\\cdot(-1)^n$ với $n \\ge 0$",
+      "$a_n = 3\\cdot(-30)^n + 14$ với $n \\ge 0$",
+      "$a_n = -3\\cdot(-30)^n + 14\\cdot(-1)^n$ với $n \\ge 0$",
+      "$a_n = 3\\cdot 30^n - 14$ với $n \\ge 0$"
+    ],
+    "correct": 0,
+    "explanation": "Phương trình đặc trưng $r^2 - 29r - 30 = (r - 30)(r + 1) = 0$ có nghiệm $r_1 = 30,\\ r_2 = -1$. Đặt $a_n = A\\cdot 30^n + B\\cdot(-1)^n$. Với $n=0, 1$: $A + B = -17$ và $30A - B = -76 \\Rightarrow 31A = -93 \\Rightarrow A = -3,\\ B = -14$. Vậy $a_n = -3\\cdot 30^n - 14\\cdot(-1)^n$."
+  },
+  {
+    "id": 126,
+    "topic": "Đếm Xâu Nhị Phân Có Chứa 111 (Đề 16 - PTIT)",
+    "question": "Gọi $a_n$ là số các xâu nhị phân có độ dài $n$ và CÓ chứa ít nhất một cụm $3$ chữ số $1$ liên tiếp. Khi đó, giá trị của $a_5$ là:",
+    "options": [
+      "$7$",
+      "$8$",
+      "$9$",
+      "$10$"
+    ],
+    "correct": 1,
+    "explanation": "Số xâu nhị phân độ dài $5$ không chứa $111$ là $b_5 = 24$ (dãy $2, 4, 7, 13, 24$). Do đó số xâu độ dài $5$ có chứa ít nhất một cụm $111$ là $a_5 = 2^5 - 24 = 32 - 24 = 8$."
+  },
+  {
+    "id": 127,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1 (Đề 18 - PTIT)",
+    "question": "Giải bài toán cái túi dưới đây để chỉ ra giá trị tối ưu $f^*$: $$6x_1 + 3x_2 + 2x_3 + 2x_4 \\to \\max$$ với điều kiện $3x_1 + 5x_2 + 3x_3 + 2x_4 \\le 5$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$.",
+    "options": [
+      "$f^* = 14$",
+      "$f^* = 16$",
+      "$f^* = 8$",
+      "$f^* = 7$"
+    ],
+    "correct": 2,
+    "explanation": "Với sức chứa $b = 5$: chọn $x_1 = 1, x_4 = 1$ ($x_2 = x_3 = 0$) có tổng trọng lượng $3 + 2 = 5 \\le 5$ và đạt giá trị lớn nhất $f^* = 6 + 2 = 8$."
+  },
+  {
+    "id": 128,
+    "topic": "Logic Mệnh Đề (Đề 1-90 - PTIT)",
+    "question": "Cho mệnh đề logic $B = (p \\land q) \\Rightarrow p$. Hỏi khẳng định nào sau đây là đúng?",
+    "options": [
+      "$B$ là mệnh đề không thỏa được (mâu thuẫn)",
+      "Tất cả đều sai",
+      "$B$ chỉ đúng khi $p$ và $q$ cùng đúng",
+      "$B$ là mệnh đề hằng đúng (tautology)"
+    ],
+    "correct": 3,
+    "explanation": "Ta có $(p \\land q) \\Rightarrow p \\equiv \\neg(p \\land q) \\lor p \\equiv (\\neg p \\lor \\neg q) \\lor p \\equiv (p \\lor \\neg p) \\lor \\neg q \\equiv 1 \\lor \\neg q \\equiv 1$. Do đó $B$ luôn nhận giá trị chân lý Đúng với mọi $p, q$, tức $B$ là mệnh đề hằng đúng."
+  }
+]

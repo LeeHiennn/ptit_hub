@@ -1,0 +1,210 @@
+[
+  {
+    "id": 97,
+    "topic": "Thuật Toán Sinh Tổ Hợp (Đề 3 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $6$ của các phần tử của $A$ theo thứ tự từ điển, hãy liệt kê $5$ tổ hợp liền kề tiếp theo của tổ hợp $(1,3,4,5,7,8)$.",
+    "options": [
+      "$(1,3,4,5,7,9),\\ (1,3,4,5,8,9),\\ (1,3,4,6,7,8),\\ (1,3,4,6,7,9),\\ (1,3,4,6,8,9)$",
+      "$(1,3,4,6,7,9),\\ (1,3,4,6,7,8),\\ (1,3,4,6,8,9),\\ (1,3,4,5,8,9),\\ (1,3,4,5,7,9)$",
+      "$(1,3,4,6,8,9),\\ (1,3,4,5,7,9),\\ (1,3,4,6,7,8),\\ (1,3,4,6,7,9),\\ (1,3,4,5,8,9)$",
+      "$(1,3,4,5,8,9),\\ (1,3,4,6,7,9),\\ (1,3,4,6,7,8),\\ (1,3,4,5,7,9),\\ (1,3,4,6,8,9)$"
+    ],
+    "correct": 0,
+    "explanation": "Từ $(1,3,4,5,7,8)$: tăng phần tử cuối được $(1,3,4,5,7,9)$; tiếp theo tăng vị trí thứ $5$ từ $7$ lên $8$ được $(1,3,4,5,8,9)$; tiếp theo tăng vị trí thứ $4$ từ $5$ lên $6$ và đặt lại đuôi nhỏ nhất được $(1,3,4,6,7,8)$, rồi $(1,3,4,6,7,9)$ và $(1,3,4,6,8,9)$."
+  },
+  {
+    "id": 98,
+    "topic": "Hệ Thức Truy Hồi Bậc 3 (Đề 3 - PTIT)",
+    "question": "Giải hệ thức truy hồi sau: $a_{n+3} = -10a_{n+2} - 27a_{n+1} - 18a_n$ với $n \\ge 0,\\ a_0 = 12,\\ a_1 = -40,\\ a_2 = 184$.",
+    "options": [
+      "$a_n = 4\\cdot(-3)^n - 4\\cdot(-1)^n - 4\\cdot(-6)^n$",
+      "$a_n = 4\\cdot(-3)^n + 4\\cdot(-1)^n + 4\\cdot(-6)^n$",
+      "$a_n = -4\\cdot(-3)^n - 4\\cdot(-1)^n + 4\\cdot(-6)^n$",
+      "$a_n = -4\\cdot(-3)^n + 4\\cdot(-1)^n + 4\\cdot(-6)^n$"
+    ],
+    "correct": 1,
+    "explanation": "Phương trình đặc trưng $r^3 + 10r^2 + 27r + 18 = (r+1)(r+3)(r+6) = 0$ có nghiệm $r \\in \\{-1, -3, -6\\}$. Kiểm tra $a_n = 4\\cdot(-3)^n + 4\\cdot(-1)^n + 4\\cdot(-6)^n$: tại $n=0 \\Rightarrow 4+4+4 = 12 = a_0$; tại $n=1 \\Rightarrow -12 - 4 - 24 = -40 = a_1$; tại $n=2 \\Rightarrow 36 + 4 + 144 = 184 = a_2$."
+  },
+  {
+    "id": 99,
+    "topic": "Hệ Thức Truy Hồi Nghiệm Kép (Đề 3 - PTIT)",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = 40a_{n-1} - 400a_{n-2}$ với $n \\ge 2$ và $a_0 = -28,\\ a_1 = -40$ là:",
+    "options": [
+      "$a_n = (-28 - 26n)\\cdot(-20)^n$ với $n \\ge 0$",
+      "$a_n = (28 - 26n)\\cdot 20^n$ với $n \\ge 0$",
+      "$a_n = (-28 + 26n)\\cdot 20^n$ với $n \\ge 0$",
+      "$a_n = (28 + 26n)\\cdot(-20)^n$ với $n \\ge 0$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 - 40r + 400 = (r - 20)^2 = 0$ có nghiệm kép $r_0 = 20$. Nghiệm tổng quát $a_n = (A + Bn)20^n$. Với $n=0 \\Rightarrow A = a_0 = -28$. Với $n=1 \\Rightarrow (-28 + B)\\times 20 = -40 \\Rightarrow -28 + B = -2 \\Rightarrow B = 26$. Vậy $a_n = (-28 + 26n)\\cdot 20^n$."
+  },
+  {
+    "id": 100,
+    "topic": "Nguyên Lý Dirichlet (Đề 3 - PTIT)",
+    "question": "Trong một kỳ thi trắc nghiệm, đề thi gồm có $5$ câu hỏi. Thí sinh được $1$ điểm cho mỗi câu trả lời đúng và $0$ điểm cho mỗi câu trả lời sai; giả thiết mỗi câu có $3$ đáp án và các bạn đều điền hết các câu. Hỏi cần ít nhất bao nhiêu thí sinh tham gia kỳ thi để chắc chắn rằng có ít nhất $4$ thí sinh có phương án chọn đáp án giống nhau?",
+    "options": [
+      "$728$",
+      "$973$",
+      "$2917$",
+      "$730$"
+    ],
+    "correct": 3,
+    "explanation": "Số phương án chọn đáp án cho $5$ câu hỏi (mỗi câu $3$ lựa chọn) là $M = 3^5 = 243$. Để chắc chắn có ít nhất $k = 4$ thí sinh có phương án giống nhau, cần ít nhất $(k - 1)\\cdot M + 1 = 3\\times 243 + 1 = 729 + 1 = 730$ thí sinh."
+  },
+  {
+    "id": 101,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1 (Đề 3 - PTIT)",
+    "question": "Giải bài toán cái túi dưới đây để chỉ ra giá trị tối ưu $f^*$: $$4x_1 + 3x_2 + 2x_3 + 3x_4 \\to \\max$$ với điều kiện $x_1 + 5x_2 + 3x_3 + x_4 \\le 8$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$.",
+    "options": [
+      "$f^* = 10$",
+      "$f^* = 16$",
+      "$f^* = 9$",
+      "$f^* = 14$"
+    ],
+    "correct": 0,
+    "explanation": "Xét các phương án khả thi: nếu chọn $(x_1, x_2, x_3, x_4) = (1, 1, 0, 1)$ thì trọng lượng là $1 + 5 + 0 + 1 = 7 \\le 8$ và giá trị là $4 + 3 + 0 + 3 = 10$. Nếu chọn $(1, 0, 1, 1)$ thì trọng lượng là $1 + 3 + 1 = 5 \\le 8$, giá trị là $4 + 2 + 3 = 9$. Không thể chọn cả $4$ vật vì $1+5+3+1 = 10 > 8$. Vậy $f^* = 10$."
+  },
+  {
+    "id": 102,
+    "topic": "Đếm Xâu Nhị Phân Có Chứa 000 (Đề 3 - PTIT)",
+    "question": "Gọi $a_n$ là số các xâu nhị phân có độ dài $n$ và CÓ chứa ít nhất một cụm $3$ chữ số $0$ liên tiếp. Khi đó, giá trị của $a_4$ là:",
+    "options": [
+      "$2$",
+      "$3$",
+      "$4$",
+      "$5$"
+    ],
+    "correct": 1,
+    "explanation": "Với $n = 4$, các xâu nhị phân độ dài $4$ có chứa ít nhất $3$ chữ số $0$ liên tiếp gồm: $0000$, $0001$, $1000$, tổng cộng có $3$ xâu (hoặc tính phần bù: $2^4 - 13 = 16 - 13 = 3$)."
+  },
+  {
+    "id": 103,
+    "topic": "Đếm Số Thuận Nghịch 7 Chữ Số (Đề 3 - PTIT)",
+    "question": "Có bao nhiêu số tự nhiên có $7$ chữ số tạo thành một số thuận nghịch (đối xứng) có tổng các chữ số bằng $N = 17$?",
+    "options": [
+      "$105$",
+      "$112$",
+      "$110$",
+      "$122$"
+    ],
+    "correct": 2,
+    "explanation": "Số thuận nghịch $7$ chữ số có dạng $\\overline{x_1 x_2 x_3 x_4 x_3 x_2 x_1}$ với $2(x_1 + x_2 + x_3) + x_4 = 17$. Vì tổng bằng $17$ lẻ nên $x_4$ phải là chữ số lẻ: $x_4 \\in \\{1, 3, 5, 7, 9\\}$. Đặt $y_1 = x_1 - 1 \\ge 0$, ta có $y_1 + x_2 + x_3 = \\dfrac{17 - x_4}{2} - 1 = k$ với $k \\in \\{7, 6, 5, 4, 3\\}$. Vì $k \\le 7 < 9$ nên không có biến nào vượt quá $9$. Số các số thỏa mãn là $\\sum_{k=3}^{7} C_{k+3-1}^{3-1} = C_5^2 + C_6^2 + C_7^2 + C_8^2 + C_9^2 = 10 + 15 + 21 + 28 + 36 = 110$."
+  },
+  {
+    "id": 104,
+    "topic": "Đếm Xâu Nhị Phân Có Chứa 000 (Đề 4 - PTIT)",
+    "question": "Gọi $a_n$ là số các xâu nhị phân có độ dài $n$ và CÓ chứa ít nhất một cụm $3$ chữ số $0$ liên tiếp. Khi đó, giá trị của $a_6$ là:",
+    "options": [
+      "$19$",
+      "$22$",
+      "$21$",
+      "$20$"
+    ],
+    "correct": 3,
+    "explanation": "Gọi $b_n$ là số xâu nhị phân độ dài $n$ KHÔNG chứa $3$ chữ số $0$ liên tiếp. Ta có $b_1 = 2, b_2 = 4, b_3 = 7, b_4 = 13, b_5 = 24, b_6 = 44$. Do đó số xâu độ dài $6$ CÓ chứa ít nhất $3$ chữ số $0$ liên tiếp là $a_6 = 2^6 - b_6 = 64 - 44 = 20$."
+  },
+  {
+    "id": 105,
+    "topic": "Đếm & Tổ Hợp (Đề 4 - PTIT)",
+    "question": "Lớp học có $15$ bạn nam và $12$ bạn nữ. Hãy cho biết có bao nhiêu cách chọn đội văn nghệ của lớp sao cho số bạn nam đúng bằng $2$ lần số bạn nữ, biết rằng đội văn nghệ cần ít nhất $3$ và nhiều nhất $9$ thành viên?",
+    "options": [
+      "$1192450$",
+      "$1192448$",
+      "$1192449$",
+      "$1192447$"
+    ],
+    "correct": 0,
+    "explanation": "Gọi số nữ là $k \\in \\{1, 2, 3\\} \\Rightarrow$ số nam là $2k \\in \\{2, 4, 6\\}$. Tổng số cách chọn là $C_{15}^2 C_{12}^1 + C_{15}^4 C_{12}^2 + C_{15}^6 C_{12}^3 = 105\\times 12 + 1365\\times 66 + 5005\\times 220 = 1260 + 90090 + 1101100 = 1192450$."
+  },
+  {
+    "id": 106,
+    "topic": "Hệ Thức Truy Hồi Bậc 3 (Đề 4 - PTIT)",
+    "question": "Giải hệ thức truy hồi sau: $a_{n+3} = 4a_{n+2} + 4a_{n+1} - 16a_n$ với $n \\ge 0,\\ a_0 = 3,\\ a_1 = 44,\\ a_2 = 72$.",
+    "options": [
+      "$a_n = -5\\cdot 4^n + 5\\cdot 2^n - 7\\cdot(-2)^n$",
+      "$a_n = 5\\cdot 4^n + 5\\cdot 2^n - 7\\cdot(-2)^n$",
+      "$a_n = 5\\cdot 4^n - 5\\cdot 2^n + 7\\cdot(-2)^n$",
+      "$a_n = -5\\cdot 4^n - 5\\cdot 2^n - 7\\cdot(-2)^n$"
+    ],
+    "correct": 1,
+    "explanation": "Phương trình đặc trưng $r^3 - 4r^2 - 4r + 16 = (r - 4)(r^2 - 4) = (r - 4)(r - 2)(r + 2) = 0$ có nghiệm $r \\in \\{4, 2, -2\\}$. Kiểm tra $a_n = 5\\cdot 4^n + 5\\cdot 2^n - 7\\cdot(-2)^n$: tại $n=0 \\Rightarrow 5 + 5 - 7 = 3 = a_0$; tại $n=1 \\Rightarrow 20 + 10 + 14 = 44 = a_1$; tại $n=2 \\Rightarrow 80 + 20 - 28 = 72 = a_2$."
+  },
+  {
+    "id": 107,
+    "topic": "Phương Trình Nghiệm Nguyên Bị Chặn (Đề 4 - PTIT)",
+    "question": "Số nghiệm nguyên không âm của phương trình $x_1 + x_2 + x_3 + x_4 + x_5 + x_6 = 52$ thỏa mãn $3 \\le x_2 \\le 7,\\ 4 \\le x_3 \\le 8$ là:",
+    "options": [
+      "$333269$",
+      "$333246$",
+      "$333250$",
+      "$333242$"
+    ],
+    "correct": 2,
+    "explanation": "Đặt $y_2 = x_2 - 3 \\in [0, 4]$ và $y_3 = x_3 - 4 \\in [0, 4]$. Phương trình thành $x_1 + y_2 + y_3 + x_4 + x_5 + x_6 = 52 - 7 = 45$. Theo nguyên lý bù trừ cho hai điều kiện vi phạm $y_2 \\ge 5$ và $y_3 \\ge 5$: số nghiệm là $C_{45+5}^5 - 2 C_{40+5}^5 + C_{35+5}^5 = C_{50}^5 - 2 C_{45}^5 + C_{40}^5 = 2118760 - 2\\times 1221759 + 658008 = 333250$."
+  },
+  {
+    "id": 108,
+    "topic": "Thuật Toán Sinh Hoán Vị (Đề 4 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh hoán vị theo thứ tự từ điển, hoán vị liền kề tiếp theo của hoán vị $(7,6,8,4,9,3,1,5,2)$ là:",
+    "options": [
+      "$(4,9,7,1,8,5,3,6,2)$",
+      "$(3,1,4,6,8,5,9,7,2)$",
+      "$(3,2,8,9,4,1,7,5,6)$",
+      "$(7,6,8,4,9,3,2,1,5)$"
+    ],
+    "correct": 3,
+    "explanation": "Trong $(7,6,8,4,9,3,1,5,2)$, duyệt từ phải sang trái thấy $a_7 = 1 < a_8 = 5$ (và $a_8 = 5 > a_9 = 2$). Phần tử nhỏ nhất bên phải $a_7 = 1$ mà lớn hơn $1$ là $2$. Đổi chỗ $1$ và $2$ được $(7,6,8,4,9,3,2,5,1)$, rồi lật ngược đoạn đuôi $(5,1)$ thành $(1,5)$, ta thu được $(7,6,8,4,9,3,2,1,5)$."
+  },
+  {
+    "id": 109,
+    "topic": "Thuật Toán Sinh Tổ Hợp (Đề 5 - PTIT)",
+    "question": "Cho tập $A = \\{1,2,3,4,5,6,7,8,9\\}$. Giả sử áp dụng phương pháp sinh tổ hợp chập $5$ của các phần tử của $A$ theo thứ tự từ điển, hãy liệt kê $6$ tổ hợp liền kề tiếp theo của tổ hợp $(1,2,4,7,8)$.",
+    "options": [
+      "$(1,2,4,7,9),\\ (1,2,4,8,9),\\ (1,2,5,6,7),\\ (1,2,5,6,8),\\ (1,2,5,6,9),\\ (1,2,5,7,8)$",
+      "$(1,2,5,6,9),\\ (1,2,5,7,8),\\ (1,2,5,6,7),\\ (1,2,5,6,8),\\ (1,2,4,8,9),\\ (1,2,4,7,9)$",
+      "$(1,2,5,7,8),\\ (1,2,5,6,8),\\ (1,2,5,6,7),\\ (1,2,5,6,9),\\ (1,2,4,8,9),\\ (1,2,4,7,9)$",
+      "$(1,2,5,7,8),\\ (1,2,5,6,8),\\ (1,2,4,7,9),\\ (1,2,5,6,7),\\ (1,2,5,6,9),\\ (1,2,4,8,9)$"
+    ],
+    "correct": 0,
+    "explanation": "Từ $(1,2,4,7,8)$ với $n=9, k=5$: lần lượt sinh được $(1,2,4,7,9) \\to (1,2,4,8,9) \\to$ tăng vị trí thứ $3$ từ $4$ lên $5$ và đặt đuôi nhỏ nhất thành $(1,2,5,6,7) \\to (1,2,5,6,8) \\to (1,2,5,6,9) \\to (1,2,5,7,8)$."
+  },
+  {
+    "id": 110,
+    "topic": "Tối Ưu Bài Toán Cái Túi 0-1 (Đề 5 - PTIT)",
+    "question": "Giải bài toán cái túi dưới đây để chỉ ra giá trị tối ưu $f^*$: $$5x_1 + 2x_2 + 4x_3 + 3x_4 \\to \\max$$ với điều kiện $4x_1 + 6x_2 + 2x_3 + 6x_4 \\le 6$ và $x_1, x_2, x_3, x_4 \\in \\{0, 1\\}$.",
+    "options": [
+      "$f^* = 8$",
+      "$f^* = 9$",
+      "$f^* = 18$",
+      "$f^* = 14$"
+    ],
+    "correct": 1,
+    "explanation": "Với sức chứa $b = 6$: chọn $x_1 = 1, x_3 = 1, x_2 = x_4 = 0$ có tổng trọng lượng $4 + 2 = 6 \\le 6$ và cho tổng giá trị lớn nhất $f^* = 5 + 4 = 9$."
+  },
+  {
+    "id": 111,
+    "topic": "Hệ Thức Truy Hồi Nghiệm Kép (Đề 5 - PTIT)",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = -52a_{n-1} - 676a_{n-2}$ với $n \\ge 2$ và $a_0 = -3,\\ a_1 = 858$ là:",
+    "options": [
+      "$a_n = (3 - 30n)\\cdot 26^n$ với $n \\ge 0$",
+      "$a_n = (3 + 30n)\\cdot(-26)^n$ với $n \\ge 0$",
+      "$a_n = (-3 - 30n)\\cdot(-26)^n$ với $n \\ge 0$",
+      "$a_n = (-3 + 30n)\\cdot 26^n$ với $n \\ge 0$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 + 52r + 676 = (r + 26)^2 = 0$ có nghiệm kép $r_0 = -26$. Đặt $a_n = (A + Bn)(-26)^n$. Với $n=0 \\Rightarrow A = -3$; với $n=1 \\Rightarrow (-3 + B)(-26) = 858 \\Rightarrow -3 + B = -33 \\Rightarrow B = -30$. Vậy $a_n = (-3 - 30n)\\cdot(-26)^n$."
+  },
+  {
+    "id": 112,
+    "topic": "Đếm Số Thuận Nghịch 7 Chữ Số (Đề 5 - PTIT)",
+    "question": "Có bao nhiêu số tự nhiên có $7$ chữ số tạo thành một số thuận nghịch (đối xứng) có tổng các chữ số bằng $N = 19$?",
+    "options": [
+      "$137$",
+      "$159$",
+      "$150$",
+      "$145$"
+    ],
+    "correct": 3,
+    "explanation": "Số thuận nghịch $7$ chữ số dạng $\\overline{x_1 x_2 x_3 x_4 x_3 x_2 x_1}$ có $2(x_1 + x_2 + x_3) + x_4 = 19$, với $x_4 \\in \\{1, 3, 5, 7, 9\\}$. Đặt $y_1 = x_1 - 1 \\ge 0 \\Rightarrow y_1 + x_2 + x_3 = k$ với $k = \\dfrac{19 - x_4}{2} - 1 \\in \\{8, 7, 6, 5, 4\\}$. Vì $k \\le 8 < 9$ nên không có chữ số nào vượt quá $9$ (ngoại trừ trường hợp $y_1 = 9 \\iff x_1 = 10$ không xảy ra vì $k \\le 8$). Vậy tổng số các số là $C_6^2 + C_7^2 + C_8^2 + C_9^2 + C_{10}^2 = 15 + 21 + 28 + 36 + 45 = 145$."
+  }
+]

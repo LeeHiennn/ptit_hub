@@ -1,0 +1,392 @@
+[
+  {
+    "id": 691,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Có bao nhiêu cách lát kín một hành lang kích thước $2 \\times 6$ bằng các viên gạch kích thước $1 \\times 2$ (đặt ngang hoặc dọc) và gạch vuông kích thước $2 \\times 2$?",
+    "options": [
+      "$64$",
+      "$43$",
+      "$31$",
+      "$21$"
+    ],
+    "correct": 1,
+    "explanation": "Gọi $a_n$ là số cách lát bảng $2 \\times n$ ($a_0 = 1, a_1 = 1$). Xét cột cuối: hoặc đặt $1$ viên dọc $2\\times 1$ ($a_{n-1}$ cách), hoặc đặt $2$ viên ngang $1\\times 2$ ($a_{n-2}$ cách), hoặc đặt $1$ viên $2\\times 2$ ($a_{n-2}$ cách). Suy ra $a_n = a_{n-1} + 2a_{n-2}$. Tính lần lượt: $a_2 = 3, a_3 = 5, a_4 = 11, a_5 = 21, a_6 = 43$."
+  },
+  {
+    "id": 692,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Một người leo cầu thang gồm $7$ bậc. Mỗi bước người đó có thể bước lên $1$, $2$ hoặc $3$ bậc. Hỏi có tất cả bao nhiêu cách khác nhau để leo hết cầu thang này?",
+    "options": [
+      "$24$",
+      "$81$",
+      "$37$",
+      "$44$"
+    ],
+    "correct": 3,
+    "explanation": "Gọi $T_n$ là số cách leo $n$ bậc ($T_0=1, T_1=1, T_2=2, T_3=4$). Vì bước cuối cùng có độ dài $1, 2$ hoặc $3$ nên $T_n = T_{n-1} + T_{n-2} + T_{n-3}$. Tính tiếp: $T_4 = 7, T_5 = 13, T_6 = 24, T_7 = 44$."
+  },
+  {
+    "id": 693,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Số miền tối đa mà $n = 10$ đường thẳng ở vị trí tổng quát (không có $2$ đường song song, không có $3$ đường đồng quy) chia mặt phẳng ra là bao nhiêu?",
+    "options": [
+      "$46$",
+      "$67$",
+      "$56$",
+      "$55$"
+    ],
+    "correct": 2,
+    "explanation": "Hệ thức truy hồi $L_n = L_{n-1} + n$ với $L_0 = 1$ (đường thứ $n$ cắt $n-1$ đường trước tại $n-1$ điểm, tạo thêm $n$ miền). Công thức tổng quát $L_n = \\frac{n(n+1)}{2} + 1 \\Rightarrow L_{10} = \\frac{10 \\times 11}{2} + 1 = 56$."
+  },
+  {
+    "id": 694,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Trong biến thể bài toán Tháp Hà Nội với $3$ cọc $A, B, C$: mỗi lần chuyển đĩa từ cọc $A$ sang cọc $C$ (hoặc ngược lại) <strong>bắt buộc phải đi qua cọc trung gian $B$</strong> (tức không được chuyển trực tiếp $A \\leftrightarrow C$). Gọi $M_n$ là số lần di chuyển ít nhất cho $n$ đĩa. Hệ thức truy hồi và nghiệm đúng là:",
+    "options": [
+      "$M_n = 3M_{n-1} + 2$ và $M_n = 3^n - 1$",
+      "$M_n = 2M_{n-1} + 3$ và $M_n = 3\\cdot 2^{n-1} - 3$",
+      "$M_n = 3M_{n-1} + 1$ và $M_n = \\frac{3^n - 1}{2}$",
+      "$M_n = 2M_{n-1} + 2$ và $M_n = 2^{n+1} - 2$"
+    ],
+    "correct": 0,
+    "explanation": "Để chuyển $n$ đĩa từ $A\\to C$: (1) chuyển $n-1$ đĩa $A\\to C$ ($M_{n-1}$); (2) chuyển đĩa lớn $A\\to B$ ($1$); (3) chuyển $n-1$ đĩa $C\\to A$ ($M_{n-1}$); (4) chuyển đĩa lớn $B\\to C$ ($1$); (5) chuyển $n-1$ đĩa $A\\to C$ ($M_{n-1}$). Thu được $M_n = 3M_{n-1} + 2$ ($M_1=2$), giải ra $M_n = 3^n - 1$."
+  },
+  {
+    "id": 695,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Gọi $a_n$ là số xâu tam phân (gồm các ký tự $\\{0, 1, 2\\}$) có độ dài $n$ sao cho <strong>không có hai chữ số $0$ đứng liền nhau</strong>. Hệ thức truy hồi của $a_n$ (với $n \\ge 3$, $a_1 = 3, a_2 = 8$) và giá trị $a_4$ là:",
+    "options": [
+      "$a_n = 3a_{n-1} - a_{n-2}$ và $a_4 = 55$",
+      "$a_n = 2a_{n-1} + 3a_{n-2}$ và $a_4 = 68$",
+      "$a_n = 2a_{n-1} + a_{n-2}$ và $a_4 = 47$",
+      "$a_n = 2a_{n-1} + 2a_{n-2}$ và $a_4 = 60$"
+    ],
+    "correct": 3,
+    "explanation": "Nếu xâu kết thúc bằng $1$ hoặc $2$ ($2$ cách), $n-1$ ký tự đầu tùy ý thỏa điều kiện ($2a_{n-1}$). Nếu xâu kết thúc bằng $0$, ký tự trước nó bắt buộc là $1$ hoặc $2$ ($2$ cách), $n-2$ ký tự đầu tùy ý ($2a_{n-2}$). Vậy $a_n = 2a_{n-1} + 2a_{n-2}$. Tính được $a_3 = 22$, $a_4 = 2(22) + 2(8) = 60$."
+  },
+  {
+    "id": 696,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Số lượng xâu nhị phân độ dài $n$ ($n \\ge 1$) sao cho <strong>không</strong> chứa chuỗi con <code>01</code> bằng bao nhiêu?",
+    "options": [
+      "$n + 1$",
+      "$2^n - n$",
+      "$n$",
+      "$F_{n+2}$ (số Fibonacci)"
+    ],
+    "correct": 0,
+    "explanation": "Một xâu nhị phân không chứa <code>01</code> thì không bao giờ có bit $0$ đứng trước bit $1$, tức mọi bit $1$ phải đứng trước mọi bit $0$ (dạng $1^k 0^{n-k}$ với $0 \\le k \\le n$). Có đúng $n + 1$ xâu như vậy (tương ứng hệ thức $a_n = a_{n-1} + 1$ với $a_1 = 2$)."
+  },
+  {
+    "id": 697,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Gọi $a_n$ là số xâu tam phân (trên $\\{0, 1, 2\\}$) có độ dài $n$ chứa một <strong>số chẵn các chữ số $0$</strong>. Hệ thức truy hồi của $a_n$ ($a_1 = 2$) là:",
+    "options": [
+      "$a_n = 2a_{n-1} + 3^{n-1}$",
+      "$a_n = 3a_{n-1} - 1$",
+      "$a_n = 3^{n-1} - a_{n-1}$",
+      "$a_n = a_{n-1} + 3^{n-1}$"
+    ],
+    "correct": 3,
+    "explanation": "Trong $3^{n-1}$ xâu độ dài $n-1$, có $a_{n-1}$ xâu có số bit $0$ chẵn (thêm $1$ hoặc $2$ vào cuối $\\Rightarrow 2a_{n-1}$ xâu hợp lệ) và $3^{n-1} - a_{n-1}$ xâu có số bit $0$ lẻ (thêm $0$ vào cuối $\\Rightarrow 3^{n-1} - a_{n-1}$ xâu hợp lệ). Cộng lại: $a_n = 2a_{n-1} + (3^{n-1} - a_{n-1}) = a_{n-1} + 3^{n-1}$ (nghiệm $a_n = \\frac{3^n + 1}{2}$)."
+  },
+  {
+    "id": 698,
+    "topic": "Thiết Lập Hệ Thức Truy Hồi",
+    "question": "Số <strong>Catalan</strong> $C_n = \\frac{1}{n+1}\\binom{2n}{n}$ đếm số dãy $n$ cặp ngoặc đóng mở hợp lệ <code>()</code> (hoặc số cây nhị phân đầy đủ có $n+1$ lá). Với $n = 4$ và $n = 5$, giá trị của $C_4$ và $C_5$ lần lượt là:",
+    "options": [
+      "$16$ và $64$",
+      "$15$ và $42$",
+      "$14$ và $42$",
+      "$14$ và $28$"
+    ],
+    "correct": 2,
+    "explanation": "Thay công thức Catalan: $C_4 = \\frac{1}{5}\\binom{8}{4} = \\frac{70}{5} = 14$; $C_5 = \\frac{1}{6}\\binom{10}{5} = \\frac{252}{6} = 42$ (từ hệ thức truy hồi $C_n = \\sum_{k=0}^{n-1} C_k C_{n-1-k}$ với $C_0=1, C_1=1, C_2=2, C_3=5$)."
+  },
+  {
+    "id": 699,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = 5a_{n-1} - 6a_{n-2}$ với $n \\ge 2$ và $a_0 = 1,\\ a_1 = 4$ là:",
+    "options": [
+      "$a_n = 2\\cdot 3^n + 2^n$",
+      "$a_n = 2\\cdot 3^n - 2^n$",
+      "$a_n = 3^n + 2^n$",
+      "$a_n = 2\\cdot 2^n - 3^n$"
+    ],
+    "correct": 1,
+    "explanation": "Phương trình đặc trưng $r^2 - 5r + 6 = 0$ có $2$ nghiệm $r_1 = 2, r_2 = 3$. Thay vào $a_n = A\\cdot 2^n + B\\cdot 3^n$: $\\begin{cases} A + B = 1 \\\\ 2A + 3B = 4 \\end{cases} \\Rightarrow B = 2,\\ A = -1$. Vậy $a_n = 2\\cdot 3^n - 2^n$."
+  },
+  {
+    "id": 700,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Tìm nghiệm riêng của hệ thức truy hồi $a_n = 2a_{n-1} + 15a_{n-2}$ với $n \\ge 2$ và $a_0 = 4,\\ a_1 = 12$:",
+    "options": [
+      "$a_n = 5^n + 3\\cdot(-3)^n$",
+      "$a_n = 3\\cdot(-5)^n + 3^n$",
+      "$a_n = 4\\cdot 5^n - (-3)^n$",
+      "$a_n = 3\\cdot 5^n + (-3)^n$"
+    ],
+    "correct": 3,
+    "explanation": "Phương trình đặc trưng $r^2 - 2r - 15 = 0 \\iff (r - 5)(r + 3) = 0$ có nghiệm $r_1 = 5,\\ r_2 = -3$. Giải hệ $\\begin{cases} A + B = 4 \\\\ 5A - 3B = 12 \\end{cases} \\Rightarrow 8A = 24 \\Rightarrow A = 3, B = 1$. Vậy $a_n = 3\\cdot 5^n + (-3)^n$."
+  },
+  {
+    "id": 701,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = 10a_{n-1} - 25a_{n-2}$ với $n \\ge 2$ và $a_0 = 2,\\ a_1 = 15$ là:",
+    "options": [
+      "$a_n = (1 + 2n)\\cdot 5^n$",
+      "$a_n = (2 + n)\\cdot 5^n$",
+      "$a_n = (2 - n)\\cdot 5^n$",
+      "$a_n = (2 + 3n)\\cdot 5^n$"
+    ],
+    "correct": 1,
+    "explanation": "Phương trình đặc trưng $r^2 - 10r + 25 = (r - 5)^2 = 0$ có nghiệm kép $r_0 = 5$. Đặt $a_n = (A + Bn)5^n$: $a_0 = 2 \\Rightarrow A = 2$; $a_1 = (2 + B)\\cdot 5 = 15 \\Rightarrow B = 1$. Vậy $a_n = (2 + n)\\cdot 5^n$."
+  },
+  {
+    "id": 702,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Nghiệm riêng của hệ thức truy hồi $a_n = -14a_{n-1} - 49a_{n-2}$ với $n \\ge 2$ và $a_0 = 3,\\ a_1 = -7$ là:",
+    "options": [
+      "$a_n = (3 + 2n)\\cdot(-7)^n$",
+      "$a_n = (-3 + 2n)\\cdot(-7)^n$",
+      "$a_n = (3 - 2n)\\cdot(-7)^n$",
+      "$a_n = (3 - 2n)\\cdot 7^n$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 + 14r + 49 = (r + 7)^2 = 0$ có nghiệm kép $r_0 = -7$. Đặt $a_n = (A + Bn)(-7)^n$: $a_0 = 3 \\Rightarrow A = 3$; $a_1 = (3 + B)(-7) = -7 \\Rightarrow 3 + B = 1 \\Rightarrow B = -2$. Vậy $a_n = (3 - 2n)\\cdot(-7)^n$."
+  },
+  {
+    "id": 703,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Hệ thức truy hồi $a_n = 2a_{n-1} - 4a_{n-2}$ ($n \\ge 2$) với điều kiện đầu $a_0 = 1,\\ a_1 = 1$ có nghiệm thực dưới dạng lượng giác là:",
+    "options": [
+      "$a_n = 2^n \\sin\\left(\\frac{n\\pi}{3}\\right)$",
+      "$a_n = 2^n \\cos\\left(\\frac{n\\pi}{6}\\right)$",
+      "$a_n = 2^n \\cos\\left(\\frac{n\\pi}{3}\\right)$",
+      "$a_n = (\\sqrt{2})^n \\cos\\left(\\frac{n\\pi}{4}\\right)$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 - 2r + 4 = 0$ có hai nghiệm phức $r = 1 \\pm i\\sqrt{3} = 2\\left(\\cos\\frac{\\pi}{3} \\pm i\\sin\\frac{\\pi}{3}\\right)$. Nghiệm tổng quát $a_n = 2^n\\left(C_1 \\cos\\frac{n\\pi}{3} + C_2 \\sin\\frac{n\\pi}{3}\\right)$. Thay $a_0 = 1 \\Rightarrow C_1 = 1$; $a_1 = 2(\\frac{1}{2} + C_2\\frac{\\sqrt{3}}{2}) = 1 \\Rightarrow C_2 = 0$. Vậy $a_n = 2^n \\cos\\left(\\frac{n\\pi}{3}\\right)$."
+  },
+  {
+    "id": 704,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Nghiệm của hệ thức truy hồi bậc $3$: $a_n = 2a_{n-1} + a_{n-2} - 2a_{n-3}$ với $a_0 = 6,\\ a_1 = 5,\\ a_2 = 15$ là:",
+    "options": [
+      "$a_n = 3 + 2(-1)^n + 2^n$",
+      "$a_n = 2 + (-1)^n + 3\\cdot 2^n$",
+      "$a_n = 1 + 2(-1)^n + 3\\cdot 2^n$",
+      "$a_n = 1 - 2(-1)^n + 3\\cdot 2^n$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^3 - 2r^2 - r + 2 = (r-1)(r+1)(r-2) = 0$ có $3$ nghiệm $1, -1, 2$. Đặt $a_n = A + B(-1)^n + C\\cdot 2^n$ và giải hệ từ $a_0=6, a_1=5, a_2=15$ thu được $A = 1, B = 2, C = 3$."
+  },
+  {
+    "id": 705,
+    "topic": "Giải Hệ Thức Truy Hồi Tuyến Tính",
+    "question": "Cho hệ thức truy hồi bậc $3$: $a_n = 4a_{n-1} - 5a_{n-2} + 2a_{n-3}$ ($n \\ge 3$) với $a_0 = 4,\\ a_1 = 9,\\ a_2 = 17$. Nghiệm riêng của hệ thức là:",
+    "options": [
+      "$a_n = 1 + (2 + 3n)\\cdot 2^n$",
+      "$a_n = (3 + 2n) + 2^n$",
+      "$a_n = (1 + 2n) + 3\\cdot 2^n$",
+      "$a_n = (1 + n) + 3\\cdot 2^n$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^3 - 4r^2 + 5r - 2 = (r - 1)^2 (r - 2) = 0$ có nghiệm kép $r = 1$ và nghiệm đơn $r = 2$. Nghiệm tổng quát $a_n = (A + Bn)1^n + C\\cdot 2^n$. Giải hệ điều kiện đầu tìm được $A = 1, B = 2, C = 3$."
+  },
+  {
+    "id": 706,
+    "topic": "Hệ Thức Truy Hồi Không Thuần Nhất",
+    "question": "Nghiệm của hệ thức truy hồi tuyến tính không thuần nhất $a_n = 3a_{n-1} + 2$ ($n \\ge 1$) với $a_0 = 1$ là:",
+    "options": [
+      "$a_n = 2\\cdot 3^n - 1$",
+      "$a_n = 3^n + 2$",
+      "$a_n = (1 + 2n)\\cdot 3^n$",
+      "$a_n = 3\\cdot 2^n - 2$"
+    ],
+    "correct": 0,
+    "explanation": "Nghiệm thuần nhất $a_n^{(h)} = A\\cdot 3^n$. Thử nghiệm riêng hằng số $a_n^{(p)} = c$: $c = 3c + 2 \\Rightarrow c = -1$. Do đó $a_n = A\\cdot 3^n - 1$. Thay $a_0 = 1 \\Rightarrow A - 1 = 1 \\Rightarrow A = 2$. Vậy $a_n = 2\\cdot 3^n - 1$."
+  },
+  {
+    "id": 707,
+    "topic": "Hệ Thức Truy Hồi Không Thuần Nhất",
+    "question": "Nghiệm của hệ thức truy hồi $a_n = 2a_{n-1} + 3n$ ($n \\ge 1$) với điều kiện đầu $a_0 = 1$ là:",
+    "options": [
+      "$a_n = 4\\cdot 2^n - 3n - 3$",
+      "$a_n = (1 + 3n)\\cdot 2^n$",
+      "$a_n = 5\\cdot 2^n + 3n - 4$",
+      "$a_n = 7\\cdot 2^n - 3n - 6$"
+    ],
+    "correct": 3,
+    "explanation": "Vì $1$ không phải nghiệm phương trình đặc trưng $r - 2 = 0$, ta tìm nghiệm riêng $a_n^{(p)} = pn + q$. Thay vào hệ thức: $pn + q = 2(p(n-1)+q) + 3n \\Rightarrow p = -3,\\ q = -6$. Cộng với $a_n^{(h)} = A\\cdot 2^n$ và thay $a_0 = 1 \\Rightarrow A = 7$. Vậy $a_n = 7\\cdot 2^n - 3n - 6$."
+  },
+  {
+    "id": 708,
+    "topic": "Hệ Thức Truy Hồi Không Thuần Nhất",
+    "question": "Nghiệm của hệ thức truy hồi không thuần nhất (trường hợp cộng hưởng) $a_n = 3a_{n-1} + 2\\cdot 3^n$ ($n \\ge 1$) với $a_0 = 1$ là:",
+    "options": [
+      "$a_n = (1 + 2n)\\cdot 3^n$",
+      "$a_n = 3\\cdot 3^n - 2$",
+      "$a_n = (1 + 2n^2)\\cdot 3^n$",
+      "$a_n = (1 + 6n)\\cdot 3^n$"
+    ],
+    "correct": 0,
+    "explanation": "Vì cơ số $3$ trùng với nghiệm đặc trưng $r = 3$ (bội $1$), nghiệm riêng có dạng $a_n^{(p)} = C n\\cdot 3^n$. Thay vào hệ thức: $Cn\\cdot 3^n = C(n-1)3^n + 2\\cdot 3^n \\Rightarrow C = 2$. Kết hợp nghiệm thuần nhất: $a_n = (A + 2n)3^n$, thay $a_0 = 1 \\Rightarrow A = 1$."
+  },
+  {
+    "id": 709,
+    "topic": "Hệ Thức Truy Hồi Không Thuần Nhất",
+    "question": "Xét hệ thức $a_n = 4a_{n-1} - 4a_{n-2} + 2^n$ ($n \\ge 2$) với $a_0 = 1,\\ a_1 = 4$. Do $r = 2$ là nghiệm kép của phương trình đặc trưng, nghiệm riêng $a_n^{(p)}$ có dạng nào và nghiệm đầy đủ là gì?",
+    "options": [
+      "$a_n^{(p)} = (C_1 n + C_2)\\cdot 2^n$; $a_n = (1 + n^2)\\cdot 2^n$",
+      "$a_n^{(p)} = C\\cdot 2^n$; $a_n = (1 + 2n)\\cdot 2^n$",
+      "$a_n^{(p)} = C n^2\\cdot 2^n$; $a_n = \\left(1 + \\frac{n + n^2}{2}\\right)\\cdot 2^n$",
+      "$a_n^{(p)} = C n\\cdot 2^n$; $a_n = (1 + n)\\cdot 2^n$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $(r - 2)^2 = 0$ có nghiệm $r = 2$ bội $m = 2$, nên nghiệm riêng ứng với vế phải $2^n$ phải nhân thêm $n^2$: $a_n^{(p)} = C n^2 \\cdot 2^n$. Thay vào hệ thức tìm được $C = \\frac{1}{2}$, từ $a_0 = 1, a_1 = 4$ tìm được $A = 1, B = \\frac{1}{2}$."
+  },
+  {
+    "id": 710,
+    "topic": "Hệ Thức Truy Hồi Không Thuần Nhất",
+    "question": "Để tìm nghiệm riêng cho hệ thức truy hồi không thuần nhất $a_n - 5a_{n-1} + 6a_{n-2} = (n + 1)\\cdot 2^n$, cần chọn dạng thử $a_n^{(p)}$ nào sau đây?",
+    "options": [
+      "$(An^2 + Bn + C)\\cdot 3^n$",
+      "$(An + B)\\cdot 2^n$",
+      "$n(An + B)\\cdot 2^n$",
+      "$n^2(An + B)\\cdot 2^n$"
+    ],
+    "correct": 2,
+    "explanation": "Phương trình đặc trưng $r^2 - 5r + 6 = 0$ có hai nghiệm $r = 2$ (bội $1$) và $r = 3$. Vì vế phải có dạng đa thức bậc $1$ nhân $2^n$ và cơ số $2$ trùng với nghiệm đặc trưng bội $1$, nên dạng thử phải nhân thêm $n^1$: $a_n^{(p)} = n(An + B)\\cdot 2^n$."
+  },
+  {
+    "id": 711,
+    "topic": "Hệ Thức Chia Để Trị",
+    "question": "Giải chính xác hệ thức chia để trị $T(n) = 2T(n/2) + n$ với điều kiện cơ sở $T(1) = 1$ (giả sử $n = 2^k$):",
+    "options": [
+      "$T(n) = n^2 + n$",
+      "$T(n) = n(\\log_2 n + 1)$",
+      "$T(n) = 2n \\log_2 n - 1$",
+      "$T(n) = n \\log_2 n$"
+    ],
+    "correct": 1,
+    "explanation": "Khai triển lặp với $n = 2^k$: $T(2^k) = 2T(2^{k-1}) + 2^k = 2^2 T(2^{k-2}) + 2\\cdot 2^k = \\dots = 2^k T(1) + k\\cdot 2^k = n + n\\log_2 n = n(\\log_2 n + 1)$."
+  },
+  {
+    "id": 712,
+    "topic": "Hệ Thức Chia Để Trị",
+    "question": "Bằng cách đặt $m = \\log_2 n$ (hay $n = 2^m$), hệ thức $T(n) = 2T(\\sqrt{n}) + \\log_2 n$ (với $T(2) = 1$) chuyển thành hệ thức nào và có độ phức tạp bao nhiêu?",
+    "options": [
+      "$S(m) = S(m/2) + m \\Rightarrow \\Theta(\\log n)$",
+      "$S(m) = 2S(m/2) + m \\Rightarrow \\Theta(\\log n \\cdot \\log\\log n)$",
+      "$S(m) = 2S(m/2) + 1 \\Rightarrow \\Theta(\\log n)$",
+      "$S(m) = 2S(m-1) + m \\Rightarrow \\Theta(n)$"
+    ],
+    "correct": 1,
+    "explanation": "Với $n = 2^m$, ta có $\\sqrt{n} = 2^{m/2}$ và $\\log_2 n = m$. Đặt $S(m) = T(2^m)$, hệ thức trở thành $S(m) = 2S(m/2) + m$, theo Định lý Thợ cho $S(m) = \\Theta(m \\log m) = \\Theta(\\log n \\cdot \\log\\log n)$."
+  },
+  {
+    "id": 713,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Hàm sinh thường (Ordinary Generating Function) thu gọn của dãy số $a_n = 3 \\cdot 5^n$ (với mọi $n \\ge 0$) là:",
+    "options": [
+      "$\\dfrac{3x}{1 - 5x}$",
+      "$\\dfrac{3}{1 - 5x}$",
+      "$\\dfrac{5}{1 - 3x}$",
+      "$\\dfrac{1}{1 - 15x}$"
+    ],
+    "correct": 1,
+    "explanation": "Ta có $G(x) = \\sum_{n=0}^{\\infty} (3\\cdot 5^n) x^n = 3 \\sum_{n=0}^{\\infty} (5x)^n = \\dfrac{3}{1 - 5x}$."
+  },
+  {
+    "id": 714,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Biết $\\sum_{n=0}^{\\infty} n x^n = \\dfrac{x}{(1-x)^2}$. Bằng phép lấy đạo hàm nhân $x$ (toán tử $x\\frac{d}{dx}$), hàm sinh thường của dãy số $a_n = n^2$ ($n \\ge 0$) là:",
+    "options": [
+      "$\\dfrac{1 + x}{(1-x)^3}$",
+      "$\\dfrac{2x}{(1-x)^3}$",
+      "$\\dfrac{x(1 + x)}{(1-x)^3}$",
+      "$\\dfrac{x}{(1-x)^3}$"
+    ],
+    "correct": 2,
+    "explanation": "Lấy đạo hàm $\\frac{x}{(1-x)^2}$ theo $x$: $\\frac{(1-x)^2 - x\\cdot 2(1-x)(-1)}{(1-x)^4} = \\frac{1 + x}{(1-x)^3} = \\sum_{n=1}^{\\infty} n x^{n-1}$. Nhân cả hai vế với $x$ thu được $\\sum_{n=0}^{\\infty} n^2 x^n = \\dfrac{x(1 + x)}{(1-x)^3}$."
+  },
+  {
+    "id": 715,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Cho hàm sinh $G(x) = \\dfrac{5 - 11x}{(1 - 2x)(1 - 3x)} = \\sum_{n=0}^{\\infty} a_n x^n$. Bằng phương pháp phân tích phân thức đơn giản, công thức tổng quát của $a_n$ là:",
+    "options": [
+      "$a_n = 4\\cdot 2^n + 3^n$",
+      "$a_n = 5\\cdot 3^n - 2^n$",
+      "$a_n = 2^n + 4\\cdot 3^n$",
+      "$a_n = 2\\cdot 2^n + 3\\cdot 3^n$"
+    ],
+    "correct": 2,
+    "explanation": "Đặt $\\frac{5 - 11x}{(1-2x)(1-3x)} = \\frac{A}{1-2x} + \\frac{B}{1-3x} \\Rightarrow A(1-3x) + B(1-2x) = 5 - 11x$. Đồng nhất hệ số: $\\begin{cases} A + B = 5 \\\\ 3A + 2B = 11 \\end{cases} \\Rightarrow A = 1,\\ B = 4$. Khai triển cho $a_n = 2^n + 4\\cdot 3^n$."
+  },
+  {
+    "id": 716,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Tìm hệ số của $x^{10}$ trong khai triển của hàm sinh $G(x) = (x^2 + x^3 + x^4 + \\dots)^4$:",
+    "options": [
+      "$4$",
+      "$20$",
+      "$10$",
+      "$35$"
+    ],
+    "correct": 2,
+    "explanation": "Rút gọn $G(x) = \\left(\\frac{x^2}{1-x}\\right)^4 = \\frac{x^8}{(1-x)^4}$. Hệ số của $x^{10}$ trong $G(x)$ chính là hệ số của $x^2$ trong $\\frac{1}{(1-x)^4} = \\sum_{k=0}^{\\infty} C_{k+3}^3 x^k$, bằng $C_{2+3}^3 = C_5^3 = 10$."
+  },
+  {
+    "id": 717,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Số nghiệm nguyên của phương trình $e_1 + e_2 + e_3 = 12$ thỏa mãn $e_1 \\ge 1$ là <strong>số lẻ</strong>, $e_2 \\in \\{0, 1, 2\\}$, và $e_3 \\ge 2$ chính là hệ số của $x^{12}$ trong hàm sinh nào sau đây?",
+    "options": [
+      "$(x + x^3 + x^5 + \\dots)(x + x^2)(x + x^2 + \\dots)$",
+      "$\\frac{x}{1 - x} \\cdot (1 - x^3) \\cdot \\frac{x^2}{1 - x}$",
+      "$(1 + x^2 + x^4 + \\dots)(1 + x + x^2)(1 + x + x^2 + \\dots)$",
+      "$(x + x^3 + x^5 + \\dots)(1 + x + x^2)(x^2 + x^3 + x^4 + \\dots)$"
+    ],
+    "correct": 3,
+    "explanation": "Thừa số thứ nhất ứng với $e_1 \\in \\{1, 3, 5, \\dots\\}$ là $(x + x^3 + x^5 + \\dots)$; thừa số thứ hai ứng với $e_2 \\in \\{0, 1, 2\\}$ là $(1 + x + x^2)$; thừa số thứ ba ứng với $e_3 \\ge 2$ là $(x^2 + x^3 + x^4 + \\dots)$."
+  },
+  {
+    "id": 718,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Hệ số của $x^n$ trong khai triển chuỗi lũy thừa của $f(x) = \\dfrac{1}{(1 - 2x)^3}$ là:",
+    "options": [
+      "$3^n \\binom{n+2}{2}$",
+      "$2^n \\binom{n+2}{2}$",
+      "$2^n \\binom{n+3}{3}$",
+      "$\\binom{n+2}{2}$"
+    ],
+    "correct": 1,
+    "explanation": "Áp dụng khai triển $\\frac{1}{(1 - u)^k} = \\sum_{n=0}^{\\infty} \\binom{n+k-1}{k-1} u^n$ với $k = 3$ và $u = 2x$, ta được hệ số của $x^n$ là $\\binom{n+2}{2} 2^n$."
+  },
+  {
+    "id": 719,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Khi dùng phương pháp hàm sinh $A(x) = \\sum_{n=0}^{\\infty} a_n x^n$ để giải hệ thức $a_n = 4a_{n-1} - 4a_{n-2}$ ($n \\ge 2$) với $a_0 = 1,\\ a_1 = 4$, ta thu được biểu thức của $A(x)$ và nghiệm $a_n$ là:",
+    "options": [
+      "$A(x) = \\dfrac{1 + 2x}{(1 - 2x)^2}$ và $a_n = (2n + 1)2^n$",
+      "$A(x) = \\dfrac{1}{(1 - 2x)^3}$ và $a_n = \\binom{n+2}{2} 2^n$",
+      "$A(x) = \\dfrac{1}{(1 - 2x)^2}$ và $a_n = (n + 1)2^n$",
+      "$A(x) = \\dfrac{1}{1 - 4x}$ và $a_n = 4^n$"
+    ],
+    "correct": 2,
+    "explanation": "Từ $A(x) - 4x A(x) + 4x^2 A(x) = a_0 + (a_1 - 4a_0)x = 1 + (4 - 4)x = 1$, suy ra $(1 - 2x)^2 A(x) = 1 \\Rightarrow A(x) = \\frac{1}{(1 - 2x)^2} = \\sum_{n=0}^{\\infty} (n + 1) 2^n x^n$."
+  },
+  {
+    "id": 720,
+    "topic": "Phương Pháp Hàm Sinh",
+    "question": "Hàm sinh mũ (Exponential Generating Function - EGF) của dãy số $a_n = 1$ (với mọi $n \\ge 0$) là $\\sum_{n=0}^{\\infty} \\frac{x^n}{n!} = e^x$. Khi dùng EGF để đếm số xâu độ dài $n$ lập từ $\\{a, b, c\\}$ sao cho ký tự $a$ xuất hiện <strong>số lần chẵn</strong>, hàm sinh mũ của bài toán là:",
+    "options": [
+      "$\\left(\\dfrac{e^x + e^{-x}}{2}\\right) \\cdot e^{2x} = \\dfrac{e^{3x} + e^x}{2}$",
+      "$e^{3x} - e^x$",
+      "$\\dfrac{1}{1 - 2x} \\cdot \\dfrac{1}{1 - x^2}$",
+      "$\\left(\\dfrac{e^x - e^{-x}}{2}\\right) \\cdot e^{2x} = \\dfrac{e^{3x} - e^x}{2}$"
+    ],
+    "correct": 0,
+    "explanation": "Ký tự $a$ xuất hiện chẵn lần có EGF là $1 + \\frac{x^2}{2!} + \\frac{x^4}{4!} + \\dots = \\cosh x = \\frac{e^x + e^{-x}}{2}$. Ký tự $b$ và $c$ mỗi loại tùy ý có EGF là $e^x$. Nhân lại được $\\frac{e^x + e^{-x}}{2} e^{2x} = \\frac{e^{3x} + e^x}{2} = \\sum_{n=0}^{\\infty} \\frac{3^n + 1}{2} \\frac{x^n}{n!}$."
+  }
+]
