@@ -421,6 +421,112 @@
         radial-gradient(circle at 76% 68%, rgba(251, 191, 36, 0.14), transparent 46%);
     }
 
+    /* Interactive Frosted Navbar & Sliding Pill */
+    #navShell {
+      --nav-mx: 50%;
+      --nav-my: 50%;
+      position: relative;
+      transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.28s ease, background-color 0.28s ease, border-color 0.28s ease;
+    }
+    #navShell::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.25s ease;
+      background: radial-gradient(320px circle at var(--nav-mx) var(--nav-my), rgba(184, 0, 0, 0.09), transparent 72%);
+    }
+    html.dark #navShell::before {
+      background: radial-gradient(320px circle at var(--nav-mx) var(--nav-my), rgba(244, 63, 94, 0.14), transparent 72%);
+    }
+    @media (hover: hover) and (pointer: fine) {
+      #navShell:hover::before {
+        opacity: 1;
+      }
+    }
+    #mainHeader.is-scrolled #navShell {
+      background-color: rgba(252, 251, 249, 0.94);
+      border-color: rgba(184, 0, 0, 0.22);
+      box-shadow: 0 14px 36px -14px rgba(15, 16, 18, 0.16), 0 0 0 1px rgba(184, 0, 0, 0.06);
+    }
+    html.dark #mainHeader.is-scrolled #navShell {
+      background-color: rgba(20, 21, 25, 0.92);
+      border-color: rgba(244, 63, 94, 0.28);
+      box-shadow: 0 18px 42px -14px rgba(0, 0, 0, 0.65), 0 0 0 1px rgba(244, 63, 94, 0.1);
+    }
+    #navSlidingPill {
+      position: absolute;
+      top: 4px;
+      bottom: 4px;
+      left: 0;
+      border-radius: 0.75rem;
+      pointer-events: none;
+      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1), width 0.28s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+      will-change: transform, width;
+    }
+    .top-nav-link {
+      position: relative;
+      z-index: 1;
+      transition: color 0.2s ease, transform 0.2s ease;
+    }
+    .top-nav-link.active {
+      color: #b80000;
+    }
+    html.dark .top-nav-link.active {
+      color: #ffffff;
+    }
+    .top-nav-link:hover svg,
+    .top-nav-link.active svg {
+      transform: scale(1.12);
+    }
+    .top-nav-link svg {
+      transition: transform 0.22s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .nav-popover {
+      transform-origin: top right;
+      transition: opacity 0.2s ease, transform 0.22s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.2s;
+    }
+    .nav-popover.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+    .nav-popover.is-closed {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transform: translate3d(0, -6px, 0) scale(0.97);
+    }
+    .mobile-nav-item {
+      position: relative;
+      transition: color 0.2s ease, background-color 0.2s ease, transform 0.18s ease;
+    }
+    .mobile-nav-item:active {
+      transform: scale(0.93);
+    }
+    .mobile-nav-item.active svg {
+      transform: translateY(-1px) scale(1.12);
+    }
+    .mobile-nav-item::after {
+      content: "";
+      position: absolute;
+      bottom: 3px;
+      left: 50%;
+      width: 14px;
+      height: 2.5px;
+      border-radius: 9999px;
+      background: currentColor;
+      transform: translateX(-50%) scaleX(0);
+      opacity: 0;
+      transition: transform 0.24s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.2s ease;
+    }
+    .mobile-nav-item.active::after {
+      transform: translateX(-50%) scaleX(1);
+      opacity: 0.9;
+    }
+
     @media (prefers-reduced-motion: reduce) {
       html {
         scroll-behavior: auto;
@@ -436,7 +542,9 @@
       .hero-interactive,
       .hero-stat-card,
       .hero-orb,
-      .btn-magnetic {
+      .btn-magnetic,
+      #navSlidingPill,
+      .nav-popover {
         transform: none !important;
         transition: none !important;
       }
@@ -445,7 +553,8 @@
       .hero-spotlight,
       .hero-interactive::after,
       .hero-stat-card::before,
-      .btn-magnetic::after {
+      .btn-magnetic::after,
+      #navShell::before {
         display: none !important;
       }
       .animate-float-down,
@@ -467,74 +576,156 @@
   </div>
 
   <!-- =====================================================================
-       HEADER ĐIỀU HƯỚNG TỔNG (PTIT THEME)
+       HEADER ĐIỀU HƯỚNG TỔNG TƯƠNG TÁC (PTIT GLASS NAVBAR)
        ===================================================================== -->
-  <header class="sticky top-0 z-30 bg-[#fcfbf9]/92 dark:bg-[#141519]/92 backdrop-blur-md border-b border-[#e6e2de] dark:border-[#2a2c32] shadow-xs">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 sm:py-3 flex flex-wrap md:flex-nowrap items-center justify-between gap-2.5 sm:gap-3">
-      <a href="./index.html" class="flex items-center gap-2.5 sm:gap-3 group shrink-0">
-        <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#fcfbf9] border border-[#e6e2de] dark:border-[#343740] p-1 flex items-center justify-center shadow-md shadow-red-600/15 group-hover:scale-105 transition">
+  <header id="mainHeader" class="sticky top-0 z-40 md:px-4 md:pt-2.5 transition-all duration-300">
+    <div id="navShell" class="max-w-7xl mx-auto px-3.5 sm:px-5 py-2 sm:py-2.5 bg-[#fcfbf9]/85 dark:bg-[#141519]/85 backdrop-blur-xl border-b md:border border-[#e6e2de] dark:border-[#2a2c32] md:rounded-2xl shadow-sm flex flex-wrap lg:flex-nowrap items-center justify-between gap-2 sm:gap-2.5">
+      <a href="./index.html" class="flex items-center gap-2.5 group shrink-0">
+        <div class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-[#fcfbf9] border border-[#e6e2de] dark:border-[#343740] p-1 flex items-center justify-center shadow-md shadow-red-600/15 group-hover:scale-105 group-hover:-rotate-3 transition duration-300">
           <img src="./assets/ptit-logo-simple.png" alt="Logo PTIT" class="w-full h-full object-contain" />
+          <span class="absolute -bottom-0.5 -right-0.5 w-2.5 h-2.5 rounded-full bg-emerald-500 ring-2 ring-[#fcfbf9] dark:ring-[#141519]" title="Sẵn sàng 2.000 câu hỏi &amp; 36 video"></span>
         </div>
-        <div>
-          <div class="flex items-center gap-2">
-            <span class="text-sm sm:text-lg font-extrabold tracking-tight text-slate-900 dark:text-[#ece9ea] whitespace-nowrap">
+        <div class="min-w-0">
+          <div class="flex items-center gap-1.5 sm:gap-2">
+            <span class="text-sm sm:text-base font-extrabold tracking-tight text-slate-900 dark:text-[#ece9ea] whitespace-nowrap group-hover:text-[#b80000] dark:group-hover:text-[#fda4af] transition-colors">
               PTIT Study Hub
             </span>
-            <span class="hidden sm:inline-flex items-center px-2 py-0.5 rounded-full text-[11px] font-bold bg-red-50 dark:bg-red-500/20 text-[#b80000] dark:text-[#fda4af] border border-red-200 dark:border-red-500/35">
-              Trang Tổng
+            <span class="hidden xl:inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-bold bg-red-50 dark:bg-red-500/20 text-[#b80000] dark:text-[#fda4af] border border-red-200 dark:border-red-500/35 whitespace-nowrap">
+              2.000 câu
             </span>
           </div>
-          <p class="text-xs text-slate-500 dark:text-[#a19fa6] hidden 2xl:block">
-            Học viện Công nghệ Bưu chính Viễn thông • Cổng Ôn Tập &amp; Công Cụ Học Tập
+          <p class="text-[11px] text-slate-500 dark:text-[#a19fa6] hidden 2xl:block whitespace-nowrap">
+            Cổng Ôn Tập &amp; Luyện Thi PTIT
           </p>
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-1 lg:gap-2 shrink-0">
-        <a href="#hero" class="hidden xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-[#c7c5cc] hover:bg-red-50 hover:text-[#b80000] dark:hover:bg-[#202227] dark:hover:text-[#fda4af] transition">
+      <!-- Segmented Nav với Sliding Pill Indicator -->
+      <nav id="topNav" aria-label="Điều hướng chính" class="relative hidden md:flex items-center p-1 rounded-2xl bg-[#f1efeb]/90 dark:bg-[#1e2025]/90 border border-[#e6e2de] dark:border-[#30333c] shadow-inner shrink-0">
+        <span id="navSlidingPill" aria-hidden="true" class="bg-white dark:bg-[#c80000] border border-[#e6e2de]/90 dark:border-red-400/30 shadow-xs opacity-0"></span>
+        <a href="#hero" data-top-nav="hero" class="top-nav-link active inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-[#c7c5cc] whitespace-nowrap">
           <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-          <span>Tổng quan</span>
+          <span class="hidden xl:inline">Tổng quan</span>
         </a>
-        <a href="#subjects" class="inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-[#c7c5cc] hover:bg-red-50 hover:text-[#b80000] dark:hover:bg-[#202227] dark:hover:text-[#fda4af] transition">
+        <a href="#subjects" data-top-nav="subjects" class="top-nav-link inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-[#c7c5cc] whitespace-nowrap">
           <i data-lucide="book-open" class="w-3.5 h-3.5"></i>
           <span>Môn học</span>
         </a>
-        <a href="#videos" class="inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-[#c7c5cc] hover:bg-red-50 hover:text-[#b80000] dark:hover:bg-[#202227] dark:hover:text-[#fda4af] transition">
+        <a href="#videos" data-top-nav="videos" class="top-nav-link inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-[#c7c5cc] whitespace-nowrap">
           <i data-lucide="play-circle" class="w-3.5 h-3.5"></i>
-          <span>Học Video</span>
+          <span>Video</span>
         </a>
-        <a href="#catalog" class="inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-[#c7c5cc] hover:bg-red-50 hover:text-[#b80000] dark:hover:bg-[#202227] dark:hover:text-[#fda4af] transition">
+        <a href="#catalog" data-top-nav="catalog" class="top-nav-link inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-[#c7c5cc] whitespace-nowrap">
           <i data-lucide="folder-kanban" class="w-3.5 h-3.5"></i>
-          <span>Kho bộ đề</span>
+          <span>Kho đề</span>
         </a>
-        <a href="#tools" class="inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-semibold text-slate-600 dark:text-[#c7c5cc] hover:bg-red-50 hover:text-[#b80000] dark:hover:bg-[#202227] dark:hover:text-[#fda4af] transition">
+        <a href="#tools" data-top-nav="tools" class="top-nav-link inline-flex items-center gap-1.5 px-2.5 lg:px-3 py-1.5 rounded-xl text-xs font-bold text-slate-600 dark:text-[#c7c5cc] whitespace-nowrap">
           <i data-lucide="history" class="w-3.5 h-3.5"></i>
           <span>Lịch sử</span>
         </a>
       </nav>
 
-      <!-- Thanh tìm kiếm nhanh (trải full trên mobile hàng 2 để không ép rớt Logo/Theme) -->
-      <div class="relative w-full order-last md:order-none md:w-56 lg:w-64 md:shrink-0">
+      <!-- Ô tìm kiếm trực tiếp + Instant Command Dropdown -->
+      <div id="navSearchWrap" class="relative w-full order-last lg:order-none lg:flex-1 lg:min-w-[155px] lg:max-w-[260px] focus-within:lg:max-w-[300px] transition-all duration-300">
         <i data-lucide="search" class="w-4 h-4 text-slate-400 dark:text-[#a19fa6] absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none"></i>
         <input
           id="quickSearchInput"
-          type="search"
-          placeholder="Tìm đề, chương... (Ctrl+K)"
-          class="w-full pl-9 pr-3 py-2 rounded-xl text-xs sm:text-sm bg-[#f1efeb] dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740] text-slate-800 dark:text-[#ece9ea] placeholder:text-slate-400 dark:placeholder:text-[#9c7e85] focus:outline-none focus:ring-2 focus:ring-[#b80000] dark:focus:ring-[#f43f5e] transition"
+          type="text"
+          autocomplete="off"
+          placeholder="Tìm đề, chương..."
+          aria-expanded="false"
+          aria-controls="navSearchDropdown"
+          class="w-full pl-9 pr-14 sm:pr-16 py-2 rounded-xl text-xs sm:text-sm bg-[#f1efeb]/90 dark:bg-[#202227] border border-[#e6e2de] dark:border-[#343740] text-slate-800 dark:text-[#ece9ea] placeholder:text-slate-400 dark:placeholder:text-[#9c7e85] focus:outline-none focus:ring-2 focus:ring-[#b80000] dark:focus:ring-[#f43f5e] focus:bg-white dark:focus:bg-[#17181c] transition"
         />
+        <kbd id="navSearchKbd" class="hidden xl:inline-flex items-center px-1.5 py-0.5 rounded-md text-[10px] font-mono font-bold text-slate-500 dark:text-[#a19fa6] bg-[#fcfbf9] dark:bg-[#141519] border border-[#dcd7d2] dark:border-[#343740] absolute right-2 top-1/2 -translate-y-1/2 pointer-events-none">Ctrl K</kbd>
+        <button id="navSearchClear" type="button" aria-label="Xóa tìm kiếm" class="hidden absolute right-2 top-1/2 -translate-y-1/2 w-6 h-6 rounded-lg items-center justify-center text-slate-400 hover:text-[#b80000] hover:bg-red-50 dark:hover:bg-[#2a2c32] transition">
+          <i data-lucide="x" class="w-3.5 h-3.5"></i>
+        </button>
+
+        <!-- Dropdown kết quả tìm kiếm tức thì -->
+        <div id="navSearchDropdown" class="nav-popover is-closed absolute left-0 right-0 lg:left-auto lg:w-96 mt-2 rounded-2xl bg-[#fcfbf9] dark:bg-[#17181c] border border-[#e6e2de] dark:border-[#343740] shadow-2xl overflow-hidden z-50">
+          <div class="px-3.5 py-2 border-b border-[#e6e2de] dark:border-[#2a2c32] flex items-center justify-between text-[11px] font-bold text-slate-500 dark:text-[#a19fa6]">
+            <span id="navSearchMeta">Gợi ý truy cập nhanh</span>
+            <span class="font-mono text-[10px] opacity-80">↑↓ Enter · Esc</span>
+          </div>
+          <div id="navSearchResults" class="max-h-80 overflow-y-auto divide-y divide-[#efece7] dark:divide-[#24262c]"></div>
+        </div>
       </div>
 
-      <!-- Nút chuyển chế độ Sáng / Tối đồng bộ -->
-      <button
-        id="btnToggleTheme"
-        onclick="toggleHubTheme()"
-        class="inline-flex items-center gap-1.5 px-3 py-2 min-h-[38px] rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-[#ece9ea] bg-[#fcfbf9] dark:bg-[#202227] hover:bg-[#f1efeb] dark:hover:bg-[#2a2c32] border border-[#e6e2de] dark:border-[#343740] shadow-xs transition shrink-0"
-        title="Đổi giao diện Sáng / Tối PTIT (đồng bộ tất cả môn)"
-        aria-label="Đổi giao diện Sáng / Tối"
-      >
-        <i id="themeIcon" data-lucide="moon" class="w-4 h-4 text-[#c80000] dark:text-amber-300"></i>
-        <span id="themeText" class="hidden sm:inline">Tối</span>
-      </button>
+      <!-- Nhóm nút tương tác nhanh + Đổi theme -->
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0">
+        <!-- Quick Launch Menu Button + Popover -->
+        <div class="relative" id="quickLaunchWrap">
+          <button
+            id="btnQuickLaunch"
+            type="button"
+            aria-expanded="false"
+            aria-controls="quickLaunchPanel"
+            class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-2 min-h-[38px] rounded-xl text-xs font-bold text-[#b80000] dark:text-[#fda4af] bg-red-50/90 dark:bg-rose-500/15 hover:bg-[#b80000] hover:text-white dark:hover:bg-[#e11d48] dark:hover:text-white border border-red-200 dark:border-rose-500/35 shadow-xs transition group"
+            title="Mở nhanh môn học, đề thi &amp; video"
+          >
+            <i data-lucide="zap" class="w-3.5 h-3.5 fill-current"></i>
+            <span class="hidden xl:inline">Mở nhanh</span>
+            <i id="quickLaunchChevron" data-lucide="chevron-down" class="w-3.5 h-3.5 transition-transform duration-200"></i>
+          </button>
+
+          <div id="quickLaunchPanel" class="nav-popover is-closed absolute right-0 mt-2 w-72 sm:w-80 rounded-2xl bg-[#fcfbf9] dark:bg-[#17181c] border border-[#e6e2de] dark:border-[#343740] shadow-2xl p-3 space-y-2.5 z-50">
+            <div class="flex items-center justify-between px-1">
+              <span class="text-[11px] font-extrabold uppercase tracking-wider text-slate-400 dark:text-[#a19fa6]">Vào thẳng phân hệ</span>
+              <span class="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-50 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-300 border border-emerald-200 dark:border-emerald-500/30">2.000 câu</span>
+            </div>
+            <div class="grid grid-cols-1 gap-1.5">
+              <a href="./to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html" class="flex items-center justify-between p-2.5 rounded-xl bg-[#f1efeb]/80 dark:bg-[#202227] hover:bg-red-50 dark:hover:bg-[#2c191f] border border-transparent hover:border-[#b80000]/40 transition group">
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span class="w-8 h-8 rounded-lg bg-[#b80000] text-white flex items-center justify-center shrink-0"><i data-lucide="sigma" class="w-4 h-4"></i></span>
+                  <div class="min-w-0">
+                    <div class="text-xs font-bold text-slate-900 dark:text-[#ece9ea] truncate">Toán Rời Rạc 1 &amp; 2</div>
+                    <div class="text-[11px] text-slate-500 dark:text-[#a19fa6]">1.000 câu · 28 bộ đề PTIT</div>
+                  </div>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#b80000] dark:group-hover:text-rose-300 shrink-0"></i>
+              </a>
+              <a href="./vatly3/index.html" class="flex items-center justify-between p-2.5 rounded-xl bg-[#f1efeb]/80 dark:bg-[#202227] hover:bg-amber-50 dark:hover:bg-[#2c2219] border border-transparent hover:border-amber-500/40 transition group">
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span class="w-8 h-8 rounded-lg bg-[#1b0b0b] text-amber-300 flex items-center justify-center shrink-0"><i data-lucide="atom" class="w-4 h-4"></i></span>
+                  <div class="min-w-0">
+                    <div class="text-xs font-bold text-slate-900 dark:text-[#ece9ea] truncate">Vật Lý 3 &amp; Thí Nghiệm</div>
+                    <div class="text-[11px] text-slate-500 dark:text-[#a19fa6]">1.000 câu · 10 chương × 100c</div>
+                  </div>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-amber-600 dark:group-hover:text-amber-300 shrink-0"></i>
+              </a>
+              <a href="./video/index.html" class="flex items-center justify-between p-2.5 rounded-xl bg-[#f1efeb]/80 dark:bg-[#202227] hover:bg-rose-50 dark:hover:bg-[#2a1a20] border border-transparent hover:border-rose-500/40 transition group">
+                <div class="flex items-center gap-2.5 min-w-0">
+                  <span class="w-8 h-8 rounded-lg bg-gradient-to-br from-[#c80000] to-[#7a0000] text-white flex items-center justify-center shrink-0"><i data-lucide="clapperboard" class="w-4 h-4"></i></span>
+                  <div class="min-w-0">
+                    <div class="text-xs font-bold text-slate-900 dark:text-[#ece9ea] truncate">Phòng Học Video</div>
+                    <div class="text-[11px] text-slate-500 dark:text-[#a19fa6]">36 video bài giảng TRR &amp; VL3</div>
+                  </div>
+                </div>
+                <i data-lucide="arrow-up-right" class="w-4 h-4 text-slate-400 group-hover:text-[#b80000] dark:group-hover:text-rose-300 shrink-0"></i>
+              </a>
+            </div>
+            <div class="pt-2 border-t border-[#e6e2de] dark:border-[#2a2c32] flex flex-wrap gap-1.5">
+              <a href="./to%C3%A1n%20r%E1%BB%9Di%20r%E1%BA%A1c/index.html?exam=random15&mode=exam" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-rose-50 dark:bg-rose-500/15 text-rose-800 dark:text-rose-200 hover:bg-rose-100 dark:hover:bg-rose-500/25 transition">⚡ Thi thử TRR 15c</a>
+              <a href="./vatly3/index.html?exam=ck7&mode=exam" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-amber-50 dark:bg-amber-500/15 text-amber-800 dark:text-amber-200 hover:bg-amber-100 dark:hover:bg-amber-500/25 transition">🔥 Cuối kỳ VL3 #7</a>
+              <a href="./video/index.html?group=trr" class="px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-emerald-50 dark:bg-emerald-500/15 text-emerald-800 dark:text-emerald-200 hover:bg-emerald-100 dark:hover:bg-emerald-500/25 transition">🎬 8 video TRR</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nút chuyển chế độ Sáng / Tối đồng bộ -->
+        <button
+          id="btnToggleTheme"
+          onclick="toggleHubTheme()"
+          class="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-2 min-h-[38px] rounded-xl text-xs sm:text-sm font-semibold text-slate-700 dark:text-[#ece9ea] bg-[#fcfbf9] dark:bg-[#202227] hover:bg-[#f1efeb] dark:hover:bg-[#2a2c32] border border-[#e6e2de] dark:border-[#343740] shadow-xs transition active:scale-95 shrink-0"
+          title="Đổi giao diện Sáng / Tối PTIT (đồng bộ tất cả môn)"
+          aria-label="Đổi giao diện Sáng / Tối"
+        >
+          <i id="themeIcon" data-lucide="moon" class="w-4 h-4 text-[#c80000] dark:text-amber-300"></i>
+          <span id="themeText" class="hidden sm:inline">Tối</span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -1016,7 +1207,7 @@
 
       <div class="pt-2 hidden lg:flex justify-center reveal-item" style="--reveal-delay: 280ms">
         <a href="#catalog" class="inline-flex flex-col items-center gap-1 text-xs font-semibold text-slate-500 dark:text-[#a19fa6] hover:text-[#b80000] dark:hover:text-red-300 transition">
-          <span>Cuộn xuống để duyệt 32 bộ đề &amp; tệp JSON</span>
+          <span>Cuộn xuống để duyệt 36 bộ đề &amp; tệp JSON</span>
           <i data-lucide="chevrons-down" class="w-5 h-5 animate-float-down text-[#b80000] dark:text-[#fb7185]"></i>
         </a>
       </div>
@@ -1170,7 +1361,7 @@
       document.documentElement.classList.toggle("dark", isDark);
       const btn = document.getElementById("btnToggleTheme");
       if (btn) {
-        btn.innerHTML = `<i id="themeIcon" data-lucide="${isDark ? "sun" : "moon"}" class="w-4 h-4 ${isDark ? "text-amber-300" : "text-[#c80000]"}"></i><span id="themeText" class="hidden sm:inline">${isDark ? "Sáng" : "Tối"}</span>`;
+        btn.innerHTML = `<i id="themeIcon" data-lucide="${isDark ? "sun" : "moon"}" class="w-4 h-4 ${isDark ? "text-amber-300" : "text-[#c80000]"}"></i><span id="themeText" class="hidden xl:inline">${isDark ? "Sáng" : "Tối"}</span>`;
         if (window.lucide && typeof window.lucide.createIcons === "function") {
           window.lucide.createIcons();
         }
@@ -1244,8 +1435,8 @@
       const dmCount = Array.isArray(dmHistory) ? dmHistory.length : 0;
       const dmBestStr = dmBest !== null ? `${dmBest.toFixed(1)} / 10` : "Chưa có";
 
-      animateCounter(document.getElementById("heroStatBank"), 900, v => String(Math.round(v)), 950);
-      animateCounter(document.getElementById("heroStatFiles"), 32, v => String(Math.round(v)), 850);
+      animateCounter(document.getElementById("heroStatBank"), 2000, v => String(Math.round(v)), 950);
+      animateCounter(document.getElementById("heroStatFiles"), CATALOG_ITEMS.length, v => String(Math.round(v)), 850);
 
       const elStatDmBest = document.getElementById("statDmBest");
       if (dmBest !== null) {
@@ -1777,12 +1968,62 @@
       const dots = Array.from(document.querySelectorAll("[data-dot]"));
       const mobileItems = Array.from(document.querySelectorAll("[data-mobile-nav]"));
 
+      const mainHeader = document.getElementById("mainHeader");
+      const topNav = document.getElementById("topNav");
+      const navPill = document.getElementById("navSlidingPill");
+      const topNavLinks = Array.from(document.querySelectorAll("[data-top-nav]"));
+      let currentActiveId = "hero";
+      let hoveredNavEl = null;
+
+      const moveNavPill = (el) => {
+        if (!navPill || !topNav || !el) return;
+        const navRect = topNav.getBoundingClientRect();
+        const elRect = el.getBoundingClientRect();
+        if (!navRect.width || !elRect.width) return;
+        navPill.style.width = `${elRect.width.toFixed(1)}px`;
+        navPill.style.transform = `translate3d(${(elRect.left - navRect.left).toFixed(1)}px, 0, 0)`;
+        navPill.style.opacity = "1";
+      };
+
+      const syncTopNavPill = () => {
+        const target = hoveredNavEl || topNavLinks.find(a => a.getAttribute("data-top-nav") === currentActiveId) || topNavLinks[0];
+        if (target) moveNavPill(target);
+      };
+
+      if (topNav) {
+        topNavLinks.forEach(link => {
+          link.addEventListener("mouseenter", () => {
+            hoveredNavEl = link;
+            moveNavPill(link);
+          });
+          link.addEventListener("focus", () => {
+            hoveredNavEl = link;
+            moveNavPill(link);
+          });
+        });
+        topNav.addEventListener("mouseleave", () => {
+          hoveredNavEl = null;
+          syncTopNavPill();
+        });
+        window.addEventListener("resize", syncTopNavPill, { passive: true });
+      }
+
       const setActiveSection = (id) => {
+        currentActiveId = id;
         dots.forEach(d => d.classList.toggle("active", d.getAttribute("data-dot") === id));
         mobileItems.forEach(m => m.classList.toggle("active", m.getAttribute("data-mobile-nav") === id));
+        topNavLinks.forEach(t => t.classList.toggle("active", t.getAttribute("data-top-nav") === id));
+        syncTopNavPill();
+      };
+
+      const updateHeaderScrollState = () => {
+        if (!mainHeader) return;
+        const scrolled = (window.scrollY || document.documentElement.scrollTop || 0) > 20;
+        mainHeader.classList.toggle("is-scrolled", scrolled);
       };
 
       const updateActiveOnScroll = () => {
+        updateHeaderScrollState();
         sweepVisibleRevealItems();
         if (!sections.length) return;
         const probeY = (window.innerHeight || 800) * 0.35;
@@ -1799,6 +2040,7 @@
 
       observeRevealItems();
       updateActiveOnScroll();
+      requestAnimationFrame(syncTopNavPill);
 
       let navTicking = false;
       window.addEventListener("scroll", () => {
@@ -1813,6 +2055,177 @@
         }
       }, { passive: true });
       window.addEventListener("hashchange", () => setTimeout(updateActiveOnScroll, 60));
+    }
+
+    function initInteractiveNavbar() {
+      const navShell = document.getElementById("navShell");
+      if (navShell && supportsFineHover() && !prefersReducedMotion()) {
+        navShell.addEventListener("mousemove", (e) => {
+          const rect = navShell.getBoundingClientRect();
+          if (!rect.width || !rect.height) return;
+          navShell.style.setProperty("--nav-mx", `${(((e.clientX - rect.left) / rect.width) * 100).toFixed(1)}%`);
+          navShell.style.setProperty("--nav-my", `${(((e.clientY - rect.top) / rect.height) * 100).toFixed(1)}%`);
+        });
+      }
+
+      // Quick Launch Popover
+      const qlWrap = document.getElementById("quickLaunchWrap");
+      const qlBtn = document.getElementById("btnQuickLaunch");
+      const qlPanel = document.getElementById("quickLaunchPanel");
+      const qlChevron = document.getElementById("quickLaunchChevron");
+      const setQuickLaunchOpen = (open) => {
+        if (!qlPanel || !qlBtn) return;
+        qlPanel.classList.toggle("is-open", open);
+        qlPanel.classList.toggle("is-closed", !open);
+        qlBtn.setAttribute("aria-expanded", open ? "true" : "false");
+        if (qlChevron) qlChevron.classList.toggle("rotate-180", open);
+      };
+      if (qlBtn && qlPanel) {
+        qlBtn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          const willOpen = qlPanel.classList.contains("is-closed");
+          setSearchOpen(false);
+          setQuickLaunchOpen(willOpen);
+        });
+      }
+
+      // Instant Search Command Dropdown
+      const searchWrap = document.getElementById("navSearchWrap");
+      const searchInput = document.getElementById("quickSearchInput");
+      const searchKbd = document.getElementById("navSearchKbd");
+      const searchClear = document.getElementById("navSearchClear");
+      const searchDrop = document.getElementById("navSearchDropdown");
+      const searchResults = document.getElementById("navSearchResults");
+      const searchMeta = document.getElementById("navSearchMeta");
+      let activeIndex = -1;
+
+      const escAttr = (v) => String(v ?? "").replace(/[&<>"]/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+
+      function renderNavSearchDropdown(queryText) {
+        if (!searchResults || !searchMeta) return;
+        const q = String(queryText || "").trim().toLowerCase();
+        const videoEntries = [
+          { title: "Phòng Học Video — Toán Rời Rạc (8 bài Ch 1–5)", subject: "Video TRR", badge: "8 video", desc: "Lý thuyết & chữa bài tập Toán Rời Rạc 1 PTIT", url: "./video/index.html?group=trr" },
+          { title: "Phòng Học Video — Vật Lý 3 (28 bài Ch 1–9)", subject: "Video VL3", badge: "28 video", desc: "Bài giảng Quang sóng, Lượng tử & Vật lý nguyên tử", url: "./video/index.html?group=vl3" }
+        ];
+        const allPool = [
+          ...videoEntries,
+          ...CATALOG_ITEMS.map(item => ({
+            title: item.title,
+            subject: item.subject,
+            badge: item.badge,
+            desc: item.desc,
+            url: item.examId ? `${TRR_URL}?exam=${item.examId}` : item.appUrl
+          }))
+        ];
+        const matches = q
+          ? allPool.filter(x => x.title.toLowerCase().includes(q) || x.subject.toLowerCase().includes(q) || x.desc.toLowerCase().includes(q))
+          : [
+              allPool.find(x => x.url.includes("all1000") && x.subject.includes("TRR")),
+              allPool.find(x => x.url.includes("all1000") && x.subject.includes("VL3")),
+              videoEntries[0],
+              videoEntries[1],
+              allPool.find(x => x.url.includes("ck7")),
+              allPool.find(x => x.url.includes("ch6b"))
+            ].filter(Boolean);
+
+        const top = matches.slice(0, 7);
+        searchMeta.textContent = q ? `Tìm thấy ${matches.length} kết quả cho "${queryText.trim()}"` : "Gợi ý truy cập nhanh";
+        activeIndex = -1;
+
+        if (!top.length) {
+          searchResults.innerHTML = `<div class="p-4 text-center text-xs text-slate-500 dark:text-[#a19fa6]">Không có bộ đề phù hợp với "<b>${escAttr(queryText.trim())}</b>"</div>`;
+          return;
+        }
+        searchResults.innerHTML = top.map((it, idx) => `
+          <a href="${it.url}" data-nav-res-idx="${idx}" class="nav-res-item flex items-center justify-between gap-2.5 px-3.5 py-2.5 hover:bg-red-50/70 dark:hover:bg-[#23252c] transition">
+            <div class="min-w-0">
+              <div class="text-xs font-bold text-slate-900 dark:text-[#ece9ea] truncate">${escAttr(it.title)}</div>
+              <div class="text-[11px] text-slate-500 dark:text-[#a19fa6] truncate">${escAttr(it.subject)} · ${escAttr(it.desc)}</div>
+            </div>
+            <span class="px-2 py-0.5 rounded-full text-[10px] font-mono font-bold bg-[#f1efeb] dark:bg-[#262932] text-[#b80000] dark:text-amber-300 shrink-0">${escAttr(it.badge)}</span>
+          </a>
+        `).join("") + (q ? `
+          <button type="button" onclick="revealCatalogIfNeeded();document.getElementById('catalog').scrollIntoView({behavior:'smooth',block:'start'});" class="w-full text-center py-2 text-[11px] font-bold text-[#b80000] dark:text-[#fda4af] bg-[#f6f5f2] dark:bg-[#141519] hover:bg-red-50 dark:hover:bg-[#202227] transition">
+            Xem tất cả ${matches.length} mục trong Kho bộ đề ↓
+          </button>` : "");
+      }
+
+      function setSearchOpen(open) {
+        if (!searchDrop || !searchInput) return;
+        searchDrop.classList.toggle("is-open", open);
+        searchDrop.classList.toggle("is-closed", !open);
+        searchInput.setAttribute("aria-expanded", open ? "true" : "false");
+        if (open) renderNavSearchDropdown(searchInput.value);
+      }
+
+      const updateSearchTools = () => {
+        const hasVal = Boolean(searchInput && searchInput.value.trim());
+        if (searchKbd) {
+          searchKbd.classList.toggle("hidden", hasVal);
+          searchKbd.classList.toggle("xl:inline-flex", !hasVal);
+        }
+        if (searchClear) {
+          searchClear.classList.toggle("hidden", !hasVal);
+          searchClear.classList.toggle("inline-flex", hasVal);
+        }
+      };
+
+      if (searchInput) {
+        searchInput.addEventListener("focus", () => {
+          setQuickLaunchOpen(false);
+          setSearchOpen(true);
+        });
+        searchInput.addEventListener("input", (e) => {
+          searchKeyword = e.target.value;
+          updateSearchTools();
+          renderCatalog();
+          setQuickLaunchOpen(false);
+          setSearchOpen(true);
+        });
+        searchInput.addEventListener("keydown", (e) => {
+          const items = Array.from(searchResults ? searchResults.querySelectorAll(".nav-res-item") : []);
+          if (e.key === "ArrowDown" && items.length) {
+            e.preventDefault();
+            activeIndex = (activeIndex + 1) % items.length;
+            items.forEach((el, i) => el.classList.toggle("bg-red-50", i === activeIndex));
+            items[activeIndex].scrollIntoView({ block: "nearest" });
+          } else if (e.key === "ArrowUp" && items.length) {
+            e.preventDefault();
+            activeIndex = (activeIndex - 1 + items.length) % items.length;
+            items.forEach((el, i) => el.classList.toggle("bg-red-50", i === activeIndex));
+            items[activeIndex].scrollIntoView({ block: "nearest" });
+          } else if (e.key === "Enter" && activeIndex >= 0 && items[activeIndex]) {
+            e.preventDefault();
+            items[activeIndex].click();
+          } else if (e.key === "Escape") {
+            setSearchOpen(false);
+            searchInput.blur();
+          }
+        });
+      }
+
+      if (searchClear && searchInput) {
+        searchClear.addEventListener("click", () => {
+          searchInput.value = "";
+          searchKeyword = "";
+          updateSearchTools();
+          renderCatalog();
+          renderNavSearchDropdown("");
+          searchInput.focus();
+        });
+      }
+
+      document.addEventListener("click", (e) => {
+        if (qlWrap && !qlWrap.contains(e.target)) setQuickLaunchOpen(false);
+        if (searchWrap && !searchWrap.contains(e.target)) setSearchOpen(false);
+      });
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          setQuickLaunchOpen(false);
+          setSearchOpen(false);
+        }
+      });
     }
 
     function initHub() {
@@ -1847,23 +2260,12 @@
       initMagneticButtons();
       initScrollProgressBar();
       initScrollAnimations();
+      initInteractiveNavbar();
       initConstellationCanvas();
 
       const searchInput = document.getElementById("quickSearchInput");
-      searchInput.addEventListener("input", (e) => {
-        searchKeyword = e.target.value;
-        renderCatalog();
-        if (searchKeyword.trim()) {
-          revealCatalogIfNeeded();
-          const cat = document.getElementById("catalog");
-          if (cat && typeof cat.scrollIntoView === "function") {
-            cat.scrollIntoView({ behavior: "smooth", block: "start" });
-          }
-        }
-      });
-
       document.addEventListener("keydown", (e) => {
-        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k") {
+        if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "k" && searchInput) {
           e.preventDefault();
           searchInput.focus();
           searchInput.select();
